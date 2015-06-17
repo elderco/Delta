@@ -4,11 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{0F3B212B-07EC-468F-A971-6F411F705E04}</ProjectGuid>
-=======
     <ProjectGuid>{9BA0B882-2B94-4938-A0B2-B21F7069D230}</ProjectGuid>
->>>>>>> origin/master
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VillaBisutti.Delta.Core</RootNamespace>
@@ -44,19 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-<<<<<<< HEAD
-    <Compile Include="IEntityBase.cs" />
-    <Compile Include="Model\Area.cs" />
-    <Compile Include="Model\ItemMontagem.cs" />
-    <Compile Include="Model\ItemDecoracao.cs" />
-    <Compile Include="Model\ItemBebida.cs" />
-    <Compile Include="Model\ItemBoloDoceBemCasado.cs" />
-    <Compile Include="Model\ItemFotoVideo.cs" />
-    <Compile Include="Model\ItemGastronomia.cs" />
-    <Compile Include="Model\ItemOutrosItemItemDiverso.cs" />
-    <Compile Include="Model\ItemSomIluminacao.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-=======
     <Compile Include="Model\Bebida.cs" />
     <Compile Include="Model\BoloDoceBemCasado.cs" />
     <Compile Include="Model\ContratoAditivo.cs" />
@@ -82,7 +65,6 @@
     <Compile Include="Model\TipoItemSomIluminacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Usuario.cs" />
->>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
