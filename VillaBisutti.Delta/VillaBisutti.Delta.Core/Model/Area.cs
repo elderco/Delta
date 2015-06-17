@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	class Area : IEntityBase
+	public class Area : IEntityBase
 	{
 	}
 }

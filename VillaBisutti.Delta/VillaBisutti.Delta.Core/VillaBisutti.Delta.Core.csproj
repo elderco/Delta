@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Area.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DataAccessBase.cs" />
     <Compile Include="Model\Area.cs" />
