@@ -12,5 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public Context()
 			: base("VillaBisuttiDelta")
 		{ }
+		public DbSet<Model.Area> Areas { get; set; }
+		public DbSet<Bebida> Bebidas { get; set; }
 	}
 }
