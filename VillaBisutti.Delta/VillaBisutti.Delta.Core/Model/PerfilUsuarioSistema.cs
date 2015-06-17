@@ -9,5 +9,19 @@ namespace VillaBisutti.Delta.Core.Model
 	public class PerfilUsuarioSistema : IEntityBase
 	{
 		public int Id { get; set; }
+		public string Nome { get; set; }
+		public int TipoAcessoId { get; set; }
+		public TipoAcesso TipoAcesso
+		{
+			get
+			{
+				return (TipoAcesso)TipoAcessoId;
+			}
+			set
+			{
+				TipoAcessoId = (int)value;
+			}
+		}
+		public List<Usuario> Usuarios { get; set; }
 	}
 }
