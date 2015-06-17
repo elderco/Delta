@@ -11,22 +11,25 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.CronogramaCerimonial entity)
 		{
-			throw new NotImplementedException();
+			Model.CronogramaCerimonial original = context.CronogramasCerimoniais.FirstOrDefault(a => a.Id == entity.Id);
+			context.Entry(original).OriginalValues.SetValues(entity);
+			context.SaveChanges();
 		}
 
-		public override DbEntityEntry GetCurrent(Model.CronogramaCerimonial entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.CronogramaCerimonial entity)
 		{
-			throw new NotImplementedException();
+			return context.Entry(entity);
 		}
 
 		public override void Insert(Model.CronogramaCerimonial entity)
 		{
-			throw new NotImplementedException();
+			context.CronogramasCerimoniais.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.CronogramaCerimonial> GetCollection()
 		{
-			throw new NotImplementedException();
+			return context.CronogramasCerimoniais.ToList();
 		}
 	}
 }

@@ -11,22 +11,25 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Gastronomia entity)
 		{
-			throw new NotImplementedException();
+			Model.Gastronomia original = context.Gastronomias.FirstOrDefault(a => a.Id == entity.Id);
+			context.Entry(original).OriginalValues.SetValues(entity);
+			context.SaveChanges();
 		}
 
-		public override DbEntityEntry GetCurrent(Model.Gastronomia entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.Gastronomia entity)
 		{
-			throw new NotImplementedException();
+			return context.Entry(entity);
 		}
 
 		public override void Insert(Model.Gastronomia entity)
 		{
-			throw new NotImplementedException();
+			context.Gastronomias.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.Gastronomia> GetCollection()
 		{
-			throw new NotImplementedException();
+			return context.Gastronomias.ToList();
 		}
 	}
 }

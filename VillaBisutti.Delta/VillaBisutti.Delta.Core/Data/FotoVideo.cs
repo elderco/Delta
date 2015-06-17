@@ -7,26 +7,29 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	class FotoVideo : DataAccessBase<Model.FotoVideo>
+	public class FotoVideo : DataAccessBase<Model.FotoVideo>
 	{
 		public override void Update(Model.FotoVideo entity)
 		{
-			throw new NotImplementedException();
+			Model.FotoVideo original = context.FotosVideos.FirstOrDefault(a => a.Id == entity.Id);
+			context.Entry(original).OriginalValues.SetValues(entity);
+			context.SaveChanges();
 		}
 
-		public override DbEntityEntry GetCurrent(Model.FotoVideo entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.FotoVideo entity)
 		{
-			throw new NotImplementedException();
+			return context.Entry(entity);
 		}
 
 		public override void Insert(Model.FotoVideo entity)
 		{
-			throw new NotImplementedException();
+			context.FotosVideos.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.FotoVideo> GetCollection()
 		{
-			throw new NotImplementedException();
+			return context.FotosVideos.ToList();
 		}
 	}
 }
