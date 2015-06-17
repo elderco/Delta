@@ -48,14 +48,44 @@
   <ItemGroup>
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DataAccessBase.cs" />
+    <Compile Include="Model\Area.cs" />
+    <Compile Include="Model\Bebida.cs" />
+    <Compile Include="Model\BoloDoceBemCasado.cs" />
+    <Compile Include="Model\ContratoAditivo.cs" />
+    <Compile Include="Model\CronogramaCerimonial.cs" />
+    <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
+    <Compile Include="Model\Decoracao.cs" />
+    <Compile Include="Model\FotoVideo.cs" />
+    <Compile Include="Model\Gastronomia.cs" />
+    <Compile Include="Model\IEntityBase.cs" />
+    <Compile Include="Model\ItemBebida.cs" />
+    <Compile Include="Model\ItemBoloDoceBemCasado.cs" />
+    <Compile Include="Model\ItemDecoracao.cs" />
+    <Compile Include="Model\ItemFotoVideo.cs" />
+    <Compile Include="Model\ItemGastronomia.cs" />
+    <Compile Include="Model\ItemMontagem.cs" />
+    <Compile Include="Model\ItemOutrosItemItemDiverso.cs" />
+    <Compile Include="Model\ItemSomIluminacao.cs" />
+    <Compile Include="Model\Montagem.cs" />
+    <Compile Include="Model\OutroItem.cs" />
+    <Compile Include="Model\PerfilUsuarioSistema.cs" />
+    <Compile Include="Model\Roteiro.cs" />
+    <Compile Include="Model\RoteiroPadrao.cs" />
+    <Compile Include="Model\SomIluminacao.cs" />
+    <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
+    <Compile Include="Model\TipoItemDecoracao.cs" />
+    <Compile Include="Model\TipoItemFotoVideo.cs" />
+    <Compile Include="Model\TipoItemGastronomia.cs" />
+    <Compile Include="Model\TipoItemMontagem.cs" />
+    <Compile Include="Model\TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="Model\TipoItemSomIluminacao.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
