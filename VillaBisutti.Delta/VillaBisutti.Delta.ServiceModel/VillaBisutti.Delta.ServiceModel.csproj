@@ -68,7 +68,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area.cs" />
+    <Compile Include="Bebida.cs" />
+    <Compile Include="BoloDoceBemCasado.cs" />
+    <Compile Include="ContratoAditivo.cs" />
+    <Compile Include="CronogramaCerimonial.cs" />
+    <Compile Include="CronogramaCerimonialPadrao.cs" />
+    <Compile Include="Decoracao.cs" />
+    <Compile Include="FotoVideo.cs" />
+    <Compile Include="Gastronomia.cs" />
+    <Compile Include="ItemBebida.cs" />
+    <Compile Include="ItemBoloDoceBemCasado.cs" />
+    <Compile Include="ItemDecoracao.cs" />
+    <Compile Include="ItemFotoVideo.cs" />
+    <Compile Include="ItemGastronomia.cs" />
+    <Compile Include="ItemMontagem.cs" />
+    <Compile Include="ItemOutrosItemItemDiverso.cs" />
+    <Compile Include="ItemSomIluminacao.cs" />
+    <Compile Include="Montagem.cs" />
+    <Compile Include="OutroItem.cs" />
+    <Compile Include="PerfilUsuarioSistema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roteiro.cs" />
+    <Compile Include="RoteiroPadrao.cs" />
+    <Compile Include="SomIluminacao.cs" />
+    <Compile Include="TipoItemBoloDoceBemCasado.cs" />
+    <Compile Include="TipoItemDecoracao.cs" />
+    <Compile Include="TipoItemFotoVideo.cs" />
+    <Compile Include="TipoItemGastronomia.cs" />
+    <Compile Include="TipoItemMontagem.cs" />
+    <Compile Include="TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="TipoItemSomIluminacao.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="WebServiceExamples.cs" />
   </ItemGroup>
   <ItemGroup>
