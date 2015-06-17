@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	class CronogramaCerimonial : IEntityBase
+	public class CronogramaCerimonial : IEntityBase
 	{
+		public int Id { get; set; }
 	}
 }

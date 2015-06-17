@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	class PerfilUsuarioSistema : IEntityBase
+	public class PerfilUsuarioSistema : IEntityBase
 	{
+		public int Id { get; set; }
 	}
 }

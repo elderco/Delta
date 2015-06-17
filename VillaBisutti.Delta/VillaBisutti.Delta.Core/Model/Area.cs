@@ -8,5 +8,6 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Area : IEntityBase
 	{
+		public int Id { get; set; }
 	}
 }
