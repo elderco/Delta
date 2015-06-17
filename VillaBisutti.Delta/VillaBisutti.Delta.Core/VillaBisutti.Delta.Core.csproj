@@ -63,7 +63,7 @@
     <Compile Include="Data\ItemFotoVideo.cs" />
     <Compile Include="Data\ItemGastronomia.cs" />
     <Compile Include="Data\ItemMontagem.cs" />
-    <Compile Include="Data\ItemOutrosItemDiverso.cs" />
+    <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Montagem.cs" />
     <Compile Include="Data\OutroItem.cs" />
