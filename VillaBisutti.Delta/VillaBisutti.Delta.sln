@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.Api", "VillaBisutti.Delta.Api\VillaBisutti.Delta.Api.csproj", "{696C9B8B-E330-4207-AEEA-825F46C0F839}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.ServiceInterface", "VillaBisutti.Delta.ServiceInterface\VillaBisutti.Delta.ServiceInterface.csproj", "{C352F883-8610-4F5F-AD6C-EDBE3BA4EF55}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.ServiceModel", "VillaBisutti.Delta.ServiceModel\VillaBisutti.Delta.ServiceModel.csproj", "{C6224238-9D14-4568-A9E2-5211840637EA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.Core", "VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj", "{83FB85EF-3D61-495B-BE38-E28EAC6307E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.WebApp", "VillaBisutti.Delta.WebApp\VillaBisutti.Delta.WebApp.csproj", "{C9F5022A-93FF-4528-BBC6-7031479941EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.Core", "VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj", "{9BA0B882-2B94-4938-A0B2-B21F7069D230}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,26 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{696C9B8B-E330-4207-AEEA-825F46C0F839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{696C9B8B-E330-4207-AEEA-825F46C0F839}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{696C9B8B-E330-4207-AEEA-825F46C0F839}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{696C9B8B-E330-4207-AEEA-825F46C0F839}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C352F883-8610-4F5F-AD6C-EDBE3BA4EF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C352F883-8610-4F5F-AD6C-EDBE3BA4EF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C352F883-8610-4F5F-AD6C-EDBE3BA4EF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C352F883-8610-4F5F-AD6C-EDBE3BA4EF55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6224238-9D14-4568-A9E2-5211840637EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6224238-9D14-4568-A9E2-5211840637EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6224238-9D14-4568-A9E2-5211840637EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6224238-9D14-4568-A9E2-5211840637EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83FB85EF-3D61-495B-BE38-E28EAC6307E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83FB85EF-3D61-495B-BE38-E28EAC6307E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83FB85EF-3D61-495B-BE38-E28EAC6307E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83FB85EF-3D61-495B-BE38-E28EAC6307E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9F5022A-93FF-4528-BBC6-7031479941EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9F5022A-93FF-4528-BBC6-7031479941EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9F5022A-93FF-4528-BBC6-7031479941EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9F5022A-93FF-4528-BBC6-7031479941EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

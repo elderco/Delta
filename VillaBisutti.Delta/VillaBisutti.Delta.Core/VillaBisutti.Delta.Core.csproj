@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83FB85EF-3D61-495B-BE38-E28EAC6307E7}</ProjectGuid>
+    <ProjectGuid>{9BA0B882-2B94-4938-A0B2-B21F7069D230}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VillaBisutti.Delta.Core</RootNamespace>
@@ -30,14 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,15 +39,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Context.cs" />
-    <Compile Include="Data\DataAccessBase.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Model\Bebida.cs" />
+    <Compile Include="Model\BoloDoceBemCasado.cs" />
+    <Compile Include="Model\ContratoAditivo.cs" />
+    <Compile Include="Model\CronogramaCerimonial.cs" />
+    <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
+    <Compile Include="Model\Decoracao.cs" />
+    <Compile Include="Model\FotoVideo.cs" />
+    <Compile Include="Model\Gastronomia.cs" />
+    <Compile Include="Model\IEntityBase.cs" />
+    <Compile Include="Model\ItemBebida.cs" />
+    <Compile Include="Model\Montagem.cs" />
+    <Compile Include="Model\OutroItem.cs" />
+    <Compile Include="Model\Roteiro.cs" />
+    <Compile Include="Model\RoteiroPadrao.cs" />
+    <Compile Include="Model\SomIluminacao.cs" />
+    <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
+    <Compile Include="Model\TipoItemDecoracao.cs" />
+    <Compile Include="Model\PerfilUsuarioSistema.cs" />
+    <Compile Include="Model\TipoItemFotoVideo.cs" />
+    <Compile Include="Model\TipoItemGastronomia.cs" />
+    <Compile Include="Model\TipoItemMontagem.cs" />
+    <Compile Include="Model\TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="Model\TipoItemSomIluminacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
+    <Compile Include="Model\Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
