@@ -11,22 +11,25 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Area entity)
 		{
-			throw new NotImplementedException();
+			Model.Area original = context.Areas.FirstOrDefault(a => a.Id == entity.Id);
+			context.Entry(original).OriginalValues.SetValues(entity);
+			context.SaveChanges();
 		}
 
 		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.Area entity)
 		{
-			throw new NotImplementedException();
+			return context.Entry(entity);
 		}
 
 		public override void Insert(Model.Area entity)
 		{
-			throw new NotImplementedException();
+			context.Areas.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.Area> GetCollection()
 		{
-			throw new NotImplementedException();
+			return context.Areas.ToList();
 		}
 	}
 }
