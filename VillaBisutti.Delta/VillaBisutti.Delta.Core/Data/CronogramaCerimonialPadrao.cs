@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data.Entity.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class CronogramaCerimonialPadrao : DataAccessBase<Model.CronogramaCerimonialPadrao>]	
+	public class CronogramaCerimonialPadrao : DataAccessBase<Model.CronogramaCerimonialPadrao>
 	{
 		public override void Update(Model.CronogramaCerimonialPadrao entity)
 		{
