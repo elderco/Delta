@@ -54,7 +54,7 @@
     <Compile Include="Data\CronogramaCerimonial.cs" />
     <Compile Include="Data\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Data\DataAccessBase.cs" />
-    <Compile Include="Data\Decoração.cs" />
+    <Compile Include="Data\Decoracao.cs" />
     <Compile Include="Data\FotoVideo.cs" />
     <Compile Include="Data\Gastronomia.cs" />
     <Compile Include="Data\ItemBebida.cs" />
