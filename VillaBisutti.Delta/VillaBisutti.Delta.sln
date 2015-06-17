@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.Core", "VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj", "{0F3B212B-07EC-468F-A971-6F411F705E04}"
+=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillaBisutti.Delta.Core", "VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj", "{9BA0B882-2B94-4938-A0B2-B21F7069D230}"
+>>>>>>> origin/master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
+		{0F3B212B-07EC-468F-A971-6F411F705E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3B212B-07EC-468F-A971-6F411F705E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3B212B-07EC-468F-A971-6F411F705E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3B212B-07EC-468F-A971-6F411F705E04}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
 		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BA0B882-2B94-4938-A0B2-B21F7069D230}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> origin/master
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
