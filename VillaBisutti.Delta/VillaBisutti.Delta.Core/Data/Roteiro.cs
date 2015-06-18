@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Roteiro entity)
 		{
-			Model.Roteiro original = context.Roteiros.FirstOrDefault(a => a.Id == entity.Id);
+			Model.Roteiro original = context.Roteiro.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Roteiro entity)
 		{
-			context.Roteiros.Add(entity);
+			context.Roteiro.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.Roteiro> GetCollection()
 		{
-			return context.Roteiros.ToList();
+			return context.Roteiro.ToList();
 		}
 	}
 }

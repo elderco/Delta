@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class TipoItemOutroItemItemDiverso : DataAccessBase<Model.TipoItemOutroItemItemDiverso>
+	public class TipoItemOutroItemItemDiverso : DataAccessBase<Model.TipoItemOutroItem>
 	{
-		public override void Update(Model.TipoItemOutroItemItemDiverso entity)
+		public override void Update(Model.TipoItemOutroItem entity)
 		{
-			Model.TipoItemOutroItemItemDiverso original = context.TiposItensOutrosItensItensDiversos.FirstOrDefault(a => a.Id == entity.Id);
+			Model.TipoItemOutroItem original = context.TipoItemOutroItem.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemOutroItemItemDiverso entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemOutroItem entity)
 		{
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.TipoItemOutroItemItemDiverso entity)
+		public override void Insert(Model.TipoItemOutroItem entity)
 		{
-			context.TiposItensOutrosItensItensDiversos.Add(entity);
+			context.TipoItemOutroItem.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.TipoItemOutroItemItemDiverso> GetCollection()
+		protected override List<Model.TipoItemOutroItem> GetCollection()
 		{
-			return context.TiposItensOutrosItensItensDiversos.ToList();
+			return context.TipoItemOutroItem.ToList();
 		}
 	}
 }

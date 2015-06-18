@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class ContratoAditivo : IEntityBase
+	public class ItemOutroItem : IEntityBase
 	{
 		public int Id { get; set; }
 	}

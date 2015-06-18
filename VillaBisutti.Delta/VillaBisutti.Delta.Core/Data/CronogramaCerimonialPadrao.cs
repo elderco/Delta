@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.CronogramaCerimonialPadrao entity)
 		{
-			Model.CronogramaCerimonialPadrao original = context.CronogramasCerimoniaisPadroes.FirstOrDefault(a => a.Id == entity.Id);
+			Model.CronogramaCerimonialPadrao original = context.CronogramaCerimonialPadrao.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.CronogramaCerimonialPadrao entity)
 		{
-			context.CronogramasCerimoniaisPadroes.Add(entity);
+			context.CronogramaCerimonialPadrao.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.CronogramaCerimonialPadrao> GetCollection()
 		{
-			return context.CronogramasCerimoniaisPadroes.ToList();
+			return context.CronogramaCerimonialPadrao.ToList();
 		}
 	}
 }
