@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class Bebida : IEntityBase
+	public class Foto : IEntityBase
 	{
 		public int Id { get; set; }
-		public List<ItemBebidaSelecionado> ItensBebida { get; set; }
+		public string URL { get; set; }
+		public string Legenda { get; set; }
 	}
 }

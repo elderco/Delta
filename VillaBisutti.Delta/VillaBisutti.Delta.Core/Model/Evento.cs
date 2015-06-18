@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class Bebida : IEntityBase
+	public class Evento : IEntityBase
 	{
 		public int Id { get; set; }
-		public List<ItemBebidaSelecionado> ItensBebida { get; set; }
 	}
 }

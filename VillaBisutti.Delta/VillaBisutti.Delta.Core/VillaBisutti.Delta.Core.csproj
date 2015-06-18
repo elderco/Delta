@@ -86,10 +86,13 @@
     <Compile Include="Model\CronogramaCerimonial.cs" />
     <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Model\Decoracao.cs" />
+    <Compile Include="Model\Evento.cs" />
     <Compile Include="Model\FotoVideo.cs" />
     <Compile Include="Model\Gastronomia.cs" />
+    <Compile Include="Model\Horario.cs" />
     <Compile Include="Model\IEntityBase.cs" />
     <Compile Include="Model\ItemBebida.cs" />
+    <Compile Include="Model\ItemBebidaSelecionado.cs" />
     <Compile Include="Model\ItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\ItemDecoracao.cs" />
     <Compile Include="Model\ItemFotoVideo.cs" />
@@ -105,6 +108,7 @@
     <Compile Include="Model\SomIluminacao.cs" />
     <Compile Include="Model\TipoAcesso.cs" />
     <Compile Include="Model\TipoEvento.cs" />
+    <Compile Include="Model\TipoItemBebida.cs" />
     <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />
