@@ -9,5 +9,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemSomIluminacao : IEntityBase
 	{
 		public int Id { get; set; }
+		public string Nome { get; set; }
+		public List<ItemSomIluminacao> Itens { get; set; }
 	}
 }

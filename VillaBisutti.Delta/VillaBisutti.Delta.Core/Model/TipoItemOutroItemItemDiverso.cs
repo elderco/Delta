@@ -9,5 +9,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemOutroItemItemDiverso : IEntityBase
 	{
 		public int Id { get; set; }
+		public string Nome { get; set; }
+		public List<ItemOutroItemItemDiverso> Itens { get; set; }
 	}
 }

@@ -9,5 +9,8 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemBoloDoceBemCasado : IEntityBase
 	{
 		public int Id { get; set; }
+		public string Nome { get; set; }
+		public List<ItemBoloDoceBemCasado> Itens { get; set; }
+
 	}
 }
