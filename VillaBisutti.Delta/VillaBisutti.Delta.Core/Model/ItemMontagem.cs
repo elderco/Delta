@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public string Nome { get; set; }
 		public int Quantidade { get; set; }
-		public int ItemMontagemId { get; set; }
-		public ItemMontagem ItemMontagem { get; set; }
+		public int TipoItemMontagemId { get; set; }
+		public TipoItemMontagem TipoItemMontagem { get; set; }
 	}
 }

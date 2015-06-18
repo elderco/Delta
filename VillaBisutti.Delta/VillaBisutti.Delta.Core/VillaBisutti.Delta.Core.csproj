@@ -98,8 +98,8 @@
     <Compile Include="Model\ItemFotoVideo.cs" />
     <Compile Include="Model\ItemGastronomia.cs" />
     <Compile Include="Model\ItemMontagem.cs" />
-    <Compile Include="Model\ItemOutrosItemItemDiverso.cs" />
-    <Compile Include="Model\ItemOutrosItemItemDiversoSelecionado.cs" />
+    <Compile Include="Model\ItemOutroItemItemDiverso.cs" />
+    <Compile Include="Model\ItemOutroItemItemDiversoSelecionado.cs" />
     <Compile Include="Model\ItemSomIluminacao.cs" />
     <Compile Include="Model\ItemMontagemSelecionado.cs" />
     <Compile Include="Model\OutroItem.cs" />

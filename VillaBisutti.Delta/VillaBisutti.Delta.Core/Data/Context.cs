@@ -27,7 +27,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemFotoVideo> ItensFotosVideos { get; set; }
 		public DbSet<Model.ItemGastronomia> ItensGastronomias { get; set; }
 		public DbSet<Model.ItemMontagem> ItensMontagens { get; set; }
-		public DbSet<Model.ItemOutrosItemItemDiverso> IntensOutrosItensItensDiversos { get; set; }
+		public DbSet<Model.ItemOutroItemItemDiverso> IntensOutrosItensItensDiversos { get; set; }
 		public DbSet<Model.ItemSomIluminacao> ItensSonsIluminacoes { get; set; }
 		public DbSet<Model.ItemMontagemSelecionado> Montagens { get; set; }
 		public DbSet<Model.OutroItem> OutrosItens { get; set; }
