@@ -87,6 +87,7 @@
     <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Model\Decoracao.cs" />
     <Compile Include="Model\Evento.cs" />
+    <Compile Include="Model\Foto.cs" />
     <Compile Include="Model\FotoVideo.cs" />
     <Compile Include="Model\Gastronomia.cs" />
     <Compile Include="Model\Horario.cs" />
