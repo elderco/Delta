@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemBebida entity)
 		{
-			Model.ItemBebida original = context.ItensBebidas.FirstOrDefault(b => b.Id == entity.Id);
+			Model.ItemBebida original = context.ItemBebida.FirstOrDefault(b => b.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemBebida entity)
 		{
-			context.ItensBebidas.Add(entity);
+			context.ItemBebida.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.ItemBebida> GetCollection()
 		{
-			return context.ItensBebidas.ToList();
+			return context.ItemBebida.ToList();
 		}
 	}
 }

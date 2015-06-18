@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Usuario entity)
 		{
-			Model.Usuario original = context.Usuarios.FirstOrDefault(a => a.Id == entity.Id);
+			Model.Usuario original = context.Usuario.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Usuario entity)
 		{
-			context.Usuarios.Add(entity);
+			context.Usuario.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.Usuario> GetCollection()
 		{
-			return context.Usuarios.ToList();
+			return context.Usuario.ToList();
 		}
 	}
 }

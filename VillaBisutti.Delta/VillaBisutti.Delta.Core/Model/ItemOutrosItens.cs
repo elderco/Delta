@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class ItemOutroItemItemDiverso : IEntityBase
+	public class ItemOutrosItens : IEntityBase
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }
 		public int Quantidade { get; set; }
 		public int TipoItemOutroItemItemDiversoId { get; set; }
-		public TipoItemOutroItemItemDiverso TipoItemOutroItemItemDiverso { get; set; }
+		public TipoItemOutrosItens TipoItemOutroItemItemDiverso { get; set; }
 	}
 }

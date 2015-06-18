@@ -39,6 +39,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,8 +100,8 @@
     <Compile Include="Model\ItemFotoVideo.cs" />
     <Compile Include="Model\ItemGastronomia.cs" />
     <Compile Include="Model\ItemMontagem.cs" />
-    <Compile Include="Model\ItemOutroItemItemDiverso.cs" />
-    <Compile Include="Model\ItemOutroItemItemDiversoSelecionado.cs" />
+    <Compile Include="Model\ItemOutrosItens.cs" />
+    <Compile Include="Model\ItemOutrosItensSelecionado.cs" />
     <Compile Include="Model\ItemSomIluminacao.cs" />
     <Compile Include="Model\ItemMontagemSelecionado.cs" />
     <Compile Include="Model\OutroItem.cs" />
@@ -115,7 +117,7 @@
     <Compile Include="Model\TipoItemFotoVideo.cs" />
     <Compile Include="Model\TipoItemGastronomia.cs" />
     <Compile Include="Model\TipoItemMontagem.cs" />
-    <Compile Include="Model\TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="Model\TipoItemOutrosItens.cs" />
     <Compile Include="Model\TipoItemSomIluminacao.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

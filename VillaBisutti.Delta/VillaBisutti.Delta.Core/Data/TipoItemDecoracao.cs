@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.TipoItemDecoracao entity)
 		{
-			Model.TipoItemDecoracao original = context.TiposItensDecoracoes.FirstOrDefault(a => a.Id == entity.Id);
+			Model.TipoItemDecoracao original = context.TipoItemDecoracao.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.TipoItemDecoracao entity)
 		{
-			context.TiposItensDecoracoes.Add(entity);
+			context.TipoItemDecoracao.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.TipoItemDecoracao> GetCollection()
 		{
-			return context.TiposItensDecoracoes.ToList();
+			return context.TipoItemDecoracao.ToList();
 		}
 	}
 }

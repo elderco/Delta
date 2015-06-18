@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemGastronomiaSelecionado entity)
 		{
-			Model.ItemGastronomiaSelecionado original = context.Gastronomias.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemGastronomiaSelecionado original = context.Gastronomia.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemGastronomiaSelecionado entity)
 		{
-			context.Gastronomias.Add(entity);
+			context.Gastronomia.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.ItemGastronomiaSelecionado> GetCollection()
 		{
-			return context.Gastronomias.ToList();
+			return context.Gastronomia.ToList();
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public List<TipoItemFotoVideo> TipoFotoExibir { get; set; }
 		public List<TipoItemGastronomia> TipoGastronomiaExibir { get; set; }
 		public List<TipoItemMontagem> TipoMontagemExibir { get; set; }
-		public List<TipoItemOutroItemItemDiverso> TipoOutrosExibir { get; set; }
+		public List<TipoItemOutrosItens> TipoOutrosExibir { get; set; }
 		public List<TipoItemSomIluminacao> TipoSomExibir { get; set; }
 	}
 }

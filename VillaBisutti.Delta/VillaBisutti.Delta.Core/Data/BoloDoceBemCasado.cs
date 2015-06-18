@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemBoloDoceBemCasadoSelecionado entity)
 		{
-			Model.ItemBoloDoceBemCasadoSelecionado original = context.BolosDocesBemCasados.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemBoloDoceBemCasadoSelecionado original = context.BoloDoceBemCasado.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemBoloDoceBemCasadoSelecionado entity)
 		{
-			context.BolosDocesBemCasados.Add(entity);
+			context.BoloDoceBemCasado.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.ItemBoloDoceBemCasadoSelecionado> GetCollection()
 		{
-			return context.BolosDocesBemCasados.ToList();
+			return context.BoloDoceBemCasado.ToList();
 		}
 	}
 }
