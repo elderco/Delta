@@ -39,7 +39,7 @@ namespace VillaBisutti.Delta.Core.Model
 			string[] args = value.Split(':');
 			return new Horario { Hora = int.Parse(args[0]), Minuto = int.Parse(args[1]) };
 		}
-		public override string ToString()
+		public string ToString()
 		{
 			return Horas + ":" + Minutos;
 		}

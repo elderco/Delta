@@ -13,36 +13,36 @@ namespace VillaBisutti.Delta.Core.Data
 			: base("VillaBisuttiDelta")
 		{ }
 		public DbSet<Model.Area> Areas { get; set; }
-		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
-		public DbSet<Model.ContratoAditivo> ContratoAdivitivo { get; set; }
-		public DbSet<Model.CronogramaCerimonial> CronogramaCerimonial { get; set; }
-		public DbSet<Model.CronogramaCerimonialPadrao> CronogramaCerimonialPadrao { get; set; }
-		public DbSet<Model.Decoracao> Decoracao { get; set; }
-		public DbSet<Model.FotoVideo> FotoVideo { get; set; }
-		public DbSet<Model.Gastronomia> Gastronomia { get; set; }
-		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
-		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
-		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
-		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
-		public DbSet<Model.ItemFotoVideo> ItemFotoVideo { get; set; }
-		public DbSet<Model.ItemGastronomia> ItemGastronomia { get; set; }
-		public DbSet<Model.ItemMontagem> ItemMontagem { get; set; }
-		public DbSet<Model.ItemOutroItem> ItemOutroItem { get; set; }
-		public DbSet<Model.ItemSomIluminacao> ItemSomIluminacao { get; set; }
-		public DbSet<Model.Montagem> Montagem { get; set; }
-		public DbSet<Model.OutroItem> OutroItem { get; set; }
-		public DbSet<Model.PerfilUsuarioSistema> PerfilUsuarioSistema { get; set; }
-		public DbSet<Model.Roteiro> Roteiro { get; set; }
-		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }
-		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
-		public DbSet<Model.TipoItemBoloDoceBemCasado> TipoItemBoloDoceBemCasado { get; set; }
-		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
-		public DbSet<Model.TipoItemFotoVideo> TipoItemFotoVideo { get; set; }
-		public DbSet<Model.TipoItemGastronomia> TipoItemGastronomia { get; set; }
-		public DbSet<Model.TipoItemMontagem> TipoItemMontagem { get; set; }
-		public DbSet<Model.TipoItemOutroItem> TipoItemOutroItem { get; set; }
-		public DbSet<Model.TipoItemSomIluminacao> TipoItemSomIluminacao { get; set; }
-		public DbSet<Model.Usuario> Usuario { get; set; }
+		public DbSet<Model.Bebida> Bebidas { get; set; }
+		public DbSet<Model.BoloDoceBemCasado> BolosDocesBemCasados { get; set; }
+		public DbSet<Model.ContratoAditivo> ContratosAdivitivos { get; set; }
+		public DbSet<Model.CronogramaCerimonial> CronogramasCerimoniais { get; set; }
+		public DbSet<Model.CronogramaCerimonialPadrao> CronogramasCerimoniaisPadroes { get; set; }
+		public DbSet<Model.Decoracao> Decoracoes { get; set; }
+		public DbSet<Model.FotoVideo> FotosVideos { get; set; }
+		public DbSet<Model.Gastronomia> Gastronomias { get; set; }
+		public DbSet<Model.ItemBebida> ItensBebidas { get; set; }
+		public DbSet<Model.ItemBoloDoceBemCasado> ItensBolosDocesBemCasados { get; set; }
+		public DbSet<Model.ItemDecoracao> ItensDecoracoes { get; set; }
+		public DbSet<Model.ItemFotoVideo> ItensFotosVideos { get; set; }
+		public DbSet<Model.ItemGastronomia> ItensGastronomias { get; set; }
+		public DbSet<Model.ItemMontagem> ItensMontagens { get; set; }
+		public DbSet<Model.ItemOutrosItemItemDiverso> IntensOutrosItensItensDiversos { get; set; }
+		public DbSet<Model.ItemSomIluminacao> ItensSonsIluminacoes { get; set; }
+		public DbSet<Model.Montagem> Montagens { get; set; }
+		public DbSet<Model.OutroItem> OutrosItens { get; set; }
+		public DbSet<Model.PerfilUsuarioSistema> PerfilsUsuariosSistemas { get; set; }
+		public DbSet<Model.Roteiro> Roteiros { get; set; }
+		public DbSet<Model.RoteiroPadrao> RoteirosPadroes { get; set; }
+		public DbSet<Model.SomIluminacao> SonsIluminacoes { get; set; }
+		public DbSet<Model.TipoItemBoloDoceBemCasado> TiposItensBolosDocesBemCasados { get; set; }
+		public DbSet<Model.TipoItemDecoracao> TiposItensDecoracoes { get; set; }
+		public DbSet<Model.TipoItemFotoVideo> TiposItensFotosVideos { get; set; }
+		public DbSet<Model.TipoItemGastronomia> TiposItensGastronomias { get; set; }
+		public DbSet<Model.TipoItemMontagem> TiposItemMontagens { get; set; }
+		public DbSet<Model.TipoItemOutroItemItemDiverso> TiposItensOutrosItensItensDiversos { get; set; }
+		public DbSet<Model.TipoItemSomIluminacao> TiposItensSonsIluminacoes { get; set; }
+		public DbSet<Model.Usuario> Usuarios { get; set; }
 
 	}
 }

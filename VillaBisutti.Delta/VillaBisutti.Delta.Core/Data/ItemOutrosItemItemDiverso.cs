@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class ItemOutrosItemItemDiverso : DataAccessBase<Model.ItemOutroItem>
+	public class ItemOutrosItemItemDiverso : DataAccessBase<Model.ItemOutrosItemItemDiverso>
 	{
-		public override void Update(Model.ItemOutroItem entity)
+		public override void Update(Model.ItemOutrosItemItemDiverso entity)
 		{
-			Model.ItemOutroItem original = context.ItemOutroItem.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemOutrosItemItemDiverso original = context.IntensOutrosItensItensDiversos.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemOutroItem entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemOutrosItemItemDiverso entity)
 		{
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.ItemOutroItem entity)
+		public override void Insert(Model.ItemOutrosItemItemDiverso entity)
 		{
-			context.ItemOutroItem.Add(entity);
+			context.IntensOutrosItensItensDiversos.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.ItemOutroItem> GetCollection()
+		protected override List<Model.ItemOutrosItemItemDiverso> GetCollection()
 		{
-			return context.ItemOutroItem.ToList();
+			return context.IntensOutrosItensItensDiversos.ToList();
 		}
 	}
 }
