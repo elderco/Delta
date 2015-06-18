@@ -20,9 +20,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool FornecimentoBisutti { get; set; }
 		public int Quantidade { get; set; }
 		public int HorarioEntrega { get; set; }
-		public string ContatoFornecimento { get; set; }
-		public string Observacoes { get; set; }
-		public List<Foto> Fotos { get; set; }
 		public Horario Entrega
 		{
 			get
@@ -34,5 +31,8 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioEntrega = value.ToInt();
 			}
 		}
+		public string ContatoFornecimento { get; set; }
+		public string Observacoes { get; set; }
+		public List<Foto> Fotos { get; set; }
 	}
 }

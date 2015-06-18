@@ -67,6 +67,7 @@
     <Compile Include="Data\ItemMontagem.cs" />
     <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
+    <Compile Include="Model\LocalCerimonia.cs" />
     <Compile Include="Data\Montagem.cs" />
     <Compile Include="Data\OutroItem.cs" />
     <Compile Include="Data\PerfilUsuarioSistema.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Model\ItemOutrosItensSelecionado.cs" />
     <Compile Include="Model\ItemSomIluminacao.cs" />
     <Compile Include="Model\ItemMontagemSelecionado.cs" />
+    <Compile Include="Model\Local.cs" />
     <Compile Include="Model\OutroItem.cs" />
     <Compile Include="Model\PerfilUsuarioSistema.cs" />
     <Compile Include="Model\Roteiro.cs" />
