@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class Gastronomia : DataAccessBase<Model.Gastronomia>
+	public class Gastronomia : DataAccessBase<Model.ItemGastronomiaSelecionado>
 	{
-		public override void Update(Model.Gastronomia entity)
+		public override void Update(Model.ItemGastronomiaSelecionado entity)
 		{
-			Model.Gastronomia original = context.Gastronomias.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemGastronomiaSelecionado original = context.Gastronomias.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.Gastronomia entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemGastronomiaSelecionado entity)
 		{
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.Gastronomia entity)
+		public override void Insert(Model.ItemGastronomiaSelecionado entity)
 		{
 			context.Gastronomias.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.Gastronomia> GetCollection()
+		protected override List<Model.ItemGastronomiaSelecionado> GetCollection()
 		{
 			return context.Gastronomias.ToList();
 		}

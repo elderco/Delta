@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class SomIluminacao : DataAccessBase<Model.SomIluminacao>
+	public class SomIluminacao : DataAccessBase<Model.ItemSomIluminacaoSelecionado>
 	{
-		public override void Update(Model.SomIluminacao entity)
+		public override void Update(Model.ItemSomIluminacaoSelecionado entity)
 		{
-			Model.SomIluminacao original = context.SonsIluminacoes.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemSomIluminacaoSelecionado original = context.SonsIluminacoes.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).OriginalValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.SomIluminacao entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemSomIluminacaoSelecionado entity)
 		{
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.SomIluminacao entity)
+		public override void Insert(Model.ItemSomIluminacaoSelecionado entity)
 		{
 			context.SonsIluminacoes.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.SomIluminacao> GetCollection()
+		protected override List<Model.ItemSomIluminacaoSelecionado> GetCollection()
 		{
 			return context.SonsIluminacoes.ToList();
 		}
