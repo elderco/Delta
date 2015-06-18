@@ -104,6 +104,7 @@
     <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\SomIluminacao.cs" />
     <Compile Include="Model\TipoAcesso.cs" />
+    <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />

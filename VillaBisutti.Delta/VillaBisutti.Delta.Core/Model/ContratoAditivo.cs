@@ -9,5 +9,17 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ContratoAditivo : IEntityBase
 	{
 		public int Id { get; set; }
+		public int TipoEventoId { get; set; }
+		public TipoEvento TipoEvento
+		{
+			get
+			{
+				return (TipoEvento)TipoEventoId;
+			}
+			set
+			{
+				TipoEventoId = (int)value;
+			}
+		}
 	}
 }
