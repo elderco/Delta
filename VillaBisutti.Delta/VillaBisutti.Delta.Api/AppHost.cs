@@ -1,4 +1,5 @@
-﻿using ServiceStack.WebHost.Endpoints;
+﻿using Funq;
+using ServiceStack.WebHost.Endpoints;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,26 @@ namespace VillaBisutti.Delta.Api
 {
     public class AppHost : AppHostBase
     {
-        public AppHost()
-            : base("VillaBisutti.Delta.Api", typeof(Class1).Assembly)
-        {
+		/// <summary>
+		/// Default constructor.
+		/// Base constructor requires a name and assembly to locate web service classes. 
+		/// </summary>
+		public AppHost()
+			: base("VillaBisutti.Delta.Api", typeof(Bebida).Assembly)
+		{
 
-        }
+		}
 
-        public override void Configure(Funq.Container container)
-        {
-            throw new NotImplementedException();
-        }
-    }
+		/// <summary>
+		/// Application specific configuration
+		/// This method should initialize any IoC resources utilized by your web service classes.
+		/// </summary>
+		/// <param name="container"></param>
+		public override void Configure(Container container)
+		{
+			//Config examples
+			//this.Plugins.Add(new PostmanFeature());
+			//this.Plugins.Add(new CorsFeature());
+		}
+	}
 }
