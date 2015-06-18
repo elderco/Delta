@@ -80,12 +80,9 @@
     <Compile Include="Data\TipoItemSomIluminacao.cs" />
     <Compile Include="Data\Usuario.cs" />
     <Compile Include="Model\Area.cs" />
-    <Compile Include="Model\Bebida.cs" />
-    <Compile Include="Model\BoloDoceBemCasado.cs" />
     <Compile Include="Model\ContratoAditivo.cs" />
     <Compile Include="Model\CronogramaCerimonial.cs" />
     <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
-    <Compile Include="Model\Decoracao.cs" />
     <Compile Include="Model\Evento.cs" />
     <Compile Include="Model\Foto.cs" />
     <Compile Include="Model\FotoVideo.cs" />
@@ -95,7 +92,9 @@
     <Compile Include="Model\ItemBebida.cs" />
     <Compile Include="Model\ItemBebidaSelecionado.cs" />
     <Compile Include="Model\ItemBoloDoceBemCasado.cs" />
+    <Compile Include="Model\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Model\ItemDecoracao.cs" />
+    <Compile Include="Model\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Model\ItemFotoVideo.cs" />
     <Compile Include="Model\ItemGastronomia.cs" />
     <Compile Include="Model\ItemMontagem.cs" />

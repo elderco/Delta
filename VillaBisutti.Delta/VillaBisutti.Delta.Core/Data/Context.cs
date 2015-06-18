@@ -14,11 +14,11 @@ namespace VillaBisutti.Delta.Core.Data
 		{ }
 		public DbSet<Model.Area> Areas { get; set; }
 		public DbSet<Model.Bebida> Bebidas { get; set; }
-		public DbSet<Model.BoloDoceBemCasado> BolosDocesBemCasados { get; set; }
+		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> BolosDocesBemCasados { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratosAdivitivos { get; set; }
 		public DbSet<Model.CronogramaCerimonial> CronogramasCerimoniais { get; set; }
 		public DbSet<Model.CronogramaCerimonialPadrao> CronogramasCerimoniaisPadroes { get; set; }
-		public DbSet<Model.Decoracao> Decoracoes { get; set; }
+		public DbSet<Model.ItemDecoracaoSelecionado> Decoracoes { get; set; }
 		public DbSet<Model.FotoVideo> FotosVideos { get; set; }
 		public DbSet<Model.Gastronomia> Gastronomias { get; set; }
 		public DbSet<Model.ItemBebida> ItensBebidas { get; set; }
