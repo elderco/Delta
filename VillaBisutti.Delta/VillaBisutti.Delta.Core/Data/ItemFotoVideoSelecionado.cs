@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class FotoVideo : DataAccessBase<Model.ItemFotoVideoSelecionado>
+	public class ItemFotoVideoSelecionado : DataAccessBase<Model.ItemFotoVideoSelecionado>
 	{
 		public override void Update(Model.ItemFotoVideoSelecionado entity)
 		{

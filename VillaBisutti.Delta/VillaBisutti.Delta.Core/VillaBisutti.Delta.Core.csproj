@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Data\Area.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
-    <Compile Include="Data\BoloDoceBemCasado.cs" />
+    <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\ContratoAditivo.cs" />
     <Compile Include="Data\CronogramaCerimonial.cs" />
@@ -58,8 +58,8 @@
     <Compile Include="Data\DataAccessBase.cs" />
     <Compile Include="Data\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Data\Evento.cs" />
-    <Compile Include="Data\FotoVideo.cs" />
-    <Compile Include="Data\Gastronomia.cs" />
+    <Compile Include="Data\ItemFotoVideoSelecionado.cs" />
+    <Compile Include="Data\ItemGastronomiaSelecionado.cs" />
     <Compile Include="Data\ItemBebida.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\ItemDecoracao.cs" />
@@ -69,12 +69,12 @@
     <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Model\LocalCerimonia.cs" />
-    <Compile Include="Data\Montagem.cs" />
-    <Compile Include="Data\OutroItem.cs" />
+    <Compile Include="Data\ItemMontagemSelecionado.cs" />
+    <Compile Include="Data\ItemOutrosItensSelecionado.cs" />
     <Compile Include="Data\PerfilUsuarioSistema.cs" />
     <Compile Include="Data\Roteiro.cs" />
     <Compile Include="Data\RoteiroPadrao.cs" />
-    <Compile Include="Data\SomIluminacao.cs" />
+    <Compile Include="Data\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\TipoItemDecoracao.cs" />
     <Compile Include="Data\TipoItemFotoVideo.cs" />

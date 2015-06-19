@@ -17,25 +17,25 @@ namespace VillaBisutti.Delta.ServiceInterface
 	{
 		public model.ItemGastronomiaSelecionado Get(svc.Gastronomia.Get request)
 		{
-			return new data.Gastronomia().GetElement(request.Id);
+			return new data.ItemGastronomiaSelecionado().GetElement(request.Id);
 		}
 		public List<model.ItemGastronomiaSelecionado> Get(svc.Gastronomia.GetAll request)
 		{
-			return new data.Gastronomia().GetCollection(0);
+			return new data.ItemGastronomiaSelecionado().GetCollection(0);
 		}
 		public HttpResult Post(svc.Gastronomia.New request)
 		{
-			new data.Gastronomia().Insert(request.entity);
+			new data.ItemGastronomiaSelecionado().Insert(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 		public HttpResult Put(svc.Gastronomia.Update request)
 		{
-			new data.Gastronomia().Update(request.entity);
+			new data.ItemGastronomiaSelecionado().Update(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 		public HttpResult Delete(svc.Gastronomia.Delete request)
 		{
-			new data.Gastronomia().Delete(request.Id);
+			new data.ItemGastronomiaSelecionado().Delete(request.Id);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 	}
