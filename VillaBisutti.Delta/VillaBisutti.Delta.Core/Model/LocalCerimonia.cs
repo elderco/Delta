@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace VillaBisutti.Delta.Core.Model
 		Local = 0,
 		Anexo = 1,
 		Externo = 2,
-		[("Não Possui Cerimonial")]
+		[Description ("Não Possui Cerimonial")]
 		NaoPossui = 3
 	}
 }

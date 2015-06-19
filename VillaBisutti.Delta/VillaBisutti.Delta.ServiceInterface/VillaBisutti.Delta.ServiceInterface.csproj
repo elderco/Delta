@@ -65,7 +65,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bebida.cs" />
+    <Compile Include="ItemSomIluminacao.cs" />
+    <Compile Include="Montagem.cs" />
+    <Compile Include="OutroItem.cs" />
+    <Compile Include="PerfilUsuarioSistema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roteiro.cs" />
+    <Compile Include="RoteiroPadrao.cs" />
+    <Compile Include="SomIluminacao.cs" />
+    <Compile Include="TipoItemBoloDoceBemCasado.cs" />
+    <Compile Include="TipoItemDecoracao.cs" />
+    <Compile Include="TipoItemFotoVideo.cs" />
+    <Compile Include="TipoItemGastronomia.cs" />
+    <Compile Include="TipoItemMontagem.cs" />
+    <Compile Include="TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="TipoItemSomIluminacao.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
