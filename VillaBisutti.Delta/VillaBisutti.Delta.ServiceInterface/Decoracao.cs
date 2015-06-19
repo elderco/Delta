@@ -17,25 +17,25 @@ namespace VillaBisutti.Delta.ServiceInterface
 	{
 		public model.ItemDecoracaoSelecionado Get(svc.Decoracao.Get request)
 		{
-			return new data.Decoracao().GetElement(request.Id);
+			return new data.ItemDecoracaoSelecionado().GetElement(request.Id);
 		}
 		public List<model.ItemDecoracaoSelecionado> Get(svc.Decoracao.GetAll request)
 		{
-			return new data.Decoracao().GetCollection(0);
+			return new data.ItemDecoracaoSelecionado().GetCollection(0);
 		}
 		public HttpResult Post(svc.Decoracao.New request)
 		{
-			new data.Decoracao().Insert(request.entity);
+			new data.ItemDecoracaoSelecionado().Insert(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 		public HttpResult Put(svc.Decoracao.Update request)
 		{
-			new data.Decoracao().Update(request.entity);
+			new data.ItemDecoracaoSelecionado().Update(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 		public HttpResult Delete(svc.Decoracao.Delete request)
 		{
-			new data.Decoracao().Delete(request.Id);
+			new data.ItemDecoracaoSelecionado().Delete(request.Id);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 	}

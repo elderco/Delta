@@ -49,14 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Area.cs" />
-    <Compile Include="Data\Bebida.cs" />
+    <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\BoloDoceBemCasado.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\ContratoAditivo.cs" />
     <Compile Include="Data\CronogramaCerimonial.cs" />
     <Compile Include="Data\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Data\DataAccessBase.cs" />
-    <Compile Include="Data\Decoracao.cs" />
+    <Compile Include="Data\ItemDecoracaoSelecionado.cs" />
+    <Compile Include="Data\Evento.cs" />
     <Compile Include="Data\FotoVideo.cs" />
     <Compile Include="Data\Gastronomia.cs" />
     <Compile Include="Data\ItemBebida.cs" />
