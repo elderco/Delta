@@ -44,7 +44,10 @@ namespace VillaBisutti.Delta.ServiceInterface
 			foreach (model.Evento evento in new data.Evento().GetEventos(request.CasaId,request.ProdutorId))
 			{
 				svc.Evento.RetornoEventoProdutorCasa item = new svc.Evento.RetornoEventoProdutorCasa();
+				item.EventoId = evento.Id;
 				item.DataEvento = evento.Data;
+				item.NomeHomenageados = evento.NomeHomenageados;
+				item.TipoEvento = evento.TipoEvento.ToString();
 				retorno.Add(item);
 			}
 			return retorno;
