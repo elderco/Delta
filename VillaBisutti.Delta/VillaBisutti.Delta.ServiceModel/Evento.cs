@@ -31,14 +31,30 @@ namespace VillaBisutti.Delta.ServiceModel.Evento
 		public int Id { get; set; }
 	}
 	/*
-	 * classe de envio de dados:
+	 * classe de EventosProdutorCasa:
 	 * id da casa (local)
 	 * id do produtor
 	 * 
-	 * classe de tráfego de dados
+	 * 
+	 */
+	[Route("/eventos/{Id}", "GET")]
+	public class EventosProdutorCasa
+	{
+		public int CasaId { get; set; }
+		public int ProdutorId { get; set; }
+	}
+	/*
+	 * classe de RetornoEventoProdutorCasa
 	 * id do evento
 	 * data do evento
 	 * nome dos homenageados
 	 * tipo de evento
 	*/
+	public class RetornoEventoProdutorCasa
+	{
+		public int EventoId { get; set; }
+		public DateTime DataEvento { get; set; }
+		public string NomeHomenageados { get; set; }
+		public string TipoEvento { get; set; }
+	}
 }
