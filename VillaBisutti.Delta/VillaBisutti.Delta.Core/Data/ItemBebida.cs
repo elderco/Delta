@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,12 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.ItemBebida> GetCollection()
 		{
 			return context.ItemBebida.ToList();
+		}
+		public List<Model.ItemBebida> GetCollection(int tipoId)
+		{
+			return context.ItemBebida.Include(i => i.TipoItemBebida).Where(
+				(i => i.TipoItemBebidaId == tipoId || tipoId == 0) 
+				).ToList();
 		}
 	}
 }
