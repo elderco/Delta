@@ -43,6 +43,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.TipoItemOutrosItens> TipoItemOutrosItens { get; set; }
 		public DbSet<Model.TipoItemSomIluminacao> TipoItemSomIluminacao { get; set; }
 		public DbSet<Model.Usuario> Usuario { get; set; }
+		public DbSet<Model.Evento> Evento { get; set; }
 
 	}
 }

@@ -75,6 +75,7 @@
     <Compile Include="CronogramaCerimonial.cs" />
     <Compile Include="CronogramaCerimonialPadrao.cs" />
     <Compile Include="Decoracao.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="FotoVideo.cs" />
     <Compile Include="Gastronomia.cs" />
     <Compile Include="ItemBebida.cs" />
