@@ -38,7 +38,7 @@ namespace VillaBisutti.Delta.ServiceModel.Evento
 	 * 
 	 */
 	[Route("/eventos/{Id}", "GET")]
-	public class EventosProdutorCasa
+	public class EventosProdutorCasaRequest
 	{
 		public int CasaId { get; set; }
 		public int ProdutorId { get; set; }

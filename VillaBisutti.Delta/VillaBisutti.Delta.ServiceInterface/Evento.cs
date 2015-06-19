@@ -37,5 +37,18 @@ namespace VillaBisutti.Delta.ServiceInterface
 			new data.Evento().Delete(request.Id);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
+
+		public List<svc.Evento.RetornoEventoProdutorCasa> Get(svc.Evento.EventosProdutorCasaRequest request)
+		{
+			List<svc.Evento.RetornoEventoProdutorCasa> retorno = new List<svc.Evento.RetornoEventoProdutorCasa>();
+			foreach (model.Evento evento in new data.Evento().GetEventos(request.CasaId,request.ProdutorId))
+			{
+				svc.Evento.RetornoEventoProdutorCasa item = new svc.Evento.RetornoEventoProdutorCasa();
+				item.DataEvento = evento.Data;
+				retorno.Add(item);
+			}
+			return retorno;
+		}
 	}
 }
+
