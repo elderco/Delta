@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	class TipoItemBebida : DataAccessBase<Model.TipoItemBebida>
+	public class TipoItemBebida : DataAccessBase<Model.TipoItemBebida>
 	{
 		public override void Update(Model.TipoItemBebida entity)
 		{
