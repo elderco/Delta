@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.CronogramaCerimonial
 {
-	[Route("/cronogramascerimonial/{Id}", "GET")]
+	[Route("/cerimonial/{Id}", "GET")]
 	public class Get : IReturn<model.CronogramaCerimonial>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/cronogramascerimonial", "GET")]
+	[Route("/cerimonial", "GET")]
 	public class GetAll : IReturn<List<model.CronogramaCerimonial>> { }
-	[Route("/cronogramascerimonial", "POST")]
+	[Route("/cerimonial", "POST")]
 	public class New
 	{
 		public model.CronogramaCerimonial entity { get; set; }
 	}
-	[Route("/cronogramascerimonial", "PUT")]
+	[Route("/cerimonial", "PUT")]
 	public class Update
 	{
 		public model.CronogramaCerimonial entity { get; set; }
 	}
-	[Route("/cronogramascerimonial/{Id}", "DELETE")]
+	[Route("/cerimonial/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }
