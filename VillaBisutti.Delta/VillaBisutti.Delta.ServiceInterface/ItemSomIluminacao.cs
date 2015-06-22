@@ -14,27 +14,27 @@ namespace VillaBisutti.Delta.ServiceInterface
 {
 	public class ItemSomIluminacao : Service
 	{
-		public model.ItemSomIluminacaoSelecionado Get(svc.SomIluminacao.Get request)
+		public model.ItemSomIluminacao Get(svc.ItemSomIluminacao.Get request)
 		{
-			return new data.ItemSomIluminacaoSelecionado().GetElement(request.Id);
+			return new data.ItemSomIluminacao().GetElement(request.Id);
 		}
-		public List<model.ItemSomIluminacaoSelecionado> Get(svc.SomIluminacao.GetAll request)
+		public List<model.ItemSomIluminacao> Get(svc.ItemSomIluminacao.GetAll request)
 		{
-			return new data.ItemSomIluminacaoSelecionado().GetCollection(0);
+			return new data.ItemSomIluminacao().GetCollection(0);
 		}
-		public HttpResult Post(svc.SomIluminacao.New request)
+		public HttpResult Post(svc.ItemSomIluminacao.New request)
 		{
-			new data.ItemSomIluminacaoSelecionado().Insert(request.entity);
+			new data.ItemSomIluminacao().Insert(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
-		public HttpResult Put(svc.SomIluminacao.Update request)
+		public HttpResult Put(svc.ItemSomIluminacao.Update request)
 		{
-			new data.ItemSomIluminacaoSelecionado().Update(request.entity);
+			new data.ItemSomIluminacao().Update(request.entity);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
-		public HttpResult Delete(svc.Bebida.Delete request)
+		public HttpResult Delete(svc.ItemSomIluminacao.Delete request)
 		{
-			new data.ItemSomIluminacaoSelecionado().Delete(request.Id);
+			new data.ItemSomIluminacao().Delete(request.Id);
 			return new HttpResult(request, HttpStatusCode.OK);
 		}
 	}
