@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.ItemSomIluminacaoSelecionado entity)
 		{
 			Model.ItemSomIluminacaoSelecionado original = context.ItemSomIluminacaoSelecionado.FirstOrDefault(a => a.Id == entity.Id);
-			context.Entry(original).OriginalValues.SetValues(entity);
+			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
