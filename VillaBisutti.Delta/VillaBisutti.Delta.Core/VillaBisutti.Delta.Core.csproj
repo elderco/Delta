@@ -68,6 +68,7 @@
     <Compile Include="Data\ItemMontagem.cs" />
     <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
+    <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Model\LocalCerimonia.cs" />
     <Compile Include="Data\ItemMontagemSelecionado.cs" />
     <Compile Include="Data\ItemOutrosItensSelecionado.cs" />

@@ -35,6 +35,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.Roteiro> Roteiro { get; set; }
 		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }
 		public DbSet<Model.ItemSomIluminacaoSelecionado> ItemSomIluminacaoSelecionado { get; set; }
+		public DbSet<Model.TipoItemBebida> TipoItemBebida { get; set; }
 		public DbSet<Model.TipoItemBoloDoceBemCasado> TipoItemBoloDoceBemCasado { get; set; }
 		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
 		public DbSet<Model.TipoItemFotoVideo> TipoItemFotoVideo { get; set; }
