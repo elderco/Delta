@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemBebida.ToList();
 		}
-		public List<Model.ItemBebida> GetCollection(int tipoId)
+		public List<Model.ItemBebida> GetFromTipo(int tipoId)
 		{
 			return context.ItemBebida.Include(i => i.TipoItemBebida).Where(
 				(i => i.TipoItemBebidaId == tipoId || tipoId == 0) 

@@ -46,5 +46,17 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.Usuario> Usuario { get; set; }
 		public DbSet<Model.Evento> Evento { get; set; }
 
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Model.Evento>()
+				.HasRequired(e => e.Produtora)
+				.WithMany()
+				.WillCascadeOnDelete(false);
+			modelBuilder.Entity<Model.Evento>()
+				.HasRequired(e => e.PosVendedora)
+				.WithMany()
+				.WillCascadeOnDelete(false);
+		}
+
 	}
 }
