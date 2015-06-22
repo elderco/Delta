@@ -93,6 +93,7 @@
     <Compile Include="Roteiro.cs" />
     <Compile Include="RoteiroPadrao.cs" />
     <Compile Include="SomIluminacao.cs" />
+    <Compile Include="TipoItemBebida.cs" />
     <Compile Include="TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="TipoItemDecoracao.cs" />
     <Compile Include="TipoItemFotoVideo.cs" />
