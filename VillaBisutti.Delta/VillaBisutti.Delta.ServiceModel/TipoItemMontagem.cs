@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.TipoItemMontagem
 {
-	[Route("/tipoitemmontagens/{Id}", "GET")]
+	[Route("/tipo-item-montagem/{Id}", "GET")]
 	public class Get : IReturn<model.TipoItemMontagem>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/tipoitemmontagens", "GET")]
+	[Route("/tipo-item-montagem", "GET")]
 	public class GetAll : IReturn<List<model.TipoItemMontagem>> { }
-	[Route("/tipoitemmontagens", "POST")]
+	[Route("/tipo-item-montagem", "POST")]
 	public class New
 	{
 		public model.TipoItemMontagem entity { get; set; }
 	}
-	[Route("/tipoitemmontagens", "PUT")]
+	[Route("/tipo-item-montagem", "PUT")]
 	public class Update
 	{
 		public model.TipoItemMontagem entity { get; set; }
 	}
-	[Route("/tipoitemmontagens/{Id}", "DELETE")]
+	[Route("/tipo-item-montagem/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }

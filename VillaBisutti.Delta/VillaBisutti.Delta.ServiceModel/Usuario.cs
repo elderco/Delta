@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.Usuario
 {
-	[Route("/usuarios/{Id}", "GET")]
+	[Route("/usuario/{Id}", "GET")]
 	public class Get : IReturn<model.Usuario>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/usuarios", "GET")]
+	[Route("/usuario", "GET")]
 	public class GetAll : IReturn<List<model.Usuario>> { }
-	[Route("/usuarios", "POST")]
+	[Route("/usuario", "POST")]
 	public class New
 	{
 		public model.Usuario entity { get; set; }
 	}
-	[Route("/usuarios", "PUT")]
+	[Route("/usuario", "PUT")]
 	public class Update
 	{
 		public model.Usuario entity { get; set; }
 	}
-	[Route("/usuarios/{Id}", "DELETE")]
+	[Route("/usuario/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }
