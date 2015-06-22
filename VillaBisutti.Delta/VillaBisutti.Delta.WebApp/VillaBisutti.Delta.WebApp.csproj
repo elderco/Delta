@@ -158,6 +158,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,13 +225,13 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VillaBisutti.Delta.Api\VillaBisutti.Delta.Api.csproj">
-      <Project>{696c9b8b-e330-4207-aeea-825f46c0f839}</Project>
-      <Name>VillaBisutti.Delta.Api</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj">
+      <Project>{83fb85ef-3d61-495b-be38-e28eac6307e7}</Project>
+      <Name>VillaBisutti.Delta.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
