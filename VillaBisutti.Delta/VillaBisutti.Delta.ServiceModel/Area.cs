@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.Area
 {
-	[Route("/areas/{Id}", "GET")]
+	[Route("/area/{Id}", "GET")]
 	public class Get : IReturn<model.Area>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/areas", "GET")]
+	[Route("/area", "GET")]
 	public class GetAll : IReturn<List<model.Area>>	{ 	}
-	[Route("/areas", "POST")]
+	[Route("/area", "POST")]
 	public class New
 	{
 		public model.Area entity { get; set; }
 	}
-	[Route("/areas", "PUT")]
+	[Route("/area", "PUT")]
 	public class Update
 	{
 		public model.Area entity { get; set; }
 	}
-	[Route("/areas/{Id}", "DELETE")]
+	[Route("/area/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }

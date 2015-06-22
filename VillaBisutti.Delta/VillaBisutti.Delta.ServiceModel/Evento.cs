@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.Evento
 {
-	[Route("/eventos/{Id}", "GET")]
+	[Route("/evento/{Id}", "GET")]
 	public class Get : IReturn<model.Evento>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/eventos", "GET")]
+	[Route("/evento", "GET")]
 	public class GetAll : IReturn<List<model.Evento>> { }
-	[Route("/eventos", "POST")]
+	[Route("/evento", "POST")]
 	public class New
 	{
 		public model.Evento entity { get; set; }
 	}
-	[Route("/eventos", "PUT")]
+	[Route("/evento", "PUT")]
 	public class Update
 	{
 		public model.Evento entity { get; set; }
 	}
-	[Route("/eventos/{Id}", "DELETE")]
+	[Route("/evento/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }
@@ -37,7 +37,7 @@ namespace VillaBisutti.Delta.ServiceModel.Evento
 	 * 
 	 * 
 	 */
-	[Route("/eventos/{Id}", "GET")]
+	[Route("/evento/{Id}", "GET")]
 	public class EventosProdutorCasaRequest
 	{
 		public int CasaId { get; set; }

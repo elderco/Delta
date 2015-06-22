@@ -8,24 +8,24 @@ using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta.ServiceModel.ItemFotoVideo
 {
-	[Route("/itemfotovideos/{Id}", "GET")]
+	[Route("/item-foto-video/{Id}", "GET")]
 	public class Get : IReturn<model.ItemFotoVideo>
 	{
 		public int Id { get; set; }
 	}
-	[Route("/itemfotovideos", "GET")]
+	[Route("/item-foto-video", "GET")]
 	public class GetAll : IReturn<List<model.ItemFotoVideo>> { }
-	[Route("/itemfotovideos", "POST")]
+	[Route("/item-foto-video", "POST")]
 	public class New
 	{
 		public model.ItemFotoVideo entity { get; set; }
 	}
-	[Route("/itemfotovideos", "PUT")]
+	[Route("/item-foto-video", "PUT")]
 	public class Update
 	{
 		public model.ItemFotoVideo entity { get; set; }
 	}
-	[Route("/itemfotovideos/{Id}", "DELETE")]
+	[Route("/item-foto-video/{Id}", "DELETE")]
 	public class Delete
 	{
 		public int Id { get; set; }
