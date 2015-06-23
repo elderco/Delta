@@ -84,5 +84,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public List<ContratoAditivo> Contratos { get; set; }
 		public bool EmailBoasVindasEnviado { get; set; }
 		public bool OSFinalizada { get; set; }
+		public Decoracao Decoracao { get; set; }
+		public Montagem Montagem { get; set; }
 	}
 }
