@@ -1,0 +1,26 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.TipoItemDecoracao>
+@{
+	Layout = null;
+}
+@foreach (var item in Model)
+{
+	<div class="row" style="border-bottom: #000099 1px dotted;">
+		<span class="col-md-3 col-xs-6">
+			@if (item.Itens.Count > 0)
+			{
+				<span id="@(item.Id)" class="btn-default botao-mais" onclick="CarregarSubitens('@(item.Id)');">
+					<span class="glyphicon glyphicon-plus-sign" id="@(item.Id)_button"></span>Ver subitens
+				</span>
+			}
+		</span>
+		<span class="col-md-3 col-xs-6">@Html.DisplayFor(modelItem => item.Nome)</span>
+		<span class="col-md-2 col-xs-4">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</span>
+		<span class="col-md-2 col-xs-4">@Html.ActionLink("Details", "Details", new { id = item.Id }) </span>
+		<span class="col-md-2 col-xs-4">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</span>
+		<span class="clearfix"></span>
+		@if (item.Itens.Count > 0)
+		{
+			<div id="@(item.Id)_container" class="col-md-12"></div>
+		}
+	</div>
+}
