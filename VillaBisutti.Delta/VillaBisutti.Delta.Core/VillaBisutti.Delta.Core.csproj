@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Area.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
@@ -59,12 +58,10 @@
     <Compile Include="Data\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Data\Evento.cs" />
     <Compile Include="Data\ItemFotoVideoSelecionado.cs" />
-    <Compile Include="Data\ItemGastronomiaSelecionado.cs" />
     <Compile Include="Data\ItemBebida.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\ItemDecoracao.cs" />
     <Compile Include="Data\ItemFotoVideo.cs" />
-    <Compile Include="Data\ItemGastronomia.cs" />
     <Compile Include="Data\ItemMontagem.cs" />
     <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
@@ -81,19 +78,16 @@
     <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\TipoItemDecoracao.cs" />
     <Compile Include="Data\TipoItemFotoVideo.cs" />
-    <Compile Include="Data\TipoItemGastronomia.cs" />
     <Compile Include="Data\TipoItemMontagem.cs" />
     <Compile Include="Data\TipoItemOutroItemItemDiverso.cs" />
     <Compile Include="Data\TipoItemSomIluminacao.cs" />
     <Compile Include="Data\Usuario.cs" />
-    <Compile Include="Model\Area.cs" />
     <Compile Include="Model\ContratoAditivo.cs" />
     <Compile Include="Model\CronogramaCerimonial.cs" />
     <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Model\Evento.cs" />
     <Compile Include="Model\Foto.cs" />
     <Compile Include="Model\ItemFotoVideoSelecionado.cs" />
-    <Compile Include="Model\ItemGastronomiaSelecionado.cs" />
     <Compile Include="Model\Horario.cs" />
     <Compile Include="Model\IEntityBase.cs" />
     <Compile Include="Model\ItemBebida.cs" />
@@ -103,7 +97,6 @@
     <Compile Include="Model\ItemDecoracao.cs" />
     <Compile Include="Model\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Model\ItemFotoVideo.cs" />
-    <Compile Include="Model\ItemGastronomia.cs" />
     <Compile Include="Model\ItemMontagem.cs" />
     <Compile Include="Model\ItemOutrosItens.cs" />
     <Compile Include="Model\ItemOutrosItensSelecionado.cs" />
@@ -122,7 +115,6 @@
     <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />
-    <Compile Include="Model\TipoItemGastronomia.cs" />
     <Compile Include="Model\TipoItemMontagem.cs" />
     <Compile Include="Model\TipoItemOutrosItens.cs" />
     <Compile Include="Model\TipoItemSomIluminacao.cs" />

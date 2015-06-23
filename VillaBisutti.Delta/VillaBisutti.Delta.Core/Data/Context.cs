@@ -23,12 +23,10 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.CronogramaCerimonialPadrao> CronogramaCerimonialPadrao { get; set; }
 		public DbSet<Model.ItemDecoracaoSelecionado> Decoracao { get; set; }
 		public DbSet<Model.ItemFotoVideoSelecionado> FotoVideo { get; set; }
-		public DbSet<Model.ItemGastronomiaSelecionado> Gastronomia { get; set; }
 		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
 		public DbSet<Model.ItemFotoVideo> ItemFotoVideo { get; set; }
-		public DbSet<Model.ItemGastronomia> ItemGastronomia { get; set; }
 		public DbSet<Model.ItemMontagem> ItemMontagem { get; set; }
 		public DbSet<Model.ItemOutrosItens> ItemOutrosItens { get; set; }
 		public DbSet<Model.ItemSomIluminacao> ItemSomIluminacao { get; set; }
@@ -42,7 +40,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.TipoItemBoloDoceBemCasado> TipoItemBoloDoceBemCasado { get; set; }
 		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
 		public DbSet<Model.TipoItemFotoVideo> TipoItemFotoVideo { get; set; }
-		public DbSet<Model.TipoItemGastronomia> TipoItemGastronomia { get; set; }
 		public DbSet<Model.TipoItemMontagem> TipoItemMontagem { get; set; }
 		public DbSet<Model.TipoItemOutrosItens> TipoItemOutrosItens { get; set; }
 		public DbSet<Model.TipoItemSomIluminacao> TipoItemSomIluminacao { get; set; }
