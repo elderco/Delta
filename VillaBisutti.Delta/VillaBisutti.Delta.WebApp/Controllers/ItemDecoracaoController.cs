@@ -37,8 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemDecoracao/Create
         public ActionResult Create()
         {
-			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0), "ID", "Name");
-			ViewBag.TipoItemDecoracao = TipoItemDecoracao;
+			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0), "Id", "Nome");
+			ViewBag.Caetano = TipoItemDecoracao;
             return View();
         }
 
