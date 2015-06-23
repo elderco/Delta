@@ -37,6 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemMontagem/Create
         public ActionResult Create()
         {
+			SelectList TipoItemMontagem = new SelectList(new data.TipoItemMontagem().GetCollection(0), "ID", "Name");
+			ViewBag.TipoItemMontagem = TipoItemMontagem;
             return View();
         }
 
