@@ -6,19 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
+
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemMontagemController : Controller
     {
-        private Context db = new Context();
 
         // GET: /TipoItemMontagem/
         public ActionResult Index()
         {
-            return View(db.TipoItemMontagem.ToList());
+			return View(new data.TipoItemMontagem().GetCollection(0));
         }
 
         // GET: /TipoItemMontagem/Details/5
@@ -28,7 +28,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemMontagem tipoitemmontagem = db.TipoItemMontagem.Find(id);
+			model.TipoItemMontagem tipoitemmontagem = new data.TipoItemMontagem().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemmontagem == null)
             {
                 return HttpNotFound();
@@ -47,13 +47,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] TipoItemMontagem tipoitemmontagem)
+        public ActionResult Create([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] model.TipoItemMontagem tipoitemmontagem)
         {
             if (ModelState.IsValid)
             {
-                db.TipoItemMontagem.Add(tipoitemmontagem);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.TipoItemMontagem().Insert(tipoitemmontagem);
+				return RedirectToAction("Index");
             }
 
             return View(tipoitemmontagem);
@@ -66,7 +65,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemMontagem tipoitemmontagem = db.TipoItemMontagem.Find(id);
+
+			model.TipoItemMontagem tipoitemmontagem = new data.TipoItemMontagem().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemmontagem == null)
             {
                 return HttpNotFound();
@@ -79,13 +79,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] TipoItemMontagem tipoitemmontagem)
+        public ActionResult Edit([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] model.TipoItemMontagem tipoitemmontagem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoitemmontagem).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.TipoItemMontagem().Update(tipoitemmontagem);
+				return RedirectToAction("Index");
             }
             return View(tipoitemmontagem);
         }
@@ -97,7 +96,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemMontagem tipoitemmontagem = db.TipoItemMontagem.Find(id);
+			model.TipoItemMontagem tipoitemmontagem = new data.TipoItemMontagem().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemmontagem == null)
             {
                 return HttpNotFound();
@@ -110,19 +109,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoItemMontagem tipoitemmontagem = db.TipoItemMontagem.Find(id);
-            db.TipoItemMontagem.Remove(tipoitemmontagem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+			new data.TipoItemMontagem().Delete(id);
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+		{
+			base.Dispose(disposing);
+		}
+	}
 }
