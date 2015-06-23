@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TipoItemDecoracaoController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,6 +220,11 @@
     <Content Include="Views\ContratoAditivo\Details.cshtml" />
     <Content Include="Views\ContratoAditivo\Edit.cshtml" />
     <Content Include="Views\ContratoAditivo\Index.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Create.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Delete.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Details.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Edit.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
