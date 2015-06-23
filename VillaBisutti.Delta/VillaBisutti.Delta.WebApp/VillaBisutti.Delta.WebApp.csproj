@@ -158,6 +158,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,10 +214,15 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ContratoAditivo\Create.cshtml" />
+    <Content Include="Views\ContratoAditivo\Delete.cshtml" />
+    <Content Include="Views\ContratoAditivo\Details.cshtml" />
+    <Content Include="Views\ContratoAditivo\Edit.cshtml" />
+    <Content Include="Views\ContratoAditivo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Bebida\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
