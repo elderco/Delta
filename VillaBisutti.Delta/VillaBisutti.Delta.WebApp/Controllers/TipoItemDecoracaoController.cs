@@ -6,19 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemDecoracaoController : Controller
     {
-        private Context db = new Context();
 
         // GET: /TipoItemDecoracao/
         public ActionResult Index()
         {
-            return View(db.TipoItemDecoracao.ToList());
+            return View(new data.TipoItemDecoracao().GetCollection(0));
         }
 
         // GET: /TipoItemDecoracao/Details/5
@@ -28,12 +27,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemDecoracao tipoitemdecoracao = db.TipoItemDecoracao.Find(id);
-            if (tipoitemdecoracao == null)
+			model.TipoItemDecoracao tipoitemdecoracao = new data.TipoItemDecoracao().GetElement(id.HasValue ? id.Value : 0);
+			if (tipoitemdecoracao == null)
             {
                 return HttpNotFound();
             }
-            return View(tipoitemdecoracao);
+			return View(tipoitemdecoracao);
         }
 
         // GET: /TipoItemDecoracao/Create
@@ -47,12 +46,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] TipoItemDecoracao tipoitemdecoracao)
+        public ActionResult Create([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] model.TipoItemDecoracao tipoitemdecoracao)
         {
             if (ModelState.IsValid)
             {
-                db.TipoItemDecoracao.Add(tipoitemdecoracao);
-                db.SaveChanges();
+				new data.TipoItemDecoracao().Insert(tipoitemdecoracao);
                 return RedirectToAction("Index");
             }
 
@@ -66,8 +64,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemDecoracao tipoitemdecoracao = db.TipoItemDecoracao.Find(id);
-            if (tipoitemdecoracao == null)
+			model.TipoItemDecoracao tipoitemdecoracao = new data.TipoItemDecoracao().GetElement(id.HasValue ? id.Value : 0);
+           if (tipoitemdecoracao == null)
             {
                 return HttpNotFound();
             }
@@ -79,12 +77,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] TipoItemDecoracao tipoitemdecoracao)
+        public ActionResult Edit([Bind(Include="Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro")] model.TipoItemDecoracao tipoitemdecoracao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoitemdecoracao).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.TipoItemDecoracao().Update(tipoitemdecoracao);
                 return RedirectToAction("Index");
             }
             return View(tipoitemdecoracao);
@@ -97,8 +94,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemDecoracao tipoitemdecoracao = db.TipoItemDecoracao.Find(id);
-            if (tipoitemdecoracao == null)
+			model.TipoItemDecoracao tipoitemdecoracao = new data.TipoItemDecoracao().GetElement(id.HasValue ? id.Value : 0);
+			if (tipoitemdecoracao == null)
             {
                 return HttpNotFound();
             }
@@ -110,19 +107,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoItemDecoracao tipoitemdecoracao = db.TipoItemDecoracao.Find(id);
-            db.TipoItemDecoracao.Remove(tipoitemdecoracao);
-            db.SaveChanges();
+			new data.TipoItemDecoracao().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+			base.Dispose(disposing);
         }
     }
 }
