@@ -36,7 +36,7 @@
             @Html.LabelFor(model => model.TipoItemMontagemId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("TipoItemMontagemId", (IEnumerable<SelectListItem>)ViewBag.TipoItemDecoracao, String.Empty)
-                @Html.ValidationMessageFor(model => model.TipoItemDecoracao)
+                @Html.ValidationMessageFor(model => model.TipoItemMontagem)
             </div>
         </div>
 
