@@ -161,7 +161,9 @@
     <Compile Include="Controllers\ContratoAditivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemDecoracaoController.cs" />
+    <Compile Include="Controllers\ItemMontagemController.cs" />
     <Compile Include="Controllers\TipoItemDecoracaoController.cs" />
+    <Compile Include="Controllers\TipoItemMontagemController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,6 +233,16 @@
     <Content Include="Views\ItemDecoracao\Details.cshtml" />
     <Content Include="Views\ItemDecoracao\Edit.cshtml" />
     <Content Include="Views\ItemDecoracao\Index.cshtml" />
+    <Content Include="Views\TipoItemMontagem\Create.cshtml" />
+    <Content Include="Views\TipoItemMontagem\Delete.cshtml" />
+    <Content Include="Views\TipoItemMontagem\Details.cshtml" />
+    <Content Include="Views\TipoItemMontagem\Edit.cshtml" />
+    <Content Include="Views\TipoItemMontagem\Index.cshtml" />
+    <Content Include="Views\ItemMontagem\Create.cshtml" />
+    <Content Include="Views\ItemMontagem\Delete.cshtml" />
+    <Content Include="Views\ItemMontagem\Details.cshtml" />
+    <Content Include="Views\ItemMontagem\Edit.cshtml" />
+    <Content Include="Views\ItemMontagem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
