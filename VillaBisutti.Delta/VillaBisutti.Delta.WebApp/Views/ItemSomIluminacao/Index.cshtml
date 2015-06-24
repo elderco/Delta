@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado>
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemSomIluminacao>
 
 @{
     ViewBag.Title = "Index";
@@ -12,37 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ContratoAditivo.Id)
+            @Html.DisplayNameFor(model => model.TipoItemSomIluminacao.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Evento.NomeResponsavel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemSomIId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Definido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contratado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContratacaoBisutti)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FornecimentoBisutti)
+            @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Quantidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioMontagem)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContatoFornecimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
         </th>
         <th></th>
     </tr>
@@ -50,37 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ContratoAditivo.Id)
+            @Html.DisplayFor(modelItem => item.TipoItemSomIluminacao.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Evento.NomeResponsavel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemSomIId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Definido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contratado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContratacaoBisutti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FornecimentoBisutti)
+            @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quantidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioMontagem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContatoFornecimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

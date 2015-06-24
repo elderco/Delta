@@ -6,20 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemFotoVideoController : Controller
-    {
-        private Context db = new Context();
-
+    { 
         // GET: /ItemFotoVideo/
         public ActionResult Index()
         {
-            var itemfotovideo = db.ItemFotoVideo.Include(i => i.TipoItemFotoVideo);
-            return View(itemfotovideo.ToList());
+			return View(new data.ItemFotoVideo().GetCollection(0));
         }
 
         // GET: /ItemFotoVideo/Details/5
@@ -29,8 +26,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFotoVideo itemfotovideo = db.ItemFotoVideo.Find(id);
-            if (itemfotovideo == null)
+			model.ItemFotoVideo itemfotovideo = new data.ItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
+			if (itemfotovideo == null)
             {
                 return HttpNotFound();
             }
@@ -40,7 +37,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemFotoVideo/Create
         public ActionResult Create()
         {
-            ViewBag.TipoItemFotoVideoId = new SelectList(db.TipoItemFotoVideo, "Id", "Nome");
             return View();
         }
 
@@ -49,16 +45,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemFotoVideoId")] ItemFotoVideo itemfotovideo)
+        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemFotoVideoId")] model.ItemFotoVideo itemfotovideo)
         {
             if (ModelState.IsValid)
             {
-                db.ItemFotoVideo.Add(itemfotovideo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.ItemFotoVideo().Insert(itemfotovideo);
+				return RedirectToAction("Index");
             }
-
-            ViewBag.TipoItemFotoVideoId = new SelectList(db.TipoItemFotoVideo, "Id", "Nome", itemfotovideo.TipoItemFotoVideoId);
             return View(itemfotovideo);
         }
 
@@ -69,12 +62,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFotoVideo itemfotovideo = db.ItemFotoVideo.Find(id);
-            if (itemfotovideo == null)
+			model.ItemFotoVideo itemfotovideo = new data.ItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
+			if (itemfotovideo == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.TipoItemFotoVideoId = new SelectList(db.TipoItemFotoVideo, "Id", "Nome", itemfotovideo.TipoItemFotoVideoId);
             return View(itemfotovideo);
         }
 
@@ -83,15 +75,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemFotoVideoId")] ItemFotoVideo itemfotovideo)
+        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemFotoVideoId")] model.ItemFotoVideo itemfotovideo)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itemfotovideo).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemFotoVideo().Update(itemfotovideo);
                 return RedirectToAction("Index");
             }
-            ViewBag.TipoItemFotoVideoId = new SelectList(db.TipoItemFotoVideo, "Id", "Nome", itemfotovideo.TipoItemFotoVideoId);
             return View(itemfotovideo);
         }
 
@@ -102,8 +92,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFotoVideo itemfotovideo = db.ItemFotoVideo.Find(id);
-            if (itemfotovideo == null)
+            model.ItemFotoVideo itemfotovideo = new  data.ItemFotoVideo().GetElement(id.HasValue ? id.Value);
+			if (itemfotovideo == null)
             {
                 return HttpNotFound();
             }
@@ -115,18 +105,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemFotoVideo itemfotovideo = db.ItemFotoVideo.Find(id);
-            db.ItemFotoVideo.Remove(itemfotovideo);
-            db.SaveChanges();
+			new data.ItemFotoVideo().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

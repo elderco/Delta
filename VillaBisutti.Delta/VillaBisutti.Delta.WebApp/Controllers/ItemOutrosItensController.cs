@@ -6,20 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemOutrosItensController : Controller
     {
-        private Context db = new Context();
-
         // GET: /ItemOutrosItens/
         public ActionResult Index()
         {
-            var itemoutrositens = db.ItemOutrosItens.Include(i => i.TipoItemOutroItemItemDiverso);
-            return View(itemoutrositens.ToList());
+            return View(new data.ItemOutrosItemItemDiverso().GetCollection(0));
         }
 
         // GET: /ItemOutrosItens/Details/5
@@ -29,8 +26,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemOutrosItens itemoutrositens = db.ItemOutrosItens.Find(id);
-            if (itemoutrositens == null)
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			if (itemoutrositens == null)
             {
                 return HttpNotFound();
             }
@@ -40,7 +37,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemOutrosItens/Create
         public ActionResult Create()
         {
-            ViewBag.TipoItemOutroItemItemDiversoId = new SelectList(db.TipoItemOutrosItens, "Id", "Nome");
             return View();
         }
 
@@ -53,13 +49,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.ItemOutrosItens.Add(itemoutrositens);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.ItemOutrosItemItemDiverso().Insert(itemoutrositens);
+				return RedirectToAction("Index");
             }
-
-            ViewBag.TipoItemOutroItemItemDiversoId = new SelectList(db.TipoItemOutrosItens, "Id", "Nome", itemoutrositens.TipoItemOutroItemItemDiversoId);
-            return View(itemoutrositens);
+			return View(itemoutrositens);
         }
 
         // GET: /ItemOutrosItens/Edit/5
@@ -69,13 +62,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemOutrosItens itemoutrositens = db.ItemOutrosItens.Find(id);
-            if (itemoutrositens == null)
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			if (itemoutrositens == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.TipoItemOutroItemItemDiversoId = new SelectList(db.TipoItemOutrosItens, "Id", "Nome", itemoutrositens.TipoItemOutroItemItemDiversoId);
-            return View(itemoutrositens);
+			return View(itemoutrositens);
         }
 
         // POST: /ItemOutrosItens/Edit/5
@@ -87,11 +79,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itemoutrositens).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemOutrosItemItemDiverso().Update(itemoutrositens);
                 return RedirectToAction("Index");
             }
-            ViewBag.TipoItemOutroItemItemDiversoId = new SelectList(db.TipoItemOutrosItens, "Id", "Nome", itemoutrositens.TipoItemOutroItemItemDiversoId);
             return View(itemoutrositens);
         }
 
@@ -102,8 +92,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemOutrosItens itemoutrositens = db.ItemOutrosItens.Find(id);
-            if (itemoutrositens == null)
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			if (itemoutrositens == null)
             {
                 return HttpNotFound();
             }
@@ -115,18 +105,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemOutrosItens itemoutrositens = db.ItemOutrosItens.Find(id);
-            db.ItemOutrosItens.Remove(itemoutrositens);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            new data.ItemOutrosItemItemDiverso().Delete(id;)
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

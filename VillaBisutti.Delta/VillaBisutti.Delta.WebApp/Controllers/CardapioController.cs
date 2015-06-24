@@ -52,7 +52,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				new data.Cardapio().Insert(cardapio);
                 return RedirectToAction("Index");
             }
-
             return View(cardapio);
         }
 

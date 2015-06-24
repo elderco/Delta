@@ -6,20 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemSomIluminacaoController : Controller
     {
-        private Context db = new Context();
-
         // GET: /ItemSomIluminacao/
         public ActionResult Index()
         {
-            var itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Include(i => i.ContratoAditivo).Include(i => i.Evento);
-            return View(itemsomiluminacaoselecionado.ToList());
+             return View(new data.ItemSomIluminacao().GetCollection(0));
         }
 
         // GET: /ItemSomIluminacao/Details/5
@@ -29,19 +26,17 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
+			model.ItemSomIluminacao itemsomiluminacao = new data.ItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (itemsomiluminacao == null)
             {
                 return HttpNotFound();
             }
-            return View(itemsomiluminacaoselecionado);
+            return View(itemsomiluminacao);
         }
 
         // GET: /ItemSomIluminacao/Create
         public ActionResult Create()
         {
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Id");
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel");
             return View();
         }
 
@@ -50,18 +45,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,EventoId,ContratoAditivoId,ItemSomIId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,Quantidade,HorarioMontagem,ContatoFornecimento,Observacoes")] ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemSomIluminacaoId")] model.ItemSomIluminacao itemsomiluminacao)
         {
             if (ModelState.IsValid)
             {
-                db.ItemSomIluminacaoSelecionado.Add(itemsomiluminacaoselecionado);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.ItemSomIluminacao().Insert(itemsomiluminacao);
+				return RedirectToAction("Index");
             }
-
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Id", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
+			return View(itemsomiluminacao);
         }
 
         // GET: /ItemSomIluminacao/Edit/5
@@ -71,14 +62,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
+			model.ItemSomIluminacao itemsomiluminacao = new data.ItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (itemsomiluminacao == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Id", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
+            return View(itemsomiluminacao);
         }
 
         // POST: /ItemSomIluminacao/Edit/5
@@ -86,17 +75,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,EventoId,ContratoAditivoId,ItemSomIId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,Quantidade,HorarioMontagem,ContatoFornecimento,Observacoes")] ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemSomIluminacaoId")] model.ItemSomIluminacao itemsomiluminacao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itemsomiluminacaoselecionado).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemSomIluminacao().Update(itemsomiluminacao);
                 return RedirectToAction("Index");
             }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Id", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
+            return View(itemsomiluminacao);
         }
 
         // GET: /ItemSomIluminacao/Delete/5
@@ -106,12 +92,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
+			model.ItemSomIluminacao itemsomiluminacao = new data.ItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (itemsomiluminacao == null)
             {
                 return HttpNotFound();
             }
-            return View(itemsomiluminacaoselecionado);
+            return View(itemsomiluminacao);
         }
 
         // POST: /ItemSomIluminacao/Delete/5
@@ -119,18 +105,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            db.ItemSomIluminacaoSelecionado.Remove(itemsomiluminacaoselecionado);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+			new data.ItemSomIluminacao().Delete(id);
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

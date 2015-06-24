@@ -6,20 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemBebidaController : Controller
     {
-        private Context db = new Context();
-
         // GET: /ItemBebida/
         public ActionResult Index()
         {
-            var itembebida = db.ItemBebida.Include(i => i.TipoItemBebida);
-            return View(itembebida.ToList());
+            return View(new data.ItemBebida().GetCollection(0);
         }
 
         // GET: /ItemBebida/Details/5
@@ -29,8 +26,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemBebida itembebida = db.ItemBebida.Find(id);
-            if (itembebida == null)
+			model.ItemBebida itembebida = new data.ItemBebida().GetElement(id.HasValue ? id.Value : 0);
+			if (itembebida == null)
             {
                 return HttpNotFound();
             }
@@ -40,7 +37,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemBebida/Create
         public ActionResult Create()
         {
-            ViewBag.TipoItemBebidaId = new SelectList(db.TipoItemBebida, "Id", "Nome");
             return View();
         }
 
@@ -49,16 +45,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemBebidaId")] ItemBebida itembebida)
+        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemBebidaId")] model.ItemBebida itembebida)
         {
             if (ModelState.IsValid)
             {
-                db.ItemBebida.Add(itembebida);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+				new data.ItemBebida().Insert(itembebida);
+				return RedirectToAction("Index");
             }
-
-            ViewBag.TipoItemBebidaId = new SelectList(db.TipoItemBebida, "Id", "Nome", itembebida.TipoItemBebidaId);
             return View(itembebida);
         }
 
@@ -69,12 +62,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemBebida itembebida = db.ItemBebida.Find(id);
-            if (itembebida == null)
+			model.ItemBebida itembebida = new data.ItemBebida().GetElement(id.HasValue ? id.Value : 0);
+			if (itembebida == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.TipoItemBebidaId = new SelectList(db.TipoItemBebida, "Id", "Nome", itembebida.TipoItemBebidaId);
             return View(itembebida);
         }
 
@@ -83,15 +75,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemBebidaId")] ItemBebida itembebida)
+        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemBebidaId")] model.ItemBebida itembebida)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itembebida).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemBebida().Update(itembebida);
                 return RedirectToAction("Index");
             }
-            ViewBag.TipoItemBebidaId = new SelectList(db.TipoItemBebida, "Id", "Nome", itembebida.TipoItemBebidaId);
             return View(itembebida);
         }
 
@@ -102,8 +92,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemBebida itembebida = db.ItemBebida.Find(id);
-            if (itembebida == null)
+			model.ItemBebida itembebida = new data.ItemBebida().GetElement(id.HasValue ? id.Value : 0);
+			if (itembebida == null)
             {
                 return HttpNotFound();
             }
@@ -115,18 +105,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemBebida itembebida = db.ItemBebida.Find(id);
-            db.ItemBebida.Remove(itembebida);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+			new data.ItemBebida().Delete(id);
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

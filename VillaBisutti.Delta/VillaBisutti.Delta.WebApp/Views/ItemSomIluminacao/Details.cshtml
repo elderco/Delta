@@ -1,4 +1,4 @@
-﻿@model VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado
+﻿@model VillaBisutti.Delta.Core.Model.ItemSomIluminacao
 
 @{
     ViewBag.Title = "Details";
@@ -7,63 +7,23 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ItemSomIluminacaoSelecionado</h4>
+    <h4>ItemSomIluminacao</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ContratoAditivo.Id)
+            @Html.DisplayNameFor(model => model.TipoItemSomIluminacao.Nome)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ContratoAditivo.Id)
+            @Html.DisplayFor(model => model.TipoItemSomIluminacao.Nome)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Evento.NomeResponsavel)
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Evento.NomeResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemSomIId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ItemSomIId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Definido)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Definido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Contratado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Contratado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContratacaoBisutti)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContratacaoBisutti)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FornecimentoBisutti)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FornecimentoBisutti)
+            @Html.DisplayFor(model => model.Nome)
         </dd>
 
         <dt>
@@ -72,30 +32,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Quantidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HorarioMontagem)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HorarioMontagem)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContatoFornecimento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContatoFornecimento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Observacoes)
         </dd>
 
     </dl>
