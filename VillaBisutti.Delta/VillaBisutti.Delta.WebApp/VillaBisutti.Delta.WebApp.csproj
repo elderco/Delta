@@ -269,22 +269,18 @@
     <Content Include="Views\TipoPrato\Details.cshtml" />
     <Content Include="Views\TipoPrato\Edit.cshtml" />
     <Content Include="Views\TipoPrato\Index.cshtml" />
-    <Content Include="Views\TipoItemFotoVideo\Create.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Delete.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Details.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Edit.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Index.cshtml" />
-    <Content Include="Views\TipoItemSomIluminacao\Create.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Delete.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Details.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Edit.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Index.cshtml" />
-    <Content Include="Views\TipoItemOutrosItens\Create.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Delete.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Details.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Edit.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Index.cshtml" />
-    <Content Include="Views\TipoItemBebida\Create.cshtml" />
     <Content Include="Views\TipoItemBebida\Delete.cshtml" />
     <Content Include="Views\TipoItemBebida\Details.cshtml" />
     <Content Include="Views\TipoItemBebida\Edit.cshtml" />
@@ -309,6 +305,10 @@
     <Content Include="Views\ItemOutrosItens\Details.cshtml" />
     <Content Include="Views\ItemOutrosItens\Edit.cshtml" />
     <Content Include="Views\ItemOutrosItens\Index.cshtml" />
+    <Content Include="Views\TipoItemSomIluminacao\Create.cshtml" />
+    <Content Include="Views\TipoItemFotoVideo\Create.cshtml" />
+    <Content Include="Views\TipoItemOutrosItens\Create.cshtml" />
+    <Content Include="Views\TipoItemBebida\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
