@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Cardapio.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
@@ -65,8 +66,11 @@
     <Compile Include="Data\ItemMontagem.cs" />
     <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
+    <Compile Include="Data\Prato.cs" />
+    <Compile Include="Data\PratoSelecionado.cs" />
     <Compile Include="Data\SeedDatabase.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
+    <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Model\Cardapio.cs" />
     <Compile Include="Model\Decoracao.cs" />
     <Compile Include="Model\LocalCerimonia.cs" />

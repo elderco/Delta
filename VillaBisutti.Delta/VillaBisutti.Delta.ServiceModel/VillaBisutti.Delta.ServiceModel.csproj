@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Bebida.cs" />
     <Compile Include="BoloDoceBemCasado.cs" />
+    <Compile Include="Cardapio.cs" />
     <Compile Include="ContratoAditivo.cs" />
     <Compile Include="CronogramaCerimonial.cs" />
     <Compile Include="CronogramaCerimonialPadrao.cs" />

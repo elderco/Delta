@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public string Nome { get; set; }
 		public int TipoPratoId { get; set; }
-		public TipoPrato TipoPrato { get; set; }
+		public List<TipoPrato> TipoPrato { get; set; }
 		public List<Cardapio> Cardapios { get; set; }
 	}
 }
