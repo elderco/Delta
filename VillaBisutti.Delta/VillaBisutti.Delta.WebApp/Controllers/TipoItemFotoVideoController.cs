@@ -6,19 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemFotoVideoController : Controller
     {
-        private Context db = new Context();
 
         // GET: /TipoItemFotoVideo/
         public ActionResult Index()
         {
-            return View(db.TipoItemFotoVideo.ToList());
+			return View(new data.TipoItemFotoVideo().GetCollection(0));
         }
 
         // GET: /TipoItemFotoVideo/Details/5
@@ -28,7 +27,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemFotoVideo tipoitemfotovideo = db.TipoItemFotoVideo.Find(id);
+			model.TipoItemFotoVideo tipoitemfotovideo = new data.TipoItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemfotovideo == null)
             {
                 return HttpNotFound();
@@ -47,12 +46,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome")] TipoItemFotoVideo tipoitemfotovideo)
+        public ActionResult Create([Bind(Include="Id,Nome")] model.TipoItemFotoVideo tipoitemfotovideo)
         {
             if (ModelState.IsValid)
             {
-                db.TipoItemFotoVideo.Add(tipoitemfotovideo);
-                db.SaveChanges();
+				new data.TipoItemFotoVideo().Insert(tipoitemfotovideo);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +64,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemFotoVideo tipoitemfotovideo = db.TipoItemFotoVideo.Find(id);
+			model.TipoItemFotoVideo tipoitemfotovideo = new data.TipoItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemfotovideo == null)
             {
                 return HttpNotFound();
@@ -79,12 +77,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome")] TipoItemFotoVideo tipoitemfotovideo)
+        public ActionResult Edit([Bind(Include="Id,Nome")] model.TipoItemFotoVideo tipoitemfotovideo)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoitemfotovideo).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.TipoItemFotoVideo().Update(tipoitemfotovideo);
                 return RedirectToAction("Index");
             }
             return View(tipoitemfotovideo);
@@ -97,7 +94,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemFotoVideo tipoitemfotovideo = db.TipoItemFotoVideo.Find(id);
+			model.TipoItemFotoVideo tipoitemfotovideo = new data.TipoItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemfotovideo == null)
             {
                 return HttpNotFound();
@@ -110,18 +107,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoItemFotoVideo tipoitemfotovideo = db.TipoItemFotoVideo.Find(id);
-            db.TipoItemFotoVideo.Remove(tipoitemfotovideo);
-            db.SaveChanges();
+			new data.TipoItemFotoVideo().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

@@ -16,7 +16,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemBebida/
         public ActionResult Index()
         {
-            return View(new data.ItemBebida().GetCollection(0);
+            return View(new data.ItemBebida().GetCollection(0));
         }
 
         // GET: /ItemBebida/Details/5

@@ -92,7 +92,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            model.ItemFotoVideo itemfotovideo = new  data.ItemFotoVideo().GetElement(id.HasValue ? id.Value);
+			model.ItemFotoVideo itemfotovideo = new data.ItemFotoVideo().GetElement(id.HasValue ? id.Value : 0);
 			if (itemfotovideo == null)
             {
                 return HttpNotFound();

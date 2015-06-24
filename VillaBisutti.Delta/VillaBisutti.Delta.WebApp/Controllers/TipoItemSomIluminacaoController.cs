@@ -6,19 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemSomIluminacaoController : Controller
     {
-        private Context db = new Context();
 
         // GET: /TipoItemSomIluminacao/
         public ActionResult Index()
         {
-            return View(db.TipoItemSomIluminacao.ToList());
+			return View(new data.TipoItemSomIluminacao().GetCollection(0));
         }
 
         // GET: /TipoItemSomIluminacao/Details/5
@@ -28,7 +27,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemSomIluminacao tipoitemsomiluminacao = db.TipoItemSomIluminacao.Find(id);
+			model.TipoItemSomIluminacao tipoitemsomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemsomiluminacao == null)
             {
                 return HttpNotFound();
@@ -47,12 +46,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome")] TipoItemSomIluminacao tipoitemsomiluminacao)
+        public ActionResult Create([Bind(Include="Id,Nome")] model.TipoItemSomIluminacao tipoitemsomiluminacao)
         {
             if (ModelState.IsValid)
             {
-                db.TipoItemSomIluminacao.Add(tipoitemsomiluminacao);
-                db.SaveChanges();
+				new data.TipoItemSomIluminacao().Insert(tipoitemsomiluminacao);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +64,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemSomIluminacao tipoitemsomiluminacao = db.TipoItemSomIluminacao.Find(id);
+			model.TipoItemSomIluminacao tipoitemsomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemsomiluminacao == null)
             {
                 return HttpNotFound();
@@ -79,12 +77,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome")] TipoItemSomIluminacao tipoitemsomiluminacao)
+        public ActionResult Edit([Bind(Include="Id,Nome")] model.TipoItemSomIluminacao tipoitemsomiluminacao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoitemsomiluminacao).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.TipoItemSomIluminacao().Update(tipoitemsomiluminacao);
                 return RedirectToAction("Index");
             }
             return View(tipoitemsomiluminacao);
@@ -97,7 +94,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemSomIluminacao tipoitemsomiluminacao = db.TipoItemSomIluminacao.Find(id);
+			model.TipoItemSomIluminacao tipoitemsomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemsomiluminacao == null)
             {
                 return HttpNotFound();
@@ -110,18 +107,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoItemSomIluminacao tipoitemsomiluminacao = db.TipoItemSomIluminacao.Find(id);
-            db.TipoItemSomIluminacao.Remove(tipoitemsomiluminacao);
-            db.SaveChanges();
+			new data.TipoItemSomIluminacao().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

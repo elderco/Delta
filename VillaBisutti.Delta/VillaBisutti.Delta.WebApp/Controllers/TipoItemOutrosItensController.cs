@@ -6,19 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemOutrosItensController : Controller
     {
-        private Context db = new Context();
 
         // GET: /TipoItemOutrosItens/
         public ActionResult Index()
         {
-            return View(db.TipoItemOutrosItens.ToList());
+			return View(new data.TipoItemOutroItemItemDiverso().GetCollection(0));
         }
 
         // GET: /TipoItemOutrosItens/Details/5
@@ -28,7 +27,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemOutrosItens tipoitemoutrositens = db.TipoItemOutrosItens.Find(id);
+			model.TipoItemOutrosItens tipoitemoutrositens = new data.TipoItemOutroItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemoutrositens == null)
             {
                 return HttpNotFound();
@@ -47,12 +46,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome")] TipoItemOutrosItens tipoitemoutrositens)
+        public ActionResult Create([Bind(Include="Id,Nome")] model.TipoItemOutrosItens tipoitemoutrositens)
         {
             if (ModelState.IsValid)
             {
-                db.TipoItemOutrosItens.Add(tipoitemoutrositens);
-                db.SaveChanges();
+				new data.TipoItemOutroItemItemDiverso().Insert(tipoitemoutrositens);
                 return RedirectToAction("Index");
             }
 
@@ -66,8 +64,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemOutrosItens tipoitemoutrositens = db.TipoItemOutrosItens.Find(id);
-            if (tipoitemoutrositens == null)
+			model.TipoItemOutrosItens tipoitemoutrositens = new data.TipoItemOutroItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			if (tipoitemoutrositens == null)
             {
                 return HttpNotFound();
             }
@@ -79,12 +77,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome")] TipoItemOutrosItens tipoitemoutrositens)
+        public ActionResult Edit([Bind(Include="Id,Nome")] model.TipoItemOutrosItens tipoitemoutrositens)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoitemoutrositens).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.TipoItemOutroItemItemDiverso().Update(tipoitemoutrositens);
                 return RedirectToAction("Index");
             }
             return View(tipoitemoutrositens);
@@ -97,7 +94,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoItemOutrosItens tipoitemoutrositens = db.TipoItemOutrosItens.Find(id);
+			model.TipoItemOutrosItens tipoitemoutrositens = new data.TipoItemOutroItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
             if (tipoitemoutrositens == null)
             {
                 return HttpNotFound();
@@ -110,18 +107,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoItemOutrosItens tipoitemoutrositens = db.TipoItemOutrosItens.Find(id);
-            db.TipoItemOutrosItens.Remove(tipoitemoutrositens);
-            db.SaveChanges();
+			new data.TipoItemOutroItemItemDiverso().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }
