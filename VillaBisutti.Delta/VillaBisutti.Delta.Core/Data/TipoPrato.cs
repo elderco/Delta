@@ -23,7 +23,8 @@ namespace VillaBisutti.Delta.Core.Data
         public override void Insert(Model.TipoPrato entity)
         {
             context.TipoPrato.Add(entity);
-        }
+			context.SaveChanges();
+		}
 
         protected override List<Model.TipoPrato> GetCollection()
         {

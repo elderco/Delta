@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public enum TipoEvento
+	public enum TipoServico
 	{
-		[Display(Name = "Aniversário")]
-		Aniversario = 0,
-		Barmitzva = 1,
-		Batmitzva = 2,
-		Casamento = 3,
-		Corporativo = 4,
-		Debutante = 5,
-		Outro = 6 
+		Inglesa=0,
+		[Display(Name = "Franco-Americano")]
+		FrancoAmericano = 1,
+		[Display(Name = "Menu-Degustação")]
+		MenuDegustacao = 2
 	}
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -23,11 +25,12 @@ namespace VillaBisutti.Delta.Core.Data
         public override void Insert(Model.Cardapio entity)
         {
             context.Cardapio.Add(entity);
-        }
+			context.SaveChanges();
+		}
 
         protected override List<Model.Cardapio> GetCollection()
         {
-            return context.Cardapio.ToList();
+            return context.Cardapio.Include(c => c.Pratos).ToList();
         }
     }
 }
