@@ -37,8 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemBebida/Create
         public ActionResult Create()
         {
-			SelectList ItemBebida = new SelectList(new data.ItemBebida().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			ViewBag.ItemBebida = ItemBebida;
+			SelectList TipoItemBebida = new SelectList(new data.TipoItemBebida().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemBebida = TipoItemBebida;
             return View();
         }
 

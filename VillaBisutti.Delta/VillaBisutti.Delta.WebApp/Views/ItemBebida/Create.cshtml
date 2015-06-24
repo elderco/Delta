@@ -5,21 +5,21 @@
 }
 <script type="text/javascript" language="javascript">
 	$(document).ready(function () {
-		$("#EditarTipoBebida").attr("disabled", "disabled");
-		$("#ExcluirTipoBebida").attr("disabled", "disabled");
+		$("#EditarTipoItem").attr("disabled", "disabled");
+		$("#ExcluirTipoItem").attr("disabled", "disabled");
 		$("#TipoItemBebidaId").change(function () {
 			var id = $(this).val();
 			if (id == "") {
-				$("#EditarTipoBebida").attr("disabled", "disabled");
-				$("#ExcluirTipoBebida").attr("disabled", "disabled");
+				$("#EditarTipoItem").attr("disabled", "disabled");
+				$("#ExcluirTipoItem").attr("disabled", "disabled");
 			} else {
-				$("#EditarTipoBebida").removeAttr("disabled");
-				$("#ExcluirTipoBebida").removeAttr("disabled");
+				$("#EditarTipoItem").removeAttr("disabled");
+				$("#ExcluirTipoItem").removeAttr("disabled");
 			}
 			var urlEditar = "@(Url.Action("Edit", "TipoItemBebida"))/";
 			var urlDeletar = "@(Url.Action("Delete", "TipoItemBebida"))/";
-			$("#EditarTipoBebida").attr("href", urlEditar + id);
-			$("#ExcluirTipoBebida").attr("href", urlDeletar + id);
+			$("#EditarTipoItem").attr("href", urlEditar + id);
+			$("#ExcluirTipoItem").attr("href", urlDeletar + id);
 		});
 	});
 </script>
@@ -55,7 +55,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TipoItemBebida,new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TipoItemBebidaId", (IEnumerable<SelectListItem>)ViewBag.ItemBebida, String.Empty)
+                @Html.DropDownList("TipoItemBebidaId", (IEnumerable<SelectListItem>)ViewBag.TipoItemBebida, String.Empty)
                 @Html.ValidationMessageFor(model => model.TipoItemBebida)
             </div>
 			<div class="col-md-2">
