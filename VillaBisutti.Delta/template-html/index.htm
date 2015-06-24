@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Vila Bisutti - Sistema de Gerenciamento de Eventos</title>
+
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!--Basic Styles-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-glyphs.min.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="stylesheet" type="text/css" href="css/google-fonts.css" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+
+	<!-- Ace styles -->
+	<link rel="stylesheet" type="text/css" href="css/ace.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/ace-responsive.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/ace-skins.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/ace-rtl.min.css" />
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/funcoes.js"></script>	
+
+
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$('#myModal').on('hidden.bs.modal', function() {
+			$(this).removeData('bs.modal');
+		});
+
+		$('[data-rel=tooltip]').tooltip({container:'body'});
+		$('[data-rel=popover]').popover({container:'body', trigger: 'hover'});
+});
+
+	</script>
+
+<style type="text/css">
+
+	.page-header h3.header{margin-top:0 !important;}
+	.page-content{margin:0 8px !important;}
+	.header-plugin{color:#FFF; font-size:16px; font-weight: bold}
+	.breadcrumb a {color: #FFF;}
+	.modal-header {min-height: 60px;}
+	.btn-margin-left {margin-left: 10px !important}
+	.botoes-sessao-pregoeiro a{margin-right: 30px;}
+
+</style>
+
+	
+	
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+			try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>Vila Bisutti</small>
+					</a>
+				</div>
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+				 	<ul class="nav ace-nav">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<span class="user-info">
+									<small>Olá,</small>
+								</span>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li class="divider"></li>
+								<li>
+									<a href="users/logout/"><i class="ace-icon fa fa-power-off"></i>Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+
+			<script type="text/javascript">try{ace.settings.check('main-container' , 'fixed')}catch(e){}</script>
+
+			<div id="sidebar" class="sidebar sidebar-left responsive menu-min" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+				<script type="text/javascript">try{ace.settings.check('sidebar' , 'fixed')}catch(e){}</script>
+
+				<!-- Sidebar Shortcuts -->
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts"></div>
+				<!-- /.sidebar-shortcuts -->
+
+
+				<ul class="nav nav-list nav-list-left" style="top: 0px;">
+				    <li>
+                		<a href="#"><i class="menu-icon fa fa-cog"></i><span class="menu-text"> Configurações </span></a>
+                	</li>
+            		<li>
+						<a href="#"><i class="menu-icon fa fa-calendar"></i><span class="menu-text"> Eventos </span></a>				<b class="arrow"></b>
+					</li>
+					<li>
+						<a href="#"><i class="menu-icon fa fa-dashboard"></i><span class="menu-text"> Relatórios </span></a>			<b class="arrow"></b>
+					</li>
+				</ul>
+				<ul class="nav nav-list nav-list-left">
+                <li class="pull_up">
+					<a class="dropdown-toggle" href="#">
+						<i class="menu-icon fa fa-tasks"></i>
+						<span class="menu-text" style="margin-top: -96px;"> Meus Eventos </span>
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+					<b class="arrow arrow-submenu"></b>
+					<ul class="submenu can-scroll ace-scroll" style="top: -96px; max-height: 143px;">
+						<li>
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Casa do Ator
+							</a>
+							<b class="arrow"></b>
+						</li>
+						<li>
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Quatá
+							</a>
+							<b class="arrow"></b>
+						</li>
+						<li>
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Tenerife
+							</a>
+							<b class="arrow"></b>
+						</li>
+						<li>
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Berrini
+							</a>
+							<b class="arrow"></b>
+						</li>
+						<li>
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Gomes de Carvalho
+							</a>
+							<b class="arrow"></b>
+						</li>
+					</ul>
+					<div class="scroll-track scroll-detached no-track scroll-thin scroll-margin scroll-visible scroll-active" style="display: none; height: 142px; top: -56px; left: 212px;">
+						<div class="scroll-bar" style="height: 80px; top: 0px;"></div>
+					</div>
+				</li>
+			</ul>
+				<div class="scroll-track scroll-detached no-track scroll-thin scroll-margin scroll-visible" style="display: none; top: 40px; left: 212px;">
+					<div class="scroll-bar" style="top: 0px;"></div>
+				</div>
+				<!-- /.nav-list -->
+
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+		<script type="text/javascript">try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}</script>
+	</div>
+
+	<div class="main-content">
+		<div class="main-content-inner">
+			<div class="breadcrumbs header-plugin" id="breadcrumbs" style="background: ">
+			<div class="breadcrumb header-plugin"></div>
+				<div class="pull-right breadcrumb">
+					<ul class="breadcrumb">
+						<li style="font-size:18px;font-weight:bold"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="row">
+					<div class="col-xs-12">
+						<!-- PAGE CONTENT BEGINS -->
+						<h1>Conteúdo</h1>
+						<!-- PAGE CONTENT ENDS -->
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.page-content -->
+		</div>
+	</div><!-- /.main-content -->
+
+	<div class="footer">
+		<div class="footer-inner">
+			<div class="footer-content">
+					<span class="bolder" style="color: #522d1c">Vila Bisutti</span>
+					2009 - 2015
+
+				&nbsp; &nbsp;
+
+			</div>
+		</div>
+	</div>
+
+	<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/typeahead-bs2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="js/jquery.easy-pie-chart.min.js"></script>
+<script type="text/javascript" src="js/jquery.gritter.min.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/ace-elements.min.js"></script>
+<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="js/ace.min.js"></script>
+<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.maskMoney.min.js"></script>
+
+
+<!--page specific plugin scripts-->
+
+<!--ace scripts-->
+
+
+<!--inline scripts related to this page-->
+
+<!-- Modals -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="titulo" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header well">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title blue" id="titulo"></h4>
+			</div>
+			<div class="modal-body">
+
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+</body>
+</html>
