@@ -9,18 +9,8 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Evento : IEntityBase
 	{
 		public int Id { get; set; }
-		public int TipoEventoId { get; set; }
-		public TipoEvento TipoEvento
-		{
-			get
-			{
-				return (TipoEvento)TipoEventoId;
-			}
-			set
-			{
-				TipoEventoId = (int)value;
-			}
-		}
+		public TipoEvento TipoEvento { get; set; }
+		public TipoServico TipoServico { get; set; }
 		public int LocalId { get; set; }
 		public Local Local { get; set; }
 		public DateTime Data { get; set; }

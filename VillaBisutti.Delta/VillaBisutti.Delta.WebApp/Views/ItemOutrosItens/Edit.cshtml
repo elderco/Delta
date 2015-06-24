@@ -34,10 +34,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoItemOutroItemItemDiversoId, "TipoItemOutroItemItemDiversoId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoItemOutrosItens, "TipoItemOutrosItens", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TipoItemOutroItemItemDiversoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.TipoItemOutroItemItemDiversoId)
+				@Html.DropDownList("TipoItemOutrosItensId", (IEnumerable<SelectListItem>)ViewBag.TipoItemOutrosItens, String.Empty)
+                @Html.ValidationMessageFor(model => model.TipoItemOutrosItens)
             </div>
         </div>
 

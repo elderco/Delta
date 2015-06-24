@@ -65,7 +65,7 @@
     <Compile Include="Data\ItemDecoracao.cs" />
     <Compile Include="Data\ItemFotoVideo.cs" />
     <Compile Include="Data\ItemMontagem.cs" />
-    <Compile Include="Data\ItemOutrosItemItemDiverso.cs" />
+    <Compile Include="Data\ItemOutrosItens.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
@@ -86,7 +86,7 @@
     <Compile Include="Data\TipoItemDecoracao.cs" />
     <Compile Include="Data\TipoItemFotoVideo.cs" />
     <Compile Include="Data\TipoItemMontagem.cs" />
-    <Compile Include="Data\TipoItemOutroItemItemDiverso.cs" />
+    <Compile Include="Data\TipoItemOutrosItens.cs" />
     <Compile Include="Data\TipoItemSomIluminacao.cs" />
     <Compile Include="Data\Usuario.cs" />
     <Compile Include="Model\ContratoAditivo.cs" />

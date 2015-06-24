@@ -16,7 +16,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemOutrosItens/
         public ActionResult Index()
         {
-            return View(new data.ItemOutrosItemItemDiverso().GetCollection(0));
+            return View(new data.ItemOutrosItens().GetCollection(0));
         }
 
         // GET: /ItemOutrosItens/Details/5
@@ -26,7 +26,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItens().GetElement(id.HasValue ? id.Value : 0);
 			if (itemoutrositens == null)
             {
                 return HttpNotFound();
@@ -37,7 +37,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemOutrosItens/Create
         public ActionResult Create()
         {
-			SelectList TipoItemOutrosItens = new SelectList(new data.TipoItemOutroItemItemDiverso().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			SelectList TipoItemOutrosItens = new SelectList(new data.TipoItemOutrosItens().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
 			ViewBag.TipoItemOutrosItens = TipoItemOutrosItens;
             return View();
         }
@@ -47,11 +47,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,Quantidade,TipoItemOutroItemItemDiversoId")] model.ItemOutrosItens itemoutrositens)
+		public ActionResult Create([Bind(Include = "Id,Nome,Quantidade,TipoItemOutrosItensId")] model.ItemOutrosItens itemoutrositens)
         {
             if (ModelState.IsValid)
             {
-				new data.ItemOutrosItemItemDiverso().Insert(itemoutrositens);
+				new data.ItemOutrosItens().Insert(itemoutrositens);
 				return RedirectToAction("Index");
             }
 			return View(itemoutrositens);
@@ -64,11 +64,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItens().GetElement(id.HasValue ? id.Value : 0);
 			if (itemoutrositens == null)
             {
                 return HttpNotFound();
             }
+			SelectList TipoItemOutrosItens = new SelectList(new data.TipoItemOutrosItens().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemOutrosItens = TipoItemOutrosItens;
 			return View(itemoutrositens);
         }
 
@@ -77,11 +79,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,TipoItemOutroItemItemDiversoId")] model.ItemOutrosItens itemoutrositens)
+		public ActionResult Edit([Bind(Include = "Id,Nome,Quantidade,TipoItemOutrosItensId")] model.ItemOutrosItens itemoutrositens)
         {
             if (ModelState.IsValid)
             {
-				new data.ItemOutrosItemItemDiverso().Update(itemoutrositens);
+				new data.ItemOutrosItens().Update(itemoutrositens);
                 return RedirectToAction("Index");
             }
             return View(itemoutrositens);
@@ -94,7 +96,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItemItemDiverso().GetElement(id.HasValue ? id.Value : 0);
+			model.ItemOutrosItens itemoutrositens = new data.ItemOutrosItens().GetElement(id.HasValue ? id.Value : 0);
 			if (itemoutrositens == null)
             {
                 return HttpNotFound();
@@ -107,7 +109,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            new data.ItemOutrosItemItemDiverso().Delete(id);
+            new data.ItemOutrosItens().Delete(id);
 			return RedirectToAction("Index");
         }
 

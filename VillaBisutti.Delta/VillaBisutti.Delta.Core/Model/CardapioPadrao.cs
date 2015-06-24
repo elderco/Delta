@@ -11,17 +11,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public int CardapioId { get; set; }
 		public Cardapio Cardapio { get; set; }
-		public int TipoServicoId { get; set; }
-		public TipoServico TipoServico {
-			get
-			{
-				return (TipoServico)TipoServicoId;
-			}
-			set
-			{
-				TipoServicoId = (int)value;
-			}
-		}
+		public TipoServico TipoServico { get; set; }
 		public List<Prato> PratosSelecionados { get; set; }
 	}
 }

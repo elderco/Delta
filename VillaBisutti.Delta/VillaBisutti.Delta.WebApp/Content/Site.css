@@ -1,42 +1,17 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
+﻿body { padding-top: 50px; padding-bottom: 20px; }
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
+.body-content { padding-left: 15px; padding-right: 15px; }
 /* styles for validation helpers */
-.field-validation-error {
-    color: #b94a48;
-}
+.field-validation-error { color: #b94a48; }
+.field-validation-valid { display: none; }
+input.input-validation-error { border: 1px solid #b94a48; }
+input[type="checkbox"].input-validation-error { border: 0 none; }
+.validation-summary-errors { color: #b94a48; }
+.validation-summary-valid { display: none; }
+.container-fluid { padding-right: 15px !important; padding-left: 15px !important; margin-right: auto; margin-left: auto; }
 
-.field-validation-valid {
-    display: none;
-}
-
-input.input-validation-error {
-    border: 1px solid #b94a48;
-}
-
-input[type="checkbox"].input-validation-error {
-    border: 0 none;
-}
-
-.validation-summary-errors {
-    color: #b94a48;
-}
-
-.validation-summary-valid {
-    display: none;
-}
+.navbar { background-color: #11100C !important; }
+.navbar-default .navbar-nav > li > a { color: #FEFEFE; font-weight: bold; }
+.navbar-default .navbar-nav > li > a:hover { color: #B1B1B1; }
+.navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus { color: #94785c; }
+.container-fluid .container { max-width: 100%; }

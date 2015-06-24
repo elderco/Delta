@@ -53,10 +53,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoItemOutroItemItemDiverso, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoItemOutrosItens, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownList("TipoItemOutroItemItemId", (IEnumerable<SelectListItem>)ViewBag.TipoItemOutrosItens, String.Empty)
-				@Html.ValidationMessageFor(model => model.TipoItemOutroItemItemDiverso)
+				@Html.DropDownList("TipoItemOutrosItensId", (IEnumerable<SelectListItem>)ViewBag.TipoItemOutrosItens, String.Empty)
+				@Html.ValidationMessageFor(model => model.TipoItemOutrosItens)
 			</div>
 			<div class="col-md-2">
 				<a href="@(Url.Action("Create", "TipoItemOutrosItens"))" class="btn btn-default" id="CriarTipoOutrosItens"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Criar</a>
