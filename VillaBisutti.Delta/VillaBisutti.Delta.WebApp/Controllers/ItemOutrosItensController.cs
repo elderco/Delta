@@ -37,6 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemOutrosItens/Create
         public ActionResult Create()
         {
+			SelectList TipoItemOutrosItens = new SelectList(new data.TipoItemOutroItemItemDiverso().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemOutrosItens = TipoItemOutrosItens;
             return View();
         }
 

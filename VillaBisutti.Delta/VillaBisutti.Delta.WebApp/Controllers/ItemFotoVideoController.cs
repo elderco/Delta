@@ -37,6 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemFotoVideo/Create
         public ActionResult Create()
         {
+			SelectList TipoItemFotoVideo = new SelectList(new data.TipoItemFotoVideo().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemFotoVideo = TipoItemFotoVideo;
             return View();
         }
 

@@ -37,6 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemSomIluminacao/Create
         public ActionResult Create()
         {
+			SelectList TipoItemSomIluminacao = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemSomIluminacao = TipoItemSomIluminacao;
             return View();
         }
 
