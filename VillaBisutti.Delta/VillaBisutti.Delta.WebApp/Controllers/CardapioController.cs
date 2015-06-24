@@ -6,19 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class CardapioController : Controller
     {
-        private Context db = new Context();
-
         // GET: /Cardapio/
         public ActionResult Index()
         {
-            return View(db.Cardapio.ToList());
+			return View(new data.Cardapio().GetCollection(0));
         }
 
         // GET: /Cardapio/Details/5
@@ -28,7 +26,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
+			model.Cardapio cardapio = new data.Cardapio().GetElement(id.HasValue ? id.Value : 0);
             if (cardapio == null)
             {
                 return HttpNotFound();
@@ -47,12 +45,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome")] Cardapio cardapio)
+        public ActionResult Create([Bind(Include="Id,Nome")] model.Cardapio cardapio)
         {
             if (ModelState.IsValid)
             {
-                db.Cardapio.Add(cardapio);
-                db.SaveChanges();
+				new data.Cardapio().Insert(cardapio);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +63,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
+			model.Cardapio cardapio = new data.Cardapio().GetElement(id.HasValue ? id.Value : 0);
             if (cardapio == null)
             {
                 return HttpNotFound();
@@ -79,12 +76,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome")] Cardapio cardapio)
+        public ActionResult Edit([Bind(Include="Id,Nome")] model.Cardapio cardapio)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cardapio).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.Cardapio().Update(cardapio);
                 return RedirectToAction("Index");
             }
             return View(cardapio);
@@ -97,7 +93,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
+			model.Cardapio cardapio = new data.Cardapio().GetElement(id.HasValue ? id.Value : 0);
             if (cardapio == null)
             {
                 return HttpNotFound();
@@ -110,18 +106,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cardapio cardapio = db.Cardapio.Find(id);
-            db.Cardapio.Remove(cardapio);
-            db.SaveChanges();
+			new data.Cardapio().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }
