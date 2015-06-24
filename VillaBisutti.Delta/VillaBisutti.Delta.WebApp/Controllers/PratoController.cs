@@ -11,107 +11,107 @@ using VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class CardapioController : Controller
+    public class PratoController : Controller
     {
         private Context db = new Context();
 
-        // GET: /Cardapio/
+        // GET: /Prato/
         public ActionResult Index()
         {
-            return View(db.Cardapio.ToList());
+            return View(db.Prato.ToList());
         }
 
-        // GET: /Cardapio/Details/5
+        // GET: /Prato/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
-            if (cardapio == null)
+            Prato prato = db.Prato.Find(id);
+            if (prato == null)
             {
                 return HttpNotFound();
             }
-            return View(cardapio);
+            return View(prato);
         }
 
-        // GET: /Cardapio/Create
+        // GET: /Prato/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: /Cardapio/Create
+        // POST: /Prato/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome")] Cardapio cardapio)
+        public ActionResult Create([Bind(Include="Id,Nome,TipoPratoId")] Prato prato)
         {
             if (ModelState.IsValid)
             {
-                db.Cardapio.Add(cardapio);
+                db.Prato.Add(prato);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cardapio);
+            return View(prato);
         }
 
-        // GET: /Cardapio/Edit/5
+        // GET: /Prato/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
-            if (cardapio == null)
+            Prato prato = db.Prato.Find(id);
+            if (prato == null)
             {
                 return HttpNotFound();
             }
-            return View(cardapio);
+            return View(prato);
         }
 
-        // POST: /Cardapio/Edit/5
+        // POST: /Prato/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome")] Cardapio cardapio)
+        public ActionResult Edit([Bind(Include="Id,Nome,TipoPratoId")] Prato prato)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cardapio).State = EntityState.Modified;
+                db.Entry(prato).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cardapio);
+            return View(prato);
         }
 
-        // GET: /Cardapio/Delete/5
+        // GET: /Prato/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cardapio cardapio = db.Cardapio.Find(id);
-            if (cardapio == null)
+            Prato prato = db.Prato.Find(id);
+            if (prato == null)
             {
                 return HttpNotFound();
             }
-            return View(cardapio);
+            return View(prato);
         }
 
-        // POST: /Cardapio/Delete/5
+        // POST: /Prato/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cardapio cardapio = db.Cardapio.Find(id);
-            db.Cardapio.Remove(cardapio);
+            Prato prato = db.Prato.Find(id);
+            db.Prato.Remove(prato);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

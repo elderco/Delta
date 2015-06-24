@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemDecoracaoController.cs" />
     <Compile Include="Controllers\ItemMontagemController.cs" />
+    <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\TipoItemDecoracaoController.cs" />
     <Compile Include="Controllers\TipoItemMontagemController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
@@ -244,11 +245,20 @@
     <Content Include="Views\ItemMontagem\Details.cshtml" />
     <Content Include="Views\ItemMontagem\Edit.cshtml" />
     <Content Include="Views\ItemMontagem\Index.cshtml" />
+    <Content Include="Views\Cardapio\Create.cshtml" />
+    <Content Include="Views\Cardapio\Delete.cshtml" />
+    <Content Include="Views\Cardapio\Details.cshtml" />
+    <Content Include="Views\Cardapio\Edit.cshtml" />
+    <Content Include="Views\Cardapio\Index.cshtml" />
+    <Content Include="Views\Prato\Create.cshtml" />
+    <Content Include="Views\Prato\Delete.cshtml" />
+    <Content Include="Views\Prato\Details.cshtml" />
+    <Content Include="Views\Prato\Edit.cshtml" />
+    <Content Include="Views\Prato\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Bebida\" />
-    <Folder Include="Views\Cardapio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
