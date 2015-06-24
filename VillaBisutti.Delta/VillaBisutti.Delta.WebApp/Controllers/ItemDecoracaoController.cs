@@ -38,7 +38,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create()
         {
 			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			ViewBag.Caetano = TipoItemDecoracao;
+			ViewBag.TipoItemDecoracao = TipoItemDecoracao;
             return View();
         }
 
