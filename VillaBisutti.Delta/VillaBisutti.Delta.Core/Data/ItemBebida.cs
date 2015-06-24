@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
+
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -30,7 +33,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemBebida> GetCollection()
 		{
-			return context.ItemBebida.ToList();
+			return context.ItemBebida.Include(i => i.TipoItemBebida).ToList();
 		}
 		public List<Model.ItemBebida> GetFromTipo(int tipoId)
 		{

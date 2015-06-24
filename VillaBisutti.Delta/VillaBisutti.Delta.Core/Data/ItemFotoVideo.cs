@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -29,7 +31,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemFotoVideo> GetCollection()
 		{
-			return context.ItemFotoVideo.ToList();
+			return context.ItemFotoVideo.Include(i => i.TipoItemFotoVideo).ToList();
 		}
 	}
 }
