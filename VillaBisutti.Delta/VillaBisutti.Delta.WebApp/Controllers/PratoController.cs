@@ -6,19 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class PratoController : Controller
     {
-        private Context db = new Context();
-
         // GET: /Prato/
         public ActionResult Index()
         {
-            return View(db.Prato.ToList());
+			return View(new data.Prato().GetCollection(0));
         }
 
         // GET: /Prato/Details/5
@@ -28,7 +26,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Prato prato = db.Prato.Find(id);
+			model.Prato prato = new data.Prato().GetElement(id.HasValue ? id.Value : 0);
             if (prato == null)
             {
                 return HttpNotFound();
@@ -39,6 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Prato/Create
         public ActionResult Create()
         {
+			SelectList Prato = new SelectList(new data.Prato().GetCollection(0), "Id", "Nome");
+			ViewBag.Prato = Prato;
             return View();
         }
 
@@ -47,12 +47,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,TipoPratoId")] Prato prato)
+        public ActionResult Create([Bind(Include="Id,Nome,TipoPratoId")] model.Prato prato)
         {
             if (ModelState.IsValid)
             {
-                db.Prato.Add(prato);
-                db.SaveChanges();
+				new data.Prato().Insert(prato);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +65,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Prato prato = db.Prato.Find(id);
+			model.Prato prato = new data.Prato().GetElement(id.HasValue ? id.Value : 0);
             if (prato == null)
             {
                 return HttpNotFound();
@@ -79,12 +78,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,TipoPratoId")] Prato prato)
+        public ActionResult Edit([Bind(Include="Id,Nome,TipoPratoId")] model.Prato prato)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(prato).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.Prato().Update(prato);
                 return RedirectToAction("Index");
             }
             return View(prato);
@@ -97,7 +95,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Prato prato = db.Prato.Find(id);
+			model.Prato prato = new data.Prato().GetElement(id.HasValue ? id.Value : 0);
             if (prato == null)
             {
                 return HttpNotFound();
@@ -110,19 +108,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Prato prato = db.Prato.Find(id);
-            db.Prato.Remove(prato);
-            db.SaveChanges();
+			new data.Prato().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+			base.Dispose(disposing);
         }
     }
 }
