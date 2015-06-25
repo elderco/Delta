@@ -37,7 +37,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemRoteiro/Create
         public ActionResult Create(int roteiroPadraoId)
         {
-            return View();
+			SelectList roteiropadrao = new SelectList(new data.RoteiroPadrao().GetCollection(0).OrderBy(tid => tid.TipoEvento), "Id", "TipoEvento");
+			ViewBag.roteiropadrao = roteiropadrao;
+			return View();
         }
 
         // POST: /ItemRoteiro/Create
