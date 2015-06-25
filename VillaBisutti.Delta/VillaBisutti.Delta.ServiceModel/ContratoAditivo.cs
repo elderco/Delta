@@ -14,7 +14,10 @@ namespace VillaBisutti.Delta.ServiceModel.ContratoAditivo
 		public int Id { get; set; }
 	}
 	[Route("/aditivo", "GET")]
-	public class GetAll : IReturn<List<model.ContratoAditivo>> { }
+	public class GetAll : IReturn<List<model.ContratoAditivo>> 
+    { 
+    }
+
 	[Route("/aditivo", "POST")]
 	public class New
 	{

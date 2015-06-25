@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Bebida.cs" />
     <Compile Include="BoloDoceBemCasado.cs" />
+    <Compile Include="Cardapio.cs" />
     <Compile Include="ContratoAditivo.cs" />
     <Compile Include="CronogramaCerimonial.cs" />
     <Compile Include="CronogramaCerimonialPadrao.cs" />
@@ -82,6 +83,8 @@
     <Compile Include="Montagem.cs" />
     <Compile Include="OutroItem.cs" />
     <Compile Include="PerfilUsuarioSistema.cs" />
+    <Compile Include="Prato.cs" />
+    <Compile Include="PratoSelecionado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roteiro.cs" />
     <Compile Include="RoteiroPadrao.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="TipoItemMontagem.cs" />
     <Compile Include="TipoItemOutroItemItemDiverso.cs" />
     <Compile Include="TipoItemSomIluminacao.cs" />
+    <Compile Include="TipoPrato.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
