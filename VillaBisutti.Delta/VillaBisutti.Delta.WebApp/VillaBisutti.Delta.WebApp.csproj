@@ -313,8 +313,8 @@
     <Content Include="Views\RoteiroPadrao\Create.cshtml" />
     <Content Include="Views\RoteiroPadrao\Delete.cshtml" />
     <Content Include="Views\RoteiroPadrao\Details.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
     <Content Include="Views\RoteiroPadrao\Index.cshtml" />
+    <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
