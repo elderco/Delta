@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemOutrosItens> GetCollection()
 		{
-			return context.ItemOutrosItens.ToList();
+			return context.ItemOutrosItens.Include(id => id.TipoItemOutrosItens).ToList();
 		}
 	}
 }
