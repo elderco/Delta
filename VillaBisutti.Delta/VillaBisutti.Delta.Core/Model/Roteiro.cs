@@ -9,7 +9,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Roteiro : IEntityBase
 	{
 		public int Id { get; set; }
-		public Evento TipoEvento { get; set; }
+		public Evento Evento { get; set; }
 		public List<ItemRoteiro> Acontecimentos { get; set; }
 	}
 }

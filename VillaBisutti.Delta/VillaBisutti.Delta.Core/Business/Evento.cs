@@ -9,6 +9,8 @@ namespace VillaBisutti.Delta.Core.Business
 	public class Evento
 	{
 		public void CopiarRoteiroPadrao(int eventoId)
-		{ }
+		{ 
+
+		}
 	}
 }
