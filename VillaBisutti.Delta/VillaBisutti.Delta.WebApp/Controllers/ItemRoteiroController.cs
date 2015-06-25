@@ -35,7 +35,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         }
 
         // GET: /ItemRoteiro/Create
-        public ActionResult Create()
+        public ActionResult Create(int roteiroPadraoId)
         {
             return View();
         }
