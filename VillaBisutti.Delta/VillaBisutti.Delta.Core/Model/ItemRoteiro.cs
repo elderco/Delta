@@ -29,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Observacao { get; set; }
 		public int? RoteiroPadraoId { get; set; }
 		public RoteiroPadrao RoteiroPadrao { get; set; }
-		public int? RoteiroId { get; set; }
-		public Roteiro Roteiro { get; set; }
+		public int? EventoId { get; set; }
+		public Evento Evento { get; set; }
 	}
 }

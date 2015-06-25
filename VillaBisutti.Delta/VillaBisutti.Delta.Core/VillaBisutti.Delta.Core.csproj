@@ -82,7 +82,6 @@
     <Compile Include="Data\ItemMontagemSelecionado.cs" />
     <Compile Include="Data\ItemOutrosItensSelecionado.cs" />
     <Compile Include="Data\PerfilUsuarioSistema.cs" />
-    <Compile Include="Data\Roteiro.cs" />
     <Compile Include="Data\RoteiroPadrao.cs" />
     <Compile Include="Data\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
@@ -118,7 +117,6 @@
     <Compile Include="Model\PerfilUsuarioSistema.cs" />
     <Compile Include="Model\Prato.cs" />
     <Compile Include="Model\PratoSelecionado.cs" />
-    <Compile Include="Model\Roteiro.cs" />
     <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Model\TipoAcesso.cs" />

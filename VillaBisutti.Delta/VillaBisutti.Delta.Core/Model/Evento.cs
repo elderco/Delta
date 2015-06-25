@@ -76,6 +76,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool OSFinalizada { get; set; }
 		public Decoracao Decoracao { get; set; }
 		public Montagem Montagem { get; set; }
-		public Roteiro Roteiro { get; set; }
+		public List<ItemRoteiro> Roteiro { get; set; }
 	}
 }

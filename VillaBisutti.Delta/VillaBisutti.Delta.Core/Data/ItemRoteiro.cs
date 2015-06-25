@@ -29,5 +29,10 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemRoteiro.Include(p => p.RoteiroPadrao).ToList();
 		}
+		public void AddRange(IEnumerable<Model.ItemRoteiro> collection)
+		{
+			context.ItemRoteiro.AddRange(collection);
+			context.SaveChanges();
+		}
 	}
 }

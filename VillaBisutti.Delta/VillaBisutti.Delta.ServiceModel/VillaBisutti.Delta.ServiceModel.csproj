@@ -90,7 +90,6 @@
     <Compile Include="Prato.cs" />
     <Compile Include="PratoSelecionado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roteiro.cs" />
     <Compile Include="RoteiroPadrao.cs" />
     <Compile Include="SomIluminacao.cs" />
     <Compile Include="TipoItemBebida.cs" />
