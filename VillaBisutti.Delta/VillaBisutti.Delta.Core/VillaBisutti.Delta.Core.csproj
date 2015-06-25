@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Evento.cs" />
     <Compile Include="Data\Cardapio.cs" />
     <Compile Include="Data\CardapioPadrao.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
@@ -132,7 +133,6 @@
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shared\Properties.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
