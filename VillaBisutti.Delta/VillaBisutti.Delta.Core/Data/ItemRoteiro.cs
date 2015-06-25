@@ -27,7 +27,7 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		protected override List<Model.ItemRoteiro> GetCollection()
 		{
-			return context.ItemRoteiro.ToList();
+			return context.ItemRoteiro.Include(p => p.RoteiroPadrao).ToList();
 		}
 	}
 }
