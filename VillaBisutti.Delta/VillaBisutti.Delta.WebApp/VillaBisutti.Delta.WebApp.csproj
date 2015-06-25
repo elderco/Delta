@@ -166,6 +166,7 @@
     <Compile Include="Controllers\ItemFotoVideoController.cs" />
     <Compile Include="Controllers\ItemMontagemController.cs" />
     <Compile Include="Controllers\ItemOutrosItensController.cs" />
+    <Compile Include="Controllers\ItemRoteiroController.cs" />
     <Compile Include="Controllers\ItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
@@ -315,6 +316,11 @@
     <Content Include="Views\RoteiroPadrao\Details.cshtml" />
     <Content Include="Views\RoteiroPadrao\Index.cshtml" />
     <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
+    <Content Include="Views\ItemRoteiro\Create.cshtml" />
+    <Content Include="Views\ItemRoteiro\Delete.cshtml" />
+    <Content Include="Views\ItemRoteiro\Details.cshtml" />
+    <Content Include="Views\ItemRoteiro\Edit.cshtml" />
+    <Content Include="Views\ItemRoteiro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

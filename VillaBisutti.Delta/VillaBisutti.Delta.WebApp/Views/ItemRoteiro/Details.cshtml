@@ -1,0 +1,66 @@
+﻿@model VillaBisutti.Delta.Core.Model.ItemRoteiro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemRoteiro</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoteiroPadrao.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoteiroPadrao.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoteiroId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoteiroId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
