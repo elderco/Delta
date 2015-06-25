@@ -10,9 +10,17 @@
     <h4>RoteiroPadrao</h4>
 	<hr />
     <dl class="dl-horizontal">
+		<dd>
+			@Html.DisplayFor(model => model.TipoEvento)
+		</dd>
+
+		</dd>
     </dl>
 </div>
 <p>
+
+
+
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

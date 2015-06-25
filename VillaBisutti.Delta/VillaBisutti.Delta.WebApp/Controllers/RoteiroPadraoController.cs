@@ -11,109 +11,123 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class RoteiroPadraoController : Controller
-    {
-		 // GET: /RoteiroPadrao/
-        public ActionResult Index()
-        {
-            return View(new data.RoteiroPadrao().GetCollection(0));
-        }
+	public class RoteiroPadraoController : Controller
+	{
+		// GET: /RoteiroPadrao/
+		public ActionResult Index()
+		{
+			return View(new data.RoteiroPadrao().GetCollection(0));
+		}
 
-        // GET: /RoteiroPadrao/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+		// GET: /RoteiroPadrao/Details/5
+		public ActionResult Details(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
 			model.RoteiroPadrao roteiropadrao = new data.RoteiroPadrao().GetElement(id.HasValue ? id.Value : 0);
 			if (roteiropadrao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(roteiropadrao);
-        }
+			{
+				return HttpNotFound();
+			}
+			return View(roteiropadrao);
+		}
 
-        // GET: /RoteiroPadrao/Create
-        public ActionResult Create()
-        {
-			SelectList roteiropadrao = new SelectList(new data.RoteiroPadrao().GetCollection(0),"Id");
-            return View();
-        }
+		// GET: /RoteiroPadrao/Create
+		public ActionResult Create()
+		{
+			Dictionary<string, int> tipos = new Dictionary<string, int>();
+			IEnumerable<model.TipoEvento> tiposEvento = Enum.GetValues(typeof(model.TipoEvento)).Cast<model.TipoEvento>();
+			foreach (model.TipoEvento tipoEvento in tiposEvento)
+				tipos.Add(tipoEvento.GetDescription(), (int)tipoEvento);
 
-        // POST: /RoteiroPadrao/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id")] model.RoteiroPadrao roteiropadrao)
-        {
-            if (ModelState.IsValid)
-            {
+			SelectList TipoEvento = new SelectList(tipos, "Value", "Key");
+			ViewBag.TipoEvento = TipoEvento;
+			return View();
+		}
+
+		// POST: /RoteiroPadrao/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Create([Bind(Include = "Id")] model.RoteiroPadrao roteiropadrao)
+		{
+			if (ModelState.IsValid)
+			{
 				new data.RoteiroPadrao().Insert(roteiropadrao);
-                return RedirectToAction("Index");
-            }
+				return RedirectToAction("Index");
+			}
 
-            return View(roteiropadrao);
-        }
+			return View(roteiropadrao);
+		}
 
-        // GET: /RoteiroPadrao/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+		// GET: /RoteiroPadrao/Edit/5
+		public ActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
 			model.RoteiroPadrao roteiropadrao = new data.RoteiroPadrao().GetElement(id.HasValue ? id.Value : 0);
 			if (roteiropadrao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(roteiropadrao);
-        }
+			{
+				return HttpNotFound();
+			}
+			return View(roteiropadrao);
+		}
 
-        // POST: /RoteiroPadrao/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id")] model.RoteiroPadrao roteiropadrao)
-        {
-            if (ModelState.IsValid)
-            {
+		// POST: /RoteiroPadrao/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id")] model.RoteiroPadrao roteiropadrao)
+		{
+			if (ModelState.IsValid)
+			{
 				new data.RoteiroPadrao().Update(roteiropadrao);
-                return RedirectToAction("Index");
-            }
-            return View(roteiropadrao);
-        }
+				return RedirectToAction("Index");
+			}
+			return View(roteiropadrao);
+		}
 
-        // GET: /RoteiroPadrao/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+		// GET: /RoteiroPadrao/Delete/5
+		public ActionResult Delete(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
 			model.RoteiroPadrao roteiropadrao = new data.RoteiroPadrao().GetElement(id.HasValue ? id.Value : 0);
 			if (roteiropadrao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(roteiropadrao);
-        }
+			{
+				return HttpNotFound();
+			}
+			return View(roteiropadrao);
+		}
 
-        // POST: /RoteiroPadrao/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+		// POST: /RoteiroPadrao/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
 			new data.RoteiroPadrao().Delete(id);
-            return RedirectToAction("Index");
-        }
+			return RedirectToAction("Index");
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-    }
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+		}
+
+		[HttpGet]
+		public ActionResult Add()
+		{
+			var viewModel = new data.RoteiroPadrao();
+
+			return View(viewModel);
+		}
+	}
 }
