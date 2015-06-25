@@ -10,9 +10,12 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public TipoEvento TipoEvento { get; set; }
-		public TipoServico TipoServico { get; set; }
+		
 		public int LocalId { get; set; }
 		public Local Local { get; set; }
+
+
+		//Dados do evento
 		public DateTime Data { get; set; }
 		public int HorarioInicio { get; set; }
 		public Horario Inicio
@@ -46,16 +49,24 @@ namespace VillaBisutti.Delta.Core.Model
 				return (int)(Pax * 1.1);
 			}
 		}
+		
+
+
+		//Dados do contratante
 		public string NomeResponsavel { get; set; }
 		public string CPFResponsavel { get; set; }
 		public string EmailContato { get; set; }
 		public string TelefoneContato { get; set; }
 		public string NomeHomenageados { get; set; }
 		public string PerfilFesta { get; set; }
+
+
 		public int ProdutoraId { get; set; }
 		public Usuario Produtora { get; set; }
 		public int PosVendedoraId { get; set; }
 		public Usuario PosVendedora { get; set; }
+		
+
 		public int LocalCerimoniaId { get; set; }
 		public LocalCerimonia LocalCerimonia
 		{
@@ -70,12 +81,22 @@ namespace VillaBisutti.Delta.Core.Model
 		}
 		public string EnderecoCerimonia { get; set; }
 		public string Observacoes { get; set; }
+		
+
 		public Foto Layout { get; set; }
 		public List<ContratoAditivo> Contratos { get; set; }
 		public bool EmailBoasVindasEnviado { get; set; }
 		public bool OSFinalizada { get; set; }
 		public Decoracao Decoracao { get; set; }
 		public Montagem Montagem { get; set; }
+		
+
 		public List<ItemRoteiro> Roteiro { get; set; }
+		
+
+		public TipoServico TipoServico { get; set; }
+		public int CardapioId { get; set; }
+		public Cardapio Cardapio { get; set; }
+
 	}
 }

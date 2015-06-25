@@ -23,5 +23,15 @@ namespace VillaBisutti.Delta.Core.Business
 				});
 			new Data.ItemRoteiro().AddRange(itens);
 		}
+		//TODO: Implementar método abaixo (Gabriel)
+		public void CopiarCardapioPadrao(int eventoId)
+		{
+			/*
+			 * Tal qual o método acima
+			 * só que pega o TipoServico e o Cardapio no evento
+			 * e pega o CardapioPadrao correspondente
+			 * adiciona todos os pratos do CardapioPadrao no Evento
+			 */
+		}
 	}
 }

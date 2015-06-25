@@ -5,6 +5,8 @@ using System.Text;
 
 namespace VillaBisutti.Delta.Core.Model
 {
+	//TODO: Criar Data, ServiceModel e ServiceInterface deste model (André)
+	//TODO: Criar Tela de cadastro de locais (André)
 	public class Local : IEntityBase
 	{
 		public int Id { get; set; }

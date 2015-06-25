@@ -101,13 +101,9 @@
     <Compile Include="TipoItemSomIluminacao.cs" />
     <Compile Include="TipoPrato.cs" />
     <Compile Include="Usuario.cs" />
-    <Compile Include="WebServiceExamples.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj">

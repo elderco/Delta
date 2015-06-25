@@ -6,20 +6,9 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
+	//TODO: Criar modelo da classe para implementação (Velho)
 	public class ContratoAditivo : IEntityBase
 	{
 		public int Id { get; set; }
-		public int TipoEventoId { get; set; }
-		public TipoEvento TipoEvento
-		{
-			get
-			{
-				return (TipoEvento)TipoEventoId;
-			}
-			set
-			{
-				TipoEventoId = (int)value;
-			}
-		}
 	}
 }

@@ -71,9 +71,11 @@
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
+    <Compile Include="Data\Reuniao.cs" />
     <Compile Include="Data\SeedDatabase.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoPrato.cs" />
+    <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="Model\Cardapio.cs" />
     <Compile Include="Model\CardapioPadrao.cs" />
     <Compile Include="Model\Decoracao.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Model\PerfilUsuarioSistema.cs" />
     <Compile Include="Model\Prato.cs" />
     <Compile Include="Model\PratoSelecionado.cs" />
+    <Compile Include="Model\Reuniao.cs" />
     <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Model\TipoAcesso.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Model\TipoItemOutrosItens.cs" />
     <Compile Include="Model\TipoItemSomIluminacao.cs" />
     <Compile Include="Model\TipoPrato.cs" />
+    <Compile Include="Model\TipoReuniao.cs" />
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
