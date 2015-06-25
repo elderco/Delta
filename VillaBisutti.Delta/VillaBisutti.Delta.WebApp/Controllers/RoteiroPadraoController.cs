@@ -52,7 +52,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "Id")] model.RoteiroPadrao roteiropadrao)
+		public ActionResult Create([Bind(Include = "Id,TipoEvento")] model.RoteiroPadrao roteiropadrao)
 		{
 			if (ModelState.IsValid)
 			{
@@ -83,7 +83,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id")] model.RoteiroPadrao roteiropadrao)
+		public ActionResult Edit([Bind(Include = "Id,TipoEvento")] model.RoteiroPadrao roteiropadrao)
 		{
 			if (ModelState.IsValid)
 			{
