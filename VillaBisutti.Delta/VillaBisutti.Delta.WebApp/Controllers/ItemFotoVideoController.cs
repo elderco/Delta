@@ -69,6 +69,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+			SelectList TipoItemFotoVideo = new SelectList(new data.TipoItemFotoVideo().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemFotoVideo = TipoItemFotoVideo;
             return View(itemfotovideo);
         }
 

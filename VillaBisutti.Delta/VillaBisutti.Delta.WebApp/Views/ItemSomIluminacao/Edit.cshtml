@@ -10,43 +10,43 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ItemSomIluminacao</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome)
-                @Html.ValidationMessageFor(model => model.Nome)
-            </div>
-        </div>
+	<div class="form-horizontal">
+		<h4>ItemSomIluminacao</h4>
+		<hr />
+		@Html.ValidationSummary(true)
+		@Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quantidade)
-                @Html.ValidationMessageFor(model => model.Quantidade)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Nome)
+				@Html.ValidationMessageFor(model => model.Nome)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TipoItemSomIluminacaoId, "TipoItemSomIluminacaoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("TipoItemSomIluminacaoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.TipoItemSomIluminacaoId)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Quantidade)
+				@Html.ValidationMessageFor(model => model.Quantidade)
+			</div>
+		</div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.TipoItemSomIluminacao, "TipoItemSomIluminacao", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("TipoItemSomIluminacaoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemSomIluminacao, String.Empty)
+				@Html.ValidationMessageFor(model => model.TipoItemSomIluminacao)
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Save" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
 }
 
 <div>

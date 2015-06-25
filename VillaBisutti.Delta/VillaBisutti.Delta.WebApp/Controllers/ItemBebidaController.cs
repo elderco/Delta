@@ -69,6 +69,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+			SelectList TipoItemBebida = new SelectList(new data.TipoItemBebida().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemBebida = TipoItemBebida;
             return View(itembebida);
         }
 

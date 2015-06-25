@@ -70,6 +70,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+			SelectList TipoItemMontagem = new SelectList(new data.TipoItemMontagem().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemMontagem = TipoItemMontagem;
             return View(itemmontagem);
         }
 
