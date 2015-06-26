@@ -48,23 +48,6 @@
                 @Html.ValidationMessageFor(model => model.Observacao)
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RoteiroPadrao.Id, "RoteiroPadraoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("RoteiroPadraoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.RoteiroPadrao.Id)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RoteiroPadrao.TipoEvento, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RoteiroPadrao.TipoEvento)
-                @Html.ValidationMessageFor(model => model.RoteiroPadrao.TipoEvento)
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
