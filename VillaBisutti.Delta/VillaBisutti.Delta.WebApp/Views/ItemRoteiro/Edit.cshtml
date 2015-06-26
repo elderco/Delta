@@ -50,18 +50,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RoteiroPadraoId, "RoteiroPadraoId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RoteiroPadrao.Id, "RoteiroPadraoId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("RoteiroPadraoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.RoteiroPadraoId)
+                @Html.ValidationMessageFor(model => model.RoteiroPadrao.Id)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RoteiroId, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RoteiroPadrao.TipoEvento, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.RoteiroId)
-                @Html.ValidationMessageFor(model => model.RoteiroId)
+                @Html.EditorFor(model => model.RoteiroPadrao.TipoEvento)
+                @Html.ValidationMessageFor(model => model.RoteiroPadrao.TipoEvento)
             </div>
         </div>
 
