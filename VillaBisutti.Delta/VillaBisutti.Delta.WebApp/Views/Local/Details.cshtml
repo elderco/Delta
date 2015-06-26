@@ -1,0 +1,42 @@
+﻿@model VillaBisutti.Delta.Core.Model.Local
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Local</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiglaCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiglaCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoCasa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

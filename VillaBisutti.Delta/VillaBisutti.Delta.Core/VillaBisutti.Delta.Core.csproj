@@ -69,6 +69,7 @@
     <Compile Include="Data\ItemOutrosItens.cs" />
     <Compile Include="Data\ItemRoteiro.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
+    <Compile Include="Data\Local.cs" />
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
     <Compile Include="Data\Reuniao.cs" />

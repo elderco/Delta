@@ -84,6 +84,7 @@
     <Compile Include="ItemMontagem.cs" />
     <Compile Include="ItemOutrosItemItemDiverso.cs" />
     <Compile Include="ItemSomIluminacao.cs" />
+    <Compile Include="Local.cs" />
     <Compile Include="Montagem.cs" />
     <Compile Include="OutroItem.cs" />
     <Compile Include="PerfilUsuarioSistema.cs" />
