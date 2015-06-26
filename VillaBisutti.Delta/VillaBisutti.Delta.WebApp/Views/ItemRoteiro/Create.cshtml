@@ -27,7 +27,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Inicio, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Inicio)
+				@Html.EditorFor(model => model.Inicio.Hora)
+                @Html.EditorFor(model => model.Inicio.Minuto)
                 @Html.ValidationMessageFor(model => model.Inicio)
             </div>
         </div>

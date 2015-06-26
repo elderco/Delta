@@ -10,5 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ContratoAditivo : IEntityBase
 	{
 		public int Id { get; set; }
+		public string Arquivo { get; set; }
+		public string NumeroContrato { get; set; }
 	}
 }
