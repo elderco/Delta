@@ -11,22 +11,25 @@ namespace VillaBisutti.Delta.Core.Data
 		//TODO: Implementar os métodos abaixo (Gabriel)
 		public override void Update(Model.TipoReuniao entity)
 		{
-			throw new NotImplementedException();
+			Model.TipoReuniao tiporeuniao = context.TipoReuniao.FirstOrDefault(s => s.Id.Equals(entity.Id));
+			context.Entry(tiporeuniao).CurrentValues.SetValues(entity);
+			context.SaveChanges();
 		}
 
 		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoReuniao entity)
 		{
-			throw new NotImplementedException();
+			return context.Entry(entity);
 		}
 
 		public override void Insert(Model.TipoReuniao entity)
 		{
-			throw new NotImplementedException();
+			context.TipoReuniao.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.TipoReuniao> GetCollection()
 		{
-			throw new NotImplementedException();
+			return context.TipoReuniao.ToList();
 		}
 	}
 }

@@ -49,6 +49,8 @@ namespace VillaBisutti.Delta.Core.Data
         public DbSet<Model.Prato> Prato{ get; set; }
         public DbSet<Model.TipoPrato> TipoPrato { get; set; }
         public DbSet<Model.PratoSelecionado> PratoSelecionado { get; set; }
+		public DbSet<Model.TipoReuniao> TipoReuniao { get; set; }
+		public DbSet<Model.Reuniao> Reuniao { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

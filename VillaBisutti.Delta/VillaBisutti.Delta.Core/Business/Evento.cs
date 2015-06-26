@@ -26,6 +26,7 @@ namespace VillaBisutti.Delta.Core.Business
 		//TODO: Implementar método abaixo (Gabriel)
 		public void CopiarCardapioPadrao(int eventoId)
 		{
+			//Model.TipoServico tiposervico = new Data.TipoServico().GetElement(eventoId);
 			/*
 			 * Tal qual o método acima
 			 * só que pega o TipoServico e o Cardapio no evento
