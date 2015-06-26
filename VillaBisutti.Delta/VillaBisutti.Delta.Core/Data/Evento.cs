@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -28,11 +29,11 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Evento> GetCollection()
 		{
-			return context.Evento.ToList();
+			return context.Evento.Include(e => e.Cardapio).ToList();
 		}
 		public List<Model.Evento> GetEventos(int casaId, int produtorId)
 		{
-			return context.Evento.Where(e => 
+			return context.Evento.Where(e =>
 				e.LocalId == casaId && e.ProdutoraId == produtorId
 				).ToList();
 		}

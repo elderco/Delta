@@ -26,13 +26,11 @@ namespace VillaBisutti.Delta.Core.Business
 		//TODO: Implementar método abaixo (Gabriel)
 		public void CopiarCardapioPadrao(int eventoId)
 		{
-			//Model.TipoServico tiposervico = new Data.TipoServico().GetElement(eventoId);
-			/*
-			 * Tal qual o método acima
-			 * só que pega o TipoServico e o Cardapio no evento
-			 * e pega o CardapioPadrao correspondente
-			 * adiciona todos os pratos do CardapioPadrao no Evento
-			 */
+			Model.Evento evento = new Data.Evento().GetElement(eventoId);
+			Model.CardapioPadrao cardapio = new Data.CardapioPadrao().GetCollection(0).FirstOrDefault(cp => cp.CardapioId == evento.CardapioId && cp.TipoServico == evento.TipoServico);
+			foreach(Model.Prato p in cardapio.PratosSelecionados)
+				evento.Cardapio.Pratos.Add(p);
+			new Data.Evento().Update(evento);
 		}
 	}
 }
