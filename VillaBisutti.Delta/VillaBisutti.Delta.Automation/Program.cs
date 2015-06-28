@@ -12,14 +12,45 @@ namespace VillaBisutti.Delta.Automation
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
-		static void Main()
+		static void Main(string [] args)
 		{
-			ServiceBase[] ServicesToRun;
-			ServicesToRun = new ServiceBase[] 
-            { 
-                new Service1() 
-            };
-			ServiceBase.Run(ServicesToRun);
-		}
-	}
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
+            if (args.Length == 0)
+            {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[] 
+			    { 
+				    new Service() 
+			    };
+
+                try
+                {
+                    ServiceBase.Run(ServicesToRun);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            else if (args[0] == "/console")
+            {
+                Watcher wather = new Watcher();
+                Console.ReadKey();
+            }
+            else
+                //TODO Logger
+                Console.ReadKey();
+         }
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            if (e != null && e.ExceptionObject != null)
+            {
+                //TODO: Log
+                //logger.Error(e.ExceptionObject as Exception);
+
+            }
+        }
+	}   
 }

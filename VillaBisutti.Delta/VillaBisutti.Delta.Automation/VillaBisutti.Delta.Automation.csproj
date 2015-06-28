@@ -42,18 +42,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.cs">
+    <Compile Include="AgendaSemanal\AgendaSemanal.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Service1.Designer.cs">
-      <DependentUpon>Service1.cs</DependentUpon>
+    <Compile Include="AgendaSemanal\AgendaSemanal.Designer.cs">
+      <DependentUpon>AgendaSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoasVindas\BoasVindas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BoasVindas\BoasVindas.Designer.cs">
+      <DependentUpon>BoasVindas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContratacaoServicoTerceiro\ServicoTerceiro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratacaoServicoTerceiro\ServicoTerceiro.Designer.cs">
+      <DependentUpon>ServicoTerceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ExtensionMethods.cs" />
+    <Compile Include="OSFinalizada\OSFinalizada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OSFinalizada\OSFinalizada.Designer.cs">
+      <DependentUpon>OSFinalizada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrazoFinal\PrazoFinal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrazoFinal\PrazoFinal.Designer.cs">
+      <DependentUpon>PrazoFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosContratados\ProdutosContratados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProdutosContratados\ProdutosContratados.Designer.cs">
+      <DependentUpon>ProdutosContratados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Watcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
