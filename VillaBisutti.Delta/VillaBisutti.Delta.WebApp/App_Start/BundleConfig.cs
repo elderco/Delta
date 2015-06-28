@@ -9,6 +9,7 @@ namespace VillaBisutti.Delta.WebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-ui.min.js",
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.WebApp
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+					  "~/Content/jquery-ui.min.css",
 					  "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
