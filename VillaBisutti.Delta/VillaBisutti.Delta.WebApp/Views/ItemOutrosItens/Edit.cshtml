@@ -1,10 +1,9 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemOutrosItens
 
 @{
+	Layout = null;
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -12,8 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ItemOutrosItens</h4>
-        <hr />
+   
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
@@ -47,12 +45,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

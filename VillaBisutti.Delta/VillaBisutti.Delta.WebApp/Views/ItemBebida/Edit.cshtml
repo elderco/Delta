@@ -1,19 +1,15 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemBebida
 
 @{
+	Layout = null;	
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
-		<h4>TipoItemBebida</h4>
-		<hr />
+
 		@Html.ValidationSummary(true)
 		@Html.HiddenFor(model => model.Id)
 
@@ -49,10 +45,3 @@
 	</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
