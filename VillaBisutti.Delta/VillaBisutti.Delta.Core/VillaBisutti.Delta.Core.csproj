@@ -121,8 +121,8 @@
     <Compile Include="Model\Prato.cs" />
     <Compile Include="Model\PratoSelecionado.cs" />
     <Compile Include="Model\Reuniao.cs" />
-    <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\ItemSomIluminacaoSelecionado.cs" />
+    <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\TipoAcesso.cs" />
     <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBebida.cs" />
