@@ -9,8 +9,9 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemRoteiro : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name = "Título")]
+		[Display(Name = "Título"), Required]
 		public string Titulo { get; set; }
+		[Required]
 		public int HorarioInicio { get; set; }
 		[Display(Name = "Início")]
 		public Horario Inicio
@@ -27,8 +28,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool Importante { get; set; }
 		[Display(Name = "Observação")]
 		public string Observacao { get; set; }
-		public int? RoteiroPadraoId { get; set; }
-		public RoteiroPadrao RoteiroPadrao { get; set; }
+		public TipoEvento? TipoEvento { get; set; }
 		public int? EventoId { get; set; }
 		public Evento Evento { get; set; }
 	}

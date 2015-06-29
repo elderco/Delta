@@ -27,12 +27,22 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		protected override List<Model.ItemRoteiro> GetCollection()
 		{
-			return context.ItemRoteiro.Include(p => p.RoteiroPadrao).ToList();
+			List<Model.ItemRoteiro> lista = context.ItemRoteiro.ToList();
+			lista = lista.OrderBy(ir => ir.HorarioInicio).ToList();
+			return lista;
 		}
 		public void AddRange(IEnumerable<Model.ItemRoteiro> collection)
 		{
 			context.ItemRoteiro.AddRange(collection);
 			context.SaveChanges();
+		}
+
+		public List<Model.ItemRoteiro> GetFromTipoEvento(int TipoEvento)
+		{
+			Model.TipoEvento tipo = (Model.TipoEvento)TipoEvento;
+			List<Model.ItemRoteiro> lista = context.ItemRoteiro.Where(i => i.TipoEvento.Value == tipo).ToList();
+			lista = lista.OrderBy(ir => ir.HorarioInicio).ToList();
+			return lista;
 		}
 	}
 }

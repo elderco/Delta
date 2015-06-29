@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.Observacao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoteiroPadrao)
+            @Html.DisplayNameFor(model => model.TipoEvento)
         </th>
         <th></th>
     </tr>
@@ -50,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.Observacao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RoteiroPadrao.TipoEvento)
+            @Html.DisplayFor(modelItem => item.TipoEvento)
         </td>
         <td>
 			@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |

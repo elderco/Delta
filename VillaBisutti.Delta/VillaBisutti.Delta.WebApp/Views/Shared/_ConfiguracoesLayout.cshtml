@@ -7,6 +7,12 @@
 <div class="col-md-1 navbar navbar-default">
 	<ul class="nav navbar-nav">
 		<li>
+			<a href="javascript:void(0);">
+				<i class="menu-icon glyphicon glyphicon-tree-deciduous"></i>
+				<span class="menu-text glyphicon-class"> Usuários </span>
+			</a>
+		</li>
+		<li>
 			<a href="@Url.Action("Index", "ItemDecoracao")">
 				<i class="menu-icon glyphicon glyphicon-tree-deciduous"></i>
 				<span class="menu-text glyphicon-class"> Decoração </span>
@@ -72,6 +78,15 @@
 				<i class="menu-icon glyphicon glyphicon-list"></i>
 				<span class="menu-text glyphicon-class"> Roteiro padrão </span>
 			</a>
+			<ul>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario })">@VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva })">@VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva })">@VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Casamento })">@VillaBisutti.Delta.Core.Model.TipoEvento.Casamento</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo })">@VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Debutante })">@VillaBisutti.Delta.Core.Model.TipoEvento.Debutante</a></li>
+				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Outro })">@VillaBisutti.Delta.Core.Model.TipoEvento.Outro</a></li>
+			</ul>
 		</li>
 		<li>
 			<a href="javascript:void(0);">

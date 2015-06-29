@@ -156,6 +156,45 @@ function RepositionStack() {
 function RemoveStack(id) {
 	window.setTimeout("$('#" + id + "').remove();SetCurrentY();RepositionStack();", 8000);
 }
+function CreateHorarioEditor(itemId) {
+	var item = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	$(item).addClass("hide");
+	var $hour = $("<input/>")
+		.attr("type", "number")
+		.attr("min", "0")
+		.attr("max", "23")
+		.attr("id", itemId + "_h")
+		.change(function () {
+			ConvertHorarioBack(itemId);
+		});
+	var $minute = $("<input/>")
+		.attr("type", "number")
+		.attr("min", "0")
+		.attr("max", "59")
+		.attr("step", "15")
+		.attr("id", itemId + "_m")
+		.change(function () {
+			ConvertHorarioBack(itemId);
+		});
+	var $texto = $("<span/>").html(":");
+	$hour.insertBefore($(item));
+	$texto.insertBefore($(item));
+	$minute.insertBefore($(item));
+	ConvertHorario(item);
+}
+function ConvertHorario(itemId) {
+	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	var horas = Math.floor($(itemId).val() / 60);
+	var minutos = $(itemId).val() - (horas * 60);
+	$(itemId + "_h").val(horas);
+	$(itemId + "_m").val(minutos);
+}
+function ConvertHorarioBack(itemId) {
+	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	var horas = parseInt($(itemId + "_h").val());
+	var minutos = parseInt($(itemId + "_m").val());
+	$(itemId).val((horas * 60) + minutos);
+}
 function InitializeLoading() {
 	var $background = $("<div/>")
 		.attr("id", "LoadingOverlay")
