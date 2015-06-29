@@ -11,7 +11,7 @@
         <hr />
         @Html.ValidationSummary(true)
 
-        <div class="form-group">
+        <div class="form-group row">
             @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Nome)
@@ -19,55 +19,43 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PadraoAniversario, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PadraoAniversario)
-                @Html.ValidationMessageFor(model => model.PadraoAniversario)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.PadraoAniversario, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PadraoAniversario)
+				@Html.ValidationMessageFor(model => model.PadraoAniversario)
+			</div>
+			@Html.LabelFor(model => model.PadraoBarmitzva, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PadraoBarmitzva)
+				@Html.ValidationMessageFor(model => model.PadraoBarmitzva)
+			</div>
+			@Html.LabelFor(model => model.PadraoBatmitzva, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PadraoBatmitzva)
+				@Html.ValidationMessageFor(model => model.PadraoBatmitzva)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PadraoBarmitzva, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PadraoBarmitzva)
-                @Html.ValidationMessageFor(model => model.PadraoBarmitzva)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PadraoBatmitzva, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PadraoBatmitzva)
-                @Html.ValidationMessageFor(model => model.PadraoBatmitzva)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PadraoCasamento, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PadraoCasamento)
-                @Html.ValidationMessageFor(model => model.PadraoCasamento)
-            </div>
-        </div>
-
-        <div class="form-group">
+		<div class="form-group row">
+			@Html.LabelFor(model => model.PadraoCasamento, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PadraoCasamento)
+				@Html.ValidationMessageFor(model => model.PadraoCasamento)
+			</div>
             @Html.LabelFor(model => model.PadraoCorporativo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-2">
                 @Html.EditorFor(model => model.PadraoCorporativo)
                 @Html.ValidationMessageFor(model => model.PadraoCorporativo)
             </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.PadraoDebutante, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-2">
                 @Html.EditorFor(model => model.PadraoDebutante)
                 @Html.ValidationMessageFor(model => model.PadraoDebutante)
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group row">
             @Html.LabelFor(model => model.PadraoOutro, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PadraoOutro)

@@ -22,9 +22,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PadraoCasamento { get; set; }
 		[Display(Name="Item padrão para Corporativo")]
 		public bool PadraoCorporativo { get; set; }
-		[Display(Name="Tipo padrão para Debutante")]
+		[Display(Name="Item padrão para Debutante")]
 		public bool PadraoDebutante { get; set; }
-		[Display(Name="Tipo deve ser criado junto com eventro do tipo Outro")]
+		[Display(Name="Item padrão para Outro")]
 		public bool PadraoOutro { get; set; }
 	}
 }
