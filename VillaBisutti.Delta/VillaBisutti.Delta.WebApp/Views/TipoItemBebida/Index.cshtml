@@ -12,14 +12,60 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoAniversario)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoBarmitzva)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoBatmitzva)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoCasamento)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoCorporativo)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoDebutante)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.PadraoOutro)
+		</th>
         <th></th>
     </tr>
+	<tr>
+		<th></th>
+	</tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoAniversario)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoBarmitzva)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoBatmitzva)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoCasamento)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoCorporativo)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoDebutante)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PadraoOutro)
+		</td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

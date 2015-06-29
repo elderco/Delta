@@ -14,7 +14,7 @@ namespace VillaBisutti.Delta.Core.Data
 			//context.TipoItemBebida.Attach(entity);
 			//context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 			//context.SaveChanges();
-			Model.TipoItemBebida original = context.TipoItemBebida.Find(entity.Id);
+			Model.TipoItemBebida original = context.TipoItemBebida.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
