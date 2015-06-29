@@ -1,14 +1,20 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.TipoItemFotoVideo>
-
 @{
-    ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	ViewBag.Title = "Index";
 }
+@section scripts {
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".PopUpActionLinks").click(function (e) {
+				event.preventDefault();
+				ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+			});
+		});
+	</script>
+}
+    @Html.Action("Create", "TipoItemFotoVideo")
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -64,11 +70,11 @@
 		<td>
 			@Html.DisplayFor(modelItem => item.PadraoOutro)
 		</td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+        <td>		
+			@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+			@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Detalhes" }) |
+			@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+ </td>
     </tr>
 }
 
