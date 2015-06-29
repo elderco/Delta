@@ -9,8 +9,8 @@ namespace VillaBisutti.Delta.WebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-ui.min.js",
-                        "~/Scripts/jquery-{version}.js"));
+						"~/Scripts/jquery-{version}.js",
+						"~/Scripts/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -28,6 +28,8 @@ namespace VillaBisutti.Delta.WebApp
 					  "~/Content/jquery-ui.min.css",
 					  "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+			bundles.Add(new ScriptBundle("~/bundles/own").Include("~/Scripts/Functions.js"));
         }
     }
 }
