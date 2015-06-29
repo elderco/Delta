@@ -51,7 +51,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoItemBebida().Insert(tipoitembebida);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "ItemBebida");
             }
 
             return View(tipoitembebida);
