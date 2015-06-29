@@ -1,6 +1,7 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemDecoracao
 
 @{
+	Layout = null;		
 	ViewBag.Title = "Create";
 }
 <script type="text/javascript" language="javascript">
@@ -24,11 +25,9 @@
 	});
 </script>
 
-<h2>Create</h2>
 
-
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm("ItemCreated", "ItemDecoracao"))
+	{
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
@@ -71,12 +70,4 @@
 			</div>
 		</div>
 	</div>
-}
-
-<div>
-	@Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
 }
