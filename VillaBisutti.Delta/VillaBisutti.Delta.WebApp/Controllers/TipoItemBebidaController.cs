@@ -82,7 +82,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoItemBebida().Update(tipoitembebida);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "ItemBebida");
             }
             return View(tipoitembebida);
         }
@@ -108,7 +108,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.TipoItemBebida().Delete(id);
-            return RedirectToAction("Index");
+			return RedirectToAction("Index", "ItemBebida");
         }
 
         protected override void Dispose(bool disposing)

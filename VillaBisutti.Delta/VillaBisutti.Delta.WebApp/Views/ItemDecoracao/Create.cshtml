@@ -22,7 +22,9 @@
 			$("#EditarTipoItem").click(function(){
 				ShowPopUp(urlEditar + id, "Editar tipo de item de decoração", 790);
 			});
-			$("#ExcluirTipoItem").attr("href", urlDeletar + id);
+			$("#ExcluirTipoItem").click(function(){
+				ShowPopUp(urlDeletar + id, "Excluir tipo de item de decoração", 790);
+			});
 		});
 	});
 </script>

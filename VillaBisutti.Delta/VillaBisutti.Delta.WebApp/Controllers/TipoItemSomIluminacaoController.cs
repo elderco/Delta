@@ -51,7 +51,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoItemSomIluminacao().Insert(tipoitemsomiluminacao);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "ItemSomIluminacao");
             }
 
             return View(tipoitemsomiluminacao);
@@ -82,7 +82,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoItemSomIluminacao().Update(tipoitemsomiluminacao);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "ItemSomIluminacao");
             }
             return View(tipoitemsomiluminacao);
         }
@@ -108,7 +108,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.TipoItemSomIluminacao().Delete(id);
-            return RedirectToAction("Index");
+			return RedirectToAction("Index", "ItemSomIluminacao");
         }
 
         protected override void Dispose(bool disposing)
