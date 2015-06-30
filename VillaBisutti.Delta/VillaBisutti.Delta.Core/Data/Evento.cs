@@ -37,5 +37,26 @@ namespace VillaBisutti.Delta.Core.Data
 				e.LocalId == casaId && e.ProdutoraId == produtorId
 				).ToList();
 		}
+
+        public List<Model.Evento> GetEventosServicoTerceiro()
+        {
+            return context.Evento
+                .Include(e => e.Decoracao).Include(e => e.Decoracao.Itens)
+                .Include(e => e.Montagem).Include(e => e.Montagem.Itens)
+                .Include(e => e.Bebida).Include(e => e.Bebida.Itens)
+                .Include(e => e.BoloDoceBemCasado).Include(e => e.BoloDoceBemCasado.Itens)
+                .Include(e => e.FotoVideo).Include(e => e.FotoVideo.Itens)
+                .Include(e => e.SomIluminacao).Include(e => e.SomIluminacao.Itens)
+                .Include(e => e.OutrosItens).Include(e => e.OutrosItens.Itens)
+                 //.Where((i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false))
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                    //.Where(i => i.ContratacaoBisutti == true && i.FornecimentoBisutti == false && i.Definido == true && i.FornecedorStartado == false)
+                .ToList();
+                
+        }
 	}
 }

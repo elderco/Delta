@@ -4,16 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class Decoracao
-	{
-		[Key, ForeignKey("Evento")]
+    public class Bebida
+    {
+        [Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		public Evento Evento { get; set; }
 		public string CoresCerimonia { get; set; }
 		public string Observacoes { get; set; }
-		public List<ItemDecoracaoSelecionado> Itens { get; set; }
-	}
+		public List<ItemBebidaSelecionado> Itens { get; set; }
+    }
 }

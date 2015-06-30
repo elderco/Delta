@@ -89,7 +89,14 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool OSFinalizada { get; set; }
 		public Decoracao Decoracao { get; set; }
 		public Montagem Montagem { get; set; }
-		
+
+        public Bebida Bebida { get; set; }
+        public BoloDoceBemCasado BoloDoceBemCasado { get; set; }
+        public FotoVideo FotoVideo{ get; set; }
+        public SomIluminacao SomIluminacao { get; set; }
+
+        public OutrosItens OutrosItens { get; set; }
+
 
 		public List<ItemRoteiro> Roteiro { get; set; }
 		

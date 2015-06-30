@@ -18,6 +18,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool Contratado { get; set; }
 		public bool ContratacaoBisutti { get; set; }
 		public bool FornecimentoBisutti { get; set; }
+
+        public bool FornecedorStartado { get; set; }
 		public int Quantidade { get; set; }
 		public int HorarioEntrega { get; set; }
 		public Horario Entrega

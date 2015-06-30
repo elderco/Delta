@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemMontagemSelecionado> ItemMontagemSelecionado { get; set; }
 		public DbSet<Model.Local> Local { get; set; }
 		public  DbSet<Model.ItemRoteiro> ItemRoteiro { get; set; }
-		public DbSet<Model.OutroItem> OutroItem { get; set; }
+		public DbSet<Model.OutrosItens> OutrosItens { get; set; }
 		public DbSet<Model.PerfilUsuarioSistema> PerfilUsuarioSistema { get; set; }
 		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }
 		public DbSet<Model.ItemSomIluminacaoSelecionado> ItemSomIluminacaoSelecionado { get; set; }

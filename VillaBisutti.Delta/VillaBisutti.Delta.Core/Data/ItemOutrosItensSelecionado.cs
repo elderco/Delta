@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
 {
-	public class ItemOutrosItensSelecionado : DataAccessBase<Model.OutroItem>
+	public class ItemOutrosItensSelecionado : DataAccessBase<Model.OutrosItens>
 	{
-		public override void Update(Model.OutroItem entity)
+        public override void Update(Model.OutrosItens entity)
 		{
-			Model.OutroItem original = context.OutroItem.FirstOrDefault(a => a.Id == entity.Id);
+            Model.OutrosItens original = context.OutrosItens.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.OutroItem entity)
+        public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.OutrosItens entity)
 		{
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.OutroItem entity)
+        public override void Insert(Model.OutrosItens entity)
 		{
-			context.OutroItem.Add(entity);
+            context.OutrosItens.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.OutroItem> GetCollection()
+        protected override List<Model.OutrosItens> GetCollection()
 		{
-			return context.OutroItem.ToList();
+            return context.OutrosItens.ToList();
 		}
 	}
 }

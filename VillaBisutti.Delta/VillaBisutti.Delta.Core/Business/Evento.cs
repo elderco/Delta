@@ -32,5 +32,9 @@ namespace VillaBisutti.Delta.Core.Business
 				evento.Cardapio.Pratos.Add(p);
 			new Data.Evento().Update(evento);
 		}
+        public void AcionarEventosTerceiros()
+        {
+            List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
+        }
 	}
 }
