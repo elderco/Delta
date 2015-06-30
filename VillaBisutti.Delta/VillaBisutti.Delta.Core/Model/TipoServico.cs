@@ -9,7 +9,8 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public enum TipoServico
 	{
-		Inglesa=0,
+		[Display(Name = "À Inglesa")]
+		Inglesa = 0,
 		[Display(Name = "Franco-Americano")]
 		FrancoAmericano = 1,
 		[Display(Name = "Menu-Degustação")]
