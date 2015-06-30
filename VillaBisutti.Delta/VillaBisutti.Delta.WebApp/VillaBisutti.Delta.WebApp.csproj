@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\CronogramaCerimonialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemBebidaController.cs" />
     <Compile Include="Controllers\ItemDecoracaoController.cs" />
@@ -359,6 +360,11 @@
     <Content Include="Views\Local\Index.cshtml" />
     <Content Include="Views\Shared\_EventosLayout.cshtml" />
     <Content Include="Views\Shared\_ConfiguracoesLayout.cshtml" />
+    <Content Include="Views\CronogramaCerimonial\Create.cshtml" />
+    <Content Include="Views\CronogramaCerimonial\Delete.cshtml" />
+    <Content Include="Views\CronogramaCerimonial\Details.cshtml" />
+    <Content Include="Views\CronogramaCerimonial\Edit.cshtml" />
+    <Content Include="Views\CronogramaCerimonial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
