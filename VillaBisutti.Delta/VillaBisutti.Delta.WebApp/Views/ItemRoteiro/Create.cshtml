@@ -1,16 +1,15 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemRoteiro
 
 @{
-	//Layout = null;
+	Layout = null;
 	ViewBag.Title = "Create";
 }
-@section scripts{
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
 			CreateHorarioEditor("HorarioInicio");
 		});
 	</script>
-}
+@Scripts.Render("~/bundles/jqueryval")
 @using (Html.BeginForm("ItemCreated", "ItemRoteiro"))
 {
 	@Html.AntiForgeryToken()

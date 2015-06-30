@@ -223,17 +223,17 @@ function HideLoading() {
 	window.setTimeout("$(\"#LoadingOverlay\").hide();$(\"#LoadingImage\").hide();", 500);
 }
 $(document)
-.ajaxStart(function () {
-	ShowLoading();
-})
-.ajaxStop(function () {
-	HideLoading();
-})
-.ready(function () {
-	InitializeLoading();
-	ShowLoading();
-	HideLoading();
-})
-.error(function () {
-	HideLoading();
-});
+	.ajaxStart(function () {
+		ShowLoading();
+	})
+	.ajaxStop(function () {
+		HideLoading();
+	})
+	.ready(function () {
+		InitializeLoading();
+		ShowLoading();
+		HideLoading();
+	})
+	.error(function () {
+		HideLoading();
+	});
