@@ -14,7 +14,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     public class ItemCerimonialController : Controller
     {
         // GET: /ItemCerimonial/
-        public ActionResult Index()
+		public ActionResult Index(int TipoEvento)
         {
 			ViewBag.TipoEvento = TipoEvento;
 			return View(new data.ItemCerimonial().GetFromTipoEvento(TipoEvento));
@@ -27,8 +27,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
+			model.ItemCerimonial itemcerimonial = new data.ItemCerimonial().GetElement(id.HasValue ? id.Value : 0);
+			if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
@@ -36,10 +36,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         }
 
         // GET: /ItemCerimonial/Create
-        public ActionResult Create()
+		public ActionResult Create(int TipoEvento)
         {
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel");
-            return View();
+			ViewBag.TipoEvento = TipoEvento;
+			return View();
         }
 
         // POST: /ItemCerimonial/Create
@@ -47,17 +47,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
+		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] model.ItemCerimonial itemcerimonial)
         {
-            if (ModelState.IsValid)
-            {
-                db.ItemCerimonial.Add(itemcerimonial);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
-            return View(itemcerimonial);
+			new data.ItemCerimonial().Insert(itemcerimonial);
+			return RedirectToAction("Index", new { TipoEvento = (int)itemcerimonial.TipoEvento });
+		
         }
 
         // GET: /ItemCerimonial/Edit/5
@@ -67,12 +61,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
+			model.ItemCerimonial itemcerimonial = new data.ItemCerimonial().GetElement(id.HasValue ? id.Value : 0);
+			if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
             return View(itemcerimonial);
         }
 
@@ -81,15 +74,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
+        public ActionResult Edit([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] model.ItemCerimonial itemcerimonial)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itemcerimonial).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemCerimonial().Update(itemcerimonial);
                 return RedirectToAction("Index");
             }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
             return View(itemcerimonial);
         }
 
@@ -100,8 +91,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
+			model.ItemCerimonial itemcerimonial = new data.ItemCerimonial().GetElement(id.HasValue ? id.Value : 0);
+			if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
@@ -113,18 +104,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            db.ItemCerimonial.Remove(itemcerimonial);
-            db.SaveChanges();
+			new data.ItemCerimonial().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }
