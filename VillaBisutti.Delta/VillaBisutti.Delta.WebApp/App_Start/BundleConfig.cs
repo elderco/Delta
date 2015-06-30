@@ -29,7 +29,7 @@ namespace VillaBisutti.Delta.WebApp
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/jquery-ui.min.css",
-					  "~/Content/bootstrap.css",
+					  "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-glyphs.min.css",
                       "~/Content/ace.min.css",
                       "~/Content/estilos.css"));
