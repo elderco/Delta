@@ -18,7 +18,9 @@
 .login-layout .widget-box .widget-main{background-color: #DBC6B1 !important}
 .login-layout .widget-box{background-color: #522D1C !important}
 .field-validation-error { color: #cf2b2b; }
-
+.btn, .btn-default { border-color: #11100C !important; background-color: #522d1c !important; color: #fefefe !important; }
+.btn-default:hover { background-color: #94785c !important; }
+.btn-default:active, .btn-default:focus { background-color: #fefefe !important; color: #522d1c !important; }
 fieldset{border: 1px solid #522D1C !important}
 
 
@@ -57,7 +59,7 @@ div.tab-content{width:770px;padding:8px 6px; min-height:200px; margin:0 !importa
 .form-actions{padding: 5px; border:solid 1px #ccc; border-top: none;}
 .destaque{background:#FFFFCC}
 
-td, th{vertical-align: middle; text-align: center; padding-top: 5px !important; font-size: 110%}
+td, th{vertical-align: middle; /*text-align: center;*/ padding-top: 5px !important; font-size: 110%}
 
 /* Forms */
 select{padding:0; height: 22px}

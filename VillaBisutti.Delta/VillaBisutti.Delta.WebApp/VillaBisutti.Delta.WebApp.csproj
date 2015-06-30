@@ -370,6 +370,8 @@
     <Content Include="Views\ItemCerimonial\Details.cshtml" />
     <Content Include="Views\ItemCerimonial\Edit.cshtml" />
     <Content Include="Views\ItemCerimonial\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
