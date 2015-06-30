@@ -18,8 +18,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> BoloDoceBemCasado { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratoAdivitivo { get; set; }
-		public DbSet<Model.CronogramaCerimonial> CronogramaCerimonial { get; set; }
-		public DbSet<Model.CronogramaCerimonialPadrao> CronogramaCerimonialPadrao { get; set; }
 		public DbSet<Model.ItemDecoracaoSelecionado> Decoracao { get; set; }
 		public DbSet<Model.ItemFotoVideoSelecionado> FotoVideo { get; set; }
 		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
@@ -31,7 +29,8 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemSomIluminacao> ItemSomIluminacao { get; set; }
 		public DbSet<Model.ItemMontagemSelecionado> ItemMontagemSelecionado { get; set; }
 		public DbSet<Model.Local> Local { get; set; }
-		public  DbSet<Model.ItemRoteiro> ItemRoteiro { get; set; }
+		public DbSet<Model.ItemRoteiro> ItemRoteiro { get; set; }
+		public DbSet<Model.ItemCerimonial> ItemCerimonial { get; set; }
 		public DbSet<Model.OutrosItens> OutrosItens { get; set; }
 		public DbSet<Model.PerfilUsuarioSistema> PerfilUsuarioSistema { get; set; }
 		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }

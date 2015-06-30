@@ -6,112 +6,115 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class CronogramaCerimonialController : Controller
+    public class ItemCerimonialController : Controller
     {
-        private Context db = new Context();
-
-        // GET: /CronogramaCerimonial/
+        // GET: /ItemCerimonial/
         public ActionResult Index()
         {
-            return View(db.CronogramaCerimonial.ToList());
+			ViewBag.TipoEvento = TipoEvento;
+			return View(new data.ItemCerimonial().GetFromTipoEvento(TipoEvento));
         }
 
-        // GET: /CronogramaCerimonial/Details/5
+        // GET: /ItemCerimonial/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CronogramaCerimonial cronogramacerimonial = db.CronogramaCerimonial.Find(id);
-            if (cronogramacerimonial == null)
+            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
+            if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
-            return View(cronogramacerimonial);
+            return View(itemcerimonial);
         }
 
-        // GET: /CronogramaCerimonial/Create
+        // GET: /ItemCerimonial/Create
         public ActionResult Create()
         {
+            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel");
             return View();
         }
 
-        // POST: /CronogramaCerimonial/Create
+        // POST: /ItemCerimonial/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id")] CronogramaCerimonial cronogramacerimonial)
+        public ActionResult Create([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
         {
             if (ModelState.IsValid)
             {
-                db.CronogramaCerimonial.Add(cronogramacerimonial);
+                db.ItemCerimonial.Add(itemcerimonial);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cronogramacerimonial);
+            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
+            return View(itemcerimonial);
         }
 
-        // GET: /CronogramaCerimonial/Edit/5
+        // GET: /ItemCerimonial/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CronogramaCerimonial cronogramacerimonial = db.CronogramaCerimonial.Find(id);
-            if (cronogramacerimonial == null)
+            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
+            if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
-            return View(cronogramacerimonial);
+            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
+            return View(itemcerimonial);
         }
 
-        // POST: /CronogramaCerimonial/Edit/5
+        // POST: /ItemCerimonial/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id")] CronogramaCerimonial cronogramacerimonial)
+        public ActionResult Edit([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cronogramacerimonial).State = EntityState.Modified;
+                db.Entry(itemcerimonial).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cronogramacerimonial);
+            ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itemcerimonial.EventoId);
+            return View(itemcerimonial);
         }
 
-        // GET: /CronogramaCerimonial/Delete/5
+        // GET: /ItemCerimonial/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CronogramaCerimonial cronogramacerimonial = db.CronogramaCerimonial.Find(id);
-            if (cronogramacerimonial == null)
+            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
+            if (itemcerimonial == null)
             {
                 return HttpNotFound();
             }
-            return View(cronogramacerimonial);
+            return View(itemcerimonial);
         }
 
-        // POST: /CronogramaCerimonial/Delete/5
+        // POST: /ItemCerimonial/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CronogramaCerimonial cronogramacerimonial = db.CronogramaCerimonial.Find(id);
-            db.CronogramaCerimonial.Remove(cronogramacerimonial);
+            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
+            db.ItemCerimonial.Remove(itemcerimonial);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

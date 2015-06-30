@@ -55,9 +55,8 @@
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\ContratoAditivo.cs" />
-    <Compile Include="Data\CronogramaCerimonial.cs" />
-    <Compile Include="Data\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Data\DataAccessBase.cs" />
+    <Compile Include="Data\ItemCerimonial.cs" />
     <Compile Include="Data\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Data\Evento.cs" />
     <Compile Include="Data\ItemFotoVideoSelecionado.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Model\CardapioPadrao.cs" />
     <Compile Include="Model\Decoracao.cs" />
     <Compile Include="Model\FotoVideo.cs" />
+    <Compile Include="Model\ItemCerimonial.cs" />
     <Compile Include="Model\ItemRoteiro.cs" />
     <Compile Include="Model\LocalCerimonia.cs" />
     <Compile Include="Data\ItemMontagemSelecionado.cs" />
@@ -98,8 +98,6 @@
     <Compile Include="Data\TipoItemSomIluminacao.cs" />
     <Compile Include="Data\Usuario.cs" />
     <Compile Include="Model\ContratoAditivo.cs" />
-    <Compile Include="Model\CronogramaCerimonial.cs" />
-    <Compile Include="Model\CronogramaCerimonialPadrao.cs" />
     <Compile Include="Model\Evento.cs" />
     <Compile Include="Model\Foto.cs" />
     <Compile Include="Model\ItemFotoVideoSelecionado.cs" />

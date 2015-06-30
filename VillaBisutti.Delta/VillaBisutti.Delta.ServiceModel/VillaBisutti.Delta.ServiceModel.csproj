@@ -72,8 +72,6 @@
     <Compile Include="BoloDoceBemCasado.cs" />
     <Compile Include="Cardapio.cs" />
     <Compile Include="ContratoAditivo.cs" />
-    <Compile Include="CronogramaCerimonial.cs" />
-    <Compile Include="CronogramaCerimonialPadrao.cs" />
     <Compile Include="Decoracao.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="FotoVideo.cs" />
