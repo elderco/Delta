@@ -47,7 +47,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] model.ItemCerimonial itemcerimonial)
+		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,CerimoniaId")] model.ItemCerimonial itemcerimonial)
         {
 			new data.ItemCerimonial().Insert(itemcerimonial);
 			return RedirectToAction("Index", new { TipoEvento = (int)itemcerimonial.TipoEvento });
