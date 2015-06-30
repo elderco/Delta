@@ -4,6 +4,9 @@
 	Layout = null;	
     ViewBag.Title = "Edit";
 }
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

@@ -4,6 +4,8 @@
 	Layout = null;	
     ViewBag.Title = "Create";
 }
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
 	$(document).ready(function () {
 		$("#EditarTipoBebida").attr("disabled", "disabled");
@@ -28,6 +30,7 @@
 		});
 	});
 </script>
+}
 
 @using (Html.BeginForm("ItemCreated", "ItemBebida")) 
 {

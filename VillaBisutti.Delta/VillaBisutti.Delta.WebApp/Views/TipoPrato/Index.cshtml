@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.TipoPrato>
-
 @{
-    ViewBag.Title = "Index";
+	Layout = "~/Views/shared/_ConfiguracoesLayout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@section scripts {
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".PopUpActionLinks").click(function (e) {
+				event.preventDefault();
+				ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+			});
+		});
+	</script>
+}
+@Html.Action("Create", "TipoPrato")
 <table class="table">
     <tr>
         <th>
@@ -23,9 +27,8 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
         </td>
     </tr>
 }
