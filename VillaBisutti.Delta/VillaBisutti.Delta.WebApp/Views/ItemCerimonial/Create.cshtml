@@ -1,16 +1,14 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemCerimonial
-
 @{
 	Layout = null;
 	ViewBag.Title = "Create";
 }
-@section scripts{
-	<script language="javascript" type="text/javascript">
-		$(document).ready(function () {
-			CreateHorarioEditor("HorarioInicio");
-		});
-	</script>
-}
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		CreateHorarioEditor("HorarioInicio");
+	});
+</script>
+@Scripts.Render("~/bundles/jqueryval")
 @using (Html.BeginForm("ItemCreated", "ItemCerimonial"))
 {
 	@Html.AntiForgeryToken()

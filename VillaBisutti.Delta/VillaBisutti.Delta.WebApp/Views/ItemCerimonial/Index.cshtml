@@ -3,7 +3,6 @@
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 	ViewBag.Title = "Index";
 }
-@section scripts {
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
 			$(".PopUpActionLinks").click(function (e) {
@@ -12,7 +11,7 @@
 			});
 		});
 	</script>
-}
+
 @Html.Action("Create", "ItemCerimonial")
 <table class="table">
 	<tr>
@@ -53,8 +52,6 @@
 				@Html.DisplayFor(modelItem => item.TipoEvento)
 			</td>
 			<td>
-				@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
-				@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Detalhes" }) |
 				@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
 			</td>
 		</tr>
