@@ -17,6 +17,7 @@
 .no-skin .navbar .navbar-toggle, .no-skin .navbar .navbar-toggle:hover{background-color: #94785C !important}
 .login-layout .widget-box .widget-main{background-color: #DBC6B1 !important}
 .login-layout .widget-box{background-color: #522D1C !important}
+.field-validation-error { color: #cf2b2b; }
 
 fieldset{border: 1px solid #522D1C !important}
 
