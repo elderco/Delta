@@ -4,13 +4,11 @@
 	Layout = null;
 	ViewBag.Title = "Create";
 }
-@section scripts{
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
 			CreateHorarioEditor("HorarioInicio");
 		});
 	</script>
-}
 @using (Html.BeginForm("ItemCreated", "ItemCerimonial"))
 {
 	@Html.AntiForgeryToken()

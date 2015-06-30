@@ -164,23 +164,39 @@ function CreateHorarioEditor(itemId) {
 		.attr("min", "0")
 		.attr("max", "23")
 		.attr("id", itemId + "_h")
+		.keyup(function () {
+			FormatTextBox(itemId + "_h", "0", 2, 23);
+		})
+		.focusout(function () {
+			FormatTextBox(itemId + "_h", "0", 2, 23);
+		})
 		.change(function () {
 			ConvertHorarioBack(itemId);
+			FormatTextBox(itemId + "_h", "0", 2, 23);
 		});
 	var $minute = $("<input/>")
 		.attr("type", "number")
 		.attr("min", "0")
 		.attr("max", "59")
-		.attr("step", "15")
+		.attr("step", "5")
 		.attr("id", itemId + "_m")
+		.keyup(function () {
+			FormatTextBox(itemId + "_m", "0", 2, 59);
+		})
+		.focusout(function () {
+			FormatTextBox(itemId + "_m", "0", 2, 59);
+		})
 		.change(function () {
 			ConvertHorarioBack(itemId);
+			FormatTextBox(itemId + "_m", "0", 2, 59);
 		});
 	var $texto = $("<span/>").html(":");
 	$hour.insertBefore($(item));
 	$texto.insertBefore($(item));
 	$minute.insertBefore($(item));
 	ConvertHorario(item);
+	FormatTextBox(item + "_h", "0", 2, 23);
+	FormatTextBox(item + "_m", "0", 2, 59);
 }
 function ConvertHorario(itemId) {
 	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
@@ -194,6 +210,20 @@ function ConvertHorarioBack(itemId) {
 	var horas = parseInt($(itemId + "_h").val());
 	var minutos = parseInt($(itemId + "_m").val());
 	$(itemId).val((horas * 60) + minutos);
+}
+function FormatTextBox(itemId, char, len, limit)
+{
+	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	var txt = parseInt($(itemId).val()) + "";
+	if (isNaN(txt))
+		txt = "0";
+	if (parseInt(txt) > limit)
+		txt = limit;
+	while (txt.length < len)
+		txt = char + txt;
+	if (txt.length > len)
+		txt = txt.substr(0, len);
+	$(itemId).val(txt);
 }
 function InitializeLoading() {
 	var $background = $("<div/>")

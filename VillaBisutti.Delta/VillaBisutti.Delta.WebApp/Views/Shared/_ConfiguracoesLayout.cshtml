@@ -1,14 +1,8 @@
 ﻿@{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section scripts{
-	@RenderSection("scripts", required: false)
-}
-@section MenuLateralConfiguracoes{
+@section MenuLateral{
 <div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar                  responsive menu-min">
-    <script type="text/javascript">
-        try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
-    </script>
     <ul class="nav nav-list nav-list-left">
         <li>
             <a href="#">
@@ -178,10 +172,17 @@
         <i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
     </div>
 
-    <script type="text/javascript">
-        try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
-    </script>
 </div>
 }
 
 @RenderBody()
+
+@section scripts{
+	@RenderSection("scripts", required: false)
+	<script type="text/javascript">
+		$(document).ready(function () {
+			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+		})
+	</script>
+}
