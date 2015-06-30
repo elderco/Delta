@@ -1,11 +1,9 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Cardapio
 @{
 	Layout = null;
-	HtmlHelper.ClientValidationEnabled = true;
-	HtmlHelper.UnobtrusiveJavaScriptEnabled = true;
 }
 	@Scripts.Render("~/bundles/jqueryval")
-@using (Html.BeginForm("ItemCreated", "Cardapio", FormMethod.Post, new { @id="CardapioCreate" }))
+@using (Html.BeginForm("ItemCreated", "Cardapio"))
 {
     @Html.AntiForgeryToken()
     
