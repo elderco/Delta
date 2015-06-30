@@ -9,8 +9,8 @@ namespace VillaBisutti.Delta.WebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+						"~/Scripts/jquery-2.0.3.min.js",
 						"~/Scripts/ace-extra.min.js",
-                        "~/Scripts/jquery-2.0.3.min.js",
                         "~/Scripts/ace-elements.min.js",
                         "~/Scripts/ace.min.js",
 						"~/Scripts/jquery-ui.min.js"));
