@@ -9,34 +9,150 @@
     @Scripts.Render("~/bundles/modernizr")
 	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/own")
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
 
 
 </head>
-<body>
-	<div class="container-fluid">
-		<div class="row navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					@*@Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })*@
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#"><span class="menu-icon glyphicon glyphicon-calendar"></span> Eventos</a></li>
-						<li><a href="#"><span class="menu-icon glyphicon glyphicon-dashboard"></span> Relatórios</a></li>
-						<li><a href="#"><span class="menu-icon glyphicon glyphicon-cog"></span> Configurações</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="container body-content">
-			@RenderBody()
-		</div>
-	</div>
+<body class="no-skin">
+    <div id="navbar" class="navbar navbar-default    navbar-collapse">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        Villa Bisutti
+                    </small>
+                </a>
+                <button class="pull-right navbar-toggle navbar-toggle-img collapsed" type="button" data-toggle="collapse" data-target=".navbar-buttons">
+                    <span class="sr-only">Toggle user menu</span>
+                    <b>RV</b>
+                </button>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="transparent">
+                        <a href="#"><i class="menu-icon fa fa-cog"></i></a>
+                    </li>
+                    <li class="transparent">
+                        <a href="#"><i class="menu-icon fa fa-calendar"></i></a>
+                    </li>
+                    <li class="transparent">
+                        <a href="#"><i class="menu-icon fa fa-dashboard"></i></a>
+                    </li>
+                    <li class="transparent">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-tasks"></i>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Casa do Ator
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Quatá
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Tenerife
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Berrini
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Gomes de Carvalho
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+
+                            <span class="user-info">
+                                <small>Olá,</small>
+                                Rafael Ravena
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-container -->
+    </div>
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
+            @RenderSection("MenuLateralConfiguracoes", required: false)
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div class="page-content">
+                        <!-- /.ace-settings-container -->
+                        <div class="page-header">
+                            <h1>Conteúdo</h1>
+                        </div><!-- /.page-header -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- PAGE CONTENT BEGINS -->
+                                @RenderBody()
+                                <!-- PAGE CONTENT ENDS -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content -->
+                </div>
+            </div><!-- /.main-content -->
+            <div class="footer">
+                <div class="footer-inner">
+                    <div class="footer-content">
+                        <span class="bolder bigger-120" style="color: #522d1c">Vila Bisutti</span>
+                        2009 - 2015
+
+                        &nbsp; &nbsp;
+
+                    </div>
+                </div>
+            </div><!-- Footer -->
+     </div>
 </body>
 </html>

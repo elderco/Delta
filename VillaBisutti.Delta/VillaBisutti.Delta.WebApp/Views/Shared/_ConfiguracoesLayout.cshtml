@@ -4,109 +4,184 @@
 @section scripts{
 	@RenderSection("scripts", required: false)
 }
-<div class="col-md-1 navbar navbar-default">
-	<ul class="nav navbar-nav">
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-tree-deciduous"></i>
-				<span class="menu-text glyphicon-class"> Usuários </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemDecoracao")">
-				<i class="menu-icon glyphicon glyphicon-tree-deciduous"></i>
-				<span class="menu-text glyphicon-class"> Decoração </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemMontagem")">
-				<i class=" menu-icon glyphicon glyphicon-home">
-				</i>
-				<span class="menu-text glyphicon-class"> Montagem </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "Prato")">
-				<i class="menu-icon glyphicon glyphicon-cutlery"></i>
-				<span class="menu-text glyphicon-class"> Gastronomia </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemBebida")">
-				<i class="menu-icon glyphicon glyphicon-glass"></i>
-				<span class="menu-text glyphicon-class"> Bebidas </span>
-			</a>
-		</li>
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-heart"></i>
-				<span class="menu-text glyphicon-class"> Doces </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemFotoVideo")">
-				<i class="menu-icon glyphicon glyphicon-camera"></i>
-				<span class="menu-text glyphicon-class"> Foto e Vídeo </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemSomIluminacao")">
-				<i class="menu-icon glyphicon glyphicon-headphones"></i>
-				<span class="menu-text glyphicon-class"> Luz e Som </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "ItemOutrosItens")">
-				<i class="menu-icon glyphicon glyphicon-gift"></i>
-				<span class="menu-text glyphicon-class"> Outros Ítens </span>
-			</a>
-		</li>
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-book"></i>
-				<span class="menu-text glyphicon-class"> Contrato e Aditivos </span>
-			</a>
-		</li>
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-bookmark"></i>
-				<span class="menu-text glyphicon-class"> Evento </span>
-			</a>
-		</li>
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-list"></i>
-				<span class="menu-text glyphicon-class"> Roteiro padrão </span>
-			</a>
-			<ul>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario })">@VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva })">@VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva })">@VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Casamento })">@VillaBisutti.Delta.Core.Model.TipoEvento.Casamento</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo })">@VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Debutante })">@VillaBisutti.Delta.Core.Model.TipoEvento.Debutante</a></li>
-				<li><a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Outro })">@VillaBisutti.Delta.Core.Model.TipoEvento.Outro</a></li>
-			</ul>
-		</li>
-		<li>
-			<a href="javascript:void(0);">
-				<i class="menu-icon glyphicon glyphicon-bell"></i>
-				<span class="menu-text glyphicon-class"> Cronograma cerimonial padrão </span>
-			</a>
-		</li>
-		<li>
-			<a href="@Url.Action("Index", "Local")">
-				<i class="menu-icon glyphicon glyphicon-map-marker"></i>
-				<span class="menu-text glyphicon-class"> Casas </span>
-			</a>
-		</li>
+@section MenuLateralConfiguracoes{
+<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar                  responsive menu-min">
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+    </script>
+    <ul class="nav nav-list nav-list-left">
+        <li>
+            <a href="#">
+                <i class="menu-icon fa fa-group"></i>
+                <span class="menu-text"> Usuários </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-grain"></i>
+                <span class="menu-text"> Decoração </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-lamp"></i>
+                <span class="menu-text"> Montagem </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="#">
+                <i class="menu-icon glyphicon glyphicon-cutlery"></i>
+                <span class="menu-text"> Gastronomia </span>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <span class="menu-text">Cardápios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <span class="menu-text">Tipos de Pratos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <span class="menu-text">Pratos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <span class="menu-text">Pratos dos cardápios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        <span class="menu-text">Cardápios Padrão</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon fa fa-glass"></i>
+                <span class="menu-text"> Bebidas </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-ice-lolly-tasted"></i>
+                <span class="menu-text"> Doces </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-camera"></i>
+                <span class="menu-text"> Foto e Vídeo </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-headphones"></i>
+                <span class="menu-text"> Luz e Som </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-gift"></i>
+                <span class="menu-text"> Outros Ítens </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-duplicate"></i>
+                <span class="menu-text"> Contrato e Aditivos </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li>
+            <a href="#">
+                <i class="menu-icon glyphicon glyphicon-blackboard"></i>
+                <span class="menu-text"> Evento </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <b class="arrow"></b>
+        <li>
+            <a class="dropdown-toggle" href="#">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"> Roteiro Padrão</span>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Aniversário</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Barmitzva</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Casamento</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Corporativo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Debutante</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="menu-icon fa caret-right"></i>
+                        <span class="menu-text">Outro</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <b class="arrow"></b>
+        <li>
+            <a href="#">
+                <i class="menu-icon fa fa-align-justify" ></i>
+                <span class="menu-text">Cerimonial padrão</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+    </ul>
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
 
-	</ul>
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+    </script>
 </div>
-<div class="col-md-11">
-	@RenderBody()
-	<hr />
-	<footer>
-		<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-	</footer>
-</div>
+}
+
+@RenderBody()
