@@ -350,8 +350,6 @@
     <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
     <Content Include="Views\ItemRoteiro\Create.cshtml" />
     <Content Include="Views\ItemRoteiro\Delete.cshtml" />
-    <Content Include="Views\ItemRoteiro\Details.cshtml" />
-    <Content Include="Views\ItemRoteiro\Edit.cshtml" />
     <Content Include="Views\ItemRoteiro\Index.cshtml" />
     <Content Include="Views\Local\Create.cshtml" />
     <Content Include="Views\Local\Delete.cshtml" />
@@ -367,8 +365,6 @@
     <Content Include="Views\CronogramaCerimonial\Index.cshtml" />
     <Content Include="Views\ItemCerimonial\Create.cshtml" />
     <Content Include="Views\ItemCerimonial\Delete.cshtml" />
-    <Content Include="Views\ItemCerimonial\Details.cshtml" />
-    <Content Include="Views\ItemCerimonial\Edit.cshtml" />
     <Content Include="Views\ItemCerimonial\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />

@@ -103,8 +103,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(int id)
 		{
+			int TipoEvento = (int)(new data.ItemRoteiro().GetElement(id).TipoEvento);
 			new data.ItemRoteiro().Delete(id);
-			return RedirectToAction("Index");
+			return RedirectToAction("Index", new { TipoEvento = TipoEvento });
 		}
 
 		protected override void Dispose(bool disposing)
