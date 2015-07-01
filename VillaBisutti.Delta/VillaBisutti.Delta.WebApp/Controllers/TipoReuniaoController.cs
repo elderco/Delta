@@ -19,6 +19,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             return View(new data.TipoReuniao().GetCollection(0));
         }
 
+		// GET: /TipoItemBebida/Details/5
+		public ActionResult Details(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.TipoReuniao tiporeuniao = new data.TipoReuniao().GetElement(id.HasValue ? id.Value : 0);
+			if (tiporeuniao == null)
+			{
+				return HttpNotFound();
+			}
+			return View(tiporeuniao);
+		}
+
         // GET: /TipoReuniao/Create
         public ActionResult Create()
         {
@@ -35,7 +50,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoReuniao().Insert(tiporeuniao);
-				return RedirectToAction("Index", "TipoReuniao");
+				return RedirectToAction("Index", "Reuniao");
             }
 
             return View(tiporeuniao);
@@ -66,7 +81,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoReuniao().Update(tiporeuniao);
-				return RedirectToAction("Index");
+				return RedirectToAction("Index","Reuniao");
             }
             return View(tiporeuniao);
         }
@@ -92,7 +107,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.TipoReuniao().Delete(id);
-			return RedirectToAction("Index");
+			return RedirectToAction("Index", "Reuniao");
         }
 
         protected override void Dispose(bool disposing)
