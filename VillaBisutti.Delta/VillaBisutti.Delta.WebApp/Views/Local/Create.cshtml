@@ -3,6 +3,8 @@
 	Layout = null;
 }
 
+@Scripts.Render("~/bundles/jqueryval")
+
 @using (Html.BeginForm("ItemCreated", "Local")) 
 {
     @Html.AntiForgeryToken()
