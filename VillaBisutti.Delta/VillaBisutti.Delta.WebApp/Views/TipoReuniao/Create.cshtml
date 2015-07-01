@@ -92,7 +92,7 @@
 		<div class="form-group row">
 			@Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.AreaEnvolvida)
+				@Html.DropDownList("AreaEnvolvida", (IEnumerable<SelectListItem>)ViewBag.AreaEnvolvida, new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.AreaEnvolvida)
 			</div>
 		</div>

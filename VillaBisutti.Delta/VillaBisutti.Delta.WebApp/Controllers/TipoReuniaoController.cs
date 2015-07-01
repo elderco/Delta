@@ -37,7 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /TipoReuniao/Create
         public ActionResult Create()
         {
-            return View();
+			ViewBag.AreaEnvolvida = new SelectList(Util.TiposEvento, "key", "value");
+			return View();
         }
 
         // POST: /TipoReuniao/Create
@@ -50,7 +51,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoReuniao().Insert(tiporeuniao);
-				return RedirectToAction("Index", "Reuniao");
+				return RedirectToAction("Index", "TipoReuniao");
             }
 
             return View(tiporeuniao);
@@ -63,6 +64,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+			ViewBag.AreaEnvolvida = new SelectList(Util.TiposEvento, "key", "value");
             model.TipoReuniao tiporeuniao = new data.TipoReuniao().GetElement(id.Value);
             if (tiporeuniao == null)
             {
@@ -81,7 +83,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoReuniao().Update(tiporeuniao);
-				return RedirectToAction("Index","Reuniao");
+				return RedirectToAction("Index","TipoReuniao");
             }
             return View(tiporeuniao);
         }

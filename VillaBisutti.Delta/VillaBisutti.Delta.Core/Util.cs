@@ -50,11 +50,6 @@ namespace VillaBisutti.Delta
             return value;
         }
 
-        public static void ImageToFolder(string file, string nomeEvento)
-        {
-
-        }
-
         /*TODO: Imagem
          * Redimencionar a imagem
          * Colocar a mensagem dentro da imagem: Imagem meramente ilustrativa
@@ -62,6 +57,53 @@ namespace VillaBisutti.Delta
          * criar a pasta para o evento da imagem(se ja tiver, só coloca na pasta)
          * colocar o nome da imagem de acordo com a data e hora (yyyymmdd HH:mm:ss) dentro da pasta
          * */
-        
+        public static void ImageToFolder(string file, string nomeEvento)
+        {
+
+        }
+
+		private static Dictionary<int, string> locaisCerimonia;
+		public static Dictionary<int, string> LocalCerimonia
+		{
+			get
+			{
+				if (locaisCerimonia == null)
+				{
+					locaisCerimonia = new Dictionary<int, string>();
+					foreach (Delta.Core.Model.LocalCerimonia item in Enum.GetValues(typeof(Delta.Core.Model.LocalCerimonia)).Cast<Delta.Core.Model.LocalCerimonia>())
+						locaisCerimonia.Add((int)item, item.GetDescription());
+				}
+				return locaisCerimonia;
+			}
+		}
+		private static Dictionary<int, string> tiposAcesso;
+		public static Dictionary<int, string> TiposAcesso
+		{
+			get
+			{
+				if(tiposAcesso == null)
+				{
+					tiposAcesso = new Dictionary<int, string>();
+					foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoAcesso)).Cast<Delta.Core.Model.TipoAcesso>())
+						tiposAcesso.Add((int)item, item.GetDescription());
+				}
+				return tiposAcesso;
+			}
+		}
+		private static Dictionary<int, string> tiposEvento;
+		public static Dictionary<int, string> TiposEvento
+		{
+			get
+			{
+				if (tiposEvento == null)
+				{
+					tiposEvento = new Dictionary<int, string>();
+					foreach (Delta.Core.Model.TipoEvento item in Enum.GetValues(typeof(Delta.Core.Model.TipoEvento)).Cast<Delta.Core.Model.TipoEvento>())
+						tiposEvento.Add((int)item, item.GetDescription());
+				}
+				return tiposEvento;
+			}
+		}
+       
 	}
 }

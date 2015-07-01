@@ -14,110 +14,81 @@
 		});
 	</script>
 }
-    @Html.Action("Create", "TipoReuniao")
+@Html.Action("Create", "TipoReuniao")
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiasAntesEvento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaximoEventosEnvolvidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeDomingo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeSegunda)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeTerca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeQuarta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeQuinta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeSexta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PodeSabado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AreaEnvolvida)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Duracao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioDisponibilidadeInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioDisponibilidadeTermino)
-        </th>
-        <th></th>
-    </tr>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Nome)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DiasAntesEvento)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.MaximoEventosEnvolvidos)
+		</th>
+		<th>
+			Dias disponíveis:
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.AreaEnvolvida)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Duracao)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.HorarioDisponibilidadeInicio)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.HorarioDisponibilidadeTermino)
+		</th>
+		<th></th>
+	</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiasAntesEvento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaximoEventosEnvolvidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeDomingo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeSegunda)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeTerca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeQuarta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeQuinta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeSexta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PodeSabado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AreaEnvolvida)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaximoAreaEnvolvida)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duracao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioDisponibilidadeInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioDisponibilidadeTermino)
-        </td>
-        <td>			
-			@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
-			@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Detalhes" }) |
-			@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
- </td>
-    </tr>
-}
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.DiasAntesEvento)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.MaximoEventosEnvolvidos)
+			</td>
+			<td>
+				@if (item.PodeDomingo) { @(Html.DisplayNameFor(m => m.PodeDomingo) + "| ") }
+				@if (item.PodeSegunda) { @(Html.DisplayNameFor(m => m.PodeSegunda) + "| ") }
+				@if (item.PodeTerca) { @(Html.DisplayNameFor(m => m.PodeTerca) + "| ") }
+				@if (item.PodeQuarta) { @(Html.DisplayNameFor(m => m.PodeQuarta) + "| ") }
+				@if (item.PodeQuinta) { @(Html.DisplayNameFor(m => m.PodeQuinta) + "| ") }
+				@if (item.PodeSexta) { @(Html.DisplayNameFor(m => m.PodeSexta) + "| ") }
+				@if (item.PodeSabado) { @(Html.DisplayNameFor(m => m.PodeSabado) + "| ") }
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.AreaEnvolvida)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.MaximoAreaEnvolvida)
+			</td>
+			<td>
+				@(item.Duracao.ToString())
+			</td>
+			<td>
+				@(item.DisponibilidadeInicio.ToString())
+			</td>
+			<td>
+				@(item.DisponibilidadeTermino.ToString())
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+				@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Detalhes" }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			</td>
+		</tr>
+	}
 
 </table>

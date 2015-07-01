@@ -23,7 +23,6 @@ namespace VillaBisutti.Delta.Core.Business
 				});
 			new Data.ItemRoteiro().AddRange(itens);
 		}
-		//TODO: Implementar método abaixo (Gabriel)
 		public void CopiarCardapioPadrao(int eventoId)
 		{
 			Model.Evento evento = new Data.Evento().GetElement(eventoId);
@@ -32,6 +31,7 @@ namespace VillaBisutti.Delta.Core.Business
 				evento.Cardapio.Pratos.Add(p);
 			new Data.Evento().Update(evento);
 		}
+		
         public void AcionarEventosTerceiros()
         {
             List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
