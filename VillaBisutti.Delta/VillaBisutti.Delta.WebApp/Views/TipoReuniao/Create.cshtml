@@ -2,6 +2,15 @@
 @{
 	Layout = null;
 }
+
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		CreateHorarioEditor("HorarioDisponibilidadeInicio");
+	});
+</script>
+
+
+
 @Scripts.Render("~/bundles/jqueryval")
 
 @using (Html.BeginForm("ItemCreated", "TipoReuniao"))
@@ -109,7 +118,7 @@
 		<div class="form-group row">
 			@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
+				@Html.EditorFor(model => model.HorarioInicio)
 				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
 			</div>
 		</div>
@@ -117,7 +126,7 @@
 		<div class="form-group row">
 			@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
+				@Html.EditorFor(model => model.HorarioInicio)
 				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
 			</div>
 		</div>
