@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemSomIluminacao : IEntityBase
 	{
 		public int Id { get; set; }
+		[Required]
 		public string Nome { get; set; }
 		public List<ItemSomIluminacao> Itens { get; set; }
 		[Display(Name = "Item padrão para Aniversario")]

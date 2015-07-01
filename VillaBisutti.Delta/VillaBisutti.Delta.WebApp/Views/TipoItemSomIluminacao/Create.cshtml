@@ -2,6 +2,9 @@
 @{
 	Layout = null;
 }
+
+@Scripts.Render("~/bundles/jqueryval")
+
 @using (Html.BeginForm("ItemCreated", "TipoItemSomIluminacao")) 
 {
     @Html.AntiForgeryToken()
