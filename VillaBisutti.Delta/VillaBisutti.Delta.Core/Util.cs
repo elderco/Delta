@@ -49,5 +49,19 @@ namespace VillaBisutti.Delta
             }
             return value;
         }
+
+        public static void ImageToFolder(string file, string nomeEvento)
+        {
+
+        }
+
+        /*TODO: Imagem
+         * Redimencionar a imagem
+         * Colocar a mensagem dentro da imagem: Imagem meramente ilustrativa
+         * ver de qual evento se trata
+         * criar a pasta para o evento da imagem(se ja tiver, só coloca na pasta)
+         * colocar o nome da imagem de acordo com a data e hora (yyyymmdd HH:mm:ss) dentro da pasta
+         * */
+        
 	}
 }
