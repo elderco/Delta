@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -76,6 +77,7 @@
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Model\Bebida.cs" />
     <Compile Include="Model\BoloDoceBemCadaso.cs" />
     <Compile Include="Model\Cardapio.cs" />
