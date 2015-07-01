@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reuniao.cs" />
     <Compile Include="Bebida.cs" />
     <Compile Include="BoloDoceBemCasado.cs" />
     <Compile Include="Cardapio.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="TipoItemMontagem.cs" />
     <Compile Include="TipoItemOutroItemItemDiverso.cs" />
     <Compile Include="TipoItemSomIluminacao.cs" />
+    <Compile Include="TipoReuniao.cs" />
     <Compile Include="TipoPrato.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

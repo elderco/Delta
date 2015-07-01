@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,19 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Nome { get; set; }
 		public int DiasAntesEvento { get; set; }
 		public int MaximoEventosEnvolvidos { get; set; }
+		[Display(Name = "Domingo")]
 		public bool PodeDomingo { get; set; }
+		[Display(Name = "Segunda-feira")]
 		public bool PodeSegunda { get; set; }
+		[Display(Name = "Terça-feira")]
 		public bool PodeTerca { get; set; }
+		[Display(Name = "Quarta-feira")]
 		public bool PodeQuarta { get; set; }
+		[Display(Name = "Quinta-feira")]
 		public bool PodeQuinta { get; set; }
+		[Display(Name = "Sexta-feira")]
 		public bool PodeSexta { get; set; }
+		[Display(Name = "Sábado")]
 		public bool PodeSabado { get; set; }
 		public TipoAcesso AreaEnvolvida { get; set; }
 		public int MaximoAreaEnvolvida { get; set; }

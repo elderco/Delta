@@ -1,0 +1,139 @@
+﻿@model VillaBisutti.Delta.Core.Model.TipoReuniao
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoReuniao</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiasAntesEvento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiasAntesEvento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximoEventosEnvolvidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximoEventosEnvolvidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeDomingo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeDomingo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeSegunda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeSegunda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeTerca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeTerca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeQuarta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeQuarta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeQuinta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeQuinta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeSexta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeSexta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PodeSabado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PodeSabado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaEnvolvida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaEnvolvida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximoAreaEnvolvida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioDisponibilidadeInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioDisponibilidadeInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioDisponibilidadeTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioDisponibilidadeTermino)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

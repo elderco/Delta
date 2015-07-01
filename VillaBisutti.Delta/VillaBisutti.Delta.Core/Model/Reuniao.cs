@@ -27,5 +27,7 @@ namespace VillaBisutti.Delta.Core.Model
 			}
 		}
 		public string Observacoes { get; set; }
+		public bool Definida { get; set; }
+		public bool Executada { get; set; }
 	}
 }

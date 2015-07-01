@@ -64,6 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TipoReuniao.cs" />
+    <Compile Include="Reuniao.cs" />
     <Compile Include="Bebida.cs" />
     <Compile Include="BoloDoceBemCasado.cs" />
     <Compile Include="Cardapio.cs" />

@@ -179,6 +179,7 @@
     <Compile Include="Controllers\TipoItemOutrosItensController.cs" />
     <Compile Include="Controllers\TipoItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\TipoPratoController.cs" />
+    <Compile Include="Controllers\TipoReuniaoController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
@@ -367,6 +368,11 @@
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\TipoReuniao\Create.cshtml" />
+    <Content Include="Views\TipoReuniao\Delete.cshtml" />
+    <Content Include="Views\TipoReuniao\Details.cshtml" />
+    <Content Include="Views\TipoReuniao\Edit.cshtml" />
+    <Content Include="Views\TipoReuniao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
