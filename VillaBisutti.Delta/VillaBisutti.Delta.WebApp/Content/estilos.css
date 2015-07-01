@@ -9,16 +9,20 @@
 .no-skin .sidebar-toggle{background-color: #94785c !important; color:#FFF !important;}
 .no-skin .sidebar.menu-min .nav-list>li>a>.menu-text{background-color: #664131 !important}
 .nav-list>li:before{background-color: #B79C81 !important}
-.no-skin .sidebar.menu-min .nav-list>li>.arrow:after{border-right-color: #E1CBB6 !important}
-.no-skin .nav-list>li .submenu>li>a:hover{background-color: #FFFBF7 !important}
+.no-skin .sidebar.menu-min .nav-list>li>.arrow:after{border-right-color: #664131 !important}
+.no-skin .nav-list>li .submenu>li>a:hover{background-color: #664131 !important}
 .no-skin .nav-list>li .submenu>li>a{background-color: #FFFBF7 !important}
 .no-skin .sidebar.menu-min .nav-list>li>.arrow-submenu:after{border-right-color: #FFFBF7 !important}
 .user-info{top: 0px !important;}
 .no-skin .navbar .navbar-toggle, .no-skin .navbar .navbar-toggle:hover{background-color: #94785C !important}
 .login-layout .widget-box .widget-main{background-color: #DBC6B1 !important}
 .login-layout .widget-box{background-color: #522D1C !important}
-.field-validation-error { color: #cf2b2b; }
-.btn, .btn-default { border-color: #11100C !important; background-color: #522d1c !important; color: #fefefe !important; }
-.btn-default:hover { background-color: #94785c !important; }
-.btn-default:active, .btn-default:focus { background-color: #fefefe !important; color: #522d1c !important; }
+.field-validation-error { color: #CF2B2B; }
 fieldset{border: 1px solid #522D1C !important}
+
+/* Botões */
+
+.btn-default { border: solid 1px #11100C !important; background-color: #522d1c !important; color: #fefefe !important; }
+.btn-default:hover { background-color: #94785C !important; }
+.btn-default:active, .btn-default:focus { background-color: #94785C !important; color: #FEFEFE !important;}
+.btn.disabled, .btn-default.disabled, .btn[disabled], .btn-default[disabled], .disabled{background-color: #926856 !important}
