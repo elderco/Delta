@@ -2,17 +2,14 @@
 @{
 	Layout = null;
 }
-
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
 		CreateHorarioEditor("HorarioDisponibilidadeInicio");
+		CreateHorarioEditor("HorarioDisponibilidadeTermino");
+		CreateHorarioEditor("Duracao");
 	});
 </script>
-
-
-
 @Scripts.Render("~/bundles/jqueryval")
-
 @using (Html.BeginForm("ItemCreated", "TipoReuniao"))
 {
     @Html.AntiForgeryToken()
@@ -118,7 +115,7 @@
 		<div class="form-group row">
 			@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioInicio)
+				@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
 				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
 			</div>
 		</div>
@@ -126,7 +123,7 @@
 		<div class="form-group row">
 			@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioInicio)
+				@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
 				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
 			</div>
 		</div>
