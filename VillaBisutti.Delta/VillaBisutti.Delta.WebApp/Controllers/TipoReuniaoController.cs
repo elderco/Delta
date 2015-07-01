@@ -30,12 +30,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,DiasAntesEvento,MaximoEventosEnvolvidos,PodeDomingo,PodeSegunda,PodeTerca,PodeQuarta,PodeQuinta,PodeSexta,PodeSabado,AreaEnvolvida,MaximoAreaEnvolvida,Duracao,HorarioDisponibilidadeInicio,HorarioDisponibilidadeTermino")] model.TipoReuniao tiporeuniao)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,DiasAntesEvento,MaximoEventosEnvolvidos,PodeDomingo,PodeSegunda,PodeTerca,PodeQuarta,PodeQuinta,PodeSexta,PodeSabado,AreaEnvolvida,MaximoAreaEnvolvida,Duracao,HorarioDisponibilidadeInicio,HorarioDisponibilidadeTermino")] model.TipoReuniao tiporeuniao)
         {
             if (ModelState.IsValid)
             {
 				new data.TipoReuniao().Insert(tiporeuniao);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "TipoReuniao");
             }
 
             return View(tiporeuniao);

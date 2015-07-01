@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoReuniao : IEntityBase
 	{
 		public int Id { get; set; }
+		[Required]
 		public string Nome { get; set; }
 		public int DiasAntesEvento { get; set; }
 		public int MaximoEventosEnvolvidos { get; set; }

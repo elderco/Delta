@@ -1,15 +1,11 @@
 ﻿@model VillaBisutti.Delta.Core.Model.TipoReuniao
 
 @{
+	Layout = null;
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>TipoReuniao</h4>
-	<hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)

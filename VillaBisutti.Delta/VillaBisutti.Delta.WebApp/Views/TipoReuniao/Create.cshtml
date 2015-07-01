@@ -1,141 +1,126 @@
 ﻿@model VillaBisutti.Delta.Core.Model.TipoReuniao
-
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	Layout = null;
 }
+@Scripts.Render("~/bundles/jqueryval")
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("ItemCreated", "TipoReuniao"))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TipoReuniao</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+		<h4>TipoReuniao</h4>
+		<hr />
+		@Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome)
-                @Html.ValidationMessageFor(model => model.Nome)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Nome)
+				@Html.ValidationMessageFor(model => model.Nome)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DiasAntesEvento, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DiasAntesEvento)
-                @Html.ValidationMessageFor(model => model.DiasAntesEvento)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.DiasAntesEvento, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.DiasAntesEvento)
+				@Html.ValidationMessageFor(model => model.DiasAntesEvento)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaximoEventosEnvolvidos, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MaximoEventosEnvolvidos)
-                @Html.ValidationMessageFor(model => model.MaximoEventosEnvolvidos)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.MaximoEventosEnvolvidos, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MaximoEventosEnvolvidos)
+				@Html.ValidationMessageFor(model => model.MaximoEventosEnvolvidos)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeDomingo)
-                @Html.ValidationMessageFor(model => model.PodeDomingo)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeDomingo)
+				@Html.ValidationMessageFor(model => model.PodeDomingo)
+			</div>
+			@Html.LabelFor(model => model.PodeSegunda, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeSegunda)
+				@Html.ValidationMessageFor(model => model.PodeSegunda)
+			</div>
+			@Html.LabelFor(model => model.PodeTerca, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeTerca)
+				@Html.ValidationMessageFor(model => model.PodeTerca)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeSegunda, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeSegunda)
-                @Html.ValidationMessageFor(model => model.PodeSegunda)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.PodeQuarta, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeQuarta)
+				@Html.ValidationMessageFor(model => model.PodeQuarta)
+			</div>
+			@Html.LabelFor(model => model.PodeQuinta, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeQuinta)
+				@Html.ValidationMessageFor(model => model.PodeQuinta)
+			</div>
+			@Html.LabelFor(model => model.PodeSexta, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeSexta)
+				@Html.ValidationMessageFor(model => model.PodeSexta)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeTerca, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeTerca)
-                @Html.ValidationMessageFor(model => model.PodeTerca)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.PodeSabado, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
+				@Html.EditorFor(model => model.PodeSabado)
+				@Html.ValidationMessageFor(model => model.PodeSabado)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeQuarta, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeQuarta)
-                @Html.ValidationMessageFor(model => model.PodeQuarta)
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeQuinta, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeQuinta)
-                @Html.ValidationMessageFor(model => model.PodeQuinta)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.AreaEnvolvida)
+				@Html.ValidationMessageFor(model => model.AreaEnvolvida)
+			</div>
+		</div>
+		 
+		<div class="form-group row">
+			@Html.LabelFor(model => model.MaximoAreaEnvolvida, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MaximoAreaEnvolvida)
+				@Html.ValidationMessageFor(model => model.MaximoAreaEnvolvida)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeSexta, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeSexta)
-                @Html.ValidationMessageFor(model => model.PodeSexta)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.Duracao, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Duracao)
+				@Html.ValidationMessageFor(model => model.Duracao)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PodeSabado, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PodeSabado)
-                @Html.ValidationMessageFor(model => model.PodeSabado)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
+				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AreaEnvolvida)
-                @Html.ValidationMessageFor(model => model.AreaEnvolvida)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaximoAreaEnvolvida, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MaximoAreaEnvolvida)
-                @Html.ValidationMessageFor(model => model.MaximoAreaEnvolvida)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Duracao, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Duracao)
-                @Html.ValidationMessageFor(model => model.Duracao)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
-                @Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
-                @Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
-            </div>
-        </div>
+		<div class="form-group row">
+			@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
+				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
+			</div>
+		</div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -143,12 +128,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
