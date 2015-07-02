@@ -74,6 +74,7 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioDisponibilidadeTermino = value.ToInt();
 			}
 		}
+		[Display(Name = "Reunioes")]
 		public List<Reuniao> Reunioes { get; set; }
 	}
 }

@@ -15,7 +15,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
 		public int TipoItemBoloDoceBemCasadoId { get; set; }
-		[Display(Name = "Tipo Item BoloDoceBemCasado")]
+		[Display(Name = "Bolo, Doce e Bem Casado")]
 		public TipoItemBoloDoceBemCasado TipoItemBoloDoceBemCasado { get; set; }
 	}
 }
