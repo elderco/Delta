@@ -1,8 +1,9 @@
-﻿@model VillaBisutti.Delta.Core.Model.ItemCerimonial
+﻿@using VillaBisutti.Delta
+@model VillaBisutti.Delta.Core.Model.ItemCerimonial
 
 @{
 	Layout = null;
-	ViewBag.Title = "Create";
+	//ViewBag.Title = "Create";
 }
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
@@ -15,7 +16,7 @@
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
-		<h4>@((VillaBisutti.Delta.Core.Model.TipoEvento)ViewBag.TipoEvento)</h4>
+		<h4>Cerimonial padrão para @(((VillaBisutti.Delta.Core.Model.TipoEvento)ViewBag.TipoEvento).GetDescription())</h4>
 		<hr />
 		@Html.ValidationSummary(true)
 

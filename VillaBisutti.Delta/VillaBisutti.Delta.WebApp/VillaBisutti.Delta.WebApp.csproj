@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemBebidaController.cs" />
     <Compile Include="Controllers\ItemCerimonialController.cs" />
@@ -195,6 +196,7 @@
     <Content Include="Content\estilos.css" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\bg-logo-villa-bisutti.png" />
+    <Content Include="Content\images\delta.png" />
     <Content Include="Content\images\ui-bg_diagonals-medium_10_000000_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_0_ffffff_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -374,6 +376,8 @@
     <Content Include="Views\TipoReuniao\Details.cshtml" />
     <Content Include="Views\TipoReuniao\Edit.cshtml" />
     <Content Include="Views\TipoReuniao\Index.cshtml" />
+    <Content Include="Views\Evento\Delete.cshtml" />
+    <Content Include="Views\Evento\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

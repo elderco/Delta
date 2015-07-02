@@ -71,5 +71,13 @@ namespace VillaBisutti.Delta.Core.Data
                 .ToList();
                 
         }
+		public List<Model.Evento> GetListaPorCasaProducao(int localId, int responsavelId)
+		{
+			return context.Evento.Where(e => e.LocalId == localId && (e.ProdutoraId == responsavelId || e.PosVendedoraId == responsavelId)).ToList();
+		}
+		public List<Model.Evento> GetListaPorCasa(int localId)
+		{
+			return context.Evento.Where(e => e.LocalId == localId).ToList();
+		}
 	}
 }

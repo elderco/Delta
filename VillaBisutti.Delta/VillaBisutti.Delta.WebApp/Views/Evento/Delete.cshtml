@@ -1,0 +1,249 @@
+﻿@model VillaBisutti.Delta.Core.Model.Evento
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bebida.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bebida.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoloDoceBemCasado.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoloDoceBemCasado.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cardapio.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cardapio.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoracao.CoresCerimonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Decoracao.CoresCerimonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoVideo.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoVideo.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Local.NomeCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Local.NomeCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Montagem.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Montagem.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutrosItens.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutrosItens.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PosVendedora.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PosVendedora.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produtora.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produtora.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SomIluminacao.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SomIluminacao.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoEvento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoEvento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioTermino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPFResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPFResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeHomenageados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeHomenageados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerfilFesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerfilFesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalCerimonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalCerimonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoCerimonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoCerimonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailBoasVindasEnviado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailBoasVindasEnviado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OSFinalizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OSFinalizada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServico)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -16,10 +16,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Email { get; set; }
 		[Display(Name = "Senha")]
 		public string Senha{ get; set; }
-		public int PerfilUsuarioSistemaId { get; set; }
 		[Display(Name = "Perfil")]
-		public PerfilUsuarioSistema Perfil { get; set; }
-		[Display(Name = "Eventos da Produtora")]
+		public TipoAcesso Perfil { get; set; }
 		public List<Evento> EventosProdutora { get; set; }
 	}
 }

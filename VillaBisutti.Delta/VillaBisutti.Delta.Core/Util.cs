@@ -152,6 +152,19 @@ namespace VillaBisutti.Delta
 				return tiposEvento;
 			}
 		}
-       
+		private static Dictionary<int, string> tiposServico;
+		public static Dictionary<int, string> TiposServico
+		{
+			get
+			{
+				if (tiposServico == null)
+				{
+					tiposServico = new Dictionary<int, string>();
+					foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoServico)).Cast<Delta.Core.Model.TipoServico>())
+						tiposServico[(int)item] = item.GetDescription();
+				}
+				return tiposServico;
+			}
+		}
 	}
 }
