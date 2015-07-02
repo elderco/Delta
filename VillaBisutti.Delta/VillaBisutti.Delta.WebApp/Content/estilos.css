@@ -21,7 +21,7 @@
 fieldset{border: 1px solid #522D1C !important}
 
 /* Content Background */
-.page-content{background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; }
+.page-content { background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; min-height: 100% !important; }
 
 /* Botões */
 
