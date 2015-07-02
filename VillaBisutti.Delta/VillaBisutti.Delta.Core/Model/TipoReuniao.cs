@@ -10,13 +10,11 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoReuniao : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name="Tipo de reunião"), Required]
+		[Display(Name = "Tipo de reunião"), Required]
 		public string Nome { get; set; }
-		[Display(Name="Dias Restantes até o Evento")]
-		[Range(0, 161)]
+		[Display(Name = "Dias Restantes até o Evento"), Range(0, 365)]
 		public int DiasAntesEvento { get; set; }
-		[Display(Name = "Reuniões simultâneas / tipo")]
-		[Range(0, 161)]
+		[Display(Name = "Reuniões simultâneas / tipo"), Range(0, 161)]
 		public int MaximoEventosEnvolvidos { get; set; }
 		[Display(Name = "Domingo")]
 		public bool PodeDomingo { get; set; }
@@ -34,12 +32,11 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PodeSabado { get; set; }
 		[Display(Name = "Àrea participante")]
 		public TipoAcesso AreaEnvolvida { get; set; }
-		[Display(Name = "Reuniões simultâneas / área")]
-		[Range(0, 161)]
+		[Display(Name = "Reuniões simultâneas / área"), Range(0, 161)]
 		public int MaximoAreaEnvolvida { get; set; }
 		[Display(Name = "Duração")]
 		public int HorarioDuracao { get; set; }
-		public Horario DisponibilidadeDuracao
+		public Horario Duracao
 		{
 			get
 			{

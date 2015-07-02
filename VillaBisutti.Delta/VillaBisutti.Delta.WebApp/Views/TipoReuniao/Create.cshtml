@@ -45,49 +45,44 @@
 		</div>
 
 		<div class="form-group row">
-			@Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeDomingo)
-				@Html.ValidationMessageFor(model => model.PodeDomingo)
-			</div>
-			@Html.LabelFor(model => model.PodeSegunda, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeSegunda)
-				@Html.ValidationMessageFor(model => model.PodeSegunda)
-			</div>
-			@Html.LabelFor(model => model.PodeTerca, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeTerca)
-				@Html.ValidationMessageFor(model => model.PodeTerca)
-			</div>
-		</div>
-
-		<div class="form-group row">
-			@Html.LabelFor(model => model.PodeQuarta, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeQuarta)
-				@Html.ValidationMessageFor(model => model.PodeQuarta)
-			</div>
-			@Html.LabelFor(model => model.PodeQuinta, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeQuinta)
-				@Html.ValidationMessageFor(model => model.PodeQuinta)
-			</div>
-			@Html.LabelFor(model => model.PodeSexta, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeSexta)
-				@Html.ValidationMessageFor(model => model.PodeSexta)
-			</div>
-		</div>
-
-		<div class="form-group row">
-			@Html.LabelFor(model => model.PodeSabado, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
-				@Html.EditorFor(model => model.PodeSabado)
-				@Html.ValidationMessageFor(model => model.PodeSabado)
+			<div class="col-md-offset-2 col-md-10">
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeDomingo)
+					@Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeDomingo)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeSegunda)
+					@Html.LabelFor(model => model.PodeSegunda, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeSegunda)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeTerca)
+					@Html.LabelFor(model => model.PodeTerca, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeTerca)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeQuarta)
+					@Html.LabelFor(model => model.PodeQuarta, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeQuarta)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeQuinta)
+					@Html.LabelFor(model => model.PodeQuinta, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeQuinta)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeSexta)
+					@Html.LabelFor(model => model.PodeSexta, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PodeSexta)
+				</div>
+				<div class="col-md-2">
+					@Html.EditorFor(model => model.PodeSabado)
+					@Html.LabelFor(model => model.PodeSabado, new { @class = "control-label " })
+					@Html.ValidationMessageFor(model => model.PodeSabado)
+				</div>
 			</div>
 		</div>
-
 
 		<div class="form-group row">
 			@Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
