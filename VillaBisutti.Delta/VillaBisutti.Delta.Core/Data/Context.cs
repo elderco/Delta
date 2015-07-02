@@ -13,13 +13,12 @@ namespace VillaBisutti.Delta.Core.Data
 			: base("VillaBisuttiDelta")
 		{
 			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
-
 		}
 		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
-		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> BoloDoceBemCasado { get; set; }
+		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratoAdivitivo { get; set; }
-		public DbSet<Model.ItemDecoracaoSelecionado> Decoracao { get; set; }
-		public DbSet<Model.ItemFotoVideoSelecionado> FotoVideo { get; set; }
+		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
+		public DbSet<Model.ItemFotoVideoSelecionado> ItemFotoVideoSelecionado { get; set; }
 		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
@@ -51,7 +50,12 @@ namespace VillaBisutti.Delta.Core.Data
         public DbSet<Model.PratoSelecionado> PratoSelecionado { get; set; }
 		public DbSet<Model.TipoReuniao> TipoReuniao { get; set; }
 		public DbSet<Model.Reuniao> Reuniao { get; set; }
-
+		public DbSet<Model.Bebida> Bebida { get; set; }
+		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
+		public DbSet<Model.Decoracao> Decoracao { get; set; }
+		public DbSet<Model.FotoVideo> FotoVideo { get; set; }
+		public DbSet<Model.Montagem> Montagem { get; set; }
+		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Model.Evento>()

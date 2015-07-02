@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemFotoVideoSelecionado entity)
 		{
-			Model.ItemFotoVideoSelecionado original = context.FotoVideo.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemFotoVideoSelecionado original = context.ItemFotoVideoSelecionado.FirstOrDefault(a => a.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,13 +23,13 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemFotoVideoSelecionado entity)
 		{
-			context.FotoVideo.Add(entity);
+			context.ItemFotoVideoSelecionado.Add(entity);
 			context.SaveChanges();
 		}
 
 		protected override List<Model.ItemFotoVideoSelecionado> GetCollection()
 		{
-			return context.FotoVideo.ToList();
+			return context.ItemFotoVideoSelecionado.ToList();
 		}
 	}
 }

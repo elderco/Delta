@@ -29,7 +29,20 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Evento> GetCollection()
 		{
-			return context.Evento.Include(e => e.Cardapio).ToList();
+			return context.Evento
+					.Include(e => e.Bebida)
+					.Include(e => e.BoloDoceBemCasado)
+					.Include(e => e.Cardapio)
+					.Include(e => e.Decoracao)
+					.Include(e => e.FotoVideo)
+					.Include(e => e.Local)
+					.Include(e => e.Montagem)
+					.Include(e => e.OutrosItens)
+					.Include(e => e.PosVendedora)
+					.Include(e => e.Produtora)
+					.Include(e => e.SomIluminacao)
+					.ToList();
+			
 		}
 		public List<Model.Evento> GetEventos(int casaId, int produtorId)
 		{

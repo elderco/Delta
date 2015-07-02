@@ -10,10 +10,9 @@ namespace VillaBisutti.Delta.Core.Business
 	{
 		public void CopiarRoteiroPadrao(int eventoId)
 		{
-			Model.Evento evento = new Data.Evento().GetElement(eventoId);
-			Model.RoteiroPadrao roteiro = new Data.RoteiroPadrao().GetCollection(0).FirstOrDefault(rp => rp.TipoEvento == evento.TipoEvento);
+			Model.Evento evento = new Data.Evento().GetElement(eventoId);			
 			List<Model.ItemRoteiro> itens = new List<Model.ItemRoteiro>();
-			foreach (Model.ItemRoteiro item in roteiro.Acontecimentos)
+			foreach (Model.ItemRoteiro item in new Data.ItemRoteiro().GetCollection(0).Where(rp => rp.TipoEvento == evento.TipoEvento))
 				itens.Add(new Model.ItemRoteiro
 				{
 					Titulo = item.Titulo,
@@ -22,6 +21,20 @@ namespace VillaBisutti.Delta.Core.Business
 					Observacao = item.Observacao
 				});
 			new Data.ItemRoteiro().AddRange(itens);
+		}
+		public void CopiarCerimonialPadrao(int eventoId)
+		{
+			Model.Evento evento = new Data.Evento().GetElement(eventoId);
+			List<Model.ItemCerimonial> itens = new List<Model.ItemCerimonial>();
+			foreach (Model.ItemCerimonial item in new Data.ItemCerimonial().GetCollection(0).Where(rp => rp.TipoEvento == evento.TipoEvento))
+				itens.Add(new Model.ItemCerimonial
+				{
+					Titulo = item.Titulo,
+					HorarioInicio = evento.HorarioInicio + item.HorarioInicio,
+					EventoId = evento.Id,
+					Observacao = item.Observacao
+				});
+			new Data.ItemCerimonial().AddRange(itens);
 		}
 		public void CopiarCardapioPadrao(int eventoId)
 		{
