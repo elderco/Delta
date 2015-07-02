@@ -52,8 +52,11 @@
   <ItemGroup>
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Data\Bebida.cs" />
+    <Compile Include="Data\BoloDoceBemCasado.cs" />
     <Compile Include="Data\Cardapio.cs" />
     <Compile Include="Data\CardapioPadrao.cs" />
+    <Compile Include="Data\Decoracao.cs" />
+    <Compile Include="Data\FotoVideo.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
@@ -72,10 +75,13 @@
     <Compile Include="Data\ItemRoteiro.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Local.cs" />
+    <Compile Include="Data\Montagem.cs" />
+    <Compile Include="Data\OutrosItens.cs" />
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
     <Compile Include="Data\Reuniao.cs" />
     <Compile Include="Data\SeedDatabase.cs" />
+    <Compile Include="Data\SomIluminacao.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
