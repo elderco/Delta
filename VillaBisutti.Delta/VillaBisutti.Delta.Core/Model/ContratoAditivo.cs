@@ -12,5 +12,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public string Arquivo { get; set; }
 		public string NumeroContrato { get; set; }
+		public DateTime DataContrato { get; set; }
 	}
 }
