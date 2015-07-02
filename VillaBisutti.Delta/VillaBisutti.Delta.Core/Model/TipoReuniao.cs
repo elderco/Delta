@@ -13,8 +13,10 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name="Tipo de reunião"), Required]
 		public string Nome { get; set; }
 		[Display(Name="Evento (-dias)")]
+		[Range(0, 161)]
 		public int DiasAntesEvento { get; set; }
 		[Display(Name = "Reuniões simultâneas / tipo")]
+		[Range(0, 161)]
 		public int MaximoEventosEnvolvidos { get; set; }
 		[Display(Name = "Domingo")]
 		public bool PodeDomingo { get; set; }
@@ -33,9 +35,21 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Àrea participante")]
 		public TipoAcesso AreaEnvolvida { get; set; }
 		[Display(Name = "Reuniões simultâneas / área")]
+		[Range(0, 161)]
 		public int MaximoAreaEnvolvida { get; set; }
 		[Display(Name = "Duração")]
-		public int Duracao { get; set; }
+		public int HorarioDuracao { get; set; }
+		public Horario DisponibilidadeDuracao
+		{
+			get
+			{
+				return Horario.Parse(HorarioDuracao);
+			}
+			set
+			{
+				HorarioDuracao = value.ToInt();
+			}
+		}
 		[Display(Name = "Disponibilidade (das)")]
 		public int HorarioDisponibilidadeInicio { get; set; }
 		public Horario DisponibilidadeInicio
