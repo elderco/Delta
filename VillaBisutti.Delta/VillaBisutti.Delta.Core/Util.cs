@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+
 
 namespace VillaBisutti.Delta
 {
@@ -31,7 +37,6 @@ namespace VillaBisutti.Delta
             T value = default(T);
             if (!String.IsNullOrEmpty(config))
             {
-                
                 value = (T)Convert.ChangeType(config, typeof(T));
                 return value;
             }
@@ -57,8 +62,51 @@ namespace VillaBisutti.Delta
          * criar a pasta para o evento da imagem(se ja tiver, só coloca na pasta)
          * colocar o nome da imagem de acordo com a data e hora (yyyymmdd HH:mm:ss) dentro da pasta
          * */
-        public static void ImageToFolder(string file, string nomeEvento)
+        public static String HandleFile(string path)
         {
+            
+            //Open the file
+            if (File.Exists(path))
+            {
+                using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.ReadWrite))
+                {
+                    Image image = Image.FromStream(fileStream);
+                    System.Drawing.Bitmap imageResized = ResizeImage(image);
+                    imageResized.Save(path);
+                }
+            }
+            return "Ravena";
+        }
+        /// <summary>
+        /// Redimenciona a imagem original
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
+        private static Bitmap ResizeImage(Image image)
+        {
+            //TODO: colocar essas chaves no WebConfig
+            //TODO: pegar tamanho da imagem e só redimencioar se o tamanho estiver maior que o padrão
+            int width = Util.Get<int>("largura");
+            int height = Util.Get<int>("altura");
+            var destRect = new Rectangle(0, 0, width, height);
+            Bitmap destImage = new Bitmap(width, height);
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+                //graphics.DrawRectangle(new Pen(Color.White,(float)image.Width),);
+                graphics.DrawString(Util.Get<string>("texto-imagens"), new Font(FontFamily.GenericSansSerif, 20, FontStyle.Regular, GraphicsUnit.Pixel), Brushes.Transparent, 0, 0);
+            }
+            return destImage;
 
         }
 
@@ -71,7 +119,7 @@ namespace VillaBisutti.Delta
 				{
 					locaisCerimonia = new Dictionary<int, string>();
 					foreach (Delta.Core.Model.LocalCerimonia item in Enum.GetValues(typeof(Delta.Core.Model.LocalCerimonia)).Cast<Delta.Core.Model.LocalCerimonia>())
-						locaisCerimonia.Add((int)item, item.GetDescription());
+                        locaisCerimonia[(int)item] = item.GetDescription();
 				}
 				return locaisCerimonia;
 			}
@@ -85,7 +133,7 @@ namespace VillaBisutti.Delta
 				{
 					tiposAcesso = new Dictionary<int, string>();
 					foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoAcesso)).Cast<Delta.Core.Model.TipoAcesso>())
-						tiposAcesso.Add((int)item, item.GetDescription());
+						tiposAcesso[(int)item] = item.GetDescription();
 				}
 				return tiposAcesso;
 			}
@@ -99,8 +147,8 @@ namespace VillaBisutti.Delta
 				{
 					tiposEvento = new Dictionary<int, string>();
 					foreach (Delta.Core.Model.TipoEvento item in Enum.GetValues(typeof(Delta.Core.Model.TipoEvento)).Cast<Delta.Core.Model.TipoEvento>())
-						tiposEvento.Add((int)item, item.GetDescription());
-				}
+                        tiposEvento[(int)item] = item.GetDescription();
+                }
 				return tiposEvento;
 			}
 		}
