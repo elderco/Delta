@@ -12,9 +12,11 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Local : IEntityBase
 	{
 		public int Id { get; set; }
-		[Required]
+		[Display(Name = "Nome da Casa"), Required]
 		public string NomeCasa { get; set; }
+		[Display(Name = "Sigla da Casa")]
 		public string SiglaCasa { get; set; }
+		[Display(Name = "Endereço da Casa")]
 		public string EnderecoCasa { get; set; }
 	}
 }

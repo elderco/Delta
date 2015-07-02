@@ -10,10 +10,12 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemOutrosItens : IEntityBase
 	{
 		public int Id { get; set; }
-		[Required]
+		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
+		[Display(Name = "Quantidade")]
 		public int Quantidade { get; set; }
 		public int TipoItemOutrosItensId { get; set; }
+		[Display(Name = "Outros Itens")]
 		public TipoItemOutrosItens TipoItemOutrosItens { get; set; }
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,11 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ContratoAditivo : IEntityBase
 	{
 		public int Id { get; set; }
+		[Display(Name = "Arquivo"), Required]
 		public string Arquivo { get; set; }
+		[Display(Name = "Número do Contrato")]
 		public string NumeroContrato { get; set; }
+		[Display(Name = "Data do Contrato")]
 		public DateTime DataContrato { get; set; }
 	}
 }

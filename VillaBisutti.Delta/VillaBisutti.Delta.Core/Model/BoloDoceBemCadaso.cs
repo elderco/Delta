@@ -13,9 +13,13 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
+		[Display(Name = "Evento"), Required]
 		public Evento Evento { get; set; }
+		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
+		[Display(Name = "Itens")]
 		public List<ItemBoloDoceBemCasadoSelecionado> Itens { get; set; }
+		[Display(Name = "Fotos")]
 		public List<Foto> Fotos { get; set; }
 
 	}

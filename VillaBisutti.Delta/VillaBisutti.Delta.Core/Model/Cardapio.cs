@@ -10,8 +10,9 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Cardapio : IEntityBase
 	{
 		public int Id { get; set; }
-		[Required]
+		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
+		[Display(Name = "Pratos")]
 		public List<Prato> Pratos { get; set; }
 	}
 }

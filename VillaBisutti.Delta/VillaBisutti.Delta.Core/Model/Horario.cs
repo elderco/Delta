@@ -22,7 +22,9 @@ namespace VillaBisutti.Delta.Core.Model
 				return Minuto.ToString().PadLeft(2, '0');
 			}
 		}
+		[Display(Name = "Hora")]
 		public int Hora { get; set; }
+		[Display(Name = "Minuto")]
 		public int Minuto { get; set; }
 		internal static Horario Parse(int value)
 		{

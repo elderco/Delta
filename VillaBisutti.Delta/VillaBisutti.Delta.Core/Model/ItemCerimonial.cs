@@ -11,9 +11,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Display(Name = "Título"), Required]
 		public string Titulo { get; set; }
-		[Required]
-		public int HorarioInicio { get; set; }
 		[Display(Name = "Início")]
+		public int HorarioInicio { get; set; }
 		public Horario Inicio
 		{
 			get
@@ -25,11 +24,14 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioInicio = value.ToInt();
 			}
 		}
+		[Display(Name = "Importante")]
 		public bool Importante { get; set; }
 		[Display(Name = "Observação")]
 		public string Observacao { get; set; }
+		[Display(Name = "Tipo Evento")]
 		public TipoEvento? TipoEvento { get; set; }
 		public int? EventoId { get; set; }
+		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
 	}
 }
