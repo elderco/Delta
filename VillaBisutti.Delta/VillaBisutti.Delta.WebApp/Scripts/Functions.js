@@ -158,6 +158,9 @@ function RemoveStack(id) {
 }
 function CreateHorarioEditor(itemId) {
 	var item = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	if (isNaN($(item).val()) || $(item).val() == "") {
+		$(item).val(0);
+	}
 	$(item).addClass("hide");
 	var $hour = $("<input/>")
 		.attr("type", "number")

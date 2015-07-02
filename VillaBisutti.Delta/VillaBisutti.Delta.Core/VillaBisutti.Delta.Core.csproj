@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Evento.cs" />
+    <Compile Include="Data\Bebida.cs" />
     <Compile Include="Data\Cardapio.cs" />
     <Compile Include="Data\CardapioPadrao.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />

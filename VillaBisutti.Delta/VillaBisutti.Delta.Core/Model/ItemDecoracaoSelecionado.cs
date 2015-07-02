@@ -23,7 +23,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Quantidade { get; set; }
 		public string ContatoFornecimento { get; set; }
 		public string Observacoes { get; set; }
-		public List<Foto> Fotos { get; set; }
 		public int HorarioMontagem { get; set; }
 		public Horario Montagem
 		{

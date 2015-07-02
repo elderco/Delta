@@ -7,12 +7,14 @@ using System.Text;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class Montagem
+	public class Montagem : IEntityBase
 	{
+		public int Id { get; set; }
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		public Evento Evento { get; set; }
 		public string Observacoes { get; set; }
 		public List<ItemMontagemSelecionado> Itens { get; set; }
+		public List<Foto> Fotos { get; set; }
 	}
 }

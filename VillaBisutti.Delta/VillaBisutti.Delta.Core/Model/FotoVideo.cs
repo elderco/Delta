@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-    public class FotoVideo 
-    {
-        [Key, ForeignKey("Evento")]
-        public int EventoId { get; set; }
-        public Evento Evento { get; set; }
-        public string CoresCerimonia { get; set; }
-        public string Observacoes { get; set; }
-        public List<ItemFotoVideoSelecionado> Itens { get; set; }
-
-      
-    }
+	public class FotoVideo : IEntityBase
+	{
+		public int Id { get; set; }
+		[Key, ForeignKey("Evento")]
+		public int EventoId { get; set; }
+		public Evento Evento { get; set; }
+		public string Observacoes { get; set; }
+		public List<ItemFotoVideoSelecionado> Itens { get; set; }
+		public List<Foto> Fotos { get; set; }
+	}
 }
