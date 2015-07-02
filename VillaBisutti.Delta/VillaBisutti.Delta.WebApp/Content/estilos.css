@@ -20,9 +20,21 @@
 .field-validation-error { color: #CF2B2B; }
 fieldset{border: 1px solid #522D1C !important}
 
+/* Content Background */
+.page-content{background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; }
+
 /* Botões */
 
 .btn-default { border: solid 1px #11100C !important; background-color: #522d1c !important; color: #fefefe !important; }
 .btn-default:hover { background-color: #94785C !important; }
 .btn-default:active, .btn-default:focus { background-color: #94785C !important; color: #FEFEFE !important;}
 .btn.disabled, .btn-default.disabled, .btn[disabled], .btn-default[disabled], .disabled{background-color: #926856 !important}
+
+/* Fixed Sidebar */
+/*.no-skin .sidebar{position: fixed}*/
+.sidebar{width: 230px}
+
+/* Footer */
+.footer .footer-inner .footer-content{position: fixed; bottom: 0}
+.footer{background: #FEFEFE !important; width: 100%}
+.footer-content {background-color: #FEFEFE !important;}

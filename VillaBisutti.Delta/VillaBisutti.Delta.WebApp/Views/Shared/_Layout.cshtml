@@ -15,7 +15,7 @@
 
 </head>
 <body class="no-skin">
-    <div id="navbar" class="navbar navbar-default    navbar-collapse">
+    <div id="navbar" class="navbar navbar-default navbar-collapse navbar-fixed-top">
         <script type="text/javascript">
             try { ace.settings.check('navbar', 'fixed') } catch (e) { }
         </script>
@@ -48,17 +48,19 @@
                         <a href="#"><i class="menu-icon fa fa-cog"></i></a>
                     </li>
                     <li class="transparent">
-                        <a href="#"><i class="menu-icon fa fa-calendar"></i></a>
-                    </li>
-                    <li class="transparent">
-                        <a href="#"><i class="menu-icon fa fa-dashboard"></i></a>
-                    </li>
-                    <li class="transparent">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-tasks"></i>
+                            <i class="menu-icon fa fa-calendar"></i>
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
                         <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-plus"></i>
+                                    Adicionar Evento
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="divider"></li>
                             <li>
                                 <a href="#">
                                     <i class="menu-icon fa fa-caret-right"></i>
@@ -95,6 +97,9 @@
                                 <b class="arrow"></b>
                             </li>
                         </ul>
+                    </li>
+                    <li class="transparent">
+                        <a href="#"><i class="menu-icon fa fa-dashboard"></i></a>
                     </li>
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -142,17 +147,17 @@
                     </div><!-- /.page-content -->
                 </div>
             </div><!-- /.main-content -->
-            <div class="footer">
-                <div class="footer-inner">
-                    <div class="footer-content">
-                        <span class="bolder bigger-120" style="color: #522d1c">Villa Bisutti &reg;</span>
-                        @(DateTime.Now.Year)
-						
-                        &nbsp; &nbsp;
-
-                    </div>
-                </div>
-            </div><!-- Footer -->
      </div>
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bolder bigger-120" style="color: #522d1c">Villa Bisutti &reg;</span>
+                @(DateTime.Now.Year)
+
+                &nbsp; &nbsp;
+
+            </div>
+        </div>
+    </div><!-- Footer -->
 </body>
 </html>
