@@ -13,19 +13,19 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Tipo"), Required]
 		public string Nome { get; set; }
 		public List<ItemMontagem> Itens { get; set; }
-		[Display(Name= "Item deve ser criado junto com eventos do tipo Aniversário")]
+		[Display(Name = "Item padrão para Aniversário")]
 		public bool PadraoAniversario { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Barmitzva")]
+		[Display(Name = "Item padrão para Barmitzva")]
 		public bool PadraoBarmitzva { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Batmitzva")]
+		[Display(Name = "Item padrão para Batmitzva")]
 		public bool PadraoBatmitzva { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Casamento")]
+		[Display(Name = "Item padrão para Casamento")]
 		public bool PadraoCasamento { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Corporativo")]
+		[Display(Name = "Item padrão para Corporativo")]
 		public bool PadraoCorporativo { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Debutante")]
+		[Display(Name = "Item padrão para Debutante")]
 		public bool PadraoDebutante { get; set; }
-		[Display(Name = "Item deve ser criado junto com eventos do tipo Outro")]
+		[Display(Name = "Item padrão para Outro")]
 		public bool PadraoOutro { get; set; }
 	}
 }
