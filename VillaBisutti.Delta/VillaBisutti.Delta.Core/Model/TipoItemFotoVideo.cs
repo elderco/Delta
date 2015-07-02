@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemFotoVideo : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name = "Tipo"), Required]
+		[Display(Name = "Foto e Video"), Required]
 		public string Nome { get; set; }
 		[Display(Name = "Itens")]
 		public List<ItemFotoVideo> Itens { get; set; }

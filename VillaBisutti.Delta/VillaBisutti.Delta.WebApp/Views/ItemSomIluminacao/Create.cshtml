@@ -35,12 +35,12 @@
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
-		<h4>Configuração de itens de Som e Iluminacao</h4>
+		<h4>Configuração de itens de Som e Iluminação</h4>
 		<hr />
 		@Html.ValidationSummary(true)
 
 		<div class="form-group col-md-6">
-				@Html.LabelFor(model => model.TipoItemSomIluminacaoId, new { @class = "control-label col-md-4" })
+				@Html.LabelFor(model => model.TipoItemSomIluminacao, new { @class = "control-label col-md-4" })
 			<div class="col-md-2">
 					@Html.DropDownList("TipoItemSomIluminacaoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemSomIluminacao, string.Empty, new { @class = "form-control" })
 					@Html.ValidationMessageFor(model => model.TipoItemSomIluminacao)
