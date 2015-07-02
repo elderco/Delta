@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Display(Name="Tipo de reunião"), Required]
 		public string Nome { get; set; }
-		[Display(Name="Evento (-dias)")]
+		[Display(Name="Dias Restantes até o Evento")]
 		[Range(0, 161)]
 		public int DiasAntesEvento { get; set; }
 		[Display(Name = "Reuniões simultâneas / tipo")]
