@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemBoloDoceBemCasado : IEntityBase
 	{
 		public int Id { get; set; }
+		[Display(Name = "Tipo"), Required]
 		public string Nome { get; set; }
 		public List<ItemBoloDoceBemCasado> Itens { get; set; }
 		[Display(Name = "Item padrão para Aniversario")]

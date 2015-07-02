@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoItemMontagem : IEntityBase
 	{
 		public int Id { get; set; }
-		[Required]
+		[Display(Name = "Tipo"), Required]
 		public string Nome { get; set; }
 		public List<ItemMontagem> Itens { get; set; }
 		[Display(Name= "Item deve ser criado junto com eventos do tipo Aniversário")]
