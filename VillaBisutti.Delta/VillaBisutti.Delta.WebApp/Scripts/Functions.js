@@ -215,7 +215,17 @@ function ConvertHorarioBack(itemId) {
 	$(itemId).val((horas * 60) + minutos);
 }
 function PreventNegativeNumbers(itemId) {
-
+	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
+	$(itemId).change(function () {
+		var min = parseInt($(itemId).attr("data-val-range-min"));
+		var max = parseInt($(itemId).attr("data-val-range-max"));
+		if ($(itemId).val() < min) {
+			$(itemId).val(min);
+		}
+		if ($(itemId).val() > max) {
+			$(itemId).val(max);
+		}
+	});
 }
 function FormatTextBox(itemId, char, len, limit)
 {
