@@ -214,6 +214,9 @@ function ConvertHorarioBack(itemId) {
 	var minutos = parseInt($(itemId + "_m").val());
 	$(itemId).val((horas * 60) + minutos);
 }
+function PreventNegativeNumbers(itemId) {
+
+}
 function FormatTextBox(itemId, char, len, limit)
 {
 	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
