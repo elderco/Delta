@@ -69,6 +69,7 @@
 			</div>
 		</div>
 
+		<hr class="col-md-12" />
 		<div class="form-group col-md-4">
 			@Html.LabelFor(model => model.Cardapio, new { @class = "control-label col-md-6" })
 			<div class="col-md-6">
@@ -85,6 +86,7 @@
 			</div>
 		</div>
 
+		<hr class="col-md-12" />
 		<div class="form-group col-md-4">
 			@Html.LabelFor(model => model.Produtora, new { @class = "control-label col-md-6" })
 			<div class="col-md-6">
@@ -101,6 +103,7 @@
 			</div>
 		</div>
 
+		<hr class="col-md-12" />
 		<div class="form-group col-md-4">
 			@Html.LabelFor(model => model.NomeResponsavel, new { @class = "control-label col-md-6" })
 			<div class="col-md-6">
@@ -140,23 +143,24 @@
 				@Html.ValidationMessageFor(model => model.NomeHomenageados)
 			</div>
 		</div>
-
-		<div class="form-group col-md-4">
-			@Html.LabelFor(model => model.PerfilFesta, new { @class = "control-label col-md-6" })
+		<div class="form-group col-md-12">
+			@Html.LabelFor(model => model.PerfilFesta, new { @class = "control-label col-md-2" })
 			<div class="col-md-6">
-				@Html.EditorFor(model => model.PerfilFesta)
+				@Html.TextAreaFor(model => model.PerfilFesta, new { @class = "form-control", rows = 4})
 				@Html.ValidationMessageFor(model => model.PerfilFesta)
 			</div>
 		</div>
 
-		<div class="form-group col-md-4">
-			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-6" })
+		<hr class="col-md-12" />
+		<div class="form-group col-md-12">
+			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-2" })
 			<div class="col-md-6">
-				@Html.EditorFor(model => model.Observacoes)
+				@Html.TextAreaFor(model => model.Observacoes, new { @class = "form-control", rows = 4 })
 				@Html.ValidationMessageFor(model => model.Observacoes)
 			</div>
 		</div>
 
+		<hr class="col-md-12" />
 		<div class="form-group col-md-4">
 			@Html.LabelFor(model => model.LocalCerimonia, new { @class = "control-label col-md-6" })
 			<div class="col-md-6">
@@ -173,14 +177,15 @@
 			</div>
 		</div>
 
-		<div class="form-group col-md-4">
-			@Html.LabelFor(model => model.ObservacoesCerimonia, new { @class = "control-label col-md-6" })
+		<div class="form-group col-md-12">
+			@Html.LabelFor(model => model.ObservacoesCerimonia, new { @class = "control-label col-md-2" })
 			<div class="col-md-6">
-				@Html.EditorFor(model => model.ObservacoesCerimonia)
+				@Html.TextAreaFor(model => model.ObservacoesCerimonia, new { @class = "form-control", rows = 4 })
 				@Html.ValidationMessageFor(model => model.ObservacoesCerimonia)
 			</div>
 		</div>
 
+		<hr class="col-md-12" />
 		<div class="form-group col-md-4">
 			@Html.LabelFor(model => model.EmailBoasVindasEnviado, new { @class = "control-label col-md-6" })
 			<div class="col-md-6">
@@ -204,10 +209,6 @@
 		</div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
