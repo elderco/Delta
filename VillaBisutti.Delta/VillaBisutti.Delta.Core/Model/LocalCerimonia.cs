@@ -10,13 +10,13 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public enum LocalCerimonia
 	{
-		[Description("Local")]
+		[Description("No Local")]
 		Local = 0,
-		[Description("Anexo")]
+		[Description("No Anexo")]
 		Anexo = 1,
-		[Description("Externo")]
+		[Description("Cerimônia Externa")]
 		Externo = 2,
-		[Description("NaoPossui")]
+		[Description("Não Possui Cerimônia")]
 		NaoPossui = 3
 	}
 }
