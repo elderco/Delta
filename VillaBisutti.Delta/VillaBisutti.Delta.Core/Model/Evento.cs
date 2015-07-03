@@ -45,7 +45,7 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioTermino = value.ToInt();
 			}
 		}
-		[Display(Name = "Pax (real)"), Range(0, 9999999999)]
+		[Display(Name = "Pax (real)"), Range(0, 202768562)] //População Brasileira 2014
 		public int Pax { get; set; }
 		public int PaxAproximado
 		{
