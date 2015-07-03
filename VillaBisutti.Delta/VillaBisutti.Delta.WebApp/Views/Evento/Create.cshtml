@@ -3,6 +3,13 @@
 @{
     Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		CreateHorarioEditor("HorarioInicio");
+		CreateHorarioEditor("HorarioTermino");
+	});
+</script>
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
