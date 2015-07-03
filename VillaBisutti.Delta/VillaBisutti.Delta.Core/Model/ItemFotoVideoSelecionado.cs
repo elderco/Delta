@@ -29,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool FornecimentoBisutti { get; set; }
 		[Display(Name = "Fornecedor Iniciado")]
         public bool FornecedorStartado { get; set; }
-		[Display(Name = "Quantidade")]
+		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Contato Fornecimento")]
 		public string ContatoFornecimento { get; set; }

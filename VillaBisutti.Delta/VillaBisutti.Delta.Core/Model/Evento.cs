@@ -13,7 +13,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Display(Name = "Tipo de Evento"), Required]
 		public TipoEvento TipoEvento { get; set; }
-		
 		public int LocalId { get; set; }
 		[Display(Name = "Local")]
 		public Local Local { get; set; }

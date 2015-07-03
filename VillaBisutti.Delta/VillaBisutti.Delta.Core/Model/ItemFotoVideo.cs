@@ -14,7 +14,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Nome { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
-		[Display(Name = "Foto Video")]
 		public int TipoItemFotoVideoId { get; set; }
 		[Display(Name = "Foto Video")]
 		public TipoItemFotoVideo TipoItemFotoVideo { get; set; }

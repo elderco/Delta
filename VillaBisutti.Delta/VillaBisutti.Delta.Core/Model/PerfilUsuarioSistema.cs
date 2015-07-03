@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
 		public int TipoAcessoId { get; set; }
+		[Display(Name = "Tipo de Acesso")]
 		public TipoAcesso TipoAcesso
 		{
 			get
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Model
 				TipoAcessoId = (int)value;
 			}
 		}
+		[Display(Name = "Usuários")]
 		public List<Usuario> Usuarios { get; set; }
 	}
 }
