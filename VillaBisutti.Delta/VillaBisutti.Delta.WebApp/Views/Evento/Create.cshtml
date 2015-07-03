@@ -15,16 +15,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TipoEvento, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoEvento)
-                @Html.ValidationMessageFor(model => model.TipoEvento)
+				@Html.DropDownList("TipoEvento", (IEnumerable<SelectListItem>)ViewBag.TipoEvento, string.Empty, new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.TipoEvento)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LocalId, "LocalId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Local, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("LocalId", String.Empty)
-                @Html.ValidationMessageFor(model => model.LocalId)
+                @Html.DropDownList("LocalId", (IEnumerable<SelectListItem>)ViewBag.LocalId, string.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Local)
             </div>
         </div>
 
@@ -61,10 +61,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CardapioId, "CardapioId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cardapio, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CardapioId", String.Empty)
-                @Html.ValidationMessageFor(model => model.CardapioId)
+                @Html.DropDownList("CardapioId", (IEnumerable<SelectListItem>)ViewBag.CardapioId, string.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Cardapio)
             </div>
         </div>
 
@@ -77,18 +77,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProdutoraId, "ProdutoraId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Produtora, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProdutoraId", String.Empty)
-                @Html.ValidationMessageFor(model => model.ProdutoraId)
+                @Html.DropDownList("ProdutoraId", (IEnumerable<SelectListItem>)ViewBag.ProdutoraId, string.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Produtora)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PosVendedoraId, "PosVendedoraId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PosVendedora, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("PosVendedoraId", String.Empty)
-                @Html.ValidationMessageFor(model => model.PosVendedoraId)
+                @Html.DropDownList("PosVendedoraId", (IEnumerable<SelectListItem>)ViewBag.PosVendedoraId, string.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PosVendedora)
             </div>
         </div>
 
@@ -151,7 +151,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LocalCerimonia, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LocalCerimonia)
+				@Html.DropDownList("LocalCerimonia", (IEnumerable<SelectListItem>)ViewBag.LocalCerimonia, string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LocalCerimonia)
             </div>
         </div>
