@@ -1,67 +1,11 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section menuLateral{
-
+@section scripts{
+	@RenderSection("scripts", required: false)
 }
-<div class="left navbar navbar-default">
-	<ul class="navbar-nav">
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-cutlery"></i>
-				<span class="menu-text row"> Gastronomia </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-lamp"></i>
-				<span class="menu-text glyphicon-class"> Montagem </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-ice-lolly-tasted"></i>
-				<span class="menu-text glyphicon-class"> Doces </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-grain"></i>
-				<span class="menu-text glyphicon-class"> Decoração </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-camera"></i>
-				<span class="menu-text glyphicon-class"> Foto e Vídeo </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-headphones"></i>
-				<span class="menu-text glyphicon-class"> Luz e Som </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-gift"></i>
-				<span class="menu-text glyphicon-class"> Outros Ítens </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-duplicate"></i>
-				<span class="menu-text glyphicon-class"> Contrato e Aditivos </span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class="menu-icon glyphicon glyphicon-blackboard"></i>
-				<span class="menu-text glyphicon-class"> Evento </span>
-			</a>
-		</li>
-	</ul>
-</div>
+@section MenuLateral{
+}
 
 @RenderBody()
 
