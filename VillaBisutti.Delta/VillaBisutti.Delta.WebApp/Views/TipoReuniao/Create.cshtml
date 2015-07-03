@@ -8,6 +8,11 @@
 		CreateHorarioEditor("HorarioDisponibilidadeInicio");
 		CreateHorarioEditor("HorarioDisponibilidadeTermino");
 		CreateHorarioEditor("HorarioDuracao");
+
+		PreventNegativeNumbers("DiasAntesEvento");
+		PreventNegativeNumbers("MaximoEventosEnvolvidos");
+		PreventNegativeNumbers("MaximoAreaEnvolvida");
+
 	});
 </script>
 @Scripts.Render("~/bundles/jqueryval")

@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
-		[Display(Name = "Quantidade")]
+		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
 		public int TipoItemOutrosItensId { get; set; }
 		[Display(Name = "Outros Itens")]
