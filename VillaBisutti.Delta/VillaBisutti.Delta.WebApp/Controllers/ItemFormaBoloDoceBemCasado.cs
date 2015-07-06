@@ -11,7 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class ItemFormaBoloDoceBemCasado : Controller
+	public class ItemFormaBoloDoceBemCasadoController : Controller
     {
         // GET: /Default1/
         public ActionResult Index()
