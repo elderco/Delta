@@ -161,7 +161,7 @@
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
-    <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\ItemFormaBoloDoceBemCasado.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
