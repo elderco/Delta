@@ -37,8 +37,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /FornecedorBoloDoceBemCasado/Create
         public ActionResult Create()
         {
-			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
-			ViewBag.FornecedorBoloDoceBemCasado = FornecedorBoloDoceBemCasado;
             return View();
         }
 
@@ -47,7 +45,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,NomeFornecedor")] model.FornecedorBoloDoceBemCasado fornecedorbolodocebemcasado)
+		public ActionResult ItemCreated([Bind(Include = "Id,NomeFornecedor")] model.FornecedorBoloDoceBemCasado fornecedorbolodocebemcasado)
         {
             if (ModelState.IsValid)
             {
