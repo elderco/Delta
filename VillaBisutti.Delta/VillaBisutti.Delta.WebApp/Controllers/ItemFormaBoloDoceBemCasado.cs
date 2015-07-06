@@ -11,7 +11,7 @@ using VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class Default1Controller : Controller
+    public class ItemFormaBoloDoceBemCasado : Controller
     {
         private Context db = new Context();
 
