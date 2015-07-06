@@ -104,7 +104,6 @@
     <Compile Include="Data\PerfilUsuarioSistema.cs" />
     <Compile Include="Data\RoteiroPadrao.cs" />
     <Compile Include="Data\ItemSomIluminacaoSelecionado.cs" />
-    <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\TipoItemDecoracao.cs" />
     <Compile Include="Data\TipoItemFotoVideo.cs" />
     <Compile Include="Data\TipoItemMontagem.cs" />
@@ -142,7 +141,6 @@
     <Compile Include="Model\TipoAcesso.cs" />
     <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBebida.cs" />
-    <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />
     <Compile Include="Model\TipoItemMontagem.cs" />
