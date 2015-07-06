@@ -19,6 +19,7 @@
 .login-layout .widget-box{background-color: #522D1C !important;}
 .field-validation-error { color: #CF2B2B; }
 fieldset{border: 1px solid #522D1C !important;}
+.sidebar+.main-content{margin-left: 240px}
 
 /* Content Background */
 .page-content { background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; min-height: 100% !important; }
