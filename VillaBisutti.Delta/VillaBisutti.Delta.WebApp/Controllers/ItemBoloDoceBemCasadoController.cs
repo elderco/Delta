@@ -69,8 +69,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
-			SelectList ItemBoloDoceBemCasado = new SelectList(new data.ItemBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			ViewBag.ItemBoloDoceBemCasado = ItemBoloDoceBemCasado; 
+			SelectList Fornecedor = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
+			ViewBag.Fornecedor = Fornecedor;
 			return View(itembolodocebemcasado);
         }
 
