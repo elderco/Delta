@@ -6,20 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemFormaBoloDoceBemCasado : Controller
     {
-        private Context db = new Context();
-
         // GET: /Default1/
         public ActionResult Index()
         {
-            var itemformabolodocebemcasado = db.ItemFormaBoloDoceBemCasado.Include(i => i.Fornecedor);
-            return View(itemformabolodocebemcasado.ToList());
+			return View(new data.ItemFormaBoloDoceBemCasado().GetCollection(0));
         }
 
         // GET: /Default1/Details/5
@@ -29,8 +26,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = db.ItemFormaBoloDoceBemCasado.Find(id);
-            if (itemformabolodocebemcasado == null)
+			model.ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = new data.ItemFormaBoloDoceBemCasado().GetElement(id.HasValue ? id.Value : 0);
+			if (itemformabolodocebemcasado == null)
             {
                 return HttpNotFound();
             }
@@ -40,8 +37,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Default1/Create
         public ActionResult Create()
         {
-            ViewBag.FornecedorId = new SelectList(db.FornecedorBoloDoceBemCasado, "Id", "NomeFornecedor");
-            return View();
+			SelectList ItemFormaBoloDoceBemCasado = new SelectList(new data.ItemFormaBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.ItemFormaBoloDoceBemCasado = ItemFormaBoloDoceBemCasado;
+			return View();
         }
 
         // POST: /Default1/Create
@@ -49,16 +47,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Nome,FornecedorId")] ItemFormaBoloDoceBemCasado itemformabolodocebemcasado)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,FornecedorId")] model.ItemFormaBoloDoceBemCasado itemformabolodocebemcasado)
         {
             if (ModelState.IsValid)
             {
-                db.ItemFormaBoloDoceBemCasado.Add(itemformabolodocebemcasado);
-                db.SaveChanges();
+				new data.ItemFormaBoloDoceBemCasado().Insert(itemformabolodocebemcasado);
                 return RedirectToAction("Index");
             }
-
-            ViewBag.FornecedorId = new SelectList(db.FornecedorBoloDoceBemCasado, "Id", "NomeFornecedor", itemformabolodocebemcasado.FornecedorId);
             return View(itemformabolodocebemcasado);
         }
 
@@ -69,13 +64,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = db.ItemFormaBoloDoceBemCasado.Find(id);
+			model.ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = new data.ItemFormaBoloDoceBemCasado().GetElement(id.HasValue ? id.Value : 0);
             if (itemformabolodocebemcasado == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.FornecedorId = new SelectList(db.FornecedorBoloDoceBemCasado, "Id", "NomeFornecedor", itemformabolodocebemcasado.FornecedorId);
-            return View(itemformabolodocebemcasado);
+			SelectList ItemFormaBoloDoceBemCasado = new SelectList(new data.ItemFormaBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.ItemFormaBoloDoceBemCasado = ItemFormaBoloDoceBemCasado;
+			return View(itemformabolodocebemcasado);
         }
 
         // POST: /Default1/Edit/5
@@ -83,15 +79,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,FornecedorId")] ItemFormaBoloDoceBemCasado itemformabolodocebemcasado)
+        public ActionResult Edit([Bind(Include="Id,Nome,FornecedorId")] model.ItemFormaBoloDoceBemCasado itemformabolodocebemcasado)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(itemformabolodocebemcasado).State = EntityState.Modified;
-                db.SaveChanges();
+				new data.ItemFormaBoloDoceBemCasado().Update(itemformabolodocebemcasado);
                 return RedirectToAction("Index");
             }
-            ViewBag.FornecedorId = new SelectList(db.FornecedorBoloDoceBemCasado, "Id", "NomeFornecedor", itemformabolodocebemcasado.FornecedorId);
             return View(itemformabolodocebemcasado);
         }
 
@@ -102,8 +96,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = db.ItemFormaBoloDoceBemCasado.Find(id);
-            if (itemformabolodocebemcasado == null)
+			model.ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = new data.ItemFormaBoloDoceBemCasado().GetElement(id.HasValue ? id.Value : 0);
+			if (itemformabolodocebemcasado == null)
             {
                 return HttpNotFound();
             }
@@ -115,18 +109,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemFormaBoloDoceBemCasado itemformabolodocebemcasado = db.ItemFormaBoloDoceBemCasado.Find(id);
-            db.ItemFormaBoloDoceBemCasado.Remove(itemformabolodocebemcasado);
-            db.SaveChanges();
+			new data.ItemFormaBoloDoceBemCasado().Delete(id);
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

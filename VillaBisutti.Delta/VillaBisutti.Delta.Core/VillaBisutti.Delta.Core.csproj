@@ -104,7 +104,6 @@
     <Compile Include="Data\PerfilUsuarioSistema.cs" />
     <Compile Include="Data\RoteiroPadrao.cs" />
     <Compile Include="Data\ItemSomIluminacaoSelecionado.cs" />
-    <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\TipoItemDecoracao.cs" />
     <Compile Include="Data\TipoItemFotoVideo.cs" />
     <Compile Include="Data\TipoItemMontagem.cs" />
