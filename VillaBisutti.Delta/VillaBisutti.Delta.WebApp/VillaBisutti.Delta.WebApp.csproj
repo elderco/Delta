@@ -158,6 +158,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BebidaController.cs" />
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
@@ -403,6 +404,11 @@
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Index.cshtml" />
+    <Content Include="Views\Bebida\Create.cshtml" />
+    <Content Include="Views\Bebida\Delete.cshtml" />
+    <Content Include="Views\Bebida\Details.cshtml" />
+    <Content Include="Views\Bebida\Edit.cshtml" />
+    <Content Include="Views\Bebida\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

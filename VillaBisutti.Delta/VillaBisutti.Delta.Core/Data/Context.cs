@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public Context()
 			: base("VillaBisuttiDelta")
 		{
-			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+			Database.SetInitializer<Context>(new SampleData());
 		}
 		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
 		public DbSet<Model.FornecedorBoloDoceBemCasado> FornecedorBoloDoceBemCasado { get; set; }

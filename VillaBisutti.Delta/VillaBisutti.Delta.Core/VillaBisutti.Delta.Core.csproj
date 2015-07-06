@@ -82,7 +82,7 @@
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
     <Compile Include="Data\Reuniao.cs" />
-    <Compile Include="Data\SeedDatabase.cs" />
+    <Compile Include="Data\SampleData.cs" />
     <Compile Include="Data\SomIluminacao.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoPrato.cs" />

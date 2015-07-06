@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -64,7 +65,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
 		public ActionResult Create([Bind(Include="Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada")] model.Evento evento)
         {
-			new data.Evento().Insert(evento);
+			new biz.Evento().CriarEvento(evento);
 			return RedirectToAction("Index", new { eventoId = evento.Id });
         }
 
