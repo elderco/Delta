@@ -161,7 +161,7 @@
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
-    <Compile Include="Controllers\ItemFormaBoloDoceBemCasado.cs" />
+    <Compile Include="Controllers\ItemFormaBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -169,7 +169,6 @@
     <Compile Include="Controllers\ItemBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\ItemCerimonialController.cs" />
     <Compile Include="Controllers\ItemDecoracaoController.cs" />
-    <Compile Include="Controllers\ItemFormaBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\ItemFotoVideoController.cs" />
     <Compile Include="Controllers\ItemMontagemController.cs" />
     <Compile Include="Controllers\ItemOutrosItensController.cs" />
