@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
 		public int FornecedorId { get; set; }
-		[Display(Name = "Fornecedor")]
+		[Display(Name = "Fornecedor de Forma")]
 		public FornecedorBoloDoceBemCasado Fornecedor { get; set; }
 	}
 }

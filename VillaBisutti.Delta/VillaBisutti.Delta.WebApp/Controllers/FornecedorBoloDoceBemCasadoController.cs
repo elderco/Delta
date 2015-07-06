@@ -50,6 +50,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.FornecedorBoloDoceBemCasado().Insert(fornecedorbolodocebemcasado);
+				Uri str = Request.UrlReferrer;
 				return RedirectToAction("Index", "ItemBoloDoceBemCasado");
             }
 
