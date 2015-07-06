@@ -14,6 +14,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Franco-Americano")]
 		FrancoAmericano = 1,
 		[Display(Name = "Menu-Degustação")]
-		MenuDegustacao = 2
+		MenuDegustacao = 2,
+		[Display(Name = "Outro")]
+		Outro = 3
 	}
 }
