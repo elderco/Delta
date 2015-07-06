@@ -8,9 +8,16 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-    public class Bebida : IEntityBase
-    {
-		public int Id { get; set; }
+	public class Bebida : IEntityBase
+	{
+		public int Id
+		{
+			get
+			{
+				return EventoId;
+			}
+			set { }
+		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		[Display(Name = "Evento"), Required]
