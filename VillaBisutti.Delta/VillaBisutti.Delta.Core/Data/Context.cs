@@ -15,6 +15,8 @@ namespace VillaBisutti.Delta.Core.Data
 			Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
 		}
 		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
+		public DbSet<Model.FornecedorBoloDoceBemCasado> FornecedorBoloDoceBemCasado { get; set; }
+		public DbSet<Model.ItemFormaBoloDoceBemCasado> ItemFormaBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratoAdivitivo { get; set; }
 		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
