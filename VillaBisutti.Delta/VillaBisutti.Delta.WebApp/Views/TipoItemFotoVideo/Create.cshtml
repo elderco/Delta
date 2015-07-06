@@ -65,6 +65,49 @@
 			</div>
 		</div>
 
+		--------------------------------------------------------
+
+
+		<div class="form-group row">
+			@Html.LabelFor(model => model.CopiaDecoracao, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CopiaDecoracao)
+				@Html.ValidationMessageFor(model => model.CopiaDecoracao)
+			</div>
+		</div>
+
+		<div class="form-group row">
+			@Html.LabelFor(model => model.CopiaMontagem, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CopiaMontagem)
+				@Html.ValidationMessageFor(model => model.CopiaMontagem)
+			</div>
+		</div>
+
+		<div class="form-group row">
+			@Html.LabelFor(model => model.CopiaBoloDoceBemCasado, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CopiaBoloDoceBemCasado)
+				@Html.ValidationMessageFor(model => model.CopiaBoloDoceBemCasado)
+			</div>
+		</div>
+
+		<div class="form-group row">
+			@Html.LabelFor(model => model.CopiaSomIluminacao, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CopiaSomIluminacao)
+				@Html.ValidationMessageFor(model => model.CopiaSomIluminacao)
+			</div>
+		</div>
+
+		<div class="form-group row">
+			@Html.LabelFor(model => model.CopiaOutrosItens, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CopiaOutrosItens)
+				@Html.ValidationMessageFor(model => model.CopiaOutrosItens)
+			</div>
+		</div>
+
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">
 				<input type="submit" value="Create" class="btn btn-default" />
