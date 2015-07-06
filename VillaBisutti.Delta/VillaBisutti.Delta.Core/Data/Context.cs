@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,12 +60,13 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
+			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			modelBuilder.Entity<Model.Evento>()
-				.HasRequired(e => e.Produtora)
+				.HasOptional(e => e.Produtora)
 				.WithMany()
 				.WillCascadeOnDelete(false);
 			modelBuilder.Entity<Model.Evento>()
-				.HasRequired(e => e.PosVendedora)
+				.HasOptional(e => e.PosVendedora)
 				.WithMany()
 				.WillCascadeOnDelete(false);
 		}

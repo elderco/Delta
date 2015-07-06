@@ -1,0 +1,21 @@
+﻿@using VillaBisutti.Delta;
+@model VillaBisutti.Delta.Core.Model.Evento
+@{
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+<div class="bg-primary row">
+	<div class="form-group">
+		<p class="col-md-4"> @(Model.Data.ToString("dd/MM/yyyy")) </p>
+		<p class="col-md-4"> @(Model.Local.NomeCasa) </p>
+		<p class="col-md-4"> @(Model.NomeHomenageados) </p>
+	</div>
+	<div class="form-group">
+		<p class="col-md-4"> @(Model.TipoEvento.GetDescription()) </p>
+		<p class="col-md-4"> @(Model.Pax) convidados (@(Model.PaxAproximado)) </p>
+		<p class="col-md-2"> das @(Model.Inicio.ToString()) às (@(Model.Termino.ToString())) </p>
+		<p class="col-md-2"> Cerimonial: @(Model.LocalCerimonia.GetDescription()) </p>
+	</div>
+	<div class="form-group">
+		<p class="col-md-12"> @(Model.PerfilFesta) </p>
+	</div>
+</div>

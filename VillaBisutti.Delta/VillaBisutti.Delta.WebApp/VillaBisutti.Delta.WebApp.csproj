@@ -409,6 +409,7 @@
     <Content Include="Views\Bebida\Details.cshtml" />
     <Content Include="Views\Bebida\Edit.cshtml" />
     <Content Include="Views\Bebida\Index.cshtml" />
+    <Content Include="Views\Evento\Cabecalho.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

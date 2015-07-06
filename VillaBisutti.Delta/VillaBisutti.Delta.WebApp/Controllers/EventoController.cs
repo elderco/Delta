@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			ViewBag.TipoServico = new SelectList(Util.TiposServico, "key", "value");
 			ViewBag.TipoEvento = new SelectList(Util.TiposEvento, "key", "value");
 			ViewBag.LocalCerimonia = new SelectList(Util.LocalCerimonia, "key", "value");
-			ViewBag.CardapioId = new SelectList(new data.Cardapio().GetCollection(0), "Id", "NomeCasa");
+			ViewBag.CardapioId = new SelectList(new data.Cardapio().GetCollection(0), "Id", "Nome");
 			ViewBag.LocalId = new SelectList(new data.Local().GetCollection(0), "Id", "NomeCasa");
 			ViewBag.PosVendedoraId = new SelectList(new data.Usuario().GetPorTipo(model.TipoAcesso.Producao), "Id", "Nome");
 			ViewBag.ProdutoraId = new SelectList(new data.Usuario().GetPorTipo(model.TipoAcesso.Producao), "Id", "Nome");
@@ -35,7 +35,19 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			return View(new data.Evento().GetListaPorCasaProducao(id, SessionFacade.UsuarioLogado.Id));
 		}
-
+		public ActionResult Cabecalho(int id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.Evento evento = new data.Evento().GetElement(id);
+			if (evento == null)
+			{
+				return HttpNotFound();
+			}
+			return View(evento);
+		}
         // GET: /Evento/Details/5
         public ActionResult Details(int? id)
         {
@@ -66,7 +78,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Create([Bind(Include="Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada")] model.Evento evento)
         {
 			new biz.Evento().CriarEvento(evento);
-			return RedirectToAction("Index", new { eventoId = evento.Id });
+			return RedirectToAction("Details", new { id = evento.Id });
         }
 
         // GET: /Evento/Edit/5
