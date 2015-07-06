@@ -1,12 +1,10 @@
 ﻿@model VillaBisutti.Delta.Core.Model.BoloDoceBemCasado
-
 @{
-    ViewBag.Title = "Create";
+	Layout = null;
 }
-
-<h2>Create</h2>
-
-
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -17,9 +15,9 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EventoId, "EventoId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EventoId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EventoId", String.Empty)
+				@Html.EditorFor(model => model.EventoId)
                 @Html.ValidationMessageFor(model => model.EventoId)
             </div>
         </div>
@@ -46,12 +44,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

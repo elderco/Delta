@@ -48,7 +48,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="EventoId,Id,Observacoes")] model.BoloDoceBemCasado bolodocebemcasado)
+        public ActionResult ItemCreated([Bind(Include="EventoId,Id,Observacoes")] model.BoloDoceBemCasado bolodocebemcasado)
         {
             if (ModelState.IsValid)
             {

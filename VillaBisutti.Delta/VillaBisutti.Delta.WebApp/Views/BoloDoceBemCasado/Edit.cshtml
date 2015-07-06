@@ -1,19 +1,13 @@
 ﻿@model VillaBisutti.Delta.Core.Model.BoloDoceBemCasado
-
 @{
-    ViewBag.Title = "Edit";
+	Layout = null;
 }
-
-<h2>Edit</h2>
-
-
+	@Scripts.Render("~/bundles/jqueryval")
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BoloDoceBemCasado</h4>
-        <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.EventoId)
 
@@ -39,12 +33,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
