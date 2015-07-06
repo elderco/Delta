@@ -9,7 +9,15 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Decoracao : IEntityBase
 	{
-		public int Id { get; set; }
+		[NotMapped]
+		public int Id
+		{
+			get
+			{
+				return EventoId;
+			}
+			set { }
+		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		[Display(Name = "Evento"), Required]

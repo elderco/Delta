@@ -10,7 +10,15 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class FotoVideo : IEntityBase
 	{
-		public int Id { get; set; }
+		[NotMapped]
+		public int Id
+		{
+			get
+			{
+				return EventoId;
+			}
+			set { }
+		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		[Display(Name = "Evento")]
