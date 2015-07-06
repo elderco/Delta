@@ -50,8 +50,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.FornecedorBoloDoceBemCasado().Insert(fornecedorbolodocebemcasado);
-				Uri str = Request.UrlReferrer;
-				return RedirectToAction("Index", "ItemBoloDoceBemCasado");
+				return Redirect(Request.UrlReferrer.AbsolutePath);
             }
 
             return View(fornecedorbolodocebemcasado);
@@ -82,7 +81,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.FornecedorBoloDoceBemCasado().Update(fornecedorbolodocebemcasado);
-				return RedirectToAction("Index", "ItemBoloDoceBemCasado");
+				return Redirect(Request.UrlReferrer.AbsolutePath);
+				//return RedirectToAction("Index", "ItemBoloDoceBemCasado");
             }
             return View(fornecedorbolodocebemcasado);
         }
