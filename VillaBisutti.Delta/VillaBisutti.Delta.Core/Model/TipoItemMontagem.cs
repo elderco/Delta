@@ -28,5 +28,19 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PadraoDebutante { get; set; }
 		[Display(Name = "Item padrão para Outro")]
 		public bool PadraoOutro { get; set; }
+		[Display(Name = "Copiar itens para Bebida")]
+		public bool CopiaBebida { get; set; }
+		[Display(Name = "Copiar itens para Decoração")]
+		public bool CopiaDecoracao { get; set; }
+		//[Display(Name = "Copiar itens para Montagem")]
+		//public bool CopiaMontagem { get; set; }
+		[Display(Name = "Copiar itens para Bolo, Doces e Bem-casado")]
+		public bool CopiaBoloDoceBemCasado { get; set; }
+		[Display(Name = "Copiar itens para Foto e vídeo")]
+		public bool CopiaFotoVideo { get; set; }
+		[Display(Name = "Copiar itens para Som e Iluminação")]
+		public bool CopiaSomIluminacao { get; set; }
+		[Display(Name = "Copiar itens para Outros itens")]
+		public bool CopiaOutrosItens { get; set; }
 	}
 }

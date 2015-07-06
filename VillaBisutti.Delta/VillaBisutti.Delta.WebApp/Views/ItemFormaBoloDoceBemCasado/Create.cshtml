@@ -1,13 +1,37 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemFormaBoloDoceBemCasado
 
 @{
-    ViewBag.Title = "Create";
+	Layout = null;
+	//ViewBag.Title = "Create";
 }
+@Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript" language="javascript">
+	$(document).ready(function () {
+		$("#EditarFornecedor").attr("disabled", "disabled");
+		$("#ExcluirFornecedor").attr("disabled", "disabled");
+		$("#FornecedorId").change(function () {
+			var id = $(this).val();
+			if (id == "") {
+				$("#EditarFornecedor").attr("disabled", "disabled");
+				$("#ExcluirFornecedor").attr("disabled", "disabled");
+			} else {
+				$("#EditarFornecedor").removeAttr("disabled");
+				$("#ExcluirFornecedor").removeAttr("disabled");
+			}
+			var urlEditar = "@(Url.Action("Edit", "ItemFormaBoloDoceBemCasado"))/";
+			var urlDeletar = "@(Url.Action("Delete", "ItemFormaBoloDoceBemCasado"))/";
+			$("#EditarFornecedor").click(function () {
+				ShowPopUp(urlEditar + id, "Editar Fornecedor", 790);
+			});
+			$("#ExcluirFornecedor").click(function () {
+				ShowPopUp(urlDeletar + id, "Excluir Fornecedor", 790);
+			});
+		});
+		PreventNegativeNumbers("Quantidade");
+});
+</script>
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("ItemCreated", "ItemFormaBoloDoceBemCasado")) 
 {
     @Html.AntiForgeryToken()
     
@@ -25,11 +49,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FornecedorId, "FornecedorId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Fornecedor, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("FornecedorId", String.Empty)
-                @Html.ValidationMessageFor(model => model.FornecedorId)
+                @Html.DropDownList("FornecedorId", (IEnumerable<SelectListItem>)ViewBag.ItemFormaBoloDoceBemCasado, string.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Fornecedor)
             </div>
+			<div class="col-md-6">
+				<a href="@(Url.Action("Create", "Fornecedor"))" class="btn btn-sm btn-default PopUpActionLinks" id="CriarFornecedor"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Criar</a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-default" id="EditarFornecedor"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-default" id="ExcluirFornecedor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</a>
+			</div>
         </div>
 
         <div class="form-group">
@@ -38,12 +67,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

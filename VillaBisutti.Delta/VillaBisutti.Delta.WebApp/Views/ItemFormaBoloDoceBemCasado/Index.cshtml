@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemFormaBoloDoceBemCasado>
 
 @{
-    ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	//ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section scripts {
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".PopUpActionLinks").click(function (e) {
+				e.preventDefault();
+				ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+			});
+		});
+	</script>
+}
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    @Html.Action("Create", "ItemFormaBoloDoceBemCasado")
 <table class="table">
     <tr>
         <th>
