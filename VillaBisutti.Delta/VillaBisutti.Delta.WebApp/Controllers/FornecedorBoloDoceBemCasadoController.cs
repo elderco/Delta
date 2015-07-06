@@ -108,7 +108,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.FornecedorBoloDoceBemCasado().Delete(id);
-			return RedirectToAction("Index", "ItemBoloDoceBemCasado");
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+			//return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
