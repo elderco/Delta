@@ -15,6 +15,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     {
 		private void CriarControlesColecao()
 		{
+			ViewBag.TipoServico = new SelectList(Util.TiposServico, "key", "value");
 			ViewBag.TipoEvento = new SelectList(Util.TiposEvento, "key", "value");
 			ViewBag.LocalCerimonia = new SelectList(Util.LocalCerimonia, "key", "value");
 			ViewBag.CardapioId = new SelectList(new data.Cardapio().GetCollection(0), "Id", "NomeCasa");
@@ -64,7 +65,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Create([Bind(Include="Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada")] model.Evento evento)
         {
 			new data.Evento().Insert(evento);
-            return RedirectToAction("Index");
+			return RedirectToAction("Index", new { eventoId = evento.Id });
         }
 
         // GET: /Evento/Edit/5

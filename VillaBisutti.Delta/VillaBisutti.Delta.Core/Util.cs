@@ -160,7 +160,7 @@ namespace VillaBisutti.Delta
 				if (tiposServico == null)
 				{
 					tiposServico = new Dictionary<int, string>();
-					foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoServico)).Cast<Delta.Core.Model.TipoServico>())
+					foreach (Delta.Core.Model.TipoServico item in Enum.GetValues(typeof(Delta.Core.Model.TipoServico)).Cast<Delta.Core.Model.TipoServico>())
 						tiposServico[(int)item] = item.GetDescription();
 				}
 				return tiposServico;

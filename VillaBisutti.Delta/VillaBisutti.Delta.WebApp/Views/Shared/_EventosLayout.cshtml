@@ -1,11 +1,102 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@section scripts{
-	@RenderSection("scripts", required: false)
+﻿@using VillaBisutti.Delta;
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section MenuLateral{
+	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">
+		<ul class="nav nav-list nav-list-left">
+			<li>
+				<a href="@(Url.Action("Index", "Reuniao", new { eventoId = ViewBag.EventoId }))">
+					<i class="menu-icon fa fa-group"></i>
+					<span class="menu-text"> Reuniões </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemDecoracao", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-leaf"></i>
+					<span class="menu-text"> Decoração </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemMontagem", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-trophy"></i>
+					<span class="menu-text"> Montagem </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a class="dropdown-toggle" href="#">
+					<i class="menu-icon fa fa-cutlery"></i>
+					<span class="menu-text"> Gastronomia </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemBebida", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-glass"></i>
+					<span class="menu-text"> Bebidas </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="javascript:void(0);">
+					<i class="menu-icon fa fa-birthday-cake"></i>
+					<span class="menu-text"> Bolo, doce e bem-casado </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemFotoVideo", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-camera-retro"></i>
+					<span class="menu-text"> Foto e Vídeo </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemSomIluminacao", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-headphones"></i>
+					<span class="menu-text"> Som e Iluminação </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a href="@Url.Action("Index", "ItemOutrosItens", new { eventoId = ViewBag.EventoId })">
+					<i class="menu-icon fa fa-gift"></i>
+					<span class="menu-text"> Outros Ítens </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a class="dropdown-toggle" href="#">
+					<i class="menu-icon fa fa-sort-amount-desc"></i>
+					<span class="menu-text"> Roteiro </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
+				<a class="dropdown-toggle" href="#">
+					<i class="menu-icon fa fa-sort-amount-asc"></i>
+					<span class="menu-text"> Cerimonial </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+		</ul>
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+	</div>
 }
 
 @RenderBody()
 
+@section scripts{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+		})
+	</script>
+	@RenderSection("scripts", required: false)
+}

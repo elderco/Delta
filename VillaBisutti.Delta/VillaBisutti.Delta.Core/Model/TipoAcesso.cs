@@ -10,7 +10,9 @@ namespace VillaBisutti.Delta.Core.Model
 	public enum TipoAcesso
 	{
 		[Display(Name = "Produção")]
-		Producao = 1,
+		Producao = 0,
+		[Display(Name = "Pós-venda")]
+		Posvenda = 1,
 		[Display(Name = "Assistente")]
 		Assistente = 2,
 		[Display(Name = "Planejamento")]
