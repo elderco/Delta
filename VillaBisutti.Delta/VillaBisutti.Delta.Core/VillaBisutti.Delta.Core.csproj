@@ -142,7 +142,6 @@
     <Compile Include="Model\TipoAcesso.cs" />
     <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBebida.cs" />
-    <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />
     <Compile Include="Model\TipoItemMontagem.cs" />
