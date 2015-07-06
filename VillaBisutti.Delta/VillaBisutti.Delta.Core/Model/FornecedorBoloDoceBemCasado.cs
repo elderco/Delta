@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class FornecedorBoloDoceBemCasado : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name = "Nome do fornecedor"), Required]
+		[Display(Name = "Nome do Fornecedor"), Required]
 		public string NomeFornecedor { get; set; }
 		[Display(Name = "Doces Fornecidos")]
 		public List<ItemBoloDoceBemCasado> DocesFornecidos { get; set; }
