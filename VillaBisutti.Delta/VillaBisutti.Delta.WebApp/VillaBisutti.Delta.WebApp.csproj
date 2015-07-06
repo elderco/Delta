@@ -158,11 +158,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\FornecedorBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemBebidaController.cs" />
+    <Compile Include="Controllers\ItemBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\ItemCerimonialController.cs" />
     <Compile Include="Controllers\ItemDecoracaoController.cs" />
     <Compile Include="Controllers\ItemFotoVideoController.cs" />
@@ -379,6 +383,26 @@
     <Content Include="Views\Evento\Delete.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
     <Content Include="Views\Evento\Details.cshtml" />
+    <Content Include="Views\BoloDoceBemCasado\Create.cshtml" />
+    <Content Include="Views\BoloDoceBemCasado\Delete.cshtml" />
+    <Content Include="Views\BoloDoceBemCasado\Details.cshtml" />
+    <Content Include="Views\BoloDoceBemCasado\Edit.cshtml" />
+    <Content Include="Views\BoloDoceBemCasado\Index.cshtml" />
+    <Content Include="Views\FornecedorBoloDoceBemCasado\Create.cshtml" />
+    <Content Include="Views\FornecedorBoloDoceBemCasado\Delete.cshtml" />
+    <Content Include="Views\FornecedorBoloDoceBemCasado\Details.cshtml" />
+    <Content Include="Views\FornecedorBoloDoceBemCasado\Edit.cshtml" />
+    <Content Include="Views\FornecedorBoloDoceBemCasado\Index.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Create.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Delete.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Details.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Edit.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Index.cshtml" />
+    <Content Include="Views\Default1\Create.cshtml" />
+    <Content Include="Views\Default1\Delete.cshtml" />
+    <Content Include="Views\Default1\Details.cshtml" />
+    <Content Include="Views\Default1\Edit.cshtml" />
+    <Content Include="Views\Default1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
