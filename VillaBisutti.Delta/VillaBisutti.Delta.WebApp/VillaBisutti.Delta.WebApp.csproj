@@ -398,11 +398,6 @@
     <Content Include="Views\ItemBoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasado\Index.cshtml" />
-    <Content Include="Views\Default1\Create.cshtml" />
-    <Content Include="Views\Default1\Delete.cshtml" />
-    <Content Include="Views\Default1\Details.cshtml" />
-    <Content Include="Views\Default1\Edit.cshtml" />
-    <Content Include="Views\Default1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

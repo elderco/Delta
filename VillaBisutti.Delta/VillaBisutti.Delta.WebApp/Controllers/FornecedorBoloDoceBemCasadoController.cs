@@ -37,7 +37,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /FornecedorBoloDoceBemCasado/Create
         public ActionResult Create()
         {
-			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "Nome Fornecedor");
+			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
 			ViewBag.FornecedorBoloDoceBemCasado = FornecedorBoloDoceBemCasado;
             return View();
         }
@@ -70,7 +70,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
-			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "Nome Fornecedor");
+			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
 			ViewBag.FornecedorBoloDoceBemCasado = fornecedorbolodocebemcasado;
 			return View(fornecedorbolodocebemcasado);
         }

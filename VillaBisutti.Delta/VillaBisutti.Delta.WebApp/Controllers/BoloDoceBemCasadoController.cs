@@ -38,7 +38,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /BoloDoceBemCasado/Create
         public ActionResult Create()
         {
-			SelectList BoloDoceBemCasado = new SelectList(new data.BoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Evento), "Id", "Evento");
+			SelectList BoloDoceBemCasado = new SelectList(new data.BoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.EventoId), "Id", "EventoId");
 			ViewBag.BoloDoceBemCasado = BoloDoceBemCasado;
 			return View();
         }
@@ -70,7 +70,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
-			SelectList BoloDoceBemCasado = new SelectList(new data.BoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Evento), "Id", "Evento");
+			SelectList BoloDoceBemCasado = new SelectList(new data.BoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.EventoId), "Id", "EventoId");
 			ViewBag.BoloDoceBemCasado = bolodocebemcasado;
 			return View(bolodocebemcasado);
         }
