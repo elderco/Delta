@@ -50,7 +50,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.FornecedorBoloDoceBemCasado().Insert(fornecedorbolodocebemcasado);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "ItemBoloDoceBemCasado");
             }
 
             return View(fornecedorbolodocebemcasado);
@@ -68,8 +68,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
-			SelectList FornecedorBoloDoceBemCasado = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
-			ViewBag.FornecedorBoloDoceBemCasado = fornecedorbolodocebemcasado;
 			return View(fornecedorbolodocebemcasado);
         }
 
@@ -83,7 +81,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.FornecedorBoloDoceBemCasado().Update(fornecedorbolodocebemcasado);
-                return RedirectToAction("Index");
+				return RedirectToAction("Index", "ItemBoloDoceBemCasado");
             }
             return View(fornecedorbolodocebemcasado);
         }
@@ -109,7 +107,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.FornecedorBoloDoceBemCasado().Delete(id);
-            return RedirectToAction("Index");
+			return RedirectToAction("Index", "ItemBoloDoceBemCasado");
         }
 
         protected override void Dispose(bool disposing)

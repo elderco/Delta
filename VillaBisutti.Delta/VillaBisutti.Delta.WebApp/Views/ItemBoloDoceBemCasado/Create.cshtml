@@ -19,8 +19,8 @@
 				$("#EditarFornecedor").removeAttr("disabled");
 				$("#ExcluirFornecedor").removeAttr("disabled");
 			}
-			var urlEditar = "@(Url.Action("Edit", "ItemBoloDoceBemCasado"))/";
-			var urlDeletar = "@(Url.Action("Delete", "ItemBoloDoceBemCasado"))/";
+			var urlEditar = "@(Url.Action("Edit", "FornecedorBoloDoceBemCasado"))/";
+			var urlDeletar = "@(Url.Action("Delete", "FornecedorBoloDoceBemCasado"))/";
 			$("#EditarFornecedor").click(function () {
 				ShowPopUp(urlEditar + id, "Editar Fornecedor", 790);
 			});
@@ -37,7 +37,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>ItemBoloDoceBemCasado</h4>
+        <h4>Bolo, Doce e Bem-Casado</h4>
         <hr />
         @Html.ValidationSummary(true)
 
@@ -60,7 +60,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.Fornecedor, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownList("FornecedorId", (IEnumerable<SelectListItem>)ViewBag.ItemBoloDoceBemCasado, string.Empty, new { @class = "form-control" })
+				@Html.DropDownList("FornecedorId", (IEnumerable<SelectListItem>)ViewBag.Fornecedor, string.Empty, new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.Fornecedor)
 			</div>
 			<div class="col-md-6">

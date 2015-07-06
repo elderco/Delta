@@ -37,8 +37,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Default1/Create
         public ActionResult Create()
         {
-			SelectList ItemFormaBoloDoceBemCasado = new SelectList(new data.ItemFormaBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			ViewBag.ItemFormaBoloDoceBemCasado = ItemFormaBoloDoceBemCasado;
+			SelectList Fornecedor = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
+			ViewBag.Fornecedor = Fornecedor;
 			return View();
         }
 
