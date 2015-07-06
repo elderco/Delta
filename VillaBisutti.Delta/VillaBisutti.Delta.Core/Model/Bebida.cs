@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Bebida : IEntityBase
 	{
+		[NotMapped]
 		public int Id
 		{
 			get
