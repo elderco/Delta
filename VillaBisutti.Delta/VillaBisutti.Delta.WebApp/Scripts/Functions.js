@@ -5,8 +5,22 @@
 	});
 }
 function ShowPopUp(url, title, w, h) {
+	var $popUpContainer = $("<div/>").attr("id", "PopUp").attr("tabindex", "-1").attr("role", "dialog").attr("aria-labelledby", "myModalLabel").addClass("modal fade");
+	var $popUpDialog = $("<div/>").attr("role", "document").addClass("modal-dialog");
+	var $popUpContent = $("<div/>").addClass("modal-content");
+	var $popUpHeader = $("<div/>").addClass("modal-header");
+	var $popUpCloseButton = $("<button/>").attr("type", "button").attr("data-dismiss", "modal").attr("aria-label", "Close").addClass("close white").html("<span aria-hidden=\"true\">&times;</span>");
+	var $popUpHeaderText = $("<h4/>").addClass("modal-title");
+	$popUpHeader.append($popUpCloseButton);
+	$popUpHeader.append($popUpHeaderText);
+	var $popUpBody = $("<div/>").attr("id", "PopUp_body").addClass("modal-body");
+	$popUpContent.append($popUpHeader);
+	$popUpContent.append($popUpBody);
+	$popUpDialog.append($popUpContent);
+	$popUpContainer.append($popUpDialog);
+	$("body").append($popUpContainer);
 
-    title = title ? title : 'Atenção';
+	title = title ? title : 'Atenção';
     var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
     var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
     var URL = url.indexOf("?") >= 0 ? "&" : "?";
@@ -16,10 +30,9 @@ function ShowPopUp(url, title, w, h) {
     $('.modal-dialog').css('width', pw + 'px');
     $('.modal-body').css('height', ph + 'px');
     $('.modal-body').load(URL, function (response, status, xhr) {
-        HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
+    	HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
     });
-    $('#PopUp').modal('show');
-
+    $("#PopUp").modal('show');
 }
 function ShowPopUp_2(url, title, w, h) {
     var $div = $("<div/>").attr("id", "PopUp");
@@ -51,10 +64,8 @@ function ClosePopUp() {
 	$("#PopUp").dialog('close');
 }
 function HandleResponse(responseText, statusResponse, statusCode, statusText, containerId) {
-    if (statusResponse == "error") {
-        var body = responseText;
-        alert(body.len);
-        var corpo = body[1].substr(0, body[1].len - 2);
+	if (statusResponse == "error") {
+		responseText = responseText.split("<body bgcolor=\"white\">")[1];
 		var id = "ErrorDetail_" + Math.random();
 		id = id.replace(".", "");
 		var $errorContent = $("<div/>")
