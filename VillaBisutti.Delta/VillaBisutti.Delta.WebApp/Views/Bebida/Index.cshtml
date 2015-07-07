@@ -6,14 +6,14 @@
 @Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
 @Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
 <div class="row">
-	<h3>Fornecimento Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
 	@Html.Action("ListFornecimentoBisutti", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
 </div>
 <div class="row">
-	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
 	@Html.Action("ListFornecimentoTerceiro", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = false })
 </div>
 <div class="row">
-	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
 	@Html.Action("ListFornecimentoContratante", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
 </div>

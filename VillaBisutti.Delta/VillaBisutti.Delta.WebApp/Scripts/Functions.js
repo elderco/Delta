@@ -1,6 +1,8 @@
 ﻿function LoadPage(url, target) {
 	target = target.replace("#", "") == target ? "#" + target : target;
-	$(target).load(url, function (response, status, xhr) {
+	var URL = url.indexOf("?") >= 0 ? "&" : "?";
+	URL = url + URL + "sid=" + Math.random();
+	$(target).load(URL, function (response, status, xhr) {
 		HandleResponse(response, status, xhr.status, xhr.statusText, target);
 	});
 }

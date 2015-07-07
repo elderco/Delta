@@ -39,5 +39,10 @@ namespace VillaBisutti.Delta.Core.Data
 				(i => i.TipoItemBebidaId == tipoId || tipoId == 0) 
 				).ToList();
 		}
+
+		public List<Model.ItemBebida> ListarPorTipo(int tipoId)
+		{
+			return context.ItemBebida.Where(ib => ib.TipoItemBebidaId == tipoId).ToList();
+		}
 	}
 }
