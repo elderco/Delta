@@ -20,6 +20,7 @@
 .field-validation-error { color: #CF2B2B; }
 fieldset{border: 1px solid #522D1C !important;}
 .sidebar+.main-content{margin-left: 240px}
+.bg-primary { background-color: #522d1c !important; color: #fefefe !important; margin: 10px; padding: 5px;}
 
 /* Modal */
 .modal-header{background: #11100C; color:#DBC6B1}
@@ -36,7 +37,6 @@ fieldset{border: 1px solid #522D1C !important;}
 .btn.disabled, .btn-default.disabled, .btn[disabled], .btn-default[disabled], .disabled{background-color: #926856 !important;}
 
 /* Fixed Sidebar */
-/*.no-skin .sidebar{position: fixed}*/
 .sidebar{width: 230px}
 
 /* Footer */
