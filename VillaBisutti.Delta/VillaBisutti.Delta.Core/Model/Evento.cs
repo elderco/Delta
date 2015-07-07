@@ -68,6 +68,12 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Pós Vendedora")]
 		public Usuario PosVendedora { get; set; }
 
+		//Assessoria
+		[Display(Name = "Possui assessoria")]
+		public bool PossuiAssessoria { get; set; }
+		[Display(Name = "Contato da assessoria")]
+		public string ContatoAssessoria { get; set; }
+
 		//Dados do contratante
 		[Display(Name = "Nome do Responsável"), Required]
 		public string NomeResponsavel { get; set; }
