@@ -93,18 +93,21 @@ namespace VillaBisutti.Delta
             destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
             using (var graphics = Graphics.FromImage(destImage))
             {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 graphics.CompositingQuality = CompositingQuality.HighQuality;
                 graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 using (var wrapMode = new ImageAttributes())
                 {
                     wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    graphics.DrawImage(image, new Rectangle(0, 0, width, height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
-                //graphics.DrawRectangle(new Pen(Color.White,(float)image.Width),);
-                graphics.DrawString(Util.Get<string>("texto-imagens"), new Font(FontFamily.GenericSansSerif, 20, FontStyle.Regular, GraphicsUnit.Pixel), Brushes.Transparent, 0, 0);
+                string text = "Imagem meramente ilustrativa";
+                Rectangle rect = new Rectangle(0, width - 20, destImage.Width, destImage.Height);
+                graphics.FillRectangle(Brushes.White, rect);
+                graphics.DrawString(text, new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
+                graphics.Flush();
+
             }
             return destImage;
 
