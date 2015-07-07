@@ -5,12 +5,30 @@
 	});
 }
 function ShowPopUp(url, title, w, h) {
-	var $div = $("<div/>").attr("id", "PopUp");
+
+    title = title ? title : 'Atenção';
+    var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
+    var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
+    var URL = url.indexOf("?") >= 0 ? "&" : "?";
+    URL = url + URL + "sid=" + Math.random();
+
+    $('.modal-title').text(title);
+    $('.modal-dialog').css('width', pw + 'px');
+    $('.modal-body').css('height', ph + 'px');
+    $('.modal-body').load(URL, function (response, status, xhr) {
+        HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
+    });
+    $('#PopUp').modal('show');
+
+}
+function ShowPopUp_2(url, title, w, h) {
+    var $div = $("<div/>").attr("id", "PopUp");
 	$("body").append($div);
 	var URL = url.indexOf("?") >= 0 ? "&" : "?";
 	URL = url + URL + "sid=" + Math.random();
 	var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
 	var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
+	title = !title ? "Atenção" : title;
 	$("#PopUp").attr("title", title).dialog({
 		modal: true,
 		width: pw,
@@ -33,7 +51,10 @@ function ClosePopUp() {
 	$("#PopUp").dialog('close');
 }
 function HandleResponse(responseText, statusResponse, statusCode, statusText, containerId) {
-	if (statusResponse == "error") {
+    if (statusResponse == "error") {
+        var body = responseText;
+        alert(body.len);
+        var corpo = body[1].substr(0, body[1].len - 2);
 		var id = "ErrorDetail_" + Math.random();
 		id = id.replace(".", "");
 		var $errorContent = $("<div/>")

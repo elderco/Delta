@@ -21,6 +21,10 @@
 fieldset{border: 1px solid #522D1C !important;}
 .sidebar+.main-content{margin-left: 240px}
 
+/* Modal */
+.modal-header{background: #11100C; color:#DBC6B1}
+.modal-body{overflow: auto}
+
 /* Content Background */
 .page-content { background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; min-height: 100% !important; }
 
