@@ -21,36 +21,30 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-		<h4>TipoReuniao</h4>
+		<h4>Tipo de Reuniao</h4>
 		<hr />
 		@Html.ValidationSummary(true)
 
-		<div class="form-group row">
+		<div class="form-group">
 			@Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
+			<div class="col-md-4">
 				@Html.EditorFor(model => model.Nome)
 				@Html.ValidationMessageFor(model => model.Nome)
 			</div>
-		</div>
 
-		<div class="form-group row">
 			@Html.LabelFor(model => model.DiasAntesEvento, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
+			<div class="col-md-4">
 				@Html.EditorFor(model => model.DiasAntesEvento)
 				@Html.ValidationMessageFor(model => model.DiasAntesEvento)
 			</div>
 		</div>
 
-		<div class="form-group row">
+		<div class="form-group">
 			@Html.LabelFor(model => model.MaximoEventosEnvolvidos, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
+			<div class="col-md-2">
 				@Html.EditorFor(model => model.MaximoEventosEnvolvidos)
 				@Html.ValidationMessageFor(model => model.MaximoEventosEnvolvidos)
-			</div>
-		</div>
 
-		<div class="form-group row">
-			<div class="col-md-offset-2 col-md-10">
 				<div class="col-md-2">
 					@Html.EditorFor(model => model.PodeDomingo)
 					@Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label" })
@@ -89,50 +83,46 @@
 			</div>
 		</div>
 
-		<div class="form-group row">
+		<div class="form-group">
 			@Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
+			<div class="col-md-2">
 				@Html.DropDownList("AreaEnvolvida", (IEnumerable<SelectListItem>)ViewBag.AreaEnvolvida, new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.AreaEnvolvida)
 			</div>
-		</div>
-		 
-		<div class="form-group row">
+
 			@Html.LabelFor(model => model.MaximoAreaEnvolvida, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
+			<div class="col-md-4">
 				@Html.EditorFor(model => model.MaximoAreaEnvolvida)
 				@Html.ValidationMessageFor(model => model.MaximoAreaEnvolvida)
 			</div>
 		</div>
 
-		<div class="form-group row">
-			@Html.LabelFor(model => model.HorarioDuracao, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioDuracao)
-				@Html.ValidationMessageFor(model => model.HorarioDuracao)
+		<div class="form-group">
+			<div class="form-group ">
+				@Html.LabelFor(model => model.HorarioDuracao, new { @class = "control-label col-md-2" })
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.HorarioDuracao)
+					@Html.ValidationMessageFor(model => model.HorarioDuracao)
+				</div>
+
+					@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
+					<div class="col-md-4">
+						@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
+						@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-4" })
+					<div class="col-md-4">
+						@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
+						@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
+					</div>
+				</div>
+			</div>
+		<div class="form-group col-md-6">
+			<div class="col-md-offset-4 col-md-8" >
+				<input type="submit" value="Salvar" class="btn btn-default form-control" />
 			</div>
 		</div>
-
-		<div class="form-group row">
-			@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
-				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
-			</div>
-		</div>
-
-		<div class="form-group row">
-			@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
-				@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
-			</div>
-		</div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-				<input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
-        </div>
     </div>
 }
