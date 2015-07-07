@@ -14,7 +14,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     public class TipoItemBebidaController : Controller
     {
 
-        // GET: /TipoItemBebida/
+		public ActionResult ListNaoSelecionados(int id)
+		{
+			return View(new data.TipoItemBebida().ListNaoSelecionados(id));
+		}
+		// GET: /TipoItemBebida/
         public ActionResult Index()
         {
 			return View(new data.TipoItemBebida().GetCollection(0));

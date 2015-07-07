@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,20 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.ItemBebidaSelecionado> GetCollection()
 		{
 			return context.ItemBebidaSelecionado.ToList();
+		}
+		public List<Model.ItemBebidaSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
+		{
+			return context.ItemBebidaSelecionado
+				.Include(i => i.ContratoAditivo)
+				.Include(i => i.ItemBebida)
+				.Include(i => i.ItemBebida.TipoItemBebida)
+				.Include(i => i.Bebida)
+				.Where(i =>
+					i.BebidaId == eventoId
+					 && i.ContratacaoBisutti == ContratacaoVB
+					 && i.FornecimentoBisutti == FornecimentoVB
+				)
+				.ToList();
 		}
 	}
 }

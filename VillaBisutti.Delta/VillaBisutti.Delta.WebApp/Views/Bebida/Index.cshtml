@@ -1,46 +1,19 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Bebida>
-
+﻿@model VillaBisutti.Delta.Core.Model.Bebida
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Evento.NomeResponsavel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.NomeResponsavel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EventoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EventoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EventoId })
-        </td>
-    </tr>
-}
-
-</table>
+@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+@Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
+@Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
+<div class="row">
+	<h3>Fornecimento Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
+</div>
+<div class="row">
+	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = false })
+</div>
+<div class="row">
+	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
+	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
+</div>

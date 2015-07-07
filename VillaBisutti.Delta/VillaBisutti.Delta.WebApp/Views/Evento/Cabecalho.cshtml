@@ -1,21 +1,22 @@
 ﻿@using VillaBisutti.Delta;
 @model VillaBisutti.Delta.Core.Model.Evento
 @{
-	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	Layout = null;
 }
-<div class="bg-primary row">
-	<div class="form-group">
-		<p class="col-md-4"> @(Model.Data.ToString("dd/MM/yyyy")) </p>
-		<p class="col-md-4"> @(Model.Local.NomeCasa) </p>
-		<p class="col-md-4"> @(Model.NomeHomenageados) </p>
-	</div>
-	<div class="form-group">
-		<p class="col-md-4"> @(Model.TipoEvento.GetDescription()) </p>
-		<p class="col-md-4"> @(Model.Pax) convidados (@(Model.PaxAproximado)) </p>
-		<p class="col-md-2"> das @(Model.Inicio.ToString()) às (@(Model.Termino.ToString())) </p>
-		<p class="col-md-2"> Cerimonial: @(Model.LocalCerimonia.GetDescription()) </p>
-	</div>
-	<div class="form-group">
-		<p class="col-md-12"> @(Model.PerfilFesta) </p>
-	</div>
+<div class="bg-primary row ui-corner-all page-header">
+	<h4 class="form-group">
+		<span class="col-md-4"> @(Model.Data.ToString("dd/MM/yyyy")) </span>
+		<span class="col-md-4"> @(Model.Local.NomeCasa) </span>
+		<span class="col-md-4"> @(Model.NomeHomenageados) </span>
+	</h4>
+	<h5 class="form-group">
+		<span class="col-md-4"> @(Model.TipoEvento.GetDescription()) </span>
+		<span class="col-md-4"> @(Model.Pax) convidados (@(Model.PaxAproximado) - +10%) </span>
+		<span class="col-md-2"> das @(Model.Inicio.ToString()) às @(Model.Termino.ToString()) </span>
+		<span class="col-md-2"> Cerimonial: @(Model.LocalCerimonia.GetDescription()) </span>
+	</h5>
+	<h5 class="form-group">
+		<span class="col-md-1"> Perfil:</span>
+		<span class="col-md-8"> @(Model.PerfilFesta) </span>
+	</h5>
 </div>

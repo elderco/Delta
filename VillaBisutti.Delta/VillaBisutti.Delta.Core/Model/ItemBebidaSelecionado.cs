@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -9,9 +10,9 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemBebidaSelecionado : IEntityBase
 	{
 		public int Id { get; set; }
-		public int EventoId { get; set; }
-		[Display(Name = "Evento"), Required]
-		public Evento Evento { get; set; }
+		public int BebidaId { get; set; }
+		[Display(Name = "Bebida"), Required]
+		public Bebida Bebida { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
@@ -26,7 +27,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecimento Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
-		[Display(Name = "Fornecedor Iniciado")]
+		[Display(Name = "Fornecedor Acionado")]
         public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
@@ -49,5 +50,17 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Observacoes { get; set; }
 		[Display(Name = "Fotos")]
 		public List<Foto> Fotos { get; set; }
+		[NotMapped]
+		public bool StateError
+		{ 
+			get 
+			{
+				return (
+					(ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado))
+					//TODO: Método em data.ItemBebida para verificar disponibilidade
+					|| (ItemBebida != null && (ItemBebida.Quantidade < Quantidade))
+					);
+			}
+		}
 	}
 }

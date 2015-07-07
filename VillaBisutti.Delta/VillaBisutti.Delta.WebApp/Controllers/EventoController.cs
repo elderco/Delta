@@ -41,6 +41,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
+			ViewBag.Id = id;
 			model.Evento evento = new data.Evento().GetElement(id);
 			if (evento == null)
 			{
@@ -55,6 +56,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+			ViewBag.Id = id;
             model.Evento evento = new data.Evento().GetElement(id.Value);
             if (evento == null)
             {

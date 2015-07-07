@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,58 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemBebida> GetCollection()
 		{
 			return context.TipoItemBebida.ToList();
+		}
+
+		//TODO: TESTAR GRANDE SAPO FÊMEA
+		public List<Model.TipoItemBebida> ListNaoSelecionados(int id)
+		{
+			List<Model.TipoItemBebida> aniversario = context.TipoItemBebida.Where(tib => tib.PadraoAniversario).ToList();
+			List<Model.TipoItemBebida> barmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBarmitzva).ToList();
+			List<Model.TipoItemBebida> batmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBatmitzva).ToList();
+			List<Model.TipoItemBebida> casamento = context.TipoItemBebida.Where(tib => tib.PadraoCasamento).ToList();
+			List<Model.TipoItemBebida> corporativo = context.TipoItemBebida.Where(tib => tib.PadraoCorporativo).ToList();
+			List<Model.TipoItemBebida> debutante = context.TipoItemBebida.Where(tib => tib.PadraoDebutante).ToList();
+			List<Model.TipoItemBebida> outro = context.TipoItemBebida.Where(tib => tib.PadraoOutro).ToList();
+			Model.TipoEvento tipo = new Evento().GetElement(id).TipoEvento;
+			switch(tipo)
+			{
+				case Model.TipoEvento.Aniversario :
+					return aniversario.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Barmitzva :
+					return barmitzva.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Batmitzva:
+					return batmitzva.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Casamento:
+					return casamento.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Corporativo:
+					return corporativo.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Debutante:
+					return debutante.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+				case Model.TipoEvento.Outro:
+					return outro.Except(
+						context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
+							.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida)
+						).ToList();
+			}
+			return null;
 		}
 	}
 }

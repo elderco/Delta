@@ -6,21 +6,21 @@
 	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">
 		<ul class="nav nav-list nav-list-left">
 			<li>
-				<a href="@(Url.Action("Index", "Reuniao", new { eventoId = ViewBag.EventoId }))">
+				<a href="@(Url.Action("Index", "Reuniao", new { id = ViewBag.Id }))">
 					<i class="menu-icon fa fa-group"></i>
 					<span class="menu-text"> Reuniões </span>
 				</a>
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemDecoracao", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "Decoracao", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-leaf"></i>
 					<span class="menu-text"> Decoração </span>
 				</a>
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemMontagem", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "Montagem", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-trophy"></i>
 					<span class="menu-text"> Montagem </span>
 				</a>
@@ -34,7 +34,7 @@
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemBebida", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "Bebida", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-glass"></i>
 					<span class="menu-text"> Bebidas </span>
 				</a>
@@ -48,21 +48,21 @@
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemFotoVideo", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "FotoVideo", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-camera-retro"></i>
 					<span class="menu-text"> Foto e Vídeo </span>
 				</a>
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemSomIluminacao", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "SomIluminacao", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-headphones"></i>
 					<span class="menu-text"> Som e Iluminação </span>
 				</a>
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "ItemOutrosItens", new { eventoId = ViewBag.EventoId })">
+				<a href="@Url.Action("Index", "OutrosItens", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-gift"></i>
 					<span class="menu-text"> Outros Ítens </span>
 				</a>
@@ -88,6 +88,8 @@
 		</div>
 	</div>
 }
+
+@Html.Action("Cabecalho", "Evento", new { id = @ViewBag.Id })
 
 @RenderBody()
 

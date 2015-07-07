@@ -162,6 +162,7 @@
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\ItemBebidaSelecionadoController.cs" />
     <Compile Include="Controllers\ItemFormaBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorBoloDoceBemCasadoController.cs" />
@@ -410,6 +411,11 @@
     <Content Include="Views\Bebida\Edit.cshtml" />
     <Content Include="Views\Bebida\Index.cshtml" />
     <Content Include="Views\Evento\Cabecalho.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\Create.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\Delete.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\Details.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\Edit.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
