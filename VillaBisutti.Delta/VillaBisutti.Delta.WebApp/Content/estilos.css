@@ -2,6 +2,10 @@
 
 /* Projeto Vila Bisutti */
 
+.main-content {
+  min-height: 500px !important;
+}
+
 .brand-dark-brown{color: #522D1C !important;}
 .navbar, .navbar.navbar-collapse .navbar-container{background-color: #11100C !important;}
 .ace-nav>li.light-blue>a{background-color: #522D1C !important;}
@@ -22,12 +26,21 @@ fieldset{border: 1px solid #522D1C !important;}
 .sidebar+.main-content{margin-left: 240px}
 .bg-primary { background-color: #522d1c !important; color: #fefefe !important; margin: 10px; padding: 5px;}
 
+/* Navbar toggle */
+
+@media (max-width: 991px) {
+    .navbar-toggle {
+        display: block !important;
+    }
+}
+
 /* Modal */
 .modal-header{background: #11100C; color:#DBC6B1}
 .modal-body{overflow: auto}
 
 /* Content Background */
-.page-content { background:url(images/bg-logo-villa-bisutti.png); background-position: center center; background-repeat:no-repeat; background-attachment: fixed; min-height: 100% !important; }
+.main-content { background:url(images/bg-logo-villa-bisutti.png); background-attachment:fixed; background-position: center center; background-repeat:no-repeat; background-attachment: fixed; }
+.page-content{background-color: transparent}
 
 /* Botões */
 
