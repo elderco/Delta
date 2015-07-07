@@ -70,8 +70,8 @@
             @Html.DisplayFor(modelItem => item.PadraoOutro)
         </td>
         <td>			
-			@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
-			@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
 </td>
     </tr>
 }
