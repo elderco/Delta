@@ -2,6 +2,16 @@
 @{
 	Layout = null;
 }
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$("#TipoItemBebidaId").change(function () {
+				if (!$(this).val())
+					$("#ItensBebidaContainer").html("");
+				else
+					LoadPage("@(Url.Action("ListarPorTipo", "ItemBebida"))/?tipoId=" + $(this).val(), "ItensBebidaContainer");
+			})
+		});
+	</script>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -13,13 +23,12 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.ItemBebida.TipoItemBebida, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownList("TipoItemBebidaId", String.Empty)
-				@Html.ValidationMessageFor(model => model.ItemBebidaId)
+				@Html.DropDownList("TipoItemBebidaId", (IEnumerable<SelectListItem>)ViewBag.TipoItemBebidaId, "Selecione", new { @class = "form-control" })
 			</div>
 		</div>
         <div class="form-group">
             @Html.LabelFor(model => model.ItemBebida, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-10" id="ItensBebidaContainer">
             </div>
         </div>
 		<div class="form-group">

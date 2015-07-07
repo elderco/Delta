@@ -2,6 +2,15 @@
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section scripts{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+		})
+	</script>
+	@RenderSection("scripts", required: false)
+}
 @section MenuLateral{
 	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">
 		<ul class="nav nav-list nav-list-left">
@@ -93,12 +102,3 @@
 
 @RenderBody()
 
-@section scripts{
-	<script type="text/javascript">
-		$(document).ready(function () {
-			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
-			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
-		})
-	</script>
-	@RenderSection("scripts", required: false)
-}

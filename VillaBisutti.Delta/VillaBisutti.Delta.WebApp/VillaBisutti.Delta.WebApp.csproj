@@ -405,9 +405,6 @@
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\ItemFormaBoloDoceBemCasado\Index.cshtml" />
-    <Content Include="Views\Bebida\Create.cshtml" />
-    <Content Include="Views\Bebida\Delete.cshtml" />
-    <Content Include="Views\Bebida\Details.cshtml" />
     <Content Include="Views\Bebida\Edit.cshtml" />
     <Content Include="Views\Bebida\Index.cshtml" />
     <Content Include="Views\Evento\Cabecalho.cshtml" />
@@ -420,6 +417,10 @@
     <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemBebida\ListarPorTipo.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoContratante.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
