@@ -35,41 +35,41 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.TipoItemBebida> ListNaoSelecionados(int id)
 		{
-			List<Model.TipoItemBebida> aniversario = context.TipoItemBebida.Where(tib => tib.PadraoAniversario).ToList();
-			List<Model.TipoItemBebida> barmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBarmitzva).ToList();
-			List<Model.TipoItemBebida> batmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBatmitzva).ToList();
-			List<Model.TipoItemBebida> casamento = context.TipoItemBebida.Where(tib => tib.PadraoCasamento).ToList();
-			List<Model.TipoItemBebida> corporativo = context.TipoItemBebida.Where(tib => tib.PadraoCorporativo).ToList();
-			List<Model.TipoItemBebida> debutante = context.TipoItemBebida.Where(tib => tib.PadraoDebutante).ToList();
-			List<Model.TipoItemBebida> outro = context.TipoItemBebida.Where(tib => tib.PadraoOutro).ToList();
 			Model.TipoEvento tipo = new Evento().GetElement(id).TipoEvento;
-			switch(tipo)
+			switch (tipo)
 			{
-				case Model.TipoEvento.Aniversario :
+				case Model.TipoEvento.Aniversario:
+					List<Model.TipoItemBebida> aniversario = context.TipoItemBebida.Where(tib => tib.PadraoAniversario).ToList();
 					return aniversario.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
-				case Model.TipoEvento.Barmitzva :
+				case Model.TipoEvento.Barmitzva:
+					List<Model.TipoItemBebida> barmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBarmitzva).ToList();
 					return barmitzva.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
 				case Model.TipoEvento.Batmitzva:
+					List<Model.TipoItemBebida> batmitzva = context.TipoItemBebida.Where(tib => tib.PadraoBatmitzva).ToList();
 					return batmitzva.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
 				case Model.TipoEvento.Casamento:
+					List<Model.TipoItemBebida> casamento = context.TipoItemBebida.Where(tib => tib.PadraoCasamento).ToList();
 					return casamento.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
 				case Model.TipoEvento.Corporativo:
+					List<Model.TipoItemBebida> corporativo = context.TipoItemBebida.Where(tib => tib.PadraoCorporativo).ToList();
 					return corporativo.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
 				case Model.TipoEvento.Debutante:
+					List<Model.TipoItemBebida> debutante = context.TipoItemBebida.Where(tib => tib.PadraoDebutante).ToList();
 					return debutante.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
 				case Model.TipoEvento.Outro:
+					List<Model.TipoItemBebida> outro = context.TipoItemBebida.Where(tib => tib.PadraoOutro).ToList();
 					return outro.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
