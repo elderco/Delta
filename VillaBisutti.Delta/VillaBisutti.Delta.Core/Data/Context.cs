@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.FornecedorBoloDoceBemCasado> FornecedorBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemFormaBoloDoceBemCasado> ItemFormaBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
-		public DbSet<Model.ContratoAditivo> ContratoAdivitivo { get; set; }
+		public DbSet<Model.ContratoAditivo> ContratoAditivo { get; set; }
 		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
 		public DbSet<Model.ItemFotoVideoSelecionado> ItemFotoVideoSelecionado { get; set; }
 		public DbSet<Model.ItemBebida> ItemBebida { get; set; }

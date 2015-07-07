@@ -416,6 +416,10 @@
     <Content Include="Views\ItemBebidaSelecionado\Details.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\Edit.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\Index.cshtml" />
+    <Content Include="Views\TipoItemBebida\ListNaoSelecionados.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoContratante.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

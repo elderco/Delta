@@ -103,6 +103,8 @@ namespace VillaBisutti.Delta.Core.Model
 
 
 		public List<ContratoAditivo> Contratos { get; set; }
+
+
 		[InverseProperty("Evento")]
 		public Bebida Bebida { get; set; }
 		[InverseProperty("Evento")]

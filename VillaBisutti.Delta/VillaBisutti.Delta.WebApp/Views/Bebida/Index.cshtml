@@ -1,19 +1,19 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Bebida
 @{
-    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
 @Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
 @Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
 <div class="row">
 	<h3>Fornecimento Villa Bisutti (Responsabilidade e Fornecimento)</h3>
-	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
+	@Html.Action("ListFornecimentoBisutti", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
 </div>
 <div class="row">
 	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
-	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = false })
+	@Html.Action("ListFornecimentoTerceiro", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = false })
 </div>
 <div class="row">
 	<h3>Contratação Villa Bisutti (Responsabilidade e Fornecimento)</h3>
-	@Html.Action("Index", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
+	@Html.Action("ListFornecimentoContratante", "ItemBebidaSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
 </div>

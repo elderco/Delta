@@ -11,20 +11,32 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    public class ItemBebidaSelecionadoController : Controller
-    {
-        // GET: /ItemBebidaSelecionado/
-        public ActionResult Index(int id, bool ContratacaoVB, bool FornecimentoVB = false)
-        {
+	public class ItemBebidaSelecionadoController : Controller
+	{
+		// GET: /ItemBebidaSelecionado/ListFornecimentoBisutti/5
+		public ActionResult ListFornecimentoBisutti(int id)
+		{
 			ViewBag.Id = id;
-			//var itembebidaselecionado = db.ItemBebidaSelecionado.Include(i => i.ContratoAditivo).Include(i => i.Evento).Include(i => i.ItemBebida);
-			//return View(itembebidaselecionado.ToList());
-			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, ContratacaoVB, FornecimentoVB));
-        }
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, true));
+		}
 
-        // GET: /ItemBebidaSelecionado/Details/5
-        public ActionResult Details(int? id)
-        {
+		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		public ActionResult ListFornecimentoTerceiro(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, false));
+		}
+
+		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+		public ActionResult ListFornecimentoContratante(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, false, false));
+		}
+
+		// GET: /ItemBebidaSelecionado/Details/5
+		public ActionResult Details(int? id)
+		{
 			//if (id == null)
 			//{
 			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,22 +50,22 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        // GET: /ItemBebidaSelecionado/Create
-        public ActionResult Create()
-        {
-			//ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Arquivo");
-			//ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel");
-			//ViewBag.ItemBebidaId = new SelectList(db.ItemBebida, "Id", "Nome");
-            return View();
-        }
+		// GET: /ItemBebidaSelecionado/Create
+		public ActionResult Create(int id)
+		{
+			ViewBag.Id = id;
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "Arquivo");
+			ViewBag.TipoItemBebidaId = new SelectList(new data.TipoItemBebida().GetCollection(0), "Id", "Nome");
+			return View();
+		}
 
-        // POST: /ItemBebidaSelecionado/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
-        {
+		// POST: /ItemBebidaSelecionado/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Create([Bind(Include = "Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		{
 			//if (ModelState.IsValid)
 			//{
 			//	db.ItemBebidaSelecionado.Add(itembebidaselecionado);
@@ -68,9 +80,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        // GET: /ItemBebidaSelecionado/Edit/5
-        public ActionResult Edit(int? id)
-        {
+		// GET: /ItemBebidaSelecionado/Edit/5
+		public ActionResult Edit(int? id)
+		{
 			//if (id == null)
 			//{
 			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -87,13 +99,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        // POST: /ItemBebidaSelecionado/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
-        {
+		// POST: /ItemBebidaSelecionado/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		{
 			//if (ModelState.IsValid)
 			//{
 			//	db.Entry(itembebidaselecionado).State = EntityState.Modified;
@@ -107,9 +119,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        // GET: /ItemBebidaSelecionado/Delete/5
-        public ActionResult Delete(int? id)
-        {
+		// GET: /ItemBebidaSelecionado/Delete/5
+		public ActionResult Delete(int? id)
+		{
 			//if (id == null)
 			//{
 			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -123,11 +135,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        // POST: /ItemBebidaSelecionado/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+		// POST: /ItemBebidaSelecionado/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
 			//ItemBebidaSelecionado itembebidaselecionado = db.ItemBebidaSelecionado.Find(id);
 			//db.ItemBebidaSelecionado.Remove(itembebidaselecionado);
 			//db.SaveChanges();
@@ -135,13 +147,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
 				//db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+			}
+			base.Dispose(disposing);
+		}
+	}
 }

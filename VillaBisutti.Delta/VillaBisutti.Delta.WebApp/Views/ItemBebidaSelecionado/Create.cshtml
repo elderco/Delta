@@ -1,8 +1,6 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado
-
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+	Layout = null;
 }
 @using (Html.BeginForm()) 
 {
@@ -11,7 +9,6 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
 		@Html.HiddenFor(model => model.BebidaId, new { @value = ViewBag.Id })
-
 
 		<div class="form-group">
 			@Html.LabelFor(model => model.ItemBebida.TipoItemBebida, new { @class = "control-label col-md-2" })
@@ -23,8 +20,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ItemBebida, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ItemBebidaId", String.Empty)
-                @Html.ValidationMessageFor(model => model.ItemBebidaId)
             </div>
         </div>
 		<div class="form-group">
@@ -34,7 +29,6 @@
 				@Html.ValidationMessageFor(model => model.ContratoAditivoId)
 			</div>
 		</div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -42,7 +36,6 @@
                 @Html.ValidationMessageFor(model => model.ContratacaoBisutti)
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -50,7 +43,6 @@
                 @Html.ValidationMessageFor(model => model.FornecimentoBisutti)
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -61,7 +53,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-				<input type="submit" value="Salvar" class="btn btn-default" />
+				<button type="submit" class="btn btn-default"><span class="menu-icon fa fa-plus"></span> Adicionar</button>
             </div>
         </div>
     </div>
