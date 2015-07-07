@@ -276,11 +276,11 @@
     <Content Include="Views\ContratoAditivo\Details.cshtml" />
     <Content Include="Views\ContratoAditivo\Edit.cshtml" />
     <Content Include="Views\ContratoAditivo\Index.cshtml" />
-    <Content Include="Views\TipoItemBebida\TipoItemDecoracao\Create.cshtml" />
-    <Content Include="Views\TipoItemBebida\TipoItemDecoracao\Delete.cshtml" />
-    <Content Include="Views\TipoItemBebida\TipoItemDecoracao\Details.cshtml" />
-    <Content Include="Views\TipoItemBebida\TipoItemDecoracao\Edit.cshtml" />
-    <Content Include="Views\TipoItemBebida\TipoItemDecoracao\Index.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Create.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Delete.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Details.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Edit.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\Index.cshtml" />
     <Content Include="Views\ItemDecoracao\Create.cshtml" />
     <Content Include="Views\ItemDecoracao\Delete.cshtml" />
     <Content Include="Views\ItemDecoracao\Details.cshtml" />
