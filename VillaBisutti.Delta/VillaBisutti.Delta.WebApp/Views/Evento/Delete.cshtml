@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 <div>
-    <h4>Evento</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Bebida.Observacoes)
@@ -238,7 +236,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" />
+			<input type="submit" value="Excluir" class="btn btn-default" />
         </div>
     }
 </div>
