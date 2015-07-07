@@ -8,11 +8,9 @@
 		CreateHorarioEditor("HorarioDisponibilidadeInicio");
 		CreateHorarioEditor("HorarioDisponibilidadeTermino");
 		CreateHorarioEditor("HorarioDuracao");
-
 		PreventNegativeNumbers("DiasAntesEvento");
 		PreventNegativeNumbers("MaximoEventosEnvolvidos");
 		PreventNegativeNumbers("MaximoAreaEnvolvida");
-
 	});
 </script>
 @Scripts.Render("~/bundles/jqueryval")
@@ -31,96 +29,92 @@
 				@Html.EditorFor(model => model.Nome)
 				@Html.ValidationMessageFor(model => model.Nome)
 			</div>
-
-			@Html.LabelFor(model => model.DiasAntesEvento, new { @class = "control-label col-md-2" })
-			<div class="col-md-4">
-				@Html.EditorFor(model => model.DiasAntesEvento)
-				@Html.ValidationMessageFor(model => model.DiasAntesEvento)
-			</div>
-		</div>
-
-		<div class="form-group">
 			@Html.LabelFor(model => model.MaximoEventosEnvolvidos, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
+			<div class="col-md-4">
 				@Html.EditorFor(model => model.MaximoEventosEnvolvidos)
 				@Html.ValidationMessageFor(model => model.MaximoEventosEnvolvidos)
-
-				<div class="col-md-2">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-md-2">Dias possíveis</label>
+			<div class="col-md-4">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeDomingo)
 					@Html.LabelFor(model => model.PodeDomingo, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeDomingo)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeSegunda)
 					@Html.LabelFor(model => model.PodeSegunda, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeSegunda)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeTerca)
 					@Html.LabelFor(model => model.PodeTerca, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeTerca)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeQuarta)
 					@Html.LabelFor(model => model.PodeQuarta, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeQuarta)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeQuinta)
 					@Html.LabelFor(model => model.PodeQuinta, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeQuinta)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeSexta)
 					@Html.LabelFor(model => model.PodeSexta, new { @class = "control-label" })
 					@Html.ValidationMessageFor(model => model.PodeSexta)
 				</div>
-				<div class="col-md-2">
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PodeSabado)
 					@Html.LabelFor(model => model.PodeSabado, new { @class = "control-label " })
 					@Html.ValidationMessageFor(model => model.PodeSabado)
 				</div>
 			</div>
+			<div class="inline-form-group">
+				@Html.LabelFor(model => model.DiasAntesEvento, new { @class = "control-label col-md-2" })
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.DiasAntesEvento)
+					@Html.ValidationMessageFor(model => model.DiasAntesEvento)
+				</div>
+			</div>
+			<div class="inline-form-group">
+				@Html.LabelFor(model => model.HorarioDuracao, new { @class = "control-label col-md-2" })
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.HorarioDuracao)
+					@Html.ValidationMessageFor(model => model.HorarioDuracao)
+				</div>
+				@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
+					@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
+				</div>
+			</div>
+			<div class="inline-form-group">
+				@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-2" })
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
+					@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
+				</div>
+			</div>
 		</div>
-
 		<div class="form-group">
 			@Html.LabelFor(model => model.AreaEnvolvida, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
+			<div class="col-md-4">
 				@Html.DropDownList("AreaEnvolvida", (IEnumerable<SelectListItem>)ViewBag.AreaEnvolvida, new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.AreaEnvolvida)
 			</div>
-
 			@Html.LabelFor(model => model.MaximoAreaEnvolvida, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
 				@Html.EditorFor(model => model.MaximoAreaEnvolvida)
 				@Html.ValidationMessageFor(model => model.MaximoAreaEnvolvida)
 			</div>
 		</div>
-
 		<div class="form-group">
-			<div class="form-group ">
-				@Html.LabelFor(model => model.HorarioDuracao, new { @class = "control-label col-md-2" })
-				<div class="col-md-4">
-					@Html.EditorFor(model => model.HorarioDuracao)
-					@Html.ValidationMessageFor(model => model.HorarioDuracao)
-				</div>
-
-					@Html.LabelFor(model => model.HorarioDisponibilidadeInicio, new { @class = "control-label col-md-2" })
-					<div class="col-md-4">
-						@Html.EditorFor(model => model.HorarioDisponibilidadeInicio)
-						@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeInicio)
-					</div>
-				</div>
-				<div class="form-group">
-					@Html.LabelFor(model => model.HorarioDisponibilidadeTermino, new { @class = "control-label col-md-4" })
-					<div class="col-md-4">
-						@Html.EditorFor(model => model.HorarioDisponibilidadeTermino)
-						@Html.ValidationMessageFor(model => model.HorarioDisponibilidadeTermino)
-					</div>
-				</div>
-			</div>
-		<div class="form-group col-md-6">
-			<div class="col-md-offset-4 col-md-8" >
+			<div class="col-md-offset-2 col-md-4">
 				<input type="submit" value="Salvar" class="btn btn-default form-control" />
 			</div>
 		</div>
