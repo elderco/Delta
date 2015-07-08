@@ -17,30 +17,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ContratoAditivo/
         public ActionResult Index(int id)
         {
-			ViewBag.Id = id;
-			model.ContratoAditivo contratoaditivo = new data.ContratoAditivo().GetElement(id);
-			return View(contratoaditivo);
-        }
-
-        // GET: /ContratoAditivo/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            model.ContratoAditivo contratoaditivo = new data.ContratoAditivo().GetElement(id.HasValue ? id.Value : 0);
-            if (contratoaditivo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contratoaditivo);
+			return View(new data.ContratoAditivo().GetCollection(0));
         }
 
         // GET: /ContratoAditivo/Create
-        public ActionResult Create()
+		public ActionResult Create(int id)
         {
-            return View();
+			return View();
         }
 
         // POST: /ContratoAditivo/Create
@@ -59,35 +42,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             return View(contratoaditivo);
         }
 
-        // GET: /ContratoAditivo/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            model.ContratoAditivo contratoaditivo = new data.ContratoAditivo().GetElement(id.HasValue ? id.Value : 0);
-            if (contratoaditivo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contratoaditivo);
-        }
-
-        // POST: /ContratoAditivo/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,TipoEventoId,TipoEvento")] model.ContratoAditivo contratoaditivo)
-        {
-            if (ModelState.IsValid)
-            {
-				new data.ContratoAditivo().Update(contratoaditivo);
-                return RedirectToAction("Index");
-            }
-            return View(contratoaditivo);
-        }
 
         // GET: /ContratoAditivo/Delete/5
         public ActionResult Delete(int? id)

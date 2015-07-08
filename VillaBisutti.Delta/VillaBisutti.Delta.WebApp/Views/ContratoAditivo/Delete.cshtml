@@ -1,27 +1,43 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ContratoAditivo
 
 @{
+	Layout = null;	
     //ViewBag.Title = "Delete";
 }
 
 <div>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TipoEventoId)
+            @Html.DisplayNameFor(model => model.EvtId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TipoEventoId)
+            @Html.DisplayFor(model => model.EvtId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TipoEvento)
+            @Html.DisplayNameFor(model => model.Arquivo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TipoEvento)
+            @Html.DisplayFor(model => model.Arquivo)
         </dd>
 
+		<dt>
+			@Html.DisplayNameFor(model => model.NumeroContrato)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.NumeroContrato)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.DataContrato)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.DataContrato)
+		</dd>
     </dl>
 
     @using (Html.BeginForm()) {
