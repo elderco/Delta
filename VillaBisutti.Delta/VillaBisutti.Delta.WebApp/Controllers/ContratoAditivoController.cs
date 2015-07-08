@@ -18,7 +18,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Index(int id)
         {
 			ViewBag.Id = id;
-			return View();
+			return View(new data.ContratoAditivo().GetContratosEvento(id));
         }
 
         // GET: /ContratoAditivo/Create

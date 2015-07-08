@@ -36,5 +36,6 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return GetCollection(0).Where(c => c.EvtId == id);
 		}
+
 	}
 }

@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ContratoAditivo>
 
 @{
-	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-    //ViewBag.Title = "Index";
+	Layout = null;
 }
 @section scripts {
 	<script language="javascript" type="text/javascript">
@@ -14,12 +13,9 @@
 		});
 	</script>
 }
-    @Html.Action("Create", "ContratoAditivo", new { id = @ViewBag.Id })
+    @Html.Action("Create", "ContratoAditivo", new { id = ViewBag.Id })
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EvtId)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Arquivo)
         </th>
@@ -34,9 +30,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EvtId)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Arquivo)
         </td>
