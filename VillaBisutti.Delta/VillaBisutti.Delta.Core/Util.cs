@@ -61,29 +61,13 @@ namespace VillaBisutti.Delta
 			return DateTime.Now.ToString("yyyyMMddhhmmss") + "." + fileExtension;
 		}
 
-		/*TODO: Imagem
-         * Redimencionar a imagem
-         * Colocar a mensagem dentro da imagem: Imagem meramente ilustrativa
-         * ver de qual evento se trata
-         * criar a pasta para o evento da imagem(se ja tiver, só coloca na pasta)
-         * colocar o nome da imagem de acordo com a data e hora (yyyymmdd HH:mm:ss) dentro da pasta
-         * */
-		public static void HandleImage(string path)
+		public static void HandleImage(HttpPostedFileBase URL, string path)
 		{
-
 			//Open the file
-			if (File.Exists(path))
-			{
-				Image image = Image.FromStream(new FileStream(path, FileMode.Open, FileAccess.Read));
-				System.Drawing.Bitmap imageResized = ResizeImage(image);
-				imageResized.Save(path.Replace("TEMP", "Images"));
-			}
+			Image image = Image.FromStream(URL.InputStream);
+			System.Drawing.Bitmap imageResized = ResizeImage(image);
+			imageResized.Save(path);
 		}
-		/// <summary>
-		/// Redimenciona a imagem original
-		/// </summary>
-		/// <param name="image"></param>
-		/// <returns></returns>
 		private static Bitmap ResizeImage(Image image)
 		{
 			//TODO: colocar essas chaves no WebConfig
@@ -91,13 +75,18 @@ namespace VillaBisutti.Delta
 			//Definir se deve redimensionar pela largura ou altura
 			int defaultWidth = Util.Get<int>("largura");
 			int defaultHeight = Util.Get<int>("altura");
-			int width = defaultWidth;
-			int height = defaultHeight;
+			int width = 0;
+			int height = 0;
 			if (image.Width > defaultWidth)
+			{
 				height = (int)((double)image.Height * (double)((double)defaultWidth / (double)image.Width));
-			if (height > defaultHeight)
+				width = defaultWidth;
+			}
+			if (image.Height > defaultHeight)
+			{
 				width = (int)((double)image.Width * (double)((double)defaultHeight / (double)image.Height));
-
+				height = defaultHeight;
+			}
 			var destRect = new Rectangle(0, 0, width, height);
 			Bitmap destImage = new Bitmap(width, height);
 			destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
@@ -177,5 +166,6 @@ namespace VillaBisutti.Delta
 				return tiposServico;
 			}
 		}
+
 	}
 }
