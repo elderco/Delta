@@ -68,8 +68,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			//System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), URL));
+
+			model.Foto fotodelete = new data.Foto().GetElement(id);
+			System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), fotodelete.URL));
 			new data.Foto().Delete(id);
-            return RedirectToAction("Index");
+
+			return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 
         protected override void Dispose(bool disposing)
