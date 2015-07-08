@@ -1,13 +1,28 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Foto
-
 @{
-    ViewBag.Title = "Create";
+	Layout = null;
+	//ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+@{  WebImage photo = null;
+    var newFileName = "";
+    var imagePath = "";
 
+    if(IsPost){
+        photo = WebImage.GetImageFromRequest();
+        if(photo != null){
+            newFileName = Guid.NewGuid().ToString() + "_" +
+                Path.GetFileName(photo.FileName);
+            imagePath = @"images\" + newFileName;
 
-@using (Html.BeginForm()) 
+            photo.Save(@"~\" + imagePath);
+			
+        }
+    }
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+@using (Html.BeginForm("ItemCreated", "Foto")) 
 {
     @Html.AntiForgeryToken()
     
@@ -16,34 +31,26 @@
         <hr />
         @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.URL, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.URL)
-                @Html.ValidationMessageFor(model => model.URL)
-            </div>
-        </div>
+		<div class="form-group col-md-6">
+			@Html.LabelFor(model => model.URL, new { @class = "control-label col-md-4" })
+			<div class="col-md-8">
+				@Html.TextBoxFor(model => model.URL  ,new { @type = "file" })
+				@Html.ValidationMessageFor(model => model.URL)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Legenda, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Legenda)
-                @Html.ValidationMessageFor(model => model.Legenda)
-            </div>
-        </div>
+		<div class="form-group col-md-6">
+			<div class="col-md-offset-4 col-md-8">
+				<input type="submit" value="Salvar" class="btn btn-default form-control" />
+			</div>
+		</div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+		<div class="form-group col-md-6">
+			@Html.LabelFor(model => model.Legenda, new { @class = "control-label col-md-4" })
+			<div class="col-md-8">
+				@Html.EditorFor(model => model.Legenda)
+				@Html.ValidationMessageFor(model => model.Legenda)
+			</div>
+		</div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

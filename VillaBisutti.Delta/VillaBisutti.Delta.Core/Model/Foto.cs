@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace VillaBisutti.Delta.Core.Model
 		/// http://stackoverflow.com/questions/249587/high-quality-image-scaling-library
 		/// </summary>
 		public int Id { get; set; }
+		[Display(Name = "URL da imagem"), Required]
 		public string URL { get; set; }
+		[Display(Name = "Legenda")]
 		public string Legenda { get; set; }
 	}
 }
