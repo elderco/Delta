@@ -30,9 +30,8 @@ fieldset{border: 1px solid #522D1C !important;}
 /* Navbar toggle */
 
 @media (max-width: 991px) {
-    .navbar-toggle {
-        display: block !important;
-    }
+    .navbar-toggle {display: block !important;}
+    .page-content{padding-top: 60px}
 }
 
 /* Modal */

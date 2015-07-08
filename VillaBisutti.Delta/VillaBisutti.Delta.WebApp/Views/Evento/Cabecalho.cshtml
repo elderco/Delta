@@ -3,20 +3,46 @@
 @{
 	Layout = null;
 }
-<div class="bg-primary row ui-corner-all page-header">
-	<h4 class="form-group">
-		<span class="col-md-4"> @(Model.Data.ToString("dd/MM/yyyy")) </span>
-		<span class="col-md-4"> @(Model.Local.NomeCasa) </span>
-		<span class="col-md-4"> @(Model.NomeHomenageados) </span>
-	</h4>
-	<h5 class="form-group">
-		<span class="col-md-4"> @(Model.TipoEvento.GetDescription()) </span>
-		<span class="col-md-4"> @(Model.Pax) convidados (@(Model.PaxAproximado) - +10%) </span>
-		<span class="col-md-2"> das @(Model.Inicio.ToString()) às @(Model.Termino.ToString()) </span>
-		<span class="col-md-2"> Cerimonial: @(Model.LocalCerimonia.GetDescription()) </span>
-	</h5>
-	<h5 class="form-group">
-		<span class="col-md-1"> Perfil:</span>
-		<span class="col-md-8"> @(Model.PerfilFesta) </span>
-	</h5>
+
+<div class="col-xs-12 widget-container-col" style="min-height: 148px;">
+    <div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
+        <div class="widget-header widget-header-large">
+            <h4 class="widget-title">
+                @(Model.Data.ToString("dd/MM/yyyy"))
+                <i class="ace-icon fa fa-angle-right"> </i>
+                @(Model.Local.NomeCasa)
+                <i class="ace-icon fa fa-angle-right"> </i>
+                @(Model.NomeHomenageados)
+            </h4>
+            <div class="widget-toolbar">
+                <a href="#">
+                    <i class="ace-icon fa fa-file-text red"></i>
+                </a>
+                <a href="#" data-toggle="collapse" data-target="#collapseExample">
+                    <i class="ace-icon fa fa-plus white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="widget-body collapse" id="collapseExample">
+            <div class="widget-main">
+                <div class="alert alert-info container-fluid">
+                    <div class="col-sm-4">
+                        <b>Tipo de Evento: </b>@(Model.TipoEvento.GetDescription())
+                    </div>
+                    <div class="col-sm-4">
+                        <b>N.º de Convidados: </b>@(Model.Pax) convidados (@(Model.PaxAproximado) - +10%)
+                    </div>
+                    <div class="col-sm-4">
+                        <b>Horário: </b>das @(Model.Inicio.ToString()) às @(Model.Termino.ToString())<br>
+                        <b>Cerimonial: </b>@(Model.LocalCerimonia.GetDescription())
+                    </div>
+                    <div class="col-sm-12">
+                        <b>Perfil: </b>@(Model.PerfilFesta)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
