@@ -15,9 +15,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     {
 
         // GET: /ContratoAditivo/
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(new data.ContratoAditivo().GetCollection(0));
+			ViewBag.Id = id;
+			model.ContratoAditivo contratoaditivo = new data.ContratoAditivo().GetElement(id);
+			return View(contratoaditivo);
         }
 
         // GET: /ContratoAditivo/Details/5
@@ -46,7 +48,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,TipoEventoId,TipoEvento")] model.ContratoAditivo contratoaditivo)
+		public ActionResult ItemCreated([Bind(Include = "Id,EvtId,Arquivo,NumeroContrato,DataContrato")] model.ContratoAditivo contratoaditivo)
         {
             if (ModelState.IsValid)
             {

@@ -1,33 +1,42 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ContratoAditivo>
 
 @{
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
     //ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    @Html.Action("Create", "ContratoAditivo")
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TipoEventoId)
+            @Html.DisplayNameFor(model => model.EvtId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TipoEvento)
+            @Html.DisplayNameFor(model => model.Arquivo)
         </th>
+		<th>
+			@Html.DisplayNameFor(model => model.NumeroContrato)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DataContrato)
+		</th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TipoEventoId)
+            @Html.DisplayFor(modelItem => item.EvtId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TipoEvento)
+            @Html.DisplayFor(modelItem => item.Arquivo)
         </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.NumeroContrato)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.DataContrato)
+		</td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Excluir", "Delete", new { id=item.Id })

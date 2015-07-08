@@ -274,8 +274,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ContratoAditivo\Create.cshtml" />
     <Content Include="Views\ContratoAditivo\Delete.cshtml" />
-    <Content Include="Views\ContratoAditivo\Details.cshtml" />
-    <Content Include="Views\ContratoAditivo\Edit.cshtml" />
     <Content Include="Views\ContratoAditivo\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Create.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Delete.cshtml" />
