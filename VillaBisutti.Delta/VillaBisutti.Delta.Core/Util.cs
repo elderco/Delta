@@ -55,14 +55,20 @@ namespace VillaBisutti.Delta
             return value;
         }
 
-        /*TODO: Imagem
+		public static string GetName(string fileName) 
+		{
+			string fileExtension = fileName.Split('.')[fileName.Split('.').Length - 1];
+			return Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), "/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + fileExtension) ;
+		}
+
+		/*TODO: Imagem
          * Redimencionar a imagem
          * Colocar a mensagem dentro da imagem: Imagem meramente ilustrativa
          * ver de qual evento se trata
          * criar a pasta para o evento da imagem(se ja tiver, só coloca na pasta)
          * colocar o nome da imagem de acordo com a data e hora (yyyymmdd HH:mm:ss) dentro da pasta
          * */
-        public static String HandleFile(string path)
+        public static void HandleImage(string path)
         {
             
             //Open the file
@@ -75,7 +81,6 @@ namespace VillaBisutti.Delta
                     imageResized.Save(path);
                 }
             }
-            return "Ravena";
         }
         /// <summary>
         /// Redimenciona a imagem original
@@ -97,7 +102,7 @@ namespace VillaBisutti.Delta
                 graphics.CompositingQuality = CompositingQuality.HighQuality;
                 graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                using (var wrapMode = new ImageAttributes())
+                using (ImageAttributes wrapMode = new ImageAttributes())
                 {
                     wrapMode.SetWrapMode(WrapMode.TileFlipXY);
                     graphics.DrawImage(image, new Rectangle(0, 0, width, height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);

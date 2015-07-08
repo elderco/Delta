@@ -43,6 +43,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,7 @@
     <Compile Include="Data\CardapioPadrao.cs" />
     <Compile Include="Data\Decoracao.cs" />
     <Compile Include="Data\FornecedorBoloDoceBemCasado.cs" />
+    <Compile Include="Data\Foto.cs" />
     <Compile Include="Data\FotoVideo.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
