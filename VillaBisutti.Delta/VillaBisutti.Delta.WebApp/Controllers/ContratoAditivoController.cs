@@ -17,12 +17,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ContratoAditivo/
         public ActionResult Index(int id)
         {
-			return View(new data.ContratoAditivo().GetCollection(0));
+			ViewBag.Id = id;
+			return View();
         }
 
         // GET: /ContratoAditivo/Create
 		public ActionResult Create(int id)
         {
+			ViewBag.Id = id;
 			return View();
         }
 
@@ -36,9 +38,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.ContratoAditivo().Insert(contratoaditivo);
-                return RedirectToAction("Index");
+				return Redirect(Request.UrlReferrer.AbsolutePath);
             }
-
             return View(contratoaditivo);
         }
 
@@ -64,7 +65,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.ContratoAditivo().Delete(id);
-            return RedirectToAction("Index");
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+			//return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
