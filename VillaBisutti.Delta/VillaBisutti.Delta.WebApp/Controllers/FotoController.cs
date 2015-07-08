@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using System.IO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -17,21 +18,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Index()
         {
 			return View(new data.Foto().GetCollection(0));
-        }
-
-        // GET: /Foto/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-			model.Foto foto = new data.Foto().GetElement(id.HasValue ? id.Value : 0);
-            if (foto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(foto);
         }
 
         // GET: /Foto/Create
@@ -45,46 +31,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,URL,Legenda")] model.Foto foto)
+		public ActionResult ItemCreated(HttpPostedFileBase URL, string legenda)
         {
-            if (ModelState.IsValid)
-            {
+			if (URL != null && URL.ContentLength > 0)
+			{
+				var fileName = Util.GetName(URL.FileName);
+				URL.SaveAs(Path.Combine(Server.MapPath("~/Content/TEMP/"), fileName));
+				Util.HandleImage(Path.Combine(Server.MapPath("~/Content/TEMP/"), fileName));
+				model.Foto foto = new model.Foto { Legenda = legenda, URL = fileName };
 				new data.Foto().Insert(foto);
-                return RedirectToAction("Index");
-            }
+				SessionFacade.FotoEmMemoria = foto;
+				System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/TEMP/"), fileName));
+			}
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
 
-            return View(foto);
-        }
-
-        // GET: /Foto/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            model.Foto foto = new data.Foto().GetElement(id.HasValue ? id.Value : 0);
-			if (foto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(foto);
-        }
-
-        // POST: /Foto/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,URL,Legenda")] model.Foto foto)
-        {
-            if (ModelState.IsValid)
-            {
-				new data.Foto().Update(foto);
-                return RedirectToAction("Index");
-            }
-            return View(foto);
-        }
 
         // GET: /Foto/Delete/5
         public ActionResult Delete(int? id)
@@ -106,6 +67,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+			//System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), URL));
 			new data.Foto().Delete(id);
             return RedirectToAction("Index");
         }

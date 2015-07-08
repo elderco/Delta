@@ -22,7 +22,7 @@
 }
 
 @Scripts.Render("~/bundles/jqueryval")
-@using (Html.BeginForm("ItemCreated", "Foto")) 
+@using (Html.BeginForm("ItemCreated", "Foto", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -34,7 +34,7 @@
 		<div class="form-group col-md-6">
 			@Html.LabelFor(model => model.URL, new { @class = "control-label col-md-4" })
 			<div class="col-md-8">
-				@Html.TextBoxFor(model => model.URL  ,new { @type = "file" })
+				@Html.TextBoxFor(model => model.URL, new { @type = "file" })
 				@Html.ValidationMessageFor(model => model.URL)
 			</div>
 		</div>

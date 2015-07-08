@@ -2,8 +2,8 @@
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
 @Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
+@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
 @Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>

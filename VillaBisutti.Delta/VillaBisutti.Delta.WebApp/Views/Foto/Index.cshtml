@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.URL)
+            <img src="@Url.Content(Path.Combine("~/Content/Images/", item.URL))" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Legenda)

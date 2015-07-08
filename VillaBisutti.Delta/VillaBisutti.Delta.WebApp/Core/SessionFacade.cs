@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using VillaBisutti.Delta.Core.Model;
 using model = VillaBisutti.Delta.Core.Model;
 
 namespace VillaBisutti.Delta
@@ -24,6 +25,17 @@ namespace VillaBisutti.Delta
 		private static void RenovaCredencialUsuario()
 		{
 			throw new NotImplementedException();
+		}
+		public static Foto FotoEmMemoria
+		{
+			get
+			{
+				return (Foto)HttpContext.Current.Session["FotoEmMemoria"];
+			}
+			set
+			{
+				HttpContext.Current.Session["FotoEmMemoria"] = value;
+			}
 		}
 	}
 }
