@@ -177,6 +177,7 @@
     <Compile Include="Controllers\ItemRoteiroController.cs" />
     <Compile Include="Controllers\ItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
+    <Compile Include="Controllers\MontagemController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\TipoItemBebidaController.cs" />
@@ -421,6 +422,8 @@
     <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoTerceiro.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\Montagem\Edit.cshtml" />
+    <Content Include="Views\Montagem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Montagem>
+
+@{
+    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+}
+@Html.ActionLink("Create", "ItemMontagemSelecionado", new {id = ViewBag.Id })
+@Html.ActionLink("Edit", "Montagem", new { id = ViewBag.Id})
+@Html.ActionLink("ListNaoSelecionado","TipoItemMontagem", new {id = ViewBag.Id})
+
+<div class="row">
+    <h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
+    @Html.Action("ListFornecimentoBisutti", "ItemMontagemSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
+</div>
+<div class="row">
+    <h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
+    @Html.Action("ListFornecimentoTerceiro", "ItemMontagemSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = false })
+</div>
+<div class="row">
+    <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
+    @Html.Action("ListFornecimentoContratante", "ItemMontagemSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
+    }
+</div>
