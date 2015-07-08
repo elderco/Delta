@@ -162,6 +162,7 @@
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\ItemBebidaSelecionadoController.cs" />
     <Compile Include="Controllers\ItemFormaBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
@@ -274,6 +275,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ContratoAditivo\Create.cshtml" />
     <Content Include="Views\ContratoAditivo\Delete.cshtml" />
+    <Content Include="Views\ContratoAditivo\Details.cshtml" />
+    <Content Include="Views\ContratoAditivo\Edit.cshtml" />
     <Content Include="Views\ContratoAditivo\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Create.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Delete.cshtml" />
@@ -422,6 +425,9 @@
     <Content Include="Views\ItemBebidaSelecionado\EditFornecimentoContratante.cshtml" />
     <Content Include="Views\Montagem\Edit.cshtml" />
     <Content Include="Views\Montagem\Index.cshtml" />
+    <Content Include="Views\Foto\Create.cshtml" />
+    <Content Include="Views\Foto\Delete.cshtml" />
+    <Content Include="Views\Foto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
