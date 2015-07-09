@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -27,9 +28,59 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 		}
 
+
 		protected override List<Model.TipoItemMontagem> GetCollection()
 		{
 			return context.TipoItemMontagem.ToList();
 		}
-	}
+
+        public List<Model.TipoItemMontagem> ListNaoSelecionados(int id)
+        {
+            Model.TipoEvento tipo = new Evento().GetElement(id).TipoEvento;
+            switch (tipo)
+            {
+                case Model.TipoEvento.Aniversario:
+                    List<Model.TipoItemMontagem> aniversario = context.TipoItemMontagem.Where(im => im.PadraoAniversario).ToList();
+                    return aniversario.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Barmitzva:
+                    List<Model.TipoItemMontagem> barmitzva = context.TipoItemMontagem.Where(im => im.PadraoBarmitzva).ToList();
+                    return barmitzva.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Batmitzva:
+                    List<Model.TipoItemMontagem> batmitzva = context.TipoItemMontagem.Where(im => im.PadraoBatmitzva).ToList();
+                    return batmitzva.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Casamento:
+                    List<Model.TipoItemMontagem> casamento = context.TipoItemMontagem.Where(im => im.PadraoCasamento).ToList();
+                    return casamento.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Corporativo:
+                    List<Model.TipoItemMontagem> corporativo = context.TipoItemMontagem.Where(im => im.PadraoCorporativo).ToList();
+                    return corporativo.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Debutante:
+                    List<Model.TipoItemMontagem> debutante = context.TipoItemMontagem.Where(im => im.PadraoDebutante).ToList();
+                    return debutante.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+                case Model.TipoEvento.Outro:
+                    List<Model.TipoItemMontagem> outro = context.TipoItemMontagem.Where(im => im.PadraoOutro).ToList();
+                    return outro.Except(
+                        GetTipoItensPreenchidos(id)
+                        ).ToList();
+            }
+            return null;
+        }
+        private IQueryable<Model.TipoItemMontagem> GetTipoItensPreenchidos(int id)
+        {
+            return context.ItemMontagemSelecionado.Include(im => im.ItemMontagem).Include(im => im.ItemMontagem.TipoItemMontagem)
+                                            .Where(im => im.Id == id).Select(im => im.ItemMontagem.TipoItemMontagem);
+        }
+    }
 }

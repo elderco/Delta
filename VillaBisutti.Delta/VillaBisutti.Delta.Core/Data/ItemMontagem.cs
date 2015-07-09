@@ -32,5 +32,10 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemMontagem.Include(id => id.TipoItemMontagem).ToList();
 		}
-	}
+
+        public List<Model.ItemMontagem> ListarPorTipo(int tipoId)
+        {
+            return context.ItemMontagem.Where(m => m.TipoItemMontagemId == tipoId).ToList();
+        }
+    }
 }

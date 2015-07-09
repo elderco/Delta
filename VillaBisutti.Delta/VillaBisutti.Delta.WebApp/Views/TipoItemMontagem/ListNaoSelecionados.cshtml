@@ -1,0 +1,9 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.TipoItemMontagem>
+
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <p>@Html.DisplayFor(modelItem => item.Nome)</p>
+}
