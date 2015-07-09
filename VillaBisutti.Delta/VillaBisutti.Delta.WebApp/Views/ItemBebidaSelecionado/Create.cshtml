@@ -12,13 +12,13 @@
 			})
 		});
 	</script>
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado")) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-inline">
         @Html.ValidationSummary(true)
-		@Html.HiddenFor(model => model.BebidaId, new { @value = ViewBag.Id })
+		<input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
 
 		<div class="input-group col-md-1">
 			@Html.LabelFor(model => model.ItemBebida.TipoItemBebida, new { @class = "control-label col-md-12" })
@@ -29,6 +29,7 @@
 		<div class="input-group col-md-1">
 			@Html.LabelFor(model => model.ItemBebida, new { @class = "control-label col-md-12" })
 			<div class="col-md-12" id="ItensBebidaContainer">
+				<select></select>
 			</div>
 		</div>
 		<div class="input-group col-md-1">

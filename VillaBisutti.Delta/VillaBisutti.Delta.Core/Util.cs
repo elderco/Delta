@@ -63,30 +63,23 @@ namespace VillaBisutti.Delta
 
 		public static void HandleImage(HttpPostedFileBase URL, string path)
 		{
-			//Open the file
 			Image image = Image.FromStream(URL.InputStream);
 			System.Drawing.Bitmap imageResized = ResizeImage(image);
 			imageResized.Save(path);
 		}
 		private static Bitmap ResizeImage(Image image)
 		{
-			//TODO: colocar essas chaves no WebConfig
-			//TODO: pegar tamanho da imagem e só redimencioar se o tamanho estiver maior que o padrão
-			//Definir se deve redimensionar pela largura ou altura
-			int defaultWidth = Util.Get<int>("largura");
-			int defaultHeight = Util.Get<int>("altura");
-			int width = 0;
-			int height = 0;
-			if (image.Width > defaultWidth)
-			{
-				height = (int)((double)image.Height * (double)((double)defaultWidth / (double)image.Width));
-				width = defaultWidth;
-			}
-			if (image.Height > defaultHeight)
-			{
-				width = (int)((double)image.Width * (double)((double)defaultHeight / (double)image.Height));
-				height = defaultHeight;
-			}
+			//TODO: Não redimensionar imagem menor que o padrão
+			int defaultWidth = Get<int>("largura");
+			int defaultHeight = Get<int>("altura");
+			int width = defaultWidth;
+			int height = defaultHeight;
+			double x = (double)defaultWidth / (double)image.Width;
+			double y = (double)defaultHeight / (double)image.Height;
+			if (x < y)
+				height = (int)(image.Height * x);
+			else
+				width = (int)(image.Width * y);
 			var destRect = new Rectangle(0, 0, width, height);
 			Bitmap destImage = new Bitmap(width, height);
 			destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
@@ -103,11 +96,10 @@ namespace VillaBisutti.Delta
 				}
 				Rectangle rect = new Rectangle(0, height - 20, destImage.Width, destImage.Height);
 				graphics.FillRectangle(Brushes.White, rect);
-				graphics.DrawString(Util.Get<string>("disclaimerImagem"), new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
+				graphics.DrawString(Get<string>("disclaimerImagem"), new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
 				graphics.Flush();
 			}
 			return destImage;
-
 		}
 
 		private static Dictionary<int, string> locaisCerimonia;

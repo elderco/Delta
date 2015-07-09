@@ -37,7 +37,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult EditFornecimentoBisutti(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, true));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
+		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,BebidaId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		{
+			return View();//new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, false));
 		}
 
 		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
@@ -84,20 +90,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		public ActionResult CreateItemBebidaSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			//if (ModelState.IsValid)
-			//{
-			//	db.ItemBebidaSelecionado.Add(itembebidaselecionado);
-			//	db.SaveChanges();
-			//	return RedirectToAction("Index");
-			//}
-
-			//ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Arquivo", itembebidaselecionado.ContratoAditivoId);
-			//ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itembebidaselecionado.EventoId);
-			//ViewBag.ItemBebidaId = new SelectList(db.ItemBebida, "Id", "Nome", itembebidaselecionado.ItemBebidaId);
-			//return View(itembebidaselecionado);
-			return View();
+			itembebidaselecionado.Definido = false;
+			itembebidaselecionado.FornecedorStartado = false;
+			itembebidaselecionado.Contratado = false;
+			itembebidaselecionado.ContatoFornecimento = string.Empty;
+			itembebidaselecionado.Entrega = new model.Horario();
+			itembebidaselecionado.HorarioEntrega = 0;
+			new data.ItemBebidaSelecionado().Insert(itembebidaselecionado);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemBebidaSelecionado/Edit/5

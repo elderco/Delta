@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Validation;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -31,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemBebidaSelecionado> GetCollection()
 		{
-			return context.ItemBebidaSelecionado.ToList();
+			return context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida).ToList();
 		}
 		public List<Model.ItemBebidaSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
@@ -41,7 +42,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(i => i.ItemBebida.TipoItemBebida)
 				.Include(i => i.Bebida)
 				.Where(i =>
-					i.BebidaId == eventoId
+					i.EventoId == eventoId
 					 && i.ContratacaoBisutti == ContratacaoVB
 					 && i.FornecimentoBisutti == FornecimentoVB
 				)

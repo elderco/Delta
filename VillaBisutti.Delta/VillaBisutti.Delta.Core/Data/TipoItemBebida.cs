@@ -79,7 +79,7 @@ namespace VillaBisutti.Delta.Core.Data
 		private IQueryable<Model.TipoItemBebida> GetTipoItensPreenchidos(int id)
 		{
 			return context.ItemBebidaSelecionado.Include(ibs => ibs.ItemBebida).Include(ibs => ibs.ItemBebida.TipoItemBebida)
-										.Where(ibs => ibs.BebidaId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida);
+										.Where(ibs => ibs.EventoId == id).Select(ibs => ibs.ItemBebida.TipoItemBebida);
 		}
 	}
 }
