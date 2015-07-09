@@ -10,13 +10,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Montagem : IEntityBase
 	{
 		[NotMapped]
-		public int Id
-		{
-			get
-			{
-				return EventoId;
-			}
-			set { }
+        public int Id
+        {
+            get { return EventoId; }
+            set { }
 		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
