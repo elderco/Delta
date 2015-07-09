@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -31,5 +32,20 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemMontagemSelecionado.ToList();
 		}
-	}
+
+        //public List<Model.ItemMontagemSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
+        //{
+        //    return context.ItemMontagemSelecionado
+        //        .Include(i => i.ContratoAditivo)
+        //        .Include(i => i.ItemMontagem)
+        //        .Include(i => i.ItemMontagem.Tipoitemmo)
+        //        .Include(i => i.Bebida)
+        //        .Where(i =>
+        //            i.BebidaId == eventoId
+        //             && i.ContratacaoBisutti == ContratacaoVB
+        //             && i.FornecimentoBisutti == FornecimentoVB
+        //        )
+        //        .ToList();
+        //}
+    }
 }

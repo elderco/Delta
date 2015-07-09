@@ -7,7 +7,7 @@
 @Html.ActionLink("Edit", "Montagem", new { id = ViewBag.Id})
 @Html.ActionLink("ListNaoSelecionado","TipoItemMontagem", new {id = ViewBag.Id})
 
-@*<div class="row">
+<div class="row">
     <h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
     @Html.Action("ListFornecimentoBisutti", "ItemMontagemSelecionado", new { id = @ViewBag.Id, ContratacaoVB = true, FornecimentoVB = true })
 </div>
@@ -19,4 +19,4 @@
     <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
     @Html.Action("ListFornecimentoContratante", "ItemMontagemSelecionado", new { id = @ViewBag.Id, ContratacaoVB = false })
     }
-</div>*@
+</div>
