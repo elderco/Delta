@@ -10,8 +10,8 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemBebidaSelecionado : IEntityBase
 	{
 		public int Id { get; set; }
-		public int BebidaId { get; set; }
-		[Display(Name = "Bebida"), Required]
+		public int EventoId { get; set; }
+		[Display(Name = "Bebida"), ForeignKey("EventoId")]
 		public Bebida Bebida { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
@@ -33,6 +33,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Quantidade { get; set; }
 		[Display(Name = "Horario de Entrega")]
 		public int HorarioEntrega { get; set; }
+		[NotMapped]
 		public Horario Entrega
 		{
 			get
