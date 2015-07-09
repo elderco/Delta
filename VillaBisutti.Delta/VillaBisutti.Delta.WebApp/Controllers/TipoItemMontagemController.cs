@@ -113,6 +113,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return RedirectToAction("Index", "ItemMontagem");
         }
 
+        public ActionResult ListNaoSelecionados(int id)
+        {
+            return View(new data.TipoItemMontagem().ListNaoSelecionados(id));
+        }
+
         protected override void Dispose(bool disposing)
 		{
 			base.Dispose(disposing);

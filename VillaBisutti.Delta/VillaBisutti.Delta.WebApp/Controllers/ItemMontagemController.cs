@@ -118,5 +118,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			base.Dispose(disposing);
 		}
+
+        public ActionResult ListarPorTipo(int tipoId)
+        {
+            return View(new data.ItemMontagem().ListarPorTipo(tipoId));
+        }
 	}
 }
