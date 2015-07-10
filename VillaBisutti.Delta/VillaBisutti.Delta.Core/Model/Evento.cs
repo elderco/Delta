@@ -21,6 +21,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public DateTime Data { get; set; }
 		[Display(Name = "Horário Inicio")]
 		public int HorarioInicio { get; set; }
+		[NotMapped]
 		public Horario Inicio
 		{
 			get
@@ -34,6 +35,7 @@ namespace VillaBisutti.Delta.Core.Model
 		}
 		[Display(Name = "Horário Termino")]
 		public int HorarioTermino { get; set; }
+		[NotMapped]
 		public Horario Termino
 		{
 			get
@@ -75,15 +77,15 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoAssessoria { get; set; }
 
 		//Dados do contratante
-		[Display(Name = "Nome do Responsável"), Required]
+		[Display(Name = "Nome do Responsável")]
 		public string NomeResponsavel { get; set; }
-		[Display(Name = "CPF do Responsável"), Required]
+		[Display(Name = "CPF do Responsável")]
 		public string CPFResponsavel { get; set; }
-		[Display(Name = "Email de Contato"), Required]
+		[Display(Name = "Email de Contato")]
 		public string EmailContato { get; set; }
-		[Display(Name = "Telefone de Contato"), Required]
+		[Display(Name = "Telefone de Contato")]
 		public string TelefoneContato { get; set; }
-		[Display(Name = "Nomes dos Homenageados"), Required]
+		[Display(Name = "Nomes dos Homenageados")]
 		public string NomeHomenageados { get; set; }
 		[Display(Name = "Perfil da Festa")]
 		public string PerfilFesta { get; set; }

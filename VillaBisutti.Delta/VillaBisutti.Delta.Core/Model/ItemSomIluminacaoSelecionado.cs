@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int EventoId { get; set; }
-		[Display(Name = "Evento"), Required]
+		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
@@ -31,6 +32,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Quantidade { get; set; }
 		[Display(Name = "Horário Montagem")]
 		public int HorarioMontagem { get; set; }
+		[NotMapped]
 		public Horario Montagem
 		{
 			get

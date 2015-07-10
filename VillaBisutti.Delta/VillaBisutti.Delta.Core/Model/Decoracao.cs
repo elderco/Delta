@@ -20,7 +20,7 @@ namespace VillaBisutti.Delta.Core.Model
 		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
-		[Display(Name = "Evento"), Required]
+		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
 		[Display(Name = "Cores & Cerimonia")]
 		public string CoresCerimonia { get; set; }

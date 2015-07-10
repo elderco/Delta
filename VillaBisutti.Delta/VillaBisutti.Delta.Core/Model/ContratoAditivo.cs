@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int  EvtId { get; set; }
-		[Display(Name = "Arquivo"), Required]
+		[Display(Name = "Arquivo")]
 		public string Arquivo { get; set; }
 		[Display(Name = "Número do Contrato")]
 		public string NumeroContrato { get; set; }

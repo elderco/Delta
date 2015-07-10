@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int CardapioId { get; set; }
-		[Display(Name = "Cardápio"), Required]
+		[Display(Name = "Cardápio")]
 		public Cardapio Cardapio { get; set; }
 		[Display(Name = "Tipo de Servico")]
 		public TipoServico TipoServico { get; set; }

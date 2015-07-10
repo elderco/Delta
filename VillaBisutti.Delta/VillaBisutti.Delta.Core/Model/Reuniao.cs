@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -21,6 +22,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public DateTime Data { get; set; }
 		[Display(Name = "Horario da Reuniao")]
 		public int HorarioReuniao { get; set; }
+		[NotMapped]
 		public Horario Horario
 		{
 			get
