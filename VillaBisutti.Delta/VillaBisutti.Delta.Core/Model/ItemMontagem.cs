@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemMontagem : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name = "Nome"), Required]
+		[Display(Name = "Item"), Required]
 		public string Nome { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 161)]
 		public int Quantidade { get; set; }
