@@ -4,7 +4,9 @@
 	Layout = null;	
     //ViewBag.Title = "Delete";
 }
-
+<h3>
+	Você tem certeza que deseja excluir?
+</h3>
 <div>
     <dl class="dl-horizontal">
         <dt>
@@ -39,7 +41,9 @@
 			@Html.DisplayFor(model => model.DataContrato)
 		</dd>
     </dl>
-
+	<h3>
+		Esta ação não poderá ser desfeita
+	</h3>
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
