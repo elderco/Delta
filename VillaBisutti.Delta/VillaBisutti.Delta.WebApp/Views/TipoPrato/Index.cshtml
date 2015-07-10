@@ -28,8 +28,8 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+            @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" })
         </td>
     </tr>
 }
