@@ -15,69 +15,13 @@
             @Html.DisplayFor(model => model.Nome)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoAniversario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoAniversario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoBarmitzva)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoBarmitzva)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoBatmitzva)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoBatmitzva)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoCasamento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoCasamento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoCorporativo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoCorporativo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoDebutante)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoDebutante)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PadraoOutro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PadraoOutro)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> 
+			<input type="submit" value="Excluir" class="btn btn-default" /> 
         </div>
     }
 </div>

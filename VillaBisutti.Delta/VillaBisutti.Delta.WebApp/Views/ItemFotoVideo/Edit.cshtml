@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoItemFotoVideo, "TipoItemFotoVideo", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoItemFotoVideo, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 				@Html.DropDownList("TipoItemFotoVideoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemFotoVideo, String.Empty)
                 @Html.ValidationMessageFor(model => model.TipoItemFotoVideoId)
