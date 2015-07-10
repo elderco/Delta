@@ -6,7 +6,7 @@
 		$(document).ready(function () {
 			$("#TipoItemBebidaId").change(function () {
 				if (!$(this).val())
-					$("#ItensBebidaContainer").html("");
+					$("#ItensBebidaContainer").html("<select />");
 				else
 					LoadPage("@(Url.Action("ListarPorTipo", "ItemBebida"))/?tipoId=" + $(this).val(), "ItensBebidaContainer");
 			})
@@ -73,8 +73,6 @@
 		</div>
     </div>
 }
-
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

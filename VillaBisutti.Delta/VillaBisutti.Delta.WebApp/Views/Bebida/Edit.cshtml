@@ -2,7 +2,7 @@
 @{
 	Layout = null;
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edited", "Bebida"))
 {
 	@Html.AntiForgeryToken()
 	<div class="form-horizontal">
@@ -11,14 +11,11 @@
 
 		<div class="form-group">
 			<label for="Observacoes" class="control-label col-md-2">Observações gerais</label>
-			<div class="col-md-10">
+			<div class="col-md-8">
 				@Html.EditorFor(model => model.Observacoes)
 				@Html.ValidationMessageFor(model => model.Observacoes)
 			</div>
-		</div>
-
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-10">
+			<div class="col-md-2">
 				<input type="submit" value="Salvar" class="btn btn-default" />
 			</div>
 		</div>

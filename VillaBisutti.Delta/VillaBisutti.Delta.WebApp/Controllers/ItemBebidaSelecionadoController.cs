@@ -41,9 +41,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,BebidaId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,Quantidade,Observacoes,Definido")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			return View();//new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, false));
+			model.ItemBebidaSelecionado itemOriginal = new data.ItemBebidaSelecionado().GetElement(itembebidaselecionado.Id);
+			itemOriginal.Quantidade = itembebidaselecionado.Quantidade;
+			itemOriginal.Observacoes = itembebidaselecionado.Observacoes;
+			itemOriginal.Definido = itembebidaselecionado.Definido;
+			new data.ItemBebidaSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
@@ -92,69 +97,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult CreateItemBebidaSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			itembebidaselecionado.Definido = false;
-			itembebidaselecionado.FornecedorStartado = false;
-			itembebidaselecionado.Contratado = false;
-			itembebidaselecionado.ContatoFornecimento = string.Empty;
-			itembebidaselecionado.Entrega = new model.Horario();
-			itembebidaselecionado.HorarioEntrega = 0;
+			//itembebidaselecionado.Definido = false;
+			//itembebidaselecionado.FornecedorStartado = false;
+			//itembebidaselecionado.Contratado = false;
+			//itembebidaselecionado.ContatoFornecimento = string.Empty;
+			//itembebidaselecionado.Entrega = new model.Horario();
+			//itembebidaselecionado.HorarioEntrega = 0;
 			new data.ItemBebidaSelecionado().Insert(itembebidaselecionado);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
-		}
-
-		// GET: /ItemBebidaSelecionado/Edit/5
-		public ActionResult Edit(int? id)
-		{
-			//if (id == null)
-			//{
-			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			//}
-			//ItemBebidaSelecionado itembebidaselecionado = db.ItemBebidaSelecionado.Find(id);
-			//if (itembebidaselecionado == null)
-			//{
-			//	return HttpNotFound();
-			//}
-			//ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Arquivo", itembebidaselecionado.ContratoAditivoId);
-			//ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itembebidaselecionado.EventoId);
-			//ViewBag.ItemBebidaId = new SelectList(db.ItemBebida, "Id", "Nome", itembebidaselecionado.ItemBebidaId);
-			//return View(itembebidaselecionado);
-			return View();
-		}
-
-		// POST: /ItemBebidaSelecionado/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id,EventoId,ContratoAditivoId,ItemBebidaId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,FornecedorStartado,Quantidade,HorarioEntrega,ContatoFornecimento,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
-		{
-			//if (ModelState.IsValid)
-			//{
-			//	db.Entry(itembebidaselecionado).State = EntityState.Modified;
-			//	db.SaveChanges();
-			//	return RedirectToAction("Index");
-			//}
-			//ViewBag.ContratoAditivoId = new SelectList(db.ContratoAdivitivo, "Id", "Arquivo", itembebidaselecionado.ContratoAditivoId);
-			//ViewBag.EventoId = new SelectList(db.Evento, "Id", "NomeResponsavel", itembebidaselecionado.EventoId);
-			//ViewBag.ItemBebidaId = new SelectList(db.ItemBebida, "Id", "Nome", itembebidaselecionado.ItemBebidaId);
-			//return View(itembebidaselecionado);
-			return View();
 		}
 
 		// GET: /ItemBebidaSelecionado/Delete/5
 		public ActionResult Delete(int? id)
 		{
-			//if (id == null)
-			//{
-			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			//}
-			//ItemBebidaSelecionado itembebidaselecionado = db.ItemBebidaSelecionado.Find(id);
-			//if (itembebidaselecionado == null)
-			//{
-			//	return HttpNotFound();
-			//}
-			//return View(itembebidaselecionado);
-			return View();
+			new data.ItemBebidaSelecionado().Delete(id.Value);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// POST: /ItemBebidaSelecionado/Delete/5

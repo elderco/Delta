@@ -1,26 +1,34 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado
 @{
-    Layout = null;
+	Layout = null;
 }
-@using (Html.BeginForm())
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$("tr.inline-row-editor@(Model.Id)>td  :input").change(function () {
+			$("#Edit_@(Model.Id)").submit();
+		});
+	});
+</script>
+@using (Html.BeginForm("EditFornecimentoBisuttiPost", "ItemBebidaSelecionado", FormMethod.Post, new { @id = "Edit_" + Model.Id }))
 {
-    @Html.AntiForgeryToken()
-    @Html.HiddenFor(model => model.Id)
-    <tr>
-        <td class="col-md-4">
-            @(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
-        </td>
-        <td class="col-md-2">
-            @Html.EditorFor(model => model.Quantidade)
-        </td>
-        <td class="col-md-4">
-            @Html.EditorFor(model => model.Observacoes)
-        </td>
+	@Html.AntiForgeryToken()
+	@Html.HiddenFor(model => model.Id)
+	<tr class="inline-row-editor@(Model.Id)">
+		<td class="col-md-4">
+			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
+		</td>
+		<td class="col-md-2">
+			@Html.EditorFor(model => model.Quantidade)
+		</td>
+		<td class="col-md-4">
+			@Html.EditorFor(model => model.Observacoes)
+		</td>
 		<td class="col-md-1">
 			@Html.EditorFor(model => model.Definido)
 		</td>
 		<td class="col-md-1">
-			@Html.ActionLink("Excluir este item", "Delete", "ItemBebidaSelecionado", new { id = Model.Id })
-		</td>
-    </tr>
+			<a href="@Url.Action("Delete", "ItemBebidaSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
+				<span class="menu-icon fa fa-trash"></span>
+			</a>
+	</tr>
 }

@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Bebida entity)
 		{
-			Model.Bebida original = context.Bebida.FirstOrDefault(s => s.Id == (entity.Id));
+			Model.Bebida original = context.Bebida.FirstOrDefault(s => s.EventoId == (entity.Id));
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
