@@ -51,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.TipoEvento)
         </td>
         <td>
-			@Html.ActionLink("Deletar", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
 		 </td>
     </tr>
 }
