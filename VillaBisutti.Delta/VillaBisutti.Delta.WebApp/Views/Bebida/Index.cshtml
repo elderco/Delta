@@ -2,9 +2,17 @@
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-@Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
-@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
-@Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
+<div class="row">
+	<div class="col-md-4">
+		@Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
+	</div>
+	<div class="col-md-8">
+		@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+	</div>
+</div>
+<div class="row">
+	@Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
+</div>
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
 	@Html.Action("ListFornecimentoBisutti", "ItemBebidaSelecionado", new { id = @ViewBag.Id })

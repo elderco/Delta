@@ -12,67 +12,59 @@
 			})
 		});
 	</script>
-@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado")) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-inline">
-        @Html.ValidationSummary(true)
-		<input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
+	@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado"))
+	{
+		@Html.AntiForgeryToken()
 
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.ItemBebida.TipoItemBebida, new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true)
+		<input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
+		<div class="form-group">
+			@Html.LabelFor(model => model.ItemBebida.TipoItemBebida.Nome, new { @class = "control-label col-md-2" })
+			<div class="col-md-4">
 				@Html.DropDownList("TipoItemBebidaId", (IEnumerable<SelectListItem>)ViewBag.TipoItemBebidaId, "Selecione", new { @class = "form-control" })
 			</div>
-		</div>
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.ItemBebida, new { @class = "control-label col-md-12" })
-			<div class="col-md-12" id="ItensBebidaContainer">
-				<select></select>
+			@Html.LabelFor(model => model.ItemBebida.Nome, new { @class = "control-label col-md-2" })
+			<div class="col-md-4" id="ItensBebidaContainer">
+				<select class="form-control"></select>
 			</div>
 		</div>
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.ContratoAditivoId, "ContratoAditivoId", new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
-				@Html.DropDownList("ContratoAditivoId", String.Empty)
+		<div class="form-group">
+			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2" })
+			<div class="col-md-4">
+				@Html.DropDownList("ContratoAditivoId", (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.ContratoAditivoId)
 			</div>
-		</div>
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
+			<div class="col-md-3">
 				@Html.EditorFor(model => model.ContratacaoBisutti)
+				@Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label" })
 				@Html.ValidationMessageFor(model => model.ContratacaoBisutti)
 			</div>
-		</div>
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
+			<div class="col-md-3">
 				@Html.EditorFor(model => model.FornecimentoBisutti)
+				@Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label" })
 				@Html.ValidationMessageFor(model => model.FornecimentoBisutti)
 			</div>
 		</div>
-		<div class="input-group col-md-1">
-			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
+			<div class="col-md-2">
 				@Html.EditorFor(model => model.Quantidade)
 				@Html.ValidationMessageFor(model => model.Quantidade)
 			</div>
-		</div>
-		<div class="input-group col-md-4">
-			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-12" })
-			<div class="col-md-12">
+			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-2" })
+			<div class="col-md-6">
 				@Html.EditorFor(model => model.Observacoes)
 				@Html.ValidationMessageFor(model => model.Observacoes)
 			</div>
 		</div>
-
-		<div class="input-group col-md-1">
-			<button type="submit" class="btn btn-default"><span class="menu-icon fa fa-plus"></span> Adicionar</button>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-4">
+				<button type="submit" class="btn btn-default form-control"><span class="menu-icon fa fa-plus"></span> Adicionar</button>
+			</div>
 		</div>
-    </div>
-}
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+	</div>
+	}
+	@section Scripts {
+		@Scripts.Render("~/bundles/jqueryval")
+	}

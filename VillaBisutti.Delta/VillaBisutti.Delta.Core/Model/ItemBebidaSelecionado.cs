@@ -52,15 +52,29 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Fotos")]
 		public List<Foto> Fotos { get; set; }
 		[NotMapped]
-		public bool StateError
+		public bool StateErrorBisutti
 		{ 
 			get 
 			{
 				return (
-					(ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado))
-					//TODO: Método em data.ItemBebida para verificar disponibilidade
-					|| (ItemBebida != null && (ItemBebida.Quantidade < Quantidade))
+					(ItemBebida != null && (ItemBebida.Quantidade < Quantidade))
 					);
+			}
+		}
+		[NotMapped]
+		public bool StateErrorContratante
+		{
+			get
+			{
+				return false;
+			}
+		}
+		[NotMapped]
+		public bool StateErrorFornecedor
+		{
+			get
+			{
+				return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
 			}
 		}
 	}

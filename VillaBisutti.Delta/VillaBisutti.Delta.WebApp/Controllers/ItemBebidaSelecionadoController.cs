@@ -55,30 +55,41 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult EditFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, false));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
+		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoTerceiroPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Contratado,FornecedorStartado,Observacoes,Definido")] model.ItemBebidaSelecionado itembebidaselecionado)
+		{
+			model.ItemBebidaSelecionado itemOriginal = new data.ItemBebidaSelecionado().GetElement(itembebidaselecionado.Id);
+			itemOriginal.Quantidade = itembebidaselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itembebidaselecionado.ContatoFornecimento;
+			itemOriginal.HorarioEntrega = itembebidaselecionado.HorarioEntrega;
+			itemOriginal.Observacoes = itembebidaselecionado.Observacoes;
+			itemOriginal.Definido = itembebidaselecionado.Definido;
+			itemOriginal.Contratado = itembebidaselecionado.Contratado;
+			itemOriginal.FornecedorStartado = itembebidaselecionado.FornecedorStartado;
+			new data.ItemBebidaSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
 		public ActionResult EditFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, false, false));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
-
-		// GET: /ItemBebidaSelecionado/Details/5
-		public ActionResult Details(int? id)
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoContratantePost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			//if (id == null)
-			//{
-			//	return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			//}
-			//ItemBebidaSelecionado itembebidaselecionado = db.ItemBebidaSelecionado.Find(id);
-			//if (itembebidaselecionado == null)
-			//{
-			//	return HttpNotFound();
-			//}
-			//return View(itembebidaselecionado);
-			return View();
+			model.ItemBebidaSelecionado itemOriginal = new data.ItemBebidaSelecionado().GetElement(itembebidaselecionado.Id);
+			itemOriginal.Quantidade = itembebidaselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itembebidaselecionado.ContatoFornecimento;
+			itemOriginal.HorarioEntrega = itembebidaselecionado.HorarioEntrega;
+			itemOriginal.Observacoes = itembebidaselecionado.Observacoes;
+			new data.ItemBebidaSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemBebidaSelecionado/Create

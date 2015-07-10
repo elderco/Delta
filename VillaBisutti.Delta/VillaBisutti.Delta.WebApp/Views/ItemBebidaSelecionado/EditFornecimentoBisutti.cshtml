@@ -4,7 +4,7 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		$("tr.inline-row-editor@(Model.Id)>td  :input").change(function () {
+		$("tr.inline-row-editor@(Model.Id)>td :input").change(function () {
 			$("#Edit_@(Model.Id)").submit();
 		});
 	});
@@ -13,17 +13,17 @@
 {
 	@Html.AntiForgeryToken()
 	@Html.HiddenFor(model => model.Id)
-	<tr class="inline-row-editor@(Model.Id)">
-		<td class="col-md-4">
+	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorBisutti ? "bg-danger" : "bg-success")">
+		<td>
 			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
 		</td>
-		<td class="col-md-2">
+		<td>
 			@Html.EditorFor(model => model.Quantidade)
 		</td>
-		<td class="col-md-4">
+		<td>
 			@Html.EditorFor(model => model.Observacoes)
 		</td>
-		<td class="col-md-1">
+		<td>
 			@Html.EditorFor(model => model.Definido)
 		</td>
 		<td class="col-md-1">
