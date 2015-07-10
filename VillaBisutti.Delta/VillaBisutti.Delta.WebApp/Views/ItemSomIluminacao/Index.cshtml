@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemSomIluminacao>
-
 @{
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-	//ViewBag.Title = "Index";
+    //ViewBag.Title = "Index";
 }
+
 @section scripts {
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
@@ -19,7 +19,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.TipoItemSomIluminacao.Nome)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
@@ -36,7 +36,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nome)
+            @Html.DisplayFor(modelItem => item.TipoItemSomIluminacao.Nome)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)

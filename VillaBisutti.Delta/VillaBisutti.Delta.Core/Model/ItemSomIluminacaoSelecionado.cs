@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemSomIId { get; set; }
 		[Display(Name = "Bebida")]
-		public ItemBebida ItemBebida { get; set; }
+		public ItemSomIluminacao ItemSomIluminacao { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
 		[Display(Name = "Contratado")]

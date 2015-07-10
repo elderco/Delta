@@ -1,121 +1,119 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado
-
 @{
-    ViewBag.Title = "Create";
+	Layout = null;
 }
-
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$("#TipoItemSomIluminacaoSelecionadoId").change(function () {
+				if (!$(this).val())
+					$("#ItensBebidaContainer").html("<select />");
+				else
+					LoadPage("@(Url.Action("ListarPorTipo", "ItemSomIluminacaoSelecionado"))/?tipoId=" + $(this).val(), "ItensSomIluminacao");
+			})
+		});
+</script>
+@using (Html.BeginForm("CreateItemSomIluminacaoSelecionado", "ItemSomIluminacaoSelecionado")) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ItemSomIluminacaoSelecionado</h4>
-        <hr />
-        @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EventoId, "EventoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EventoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.EventoId)
-            </div>
-        </div>
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContratoAditivoId, "ContratoAditivoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ContratoAditivoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.ContratoAditivoId)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.EventoId, "EventoId", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("EventoId", String.Empty)
+				@Html.ValidationMessageFor(model => model.EventoId)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ItemSomIId, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ItemSomIId)
-                @Html.ValidationMessageFor(model => model.ItemSomIId)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ContratoAditivoId, "ContratoAditivoId", new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownList("ContratoAditivoId", String.Empty)
+				@Html.ValidationMessageFor(model => model.ContratoAditivoId)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Definido, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Definido)
-                @Html.ValidationMessageFor(model => model.Definido)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ItemSomIId, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.ItemSomIId)
+				@Html.ValidationMessageFor(model => model.ItemSomIId)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Contratado, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contratado)
-                @Html.ValidationMessageFor(model => model.Contratado)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Definido, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Definido)
+				@Html.ValidationMessageFor(model => model.Definido)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ContratacaoBisutti)
-                @Html.ValidationMessageFor(model => model.ContratacaoBisutti)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Contratado, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Contratado)
+				@Html.ValidationMessageFor(model => model.Contratado)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FornecimentoBisutti)
-                @Html.ValidationMessageFor(model => model.FornecimentoBisutti)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.ContratacaoBisutti)
+				@Html.ValidationMessageFor(model => model.ContratacaoBisutti)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Quantidade)
-                @Html.ValidationMessageFor(model => model.Quantidade)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.FornecimentoBisutti)
+				@Html.ValidationMessageFor(model => model.FornecimentoBisutti)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.HorarioMontagem, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HorarioMontagem)
-                @Html.ValidationMessageFor(model => model.HorarioMontagem)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Quantidade)
+				@Html.ValidationMessageFor(model => model.Quantidade)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ContatoFornecimento, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ContatoFornecimento)
-                @Html.ValidationMessageFor(model => model.ContatoFornecimento)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.HorarioMontagem, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.HorarioMontagem)
+				@Html.ValidationMessageFor(model => model.HorarioMontagem)
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Observacoes)
-                @Html.ValidationMessageFor(model => model.Observacoes)
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ContatoFornecimento, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.ContatoFornecimento)
+				@Html.ValidationMessageFor(model => model.ContatoFornecimento)
+			</div>
+		</div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Observacoes)
+				@Html.ValidationMessageFor(model => model.Observacoes)
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-4">
+				<button type="submit" class="btn btn-default form-control"><span class="menu-icon fa fa-plus"></span> Adicionar</button>
+			</div>
+		</div>
+	</div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

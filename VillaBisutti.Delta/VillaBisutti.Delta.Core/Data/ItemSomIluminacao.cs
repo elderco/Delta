@@ -17,7 +17,7 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemSomIluminacao entity)
+		public override DbEntityEntry GetCurrent(Model.ItemSomIluminacao entity)
 		{
 			return context.Entry(entity);
 		}
@@ -31,6 +31,18 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.ItemSomIluminacao> GetCollection()
 		{
 			return context.ItemSomIluminacao.Include(i => i.TipoItemSomIluminacao).ToList();
+		}
+
+		public List<Model.ItemSomIluminacao> GetFromTipo(int tipoId)
+		{
+			return context.ItemSomIluminacao.Include(i => i.TipoItemSomIluminacao).Where(
+				(i => i.TipoItemSomIluminacaoId == tipoId || tipoId == 0)
+				).ToList();
+		}
+
+		public List<Model.ItemSomIluminacao> ListarPorTipo(int tipoId)
+		{
+			return context.ItemSomIluminacao.Where(ib => ib.TipoItemSomIluminacaoId == tipoId).ToList();
 		}
 	}
 }

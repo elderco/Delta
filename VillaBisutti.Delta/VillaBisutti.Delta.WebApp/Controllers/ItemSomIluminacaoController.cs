@@ -113,6 +113,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return RedirectToAction("Index");
         }
 
+		public ActionResult ListarPorTipo(int tipoId)
+		{
+			return View(new data.SomIluminacao().ListarPorTipo(tipoId));
+		}
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

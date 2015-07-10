@@ -1,12 +1,9 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado
-
 @{
-    ViewBag.Title = "Delete";
+	Layout = null;
 }
+<h3>Você tem certeza que quer excluir?</h3>
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>ItemSomIluminacaoSelecionado</h4>
     <hr />
@@ -105,8 +102,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+			<input type="submit" value="Excluir" class="btn btn-default" /> 
         </div>
     }
 </div>

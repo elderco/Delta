@@ -6,132 +6,145 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemSomIluminacaoSelecionadoController : Controller
     {
-        private Context db = new Context();
-
         // GET: /ItemSomIluminacaoSelecionado/
-        public ActionResult Index()
-        {
-            var itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Include(i => i.ContratoAditivo).Include(i => i.Evento);
-            return View(itemsomiluminacaoselecionado.ToList());
-        }
+		public ActionResult ListFornecimentoBisutti(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, true));
+		}
 
-        // GET: /ItemSomIluminacaoSelecionado/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemsomiluminacaoselecionado);
-        }
+		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		public ActionResult ListFornecimentoTerceiro(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, false));
+		}
 
-        // GET: /ItemSomIluminacaoSelecionado/Create
-        public ActionResult Create()
-        {
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo");
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria");
-            return View();
-        }
+		public ActionResult ListFornecimentoContratante(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, false, false));
+		}
 
-        // POST: /ItemSomIluminacaoSelecionado/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,EventoId,ContratoAditivoId,ItemSomIId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,Quantidade,HorarioMontagem,ContatoFornecimento,Observacoes")] ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ItemSomIluminacaoSelecionado.Add(itemsomiluminacaoselecionado);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+		public ActionResult EditFornecimentoBisutti(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+		}
 
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
-        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,Quantidade,Observacoes,Definido")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		{
+			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
+			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
+			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
+			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
+			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
 
-        // GET: /ItemSomIluminacaoSelecionado/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
-        }
+		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		public ActionResult EditFornecimentoTerceiro(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+		}
 
-        // POST: /ItemSomIluminacaoSelecionado/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,EventoId,ContratoAditivoId,ItemSomIId,Definido,Contratado,ContratacaoBisutti,FornecimentoBisutti,Quantidade,HorarioMontagem,ContatoFornecimento,Observacoes")] ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(itemsomiluminacaoselecionado).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemsomiluminacaoselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemsomiluminacaoselecionado.EventoId);
-            return View(itemsomiluminacaoselecionado);
-        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoTerceiroPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Contratado,FornecedorStartado,Observacoes,Definido")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		{
+			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itembebidaselecionado.Id);
+			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itemsomiluminacaoselecionado.ContatoFornecimento;
+			itemOriginal.HorarioEntrega = itemsomiluminacaoselecionado.HorarioEntrega;
+			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
+			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
+			itemOriginal.Contratado = itemsomiluminacaoselecionado.Contratado;
+			itemOriginal.FornecedorStartado = itemsomiluminacaoselecionado.FornecedorStartado;
+			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
+		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+		public ActionResult EditFornecimentoContratante(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+		}
 
-        // GET: /ItemSomIluminacaoSelecionado/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            if (itemsomiluminacaoselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemsomiluminacaoselecionado);
-        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditFornecimentoContratantePost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		{
+			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
+			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itemsomiluminacaoselecionado.ContatoFornecimento;
+			itemOriginal.HorarioEntrega = itemsomiluminacaoselecionado.HorarioEntrega;
+			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
+			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
 
-        // POST: /ItemSomIluminacaoSelecionado/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado = db.ItemSomIluminacaoSelecionado.Find(id);
-            db.ItemSomIluminacaoSelecionado.Remove(itemsomiluminacaoselecionado);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+		// GET: /ItemBebidaSelecionado/Create
+		public ActionResult Create(int id)
+		{
+			ViewBag.Id = id;
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "Arquivo");
+			ViewBag.TipoItemBebidaId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
+			return View();
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+		// POST: /ItemBebidaSelecionado/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult CreateItemBebidaSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		{
+			//itembebidaselecionado.Definido = false;
+			//itembebidaselecionado.FornecedorStartado = false;
+			//itembebidaselecionado.Contratado = false;
+			//itembebidaselecionado.ContatoFornecimento = string.Empty;
+			//itembebidaselecionado.Entrega = new model.Horario();
+			//itembebidaselecionado.HorarioEntrega = 0;
+			new data.ItemSomIluminacaoSelecionado().Insert(itemsomiluminacaoselecionado);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
+
+		// GET: /ItemBebidaSelecionado/Delete/5
+		public ActionResult Delete(int? id)
+		{
+			new data.ItemSomIluminacaoSelecionado().Delete(id.Value);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
+
+		// POST: /ItemBebidaSelecionado/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			//ItemBebidaSelecionado itembebidaselecionado = db.ItemBebidaSelecionado.Find(id);
+			//db.ItemBebidaSelecionado.Remove(itembebidaselecionado);
+			//db.SaveChanges();
+			//return RedirectToAction("Index");
+			return View();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				//db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+	}
 }

@@ -1,14 +1,7 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado>
-
 @{
-    ViewBag.Title = "Index";
+	Layout = null;
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -47,47 +40,43 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContratoAditivo.Arquivo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemSomIId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Definido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contratado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContratacaoBisutti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FornecimentoBisutti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioMontagem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContatoFornecimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.ContratoAditivo.Arquivo)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ItemSomIId)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Definido)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Contratado)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ContratacaoBisutti)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.FornecimentoBisutti)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Quantidade)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.HorarioMontagem)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ContatoFornecimento)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Observacoes)
+		</td>
+	</tr>
 }
 
 </table>
