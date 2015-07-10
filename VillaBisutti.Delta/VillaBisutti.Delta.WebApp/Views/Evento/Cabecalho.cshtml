@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="col-xs-12 widget-container-col" style="min-height: 148px;">
+<div class="col-xs-12 widget-container-col" style="min-height: 50px; margin-bottom: 20px">
     <div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
         <div class="widget-header widget-header-large">
             <h4 class="widget-title">
@@ -47,7 +47,7 @@
                         <b>Tipo de Evento: </b>@(Model.TipoEvento.GetDescription())
                     </div>
                     <div class="col-sm-4">
-                        <b>N.º de Convidados: </b>@(Model.Pax) convidados (@(Model.PaxAproximado) - +10%)
+                        <b>Pax: </b>@(Model.Pax) +10% (@(Model.PaxAproximado))
                     </div>
                     <div class="col-sm-4">
                         <b>Horário: </b>das @(Model.Inicio.ToString()) às @(Model.Termino.ToString())<br>
@@ -61,5 +61,6 @@
         </div>
     </div>
 </div>
+<br>
 
 
