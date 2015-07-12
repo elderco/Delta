@@ -31,8 +31,8 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemSomIluminacaoSelecionado> GetCollection()
 		{
-			return context.ItemSomIluminacaoSelecionado.Include(isi => isi.ItemSomIluminacao).Include(isi => isi.ItemSomIluminacao.TipoItemSomIluminacao).ToList();
-		}
+            return context.ItemSomIluminacaoSelecionado.Include(ibs => ibs.ItemSomIluminacao).Include(ibs => ibs.ItemSomIluminacao.TipoItemSomIluminacao).ToList();
+        }
 
 		public List<Model.ItemSomIluminacaoSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
@@ -40,7 +40,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(i => i.ContratoAditivo)
 				.Include(i => i.ItemSomIluminacao)
 				.Include(i => i.ItemSomIluminacao.TipoItemSomIluminacao)
-				.Include(i => i.Evento)
+				.Include(i => i.SomIluminacao)
 				.Where(i =>
 					i.EventoId == eventoId
 					 && i.ContratacaoBisutti == ContratacaoVB

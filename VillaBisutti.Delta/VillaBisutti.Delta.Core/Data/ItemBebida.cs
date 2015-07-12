@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace VillaBisutti.Delta.Core.Data
 {
 	public class ItemBebida : DataAccessBase<Model.ItemBebida>

@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,17 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.TipoItemSomIluminacao entity)
 		{
-			Model.TipoItemSomIluminacao original = context.TipoItemSomIluminacao.FirstOrDefault(a => a.Id == entity.Id);
-			context.Entry(original).CurrentValues.SetValues(entity);
-			context.SaveChanges();
+            //context.TipoItemBebida.Attach(entity);
+            //context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            //context.SaveChanges();
+            Model.TipoItemSomIluminacao original = context.TipoItemSomIluminacao.Find(entity.Id);
+            context.Entry(original).CurrentValues.SetValues(entity);
+            context.SaveChanges();
 		}
-
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemSomIluminacao entity)
+        public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemSomIluminacao entity)
 		{
 			return context.Entry(entity);
 		}
-
 		public override void Insert(Model.TipoItemSomIluminacao entity)
 		{
 			context.TipoItemSomIluminacao.Add(entity);
@@ -30,6 +32,54 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemSomIluminacao> GetCollection()
 		{
 			return context.TipoItemSomIluminacao.ToList();
+		}
+		public List<Model.TipoItemSomIluminacao> ListNaoSelecionados(int id)
+		{
+			Model.TipoEvento tipo = new Evento().GetElement(id).TipoEvento;
+			switch (tipo)
+			{
+				case Model.TipoEvento.Aniversario:
+					List<Model.TipoItemSomIluminacao> aniversario = context.TipoItemSomIluminacao.Where(tib => tib.PadraoAniversario).ToList();
+					return aniversario.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Barmitzva:
+					List<Model.TipoItemSomIluminacao> barmitzva = context.TipoItemSomIluminacao.Where(tib => tib.PadraoBarmitzva).ToList();
+					return barmitzva.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Batmitzva:
+					List<Model.TipoItemSomIluminacao> batmitzva = context.TipoItemSomIluminacao.Where(tib => tib.PadraoBatmitzva).ToList();
+					return batmitzva.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Casamento:
+					List<Model.TipoItemSomIluminacao> casamento = context.TipoItemSomIluminacao.Where(tib => tib.PadraoCasamento).ToList();
+					return casamento.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Corporativo:
+					List<Model.TipoItemSomIluminacao> corporativo = context.TipoItemSomIluminacao.Where(tib => tib.PadraoCorporativo).ToList();
+					return corporativo.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Debutante:
+					List<Model.TipoItemSomIluminacao> debutante = context.TipoItemSomIluminacao.Where(tib => tib.PadraoDebutante).ToList();
+					return debutante.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+				case Model.TipoEvento.Outro:
+					List<Model.TipoItemSomIluminacao> outro = context.TipoItemSomIluminacao.Where(tib => tib.PadraoOutro).ToList();
+					return outro.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
+			}
+			return null;
+		}
+		private IQueryable<Model.TipoItemSomIluminacao> GetTipoItensPreenchidos(int id)
+		{
+            return context.ItemSomIluminacaoSelecionado.Include(isi => isi.ItemSomIluminacao).Include(isi => isi.ItemSomIluminacao.TipoItemSomIluminacao)
+                                                .Where(isi => isi.EventoId == id).Select(isi => isi.ItemSomIluminacao.TipoItemSomIluminacao);
 		}
 	}
 }

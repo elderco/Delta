@@ -28,9 +28,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PadraoDebutante { get; set; }
 		[Display(Name = "Item padrão para Outro")]
 		public bool PadraoOutro { get; set; }
+
+
 		[Display(Name = "Copiar itens para Bebida")]
-
-
 		public bool CopiaBebida { get; set; }
 		[Display(Name = "Copiar itens para Decoração")]
 		public bool CopiaDecoracao { get; set; }

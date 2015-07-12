@@ -22,15 +22,15 @@ namespace VillaBisutti.Delta.Core.Data
 			return context.Entry(entity);
 		}
 
-		public override void Insert(Model.SomIluminacao entity)
+        public override void Insert(Model.SomIluminacao entity)
 		{
-			context.SomIluminacao.Add(entity);
+            context.SomIluminacao.Add(entity);
 			context.SaveChanges();
 		}
 
-		protected override List<Model.SomIluminacao> GetCollection()
+        protected override List<Model.SomIluminacao> GetCollection()
 		{
-			return context.SomIluminacao.ToList();
+            return context.SomIluminacao.Include(b => b.Evento).Include(b => b.Itens).ToList();
 		}
 	}
 }

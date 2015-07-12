@@ -6,126 +6,52 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class SomIluminacaoController : Controller
     {
-        private Context db = new Context();
-
         // GET: /SomIluminacao/
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            var somiluminacao = db.SomIluminacao.Include(s => s.Evento);
-            return View(somiluminacao.ToList());
+            ViewBag.Id = id;
+            model.SomIluminacao somiluminacao = new data.SomIluminacao().GetElement(id);
+            return View(somiluminacao);
         }
 
         // GET: /SomIluminacao/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SomIluminacao somiluminacao = db.SomIluminacao.Find(id);
-            if (somiluminacao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(somiluminacao);
-        }
-
-        // GET: /SomIluminacao/Create
-        public ActionResult Create()
-        {
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria");
-            return View();
-        }
-
-        // POST: /SomIluminacao/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="EventoId,Observacoes")] SomIluminacao somiluminacao)
-        {
-            if (ModelState.IsValid)
-            {
-                db.SomIluminacao.Add(somiluminacao);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", somiluminacao.EventoId);
-            return View(somiluminacao);
-        }
-
-        // GET: /SomIluminacao/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SomIluminacao somiluminacao = db.SomIluminacao.Find(id);
+            model.SomIluminacao somiluminacao = new data.SomIluminacao().GetElement(id.Value);
             if (somiluminacao == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", somiluminacao.EventoId);
+            ViewBag.EventoId = id;
             return View(somiluminacao);
         }
 
-        // POST: /SomIluminacao/Edit/5
+        // POST: /Bebida/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="EventoId,Observacoes")] SomIluminacao somiluminacao)
+        public ActionResult Edited([Bind(Include = "EventoId,Id,Observacoes")] model.SomIluminacao somiluminacao)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(somiluminacao).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", somiluminacao.EventoId);
-            return View(somiluminacao);
-        }
-
-        // GET: /SomIluminacao/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SomIluminacao somiluminacao = db.SomIluminacao.Find(id);
-            if (somiluminacao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(somiluminacao);
-        }
-
-        // POST: /SomIluminacao/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            SomIluminacao somiluminacao = db.SomIluminacao.Find(id);
-            db.SomIluminacao.Remove(somiluminacao);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            new data.SomIluminacao().Update(somiluminacao);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
             }
             base.Dispose(disposing);
         }

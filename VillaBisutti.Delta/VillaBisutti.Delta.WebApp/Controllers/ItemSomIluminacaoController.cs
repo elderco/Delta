@@ -115,7 +115,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 		public ActionResult ListarPorTipo(int tipoId)
 		{
-			return View(new data.SomIluminacao().ListarPorTipo(tipoId));
+			return View(new data.ItemSomIluminacao().ListarPorTipo(tipoId));
 		}
 
         protected override void Dispose(bool disposing)

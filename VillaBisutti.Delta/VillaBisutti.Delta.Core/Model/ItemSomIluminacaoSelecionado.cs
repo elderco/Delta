@@ -13,7 +13,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public int EventoId { get; set; }
 		[Display(Name = "Evento")]
-		public Evento Evento { get; set; }
+        public SomIluminacao SomIluminacao { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
@@ -28,6 +28,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecimento Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
+        [Display(Name = "Fornecedor Acionado")]
+        public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 200)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Horário Montagem")]
@@ -48,5 +50,32 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoFornecimento { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
+        public List<Foto> Fotos { get; set; }
+        [NotMapped]
+        public bool StateErrorBisutti
+        {
+            get
+            {
+                return (
+                    (ItemSomIluminacao != null && (ItemSomIluminacao.Quantidade < Quantidade))
+                    );
+            }
+        }
+        [NotMapped]
+        public bool StateErrorContratante
+        {
+            get
+            {
+                return false;
+            }
+        }
+        [NotMapped]
+        public bool StateErrorFornecedor
+        {
+            get
+            {
+                return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
+            }
+        }
 	}
 }
