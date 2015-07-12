@@ -1,39 +1,27 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.SomIluminacao>
-
 @{
-    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Evento.ContatoAssessoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EventoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EventoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EventoId })
-        </td>
-    </tr>
-}
-
-</table>
+<table class="row">
+    <div class="col-md-4">
+        @Html.Action("Edit", "SomIluminacao", new { id = @ViewBag.Id }) @*Beleza*@
+    </div>
+    <div class="col-md-8">
+        @Html.Action("Create", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
+    </div>
+    </div>
+    <div class="row">
+        @Html.Action("ListNaoSelecionados", "TipoItemSomIluminacao", new { id = @ViewBag.Id }) @*Beleza*@
+    </div>
+    <div class="row">
+        <h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
+        @Html.Action("ListFornecimentoBisutti", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
+    </div>
+    <div class="row">
+        <h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
+        @Html.Action("ListFornecimentoTerceiro", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
+    </div>
+    <divitemsomiluminacaoselecionado class="row">
+        <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
+        @Html.Action("ListFornecimentoContratante", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
+    </divitemsomiluminacaoselecionado>

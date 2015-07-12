@@ -467,6 +467,7 @@
     <Content Include="Views\ItemSomIluminacaoSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\ItemSomIluminacao\ListarPorTipo.cshtml" />
+    <Content Include="Views\TipoItemSomIluminacao\ListNaoSelecionados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

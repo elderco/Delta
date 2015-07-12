@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemSomIluminacao>
+
 @{
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
     //ViewBag.Title = "Index";
@@ -47,7 +48,7 @@
         <td>			
 			@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
 			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
-</td>
+        </td>
     </tr>
 }
 
