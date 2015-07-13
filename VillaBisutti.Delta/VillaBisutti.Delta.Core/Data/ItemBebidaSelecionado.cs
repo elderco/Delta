@@ -26,8 +26,16 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemBebidaSelecionado entity)
 		{
-			context.ItemBebidaSelecionado.Add(entity);
-			context.SaveChanges();
+			try
+			{
+				context.ItemBebidaSelecionado.Add(entity);
+				context.SaveChanges();
+			}
+			catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+			{
+				
+				throw;
+			}
 		}
 
 		protected override List<Model.ItemBebidaSelecionado> GetCollection()
