@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.SomIluminacao>
+﻿@model VillaBisutti.Delta.Core.Model.SomIluminacao
 @{
     Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
@@ -21,7 +21,7 @@
         <h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
         @Html.Action("ListFornecimentoTerceiro", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
     </div>
-    <divitemsomiluminacaoselecionado class="row">
+    <div class="row">
         <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
         @Html.Action("ListFornecimentoContratante", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
-    </divitemsomiluminacaoselecionado>
+    </div>
