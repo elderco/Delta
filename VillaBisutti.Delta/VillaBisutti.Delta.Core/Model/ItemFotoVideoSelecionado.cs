@@ -56,9 +56,7 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return (
-					(ItemFotoVideo != null && (ItemFotoVideo.Quantidade < Quantidade))
-					);
+				return (!Definido);
 			}
 		}
 		[NotMapped]
@@ -66,7 +64,8 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return false;
+				return (ContatoFornecimento == null || ContatoFornecimento == string.Empty)
+					|| (HorarioEntrega == 0);
 			}
 		}
 		[NotMapped]
@@ -74,7 +73,7 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
+				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
 			}
 		}
 
