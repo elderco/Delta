@@ -13,6 +13,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemSomIluminacaoController : Controller
     {
+		public ActionResult ListNaoSelecionados(int id)
+		{
+			return View(new data.TipoItemSomIluminacao().ListNaoSelecionados(id));
+		}
 
         // GET: /TipoItemSomIluminacao/
         public ActionResult Index()
