@@ -1,99 +1,36 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemFotoVideoSelecionado>
 
 @{
-    ViewBag.Title = "ListFornecimentoBisutti";
+	Layout = null;
 }
 
-<h2>ListFornecimentoBisutti</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ContratoAditivo.Arquivo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Evento.ContatoAssessoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemBebida.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Definido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contratado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContratacaoBisutti)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FornecimentoBisutti)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FornecedorStartado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContatoFornecimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioEntrega)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContratoAditivo.Arquivo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemBebida.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Definido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contratado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContratacaoBisutti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FornecimentoBisutti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FornecedorStartado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContatoFornecimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioEntrega)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@if (Model.Count() > 0)
+{
+	<table class="table">
+		<tr>
+			<th class="col-md-4">
+				@Html.DisplayNameFor(model => model.ItemFotoVideo.Nome)
+			</th>
+			<th class="col-md-2">
+				@Html.DisplayNameFor(model => model.Quantidade)
+			</th>
+			<th class="col-md-4">
+				@Html.DisplayNameFor(model => model.Observacoes)
+			</th>
+			<th class="col-md-1">
+				@Html.DisplayNameFor(model => model.Definido)
+			</th>
+			<th class="col-md-1"></th>
+		</tr>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				@Html.Action("EditFornecimentoBisutti", "ItemFotoVideoSelecionado", new { id = item.Id })
+			}
+		</tbody>
+	</table>
 }
-
-</table>
+else
+{
+	<p>Não existem itens adicionados à OS com esse criterio</p>
+}

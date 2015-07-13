@@ -104,7 +104,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemFotoVideoSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemFotoVideoSelecionado itemfotovideoselecionado)
+		public ActionResult CreateItemFotoVideoSelecionado([Bind(Include = "Id,EventoId,ItemFotoVideoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemFotoVideoSelecionado itemfotovideoselecionado)
 		{
 			//itemfotovideoselecionado.Definido = false;
 			//itemfotovideoselecionado.FornecedorStartado = false;

@@ -40,7 +40,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(i => i.ContratoAditivo)
 				.Include(i => i.ItemFotoVideo)
 				.Include(i => i.ItemFotoVideo.TipoItemFotoVideo)
-				.Include(i => i.Evento)
+				.Include(i => i.FotoVideo)
 				.Where(i =>
 					i.EventoId == eventoId
 					 && i.ContratacaoBisutti == ContratacaoVB
