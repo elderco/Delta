@@ -201,7 +201,7 @@ function CreateHorarioEditor(itemId) {
 		.attr("min", "0")
 		.attr("max", "23")
 		.attr("id", itemId + "_h")
-		.css("width","50px")
+		.css("width","40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_h", "0", 2, 23);
 		})
@@ -218,7 +218,7 @@ function CreateHorarioEditor(itemId) {
 		.attr("max", "59")
 		.attr("step", "5")
 		.attr("id", itemId + "_m")
-		.css("width","50px")
+		.css("width","40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_m", "0", 2, 59);
 		})

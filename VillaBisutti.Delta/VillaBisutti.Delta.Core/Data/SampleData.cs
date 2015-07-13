@@ -25,8 +25,8 @@ namespace VillaBisutti.Delta.Core.Data
 									  "Sed id faucibus eros, in auctor justo", "Nulla sagittis tempus turpis", "Donec id magna a enim faucibus consequat id pharetra metus", "Cras semper aliquet lectus, vel egestas est tincidunt sed",
 									  "Fusce eget risus nec mauris auctor efficitur vitae sed turpis", "Sed at velit sed dolor ornare sodales in tristique ex", "Nulla mollis vulputate arcu, sed maximus mi gravida eget",
 									  "Etiam sodales urna eu nisi congue sagittis", "Suspendisse potenti", "Morbi et mattis nisl, vehicula finibus arcu" };
-			string[] girlsNames = { "Amanda", "Camila", "Solange", "Bruna", "Cristina", "Marcela", "Mariana", "Cecília", "Joana", "Paula", "Karina", "Melanie", "Ana", "Maria" };
-			string[] boysNames = { "Anderson", "Steve", "Renato", "Marcos", "Pedro", "Tiago", "Marcelo", "Denis", "Reginaldo", "Lourival", "Sérgio", "Leandro", "Gabriel" };
+			string[] girlsNames = { "Romanov", "Natasha", "Natasha Romanov", "Viuva Negra", "Agent Carter", "Peggy", "Peggy Carter", "Carter" };
+			string[] boysNames = { "Steve", "Rogers", "Recruit", "Capitain", "Steve Rogers", "Buzz", "Lightyear", "Buzz Lightyear" };
 			string[] companyNames = { "Tabajara inc.", "ACME", "Pretobrás", "Falling Apple" };
 
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });
@@ -76,6 +76,152 @@ namespace VillaBisutti.Delta.Core.Data
 			context.Cardapio.Add(new Model.Cardapio { Nome = "Amalfi", Pratos = pratos.Where(p => p.Nome.Length > 40).ToList() });
 			context.Cardapio.Add(new Model.Cardapio { Nome = "Portovenere", Pratos = pratos.Where(p => p.Nome.Replace("mo", "") == p.Nome).ToList() });
 			context.SaveChanges();
+
+			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
+			{
+				Nome = "DJ",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
+			{
+				Nome = "VJ",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
+			{
+				Nome = "Técnico",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
+			{
+				Nome = "Atração especial",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
+			{
+				Nome = "Rider de Banda",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.SaveChanges();
+			
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "DJ Full Time", TipoItemSomIluminacaoId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 1, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "VJ Full Time", TipoItemSomIluminacaoId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 2, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Tecnico Full Time", TipoItemSomIluminacaoId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Tecnico Parcial", TipoItemSomIluminacaoId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 3, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Banda (ESPECIFICAR)", TipoItemSomIluminacaoId = 4, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Escola de samba (ESPECIFICAR)", TipoItemSomIluminacaoId = 4, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Grupo de samba (ESPECIFICAR)", TipoItemSomIluminacaoId = 4, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Coral (ESPECIFICAR)", TipoItemSomIluminacaoId = 4, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 4, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Staff e rider padrão", TipoItemSomIluminacaoId = 5, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 5, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.SaveChanges();
+
+			context.TipoItemFotoVideo.Add(new Model.TipoItemFotoVideo
+			{
+				Nome = "Equipe de fotografia",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaSomIluminacao = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.TipoItemFotoVideo.Add(new Model.TipoItemFotoVideo
+			{
+				Nome = "Serviços especiais",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaSomIluminacao = false,
+				CopiaMontagem = false,
+				CopiaOutrosItens = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = true,
+				PadraoDebutante = true,
+				PadraoOutro = true
+			});
+			context.SaveChanges();
+
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "Fotos by Produtora 7", TipoItemFotoVideoId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "Fotos produtora externa", TipoItemFotoVideoId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "Não há", TipoItemFotoVideoId = 1, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "Cabine de foto", TipoItemFotoVideoId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "App para fotos dos convidados no telão", TipoItemFotoVideoId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
+			context.ItemFotoVideo.Add(new Model.ItemFotoVideo { Nome = "Não há", TipoItemFotoVideoId = 2, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 
 			context.TipoItemBebida.Add(new Model.TipoItemBebida
 			{

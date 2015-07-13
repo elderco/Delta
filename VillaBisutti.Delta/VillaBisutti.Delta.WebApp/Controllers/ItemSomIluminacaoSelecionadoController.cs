@@ -97,7 +97,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Create(int id)
 		{
 			ViewBag.Id = id;
-			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "Arquivo");
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
             ViewBag.TipoItemSomIluminacaoId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
 			return View();
 		}
@@ -107,7 +107,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemSomIluminacaoSelecionado([Bind(Include = "Id,EventoId,ItemSomIId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		public ActionResult CreateItemSomIluminacaoSelecionado([Bind(Include = "Id,EventoId,ItemSomIluminacaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
 		{
 			//itembebidaselecionado.Definido = false;
 			//itembebidaselecionado.FornecedorStartado = false;
