@@ -18,5 +18,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public int TipoItemSomIluminacaoId { get; set; }
 		[Display(Name = "Som e de Iluminação")]
 		public TipoItemSomIluminacao TipoItemSomIluminacao { get; set; }
+		public bool BloqueiaOutrasPropriedades { get; set; }
 	}
 }
