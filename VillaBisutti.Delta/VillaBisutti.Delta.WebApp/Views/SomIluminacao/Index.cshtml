@@ -15,25 +15,264 @@
 <div class="row">
 	<fieldset class="col-md-4">
 		<legend>Informações básicas</legend>
-		@Html.Action("Edit", "SomIluminacao", new { id = @ViewBag.Id }) @*Beleza*@
+		@using (Html.BeginForm("Edited", "SomIluminacao"))
+		{
+			@Html.AntiForgeryToken()
+			<div class="form-horizontal">
+				@Html.ValidationSummary(true)
+				@Html.HiddenFor(model => model.EventoId)
+
+				<div class="form-group">
+					<label for="Observacoes" class="control-label col-md-4">Observações gerais</label>
+					<div class="col-md-8">
+						@Html.EditorFor(model => model.Observacoes)
+						@Html.ValidationMessageFor(model => model.Observacoes)
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-4 col-md-8">
+						<input type="submit" value="Salvar" class="btn btn-default form-control" />
+					</div>
+				</div>
+			</div>
+		}
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
-		<legend>Adicionar item</legend>
 		@Html.Action("Create", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
 	</fieldset>
 </div>
-    <div class="row">
-        @Html.Action("ListNaoSelecionados", "TipoItemSomIluminacao", new { id = @ViewBag.Id }) @*Beleza*@
-    </div>
-    <div class="row">
-        <h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-        @Html.Action("ListFornecimentoBisutti", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
-    </div>
-    <div class="row">
-        <h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
-        @Html.Action("ListFornecimentoTerceiro", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
-    </div>
-    <div class="row">
-        <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
-        @Html.Action("ListFornecimentoContratante", "ItemSomIluminacaoSelecionado", new { id = @ViewBag.Id })
-    </div>
+<div class="row">
+	@Html.Action("ListNaoSelecionados", "TipoItemSomIluminacao", new { id = @ViewBag.Id })
+</div>
+<div class="row">
+	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
+	@if (Model.Itens.Count() > 0)
+	{
+		VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado anyItem = Model.Itens[0];
+		<table class="table">
+			<tr>
+				<th class="col-md-4">
+					@Html.DisplayNameFor(model => anyItem.ItemSomIluminacao.Nome)
+				</th>
+				<th class="col-md-2">
+					@Html.DisplayNameFor(model => anyItem.Quantidade)
+				</th>
+				<th class="col-md-4">
+					@Html.DisplayNameFor(model => anyItem.Observacoes)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.Definido)
+				</th>
+				<th class="col-md-1"></th>
+			</tr>
+			<tbody>
+				@foreach (var item in Model.Itens.Where(i => i.FornecimentoBisutti && i.ContratacaoBisutti))
+				{
+					<script language="javascript" type="text/javascript">
+						$(document).ready(function () {
+							$("tr.inline-row-editor@(item.Id)>td :input").change(function () {
+								$("#Edit_@(item.Id)").submit();
+							});
+						});
+					</script>
+					using (Html.BeginForm("EditPost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))
+					{
+						@Html.AntiForgeryToken()
+						@Html.HiddenFor(model => item.Id)
+						@Html.HiddenFor(model => item.ContatoFornecimento)
+						@Html.HiddenFor(model => item.HorarioMontagem)
+						@Html.HiddenFor(model => item.FornecedorStartado)
+						@Html.HiddenFor(model => item.Contratado)
+						<tr class="inline-row-editor@(Model.Id) @(item.StateErrorBisutti ? "bg-danger" : "bg-success")">
+							<td>
+								<input type="hidden" name="" value="" />
+								<input type="hidden" name="" value="" />
+								<input type="hidden" name="" value="" />
+								<input type="hidden" name="" value="" />
+								@(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome) - @(item.ItemSomIluminacao.Nome)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Quantidade)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Observacoes)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Definido)
+							</td>
+							<td class="col-md-1">
+								<a href="@Url.Action("Delete", "ItemSomIluminacaoSelecionado", new { id = item.Id })" class="btn btn-default" title="Remover este item">
+									<span class="menu-icon fa fa-trash"></span>
+								</a>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>Não existem itens adicionados à OS com esse criterio</p>
+	}
+</div>
+<div class="row">
+	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
+	@if (Model.Itens.Count() > 0)
+	{
+		VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado anyItem = Model.Itens[0];
+		<table class="table">
+			<tr>
+				<th class="col-md-2">
+					@Html.DisplayNameFor(model => anyItem.ItemSomIluminacao.Nome)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.Quantidade)
+				</th>
+				<th class="col-md-2">
+					@Html.DisplayNameFor(model => anyItem.ContatoFornecimento)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.HorarioMontagem)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.Definido)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.FornecedorStartado)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.Contratado)
+				</th>
+				<th class="col-md-2">
+					@Html.DisplayNameFor(model => anyItem.Observacoes)
+				</th>
+				<th class="col-md-1"></th>
+			</tr>
+			<tbody>
+				@foreach (var item in Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
+				{
+					<script language="javascript" type="text/javascript">
+						$(document).ready(function () {
+							CreateHorarioEditor("HorarioMontagem_@(item.Id)");
+							$("tr.inline-row-editor@(item.Id)>td  :input").change(function () {
+								$("#Edit_@(item.Id)").submit();
+							});
+						});
+					</script>
+					using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))
+					{
+						@Html.AntiForgeryToken()
+						@Html.HiddenFor(model => model.Id)
+						<tr class="inline-row-editor@(item.Id) @(item.StateErrorFornecedor ? "bg-danger" : "bg-success")">
+							<td>
+								@(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome) - @(item.ItemSomIluminacao.Nome)
+							</td>
+							<td>
+								@Html.EditorFor(i => item.Quantidade)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.ContatoFornecimento)
+							</td>
+							<td>
+								@Html.TextBoxFor(model => item.HorarioMontagem, new { @type = "number", @id = "HorarioMontagem_" + item.Id })
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Definido)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.FornecedorStartado)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Contratado)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Observacoes)
+							</td>
+							<td>
+								<a href="@Url.Action("Delete", "ItemSomIluminacaoSelecionado", new { id = item.Id })" class="btn btn-default" title="Remover este item">
+									<span class="menu-icon fa fa-trash"></span>
+								</a>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>Não existem itens adicionados à OS com esse criterio</p>
+	}
+</div>
+<div class="row">
+	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
+	@if (Model.Itens.Count() > 0)
+	{
+		VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado anyItem = Model.Itens[0];
+		<table class="table">
+			<tr>
+				<th class="col-md-4">
+					@Html.DisplayNameFor(model => anyItem.ItemSomIluminacao.Nome)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.Quantidade)
+				</th>
+				<th class="col-md-2">
+					@Html.DisplayNameFor(model => anyItem.ContatoFornecimento)
+				</th>
+				<th class="col-md-1">
+					@Html.DisplayNameFor(model => anyItem.HorarioMontagem)
+				</th>
+				<th class="col-md-3">
+					@Html.DisplayNameFor(model => anyItem.Observacoes)
+				</th>
+				<th class="col-md-1"></th>
+			</tr>
+			<tbody>
+				@foreach (var item in Model.Itens.Where(i => !i.ContratacaoBisutti))
+				{
+					<script language="javascript" type="text/javascript">
+						$(document).ready(function () {
+							CreateHorarioEditor("HorarioMontagem_@(item.Id)");
+							$("tr.inline-row-editor@(item.Id)>td  :input").change(function () {
+								$("#Edit_@(item.Id)").submit();
+							});
+						});
+					</script>
+					using (Html.BeginForm("EditPost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))
+					{
+						@Html.AntiForgeryToken()
+						@Html.HiddenFor(model => item.Id)
+						@Html.HiddenFor(model => item.FornecedorStartado)
+						@Html.HiddenFor(model => item.Contratado)
+						<tr class="inline-row-editor@(Model.Id) @(item.StateErrorContratante ? "bg-danger" : "bg-success")">
+							<td>
+								@(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome) - @(item.ItemSomIluminacao.Nome)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Quantidade)
+							</td>
+							<td>
+								@Html.EditorFor(model => item.ContatoFornecimento)
+							</td>
+							<td>
+								@Html.TextBoxFor(model => item.HorarioMontagem, new { @type = "number", @id = "HorarioEntrega_" + item.Id })
+							</td>
+							<td>
+								@Html.EditorFor(model => item.Observacoes)
+							</td>
+							<td>
+								<a href="@Url.Action("Delete", "ItemSomIluminacaoSelecionado", new { id = item.Id })" class="btn btn-default" title="Remover este item">
+									<span class="menu-icon fa fa-trash"></span>
+								</a>
+							</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>Não existem itens adicionados à OS com esse criterio</p>
+	}
+</div>

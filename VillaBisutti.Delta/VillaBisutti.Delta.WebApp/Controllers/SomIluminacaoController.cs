@@ -16,9 +16,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /SomIluminacao/
         public ActionResult Index(int id)
         {
-            ViewBag.Id = id;
-            model.SomIluminacao somiluminacao = new data.SomIluminacao().GetElement(id);
-            return View(somiluminacao);
+			ViewBag.Id = id;
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
+			ViewBag.TipoItemSomIluminacaoId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
+			return View(new data.SomIluminacao().GetElement(id));
         }
 
         // GET: /SomIluminacao/Details/5
