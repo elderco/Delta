@@ -19,7 +19,6 @@
 			});
 			$("#FornecimentoBisutti").button();
 			$("#ContratacaoBisutti").change();
-			PreventNegativeNumbers("Quantidade");
 		});
 </script>
 @using (Html.BeginForm("CreateItemSomIluminacaoSelecionado", "ItemSomIluminacaoSelecionado"))
@@ -31,11 +30,11 @@
         <input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
 		<div class="form-group">
 			@Html.LabelFor(model => model.ItemSomIluminacao.TipoItemSomIluminacao.Nome, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
+			<div class="col-md-4">
 				@Html.DropDownList("TipoItemSomIluminacaoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemSomIluminacaoId, "Selecione", new { @class = "form-control" })
 			</div>
 			@Html.LabelFor(model => model.ItemSomIluminacao.Nome, new { @class = "control-label col-md-2" })
-			<div class="col-md-2" id="ItensSomIluminacaoContainer">
+			<div class="col-md-4" id="ItensSomIluminacaoContainer">
 				<select class="form-control"></select>
 			</div>
 			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2" })

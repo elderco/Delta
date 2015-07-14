@@ -9,7 +9,6 @@
 			//evt.preventDefault();
 			//alert($(this).attr("action"));
 		});
-		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 }
@@ -74,7 +73,6 @@
 						$("tr.inline-row-editor@(item.Id)>td :input").change(function () {
 							$("#Edit_@(item.Id)").submit();
 						});
-						PreventNegativeNumbers("Quantidade");
 					});
 				</script>
 				using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))
@@ -159,7 +157,6 @@ else
 		$("tr.inline-row-editor@(item.Id)>td  :input").change(function () {
 			$("#Edit_@(item.Id)").submit();
 		});
-		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 				using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))
@@ -239,7 +236,6 @@ else
 		$("tr.inline-row-editor@(item.Id)>td  :input").change(function () {
 			$("#Edit_@(item.Id)").submit();
 		});
-		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + item.Id }))

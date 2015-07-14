@@ -7,7 +7,6 @@
 		$("tr.inline-row-editor@(Model.Id)>td :input").change(function () {
 			$("#Edit_@(Model.Id)").submit();
 		});
-		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 @using (Html.BeginForm("EditFornecimentoBisuttiPost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
