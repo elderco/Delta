@@ -63,7 +63,7 @@ function ShowPopUp_2(url, title, w, h) {
 	}).css("overflow", "auto");
 }
 function ClosePopUp() {
-	$("#PopUp").dialog('close');
+	$("#PopUp").modal('close');
 }
 function HandleResponse(responseText, statusResponse, statusCode, statusText, containerId) {
 	if (statusResponse == "error") {
