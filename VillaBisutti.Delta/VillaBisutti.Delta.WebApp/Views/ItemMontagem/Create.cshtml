@@ -12,18 +12,18 @@
 		$("#TipoItemMontagemId").change(function () {
 			var id = $(this).val();
 			if (id == "") {
-				$("#EditarTipoItem").attr("disabled", "disabled");
-				$("#ExcluirTipoItem").attr("disabled", "disabled");
+				$("#EditarTipoMontagem").attr("disabled", "disabled");
+				$("#ExcluirTipoMontagem").attr("disabled", "disabled");
 			} else {
-				$("#EditarTipoItem").removeAttr("disabled");
-				$("#ExcluirTipoItem").removeAttr("disabled");
+			    $("#EditarTipoMontagem").removeAttr("disabled");
+			    $("#ExcluirTipoMontagem").removeAttr("disabled");
 			}
 			var urlEditar = "@(Url.Action("Edit", "TipoItemMontagem"))/";
 			var urlDeletar = "@(Url.Action("Delete", "TipoItemMontagem"))/";
-			$("#EditarTipoItem").click(function () {
+		    $("#EditarTipoMontagem").click(function () {
 				ShowPopUp(urlEditar + id, "Editar tipo de item de montagem", 790);
 			});
-			$("#ExcluirTipoItem").click(function () {
+		    $("#ExcluirTipoMontagem").click(function () {
 				ShowPopUp(urlDeletar + id, "Excluir tipo de item de montagem", 790);
 			});
 		});

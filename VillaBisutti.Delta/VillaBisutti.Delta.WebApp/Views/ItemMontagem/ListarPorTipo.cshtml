@@ -2,11 +2,23 @@
 @{
     Layout = null;
 }
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("body").off("change", "#ItemMontagemId");
+        $("#ItemMontagemId").change(function () {
+            if ($("#ItemMontagemId option:selected").attr("data-show-hide") != "False") {
+                $(".deve-sumir").hide();
+            } else {
+                $(".deve-sumir").show();
+            }
+        });
+    });
+</script>
 <select name="ItemMontagemId" id="ItemMontagemId" class="form-control">
-    <option value=""/>
+    <option value=""></option>
     @foreach (var item in Model)
     {
-        <option value="@item.Id">@item.Nome</option>
+        <option value="@(item.Id)" data-show-hide="@(item.BloqueiaOutrasPropriedades)">@(item.Nome)</option>
     }
 </select>
 <span class="field-validation-valid" data-valmsg-for="ItemBebidaId" data-valmsg-replace="true"></span>

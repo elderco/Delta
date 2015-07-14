@@ -17,7 +17,7 @@
     </fieldset>
     <fieldset class="col-md-7 pull-right">
         <legend>Adicionar item</legend>
-        @Html.Action("Create", "ItemMontagemSelecionado", new { id = @ViewBag.Id })
+        @Html.Partial("../ItemMontagemSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemMontagemSelecionado())
     </fieldset>
 </div>
 <div class="row">
@@ -25,13 +25,13 @@
 </div>
 <div class="row">
     <h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-    @Html.Action("ListFornecimentoBisutti", "ItemMontagemSelecionado", new { id = @ViewBag.Id })
+    @Html.Partial("../ItemMontagemSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 </div>
 <div class="row">
     <h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
-    @Html.Action("ListFornecimentoTerceiro", "ItemMontagemSelecionado", new { id = @ViewBag.Id })
+    @Html.Partial("../ItemMontagemSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>
 <div class="row">
     <h3>Fornecedores externos (Responsabilidade do contratante)</h3>
-    @Html.Action("ListFornecimentoContratante", "ItemMontagemSelecionado", new { id = @ViewBag.Id })
+    @Html.Partial("../ItemMontagemSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
 </div>
