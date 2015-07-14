@@ -21,9 +21,9 @@
 			$("#ContratacaoBisutti").change();
 		});
 	</script>
-	@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado"))
-	{
-		@Html.AntiForgeryToken()
+@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado"))
+{
+	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
 		@Html.ValidationSummary(true)

@@ -14,6 +14,8 @@
 {
     @Html.AntiForgeryToken()
 	@Html.HiddenFor(model => model.Id)
+	@Html.HiddenFor(model => model.FornecedorStartado)
+	@Html.HiddenFor(model => model.Contratado)
 	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
 		<td>
 			@(Model.ItemSomIluminacao.TipoItemSomIluminacao.Nome) - @(Model.ItemSomIluminacao.Nome)

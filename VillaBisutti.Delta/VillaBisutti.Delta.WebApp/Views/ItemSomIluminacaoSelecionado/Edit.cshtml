@@ -13,14 +13,6 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EventoId, "EventoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EventoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.EventoId)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.ContratoAditivoId, "ContratoAditivoId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ContratoAditivoId", String.Empty)
@@ -29,10 +21,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ItemSomIId, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ItemSomIluminacaoId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ItemSomIId)
-                @Html.ValidationMessageFor(model => model.ItemSomIId)
+                @Html.EditorFor(model => model.ItemSomIluminacaoId)
+                @Html.ValidationMessageFor(model => model.ItemSomIluminacaoId)
             </div>
         </div>
 
