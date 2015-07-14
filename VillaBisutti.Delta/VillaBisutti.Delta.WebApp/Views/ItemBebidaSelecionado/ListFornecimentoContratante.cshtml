@@ -26,7 +26,7 @@
 		<tbody>
 			@foreach (var item in Model)
 			{
-				@Html.Action("EditFornecimentoContratante", "ItemBebidaSelecionado", new { id = item.Id })
+				@Html.Partial("../ItemBebidaSelecionado/EditFornecimentoContratante", item)
 			}
 		</tbody>
 	</table>

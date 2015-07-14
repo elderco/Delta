@@ -12,12 +12,12 @@
 </script>
 @using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 {
-	@Html.AntiForgeryToken()
-	@Html.HiddenFor(model => model.Id)
-	@Html.HiddenFor(model => model.FornecedorStartado)
-	@Html.HiddenFor(model => model.Contratado)
 	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
 		<td>
+			@Html.AntiForgeryToken()
+			<input type="hidden" name="Id" value="@(Model.Id)" />
+			@Html.HiddenFor(model => model.FornecedorStartado)
+			@Html.HiddenFor(model => model.Contratado)
 			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
 		</td>
 		<td>

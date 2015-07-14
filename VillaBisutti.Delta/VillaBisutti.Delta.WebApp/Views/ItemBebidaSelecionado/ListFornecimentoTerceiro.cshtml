@@ -32,12 +32,10 @@
 			</th>
 			<th class="col-md-1"></th>
 		</tr>
-		<tbody>
-			@foreach (var item in Model)
-			{
-				@Html.Action("EditFornecimentoTerceiro", "ItemBebidaSelecionado", new { id = item.Id })
-			}
-		</tbody>
+		@foreach (var item in Model)
+		{
+		@Html.Partial("../ItemBebidaSelecionado/EditFornecimentoTerceiro", item)
+		}
 	</table>
 }
 else

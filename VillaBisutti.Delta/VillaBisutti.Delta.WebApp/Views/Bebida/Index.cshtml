@@ -3,14 +3,14 @@
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @section scripts {
-<script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		$(".FormItemEditor").submit(function (evt) {
-			//evt.preventDefault();
-			//alert($(this).attr("action"));
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".FormItemEditor").submit(function (evt) {
+				//evt.preventDefault();
+				//alert($(this).attr("action"));
+			});
 		});
-	});
-</script>
+	</script>
 }
 <div class="row">
 	<fieldset class="col-md-4">
@@ -19,7 +19,7 @@
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
 		<legend>Adicionar item</legend>
-		@Html.Action("Create", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+		@Html.Partial("../ItemBebidaSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado())
 	</fieldset>
 </div>
 <div class="row">
@@ -27,13 +27,13 @@
 </div>
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-	@Html.Action("ListFornecimentoBisutti", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
-	@Html.Action("ListFornecimentoTerceiro", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
-	@Html.Action("ListFornecimentoContratante", "ItemBebidaSelecionado", new { id = @ViewBag.Id })
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
 </div>
