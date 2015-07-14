@@ -30,7 +30,12 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.FotoVideo> GetCollection()
 		{
-			return context.FotoVideo.ToList();
+			return context.FotoVideo
+				.Include(b => b.Evento)
+				.Include(b => b.Itens)
+				.Include(b => b.Itens.Select(i => i.ItemFotoVideo))
+				.Include(b => b.Itens.Select(i => i.ItemFotoVideo.TipoItemFotoVideo))
+				.ToList();
 		}
 	}
 }

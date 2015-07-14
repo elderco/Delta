@@ -17,8 +17,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Index(int id)
         {
 			ViewBag.Id = id;
-			model.FotoVideo fotovideo = new data.FotoVideo().GetElement(id);
-			return View(fotovideo);
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
+			ViewBag.TipoItemFotoVideoId = new SelectList(new data.TipoItemFotoVideo().GetCollection(0), "Id", "Nome");
+			return View(new data.FotoVideo().GetElement(id));
         }
 
         // GET: /FotoVideo/Edit/5
