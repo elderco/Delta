@@ -13,20 +13,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemSomIluminacaoSelecionadoController : Controller
     {
-        // GET: /ItemSomIluminacaoSelecionado/
+		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoBisutti/5
 		public ActionResult ListFornecimentoBisutti(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, true));
 		}
 
-		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoTerceiro/5
 		public ActionResult ListFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, false));
 		}
 
+		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoContratante/5
 		public ActionResult ListFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
@@ -39,41 +40,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
 		}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,Quantidade,Observacoes,Definido")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
-		{
-			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
-			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
-			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
-			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
-			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
-		}
-
-		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoTerceiro/5
 		public ActionResult EditFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
 		}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-        public ActionResult EditFornecimentoTerceiroPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioMontagem,Contratado,FornecedorStartado,Observacoes,Definido")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
-		{
-            model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
-			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
-			itemOriginal.ContatoFornecimento = itemsomiluminacaoselecionado.ContatoFornecimento;
-            itemOriginal.HorarioMontagem = itemsomiluminacaoselecionado.HorarioMontagem;
-			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
-			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
-			itemOriginal.Contratado = itemsomiluminacaoselecionado.Contratado;
-			itemOriginal.FornecedorStartado = itemsomiluminacaoselecionado.FornecedorStartado;
-			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
-		}
-		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoContratante/5
 		public ActionResult EditFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
@@ -82,13 +56,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-        public ActionResult EditFornecimentoContratantePost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioMontagem,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioMontagem,Definido,FornecedorStartado,Contratado,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
 		{
 			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
 			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
 			itemOriginal.ContatoFornecimento = itemsomiluminacaoselecionado.ContatoFornecimento;
-            itemOriginal.HorarioMontagem = itemsomiluminacaoselecionado.HorarioMontagem;
+			itemOriginal.HorarioMontagem = itemsomiluminacaoselecionado.HorarioMontagem;
 			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
+			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
+			itemOriginal.Contratado = itemsomiluminacaoselecionado.Contratado;
+			itemOriginal.FornecedorStartado = itemsomiluminacaoselecionado.FornecedorStartado;
 			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
@@ -98,7 +75,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.Id = id;
 			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
-            ViewBag.TipoItemSomIluminacaoId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
+			ViewBag.TipoSomIluminacaoId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
 			return View();
 		}
 
@@ -107,14 +84,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemSomIluminacaoSelecionado([Bind(Include = "Id,EventoId,ItemSomIluminacaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		public ActionResult CreateItemBebidaSelecionado([Bind(Include = "Id,EventoId,ItemSomIluminacaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
 		{
-			//itembebidaselecionado.Definido = false;
-			//itembebidaselecionado.FornecedorStartado = false;
-			//itembebidaselecionado.Contratado = false;
-			//itembebidaselecionado.ContatoFornecimento = string.Empty;
-			//itembebidaselecionado.Entrega = new model.Horario();
-			//itembebidaselecionado.HorarioEntrega = 0;
 			new data.ItemSomIluminacaoSelecionado().Insert(itemsomiluminacaoselecionado);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}

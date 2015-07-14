@@ -20,12 +20,12 @@
             </th>
             <th class="col-md-1"></th>
         </tr>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                @Html.Action("EditFornecimentoBisutti", "ItemSomIluminacaoSelecionado", new { id = item.Id })
-            }
-        </tbody>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				@Html.Partial("../ItemSomIluminacaoSelecionado/EditFornecimentoBisutti", item)
+			}
+		</tbody>
     </table>
 }
 else

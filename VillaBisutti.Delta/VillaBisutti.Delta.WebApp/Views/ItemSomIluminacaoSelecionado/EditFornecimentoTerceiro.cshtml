@@ -11,38 +11,39 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+@using (Html.BeginForm("EditPost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 {
-    @Html.AntiForgeryToken()
-	@Html.HiddenFor(model => model.Id)
 	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorFornecedor ? "bg-danger" : "bg-success")">
-		<td>
+		<td class="col-md-2">
+			@Html.AntiForgeryToken()
+			<input type="hidden" name="Id" value="@(Model.Id)" />
 			@(Model.ItemSomIluminacao.TipoItemSomIluminacao.Nome) - @(Model.ItemSomIluminacao.Nome)
 		</td>
-		<td>
+		<td class="col-md-1">
 			@Html.EditorFor(model => model.Quantidade)
 		</td>
-		<td>
+		<td class="col-md-2">
 			@Html.EditorFor(model => model.ContatoFornecimento)
 		</td>
-		<td>
+		<td class="col-md-1">
 			@Html.TextBoxFor(model => model.HorarioMontagem, new { @type = "number", @id = "HorarioMontagem_" + Model.Id })
 		</td>
-		<td>
+		<td class="col-md-1">
 			@Html.EditorFor(model => model.Definido)
 		</td>
-		<td>
+		<td class="col-md-1">
 			@Html.EditorFor(model => model.FornecedorStartado)
 		</td>
-		<td>
+		<td class="col-md-1">
 			@Html.EditorFor(model => model.Contratado)
 		</td>
-		<td>
+		<td class="col-md-2">
 			@Html.EditorFor(model => model.Observacoes)
 		</td>
-		<td>
+		<td class="col-md-1">
 			<a href="@Url.Action("Delete", "ItemSomIluminacaoSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
 				<span class="menu-icon fa fa-trash"></span>
 			</a>
+		</td>
 	</tr>
 }
