@@ -55,3 +55,4 @@ fieldset{border: 1px solid #522D1C !important;}
 .footer .footer-inner .footer-content{position: fixed; bottom: 0}
 .footer{background: #FEFEFE !important; width: 100%}
 .footer-content {background-color: #FEFEFE !important;}
+.footer .footer-inner .footer-content{right: 5px !important}
