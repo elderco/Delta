@@ -20,8 +20,8 @@
 			@Html.HiddenFor(model => model.HorarioEntrega)
 			@Html.HiddenFor(model => model.FornecedorStartado)
 			@Html.HiddenFor(model => model.Contratado)
-			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
-		</td>
+			<span id="PlaceHolder_@(Model.Id)"></span>
+			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)</td>
 		<td>
 			@Html.EditorFor(model => model.Quantidade)
 		</td>

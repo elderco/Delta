@@ -56,7 +56,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes,retorno")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
 			model.ItemBebidaSelecionado itemOriginal = new data.ItemBebidaSelecionado().GetElement(itembebidaselecionado.Id);
 			itemOriginal.Quantidade = itembebidaselecionado.Quantidade;
@@ -67,7 +67,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			itemOriginal.Contratado = itembebidaselecionado.Contratado;
 			itemOriginal.FornecedorStartado = itembebidaselecionado.FornecedorStartado;
 			new data.ItemBebidaSelecionado().Update(itemOriginal);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return new HttpStatusCodeResult(HttpStatusCode.OK);
 		}
 
 		// GET: /ItemBebidaSelecionado/Create
