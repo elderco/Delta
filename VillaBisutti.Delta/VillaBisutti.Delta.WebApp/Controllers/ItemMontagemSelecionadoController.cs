@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateItemMontagemSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
+        public ActionResult CreateItemMontagemSelecionado([Bind(Include = "Id,EventoId,ItemMontagemId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemMontagemSelecionado itemmontagemselecionado)
         {
             //itembebidaselecionado.Definido = false;
             //itembebidaselecionado.FornecedorStartado = false;
@@ -40,7 +40,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             //itembebidaselecionado.ContatoFornecimento = string.Empty;
             //itembebidaselecionado.Entrega = new model.Horario();
             //itembebidaselecionado.HorarioEntrega = 0;
-            new data.ItemBebidaSelecionado().Insert(itembebidaselecionado);
+            new data.ItemMontagemSelecionado().Insert(itemmontagemselecionado);
             return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 

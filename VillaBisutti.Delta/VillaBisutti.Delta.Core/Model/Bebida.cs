@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Bebida : IEntityBase
 	{
+		//TODO: Carregar o item com toda a navegação
 		[NotMapped]
 		public int Id
 		{

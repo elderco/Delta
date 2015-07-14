@@ -10,10 +10,12 @@
 		});
 	});
 </script>
-@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+@using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 {
 	@Html.AntiForgeryToken()
 	@Html.HiddenFor(model => model.Id)
+	@Html.HiddenFor(model => model.FornecedorStartado)
+	@Html.HiddenFor(model => model.Contratado)
 	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
 		<td>
 			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
@@ -34,5 +36,6 @@
 			<a href="@Url.Action("Delete", "ItemBebidaSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
 				<span class="menu-icon fa fa-trash"></span>
 			</a>
+		</td>
 	</tr>
 }

@@ -22,10 +22,10 @@ namespace VillaBisutti.Delta.Core.Model
 		public ItemDecoracao ItemDecoracao { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
-		[Display(Name = "Fornecimento Bisutti")]
-		public bool FornecimentoBisutti { get; set; }
-		[Display(Name = "Contratação Bisutti")]
+		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
 		public bool ContratacaoBisutti { get; set; }
+		[Display(Name = "Fornecido pela Villa Bisutti")]
+		public bool FornecimentoBisutti { get; set; }
 		[Display(Name = "Contratado")]
 		public bool Contratado { get; set; }
 		[Display(Name = "Fornecedor Iniciado")]
