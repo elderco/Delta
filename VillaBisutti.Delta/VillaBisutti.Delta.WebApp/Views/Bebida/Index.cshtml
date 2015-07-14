@@ -15,7 +15,7 @@
 <div class="row">
 	<fieldset class="col-md-4">
 		<legend>Informações básicas</legend>
-		@Html.Action("Edit", "Bebida", new { id = @ViewBag.Id }) @*Beleza*@
+		@Html.Action("Edit", "Bebida", new { id = @ViewBag.Id })
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
 		<legend>Adicionar item</legend>
@@ -23,7 +23,7 @@
 	</fieldset>
 </div>
 <div class="row">
-	@Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id }) @*Beleza*@
+	@Html.Action("ListNaoSelecionados", "TipoItemBebida", new { id = @ViewBag.Id })
 </div>
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
