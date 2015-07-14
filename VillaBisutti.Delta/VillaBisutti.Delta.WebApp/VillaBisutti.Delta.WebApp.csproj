@@ -470,6 +470,7 @@
     <Content Include="Views\TipoItemSomIluminacao\ListNaoSelecionados.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\ListNaoSelecionados.cshtml" />
     <Content Include="Views\ItemFotoVideo\ListarPorTipo.cshtml" />
+    <Content Include="Views\Home\HomeConfiguracao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,5 +14,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             return View();
         }
+        public ActionResult HomeConfiguracao()
+        {
+            return View();
+        }
 	}
 }
