@@ -7,6 +7,7 @@
 		$("tr.inline-row-editor@(Model.Id)>td :input").change(function () {
 			$("#Edit_@(Model.Id)").submit();
 		});
+		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 <tr class="inline-row-editor@(Model.Id) @(Model.StateErrorBisutti ? "bg-danger" : "bg-success")">
