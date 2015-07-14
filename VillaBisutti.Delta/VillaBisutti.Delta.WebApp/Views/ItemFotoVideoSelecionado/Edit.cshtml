@@ -3,10 +3,6 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -18,14 +14,6 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EventoId, "EventoId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EventoId", String.Empty)
-                @Html.ValidationMessageFor(model => model.EventoId)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.ContratoAditivoId, "ContratoAditivoId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ContratoAditivoId", String.Empty)
@@ -34,10 +22,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ItemBebidaId, "ItemBebidaId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ItemFotoVideoId, "ItemFotoVideoId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ItemBebidaId", String.Empty)
-                @Html.ValidationMessageFor(model => model.ItemBebidaId)
+                @Html.ValidationMessageFor(model => model.ItemFotoVideoId)
             </div>
         </div>
 
