@@ -19,6 +19,7 @@
 			});
 			$("#FornecimentoBisutti").button();
 			$("#ContratacaoBisutti").change();
+			PreventNegativeNumbers("Quantidade");
 		});
 	</script>
 @using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado"))
