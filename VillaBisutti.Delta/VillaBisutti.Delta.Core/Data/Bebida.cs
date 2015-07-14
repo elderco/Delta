@@ -30,7 +30,12 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Bebida> GetCollection()
 		{
-			return context.Bebida.Include(b => b.Evento).Include(b => b.Itens).ToList();
+			return context.Bebida
+				.Include(b => b.Evento)
+				.Include(b => b.Itens)
+				.Include(b => b.Itens.Select(i => i.ItemBebida))
+				.Include(b => b.Itens.Select(i => i.ItemBebida.TipoItemBebida))
+				.ToList();
 		}
 	}
 }
