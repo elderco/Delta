@@ -22,8 +22,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create(int id)
         {
             ViewBag.Id = id;
-            ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(0), "Id", "Arquivo");
-            ViewBag.TipoItemMontagemId = new SelectList(new data.TipoItemBebida().GetCollection(0), "Id", "Nome");
+            ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(0), "Id", "NumeroContrato");
+            ViewBag.TipoItemMontagemId = new SelectList(new data.TipoItemMontagem().GetCollection(0), "Id", "Nome");
             return View();
         }
 
@@ -32,9 +32,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="EventoId,Observacoes")] model.ItemMontagemSelecionado montagem)
+        public ActionResult CreateItemMontagemSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
         {
-            return View(montagem);
+            //itembebidaselecionado.Definido = false;
+            //itembebidaselecionado.FornecedorStartado = false;
+            //itembebidaselecionado.Contratado = false;
+            //itembebidaselecionado.ContatoFornecimento = string.Empty;
+            //itembebidaselecionado.Entrega = new model.Horario();
+            //itembebidaselecionado.HorarioEntrega = 0;
+            new data.ItemBebidaSelecionado().Insert(itembebidaselecionado);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 
         // GET: /ItemMontagemSelecionado/Edit/5
@@ -56,7 +63,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /ItemMontagemSelecionado/Delete/5
         public ActionResult Delete(int? id)
         {
-            return View();
+            new data.ItemMontagemSelecionado().Delete(id.Value);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 
         // POST: /ItemMontagemSelecionado/Delete/5
@@ -75,44 +83,72 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             base.Dispose(disposing);
         }
 
-        //public ActionResult ListFornecimentoBisutti(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, true));
-        //}
+        public ActionResult ListFornecimentoBisutti(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, true));
+        }
 
-        //// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
-        //public ActionResult ListFornecimentoTerceiro(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, false));
-        //}
+        // GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+        public ActionResult ListFornecimentoTerceiro(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, false));
+        }
 
-        //// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
-        //public ActionResult ListFornecimentoContratante(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, false, false));
-        //}
+        // GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+        public ActionResult ListFornecimentoContratante(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, false, false));
+        }
 
-        //public ActionResult EditFornecimentoBisutti(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, true));
-        //}
+        public ActionResult EditFornecimentoBisutti(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, true));
+        }
 
-        //// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
-        //public ActionResult EditFornecimentoTerceiro(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, false));
-        //}
+        // GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+        public ActionResult EditFornecimentoTerceiro(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, true, false));
+        }
 
-        //// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
-        //public ActionResult EditFornecimentoContratante(int id)
-        //{
-        //    ViewBag.Id = id;
-        //    return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, false, false));
-        //}
+        // GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+        public ActionResult EditFornecimentoContratante(int id)
+        {
+            ViewBag.Id = id;
+            return View(new data.ItemMontagemSelecionado().GetItensCompartimentados(id, false, false));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditFornecimentoTerceiroPost([Bind(Include="Id, Quantidade, ContatoFornecimento, HorarioEntrega, Contratado, FornecedorStartado, Observacoes, Definido")]model.ItemMontagemSelecionado itemMontagemSelecionado)
+        {
+            model.ItemMontagemSelecionado itemOriginal = new data.ItemMontagemSelecionado().GetElement(itemMontagemSelecionado.Id);
+            itemOriginal.Quantidade = itemMontagemSelecionado.Quantidade;
+            itemOriginal.ContatoFornecimento = itemMontagemSelecionado.ContatoFornecimento;
+            itemOriginal.HorarioEntrega = itemMontagemSelecionado.HorarioEntrega;
+            itemOriginal.Observacoes = itemMontagemSelecionado.Observacoes;
+            itemOriginal.Definido = itemMontagemSelecionado.Definido;
+            itemOriginal.Contratado = itemMontagemSelecionado.Contratado;
+            itemOriginal.FornecedorStartado = itemMontagemSelecionado.FornecedorStartado;
+            new data.ItemMontagemSelecionado().Update(itemOriginal);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditFornecimentoBisuttiPost([Bind(Include = "Id,Quantidade,Observacoes,Definido")] model.ItemMontagemSelecionado itemMontagemselecionado)
+        {
+            model.ItemMontagemSelecionado itemOriginal = new data.ItemMontagemSelecionado().GetElement(itemMontagemselecionado.Id);
+            itemOriginal.Quantidade = itemMontagemselecionado.Quantidade;
+            itemOriginal.Observacoes = itemMontagemselecionado.Observacoes;
+            itemOriginal.Definido = itemMontagemselecionado.Definido;
+            new data.ItemMontagemSelecionado().Update(itemOriginal);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
+        }
     }
 }

@@ -30,22 +30,24 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemMontagemSelecionado> GetCollection()
 		{
-			return context.ItemMontagemSelecionado.ToList();
+			return context.ItemMontagemSelecionado.Include(im => im.ItemMontagem).Include(im => im.ItemMontagem.TipoItemMontagem).ToList();
 		}
 
-        //public List<Model.ItemMontagemSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
-        //{
-        //    return context.ItemMontagemSelecionado
-        //        .Include(i => i.ContratoAditivo)
-        //        .Include(i => i.ItemMontagem)
-        //        .Include(i => i.ItemMontagem.Tipoitemmo)
-        //        .Include(i => i.Bebida)
-        //        .Where(i =>
-        //            i.BebidaId == eventoId
-        //             && i.ContratacaoBisutti == ContratacaoVB
-        //             && i.FornecimentoBisutti == FornecimentoVB
-        //        )
-        //        .ToList();
-        //}
+        public List<Model.ItemMontagemSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
+        {
+            return context.ItemMontagemSelecionado
+                .Include(i => i.ContratoAditivo)
+                .Include(i => i.ItemMontagem)
+                .Include(i => i.ItemMontagem.TipoItemMontagem)
+                .Include(i => i.Montagem)
+                .Where(i =>
+                    i.EventoId == eventoId
+                     && i.ContratacaoBisutti == ContratacaoVB
+                     && i.FornecimentoBisutti == FornecimentoVB
+                )
+                .ToList();
+        }
+
+      
     }
 }

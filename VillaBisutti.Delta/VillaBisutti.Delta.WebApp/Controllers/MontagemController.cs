@@ -43,15 +43,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="EventoId, Observacoes")] model.Montagem montagem)
+        public ActionResult Edited([Bind(Include="EventoId,Id, Observacoes")] model.Montagem montagem)
         {
-            if (ModelState.IsValid)
-            {
-                new data.Montagem().Update(montagem);
-                return RedirectToAction("Index");
-            }
-            ViewBag.Id = montagem.Id;
-            return View(montagem);
+            new data.Montagem().Update(montagem);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 
         protected override void Dispose(bool disposing)

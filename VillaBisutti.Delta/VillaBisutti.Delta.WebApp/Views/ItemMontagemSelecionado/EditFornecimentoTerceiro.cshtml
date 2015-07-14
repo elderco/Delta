@@ -1,0 +1,48 @@
+﻿@model VillaBisutti.Delta.Core.Model.ItemMontagemSelecionado
+@{
+    Layout = null;
+}
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		CreateHorarioEditor("HorarioEntrega_@(Model.Id)");
+		$("tr.inline-row-editor@(Model.Id)>td  :input").change(function () {
+			$("#Edit_@(Model.Id)").submit();
+		});
+	});
+</script>
+@using (Html.BeginForm("EditFornecimentoTerceiroPost","ItemMontagemSelecionado",FormMethod.Post, new {@class= "FormItemEditor", @id = "Edit_" + Model.Id}))
+{
+    @Html.AntiForgeryToken()
+	@Html.HiddenFor(model => model.Id)
+    <tr class ="inline-row-editor@(Model.Id) @(Model.StateErrorFornecedor ? "bg-danger" : "bg-success")">
+        <td>
+            @(Model.ItemMontagem.TipoItemMontagem.Nome) - @(Model.ItemMontagem.Nome)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Quantidade)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.ContatoFornecimento)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.HorarioEntrega, new { @type = "number", @id = "HorarioEntrega_" + Model.Id })
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Definido)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.FornecedorStartado)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Contratado)
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Observacoes)
+        </td>
+        <td>
+            <a href="@Url.Action("Delete", "ItemMontagemSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
+                <span class="menu-icon fa fa-trash"></span>
+            </a>
+        </td>
+    </tr>
+}

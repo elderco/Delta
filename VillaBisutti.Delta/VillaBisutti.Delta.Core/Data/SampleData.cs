@@ -303,6 +303,83 @@ namespace VillaBisutti.Delta.Core.Data
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não há", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.SaveChanges();
 
+            context.TipoItemMontagem.Add(new Model.TipoItemMontagem 
+            {
+                CopiaBebida = false,
+                CopiaBoloDoceBemCasado = false,
+                CopiaDecoracao = false,
+                CopiaFotoVideo = false,
+                CopiaOutrosItens = false,
+                CopiaSomIluminacao = false,
+                Nome = "Montagem teste",
+                PadraoAniversario = true,
+                PadraoBarmitzva = true,
+                PadraoBatmitzva = true,
+                PadraoCasamento = true,
+                PadraoCorporativo = false,
+                PadraoDebutante = false,
+                PadraoOutro = true
+            });
+
+            context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+            {
+                CopiaBebida = false,
+                CopiaBoloDoceBemCasado = false,
+                CopiaDecoracao = false,
+                CopiaFotoVideo = false,
+                CopiaOutrosItens = false,
+                CopiaSomIluminacao = false,
+                Nome = "Montagem teste 2",
+                PadraoAniversario = true,
+                PadraoBarmitzva = true,
+                PadraoBatmitzva = true,
+                PadraoCasamento = true,
+                PadraoCorporativo = false,
+                PadraoDebutante = false,
+                PadraoOutro = true
+            });
+
+             context.TipoItemMontagem.Add(new Model.TipoItemMontagem 
+            {
+                CopiaBebida = false,
+                CopiaBoloDoceBemCasado = false,
+                CopiaDecoracao = false,
+                CopiaFotoVideo = false,
+                CopiaOutrosItens = false,
+                CopiaSomIluminacao = false,
+                Nome = "Montagem teste3",
+                PadraoAniversario = true,
+                PadraoBarmitzva = true,
+                PadraoBatmitzva = true,
+                PadraoCasamento = true,
+                PadraoCorporativo = false,
+                PadraoDebutante = false,
+                PadraoOutro = true
+            });
+            context.SaveChanges();
+
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 1", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 12", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 11", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 13", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 14", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 15", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 16", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 17", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 18", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 19", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 2", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 3", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 4", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 51", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 6", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 7", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 8", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 9", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 10", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 124", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3});
+            context.SaveChanges();
+
 			List<Model.ContratoAditivo> contratos = new List<Model.ContratoAditivo>();
 			Random rdm = new Random();
 			for (int i = 0; i < 50; i++)

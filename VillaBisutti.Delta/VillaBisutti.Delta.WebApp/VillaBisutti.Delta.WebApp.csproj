@@ -470,6 +470,12 @@
     <Content Include="Views\TipoItemSomIluminacao\ListNaoSelecionados.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\ListNaoSelecionados.cshtml" />
     <Content Include="Views\ItemFotoVideo\ListarPorTipo.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoTerceiro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
