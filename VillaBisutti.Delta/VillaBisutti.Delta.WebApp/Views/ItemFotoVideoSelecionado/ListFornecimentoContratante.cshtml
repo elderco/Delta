@@ -27,7 +27,7 @@
 		<tbody>
 			@foreach (var item in Model)
 			{
-				@Html.Action("EditFornecimentoContratante", "ItemFotoVideoSelecionado", new { id = item.Id })
+				@Html.Partial("../ItemFotoVideoSelecionado/EditFornecimentoContratante", item)
 			}
 		</tbody>
 	</table>
