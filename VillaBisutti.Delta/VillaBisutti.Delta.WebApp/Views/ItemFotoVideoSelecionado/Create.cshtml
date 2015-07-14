@@ -6,10 +6,19 @@
 		$(document).ready(function () {
 			$("#TipoItemFotoVideoId").change(function () {
 				if (!$(this).val())
-					$("#ItensFotoVideoContainer").html("<select />");
+					$("#ItensFotoVideoContainer").html("<select class=\"form-control\" />");
 				else
 					LoadPage("@(Url.Action("ListarPorTipo", "ItemFotoVideo"))/?tipoId=" + $(this).val(), "ItensFotoVideoContainer");
 			})
+			$("#ContratacaoBisutti").button().change(function () {
+				if ($(this).is(':checked')) {
+					$("#FornecimentoBisuttiContainer").show();
+				} else {
+					$("#FornecimentoBisuttiContainer").hide();
+				}
+			});
+			$("#FornecimentoBisutti").button();
+			$("#ContratacaoBisutti").change();
 		});
 </script>
 @using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado"))

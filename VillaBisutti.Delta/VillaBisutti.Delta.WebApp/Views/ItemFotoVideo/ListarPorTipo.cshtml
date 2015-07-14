@@ -3,6 +3,18 @@
 @{
     Layout = null;
 }
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$("body").off("change", "#ItemFotoVideoId");
+		$("#ItemFotoVideoId").change(function () {
+			if ($("#ItemFotoVideoId option:selected").attr("data-show-hide") != "False") {
+				$(".deve-sumir").hide();
+			} else {
+				$(".deve-sumir").show();
+			}
+		});
+	});
+</script>
 <select name="ItemFotoVideoId" id="ItemFotoVideoId" class="form-control">
 	<option value=""></option>
 	@foreach (var item in Model)

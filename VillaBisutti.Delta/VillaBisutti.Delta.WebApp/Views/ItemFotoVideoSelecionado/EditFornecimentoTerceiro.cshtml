@@ -11,7 +11,7 @@
 		});
 	});
 </script>
-@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemFotoVideoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+@using (Html.BeginForm("EditPost", "ItemFotoVideoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 {
 	@Html.AntiForgeryToken()
 	@Html.HiddenFor(model => model.Id)
