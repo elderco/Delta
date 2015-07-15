@@ -163,7 +163,7 @@ namespace VillaBisutti.Delta.Core.Data
 				PadraoOutro = true
 			});
 			context.SaveChanges();
-			
+
 			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "DJ Full Time", TipoItemSomIluminacaoId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "Não há", TipoItemSomIluminacaoId = 1, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.ItemSomIluminacao.Add(new Model.ItemSomIluminacao { Nome = "VJ Full Time", TipoItemSomIluminacaoId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
@@ -278,7 +278,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Nacional (Smirnoff, Sagatiba, Azuma Kirin) com 5 frutas da estação", TipoItemBebidaId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Importada (Absolut, Seleta, Gekkeikan) com 5 frutas da estação", TipoItemBebidaId = 1, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
-			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não há", TipoItemBebidaId = 1, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não Há", TipoItemBebidaId = 1, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Whiskey (ESPECIFICAR)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Vodka (ESPECIFICAR)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Cachaça (ESPECIFICAR)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
@@ -295,90 +295,90 @@ namespace VillaBisutti.Delta.Core.Data
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Cerveja Bohemia (Open Bar)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Cerveja Original (Open Bar)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Cerveja Serra-Malte (Open Bar)", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
-			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não há", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não Há", TipoItemBebidaId = 2, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Refrigerante FEMSA [Coca/Coca-Zero/Fanta/Sprite] (Open Bar)", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Refrigerante PEPSICO [Pepsi/Pepsi-Twist-Light-Latinha/Sukita/Soda-Limonada/Guaraná] (Open Bar)", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Sucos diversos Del-Valle [Laranja/Pêssego/Uva] (Open Bar)", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Virgin Cocktail diversos [Meia de seda/Blerg/Éca] (Open Bar)", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4) });
-			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não há", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
+			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não Há", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.SaveChanges();
 
-            context.TipoItemMontagem.Add(new Model.TipoItemMontagem 
-            {
-                CopiaBebida = false,
-                CopiaBoloDoceBemCasado = false,
-                CopiaDecoracao = false,
-                CopiaFotoVideo = false,
-                CopiaOutrosItens = false,
-                CopiaSomIluminacao = false,
-                Nome = "Montagem teste",
-                PadraoAniversario = true,
-                PadraoBarmitzva = true,
-                PadraoBatmitzva = true,
-                PadraoCasamento = true,
-                PadraoCorporativo = false,
-                PadraoDebutante = false,
-                PadraoOutro = true
-            });
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+			{
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				Nome = "Montagem teste",
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
 
-            context.TipoItemMontagem.Add(new Model.TipoItemMontagem
-            {
-                CopiaBebida = false,
-                CopiaBoloDoceBemCasado = false,
-                CopiaDecoracao = false,
-                CopiaFotoVideo = false,
-                CopiaOutrosItens = false,
-                CopiaSomIluminacao = false,
-                Nome = "Montagem teste 2",
-                PadraoAniversario = true,
-                PadraoBarmitzva = true,
-                PadraoBatmitzva = true,
-                PadraoCasamento = true,
-                PadraoCorporativo = false,
-                PadraoDebutante = false,
-                PadraoOutro = true
-            });
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+			{
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				Nome = "Montagem teste 2",
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
 
-             context.TipoItemMontagem.Add(new Model.TipoItemMontagem 
-            {
-                CopiaBebida = false,
-                CopiaBoloDoceBemCasado = false,
-                CopiaDecoracao = false,
-                CopiaFotoVideo = false,
-                CopiaOutrosItens = false,
-                CopiaSomIluminacao = false,
-                Nome = "Montagem teste3",
-                PadraoAniversario = true,
-                PadraoBarmitzva = true,
-                PadraoBatmitzva = true,
-                PadraoCasamento = true,
-                PadraoCorporativo = false,
-                PadraoDebutante = false,
-                PadraoOutro = true
-            });
-            context.SaveChanges();
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+		   {
+			   CopiaBebida = false,
+			   CopiaBoloDoceBemCasado = false,
+			   CopiaDecoracao = false,
+			   CopiaFotoVideo = false,
+			   CopiaOutrosItens = false,
+			   CopiaSomIluminacao = false,
+			   Nome = "Montagem teste3",
+			   PadraoAniversario = true,
+			   PadraoBarmitzva = true,
+			   PadraoBatmitzva = true,
+			   PadraoCasamento = true,
+			   PadraoCorporativo = false,
+			   PadraoDebutante = false,
+			   PadraoOutro = true
+		   });
+			context.SaveChanges();
 
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 1", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 12", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 11", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 13", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 14", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 15", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 16", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 17", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 18", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 19", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 2", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 3", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 4", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 51", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 6", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 7", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 8", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 9", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 10", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-            context.ItemMontagem.Add(new Model.ItemMontagem { Nome = "Item Montagem 124", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3});
-            context.SaveChanges();
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 12", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 11", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 13", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 15", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 16", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 17", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 18", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 19", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 2", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 3", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 4", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 51", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 6", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 8", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 9", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 10", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 124", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.SaveChanges();
 
 			List<Model.ContratoAditivo> contratos = new List<Model.ContratoAditivo>();
 			Random rdm = new Random();
@@ -395,7 +395,7 @@ namespace VillaBisutti.Delta.Core.Data
 					else
 						CPF += rdm.Next(0, 10).ToString();
 				Model.TipoEvento TE = (Model.TipoEvento)rdm.Next(0, 6);
-				if(Math.Ceiling((double)i / 3) == (double)i / 3)
+				if (Math.Ceiling((double)i / 3) == (double)i / 3)
 					TE = Model.TipoEvento.Casamento;
 				string nome = string.Empty;
 				if (TE == Model.TipoEvento.Casamento)
@@ -426,7 +426,7 @@ namespace VillaBisutti.Delta.Core.Data
 					LocalId = rdm.Next(1, 7)
 				};
 				new Business.Evento().CriarEvento(evento);
-				for (int j = 0; j < rdm.Next(10); j++ )
+				for (int j = 0; j < rdm.Next(10); j++)
 					contratos.Add(new Model.ContratoAditivo { DataContrato = DateTime.Now.AddDays(-1 * rdm.Next(j, 15)), NumeroContrato = Guid.NewGuid().ToString(), EvtId = evento.Id });
 			}
 
