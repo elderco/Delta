@@ -25,14 +25,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Insert(Model.ItemMontagemSelecionado entity)
 		{
 			context.ItemMontagemSelecionado.Add(entity);
-            entity.ContratoAditivo = new Model.ContratoAditivo 
-            {
-                Arquivo = "oi",
-                DataContrato = DateTime.Now,
-                EvtId = 1,
-                Id = 1,
-                NumeroContrato = "23209384093"
-            };
 			context.SaveChanges();
 		}
 

@@ -19,11 +19,12 @@
             <th class="col-md-4">
                 @Html.DisplayNameFor(model => model.Definido)
             </th>
+            <th class="col-md-1"></th>
         </tr>
         <tbody>
             @foreach (var item in Model)
             {
-                @Html.Action("EditFornecimentoVilaBisutti", "ItemMontagemSelecionado", new { id = item.Id })
+                @Html.Partial("../ItemMontagemSelecionado/EditFornecimentoBisutti", item)
             }
         </tbody>
     </table>

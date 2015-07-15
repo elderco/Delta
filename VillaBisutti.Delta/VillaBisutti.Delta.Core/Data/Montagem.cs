@@ -30,7 +30,12 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Montagem> GetCollection()
 		{
-			return context.Montagem.ToList();
+            return context.Montagem
+                .Include(m => m.Evento)
+                .Include(m => m.Itens)
+                .Include(m => m.Itens.Select(s => s.ItemMontagem))
+                .Include(m => m.Itens.Select(s => s.ItemMontagem.TipoItemMontagem))
+                .ToList();
 		}
 	}
 }

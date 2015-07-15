@@ -3,26 +3,26 @@
     Layout = null;
 }
 <script language="javascript" type="text/javascript">
-		$(document).ready(function () {
-		    $("#TipoItemMontagemId").change(function () {
-				if (!$(this).val())
-				    $("#ItensMontagemContainer").html("<select class=\"form-control\" />");
-				else
-				    LoadPage("@(Url.Action("ListarPorTipo", "ItemMontagem"))/?tipoId=" + $(this).val(), "ItensMontagemContainer");
-			});
-			$("#ContratacaoBisutti").button().change(function () {
-				if ($(this).is(':checked')) {
-					$("#FornecimentoBisuttiContainer").show();
-				} else {
-					$("#FornecimentoBisuttiContainer").hide();
-				}
-			});
-			$("#FornecimentoBisutti").button();
-			$("#ContratacaoBisutti").change();
-			PreventNegativeNumbers("Quantidade");
+	$(document).ready(function () {
+		$("#TipoItemMontagemId").change(function () {
+			if (!$(this).val())
+				$("#ItensMontagemContainer").html("<select class=\"form-control\" />");
+			else
+				LoadPage("@(Url.Action("ListarPorTipo", "ItemMontagem"))/?tipoId=" + $(this).val(), "ItensMontagemContainer");
+		});
+		$("#ContratacaoBisutti").button().change(function () {
+			if ($(this).is(':checked')) {
+				$("#FornecimentoBisuttiContainer").show();
+			} else {
+				$("#FornecimentoBisuttiContainer").hide();
+			}
+		});
+		$("#FornecimentoBisutti").button();
+		$("#ContratacaoBisutti").change();
+		PreventNegativeNumbers("Quantidade");
 		});
 </script>
-@using (Html.BeginForm("CreateItemMontagemSelecionado", "ItemMontagemSelecionado"))
+@using (Html.BeginForm("CreateItemMontagemSelecionado", "ItemMontagemSelecionado", FormMethod.Post, new {@id = "CreateItemMontagem" }))
 {
     @Html.AntiForgeryToken()
 
@@ -36,11 +36,11 @@
             </div>
             @Html.LabelFor(model => model.ItemMontagem.Nome, new { @class = "control-label col-md-2" })
             <div class="col-md-2" id="ItensMontagemContainer">
-                <select class="form-control"></select>
+                <select class="form-control" data-val="true"></select>
             </div>
             @Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2" })
             <div class="col-md-2">
-                @Html.DropDownList("ContratoAditivoId", (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ContratoAditivoId, (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContratoAditivoId)
             </div>
         </div>
@@ -74,7 +74,4 @@
             </div>
         </div>
     </div>
-}
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
