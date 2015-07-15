@@ -1,8 +1,9 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemFotoVideoSelecionado
-
 @{
     ViewBag.Title = "Edit";
 }
+@Scripts.Render("~/bundles/jqueryval")
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -109,10 +110,3 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

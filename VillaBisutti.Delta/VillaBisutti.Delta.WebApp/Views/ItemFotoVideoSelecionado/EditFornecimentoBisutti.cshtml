@@ -8,6 +8,7 @@
 		$("tr.inline-row-editor@(Model.Id)>td :input").change(function () {
 			$("#Edit_@(Model.Id)").submit();
 		});
+		PreventNegativeNumbers("Quantidade");
 	});
 </script>
 <tr class="inline-row-editor@(Model.Id) @(Model.StateErrorBisutti ? "bg-danger" : "bg-success")">
@@ -20,6 +21,7 @@
 		@Html.HiddenFor(model => model.HorarioEntrega)
 		@Html.HiddenFor(model => model.FornecedorStartado)
 		@Html.HiddenFor(model => model.Contratado)
+		<span id="PlaceHolder_@(Model.Id)"></span>
 		@(Model.ItemFotoVideo.TipoItemFotoVideo.Nome) - @(Model.ItemFotoVideo.Nome)
 	</td>
 		<td>
@@ -38,4 +40,4 @@
 		</td>
 		}
 	</tr>
-}
+

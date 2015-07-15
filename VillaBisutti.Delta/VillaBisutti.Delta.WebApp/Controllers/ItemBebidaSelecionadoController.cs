@@ -40,14 +40,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
 
-		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
+		// GET: /ItemBebidaSelecionado/EditFornecimentoTerceiro/5
 		public ActionResult EditFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
 
-		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
+		// GET: /ItemBebidaSelecionado/EditFornecimentoContratante/5
 		public ActionResult EditFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;

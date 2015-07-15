@@ -1,5 +1,4 @@
 ﻿@model VillaBisutti.Delta.Core.Model.ItemFotoVideoSelecionado
-
 @{
 	Layout = null;
 }
@@ -9,12 +8,12 @@
 		$("tr.inline-row-editor@(Model.Id)>td  :input").change(function () {
 			$("#Edit_@(Model.Id)").submit();
 		});
+		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-
-@using (Html.BeginForm("EditPost", "ItemFotoVideoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
-{
-	<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
+<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
+	@using (Html.BeginForm("EditPost", "ItemFotoVideoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+	{
 		<td>
 			@Html.AntiForgeryToken()
 			<input type="hidden" name="Id" value="@(Model.Id)" />
@@ -39,5 +38,6 @@
 				<span class="menu-icon fa fa-trash"></span>
 			</a>
 		</td>
-	</tr>
-}
+	}
+</tr>
+
