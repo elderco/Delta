@@ -26,8 +26,12 @@
 				}
 			});
 		});
+		$('form').each(function () {
+			$(this).validate();
+		});
 	});
 </script>
+@Scripts.Render("~/bundles/jqueryval")
 }
 <div class="row">
 	<fieldset class="col-md-4">
