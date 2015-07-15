@@ -2,13 +2,13 @@
 @{
     Layout = null;
 }
-   <script language="javascript" type="text/javascript">
+<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
-			$("#TipoItemMontagemId").change(function () {
+		    $("#TipoItemMontagemId").change(function () {
 				if (!$(this).val())
-					$("#ItensMontagemContainer").html("<select class=\"form-control\" />");
+				    $("#ItensMontagemContainer").html("<select class=\"form-control\" />");
 				else
-					LoadPage("@(Url.Action("ListarPorTipo", "ItemMontagem"))/?tipoId=" + $(this).val(), "ItensMontagemContainer");
+				    LoadPage("@(Url.Action("ListarPorTipo", "ItemMontagem"))/?tipoId=" + $(this).val(), "ItensMontagemContainer");
 			});
 			$("#ContratacaoBisutti").button().change(function () {
 				if ($(this).is(':checked')) {
@@ -22,41 +22,41 @@
 			PreventNegativeNumbers("Quantidade");
 		});
 </script>
-
-@using (Html.BeginForm("CreateItemMontagemSelecionado","ItemMontagemSelecionado"))
+@using (Html.BeginForm("CreateItemMontagemSelecionado", "ItemMontagemSelecionado"))
 {
     @Html.AntiForgeryToken()
+
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
         <input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
         <div class="form-group">
             @Html.LabelFor(model => model.ItemMontagem.TipoItemMontagem.Nome, new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
+            <div class="col-md-2">
                 @Html.DropDownList("TipoItemMontagemId", (IEnumerable<SelectListItem>)ViewBag.TipoItemMontagemId, "Selecione", new { @class = "form-control" })
             </div>
             @Html.LabelFor(model => model.ItemMontagem.Nome, new { @class = "control-label col-md-2" })
-            <div class="col-md-4" id="ItensMontagemContainer">
+            <div class="col-md-2" id="ItensMontagemContainer">
                 <select class="form-control"></select>
             </div>
-        </div>
-        <div class="form-group">
             @Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
+            <div class="col-md-2">
                 @Html.DropDownList("ContratoAditivoId", (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContratoAditivoId)
             </div>
-            <div class="col-md-3">
+        </div>
+        <div class="form-group deve-sumir">
+            <div class="col-md-6">
                 @Html.EditorFor(model => model.ContratacaoBisutti)
                 @Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label" })
                 @Html.ValidationMessageFor(model => model.ContratacaoBisutti)
             </div>
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.FornecimentoBisutti)
+            <div class="col-md-6" id="FornecimentoBisuttiContainer">
+                @Html.CheckBoxFor(model => model.FornecimentoBisutti)
                 @Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label" })
                 @Html.ValidationMessageFor(model => model.FornecimentoBisutti)
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group deve-sumir">
             @Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
             <div class="col-md-2">
                 @Html.EditorFor(model => model.Quantidade)
@@ -75,8 +75,6 @@
         </div>
     </div>
 }
-    
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -434,7 +434,6 @@
     <Content Include="Views\Foto\Delete.cshtml" />
     <Content Include="Views\Foto\Index.cshtml" />
     <Content Include="Views\ItemMontagem\ListarPorTipo.cshtml" />
-    <Content Include="Views\ItemMontagemSelecionado\Create.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\Delete.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\Details.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\Edit.cshtml" />
@@ -477,6 +476,7 @@
     <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\Home\HomeConfiguracao.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

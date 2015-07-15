@@ -30,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
         protected override List<Model.Cardapio> GetCollection()
         {
+           
             return context.Cardapio.Include(c => c.Pratos).ToList();
         }
     }

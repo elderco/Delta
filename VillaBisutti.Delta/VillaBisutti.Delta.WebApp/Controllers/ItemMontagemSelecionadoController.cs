@@ -34,7 +34,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateItemMontagemSelecionado([Bind(Include = "Id,EventoId,ItemMontagemId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemMontagemSelecionado itemmontagemselecionado)
         {
-           
             new data.ItemMontagemSelecionado().Insert(itemmontagemselecionado);
             return Redirect(Request.UrlReferrer.AbsolutePath);
         }
