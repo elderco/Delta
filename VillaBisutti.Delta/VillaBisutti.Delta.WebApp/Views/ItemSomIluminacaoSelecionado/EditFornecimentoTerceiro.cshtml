@@ -6,7 +6,7 @@
 	$(document).ready(function () {
 		CreateHorarioEditor("HorarioMontagem_@(Model.Id)");
 		$("tr.inline-row-editor@(Model.Id)>td  :input").change(function () {
-			$("#Edit_@(Model.Id)").submit();
+			ValidateField($(this), "Edit_@(Model.Id)");
 		});
 		PreventNegativeNumbers("Quantidade");
 	});
