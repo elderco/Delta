@@ -141,6 +141,59 @@ function GetTopMostIndex() {
 		})));
 }
 var currentY = 30;
+function ValidateField(element, formId) {
+	formId = formId.replace("#", "") == formId ? "#" + formId : formId;
+	var valid = true;
+	if (element.attr("data-val") == "true") {
+		switch (element.attr("type")) {
+			case "number":
+				if (isNaN(element.val()) || element.val() == "") {
+					element.focus();
+					AddPopOver(element, "Ooooops", element.attr("data-val-number"))
+					valid = false;
+					break;
+				}
+				if (element.val() < parseInt(element.attr("data-val-range-min")) || element.val() > parseInt(element.attr("data-val-range-max"))) {
+					element.focus();
+					AddPopOver(element, "Ooooops", element.attr("data-val-range"))
+					valid = false;
+					break;
+				}
+				break;
+			case "text":
+				if (element.val() == "") {
+					element.val(this.defaultValue);
+					element.focus();
+					AddPopOver(element, "Ooooops", element.attr("data-val-required"))
+					valid = false;
+					break;
+				}
+				break;
+			case "select-one":
+				if (element.find("option:selected").length <= 0 || element.find("option:selected").val() == "") {
+					element.focus();
+					AddPopOver(element, "Ooooops", element.attr("data-val-required"))
+					valid = false;
+					break;
+				}
+				break;
+		}
+	}
+	if (valid)
+		$(formId).submit();
+}
+
+function AddPopOver(element, title, text, popOverType) {
+	popOverType = (popOverType === undefined ? "popover-error" : popOverType);
+	element.addClass(popOverType)
+		.attr("data-rel", "popover")
+		.attr("data-toggle", "popover")
+		.attr("data-placement", "right")
+		.attr("data-original-title", title)
+		.attr("data-content", text)
+		.popover()
+		.click();
+}
 function GetCurrentY() {
 	return $(window).height() - currentY;
 }

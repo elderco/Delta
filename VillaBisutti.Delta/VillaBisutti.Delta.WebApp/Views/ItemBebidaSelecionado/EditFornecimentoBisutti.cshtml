@@ -5,8 +5,7 @@
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
 		$("tr.inline-row-editor@(Model.Id)>td :input").change(function () {
-			alert($(this).attr("type"));
-			//$("#Edit_@(Model.Id)").submit();
+			ValidateField($(this), "Edit_@(Model.Id)");
 		});
 		PreventNegativeNumbers("Quantidade");
 	});
@@ -22,7 +21,8 @@
 			@Html.HiddenFor(model => model.FornecedorStartado)
 			@Html.HiddenFor(model => model.Contratado)
 			<span id="PlaceHolder_@(Model.Id)"></span>
-			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)</td>
+			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
+		</td>
 		<td>
 			@Html.EditorFor(model => model.Quantidade)
 		</td>
@@ -37,5 +37,5 @@
 				<span class="menu-icon fa fa-trash"></span>
 			</a>
 		</td>
-		}
-	</tr>
+	}
+</tr>
