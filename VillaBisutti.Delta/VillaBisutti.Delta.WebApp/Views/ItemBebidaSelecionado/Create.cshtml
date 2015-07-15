@@ -22,7 +22,7 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado"))
+@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemBebidaSelecionado", FormMethod.Post, new { @id = "CreateItemBebida" }))
 {
 	@Html.AntiForgeryToken()
 

@@ -141,10 +141,12 @@ function GetTopMostIndex() {
 		})));
 }
 var currentY = 30;
-function ValidateField(element, formId) {
+function ValidateField(element, formId, postForm) {
+	postForm = (postForm === undefined ? true : postForm);
 	formId = formId.replace("#", "") == formId ? "#" + formId : formId;
 	var valid = true;
 	if (element.attr("data-val") == "true") {
+		alert(element.attr("type"));
 		switch (element.attr("type")) {
 			case "number":
 				if (isNaN(element.val()) || element.val() == "") {
@@ -179,7 +181,7 @@ function ValidateField(element, formId) {
 				break;
 		}
 	}
-	if (valid)
+	if (valid && postForm)
 		$(formId).submit();
 }
 

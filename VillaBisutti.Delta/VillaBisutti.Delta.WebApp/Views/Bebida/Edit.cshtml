@@ -2,7 +2,7 @@
 @{
 	Layout = null;
 }
-@using (Html.BeginForm("Edited", "Bebida"))
+@using (Html.BeginForm("Edited", "Bebida", FormMethod.Post, new { @id = "DadosBebida" }))
 {
 	@Html.AntiForgeryToken()
 	<div class="form-horizontal">
@@ -10,7 +10,7 @@
 		@Html.HiddenFor(model => model.EventoId)
 
 		<div class="form-group">
-            <label for="Observacoes" class="control-label col-md-4">Observações gerais</label>
+			<label for="Observacoes" class="control-label col-md-4">Observações gerais</label>
 			<div class="col-md-8">
 				@Html.EditorFor(model => model.Observacoes)
 				@Html.ValidationMessageFor(model => model.Observacoes)
