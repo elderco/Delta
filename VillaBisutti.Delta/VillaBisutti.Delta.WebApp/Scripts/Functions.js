@@ -190,7 +190,7 @@ function AddPopOver(element, title, text, popOverType) {
 	element.addClass(popOverType)
 		.attr("data-rel", "popover")
 		.attr("data-toggle", "popover")
-		.attr("data-placement", "right")
+		.attr("data-placement", "bottom")
 		.attr("data-original-title", title)
 		.attr("data-content", text)
 		.popover()
