@@ -6,128 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class RoteiroController : Controller
     {
-        private Context db = new Context();
+		// GET: /ItemRoteiro/
+		public ActionResult Index(int TipoEvento)
+		{
+			ViewBag.TipoEvento = TipoEvento;
+			return View(new data.ItemRoteiro().GetFromTipoEvento(TipoEvento));
+		}
 
-        // GET: /Roteiro/
-        public ActionResult Index()
-        {
-            var itemroteiro = db.ItemRoteiro.Include(i => i.Evento);
-            return View(itemroteiro.ToList());
-        }
+		// GET: /ItemRoteiro/Details/5
+		public ActionResult Details(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.ItemRoteiro itemroteiro = new data.ItemRoteiro().GetElement(id.HasValue ? id.Value : 0);
+			if (itemroteiro == null)
+			{
+				return HttpNotFound();
+			}
+			return View(itemroteiro);
+		}
 
-        // GET: /Roteiro/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemRoteiro itemroteiro = db.ItemRoteiro.Find(id);
-            if (itemroteiro == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemroteiro);
-        }
+		// GET: /ItemRoteiro/Create
+		public ActionResult Create(int TipoEvento)
+		{
+			ViewBag.TipoEvento = TipoEvento;
+			return View();
+		}
 
-        // GET: /Roteiro/Create
-        public ActionResult Create()
-        {
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria");
-            return View();
-        }
+		// POST: /ItemRoteiro/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,RoteiroId")] model.ItemRoteiro itemroteiro)
+		{
+			new data.ItemRoteiro().Insert(itemroteiro);
+			return RedirectToAction("Index", new { TipoEvento = (int)itemroteiro.TipoEvento });
+		}
 
-        // POST: /Roteiro/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemRoteiro itemroteiro)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ItemRoteiro.Add(itemroteiro);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+		// GET: /ItemRoteiro/Edit/5
+		public ActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.ItemRoteiro itemroteiro = new data.ItemRoteiro().GetElement(id.HasValue ? id.Value : 0);
+			if (itemroteiro == null)
+			{
+				return HttpNotFound();
+			}
+			return View(itemroteiro);
+		}
 
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemroteiro.EventoId);
-            return View(itemroteiro);
-        }
+		// POST: /ItemRoteiro/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,RoteiroPadraoId,RoteiroId")] model.ItemRoteiro itemroteiro)
+		{
+			if (ModelState.IsValid)
+			{
+				new data.ItemRoteiro().Update(itemroteiro);
+				return RedirectToAction("Index");
+			}
+			return View(itemroteiro);
+		}
 
-        // GET: /Roteiro/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemRoteiro itemroteiro = db.ItemRoteiro.Find(id);
-            if (itemroteiro == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemroteiro.EventoId);
-            return View(itemroteiro);
-        }
+		// GET: /ItemRoteiro/Delete/5
+		public ActionResult Delete(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.ItemRoteiro itemroteiro = new data.ItemRoteiro().GetElement(id.HasValue ? id.Value : 0);
+			if (itemroteiro == null)
+			{
+				return HttpNotFound();
+			}
+			return View(itemroteiro);
+		}
 
-        // POST: /Roteiro/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemRoteiro itemroteiro)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(itemroteiro).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemroteiro.EventoId);
-            return View(itemroteiro);
-        }
+		// POST: /ItemRoteiro/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			int TipoEvento = (int)(new data.ItemRoteiro().GetElement(id).TipoEvento);
+			new data.ItemRoteiro().Delete(id);
+			return RedirectToAction("Index", new { TipoEvento = TipoEvento });
+		}
 
-        // GET: /Roteiro/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemRoteiro itemroteiro = db.ItemRoteiro.Find(id);
-            if (itemroteiro == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemroteiro);
-        }
-
-        // POST: /Roteiro/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ItemRoteiro itemroteiro = db.ItemRoteiro.Find(id);
-            db.ItemRoteiro.Remove(itemroteiro);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+		}
+	}
 }

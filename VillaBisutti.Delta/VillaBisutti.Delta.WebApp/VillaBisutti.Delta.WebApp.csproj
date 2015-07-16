@@ -362,9 +362,6 @@
     <Content Include="Views\TipoItemBebida\Create.cshtml" />
     <Content Include="Views\RoteiroPadrao\Create.cshtml" />
     <Content Include="Views\RoteiroPadrao\Delete.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Details.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Index.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
     <Content Include="Views\ItemRoteiro\Create.cshtml" />
     <Content Include="Views\ItemRoteiro\Delete.cshtml" />
     <Content Include="Views\ItemRoteiro\Index.cshtml" />
@@ -481,14 +478,13 @@
     <Content Include="Views\ItemMontagemSelecionado\Create.cshtml" />
     <Content Include="Views\Roteiro\Create.cshtml" />
     <Content Include="Views\Roteiro\Delete.cshtml" />
-    <Content Include="Views\Roteiro\Details.cshtml" />
-    <Content Include="Views\Roteiro\Edit.cshtml" />
     <Content Include="Views\Roteiro\Index.cshtml" />
     <Content Include="Views\Cerimonial\Create.cshtml" />
     <Content Include="Views\Cerimonial\Delete.cshtml" />
     <Content Include="Views\Cerimonial\Details.cshtml" />
     <Content Include="Views\Cerimonial\Edit.cshtml" />
     <Content Include="Views\Cerimonial\Index.cshtml" />
+    <Content Include="Views\RoteiroPadrao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
