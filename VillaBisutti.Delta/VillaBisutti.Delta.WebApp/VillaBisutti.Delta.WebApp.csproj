@@ -483,6 +483,7 @@
     <Content Include="Views\Cerimonial\Delete.cshtml" />
     <Content Include="Views\Cerimonial\Index.cshtml" />
     <Content Include="Views\RoteiroPadrao\Index.cshtml" />
+    <Content Include="Views\Home\MenuEventos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

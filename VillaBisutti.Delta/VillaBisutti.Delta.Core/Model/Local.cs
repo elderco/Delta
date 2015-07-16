@@ -18,5 +18,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string SiglaCasa { get; set; }
 		[Display(Name = "Endereço da Casa")]
 		public string EnderecoCasa { get; set; }
+		public List<Evento> Eventos { get; set; }
 	}
 }

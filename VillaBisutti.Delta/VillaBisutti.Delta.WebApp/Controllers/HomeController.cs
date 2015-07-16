@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -18,5 +20,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             return View();
         }
+		public ActionResult MenuEventos()
+		{
+			//Buscar no Data.Localizacao todas as casas
+			//Incluir na lista os eventos da casa
+			List<model.Local> casas = new data.Local().GetPorProdutor(0);//SessionFacade.UsuarioLogado.Id);
+			return View(casas);
+		}
 	}
 }
