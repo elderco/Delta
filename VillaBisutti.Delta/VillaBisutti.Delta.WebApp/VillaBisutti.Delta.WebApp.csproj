@@ -494,6 +494,13 @@
     <Content Include="Views\ItemOutrosItensSelecionado\Index.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\ListNaoSelecionados.cshtml" />
     <Content Include="Views\Home\MenuEventos.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\ListFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemOutrosItens\ListarPorTipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

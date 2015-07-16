@@ -32,6 +32,11 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemOutrosItens.Include(id => id.TipoItemOutrosItens).ToList();
 		}
-	}
+
+        public List<Model.ItemOutrosItens> ListarPorTipo(int tipoId)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 

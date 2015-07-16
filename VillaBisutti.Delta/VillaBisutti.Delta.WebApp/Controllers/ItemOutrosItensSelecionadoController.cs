@@ -15,7 +15,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemOutrosItensSelecionadoController : Controller
     {
-        public ActionResult Index(int id)
+        public ActionResult Create(int id)
         {
             ViewBag.Id = id;
             ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
@@ -57,6 +57,46 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             ViewBag.Id = id;
             return View(new data.ItemOutrosItensSelecionado().GetElement(id));
+        }
+
+        public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes,retorno")] model.ItemOutrosItensSelecionado itemOutrosItensselecionado)
+        {
+            model.ItemOutrosItensSelecionado itemOriginal = new data.ItemOutrosItensSelecionado().GetElement(itemOutrosItensselecionado.Id);
+            itemOriginal.Quantidade = itemOutrosItensselecionado.Quantidade;
+            itemOriginal.ContatoFornecimento = itemOutrosItensselecionado.ContatoFornecimento;
+            itemOriginal.HorarioEntrega = itemOutrosItensselecionado.HorarioEntrega;
+            itemOriginal.Observacoes = itemOutrosItensselecionado.Observacoes;
+            itemOriginal.Definido = itemOutrosItensselecionado.Definido;
+            itemOriginal.Contratado = itemOutrosItensselecionado.Contratado;
+            itemOriginal.FornecedorStartado = itemOutrosItensselecionado.FornecedorStartado;
+            new data.ItemOutrosItensSelecionado().Update(itemOriginal);
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        public ActionResult CreateItemOutrosItensSelecionado([Bind(Include= "Id,EventoId,ItemOutrosItensId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemOutrosItensSelecionado itemOutrosItensSelecionados)
+        {
+            new data.ItemOutrosItensSelecionado().Insert(itemOutrosItensSelecionados);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            new data.ItemOutrosItensSelecionado().Delete(id.Value);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
+        }
+
+        public ActionResult DeleteConfirmed(int id)
+        {
+            return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                //db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

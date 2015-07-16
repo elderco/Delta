@@ -37,5 +37,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             return View(outrosItens);
 
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edited([Bind(Include = "EventoId,Id,Observacoes")] model.OutrosItens outrosItens)
+        {
+            new data.OutrosItens().Update(outrosItens);
+            return Redirect(Request.UrlReferrer.AbsolutePath);
+        }
     }
 }
