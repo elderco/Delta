@@ -36,7 +36,12 @@ namespace VillaBisutti.Delta.Core.Data
 			context.ItemRoteiro.AddRange(collection);
 			context.SaveChanges();
 		}
-
+		public List<Model.ItemRoteiro> GetFromEvento(int eventoId)
+		{
+			List<Model.ItemRoteiro> lista = context.ItemRoteiro.Where(i => i.EventoId.Value == eventoId).ToList();
+			lista = lista.OrderBy(ir => ir.HorarioInicio).ToList();
+			return lista;
+		}
 		public List<Model.ItemRoteiro> GetFromTipoEvento(int TipoEvento)
 		{
 			Model.TipoEvento tipo = (Model.TipoEvento)TipoEvento;

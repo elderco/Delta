@@ -1,17 +1,18 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemCerimonial>
-@{
-	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-}
-	<script language="javascript" type="text/javascript">
-		$(document).ready(function () {
-			$(".PopUpActionLinks").click(function (e) {
-				e.preventDefault();
-				ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
-			});
-		})
-	</script>
 
-@Html.Action("Create", "ItemCerimonial")
+@{
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
+}
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$(".PopUpActionLinks").click(function (e) {
+			e.preventDefault();
+			ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
+	});
+</script>
+
+@Html.Action("Create", "Cerimonial")
 <table class="table">
 	<tr>
 		<th>
@@ -21,13 +22,7 @@
 			@Html.DisplayNameFor(model => model.Inicio)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.Importante)
-		</th>
-		<th>
 			@Html.DisplayNameFor(model => model.Observacao)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.TipoEvento)
 		</th>
 		<th>
 			Opções
@@ -37,7 +32,7 @@
 
 	@foreach (var item in Model)
 	{
-		<tr>
+		<tr class="@(item.Importante ? "bg-warning" : "")" >
 			<td>
 				@Html.DisplayFor(modelItem => item.Titulo)
 			</td>
@@ -45,13 +40,7 @@
 				@(item.Inicio.ToString())
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Importante)
-			</td>
-			<td>
 				@Html.DisplayFor(modelItem => item.Observacao)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.TipoEvento)
 			</td>
 			<td>
 				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })

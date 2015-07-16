@@ -161,6 +161,7 @@
     <Compile Include="Controllers\BebidaController.cs" />
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
+    <Compile Include="Controllers\CerimonialController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
     <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\FotoVideoController.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Controllers\MontagemController.cs" />
     <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
+    <Compile Include="Controllers\RoteiroController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\SomIluminacaoController.cs" />
     <Compile Include="Controllers\TipoItemBebidaController.cs" />
@@ -362,9 +364,6 @@
     <Content Include="Views\TipoItemBebida\Create.cshtml" />
     <Content Include="Views\RoteiroPadrao\Create.cshtml" />
     <Content Include="Views\RoteiroPadrao\Delete.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Details.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Index.cshtml" />
-    <Content Include="Views\RoteiroPadrao\Edit.cshtml" />
     <Content Include="Views\ItemRoteiro\Create.cshtml" />
     <Content Include="Views\ItemRoteiro\Delete.cshtml" />
     <Content Include="Views\ItemRoteiro\Index.cshtml" />
@@ -479,6 +478,7 @@
     <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\Home\HomeConfiguracao.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\Create.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\OutrosItens\Edit.cshtml" />
     <Content Include="Views\OutrosItens\Index.cshtml" />
     <Content Include="Views\ItemOutrosItensSelecionado\Create.cshtml" />
@@ -487,6 +487,15 @@
     <Content Include="Views\ItemOutrosItensSelecionado\Edit.cshtml" />
     <Content Include="Views\ItemOutrosItensSelecionado\Index.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\ListNaoSelecionados.cshtml" />
+=======
+    <Content Include="Views\Roteiro\Create.cshtml" />
+    <Content Include="Views\Roteiro\Delete.cshtml" />
+    <Content Include="Views\Roteiro\Index.cshtml" />
+    <Content Include="Views\Cerimonial\Create.cshtml" />
+    <Content Include="Views\Cerimonial\Delete.cshtml" />
+    <Content Include="Views\Cerimonial\Index.cshtml" />
+    <Content Include="Views\RoteiroPadrao\Index.cshtml" />
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -259,9 +259,11 @@ function CreateHorarioEditor(itemId) {
 		.css("width","40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_h", "0", 2, 23);
+			ConvertHorarioBack(itemId);
 		})
 		.focusout(function () {
 			FormatTextBox(itemId + "_h", "0", 2, 23);
+			ConvertHorarioBack(itemId);
 		})
 		.change(function () {
 			ConvertHorarioBack(itemId);
@@ -276,6 +278,7 @@ function CreateHorarioEditor(itemId) {
 		.css("width","40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_m", "0", 2, 59);
+			ConvertHorarioBack(itemId);
 		})
 		.focusout(function () {
 			FormatTextBox(itemId + "_m", "0", 2, 59);
