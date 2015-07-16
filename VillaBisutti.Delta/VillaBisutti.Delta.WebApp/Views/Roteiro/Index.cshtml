@@ -14,22 +14,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Evento.ContatoAssessoria)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Titulo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HorarioInicio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Importante)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Observacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoEvento)
         </th>
 		<th>
 			Opções
@@ -40,22 +31,13 @@
 @foreach (var item in Model) {
     <tr class="@(item.Importante ? "bg-warning" : "")" >
         <td>
-            @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Titulo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HorarioInicio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Importante)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Observacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoEvento)
         </td>
         <td>
            @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
