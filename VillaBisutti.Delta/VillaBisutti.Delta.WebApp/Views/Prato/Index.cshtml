@@ -16,6 +16,9 @@
 @Html.Action("Create", "Prato")
 <table class="table">
     <tr>
+		<th>
+			@Html.DisplayNameFor(model => model.TipoPrato.Nome)
+		</th>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
@@ -27,6 +30,9 @@
 
 @foreach (var item in Model) {
     <tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.TipoPrato.Nome)
+		</td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>

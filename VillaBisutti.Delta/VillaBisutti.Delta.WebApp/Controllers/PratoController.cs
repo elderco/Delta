@@ -53,8 +53,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Prato/Create
         public ActionResult Create()
         {
-			SelectList Prato = new SelectList(new data.Prato().GetCollection(0), "Id", "Nome");
-			ViewBag.Prato = Prato;
+			SelectList TipoPrato = new SelectList(new data.TipoPrato().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoPrato = TipoPrato;
             return View();
         }
 
@@ -86,6 +86,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+			SelectList TipoPrato = new SelectList(new data.TipoPrato().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoPrato = TipoPrato;
             return View(prato);
         }
 
