@@ -14,31 +14,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     public class RoteiroController : Controller
     {
 		// GET: /ItemRoteiro/
-		public ActionResult Index(int TipoEvento)
+		public ActionResult Index(int Id)
 		{
-			ViewBag.TipoEvento = TipoEvento;
-			return View(new data.ItemRoteiro().GetFromTipoEvento(TipoEvento));
+			ViewBag.Id = Id;
+			return View(new data.ItemRoteiro().GetFromEvento(Id));
 		}
-
-		// GET: /ItemRoteiro/Details/5
-		public ActionResult Details(int? id)
+		public ActionResult Create(int Id)
 		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			model.ItemRoteiro itemroteiro = new data.ItemRoteiro().GetElement(id.HasValue ? id.Value : 0);
-			if (itemroteiro == null)
-			{
-				return HttpNotFound();
-			}
-			return View(itemroteiro);
-		}
-
-		// GET: /ItemRoteiro/Create
-		public ActionResult Create(int TipoEvento)
-		{
-			ViewBag.TipoEvento = TipoEvento;
+			ViewBag.Id = Id;
 			return View();
 		}
 
@@ -50,37 +33,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,RoteiroId")] model.ItemRoteiro itemroteiro)
 		{
 			new data.ItemRoteiro().Insert(itemroteiro);
-			return RedirectToAction("Index", new { TipoEvento = (int)itemroteiro.TipoEvento });
-		}
-
-		// GET: /ItemRoteiro/Edit/5
-		public ActionResult Edit(int? id)
-		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			model.ItemRoteiro itemroteiro = new data.ItemRoteiro().GetElement(id.HasValue ? id.Value : 0);
-			if (itemroteiro == null)
-			{
-				return HttpNotFound();
-			}
-			return View(itemroteiro);
-		}
-
-		// POST: /ItemRoteiro/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,RoteiroPadraoId,RoteiroId")] model.ItemRoteiro itemroteiro)
-		{
-			if (ModelState.IsValid)
-			{
-				new data.ItemRoteiro().Update(itemroteiro);
-				return RedirectToAction("Index");
-			}
-			return View(itemroteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemRoteiro/Delete/5
@@ -103,9 +56,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(int id)
 		{
-			int TipoEvento = (int)(new data.ItemRoteiro().GetElement(id).TipoEvento);
+			int EventoId = (int)(new data.ItemRoteiro().GetElement(id).EventoId);
 			new data.ItemRoteiro().Delete(id);
-			return RedirectToAction("Index", new { TipoEvento = TipoEvento });
+			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		protected override void Dispose(bool disposing)

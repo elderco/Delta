@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemRoteiro>
-
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$(".PopUpActionLinks").click(function (e) {
+			e.preventDefault();
+			ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
+	});
+</script>
+@Html.Action("Create", "Roteiro")
 <table class="table">
     <tr>
         <th>
@@ -30,11 +31,14 @@
         <th>
             @Html.DisplayNameFor(model => model.TipoEvento)
         </th>
-        <th></th>
+		<th>
+			Opções
+		</th>
+		<th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="@(item.Importante ? "bg-warning" : "")" >
         <td>
             @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
         </td>
@@ -54,8 +58,8 @@
             @Html.DisplayFor(modelItem => item.TipoEvento)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+           @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+		</td>
     </tr>
 }
 
