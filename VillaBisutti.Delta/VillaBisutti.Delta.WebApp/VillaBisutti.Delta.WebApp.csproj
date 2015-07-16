@@ -178,11 +178,13 @@
     <Compile Include="Controllers\ItemMontagemController.cs" />
     <Compile Include="Controllers\ItemMontagemSelecionadoController.cs" />
     <Compile Include="Controllers\ItemOutrosItensController.cs" />
+    <Compile Include="Controllers\ItemOutrosItensSelecionadoController.cs" />
     <Compile Include="Controllers\ItemRoteiroController.cs" />
     <Compile Include="Controllers\ItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\ItemSomIluminacaoSelecionadoController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\MontagemController.cs" />
+    <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\SomIluminacaoController.cs" />
@@ -477,6 +479,14 @@
     <Content Include="Views\ItemMontagemSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\Home\HomeConfiguracao.cshtml" />
     <Content Include="Views\ItemMontagemSelecionado\Create.cshtml" />
+    <Content Include="Views\OutrosItens\Edit.cshtml" />
+    <Content Include="Views\OutrosItens\Index.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\Create.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\Delete.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\Details.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\Edit.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\Index.cshtml" />
+    <Content Include="Views\TipoItemOutrosItens\ListNaoSelecionados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,14 +12,16 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int EventoId { get; set; }
-		[Display(Name = "Evento")]
-		public Evento Evento { get; set; }
+        [Display(Name = "OutrosItens"), ForeignKey("EventoId")]
+        public OutrosItens OutrosItens { get; set; }
+        [Display(Name = "Evento")]
+        public Evento Evento { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
-		public int ItemBebidaId { get; set; }
-		[Display(Name = "Bebida")]
-		public ItemBebida ItemBebida { get; set; }
+        public int ItemOutrosItensId { get; set; }
+		[Display(Name = "OutrosItens")]
+		public ItemOutrosItens ItemOutrosItens { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
 		[Display(Name = "Contratado")]
@@ -28,17 +30,17 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecido pela Villa Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
-		[Display(Name = "Fornecedor Iniciado")]
+        [Display(Name = "Fornecedor Acionado")]
         public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade")]
 		public int Quantidade { get; set; }
-		[Display(Name = "Contato Fornecimento")]
+		[Display(Name = "Contato Fornecedor")]
 		public string ContatoFornecimento { get; set; }
-		[Display(Name = "Observacoes")]
+		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
 		[Display(Name = "Fotos")]
 		public List<Foto> Fotos { get; set; }
-		[Display(Name = "Horario de Entrega")]
+		[Display(Name = "Horário de Entrega")]
 		public int HorarioEntrega { get; set; }
 		[NotMapped]
 		public Horario Entrega
@@ -52,5 +54,29 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioEntrega = value.ToInt();
 			}
 		}
+        [NotMapped]
+        public bool StateErrorBisutti
+        {
+            get
+            {
+                return (
+                    (ItemOutrosItens != null && (ItemOutrosItens.Quantidade < Quantidade))
+                    );
+            }
+        }
+        [NotMapped]
+        public bool StateErrorContratante
+        {
+            get
+            { return String.IsNullOrEmpty(ContatoFornecimento) || HorarioEntrega == 0; }
+        }
+        [NotMapped]
+        public bool StateErrorFornecedor
+        {
+            get
+            {
+                return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
+            }
+        }
 	}
 }

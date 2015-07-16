@@ -80,7 +80,7 @@ namespace VillaBisutti.Delta.Core.Data
         private IQueryable<Model.TipoItemMontagem> GetTipoItensPreenchidos(int id)
         {
             return context.ItemMontagemSelecionado.Include(im => im.ItemMontagem).Include(im => im.ItemMontagem.TipoItemMontagem)
-                                            .Where(im => im.Id == id).Select(im => im.ItemMontagem.TipoItemMontagem);
+                                            .Where(im => im.EventoId == id).Select(im => im.ItemMontagem.TipoItemMontagem);
         }
     }
 }
