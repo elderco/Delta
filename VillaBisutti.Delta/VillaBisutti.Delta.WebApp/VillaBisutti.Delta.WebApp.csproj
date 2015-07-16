@@ -481,8 +481,6 @@
     <Content Include="Views\Roteiro\Index.cshtml" />
     <Content Include="Views\Cerimonial\Create.cshtml" />
     <Content Include="Views\Cerimonial\Delete.cshtml" />
-    <Content Include="Views\Cerimonial\Details.cshtml" />
-    <Content Include="Views\Cerimonial\Edit.cshtml" />
     <Content Include="Views\Cerimonial\Index.cshtml" />
     <Content Include="Views\RoteiroPadrao\Index.cshtml" />
   </ItemGroup>
