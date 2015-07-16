@@ -11,9 +11,9 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
-{
-		<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
+<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
+	@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+	{
 		<td>
 			@Html.AntiForgeryToken()
 			<input type="hidden" name="Id" value="@(Model.Id)" />
@@ -37,5 +37,6 @@
 			<a href="@Url.Action("Delete", "ItemSomIluminacaoSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
 				<span class="menu-icon fa fa-trash"></span>
 			</a>
-	</tr>
-}
+		</td>
+	}
+</tr>
