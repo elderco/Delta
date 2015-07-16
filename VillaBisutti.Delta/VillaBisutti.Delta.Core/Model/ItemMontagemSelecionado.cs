@@ -64,18 +64,18 @@ namespace VillaBisutti.Delta.Core.Model
                     );
             }
         }
-
+        [NotMapped]
         public bool StateErrorContratante
         {
             get
-            { return false; }
+            { return String.IsNullOrEmpty(ContatoFornecimento) || HorarioEntrega == 0; }
         }
-
+        [NotMapped]
         public bool StateErrorFornecedor
         {
             get
 			{
-				return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
+				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
 			}
         }
     }
