@@ -21,12 +21,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Prato/AtribuirPratoTipoPrato
 		public ActionResult AtribuirPratoTipoPrato(int pratoId, int tipoPratoId)
 		{
-			model.Prato prato = new data.Prato().GetElement(pratoId);
-			model.TipoPrato tipo = new data.TipoPrato().GetElement(tipoPratoId);
-			if (prato.TipoPrato == null)
-				prato.TipoPrato = new List<model.TipoPrato>();
-			prato.TipoPrato.Add(tipo);
-			new data.Prato().Update(prato);
+			//model.Prato prato = new data.Prato().GetElement(pratoId);
+			//model.TipoPrato tipo = new data.TipoPrato().GetElement(tipoPratoId);
+			//if (prato.TipoPrato == null)
+			//	prato.TipoPrato = new List<model.TipoPrato>();
+			//prato.TipoPrato.Add(tipo);
+			//new data.Prato().Update(prato);
 			return RedirectToAction("ListPratos", "TipoPrato");
 		}
 		// GET: /Prato/
