@@ -6,128 +6,97 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class CerimonialController : Controller
     {
-        private Context db = new Context();
-
         // GET: /Cerimonial/
-        public ActionResult Index()
-        {
-            var itemcerimonial = db.ItemCerimonial.Include(i => i.Evento);
-            return View(itemcerimonial.ToList());
-        }
+		public ActionResult Index(int EventoId)
+		{
+			ViewBag.EventoId = EventoId;
+			return View(new data.ItemCerimonial().GetFromTipoEvento(EventoId));
+		}
 
-        // GET: /Cerimonial/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemcerimonial);
-        }
+		// GET: /Cerimonial/Create
+		public ActionResult Create(int EventoId)
+		{
+			ViewBag.EventoId = EventoId;
+			return View();
+		}
 
-        // GET: /Cerimonial/Create
-        public ActionResult Create()
-        {
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria");
-            return View();
-        }
+		// POST: /Cerimonial/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,CerimoniaId")] model.ItemCerimonial itemcerimonial)
+		{
+			new data.ItemCerimonial().Insert(itemcerimonial);
+			return RedirectToAction("Index", new { TipoEvento = (int)itemcerimonial.EventoId });
 
-        // POST: /Cerimonial/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ItemCerimonial.Add(itemcerimonial);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+		}
 
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemcerimonial.EventoId);
-            return View(itemcerimonial);
-        }
+		// GET: /Cerimonial/Edit/5
+		public ActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.ItemCerimonial itemcerimonial = new data.ItemCerimonial().GetElement(id.HasValue ? id.Value : 0);
+			if (itemcerimonial == null)
+			{
+				return HttpNotFound();
+			}
+			return View(itemcerimonial);
+		}
 
-        // GET: /Cerimonial/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemcerimonial.EventoId);
-            return View(itemcerimonial);
-        }
+		// POST: /Cerimonial/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,EventoId")] model.ItemCerimonial itemcerimonial)
+		{
+			if (ModelState.IsValid)
+			{
+				new data.ItemCerimonial().Update(itemcerimonial);
+				return RedirectToAction("Index");
+			}
+			return View(itemcerimonial);
+		}
 
-        // POST: /Cerimonial/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,EventoId")] ItemCerimonial itemcerimonial)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(itemcerimonial).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemcerimonial.EventoId);
-            return View(itemcerimonial);
-        }
+		// GET: /Cerimonial/Delete/5
+		public ActionResult Delete(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.ItemCerimonial itemcerimonial = new data.ItemCerimonial().GetElement(id.HasValue ? id.Value : 0);
+			if (itemcerimonial == null)
+			{
+				return HttpNotFound();
+			}
+			return View(itemcerimonial);
+		}
 
-        // GET: /Cerimonial/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            if (itemcerimonial == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemcerimonial);
-        }
+		// POST: /Cerimonial/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			int EventoId = (int)(new data.ItemCerimonial().GetElement(id).EventoId);
+			new data.ItemCerimonial().Delete(id);
+			return RedirectToAction("Index", new { EventoId = EventoId });
+		}
 
-        // POST: /Cerimonial/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ItemCerimonial itemcerimonial = db.ItemCerimonial.Find(id);
-            db.ItemCerimonial.Remove(itemcerimonial);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+		}
+	}
 }
