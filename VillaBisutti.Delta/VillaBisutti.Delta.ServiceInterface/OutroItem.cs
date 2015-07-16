@@ -14,11 +14,11 @@ namespace VillaBisutti.Delta.ServiceInterface
 {
 	public class OutroItem : Service
 	{
-		public model.OutrosItens Get(svc.OutroItem.Get request)
+        public model.ItemOutrosItensSelecionado Get(svc.OutroItem.Get request)
 		{
 			return new data.ItemOutrosItensSelecionado().GetElement(request.Id);
 		}
-		public List<model.OutrosItens> Get(svc.OutroItem.GetAll request)
+        public List<model.ItemOutrosItensSelecionado> Get(svc.OutroItem.GetAll request)
 		{
 			return new data.ItemOutrosItensSelecionado().GetCollection(0);
 		}

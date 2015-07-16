@@ -111,6 +111,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return RedirectToAction("Index", "ItemOutrosItens");
         }
 
+        public ActionResult ListNaoSelecionados(int id)
+        {
+            return View(new data.TipoItemOutrosItens().ListNaoSelecionados(id));
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
