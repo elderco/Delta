@@ -13,6 +13,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class PratoController : Controller
     {
+		// GET: /Prato/Atribuir
+		public ActionResult Atribuir()
+		{
+			return View();
+		}
         // GET: /Prato/
         public ActionResult Index()
         {
