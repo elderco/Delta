@@ -1,9 +1,22 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Prato
 @{
 	Layout = null;
+	//ViewBag.Title = "Create";
 }
 @Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
+	var enviado;
+	function Buscar(texto, item) {
+		window.clearTimeout(enviado);
+		if (texto == undefined)
+			texto = "";
+		if (item == undefined || isNaN(item)|| item == "")
+			item = 0;
+		var url = "@Url.Action("Buscar", "Prato", new { combo = "~0", texto = "~1" })";
+		url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+		enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
+
+	}
 	$(document).ready(function () {
 		$("#EditarTipoPrato").attr("disabled", "disabled");
 		$("#ExcluirTipoPrato").attr("disabled", "disabled");
@@ -19,13 +32,19 @@
 			var urlEditar = "@(Url.Action("Edit", "TipoPrato"))/";
 			var urlDeletar = "@(Url.Action("Delete", "TipoPrato"))/";
 			$("#EditarTipoPrato").click(function () {
-				ShowPopUp(urlEditar + id, "Editar tipo de prato", 790);
+				ShowPopUp(urlEditar + id, "Editar tipo de item de prato", 790);
 			});
 			$("#ExcluirTipoPrato").click(function () {
-				ShowPopUp(urlDeletar + id, "Excluir tipo de prato", 790);
-			});
+				ShowPopUp(urlDeletar + id, "Excluir tipo de item de prato", 790);
+		    });
+			Buscar($("#Nome").val(), $("#TipoPratoId").val());
+		});
+		$("#Nome").keyup(function () {
+			if($(this).val().length > 3)
+				Buscar($("#Nome").val(), $("#TipoPratoId").val());
 		});
 		PreventNegativeNumbers("Quantidade");
+		Buscar($("#Nome").val(), $("#TipoPratoId").val());
 	});
 </script>
 
@@ -58,10 +77,15 @@
 				@Html.ValidationMessageFor(model => model.Nome)
 			</div>
 		</div>
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-4">
+
+		<div class="form-group col-md-6">
+			<div class="col-md-offset-4 col-md-8">
 				<input type="submit" value="Salvar" class="btn btn-default form-control" />
 			</div>
 		</div>
 	</div>
 	}
+<div class="clear-fix"></div>
+<div id="ResultView" class="row col-sm-12">
+
+</div>

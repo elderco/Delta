@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Prato>
 @{
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-    //ViewBag.Title = "Index";
+	//ViewBag.Title = "Index";
 }
 @section scripts {
 	<script language="javascript" type="text/javascript">
@@ -14,33 +14,3 @@
 	</script>
 }
 @Html.Action("Create", "Prato")
-<table class="table">
-    <tr>
-		<th>
-			@Html.DisplayNameFor(model => model.TipoPrato.Nome)
-		</th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-		<th>
-			Opções
-		</th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-		<td>
-			@Html.DisplayFor(modelItem => item.TipoPrato.Nome)
-		</td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
-            @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
-        </td>
-    </tr>
-}
-
-</table>
