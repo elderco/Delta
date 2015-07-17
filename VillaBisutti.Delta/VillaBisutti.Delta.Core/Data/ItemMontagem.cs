@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Data
 {
 	public class ItemMontagem : DataAccessBase<Model.ItemMontagem>
 	{
+
 		public override void Update(Model.ItemMontagem entity)
 		{
 			Model.ItemMontagem original = context.ItemMontagem.FirstOrDefault(a => a.Id == entity.Id);
@@ -37,5 +38,13 @@ namespace VillaBisutti.Delta.Core.Data
         {
             return context.ItemMontagem.Where(m => m.TipoItemMontagemId == tipoId).ToList();
         }
+		public List<Model.ItemMontagem> Filtrar(int tipoId, string str)
+		{
+			List<Model.ItemMontagem> retorno = context.ItemMontagem.Include(m => m.TipoItemMontagem)
+				.Where(item => (item.TipoItemMontagemId == tipoId || tipoId == 0)
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+				.ToList();
+			return retorno;
+		}
     }
 }
