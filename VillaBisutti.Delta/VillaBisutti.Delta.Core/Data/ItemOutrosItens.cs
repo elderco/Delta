@@ -35,7 +35,7 @@ namespace VillaBisutti.Delta.Core.Data
 
         public List<Model.ItemOutrosItens> ListarPorTipo(int tipoId)
         {
-            throw new NotImplementedException();
+            return context.ItemOutrosItens.Where(oi => oi.TipoItemOutrosItensId == tipoId).ToList();
         }
     }
 }
