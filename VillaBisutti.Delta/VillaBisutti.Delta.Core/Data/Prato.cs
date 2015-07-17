@@ -51,5 +51,13 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 			return new DTO.PratoCardapio { Cardapio = c, Prato = p };
 		}
-	}
+		public List<Model.Prato> Filtrar(int tipoId, string str)
+		{
+			List<Model.Prato> retorno = context.Prato.Include(m => m.TipoPrato)
+				.Where(item => (item.TipoPratoId == tipoId || tipoId == 0)
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+				.ToList();
+			return retorno;
+		}
+    }
 }

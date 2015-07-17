@@ -13,10 +13,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemBebidaController : Controller
     {
-        // GET: /ItemBebida/
+		//Filtro/
+		public ActionResult Buscar(int combo, string texto)
+		{
+			return View(new data.ItemBebida().Filtrar(combo, texto));
+		}
+		
+		// GET: /ItemBebida/
         public ActionResult Index()
         {
-            return View(new data.ItemBebida().GetCollection(0));
+            return View();
         }
 
         // GET: /ItemBebida/Details/5

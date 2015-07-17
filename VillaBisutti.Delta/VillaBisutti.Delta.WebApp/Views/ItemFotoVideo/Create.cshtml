@@ -6,6 +6,18 @@
 }
 @Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
+	var enviado;
+	function Buscar(texto, item) {
+		window.clearTimeout(enviado);
+		if (texto == undefined)
+			texto = "";
+		if (item == undefined || isNaN(item)|| item == "")
+			item = 0;
+		var url = "@Url.Action("Buscar", "ItemFotoVideo", new { combo = "~0", texto = "~1" })";
+		url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+		enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
+
+	}
 	$(document).ready(function () {
 		$("#EditarTipoFotoVideo").attr("disabled", "disabled");
 		$("#ExcluirTipoFotoVideo").attr("disabled", "disabled");
@@ -26,8 +38,14 @@
 			$("#ExcluirTipoFotoVideo").click(function () {
 				ShowPopUp(urlDeletar + id, "Excluir tipo de item de foto e video", 790);
 			});
-		});
-		PreventNegativeNumbers("Quantidade");
+		Buscar($("#Nome").val(), $("#TipoItemFotoVideoId").val());
+	});
+	$("#Nome").keyup(function () {
+		if($(this).val().length > 3)
+			Buscar($("#Nome").val(), $("#TipoItemFotoVideoId").val());
+	});
+	PreventNegativeNumbers("Quantidade");
+	Buscar($("#Nome").val(), $("#TipoItemFotoVideoId").val());
 	});
 </script>
 
@@ -76,3 +94,7 @@
 		</div>
 		</div>
 }
+<div class="clear-fix"></div>
+<div id="ResultView" class="row col-sm-12">
+
+</div>

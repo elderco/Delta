@@ -34,10 +34,15 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			//new data.Prato().Update(prato);
 			return RedirectToAction("ListPratos", "TipoPrato");
 		}
+		public ActionResult Buscar(int combo, string texto)
+		{
+			return View(new data.Prato().Filtrar(combo, texto));
+		}
+
 		// GET: /Prato/
         public ActionResult Index()
         {
-			return View(new data.Prato().GetCollection(0));
+			return View();
         }
 
         // GET: /Prato/Details/5

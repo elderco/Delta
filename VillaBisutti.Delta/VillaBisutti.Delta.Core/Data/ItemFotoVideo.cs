@@ -43,5 +43,13 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemFotoVideo.Where(ib => ib.TipoItemFotoVideoId == tipoId).ToList();
 		}
+		public List<Model.ItemFotoVideo> Filtrar(int tipoId, string str)
+		{
+			List<Model.ItemFotoVideo> retorno = context.ItemFotoVideo.Include(m => m.TipoItemFotoVideo)
+				.Where(item => (item.TipoItemFotoVideoId == tipoId || tipoId == 0)
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+				.ToList();
+			return retorno;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemMontagem>
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemOutrosItens>
 @{
 	Layout = null;
 }
@@ -13,7 +13,7 @@
 <table class="table">
 	<tr>
 		<th>
-			@Html.DisplayNameFor(model => model.TipoItemMontagem.Nome)
+			@Html.DisplayNameFor(model => model.TipoItemOutrosItens.Nome)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.Nome)
@@ -26,11 +26,12 @@
 		</th>
 		<th></th>
 	</tr>
+
 	@foreach (var item in Model)
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.TipoItemMontagem.Nome)
+				@Html.DisplayFor(modelItem => item.TipoItemOutrosItens.Nome)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Nome)
@@ -44,4 +45,5 @@
 			</td>
 		</tr>
 	}
+
 </table>

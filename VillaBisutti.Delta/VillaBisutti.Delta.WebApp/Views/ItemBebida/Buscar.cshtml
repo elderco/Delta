@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemMontagem>
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemBebida>
 @{
 	Layout = null;
 }
@@ -13,7 +13,7 @@
 <table class="table">
 	<tr>
 		<th>
-			@Html.DisplayNameFor(model => model.TipoItemMontagem.Nome)
+			@Html.DisplayNameFor(model => model.TipoItemBebida.Nome)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.Nome)
@@ -30,7 +30,7 @@
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.TipoItemMontagem.Nome)
+				@Html.DisplayFor(modelItem => item.TipoItemBebida.Nome)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Nome)
