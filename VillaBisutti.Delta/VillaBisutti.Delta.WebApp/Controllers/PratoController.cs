@@ -19,9 +19,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new dto.Prato());
 		}
 		// GET: /Prato/AtribuirPratoCardapio?pratoId=5&cardapioId=5
-		public ActionResult AtribuirPratoCardapio(int pratoId, int cardapioId)
+		public ActionResult IncluirPratoCardapio(int pratoId, int cardapioId)
 		{
-			return View();
+			return View(new data.Prato().IncluirEmCardapio(pratoId, cardapioId));
 		}
 		// GET: /Prato/RemoverPratoCardapio/?pratoId=5&cardapioId=5
 		public ActionResult RemoverPratoCardapio(int pratoId, int tipoPratoId)

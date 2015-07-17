@@ -91,6 +91,7 @@
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="DTO\Prato.cs" />
+    <Compile Include="DTO\PratoCardapio.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Model\Bebida.cs" />
     <Compile Include="Model\BoloDoceBemCadaso.cs" />

@@ -23,21 +23,21 @@ function ShowPopUp(url, title, w, h) {
 	$("body").append($popUpContainer);
 
 	title = title ? title : 'Atenção';
-    var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
-    var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
-    var URL = url.indexOf("?") >= 0 ? "&" : "?";
-    URL = url + URL + "sid=" + Math.random();
+	var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
+	var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
+	var URL = url.indexOf("?") >= 0 ? "&" : "?";
+	URL = url + URL + "sid=" + Math.random();
 
-    $('.modal-title').text(title);
-    $('.modal-dialog').css('width', pw + 'px');
-    $('.modal-body').css('height', ph + 'px');
-    $('.modal-body').load(URL, function (response, status, xhr) {
-    	HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
-    });
-    $("#PopUp").modal('show');
+	$('.modal-title').text(title);
+	$('.modal-dialog').css('width', pw + 'px');
+	$('.modal-body').css('height', ph + 'px');
+	$('.modal-body').load(URL, function (response, status, xhr) {
+		HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
+	});
+	$("#PopUp").modal('show');
 }
 function ShowPopUp_2(url, title, w, h) {
-    var $div = $("<div/>").attr("id", "PopUp");
+	var $div = $("<div/>").attr("id", "PopUp");
 	$("body").append($div);
 	var URL = url.indexOf("?") >= 0 ? "&" : "?";
 	URL = url + URL + "sid=" + Math.random();
@@ -209,7 +209,7 @@ function SetCurrentY(increase) {
 		currentY = 5;
 	}
 }
-function AddStack(url) {
+function AddStack(url, isNotHTML) {
 	var $stackContainer;
 	if ($("#StackContainer").length) {
 		$stackContainer = $("#StackContainer");
@@ -223,7 +223,6 @@ function AddStack(url) {
 		$stackContainer.appendTo($("body"));
 	}
 	var id = ("stackBox" + Math.random()).replace(".", "_");
-	url += (url.replace("?", "") == url ? "?" : "&") + "HTMLElementId=" + id
 	var $container = $("<div/>")
 		.attr("id", id)
 		.addClass("ui-corner-all")
@@ -234,10 +233,16 @@ function AddStack(url) {
 		.css("margin", "5px")
 		.css("text-align", "justify")
 		.css("z-index", GetTopMostIndex());
+	if (!isNotHTML) {
+		url += (url.replace("?", "") == url ? "?" : "&") + "HTMLElementId=" + id
+		LoadPage(url, id);
+	} else {
+		$container.html(url)
+	}
 	SetCurrentY(true);
 	$container.appendTo($stackContainer);
 	RepositionStack();
-	LoadPage(url, id);
+	RemoveStack(id);
 }
 function RepositionStack() {
 	$("#StackContainer").css("top", GetCurrentY() + "px");
@@ -256,7 +261,7 @@ function CreateHorarioEditor(itemId) {
 		.attr("min", "0")
 		.attr("max", "23")
 		.attr("id", itemId + "_h")
-		.css("width","40px")
+		.css("width", "40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_h", "0", 2, 23);
 			ConvertHorarioBack(itemId);
@@ -275,7 +280,7 @@ function CreateHorarioEditor(itemId) {
 		.attr("max", "59")
 		.attr("step", "5")
 		.attr("id", itemId + "_m")
-		.css("width","40px")
+		.css("width", "40px")
 		.keyup(function () {
 			FormatTextBox(itemId + "_m", "0", 2, 59);
 			ConvertHorarioBack(itemId);
@@ -321,8 +326,7 @@ function PreventNegativeNumbers(itemId) {
 		}
 	});
 }
-function FormatTextBox(itemId, char, len, limit)
-{
+function FormatTextBox(itemId, char, len, limit) {
 	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
 	var txt = parseInt($(itemId).val()) + "";
 	if (isNaN(txt))

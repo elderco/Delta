@@ -4,13 +4,17 @@
 }
 <script language="javascript" type="text/javascript">
 	function RemoverPrato(cardapioId, pratoId) {
-		var url = '@Url.Content("~/Cardapio/RemoverPrato/")?cardapioId={0}&pratoId={1}';
-		url = url.replace("{0}", cardapioId).replace("{1}", pratoId);
+		var url = '@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = "PrAtOiD", cardapioId = "CaRdApIoId" })';
+		url = url.replace("CaRdApIoId", cardapioId).replace("PrAtOiD", pratoId).replace("&amp;", "&");
 		AddStack(url);
 	}
+	function AvisarPratoExistente(cardapio, prato) {
+		AddStack("O prato <em>" + prato + "</em> já está incluso no cardápio <em>" + cardapio + "</em><br/>Nada foi alterado", true)
+	}
 	function IncluirPrato(cardapioId, pratoId) {
-		var url = '@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = "{0}", cardapioId = "{1}" })';
-		url = url.replace("{0}", pratoId).replace("{1}", cardapioId);
+		var url = '@Url.Action("IncluirPratoCardapio", "Prato", new { pratoId = "PrAtOiD", cardapioId = "CaRdApIoId" })';
+		url = url.replace("CaRdApIoId", cardapioId).replace("PrAtOiD", pratoId).replace("&amp;", "&");
+		alert(url);
 		AddStack(url);
 	}
 	function SortItems(containerId) {
@@ -27,14 +31,11 @@
 		});
 	}
 	$(document).ready(function () {
-		SetPanels("#PainelCardapios", "#PainelGrupos");
-		$(".collapsible-header").click(function () {
-			$($(this).attr("which")).toggle("clip", {}, 100);
+		$(".collapsible").click(function () {
+			var id = "#" + $(this).attr("data-toggle");
+			$(id).toggle("clip", {}, 50);
 		});
-		$("#PainelCardapios li:not(.placeholder)").click(function () {
-			RemoverPrato($(this).attr("cardapioId"), $(this).attr("pratoId"));
-		});
-		$("#PainelGrupos li").draggable({
+		$("#PainelTipoComida li").draggable({
 			appendTo: "body",
 			helper: "clone"
 		});
@@ -44,12 +45,16 @@
 			accept: ":not(.ui-sortable-helper)",
 			drop: function (event, ui) {
 				var items = $(this).find("li");
-				var id = ui.draggable.attr("id").replace("Prato_", "");
-				var cId = $(this).attr("id").replace("Cardapio_", "");
+				var args = ui.draggable.attr("id").split("_")
+				var id = args[2];
+				var cId = args[1];
 				var tem = false;
+				var Cardapio = $("#Cardapio_H_" + cId).text();
+				var Prato = ui.draggable.text();
 				items.each(function () {
-					if ($(this).attr("pratoId") == id) {
+					if ($(this).attr("id") == "PratoCardapio_" + cId + "_" + id) {
 						tem = true;
+						AvisarPratoExistente(Cardapio, Prato);
 						return false;
 					}
 				});
@@ -57,14 +62,13 @@
 					return false;
 				}
 				var $li = $("<li/>").text(ui.draggable.text())
-				.attr("title", "clique para remover")
-				.attr("id", "Item_" + id + "_" + cId)
-				.attr("pratoId", id)
-				.attr("cardapioId", cId)
-				.appendTo(this)
-				.click(function () {
-					RemoverPrato(cId, id);
-				});
+					.attr("id", "PratoCardapio_" + cId + "_" + id)
+					.attr("class", "list-group-item");
+				var $aHref = $("<a />").text("remover")
+					.attr("href", "#")
+					.attr("class", "badge bg-danger")
+					.appendTo($li);
+				$li.appendTo(this);
 				IncluirPrato(cId, id);
 				SortItems($(this).attr("id"));
 			}
@@ -76,12 +80,11 @@
 	@foreach (VillaBisutti.Delta.Core.Model.Cardapio c in Model.Cardapios)
 	{
 		<div class="panel panel-info">
-			<div class="panel-heading">@(c.Nome)</div>
-			<!--make it collapsible-->
-			<ol class="list-group ">
+			<div id="Cardapio_H_@(c.Id)" class="panel-heading collapsible" data-toggle="Cardapio_@(c.Id)">@(c.Nome)</div>
+			<ol class="list-group" id="Cardapio_@(c.Id)">
 				@foreach (VillaBisutti.Delta.Core.Model.Prato p in c.Pratos)
 				{
-					<li class="list-group-item" id="pratocardapio_@(c.Id)_@(p.Id)">
+					<li class="list-group-item" id="PratoCardapio_@(c.Id)_@(p.Id)">
 						@(p.Nome)
 						<a href="#" class="badge bg-danger">remover</a>
 					</li>
@@ -94,9 +97,8 @@
 	@foreach (VillaBisutti.Delta.Core.Model.TipoPrato t in Model.TiposDePrato)
 	{
 		<div class="panel panel-info">
-			<div class="panel-heading">@(t.Nome)</div>
-			<!--make it collapsible-->
-			<ol class="list-group">
+			<div class="panel-heading collapsible" data-toggle="Tipo_@(t.Id)">@(t.Nome)</div>
+			<ol class="list-group" id="Tipo_@(t.Id)">
 				@foreach (VillaBisutti.Delta.Core.Model.Prato p in t.Pratos)
 				{
 					<li class="list-group-item" id="PratoTipo_@(t.Id)_@(p.Id)">

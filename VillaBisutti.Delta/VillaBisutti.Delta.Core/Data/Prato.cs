@@ -41,5 +41,15 @@ namespace VillaBisutti.Delta.Core.Data
         {
 			return context.Prato.Where(ib => ib.TipoPratoId == tipoId).ToList();
         }
-    }
+		public DTO.PratoCardapio IncluirEmCardapio(int pratoId, int cardapioId)
+		{
+			Model.Prato p = context.Prato.Find(pratoId);
+			Model.Cardapio c = context.Cardapio.Find(cardapioId);
+			if(p.Cardapios == null)
+				p.Cardapios = new List<Model.Cardapio>();
+			p.Cardapios.Add(c);
+			context.SaveChanges();
+			return new DTO.PratoCardapio { Cardapio = c, Prato = p };
+		}
+	}
 }
