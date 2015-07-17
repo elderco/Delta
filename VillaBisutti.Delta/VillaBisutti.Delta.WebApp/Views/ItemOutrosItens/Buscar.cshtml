@@ -1,39 +1,49 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.OutrosItens>
-
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemOutrosItens>
 @{
-    ViewBag.Title = "Buscar";
+	Layout = null;
 }
-
-<h2>Buscar</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$(".PopUpActionLinks").click(function (e) {
+			e.preventDefault();
+			ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
+	});
+</script>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Evento.ContatoAssessoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-        <th></th>
-    </tr>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.TipoItemOutrosItens.Nome)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Nome)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Quantidade)
+		</th>
+		<th>
+			Opções
+		</th>
+		<th></th>
+	</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.ContatoAssessoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EventoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EventoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EventoId })
-        </td>
-    </tr>
-}
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.TipoItemOutrosItens.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Quantidade)
+			</td>
+			<td>
+				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			</td>
+		</tr>
+	}
 
 </table>
