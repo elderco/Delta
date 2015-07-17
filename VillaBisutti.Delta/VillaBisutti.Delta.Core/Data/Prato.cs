@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,10 +27,19 @@ namespace VillaBisutti.Delta.Core.Data
             context.Prato.Add(entity);
 			context.SaveChanges();
 		}
-
-        protected override List<Model.Prato> GetCollection()
+		protected override List<Model.Prato> GetCollection()
+		{
+			return context.Prato.Include(i => i.TipoPrato).ToList();
+		}
+		public List<Model.Prato> GetFromTipo(int tipoId)
+		{
+			return context.Prato.Include(i => i.TipoPrato).Where(
+				(i => i.TipoPratoId == tipoId || tipoId == 0)
+				).ToList();
+		}
+		public List<Model.Prato> ListarPorTipo(int tipoId)
         {
-            return context.Prato.ToList();
+			return context.Prato.Where(ib => ib.TipoPratoId == tipoId).ToList();
         }
     }
 }
