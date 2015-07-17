@@ -12,11 +12,16 @@ using data = VillaBisutti.Delta.Core.Data;
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemFotoVideoController : Controller
-    { 
+    {
+		//Filtro/
+		public ActionResult Buscar(int combo, string texto)
+		{
+			return View(new data.ItemFotoVideo().Filtrar(combo, texto));
+		}
         // GET: /ItemFotoVideo/
         public ActionResult Index()
         {
-			return View(new data.ItemFotoVideo().GetCollection(0));
+			return View();
         }
 
         // GET: /ItemFotoVideo/Details/5
