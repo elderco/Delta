@@ -10,8 +10,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Prato</h4>
-        <hr />
+
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
@@ -26,7 +25,7 @@
 			@Html.LabelFor(model => model.TipoPrato, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				@Html.DropDownList("TipoPratoId", (IEnumerable<SelectListItem>)ViewBag.TipoPrato, String.Empty)
-				@Html.ValidationMessageFor(model => model.TipoPratoId)
+				@Html.ValidationMessageFor(model => model.TipoPrato)
 			</div>
 		</div>
 
