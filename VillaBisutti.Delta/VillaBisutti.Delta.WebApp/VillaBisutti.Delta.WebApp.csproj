@@ -501,6 +501,7 @@
     <Content Include="Views\ItemOutrosItensSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemOutrosItensSelecionado\EditFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemOutrosItens\ListarPorTipo.cshtml" />
+    <Content Include="Views\ItemMontagem\Buscar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
