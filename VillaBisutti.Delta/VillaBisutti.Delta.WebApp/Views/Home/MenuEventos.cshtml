@@ -2,21 +2,40 @@
 @{
 	Layout = null;
 }
+<script language="javascript" type="text/javascript">
+	//TODO: Paulete, faça funcionar o submenu, PELOAMORDEDEUUUUUSSSS!
+	$(document).ready(function () {
+		$(".casa-submenu")
+			.mouseover(function () {
+				if ($(this).hasClass("disabled"))
+					return;
+				$(this).addClass("open");
+				var $subMenu = $("#" + $(this).attr("data-toggle"));
+				$subMenu
+					.css("position", "absolute")
+					.css("margin-left", -250);
+				//alert($subMenu.css("left"));
+			})
+			.mouseleave(function () {
+				$(this).removeClass("open");
+			});
+	});
+</script>
 @foreach (VillaBisutti.Delta.Core.Model.Local item in Model)
 {
-	<li>
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+	<li data-toggle="CasaSubMenu@(item.Id)" class="casa-submenu @(item.Eventos.Count() > 0 ? "dropdown-submenu" : "disabled")">
+		<a tabindex="-1" href="#">
 			<i class="menu-icon fa fa-caret-right"></i>
-			@(item.NomeCasa)
+			<span class="menu-text"> @(item.NomeCasa)</span>
 		</a>
 		<b class="arrow"></b>
 		@if (item.Eventos.Count() > 0)
 		{
-			<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+			<ul class="casa-submenu-menu dropdown-menu" id="CasaSubMenu@(item.Id)">
 				@foreach (VillaBisutti.Delta.Core.Model.Evento e in item.Eventos)
 				{
 					<li>
-						<a href="@Url.Action("Index", "Evento", new { Id = e.Id })">
+						<a href="@Url.Action("Details", "Evento", new { Id = e.Id })">
 							<i class="menu-icon fa fa-caret-right"></i>
 							@(e.Data.ToString("dd/MM/yyyy")) - @(e.NomeHomenageados)
 						</a>

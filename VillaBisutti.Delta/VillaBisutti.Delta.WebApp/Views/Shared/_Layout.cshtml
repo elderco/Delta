@@ -53,7 +53,7 @@
 							<i class="menu-icon fa fa-calendar"></i>
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
-						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
 							<li>
 								<a href="@Url.Action("Create", "Evento")">
 									<i class="ace-icon fa fa-plus"></i>
@@ -62,10 +62,7 @@
 								<b class="arrow"></b>
 							</li>
 							<li class="divider"></li>
-
 							@Html.Action("MenuEventos", "Home")
-
-
 						</ul>
 					</li>
 					<li class="transparent">

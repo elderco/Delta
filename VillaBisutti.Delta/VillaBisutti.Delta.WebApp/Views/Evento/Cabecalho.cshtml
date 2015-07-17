@@ -15,17 +15,17 @@
 
 <div class="col-xs-12 widget-container-col" style="min-height: 50px; margin-bottom: 20px">
     <div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
-        <div class="widget-header widget-header-large">
-            <h4 class="widget-title">
-                @(Model.Data.ToString("dd/MM/yyyy"))
-                <i class="ace-icon fa fa-angle-right"> </i>
-                @(Model.Local.NomeCasa)
-                <i class="ace-icon fa fa-angle-right"> </i>
-                @(Model.NomeHomenageados)
-            </h4>
+		<div class="widget-header widget-header-large">
+			<h4 class="widget-title" data-toggle="collapse" data-target="#CabecalhoEvento">
+				@(Model.Data.ToString("dd/MM/yyyy"))
+				<i class="ace-icon fa fa-angle-right"> </i>
+				@(Model.Local.NomeCasa)
+				<i class="ace-icon fa fa-angle-right"> </i>
+				@(Model.NomeHomenageados)
+			</h4>
 
 			<div class="widget-toolbar">
-				<a href="#" data-toggle="collapse" data-target="#collapseExample">
+				<a href="#" data-toggle="collapse" data-target="#CabecalhoEvento">
 
 					<i class="ace-icon fa fa-plus white"></i>
 					<font color="White">Detalhes</font>
@@ -39,8 +39,8 @@
 				</a>
 			</div>
 
-        </div>
-        <div class="widget-body collapse" id="collapseExample">
+		</div>
+        <div class="widget-body in" id="CabecalhoEvento">
             <div class="widget-main">
                 <div class="alert alert-info container-fluid">
                     <div class="col-sm-4">
