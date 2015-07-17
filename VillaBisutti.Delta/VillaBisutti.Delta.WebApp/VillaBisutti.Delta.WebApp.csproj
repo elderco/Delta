@@ -503,6 +503,7 @@
     <Content Include="Views\ItemOutrosItens\ListarPorTipo.cshtml" />
     <Content Include="Views\Prato\PratosDosCardapios.cshtml" />
     <Content Include="Views\ItemMontagem\Buscar.cshtml" />
+    <Content Include="Views\ItemDecoracao\Buscar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

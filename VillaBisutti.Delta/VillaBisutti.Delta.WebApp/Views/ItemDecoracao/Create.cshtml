@@ -4,8 +4,20 @@
 	Layout = null;		
 	//ViewBag.Title = "Create";
 }
-	@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
+	var enviado;
+	function Buscar(texto, item) {
+		window.clearTimeout(enviado);
+		if (texto == undefined)
+			texto = "";
+		if (item == undefined || isNaN(item)|| item == "")
+			item = 0;
+		var url = "@Url.Action("Buscar", "ItemDecoracao", new { combo = "~0", texto = "~1" })";
+		url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+		enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
+
+	}
 	$(document).ready(function () {
 		$("#EditarTipoItem").attr("disabled", "disabled");
 		$("#ExcluirTipoItem").attr("disabled", "disabled");
@@ -20,19 +32,25 @@
 			}
 			var urlEditar = "@(Url.Action("Edit", "TipoItemDecoracao"))/";
 			var urlDeletar = "@(Url.Action("Delete", "TipoItemDecoracao"))/";
-			$("#EditarTipoItem").click(function(){
-				ShowPopUp(urlEditar + id, "Editar tipo de item de decoração", 790);
+			$("#EditarTipoItem").click(function () {
+				ShowPopUp(urlEditar + id, "Editar tipo de item de decoracao", 790);
 			});
-			$("#ExcluirTipoItem").click(function(){
-				ShowPopUp(urlDeletar + id, "Excluir tipo de item de decoração", 790);
-			});
+			$("#ExcluirTipoItem").click(function () {
+				ShowPopUp(urlDeletar + id, "Excluir tipo de item de decoracao", 790);
+		    });
+			Buscar($("#Nome").val(), $("#TipoItemDecoracaoId").val());
+		});
+		$("#Nome").keyup(function () {
+			if($(this).val().length > 3)
+				Buscar($("#Nome").val(), $("#TipoItemDecoracaoId").val());
 		});
 		PreventNegativeNumbers("Quantidade");
+		Buscar($("#Nome").val(), $("#TipoItemDecoracaoId").val());
 	});
 </script>
 
 @using (Html.BeginForm("ItemCreated", "ItemDecoracao"))
-	{
+{
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal row-fluid">
@@ -69,11 +87,14 @@
 			</div>
 		</div>
 
-
 		<div class="form-group col-md-6">
 			<div class="col-md-offset-4 col-md-8">
 				<input type="submit" value="Salvar" class="btn btn-default form-control" />
 			</div>
 		</div>
 	</div>
-}
+	}
+<div class="clear-fix"></div>
+<div id="ResultView" class="row col-sm-12">
+
+</div>

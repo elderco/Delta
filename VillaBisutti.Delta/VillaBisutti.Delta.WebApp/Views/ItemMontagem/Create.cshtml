@@ -19,26 +19,26 @@
 		
 	}
 	$(document).ready(function () {
-		$("#EditarTipoMontagem").attr("disabled", "disabled");
-		$("#ExcluirTipoMontagem").attr("disabled", "disabled");
+		$("#EditarTipoItem").attr("disabled", "disabled");
+		$("#ExcluirTipoItem").attr("disabled", "disabled");
 		$("#TipoItemMontagemId").change(function () {
 			var id = $(this).val();
 			if (id == "") {
-				$("#EditarTipoMontagem").attr("disabled", "disabled");
-				$("#ExcluirTipoMontagem").attr("disabled", "disabled");
+				$("#EditarTipoItem").attr("disabled", "disabled");
+				$("#ExcluirTipoItem").attr("disabled", "disabled");
 			} else {
-			    $("#EditarTipoMontagem").removeAttr("disabled");
-			    $("#ExcluirTipoMontagem").removeAttr("disabled");
+				$("#EditarTipoItem").removeAttr("disabled");
+				$("#ExcluirTipoItem").removeAttr("disabled");
 			}
 			var urlEditar = "@(Url.Action("Edit", "TipoItemMontagem"))/";
 			var urlDeletar = "@(Url.Action("Delete", "TipoItemMontagem"))/";
-		    $("#EditarTipoMontagem").click(function () {
+			$("#EditarTipoItem").click(function () {
 				ShowPopUp(urlEditar + id, "Editar tipo de item de montagem", 790);
 			});
-		    $("#ExcluirTipoMontagem").click(function () {
+			$("#ExcluirTipoItem").click(function () {
 				ShowPopUp(urlDeletar + id, "Excluir tipo de item de montagem", 790);
 		    });
-		    Buscar($("#Nome").val(), $("#TipoItemMontagemId").val());
+			Buscar($("#Nome").val(), $("#TipoItemMontagemId").val());
 		});
 		$("#Nome").keyup(function () {
 			if($(this).val().length > 3)
