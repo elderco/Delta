@@ -37,6 +37,7 @@
 					<li>
 						<a href="@Url.Action("Details", "Evento", new { Id = e.Id })">
 							<i class="menu-icon fa fa-caret-right"></i>
+							# @(e.Id) #
 							@(e.Data.ToString("dd/MM/yyyy")) - @(e.NomeHomenageados)
 						</a>
 						<b class="arrow"></b>

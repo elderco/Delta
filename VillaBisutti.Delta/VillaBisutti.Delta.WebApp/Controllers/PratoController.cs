@@ -8,18 +8,23 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using dto = VillaBisutti.Delta.Core.DTO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class PratoController : Controller
-    {
-		// GET: /Prato/AtribuirPratoCardapio
+	{
+		public ActionResult PratosDosCardapios()
+		{
+			return View(new dto.Prato());
+		}
+		// GET: /Prato/AtribuirPratoCardapio?pratoId=5&cardapioId=5
 		public ActionResult AtribuirPratoCardapio(int pratoId, int cardapioId)
 		{
 			return View();
 		}
-		// GET: /Prato/AtribuirPratoTipoPrato
-		public ActionResult AtribuirPratoTipoPrato(int pratoId, int tipoPratoId)
+		// GET: /Prato/RemoverPratoCardapio/?pratoId=5&cardapioId=5
+		public ActionResult RemoverPratoCardapio(int pratoId, int tipoPratoId)
 		{
 			//model.Prato prato = new data.Prato().GetElement(pratoId);
 			//model.TipoPrato tipo = new data.TipoPrato().GetElement(tipoPratoId);

@@ -1,0 +1,109 @@
+﻿@model VillaBisutti.Delta.Core.DTO.Prato
+@{
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+<script language="javascript" type="text/javascript">
+	function RemoverPrato(cardapioId, pratoId) {
+		var url = '@Url.Content("~/Cardapio/RemoverPrato/")?cardapioId={0}&pratoId={1}';
+		url = url.replace("{0}", cardapioId).replace("{1}", pratoId);
+		AddStack(url);
+	}
+	function IncluirPrato(cardapioId, pratoId) {
+		var url = '@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = "{0}", cardapioId = "{1}" })';
+		url = url.replace("{0}", pratoId).replace("{1}", cardapioId);
+		AddStack(url);
+	}
+	function SortItems(containerId) {
+		containerId = "#" + containerId;
+		var $list = $(containerId);
+		var $listLi = $(containerId + " li:not(.placeholder)");
+		$listLi.sort(function (a, b) {
+			var keyA = $(a).text();
+			var keyB = $(b).text();
+			return (keyA > keyB) ? 1 : 0;
+		});
+		$.each($listLi, function (index, row) {
+			$list.append(row);
+		});
+	}
+	$(document).ready(function () {
+		SetPanels("#PainelCardapios", "#PainelGrupos");
+		$(".collapsible-header").click(function () {
+			$($(this).attr("which")).toggle("clip", {}, 100);
+		});
+		$("#PainelCardapios li:not(.placeholder)").click(function () {
+			RemoverPrato($(this).attr("cardapioId"), $(this).attr("pratoId"));
+		});
+		$("#PainelGrupos li").draggable({
+			appendTo: "body",
+			helper: "clone"
+		});
+		$("#PainelCardapios ol").droppable({
+			activeClass: "ui-state-default",
+			hoverClass: "ui-state-hover",
+			accept: ":not(.ui-sortable-helper)",
+			drop: function (event, ui) {
+				var items = $(this).find("li");
+				var id = ui.draggable.attr("id").replace("Prato_", "");
+				var cId = $(this).attr("id").replace("Cardapio_", "");
+				var tem = false;
+				items.each(function () {
+					if ($(this).attr("pratoId") == id) {
+						tem = true;
+						return false;
+					}
+				});
+				if (tem) {
+					return false;
+				}
+				var $li = $("<li/>").text(ui.draggable.text())
+				.attr("title", "clique para remover")
+				.attr("id", "Item_" + id + "_" + cId)
+				.attr("pratoId", id)
+				.attr("cardapioId", cId)
+				.appendTo(this)
+				.click(function () {
+					RemoverPrato(cId, id);
+				});
+				IncluirPrato(cId, id);
+				SortItems($(this).attr("id"));
+			}
+		});
+	});
+</script>
+<h4>Distribuição dos Pratos nos cardápios</h4>
+<div id="PainelCardapios" class="col-md-6">
+	@foreach (VillaBisutti.Delta.Core.Model.Cardapio c in Model.Cardapios)
+	{
+		<div class="panel panel-info">
+			<div class="panel-heading">@(c.Nome)</div>
+			<!--make it collapsible-->
+			<ol class="list-group ">
+				@foreach (VillaBisutti.Delta.Core.Model.Prato p in c.Pratos)
+				{
+					<li class="list-group-item" id="pratocardapio_@(c.Id)_@(p.Id)">
+						@(p.Nome)
+						<a href="#" class="badge bg-danger">remover</a>
+					</li>
+				}
+			</ol>
+		</div>
+	}
+</div>
+<div id="PainelTipoComida" class="col-md-6">
+	@foreach (VillaBisutti.Delta.Core.Model.TipoPrato t in Model.TiposDePrato)
+	{
+		<div class="panel panel-info">
+			<div class="panel-heading">@(t.Nome)</div>
+			<!--make it collapsible-->
+			<ol class="list-group">
+				@foreach (VillaBisutti.Delta.Core.Model.Prato p in t.Pratos)
+				{
+					<li class="list-group-item" id="PratoTipo_@(t.Id)_@(p.Id)">
+						@(p.Nome)
+					</li>
+				}
+			</ol>
+		</div>
+	}
+</div>
