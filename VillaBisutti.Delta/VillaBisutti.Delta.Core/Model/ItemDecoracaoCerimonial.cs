@@ -16,6 +16,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Quantidade { get; set; }
 		public int TipoItemDecoracaoCerimonialId { get; set; }
 		[Display(Name = "Tipo")]
-		public TipoItemDecoracao TipoItemDecoracaoCerimonial { get; set; }
+		public TipoItemDecoracaoCerimonial TipoItemDecoracaoCerimonial { get; set; }
+		public bool BloqueiaOutrasPropriedades { get; set; }
 	}
 }

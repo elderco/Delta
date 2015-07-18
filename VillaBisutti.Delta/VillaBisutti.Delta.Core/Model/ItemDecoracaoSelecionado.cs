@@ -13,13 +13,13 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public int EventoId { get; set; }
 		[Display(Name = "Evento")]
-		public Evento Evento { get; set; }
+		public Decoracao Decoracao { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemDecoracaoId { get; set; }
 		[Display(Name = "Item Decoração")]
-		public ItemDecoracaoCerimonial ItemDecoracao { get; set; }
+		public ItemDecoracao ItemDecoracao { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]

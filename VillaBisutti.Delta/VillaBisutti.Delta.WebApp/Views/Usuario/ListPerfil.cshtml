@@ -1,0 +1,10 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.PerfilUsuarioSistema>
+
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+	@Html.CheckBox(item.TipoAcesso.ToString())
+}
+

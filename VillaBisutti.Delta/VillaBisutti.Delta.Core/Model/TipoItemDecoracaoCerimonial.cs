@@ -14,7 +14,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Tipo"), Required]
 		public string Nome { get; set; }
 		[Display(Name = "Itens")]
-		public List<DecoracaoCerimonial> Itens { get; set; }
+		public List<ItemDecoracaoCerimonial> Itens { get; set; }
 		[Display(Name = "Item padrão para Aniversário")]
 		public bool PadraoAniversario { get; set; }
 		[Display(Name = "Item padrão para Barmitzva")]
