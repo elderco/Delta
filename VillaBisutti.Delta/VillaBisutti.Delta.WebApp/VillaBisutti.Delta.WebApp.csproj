@@ -525,9 +525,6 @@
     <Content Include="Views\TipoItemDecoracaoCerimonial\Edit.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Index.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Buscar.cshtml" />
-    <Content Include="Views\Decoracao\Create.cshtml" />
-    <Content Include="Views\Decoracao\Delete.cshtml" />
-    <Content Include="Views\Decoracao\Details.cshtml" />
     <Content Include="Views\Decoracao\Edit.cshtml" />
     <Content Include="Views\Decoracao\Index.cshtml" />
     <Content Include="Views\DecoracaoCerimonial\Edit.cshtml" />
