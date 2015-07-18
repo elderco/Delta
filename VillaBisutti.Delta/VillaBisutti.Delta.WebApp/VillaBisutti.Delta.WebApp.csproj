@@ -170,7 +170,7 @@
     <Compile Include="Controllers\ItemBebidaSelecionadoController.cs" />
     <Compile Include="Controllers\ItemDecoracaoCerimonialController.cs" />
     <Compile Include="Controllers\ItemDecoracaoCerimonialSelecionadoController.cs" />
-    <Compile Include="Controllers\ItemDecoracaoControllerSelecionadoController.cs" />
+    <Compile Include="Controllers\ItemDecoracaoSelecionadoController.cs" />
     <Compile Include="Controllers\ItemFormaBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\FornecedorBoloDoceBemCasadoController.cs" />
@@ -533,16 +533,22 @@
     <Content Include="Views\DecoracaoCerimonial\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\ListNaoSelecionados.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\ListarPorTipo.cshtml" />
-    <Content Include="Views\ItemDecoracaoControllerSelecionado\Create.cshtml" />
-    <Content Include="Views\ItemDecoracaoControllerSelecionado\Delete.cshtml" />
-    <Content Include="Views\ItemDecoracaoControllerSelecionado\Details.cshtml" />
-    <Content Include="Views\ItemDecoracaoControllerSelecionado\Edit.cshtml" />
-    <Content Include="Views\ItemDecoracaoControllerSelecionado\Index.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\Create.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\Delete.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\Details.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\Edit.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\Index.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Create.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Delete.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Details.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Edit.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Index.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\ListFornecimentoTerceiro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
