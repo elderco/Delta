@@ -543,6 +543,12 @@
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Details.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Edit.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\Index.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoTerceiro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
