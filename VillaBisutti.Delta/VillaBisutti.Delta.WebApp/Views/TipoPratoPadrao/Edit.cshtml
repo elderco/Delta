@@ -1,0 +1,21 @@
+﻿@model VillaBisutti.Delta.Core.Model.TipoPratoPadrao
+@{
+	Layout = null;
+}
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<div class="form-group">
+		@Html.ValidationSummary(true)
+		@Html.HiddenFor(model => model.Id)
+		<span class="lead col-md-4">@(Model.TipoPrato.Nome)</span>
+		@Html.LabelFor(model => model.QuantidadePratos, new { @class = "control-label col-md-2" })
+		<div class="col-md-4">
+			@Html.EditorFor(model => model.QuantidadePratos)
+			@Html.ValidationMessageFor(model => model.QuantidadePratos)
+		</div>
+		<div class="col-md-2">
+			<input type="submit" value="Save" class="btn btn-default" />
+		</div>
+	</div>
+}

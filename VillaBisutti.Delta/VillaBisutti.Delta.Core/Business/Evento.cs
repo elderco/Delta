@@ -38,11 +38,6 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CopiarCardapioPadrao(int eventoId)
 		{
-			Model.Evento evento = new Data.Evento().GetElement(eventoId);
-			Model.CardapioPadrao cardapio = new Data.CardapioPadrao().GetCollection(0).FirstOrDefault(cp => cp.CardapioId == evento.CardapioId && cp.TipoServico == evento.TipoServico);
-			foreach(Model.Prato p in cardapio.PratosSelecionados)
-				evento.Cardapio.Pratos.Add(p);
-			new Data.Evento().Update(evento);
 		}
 		public void CriarEvento(Model.Evento evento)
 		{

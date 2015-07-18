@@ -24,15 +24,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new data.Prato().IncluirEmCardapio(pratoId, cardapioId));
 		}
 		// GET: /Prato/RemoverPratoCardapio/?pratoId=5&cardapioId=5
-		public ActionResult RemoverPratoCardapio(int pratoId, int tipoPratoId)
+		public ActionResult RemoverPratoCardapio(int pratoId, int cardapioId)
 		{
-			//model.Prato prato = new data.Prato().GetElement(pratoId);
-			//model.TipoPrato tipo = new data.TipoPrato().GetElement(tipoPratoId);
-			//if (prato.TipoPrato == null)
-			//	prato.TipoPrato = new List<model.TipoPrato>();
-			//prato.TipoPrato.Add(tipo);
-			//new data.Prato().Update(prato);
-			return RedirectToAction("ListPratos", "TipoPrato");
+			return View(new data.Prato().ExcluirDeCardapio(pratoId, cardapioId));
 		}
 		public ActionResult Buscar(int combo, string texto)
 		{

@@ -196,59 +196,12 @@ function AddPopOver(element, title, text, popOverType) {
 		.popover()
 		.click();
 }
-function GetCurrentY() {
-	return $(window).height() - currentY;
-}
-function SetCurrentY(increase) {
-	if (increase) {
-		currentY += 30;
-	} else {
-		currentY -= 30;
-	}
-	if (currentY < 5) {
-		currentY = 5;
-	}
-}
-function AddStack(url, isNotHTML) {
-	var $stackContainer;
-	if ($("#StackContainer").length) {
-		$stackContainer = $("#StackContainer");
-	} else {
-		$stackContainer = $("<div/>");
-		$stackContainer.attr("id", "StackContainer")
-			.css("position", "absolute")
-			.css("left", "5px")
-			.css("top", GetCurrentY())
-			.css("z-index", GetTopMostIndex());
-		$stackContainer.appendTo($("body"));
-	}
-	var id = ("stackBox" + Math.random()).replace(".", "_");
-	var $container = $("<div/>")
-		.attr("id", id)
-		.addClass("ui-corner-all")
-		.addClass("ui-widget-content")
-		.addClass("ui-state-highlight")
-		.addClass("stack-item")
-		.css("padding", "5px")
-		.css("margin", "5px")
-		.css("text-align", "justify")
-		.css("z-index", GetTopMostIndex());
-	if (!isNotHTML) {
-		url += (url.replace("?", "") == url ? "?" : "&") + "HTMLElementId=" + id
-		LoadPage(url, id);
-	} else {
-		$container.html(url)
-	}
-	SetCurrentY(true);
-	$container.appendTo($stackContainer);
-	RepositionStack();
-	RemoveStack(id);
-}
-function RepositionStack() {
-	$("#StackContainer").css("top", GetCurrentY() + "px");
-}
-function RemoveStack(id) {
-	window.setTimeout("$('#" + id + "').remove();SetCurrentY();RepositionStack();", 8000);
+function AddStack(title, text) {
+	$.gritter.add({
+		title: title,
+		text: text,
+		class_name: 'gritter-info gritter-light'
+	});
 }
 function CreateHorarioEditor(itemId) {
 	var item = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
@@ -381,3 +334,10 @@ $(document)
 	.error(function () {
 		HideLoading();
 	});
+$.extend($.gritter.options, {
+	class_name: 'gritter-light', // for light notifications (can be added directly to $.gritter.add too)
+	position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
+	fade_in_speed: 100, // how fast notifications fade in (string or int)
+	fade_out_speed: 100, // how fast the notices fade out
+	time: 5000 // hang on the screen for...
+});

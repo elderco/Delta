@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CardapioTipoPrato.cs" />
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
     <Compile Include="Data\Bebida.cs" />
@@ -93,18 +94,21 @@
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoItemDecoracaoCerimonial.cs" />
     <Compile Include="Data\TipoPrato.cs" />
+    <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
+    <Compile Include="DTO\TipoPratoPadrao.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Model\Bebida.cs" />
-    <Compile Include="Model\BoloDoceBemCadaso.cs" />
+    <Compile Include="Model\BoloDoceBemCasado.cs" />
     <Compile Include="Model\Cardapio.cs" />
     <Compile Include="Model\CardapioPadrao.cs" />
     <Compile Include="Model\Decoracao.cs" />
     <Compile Include="Model\DecoracaoCerimonial.cs" />
     <Compile Include="Model\FornecedorBoloDoceBemCasado.cs" />
     <Compile Include="Model\FotoVideo.cs" />
+    <Compile Include="Model\Gastronomia.cs" />
     <Compile Include="Model\ItemCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonialSelecionado.cs" />
@@ -160,6 +164,7 @@
     <Compile Include="Model\TipoItemOutrosItens.cs" />
     <Compile Include="Model\TipoItemSomIluminacao.cs" />
     <Compile Include="Model\TipoPrato.cs" />
+    <Compile Include="Model\TipoPratoPadrao.cs" />
     <Compile Include="Model\TipoReuniao.cs" />
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\Usuario.cs" />

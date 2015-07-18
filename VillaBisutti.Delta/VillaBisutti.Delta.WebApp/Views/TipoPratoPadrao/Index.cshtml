@@ -1,0 +1,22 @@
+﻿@model VillaBisutti.Delta.Core.DTO.TipoPratoPadrao
+@{
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	int tipoServico = -1;
+}
+@foreach (VillaBisutti.Delta.Core.Model.Cardapio item in Model.Itens.Keys)
+{
+	<div class="panel panel-info col-md-6">
+		<ul class="list-group">
+			@if (tipoServico != (int)Model.Itens[item].)
+			{
+				tipoServico = (int)item.TipoServico;
+				<li class="list-group-item list-group-item-info">
+					@(item.Cardapio.Nome) <i class="ace-icon fa fa-angle-right"> </i> @(item.TipoServico.Value.GetDescription())
+				</li>
+			}
+			<li class="list-group-item">
+				@Html.Partial("../TipoPratoPadrao/Edit", item)
+			</li>
+		</ul>
+	</div>
+}

@@ -14,7 +14,7 @@
 			</li>
 			<li>
 				<a class="dropdown-toggle" href="#">
-					<i class="menu-icon fa fa-sort-amount-desc"></i>
+					<i class="menu-icon fa fa-list-ul"></i>
 					<span class="menu-text"> Roteiro Padrão</span>
 				</a>
 				<b class="arrow"></b>
@@ -65,7 +65,7 @@
 			</li>
 			<li>
 				<a class="dropdown-toggle" href="#">
-					<i class="menu-icon fa fa-sort-amount-asc"></i>
+					<i class="menu-icon fa fa-list-ol"></i>
 					<span class="menu-text">Cerimonial Padrão</span>
 				</a>
 				<b class="arrow"></b>
@@ -136,6 +136,13 @@
 				<b class="arrow"></b>
 			</li>
 			<li>
+				<a href="@Url.Action("Index", "ItemDecoracaoCerimonial")">
+					<i class="menu-icon fa fa-heart"></i>
+					<span class="menu-text"> Decoração Cerimonial </span>
+				</a>
+				<b class="arrow"></b>
+			</li>
+			<li>
 				<a href="@Url.Action("Index", "ItemMontagem")">
 					<i class="menu-icon fa fa-trophy"></i>
 					<span class="menu-text"> Montagem </span>
@@ -165,6 +172,12 @@
 						<a href="@Url.Action("Index", "Prato")">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span class="menu-text">Pratos</span>
+						</a>
+					</li>
+					<li>
+						<a href="@Url.Action("Index", "TipoPratoPadrao")">
+							<i class="menu-icon fa fa-caret-right"></i>
+							<span class="menu-text">Padrões de tipo de prato</span>
 						</a>
 					</li>
 					<li>

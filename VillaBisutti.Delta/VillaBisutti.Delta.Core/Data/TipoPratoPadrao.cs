@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
+
+namespace VillaBisutti.Delta.Core.Data
+{
+	public class TipoPratoPadrao : DataAccessBase<Model.TipoPratoPadrao>
+	{
+		public override void Update(Model.TipoPratoPadrao entity)
+		{
+			Model.TipoPratoPadrao original = context.TipoPratoPadrao.FirstOrDefault(s => s.Id == (entity.Id));
+			context.Entry(original).CurrentValues.SetValues(entity);
+			context.SaveChanges();
+		}
+
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoPratoPadrao entity)
+		{
+			return context.Entry(entity);
+		}
+
+		public override void Insert(Model.TipoPratoPadrao entity)
+		{
+			context.TipoPratoPadrao.Add(entity);
+			context.SaveChanges();
+		}
+
+		protected override List<Model.TipoPratoPadrao> GetCollection()
+		{
+			return context.TipoPratoPadrao
+				.Include(tpp => tpp.TipoPrato)
+				.Include(tpp => tpp.Cardapio)
+				.OrderBy(tpp => tpp.TipoPrato.Nome)
+				.OrderBy(tpp => tpp.TipoServico)
+				.OrderBy(tpp => tpp.Cardapio.Nome)
+				.ToList();
+		}
+	}
+}

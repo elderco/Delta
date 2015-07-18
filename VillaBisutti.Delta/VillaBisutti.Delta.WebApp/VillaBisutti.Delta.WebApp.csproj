@@ -197,6 +197,7 @@
     <Compile Include="Controllers\TipoItemOutrosItensController.cs" />
     <Compile Include="Controllers\TipoItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\TipoPratoController.cs" />
+    <Compile Include="Controllers\TipoPratoPadraoController.cs" />
     <Compile Include="Controllers\TipoReuniaoController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
@@ -233,6 +234,7 @@
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\jquery.gritter.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -249,6 +251,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.gritter.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.mobile.custom.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -510,6 +513,9 @@
     <Content Include="Views\ItemSomIluminacao\Buscar.cshtml" />
     <Content Include="Views\Prato\Buscar.cshtml" />
     <Content Include="Views\ItemBebida\Buscar.cshtml" />
+    <Content Include="Views\Prato\RemoverPratoCardapio.cshtml" />
+    <Content Include="Views\TipoPratoPadrao\Edit.cshtml" />
+    <Content Include="Views\TipoPratoPadrao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

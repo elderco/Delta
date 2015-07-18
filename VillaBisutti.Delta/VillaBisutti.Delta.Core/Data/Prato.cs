@@ -43,7 +43,8 @@ namespace VillaBisutti.Delta.Core.Data
         }
 		public DTO.PratoCardapio IncluirEmCardapio(int pratoId, int cardapioId)
 		{
-			Model.Prato p = context.Prato.Find(pratoId);
+
+			Model.Prato p = context.Prato.Include(prato => prato.Cardapios).FirstOrDefault(prato => prato.Id == pratoId);
 			Model.Cardapio c = context.Cardapio.Find(cardapioId);
 			if(p.Cardapios == null)
 				p.Cardapios = new List<Model.Cardapio>();
@@ -59,5 +60,14 @@ namespace VillaBisutti.Delta.Core.Data
 				.ToList();
 			return retorno;
 		}
-    }
+
+		public DTO.PratoCardapio ExcluirDeCardapio(int pratoId, int cardapioId)
+		{
+			Model.Prato p = context.Prato.Include(prato => prato.Cardapios).FirstOrDefault(prato => prato.Id == pratoId);
+			Model.Cardapio c = context.Cardapio.Find(cardapioId);
+			p.Cardapios.Remove(c);
+			context.SaveChanges();
+			return new DTO.PratoCardapio { Prato = p, Cardapio = c };
+		}
+	}
 }

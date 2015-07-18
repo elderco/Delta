@@ -12,7 +12,8 @@ namespace VillaBisutti.Delta.WebApp
 						"~/Scripts/jquery-2.0.3.min.js",
 						"~/Scripts/ace-extra.min.js",
                         "~/Scripts/ace-elements.min.js",
-                        "~/Scripts/ace.min.js",
+						"~/Scripts/ace.min.js",
+						"~/Scripts/jquery.gritter.min.js",
 						"~/Scripts/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -32,6 +33,7 @@ namespace VillaBisutti.Delta.WebApp
 					  "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-glyphs.min.css",
                       "~/Content/ace.min.css",
+					  "~/Content/jquery.gritter.css",
                       "~/Content/estilos.css"));
 
 			bundles.Add(new ScriptBundle("~/bundles/own").Include("~/Scripts/Functions.js"));

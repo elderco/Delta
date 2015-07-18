@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
-
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -51,9 +51,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-				new data.TipoPrato().Insert(tipoprato);
-                return RedirectToAction("Index", "Prato");
-            }
+				new biz.TipoPrato().CriarTipoPrato(tipoprato);
+				return Redirect(Request.UrlReferrer.AbsolutePath);
+			}
 
             return View(tipoprato);
         }
@@ -84,8 +84,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.TipoPrato().Update(tipoprato);
-                return RedirectToAction("Index", "Prato");
-            }
+				return Redirect(Request.UrlReferrer.AbsolutePath);
+			}
             return View(tipoprato);
         }
 

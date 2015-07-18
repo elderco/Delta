@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -49,8 +50,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-				new data.Cardapio().Insert(cardapio);
-                return RedirectToAction("Index");
+				new biz.Cardapio().CriarCardapio(cardapio);
+                return Redirect(Request.UrlReferrer.AbsolutePath);
             }
             return View(cardapio);
         }
@@ -80,8 +81,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.Cardapio().Update(cardapio);
-                return RedirectToAction("Index");
-            }
+				return Redirect(Request.UrlReferrer.AbsolutePath);
+			}
             return View(cardapio);
         }
 

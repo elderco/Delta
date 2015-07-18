@@ -3,19 +3,16 @@
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 }
 <script language="javascript" type="text/javascript">
-	function RemoverPrato(cardapioId, pratoId) {
-		var url = '@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = "PrAtOiD", cardapioId = "CaRdApIoId" })';
-		url = url.replace("CaRdApIoId", cardapioId).replace("PrAtOiD", pratoId).replace("&amp;", "&");
-		AddStack(url);
-	}
 	function AvisarPratoExistente(cardapio, prato) {
-		AddStack("O prato <em>" + prato + "</em> já está incluso no cardápio <em>" + cardapio + "</em><br/>Nada foi alterado", true)
+		AddStack("Atenção", "O prato <em>" + prato + "</em> já está incluso no cardápio <em>" + cardapio + "</em><br/>Nada foi alterado");
 	}
 	function IncluirPrato(cardapioId, pratoId) {
 		var url = '@Url.Action("IncluirPratoCardapio", "Prato", new { pratoId = "PrAtOiD", cardapioId = "CaRdApIoId" })';
 		url = url.replace("CaRdApIoId", cardapioId).replace("PrAtOiD", pratoId).replace("&amp;", "&");
-		alert(url);
-		AddStack(url);
+		var id = "AddingTarget_" + cardapioId + "_" + pratoId;
+		var $targetDiv = $("<div />").attr("id", id);
+		$("body").append($targetDiv);
+		LoadPage(url, id);
 	}
 	function SortItems(containerId) {
 		containerId = "#" + containerId;
@@ -30,7 +27,20 @@
 			$list.append(row);
 		});
 	}
+	function DeleteItem(url, id) {
+		var args = id.split("_")
+		var pId = args[2];
+		var cId = args[1];
+		var targetId = "DeletingTarget_" + cId + "_" + pId;
+		var $targetDiv = $("<div />").attr("id", targetId);
+		$("body").append($targetDiv);
+		LoadPage(url, id);
+	}
 	$(document).ready(function () {
+		$("#PainelCardapios a").click(function (e) {
+			e.preventDefault();
+			DeleteItem($(this).attr("href"), $(this).attr("id"))
+		});
 		$(".collapsible").click(function () {
 			var id = "#" + $(this).attr("data-toggle");
 			$(id).toggle("clip", {}, 50);
@@ -45,16 +55,15 @@
 			accept: ":not(.ui-sortable-helper)",
 			drop: function (event, ui) {
 				var items = $(this).find("li");
-				var args = ui.draggable.attr("id").split("_")
-				var id = args[2];
-				var cId = args[1];
+				var pId = ui.draggable.attr("id").split("_")[2];
+				var cId = $(this).attr("id").split("_")[1];
+				var deleteUrl = "@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = "PrAtOiD", cardapioId = "CaRdApIoId" })";
+				deleteUrl = deleteUrl.replace("CaRdApIoId", cId).replace("PrAtOiD", pId).replace("&amp;", "&");
 				var tem = false;
-				var Cardapio = $("#Cardapio_H_" + cId).text();
-				var Prato = ui.draggable.text();
 				items.each(function () {
-					if ($(this).attr("id") == "PratoCardapio_" + cId + "_" + id) {
+					if ($(this).attr("id") == "PratoCardapio_" + cId + "_" + pId) {
 						tem = true;
-						AvisarPratoExistente(Cardapio, Prato);
+						AvisarPratoExistente($("#Cardapio_H_" + cId).text(), ui.draggable.text());
 						return false;
 					}
 				});
@@ -62,15 +71,20 @@
 					return false;
 				}
 				var $li = $("<li/>").text(ui.draggable.text())
-					.attr("id", "PratoCardapio_" + cId + "_" + id)
+					.attr("id", "PratoCardapio_" + cId + "_" + pId)
 					.attr("class", "list-group-item");
 				var $aHref = $("<a />").text("remover")
-					.attr("href", "#")
+					.attr("id", "Remover_" + cId + "_" + pId)
+					.attr("href", deleteUrl)
 					.attr("class", "badge bg-danger")
+					.click(function (e) {
+						e.preventDefault();
+						DeleteItem($(this).attr("href"), $(this).attr("id"))
+					})
 					.appendTo($li);
 				$li.appendTo(this);
-				IncluirPrato(cId, id);
 				SortItems($(this).attr("id"));
+				IncluirPrato(cId, pId);
 			}
 		});
 	});
@@ -82,11 +96,12 @@
 		<div class="panel panel-info">
 			<div id="Cardapio_H_@(c.Id)" class="panel-heading collapsible" data-toggle="Cardapio_@(c.Id)">@(c.Nome)</div>
 			<ol class="list-group" id="Cardapio_@(c.Id)">
+				<li class="list-group-item placeholder list-group-item-warning text-right">Arraste os pratos para este cardápio</li>
 				@foreach (VillaBisutti.Delta.Core.Model.Prato p in c.Pratos)
 				{
 					<li class="list-group-item" id="PratoCardapio_@(c.Id)_@(p.Id)">
 						@(p.Nome)
-						<a href="#" class="badge bg-danger">remover</a>
+						<a href="@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = p.Id, cardapioId = c.Id })" id="Remover_@(c.Id)_@(p.Id)" class="badge bg-danger">remover</a>
 					</li>
 				}
 			</ol>

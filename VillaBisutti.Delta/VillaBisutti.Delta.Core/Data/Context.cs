@@ -15,32 +15,46 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			Database.SetInitializer<Context>(new SampleData());
 		}
-		public DbSet<Model.Foto> Foto { get; set; }
-		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
-        public DbSet<Model.ItemOutrosItensSelecionado> ItemOutrosItensSelecionado { get; set; }
-		public DbSet<Model.FornecedorBoloDoceBemCasado> FornecedorBoloDoceBemCasado { get; set; }
-		public DbSet<Model.ItemFormaBoloDoceBemCasado> ItemFormaBoloDoceBemCasado { get; set; }
-		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
+		public DbSet<Model.Bebida> Bebida { get; set; }
+		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
+		public DbSet<Model.Cardapio> Cardapio { get; set; }
+		public DbSet<Model.CardapioPadrao> CardapioPadrao { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratoAditivo { get; set; }
+		public DbSet<Model.Decoracao> Decoracao { get; set; }
+		public DbSet<Model.DecoracaoCerimonial> DecoracaoCerimonial { get; set; }
+		public DbSet<Model.Evento> Evento { get; set; }
+		public DbSet<Model.FornecedorBoloDoceBemCasado> FornecedorBoloDoceBemCasado { get; set; }
+		public DbSet<Model.Foto> Foto { get; set; }
+		public DbSet<Model.FotoVideo> FotoVideo { get; set; }
+		public DbSet<Model.Gastronomia> Gastronomia { get; set; }
+		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
+		public DbSet<Model.ItemBebidaSelecionado> ItemBebidaSelecionado { get; set; }
+		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
+		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
+		public DbSet<Model.ItemCerimonial> ItemCerimonial { get; set; }
+		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
 		public DbSet<Model.ItemDecoracaoCerimonial> ItemDecoracaoCerimonial { get; set; }
 		public DbSet<Model.ItemDecoracaoCerimonialSelecionado> ItemDecoracaoCerimonialSelecionado { get; set; }
-		public DbSet<Model.ItemFotoVideoSelecionado> ItemFotoVideoSelecionado { get; set; }
-		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
-		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
-		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
 		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
+		public DbSet<Model.ItemFormaBoloDoceBemCasado> ItemFormaBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemFotoVideo> ItemFotoVideo { get; set; }
+		public DbSet<Model.ItemFotoVideoSelecionado> ItemFotoVideoSelecionado { get; set; }
 		public DbSet<Model.ItemMontagem> ItemMontagem { get; set; }
-		public DbSet<Model.ItemOutrosItens> ItemOutrosItens { get; set; }
-		public DbSet<Model.ItemSomIluminacao> ItemSomIluminacao { get; set; }
 		public DbSet<Model.ItemMontagemSelecionado> ItemMontagemSelecionado { get; set; }
-		public DbSet<Model.Local> Local { get; set; }
+		public DbSet<Model.ItemOutrosItens> ItemOutrosItens { get; set; }
+		public DbSet<Model.ItemOutrosItensSelecionado> ItemOutrosItensSelecionado { get; set; }
 		public DbSet<Model.ItemRoteiro> ItemRoteiro { get; set; }
-		public DbSet<Model.ItemCerimonial> ItemCerimonial { get; set; }
+		public DbSet<Model.ItemSomIluminacao> ItemSomIluminacao { get; set; }
+		public DbSet<Model.ItemSomIluminacaoSelecionado> ItemSomIluminacaoSelecionado { get; set; }
+		public DbSet<Model.Local> Local { get; set; }
+		public DbSet<Model.Montagem> Montagem { get; set; }
 		public DbSet<Model.OutrosItens> OutrosItens { get; set; }
 		public DbSet<Model.PerfilUsuarioSistema> PerfilUsuarioSistema { get; set; }
+		public DbSet<Model.Prato> Prato { get; set; }
+		public DbSet<Model.PratoSelecionado> PratoSelecionado { get; set; }
+		public DbSet<Model.Reuniao> Reuniao { get; set; }
 		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }
-		public DbSet<Model.ItemSomIluminacaoSelecionado> ItemSomIluminacaoSelecionado { get; set; }
+		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
 		public DbSet<Model.TipoItemBebida> TipoItemBebida { get; set; }
 		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
 		public DbSet<Model.TipoItemDecoracaoCerimonial> TipoItemDecoracaoCerimonial { get; set; }
@@ -48,22 +62,10 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.TipoItemMontagem> TipoItemMontagem { get; set; }
 		public DbSet<Model.TipoItemOutrosItens> TipoItemOutrosItens { get; set; }
 		public DbSet<Model.TipoItemSomIluminacao> TipoItemSomIluminacao { get; set; }
-		public DbSet<Model.Usuario> Usuario { get; set; }
-		public DbSet<Model.Evento> Evento { get; set; }
-		public DbSet<Model.CardapioPadrao> CardapioPadrao { get; set; }
-		public DbSet<Model.Cardapio> Cardapio { get; set; }
-        public DbSet<Model.Prato> Prato{ get; set; }
-        public DbSet<Model.TipoPrato> TipoPrato { get; set; }
-        public DbSet<Model.PratoSelecionado> PratoSelecionado { get; set; }
+		public DbSet<Model.TipoPrato> TipoPrato { get; set; }
+		public DbSet<Model.TipoPratoPadrao> TipoPratoPadrao { get; set; }
 		public DbSet<Model.TipoReuniao> TipoReuniao { get; set; }
-		public DbSet<Model.Reuniao> Reuniao { get; set; }
-		public DbSet<Model.Bebida> Bebida { get; set; }
-		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
-		public DbSet<Model.Decoracao> Decoracao { get; set; }
-		public DbSet<Model.DecoracaoCerimonial> DecoracaoCerimonial { get; set; }
-		public DbSet<Model.FotoVideo> FotoVideo { get; set; }
-		public DbSet<Model.Montagem> Montagem { get; set; }
-		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
+		public DbSet<Model.Usuario> Usuario { get; set; }
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
