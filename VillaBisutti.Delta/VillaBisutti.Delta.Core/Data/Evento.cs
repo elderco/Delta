@@ -33,7 +33,7 @@ namespace VillaBisutti.Delta.Core.Data
 					.Include(e => e.Bebida)
 					.Include(e => e.BoloDoceBemCasado)
 					.Include(e => e.Cardapio)
-					.Include(e => e.Decoracao)
+					.Include(e => e.DecoracaoCerimonial)
 					.Include(e => e.FotoVideo)
 					.Include(e => e.Local)
 					.Include(e => e.Montagem)
@@ -54,7 +54,7 @@ namespace VillaBisutti.Delta.Core.Data
         public List<Model.Evento> GetEventosServicoTerceiro()
         {
             return context.Evento
-                .Include(e => e.Decoracao).Include(e => e.Decoracao.Itens)
+                .Include(e => e.DecoracaoCerimonial).Include(e => e.DecoracaoCerimonial.Itens)
                 .Include(e => e.Montagem).Include(e => e.Montagem.Itens)
                 .Include(e => e.Bebida).Include(e => e.Bebida.Itens)
                 .Include(e => e.BoloDoceBemCasado).Include(e => e.BoloDoceBemCasado.Itens)

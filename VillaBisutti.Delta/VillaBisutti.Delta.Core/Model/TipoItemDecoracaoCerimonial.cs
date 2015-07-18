@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class TipoItemFotoVideo : IEntityBase
+	public class TipoItemDecoracaoCerimonial : IEntityBase
 	{
 		public int Id { get; set; }
 		[Display(Name = "Tipo"), Required]
 		public string Nome { get; set; }
 		[Display(Name = "Itens")]
-		public List<ItemFotoVideo> Itens { get; set; }
+		public List<DecoracaoCerimonial> Itens { get; set; }
 		[Display(Name = "Item padrão para Aniversário")]
 		public bool PadraoAniversario { get; set; }
 		[Display(Name = "Item padrão para Barmitzva")]
@@ -30,18 +31,18 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PadraoOutro { get; set; }
 		[Display(Name = "Copiar itens para Bebida")]
 		public bool CopiaBebida { get; set; }
-		[Display(Name = "Copiar itens para Decoração Cerimonial")]
-		public bool CopiaDecoracaoCerimonial { get; set; }
+		//[Display(Name = "Copiar itens para Decoração")]
+		//public bool CopiaDecoracao { get; set; }
 		[Display(Name = "Copiar itens para Montagem")]
 		public bool CopiaMontagem { get; set; }
 		[Display(Name = "Copiar itens para Bolo, Doces e Bem-casado")]
 		public bool CopiaBoloDoceBemCasado { get; set; }
-		//[Display(Name = "Copiar itens para Foto e vídeo")]
-		//public bool CopiaFotoVideo { get; set; }
+		[Display(Name = "Copiar itens para Foto e vídeo")]
+		public bool CopiaFotoVideo { get; set; }
 		[Display(Name = "Copiar itens para Som e Iluminação")]
 		public bool CopiaSomIluminacao { get; set; }
 		[Display(Name = "Copiar itens para Outros itens")]
 		public bool CopiaOutrosItens { get; set; }
-
 	}
 }
+

@@ -22,11 +22,13 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemFormaBoloDoceBemCasado> ItemFormaBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasadoSelecionado> ItemBoloDoceBemCasadoSelecionado { get; set; }
 		public DbSet<Model.ContratoAditivo> ContratoAditivo { get; set; }
-		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
+		public DbSet<Model.ItemDecoracaoCerimonial> ItemDecoracaoCerimonial { get; set; }
+		public DbSet<Model.ItemDecoracaoCerimonialSelecionado> ItemDecoracaoCerimonialSelecionado { get; set; }
 		public DbSet<Model.ItemFotoVideoSelecionado> ItemFotoVideoSelecionado { get; set; }
 		public DbSet<Model.ItemBebida> ItemBebida { get; set; }
 		public DbSet<Model.ItemBoloDoceBemCasado> ItemBoloDoceBemCasado { get; set; }
 		public DbSet<Model.ItemDecoracao> ItemDecoracao { get; set; }
+		public DbSet<Model.ItemDecoracaoSelecionado> ItemDecoracaoSelecionado { get; set; }
 		public DbSet<Model.ItemFotoVideo> ItemFotoVideo { get; set; }
 		public DbSet<Model.ItemMontagem> ItemMontagem { get; set; }
 		public DbSet<Model.ItemOutrosItens> ItemOutrosItens { get; set; }
@@ -41,6 +43,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.ItemSomIluminacaoSelecionado> ItemSomIluminacaoSelecionado { get; set; }
 		public DbSet<Model.TipoItemBebida> TipoItemBebida { get; set; }
 		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
+		public DbSet<Model.TipoItemDecoracaoCerimonial> TipoItemDecoracaoCerimonial { get; set; }
 		public DbSet<Model.TipoItemFotoVideo> TipoItemFotoVideo { get; set; }
 		public DbSet<Model.TipoItemMontagem> TipoItemMontagem { get; set; }
 		public DbSet<Model.TipoItemOutrosItens> TipoItemOutrosItens { get; set; }
@@ -57,6 +60,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.Bebida> Bebida { get; set; }
 		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
 		public DbSet<Model.Decoracao> Decoracao { get; set; }
+		public DbSet<Model.DecoracaoCerimonial> DecoracaoCerimonial { get; set; }
 		public DbSet<Model.FotoVideo> FotoVideo { get; set; }
 		public DbSet<Model.Montagem> Montagem { get; set; }
 		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }

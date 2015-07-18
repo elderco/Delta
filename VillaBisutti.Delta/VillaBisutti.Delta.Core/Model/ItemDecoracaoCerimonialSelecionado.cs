@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public class ItemDecoracaoSelecionado : IEntityBase
+	public class ItemDecoracaoCerimonialSelecionado : IEntityBase
 	{
 		public int Id { get; set; }
 		public int EventoId { get; set; }
@@ -17,9 +17,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
-		public int ItemDecoracaoId { get; set; }
+		public int ItemDecoracaoCerimonialId { get; set; }
 		[Display(Name = "Item Decoração")]
-		public ItemDecoracaoCerimonial ItemDecoracao { get; set; }
+		public ItemDecoracaoCerimonial ItemDecoracaoCerimonial { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
@@ -29,8 +29,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Contratado")]
 		public bool Contratado { get; set; }
 		[Display(Name = "Fornecedor Iniciado")]
-        public bool FornecedorStartado { get; set; }
-		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
+		public bool FornecedorStartado { get; set; }
+		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Contato Fornecimento")]
 		public string ContatoFornecimento { get; set; }
