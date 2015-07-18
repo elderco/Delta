@@ -6,136 +6,105 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VillaBisutti.Delta.Core.Model;
-using VillaBisutti.Delta.Core.Data;
+using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemDecoracaoCerimonialSelecionadoController : Controller
     {
-        private Context db = new Context();
+		public ActionResult ListFornecimentoBisutti(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetItensCompartimentados(id, true, true));
+		}
 
-        // GET: /ItemDecoracaoCerimonialSelecionado/
-        public ActionResult Index()
-        {
-            var itemdecoracaocerimonialselecionado = db.ItemDecoracaoCerimonialSelecionado.Include(i => i.ContratoAditivo).Include(i => i.Evento).Include(i => i.ItemDecoracaoCerimonial);
-            return View(itemdecoracaocerimonialselecionado.ToList());
-        }
+		public ActionResult ListFornecimentoTerceiro(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetItensCompartimentados(id, true, false));
+		}
 
-        // GET: /ItemDecoracaoCerimonialSelecionado/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado = db.ItemDecoracaoCerimonialSelecionado.Find(id);
-            if (itemdecoracaocerimonialselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemdecoracaocerimonialselecionado);
-        }
+		public ActionResult ListFornecimentoContratante(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetItensCompartimentados(id, false, false));
+		}
 
-        // GET: /ItemDecoracaoCerimonialSelecionado/Create
-        public ActionResult Create()
-        {
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo");
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria");
-            ViewBag.ItemDecoracaoCerimonialId = new SelectList(db.ItemDecoracaoCerimonial, "Id", "Nome");
-            return View();
-        }
+		public ActionResult EditFornecimentoBisutti(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetElement(id));
+		}
 
-        // POST: /ItemDecoracaoCerimonialSelecionado/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,EventoId,ContratoAditivoId,ItemDecoracaoCerimonialId,Definido,ContratacaoBisutti,FornecimentoBisutti,Contratado,FornecedorStartado,Quantidade,ContatoFornecimento,Observacoes,HorarioMontagem")] ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado)
-        {
-            if (ModelState.IsValid)
-            {
-                db.ItemDecoracaoCerimonialSelecionado.Add(itemdecoracaocerimonialselecionado);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+		public ActionResult EditFornecimentoTerceiro(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetElement(id));
+		}
 
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemdecoracaocerimonialselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemdecoracaocerimonialselecionado.EventoId);
-            ViewBag.ItemDecoracaoCerimonialId = new SelectList(db.ItemDecoracaoCerimonial, "Id", "Nome", itemdecoracaocerimonialselecionado.ItemDecoracaoCerimonialId);
-            return View(itemdecoracaocerimonialselecionado);
-        }
+		public ActionResult EditFornecimentoContratante(int id)
+		{
+			ViewBag.Id = id;
+			return View(new data.ItemDecoracaoCerimonialSelecionado().GetElement(id));
+		}
 
-        // GET: /ItemDecoracaoCerimonialSelecionado/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado = db.ItemDecoracaoCerimonialSelecionado.Find(id);
-            if (itemdecoracaocerimonialselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemdecoracaocerimonialselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemdecoracaocerimonialselecionado.EventoId);
-            ViewBag.ItemDecoracaoCerimonialId = new SelectList(db.ItemDecoracaoCerimonial, "Id", "Nome", itemdecoracaocerimonialselecionado.ItemDecoracaoCerimonialId);
-            return View(itemdecoracaocerimonialselecionado);
-        }
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,Montagem,Definido,FornecedorStartado,Contratado,Observacoes,retorno")] model.ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado)
+		{
+			model.ItemDecoracaoCerimonialSelecionado itemOriginal = new data.ItemDecoracaoCerimonialSelecionado().GetElement(itemdecoracaocerimonialselecionado.Id);
+			itemOriginal.Quantidade = itemdecoracaocerimonialselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itemdecoracaocerimonialselecionado.ContatoFornecimento;
+			itemOriginal.Montagem = itemdecoracaocerimonialselecionado.Montagem;
+			itemOriginal.Observacoes = itemdecoracaocerimonialselecionado.Observacoes;
+			itemOriginal.Definido = itemdecoracaocerimonialselecionado.Definido;
+			itemOriginal.Contratado = itemdecoracaocerimonialselecionado.Contratado;
+			itemOriginal.FornecedorStartado = itemdecoracaocerimonialselecionado.FornecedorStartado;
+			new data.ItemDecoracaoCerimonialSelecionado().Update(itemOriginal);
+			return new HttpStatusCodeResult(HttpStatusCode.OK);
+		}
 
-        // POST: /ItemDecoracaoCerimonialSelecionado/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,EventoId,ContratoAditivoId,ItemDecoracaoCerimonialId,Definido,ContratacaoBisutti,FornecimentoBisutti,Contratado,FornecedorStartado,Quantidade,ContatoFornecimento,Observacoes,HorarioMontagem")] ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(itemdecoracaocerimonialselecionado).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ContratoAditivoId = new SelectList(db.ContratoAditivo, "Id", "Arquivo", itemdecoracaocerimonialselecionado.ContratoAditivoId);
-            ViewBag.EventoId = new SelectList(db.Evento, "Id", "ContatoAssessoria", itemdecoracaocerimonialselecionado.EventoId);
-            ViewBag.ItemDecoracaoCerimonialId = new SelectList(db.ItemDecoracaoCerimonial, "Id", "Nome", itemdecoracaocerimonialselecionado.ItemDecoracaoCerimonialId);
-            return View(itemdecoracaocerimonialselecionado);
-        }
+		public ActionResult Create(int id)
+		{
+			ViewBag.Id = id;
+			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
+			ViewBag.ItemDecoracaoCerimonialId = new SelectList(new data.TipoItemDecoracaoCerimonial().GetCollection(0), "Id", "Nome");
+			return View();
+		}
 
-        // GET: /ItemDecoracaoCerimonialSelecionado/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado = db.ItemDecoracaoCerimonialSelecionado.Find(id);
-            if (itemdecoracaocerimonialselecionado == null)
-            {
-                return HttpNotFound();
-            }
-            return View(itemdecoracaocerimonialselecionado);
-        }
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult CreateItemDecoracaoCerimonialSelecionado([Bind(Include = "Id,EventoId,ItemItemDecoracaoCerimonialId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemDecoracaoCerimonialSelecionado itemdecoracaoselecionado)
+		{
+			new data.ItemDecoracaoCerimonialSelecionado().Insert(itemdecoracaoselecionado);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
 
-        // POST: /ItemDecoracaoCerimonialSelecionado/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ItemDecoracaoCerimonialSelecionado itemdecoracaocerimonialselecionado = db.ItemDecoracaoCerimonialSelecionado.Find(id);
-            db.ItemDecoracaoCerimonialSelecionado.Remove(itemdecoracaocerimonialselecionado);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+		public ActionResult Delete(int? id)
+		{
+			new data.ItemDecoracaoCerimonialSelecionado().Delete(id.Value);
+			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-    }
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			//db.SaveChanges();
+			//return RedirectToAction("Index");
+			return View();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				//db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+	}
 }
