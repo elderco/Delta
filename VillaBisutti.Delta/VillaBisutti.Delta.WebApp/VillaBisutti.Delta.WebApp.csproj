@@ -530,11 +530,9 @@
     <Content Include="Views\Decoracao\Details.cshtml" />
     <Content Include="Views\Decoracao\Edit.cshtml" />
     <Content Include="Views\Decoracao\Index.cshtml" />
-    <Content Include="Views\DecoracaoCerimonial\Create.cshtml" />
-    <Content Include="Views\DecoracaoCerimonial\Delete.cshtml" />
-    <Content Include="Views\DecoracaoCerimonial\Details.cshtml" />
     <Content Include="Views\DecoracaoCerimonial\Edit.cshtml" />
     <Content Include="Views\DecoracaoCerimonial\Index.cshtml" />
+    <Content Include="Views\TipoItemDecoracaoCerimonial\ListNaoSelecionados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
