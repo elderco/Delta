@@ -163,6 +163,8 @@
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\CerimonialController.cs" />
     <Compile Include="Controllers\ContratoAditivoController.cs" />
+    <Compile Include="Controllers\DecoracaoCerimonialController.cs" />
+    <Compile Include="Controllers\DecoracaoController.cs" />
     <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\FotoVideoController.cs" />
     <Compile Include="Controllers\ItemBebidaSelecionadoController.cs" />
@@ -523,6 +525,16 @@
     <Content Include="Views\TipoItemDecoracaoCerimonial\Edit.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Index.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Buscar.cshtml" />
+    <Content Include="Views\Decoracao\Create.cshtml" />
+    <Content Include="Views\Decoracao\Delete.cshtml" />
+    <Content Include="Views\Decoracao\Details.cshtml" />
+    <Content Include="Views\Decoracao\Edit.cshtml" />
+    <Content Include="Views\Decoracao\Index.cshtml" />
+    <Content Include="Views\DecoracaoCerimonial\Create.cshtml" />
+    <Content Include="Views\DecoracaoCerimonial\Delete.cshtml" />
+    <Content Include="Views\DecoracaoCerimonial\Details.cshtml" />
+    <Content Include="Views\DecoracaoCerimonial\Edit.cshtml" />
+    <Content Include="Views\DecoracaoCerimonial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
