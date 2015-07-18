@@ -13,7 +13,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
 		public int TipoPratoId { get; set; }
-		[Display(Name = "Tipo de Prato")]
+		[Display(Name = "Tipo")]
 		public TipoPrato TipoPrato { get; set; }
 		[Display(Name = "Cardapios")]
 		public List<Cardapio> Cardapios { get; set; }

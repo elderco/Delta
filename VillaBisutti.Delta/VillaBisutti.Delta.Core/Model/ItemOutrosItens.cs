@@ -15,7 +15,7 @@ namespace VillaBisutti.Delta.Core.Model
         [Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
         public int Quantidade { get; set; }
         public int TipoItemOutrosItensId { get; set; }
-        [Display(Name = "OutrosItens")]
+        [Display(Name = "Tipo")]
         public TipoItemOutrosItens TipoItemOutrosItens { get; set; }
         public bool BloqueiaOutrasPropriedades { get; set; }
 	}
