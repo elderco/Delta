@@ -1,0 +1,111 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.TipoItemDecoracaoCerimonial>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoAniversario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoBarmitzva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoBatmitzva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoCasamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoCorporativo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoDebutante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PadraoOutro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaBebida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaMontagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaBoloDoceBemCasado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaFotoVideo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaSomIluminacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaOutrosItens)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoAniversario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoBarmitzva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoBatmitzva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoCasamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoCorporativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoDebutante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PadraoOutro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaBebida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaMontagem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaBoloDoceBemCasado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaFotoVideo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaSomIluminacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaOutrosItens)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
