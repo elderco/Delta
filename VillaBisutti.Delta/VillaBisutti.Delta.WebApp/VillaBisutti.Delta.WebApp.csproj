@@ -522,6 +522,7 @@
     <Content Include="Views\TipoItemDecoracaoCerimonial\Details.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Edit.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Index.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonial\Buscar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
