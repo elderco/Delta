@@ -10,16 +10,6 @@
 		});
 	});
 </script>
-
-@{
-    ViewBag.Title = "Buscar";
-}
-
-<h2>Buscar</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -31,6 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Quantidade)
         </th>
+		<th>
+			Opções
+		</th>
         <th></th>
     </tr>
 

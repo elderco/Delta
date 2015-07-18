@@ -30,7 +30,12 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Decoracao> GetCollection()
 		{
-			return context.Decoracao.ToList();
+			return context.Decoracao
+				.Include(b => b.Evento)
+				.Include(b => b.Itens)
+				.Include(b => b.Itens.Select(i => i.ItemDecoracao))
+				.Include(b => b.Itens.Select(i => i.ItemDecoracao.TipoItemDecoracao))
+				.ToList();
 		}
 	}
 }
