@@ -16,7 +16,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.TipoItemDecoracaoCerimonial, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownList("TipoItemDecoracaoId", (IEnumerable<SelectListItem>)ViewBag.TipItemDecoracaoCerimonial, String.Empty)
+				@Html.DropDownList("TipoItemDecoracaoCerimonialId", (IEnumerable<SelectListItem>)ViewBag.TipoItemDecoracaoCerimonial, String.Empty)
 				@Html.ValidationMessageFor(model => model.TipoItemDecoracaoCerimonial)
 			</div>
 		</div>
