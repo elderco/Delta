@@ -50,5 +50,31 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioMontagem = value.ToInt();
 			}
 		}
+		public bool StateErrorBisuttiItemDecoracao
+		{
+			get
+			{
+				return (
+					(ItemDecoracao != null && (new Business.ItemBebida().GetQuantidadeItens(ItemDecoracaoId) < Quantidade))
+					);
+			}
+		}
+		[NotMapped]
+		public bool StateErrorContratante
+		{
+			get
+			{
+				return (ContatoFornecimento == null || ContatoFornecimento == string.Empty)
+					|| (HorarioMontagem == 0); ;
+			}
+		}
+		[NotMapped]
+		public bool StateErrorFornecedor
+		{
+			get
+			{
+				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
+			}
+		}
 	}
 }
