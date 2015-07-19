@@ -568,6 +568,7 @@
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\ListNaoSelecionados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
