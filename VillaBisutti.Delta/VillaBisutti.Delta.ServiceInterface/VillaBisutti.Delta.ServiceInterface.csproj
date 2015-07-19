@@ -83,7 +83,6 @@
     <Compile Include="Local.cs" />
     <Compile Include="Montagem.cs" />
     <Compile Include="OutroItem.cs" />
-    <Compile Include="PerfilUsuarioSistema.cs" />
     <Compile Include="Prato.cs" />
     <Compile Include="PratoSelecionado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

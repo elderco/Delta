@@ -10,15 +10,13 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Usuario : IEntityBase
 	{
 		public int Id { get; set; }
-		[Display(Name = "Nome"), Required]
+		[Required]
 		public string Nome { get; set; }
-		[Display(Name = "Email")]
+		[Display(Name = "E-mail"), Required]
 		public string Email { get; set; }
-		[Display(Name = "Senha")]
+		[Display(Name = "Senha"), Required]
 		public string Senha{ get; set; }
-		[Display(Name = "Perfis")]
-		public List<TipoAcesso> Perfis
-		{ get; set; }
-		public List<Evento> EventosProdutora { get; set; }
+		public int PerfilId { get; set; }
+		public Perfil Perfil { get; set; }
 	}
 }

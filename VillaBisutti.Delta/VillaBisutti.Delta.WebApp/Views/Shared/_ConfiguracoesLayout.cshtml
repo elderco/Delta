@@ -230,11 +230,25 @@
 				<b class="arrow"></b>
 			</li>
 			<li>
-				<a href="@Url.Action("Index", "Usuario", new { id= ViewBag.Id })">
-					<i class="menu-icon fa fa-child"></i>
+				<a class="dropdown-toggle" href="#">
+					<i class="menu-icon fa fa-users"></i>
 					<span class="menu-text"> Usuários </span>
 				</a>
 				<b class="arrow"></b>
+				<ul class="submenu">
+					<li>
+						<a href="@Url.Action("Index", "Perfil")">
+							<i class="menu-icon fa fa-child-right"></i>
+							<span class="menu-text">Perfil</span>
+						</a>
+					</li>
+					<li>
+						<a href="@Url.Action("Index","Usuario")">
+							<i class="menu-icon fa fa-child-right"></i>
+							<span class="menu-text">Usuário</span>
+						</a>
+					</li>
+				</ul>
 			</li>
 		</ul>
 		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

@@ -87,6 +87,7 @@
     <Compile Include="Data\Local.cs" />
     <Compile Include="Data\Montagem.cs" />
     <Compile Include="Data\OutrosItens.cs" />
+    <Compile Include="Data\Perfil.cs" />
     <Compile Include="Data\Prato.cs" />
     <Compile Include="Data\PratoSelecionado.cs" />
     <Compile Include="Data\Reuniao.cs" />
@@ -118,7 +119,6 @@
     <Compile Include="Model\LocalCerimonia.cs" />
     <Compile Include="Data\ItemMontagemSelecionado.cs" />
     <Compile Include="Data\ItemOutrosItensSelecionado.cs" />
-    <Compile Include="Data\PerfilUsuarioSistema.cs" />
     <Compile Include="Data\RoteiroPadrao.cs" />
     <Compile Include="Data\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Data\TipoItemDecoracao.cs" />
@@ -146,16 +146,17 @@
     <Compile Include="Model\ItemSomIluminacao.cs" />
     <Compile Include="Model\ItemMontagemSelecionado.cs" />
     <Compile Include="Model\Local.cs" />
+    <Compile Include="Model\Modulo.cs" />
     <Compile Include="Model\Montagem.cs" />
     <Compile Include="Model\OutrosItens.cs" />
-    <Compile Include="Model\PerfilUsuarioSistema.cs" />
+    <Compile Include="Model\Perfil.cs" />
+    <Compile Include="Model\PerfilModulo.cs" />
     <Compile Include="Model\Prato.cs" />
     <Compile Include="Model\PratoSelecionado.cs" />
     <Compile Include="Model\Reuniao.cs" />
     <Compile Include="Model\ItemSomIluminacaoSelecionado.cs" />
     <Compile Include="Model\RoteiroPadrao.cs" />
     <Compile Include="Model\SomIluminacao.cs" />
-    <Compile Include="Model\TipoAcesso.cs" />
     <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBebida.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />

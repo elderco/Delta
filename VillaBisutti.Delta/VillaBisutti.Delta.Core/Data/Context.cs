@@ -15,6 +15,8 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			Database.SetInitializer<Context>(new SampleData());
 		}
+
+		public DbSet<Model.Perfil> Perfil { get; set; }
 		public DbSet<Model.Bebida> Bebida { get; set; }
 		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
 		public DbSet<Model.Cardapio> Cardapio { get; set; }
@@ -49,7 +51,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.Local> Local { get; set; }
 		public DbSet<Model.Montagem> Montagem { get; set; }
 		public DbSet<Model.OutrosItens> OutrosItens { get; set; }
-		public DbSet<Model.PerfilUsuarioSistema> PerfilUsuarioSistema { get; set; }
 		public DbSet<Model.Prato> Prato { get; set; }
 		public DbSet<Model.PratoSelecionado> PratoSelecionado { get; set; }
 		public DbSet<Model.Reuniao> Reuniao { get; set; }

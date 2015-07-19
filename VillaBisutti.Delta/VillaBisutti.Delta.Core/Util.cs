@@ -116,20 +116,20 @@ namespace VillaBisutti.Delta
 				return locaisCerimonia;
 			}
 		}
-		private static Dictionary<int, string> tiposAcesso;
-		public static Dictionary<int, string> TiposAcesso
-		{
-			get
-			{
-				if (tiposAcesso == null)
-				{
-					tiposAcesso = new Dictionary<int, string>();
-					foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoAcesso)).Cast<Delta.Core.Model.TipoAcesso>())
-						tiposAcesso[(int)item] = item.GetDescription();
-				}
-				return tiposAcesso;
-			}
-		}
+		//private static Dictionary<int, string> tiposAcesso;
+		//public static Dictionary<int, string> TiposAcesso
+		//{
+		//	get
+		//	{
+		//		if (tiposAcesso == null)
+		//		{
+		//			tiposAcesso = new Dictionary<int, string>();
+		//			foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoAcesso)).Cast<Delta.Core.Model.TipoAcesso>())
+		//				tiposAcesso[(int)item] = item.GetDescription();
+		//		}
+		//		return tiposAcesso;
+		//	}
+		//}
 		private static Dictionary<int, string> tiposEvento;
 		public static Dictionary<int, string> TiposEvento
 		{
