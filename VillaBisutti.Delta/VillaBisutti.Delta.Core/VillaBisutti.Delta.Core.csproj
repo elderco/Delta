@@ -54,6 +54,7 @@
     <Compile Include="Business\CardapioTipoPrato.cs" />
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
+    <Compile Include="Business\ItemDecoracao.cs" />
     <Compile Include="Data\Bebida.cs" />
     <Compile Include="Data\BoloDoceBemCasado.cs" />
     <Compile Include="Data\Cardapio.cs" />

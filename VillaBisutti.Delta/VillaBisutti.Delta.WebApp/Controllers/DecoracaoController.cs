@@ -13,7 +13,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class DecoracaoController : Controller
     {
-        // GET: /Decoracao/
 		public ActionResult Index(int id)
 		{
 			ViewBag.Id = id;
@@ -22,7 +21,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new data.Decoracao().GetElement(id));
 		}
 
-		// GET: /Decoracao/Edit/5
 		public ActionResult Edit(int? id)
 		{
 			if (id == null)
@@ -38,7 +36,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(decoracao);
 		}
 
-		// POST: /Decoracao/Edit/5
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
