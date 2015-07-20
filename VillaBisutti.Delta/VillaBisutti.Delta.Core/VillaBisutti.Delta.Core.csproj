@@ -54,6 +54,7 @@
     <Compile Include="Business\CardapioTipoPrato.cs" />
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
+    <Compile Include="Business\PratoSelecionado.cs" />
     <Compile Include="Data\Bebida.cs" />
     <Compile Include="Data\BoloDoceBemCasado.cs" />
     <Compile Include="Data\Cardapio.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
+    <Compile Include="DTO\PratoSelecionado.cs" />
     <Compile Include="DTO\TipoPratoPadrao.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Model\Bebida.cs" />

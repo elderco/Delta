@@ -13,9 +13,12 @@ namespace VillaBisutti.Delta.Core.Model
 		public int PratoId { get; set; }
 		[Display(Name = "Prato"), Required]
 		public Prato Prato { get; set; }
-		public int EventoId { get; set; }
+		public int? EventoId { get; set; }
 		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
+		public int? CardapioId { get; set; }
+		public Cardapio Cardapio { get; set; }
+		public TipoServico? TipoServico { get; set; }
 		public bool Escolhido { get; set; }
 		public bool Degustar { get; set; }
 		[Display(Name = "Observações")]

@@ -37,10 +37,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 		public ActionResult Cabecalho(int id)
 		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
 			ViewBag.Id = id;
 			model.Evento evento = new data.Evento().GetElement(id);
 			if (evento == null)

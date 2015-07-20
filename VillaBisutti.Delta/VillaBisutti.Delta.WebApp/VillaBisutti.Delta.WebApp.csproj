@@ -192,6 +192,7 @@
     <Compile Include="Controllers\MontagemController.cs" />
     <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
+    <Compile Include="Controllers\PratoSelecionadoController.cs" />
     <Compile Include="Controllers\RoteiroController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\SomIluminacaoController.cs" />
@@ -568,6 +569,11 @@
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonialSelecionado\ListFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\PratoSelecionado\Create.cshtml" />
+    <Content Include="Views\PratoSelecionado\Delete.cshtml" />
+    <Content Include="Views\PratoSelecionado\Details.cshtml" />
+    <Content Include="Views\PratoSelecionado\Edit.cshtml" />
+    <Content Include="Views\PratoSelecionado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -73,9 +73,8 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 			List<Model.Prato> pratos = context.Prato.ToList();
 
-			context.Cardapio.Add(new Model.Cardapio { Nome = "Amalfi", Pratos = pratos.Where(p => p.Nome.Length > 40).ToList() });
-			context.Cardapio.Add(new Model.Cardapio { Nome = "Portovenere", Pratos = pratos.Where(p => p.Nome.Replace("mo", "") == p.Nome).ToList() });
-			context.SaveChanges();
+			new Business.Cardapio(context).CriarCardapio(new Model.Cardapio { Nome = "Amalfi" });
+			new Business.Cardapio(context).CriarCardapio(new Model.Cardapio { Nome = "Portovenere" });
 
 			context.TipoItemSomIluminacao.Add(new Model.TipoItemSomIluminacao
 			{
