@@ -19,49 +19,15 @@
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
-
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Casamento })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Casamento.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Debutante })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Debutante.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Outro })">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Outro.GetDescription())</span>
-						</a>
-					</li>
+					@foreach (VillaBisutti.Delta.Core.Model.TipoEvento tipoEvento in Util.TiposEvento.Keys)
+					{
+						<li>
+							<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)tipoEvento })">
+								<i class="menu-icon fa caret-right"></i>
+								<span class="menu-text">@(tipoEvento.GetDescription())</span>
+							</a>
+						</li>
+					}
 				</ul>
 			</li>
 			<li>
@@ -71,48 +37,15 @@
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Aniversario.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Barmitzva.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Batmitzva.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Casamento})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Casamento.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Corporativo.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Debutante})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Debutante.GetDescription())</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)VillaBisutti.Delta.Core.Model.TipoEvento.Outro})">
-							<i class="menu-icon fa caret-right"></i>
-							<span class="menu-text">@(VillaBisutti.Delta.Core.Model.TipoEvento.Outro.GetDescription())</span>
-						</a>
-					</li>
+					@foreach (VillaBisutti.Delta.Core.Model.TipoEvento tipoEvento in Util.TiposEvento.Keys)
+					{
+						<li>
+							<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)tipoEvento })">
+								<i class="menu-icon fa caret-right"></i>
+								<span class="menu-text">@(tipoEvento.GetDescription())</span>
+							</a>
+						</li>
+					}
 				</ul>
 			</li>
 			<li>
@@ -152,7 +85,7 @@
 			</li>
 			<li>
 				<a href="@Url.Action("Index", "TipoServico")">
-					<i class="menu-icon fa fa-street-view"></i>
+					<i class="menu-icon fa fa-meh-o"></i>
 					<span class="menu-text"> Tipos de serviço </span>
 				</a>
 				<b class="arrow"></b>
