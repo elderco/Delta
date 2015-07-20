@@ -7,21 +7,10 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public enum TipoServico
+	public class TipoServico : IEntityBase
 	{
-		[Display(Name = "À Inglesa")]
-		Inglesa = 0,
-		[Display(Name = "Franco-Americano")]
-		FrancoAmericano = 1,
-		[Display(Name = "À Francesa")]
-		Francesa = 2,
-		[Display(Name = "Serviço Volante")]
-		Volante = 3,
-		[Display(Name = "Serviço Buffet")]
-		Buffet = 4,
-		[Display(Name = "Serviço Mixto")]
-		Mixto = 4,
-		[Display(Name = "Outro tipo de serviço")]
-		Outro = 5
+		public int Id { get; set; }
+		[Display(Name = "Nome"), Required]
+		public string Nome { get; set; }
 	}
 }

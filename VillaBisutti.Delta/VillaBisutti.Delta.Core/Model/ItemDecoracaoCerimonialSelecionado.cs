@@ -18,25 +18,21 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemDecoracaoCerimonialId { get; set; }
-		[Display(Name = "Item Decoração")]
+		[Display(Name = "Decoração Cerimonial")]
 		public ItemDecoracaoCerimonial ItemDecoracaoCerimonial { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
+		[Display(Name = "Contratado")]
+		public bool Contratado { get; set; }
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecido pela Villa Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
-		[Display(Name = "Contratado")]
-		public bool Contratado { get; set; }
-		[Display(Name = "Fornecedor Iniciado")]
+		[Display(Name = "Fornecedor Acionado")]
 		public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
-		[Display(Name = "Contato Fornecimento")]
-		public string ContatoFornecimento { get; set; }
-		[Display(Name = "Observações")]
-		public string Observacoes { get; set; }
-		[Display(Name = "Horário Montagem")]
+		[Display(Name = "Horario de Montagem")]
 		public int HorarioMontagem { get; set; }
 		[NotMapped]
 		public Horario Montagem
@@ -50,12 +46,19 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioMontagem = value.ToInt();
 			}
 		}
-		public bool StateErrorBisuttiItemDecoracaoCerimonial
+		[Display(Name = "Contato do Fornecedor")]
+		public string ContatoFornecimento { get; set; }
+		[Display(Name = "Observações")]
+		public string Observacoes { get; set; }
+		[Display(Name = "Fotos")]
+		public List<Foto> Fotos { get; set; }
+		[NotMapped]
+		public bool StateErrorBisutti
 		{ 
 			get 
 			{
 				return (
-					(ItemDecoracaoCerimonial != null && (new Business.ItemBebida().GetQuantidadeItens(ItemDecoracaoCerimonialId) < Quantidade))
+					(ItemDecoracaoCerimonial != null && (new Business.ItemDecoracaoCerimonial().GetQuantidadeItens(ItemDecoracaoCerimonialId) < Quantidade))
 					);
 			}
 		}

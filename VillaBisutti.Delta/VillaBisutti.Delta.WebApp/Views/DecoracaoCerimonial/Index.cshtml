@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.DecoracaoCerimonial>
+﻿@model VillaBisutti.Delta.Core.Model.DecoracaoCerimonial
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
@@ -40,11 +40,11 @@
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
 		<legend>Adicionar item</legend>
-		@Html.Partial("../ItemDecoracaoCerimonialSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado())
+		@Html.Partial("../ItemDecoracaoCerimonialSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemDecoracaoCerimonialSelecionado())
 	</fieldset>
 </div>
 <div class="row">
-	@Html.Action("ListNaoSelecionados", "TipoItemDecoracaoCerimonial", new { id = @ViewBag.Id })
+	@Html.Action("ListNaoSelecionados", "TipoItemDecoracao", new { id = @ViewBag.Id })
 </div>
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>

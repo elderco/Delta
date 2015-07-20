@@ -4,9 +4,9 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		$("body").off("change", "#ItemBebidaId");
+		$("body").off("change", "#ItemDecoracaoCerimonialId");
 		$("#ItemDecoracaoCerimonialId").change(function () {
-			if ($("#ItemBebidaId option:selected").attr("data-show-hide") != "False") {
+			if ($("#ItemDecoracaoCerimonialId option:selected").attr("data-show-hide") != "False") {
 				$(".deve-sumir").hide();
 			} else {
 				$(".deve-sumir").show();

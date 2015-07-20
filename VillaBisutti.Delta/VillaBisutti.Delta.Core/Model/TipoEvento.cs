@@ -15,13 +15,15 @@ namespace VillaBisutti.Delta.Core.Model
 		Barmitzva = 1,
 		[Display(Name = "Batmitzva")]
 		Batmitzva = 2,
+		[Display(Name = "Bodas")]
+		Bodas = 3,
 		[Display(Name = "Casamento")]
-		Casamento = 3,
+		Casamento = 4,
 		[Display(Name = "Corporativo")]
-		Corporativo = 4,
+		Corporativo = 5,
 		[Display(Name = "Debutante")]
-		Debutante = 5,
+		Debutante = 6,
 		[Display(Name = "Outro")]
-		Outro = 6 
+		Outro = 7
 	}
 }

@@ -10,7 +10,7 @@
 		{
 			<ul class="panel panel-info list-group">
 				<li class="list-group-item list-group-item-info">
-					@(item.Nome) <i class="ace-icon fa fa-angle-right"> </i> @(tipoServico.GetDescription())
+					@(item.Nome) <i class="ace-icon fa fa-angle-right"> </i> @(tipoServico.Nome)
 				</li>
 				@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao prato in Model.Itens[item][tipoServico])
 				{

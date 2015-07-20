@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CardapioTipoPrato.cs" />
+    <Compile Include="Business\ItemDecoracaoCerimonial.cs" />
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
     <Compile Include="Business\PratoSelecionado.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
+    <Compile Include="Data\TipoServico.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
     <Compile Include="DTO\PratoSelecionado.cs" />

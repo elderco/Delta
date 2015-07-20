@@ -1,0 +1,26 @@
+﻿@model VillaBisutti.Delta.Core.Model.TipoServico
+@{
+	Layout = null;
+}
+@Scripts.Render("~/bundles/jqueryval")
+@using (Html.BeginForm("ItemCreated", "TipoServico"))
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<h4>Tipo de Serviço</h4>
+		<hr />
+		@Html.ValidationSummary(true)
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+			<div class="col-md-4">
+				@Html.EditorFor(model => model.Nome)
+				@Html.ValidationMessageFor(model => model.Nome)
+			</div>
+			<div class="col-md-4">
+				<input type="submit" value="Salvar" class="btn btn-default form-control" />
+			</div>
+		</div>
+	</div>
+}

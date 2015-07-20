@@ -17,7 +17,7 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemDecoracaoCerimonial entity)
+		public override DbEntityEntry GetCurrent(Model.ItemDecoracaoCerimonial entity)
 		{
 			return context.Entry(entity);
 		}
@@ -31,6 +31,12 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.ItemDecoracaoCerimonial> GetCollection()
 		{
 			return context.ItemDecoracaoCerimonial.Include(id => id.TipoItemDecoracaoCerimonial).ToList();
+		}
+		public List<Model.ItemDecoracaoCerimonial> GetFromTipo(int tipoId)
+		{
+			return context.ItemDecoracaoCerimonial.Include(i => i.TipoItemDecoracaoCerimonial).Where(
+				(i => i.TipoItemDecoracaoCerimonialId == tipoId || tipoId == 0)
+				).ToList();
 		}
 		public List<Model.ItemDecoracaoCerimonial> ListarPorTipo(int tipoId)
 		{

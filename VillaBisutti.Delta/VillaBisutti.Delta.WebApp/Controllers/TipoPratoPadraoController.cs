@@ -31,7 +31,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			model.TipoPratoPadrao original = new data.TipoPratoPadrao().GetElement(tipopratopadrao.Id);
 			tipopratopadrao.CardapioId = original.CardapioId;
 			tipopratopadrao.TipoPratoId = original.TipoPratoId;
-			tipopratopadrao.TipoServico = original.TipoServico;
+			tipopratopadrao.TipoServicoId = original.TipoServicoId;
 			new data.TipoPratoPadrao().Update(tipopratopadrao);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}

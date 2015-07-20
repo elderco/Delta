@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.TipoItemFotoVideo.ToList();
 		}
-				public List<Model.TipoItemFotoVideo> ListNaoSelecionados(int id)
+		public List<Model.TipoItemFotoVideo> ListNaoSelecionados(int id)
 		{
 			Model.TipoEvento tipo = new Evento().GetElement(id).TipoEvento;
 			switch (tipo)
