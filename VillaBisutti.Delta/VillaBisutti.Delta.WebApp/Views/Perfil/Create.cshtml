@@ -1,0 +1,38 @@
+﻿@model VillaBisutti.Delta.Core.Model.Perfil
+
+@{
+    Layout = null;
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+@using (Html.BeginForm("ItemCreated", "Perfil"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Perfil</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+            <div class="col-md-10">
+                @foreach (var item in ViewBag.Modulos)
+	            {
+		            <input type="checkbox" name="modulos" value="@item.Value"/>
+                    @item.Text
+	             }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <input type="submit" value="Salvar" class="btn btn-default form-control" />
+            </div>
+        </div>
+    </div>
+}
+
+

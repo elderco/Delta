@@ -31,7 +31,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.Perfil> GetCollection()
 		{
 			return context.Perfil
-				.Include(p => p.Nome)
+				//.Include(p => p.Nome)
 				.ToList();
 		}
 	}

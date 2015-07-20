@@ -29,6 +29,15 @@ namespace VillaBisutti.Delta.Core.Data
 			string[] boysNames = { "Steve", "Rogers", "Recruit", "Capitain", "Steve Rogers", "Buzz", "Lightyear", "Buzz Lightyear" };
 			string[] companyNames = { "Tabajara inc.", "ACME", "Pretobrás", "Falling Apple" };
 
+            context.Modulo.Add(new Model.Modulo { Nome = "Decoraçao" });
+            context.Modulo.Add(new Model.Modulo { Nome = "Montagem" });
+            context.Modulo.Add(new Model.Modulo { Nome = "Bebida" });
+            context.Modulo.Add(new Model.Modulo { Nome = "Bolo" });
+            context.Modulo.Add(new Model.Modulo { Nome = "Doce" });
+            context.Modulo.Add(new Model.Modulo { Nome = "BemCasado" });
+            context.Modulo.Add(new Model.Modulo { Nome = "Trolha" });
+            context.SaveChanges();
+
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });
 			context.Local.Add(new Model.Local { SiglaCasa = "BE", NomeCasa = "Berrini", EnderecoCasa = "R. James Joule, 40" });
 			context.Local.Add(new Model.Local { SiglaCasa = "GC", NomeCasa = "Gomes de Carvalho", EnderecoCasa = "R. Gomes de carvalho, 420" });

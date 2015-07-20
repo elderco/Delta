@@ -1,0 +1,38 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Perfil>
+
+@{
+    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $(".PopUpActionLinks").click(function (e) {
+                e.preventDefault();
+                ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+            });
+        });
+    </script>
+}
+@Html.Action("Create", "Perfil")
+<table class="table">
+<tr>
+    <th>
+        @Html.DisplayNameFor(model => model.Nome)
+    </th>
+    <th>
+        Módulos:
+    </th>
+</tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+        </tr>
+
+    }
+</table>
+

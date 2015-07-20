@@ -86,6 +86,7 @@
     <Compile Include="Data\ItemRoteiro.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Local.cs" />
+    <Compile Include="Data\Modulo.cs" />
     <Compile Include="Data\Montagem.cs" />
     <Compile Include="Data\OutrosItens.cs" />
     <Compile Include="Data\Perfil.cs" />

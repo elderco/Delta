@@ -12,6 +12,27 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="menu-icon fa fa-users"></i>
+                    <span class="menu-text"> Usuários </span>
+                </a>
+                <b class="arrow"></b>
+                <ul class="submenu">
+                    <li>
+                        <a href="@Url.Action("Index", "Perfil")">
+                            <i class="menu-icon fa fa-child-right"></i>
+                            <span class="menu-text">Perfil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Usuario")">
+                            <i class="menu-icon fa fa-child-right"></i>
+                            <span class="menu-text">Usuário</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 			<li>
 				<a class="dropdown-toggle" href="#">
 					<i class="menu-icon fa fa-list-ul"></i>
@@ -229,27 +250,7 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
-			<li>
-				<a class="dropdown-toggle" href="#">
-					<i class="menu-icon fa fa-users"></i>
-					<span class="menu-text"> Usuários </span>
-				</a>
-				<b class="arrow"></b>
-				<ul class="submenu">
-					<li>
-						<a href="@Url.Action("Index", "Perfil")">
-							<i class="menu-icon fa fa-child-right"></i>
-							<span class="menu-text">Perfil</span>
-						</a>
-					</li>
-					<li>
-						<a href="@Url.Action("Index","Usuario")">
-							<i class="menu-icon fa fa-child-right"></i>
-							<span class="menu-text">Usuário</span>
-						</a>
-					</li>
-				</ul>
-			</li>
+			
 		</ul>
 		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 			<i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
