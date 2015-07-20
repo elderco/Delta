@@ -120,6 +120,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[InverseProperty("Evento")]
 		public BoloDoceBemCasado BoloDoceBemCasado { get; set; }
 		[InverseProperty("Evento")]
+		public Decoracao Decoracao { get; set; }
+		[InverseProperty("Evento")]
 		public DecoracaoCerimonial DecoracaoCerimonial { get; set; }
 		[InverseProperty("Evento")]
 		public FotoVideo FotoVideo { get; set; }

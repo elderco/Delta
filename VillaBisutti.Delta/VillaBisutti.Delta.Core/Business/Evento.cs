@@ -43,8 +43,10 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			evento.Bebida = new Model.Bebida();
 			evento.BoloDoceBemCasado = new Model.BoloDoceBemCasado();
+			evento.Decoracao = new Model.Decoracao();
 			evento.DecoracaoCerimonial = new Model.DecoracaoCerimonial();
 			evento.FotoVideo = new Model.FotoVideo();
+			evento.Gastronomia = new Model.Gastronomia();
 			evento.Montagem = new Model.Montagem();
 			evento.OutrosItens = new Model.OutrosItens();
 			evento.SomIluminacao = new Model.SomIluminacao();
