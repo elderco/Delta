@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoServico : IEntityBase
 	{
 		public int Id { get; set; }
+		[Display(Name = "Nome"), Required]
 		public string Nome { get; set; }
 	}
 }

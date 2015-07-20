@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.TipoServico entity)
 		{
-			Model.TipoServico original = context.TipoServico.FirstOrDefault(s => s.Id == (entity.Id));
+			Model.TipoServico original = context.TipoServico.FirstOrDefault(s => s.Id.Equals(entity.Id));
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -30,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.TipoServico> GetCollection()
 		{
+
 			return context.TipoServico.ToList();
 		}
 	}

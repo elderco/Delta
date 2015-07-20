@@ -206,6 +206,7 @@
     <Compile Include="Controllers\TipoPratoController.cs" />
     <Compile Include="Controllers\TipoPratoPadraoController.cs" />
     <Compile Include="Controllers\TipoReuniaoController.cs" />
+    <Compile Include="Controllers\TipoServicoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Core\SessionFacade.cs" />
@@ -575,6 +576,11 @@
     <Content Include="Views\PratoSelecionado\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracao\ListNaoSelecionados.cshtml" />
     <Content Include="Views\ItemDecoracao\ListarPorTipo.cshtml" />
+    <Content Include="Views\TipoServico\Create.cshtml" />
+    <Content Include="Views\TipoServico\Delete.cshtml" />
+    <Content Include="Views\TipoServico\Details.cshtml" />
+    <Content Include="Views\TipoServico\Edit.cshtml" />
+    <Content Include="Views\TipoServico\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
