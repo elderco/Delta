@@ -106,7 +106,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult DeleteConfirmed(int id)
 		{
 			new data.TipoItemDecoracaoCerimonial().Delete(id);
-			return RedirectToAction("Index", "ItemDecoracaoCeriomonial");
+			return RedirectToAction("Index", "ItemDecoracaoCerimonial");
 		}
 
 		protected override void Dispose(bool disposing)

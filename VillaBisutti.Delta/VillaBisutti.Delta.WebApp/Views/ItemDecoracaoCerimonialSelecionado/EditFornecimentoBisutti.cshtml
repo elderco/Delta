@@ -17,7 +17,7 @@
 			@Html.AntiForgeryToken()
 			<input type="hidden" name="Id" value="@(Model.Id)" />
 			@Html.HiddenFor(model => model.ContatoFornecimento)
-			@Html.HiddenFor(model => model.Montagem)
+			@Html.HiddenFor(model => model.HorarioMontagem)
 			@Html.HiddenFor(model => model.FornecedorStartado)
 			@Html.HiddenFor(model => model.Contratado)
 			<span id="PlaceHolder_@(Model.Id)"></span>

@@ -27,10 +27,14 @@ namespace VillaBisutti.Delta.Core.Data
 			context.DecoracaoCerimonial.Add(entity);
 			context.SaveChanges();
 		}
-
 		protected override List<Model.DecoracaoCerimonial> GetCollection()
 		{
-			return context.DecoracaoCerimonial.ToList();
+			return context.DecoracaoCerimonial
+				.Include(b => b.Evento)
+				.Include(b => b.Itens)
+				.Include(b => b.Itens.Select(i => i.ItemDecoracaoCerimonial))
+				.Include(b => b.Itens.Select(i => i.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial))
+				.ToList();
 		}
 	}
 }

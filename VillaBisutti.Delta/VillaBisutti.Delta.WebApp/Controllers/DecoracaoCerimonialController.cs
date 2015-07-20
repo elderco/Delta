@@ -17,7 +17,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.Id = id;
 			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
-			ViewBag.TipoDecoracaoCerimonialId = new SelectList(new data.TipoItemDecoracaoCerimonial().GetCollection(0), "Id", "Nome");
+			ViewBag.TipoItemDecoracaoCerimonialId = new SelectList(new data.TipoItemDecoracaoCerimonial().GetCollection(0), "Id", "Nome");
 			return View(new data.DecoracaoCerimonial().GetElement(id));
 		}
 		public ActionResult Edit(int? id)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.DecoracaoCerimonial>
+﻿@model VillaBisutti.Delta.Core.Model.DecoracaoCerimonial
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
@@ -36,11 +36,11 @@
 <div class="row">
 	<fieldset class="col-md-4">
 		<legend>Informações básicas</legend>
-		@Html.Action("Edit", "Decoracao", new { id = @ViewBag.Id })
+		@Html.Action("Edit", "DecoracaoCerimonial", new { id = @ViewBag.Id })
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
 		<legend>Adicionar item</legend>
-		@Html.Partial("../ItemDecoracaoSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemDecoracaoSelecionado())
+		@Html.Partial("../ItemDecoracaoCerimonialSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemDecoracaoCerimonialSelecionado())
 	</fieldset>
 </div>
 <div class="row">
@@ -48,13 +48,13 @@
 </div>
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-	@Html.Partial("../ItemDecoracaoSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
+	@Html.Partial("../ItemDecoracaoCerimonialSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
-	@Html.Partial("../ItemDecoracaoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
+	@Html.Partial("../ItemDecoracaoCerimonialSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
-	@Html.Partial("../ItemDecoracaoSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
+	@Html.Partial("../ItemDecoracaoCerimonialSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
 </div>
