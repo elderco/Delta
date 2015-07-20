@@ -48,6 +48,11 @@ namespace VillaBisutti.Delta.Core.Data
 					return barmitzva.Except(
 						GetTipoItensPreenchidos(id)
 						).ToList();
+				case Model.TipoEvento.Bodas:
+					List<Model.TipoItemDecoracao> Bodas = context.TipoItemDecoracao.Where(tib => tib.PadraoBodas).ToList();
+					return Bodas.Except(
+						GetTipoItensPreenchidos(id)
+						).ToList();
 				case Model.TipoEvento.Batmitzva:
 					List<Model.TipoItemDecoracao> batmitzva = context.TipoItemDecoracao.Where(tib => tib.PadraoBatmitzva).ToList();
 					return batmitzva.Except(

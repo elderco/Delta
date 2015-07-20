@@ -21,6 +21,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PadraoBarmitzva { get; set; }
 		[Display(Name = "Item padrão para Batmitzva")]
 		public bool PadraoBatmitzva { get; set; }
+		[Display(Name = "Item padrão para Bodas")]
+		public bool PadraoBodas { get; set; }
 		[Display(Name = "Item padrão para Casamento")]
 		public bool PadraoCasamento { get; set; }
 		[Display(Name = "Item padrão para Corporativo")]
