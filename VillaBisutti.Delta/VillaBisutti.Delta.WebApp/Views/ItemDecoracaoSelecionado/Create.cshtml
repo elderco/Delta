@@ -22,33 +22,33 @@
 		PreventNegativeNumbers("Quantidade");
 
 
-        //Script para validar se todos os selects tem item selecionado
+		//Script para validar se todos os selects tem item selecionado
 		$("button[type=submit]").click(function () {
-		    event.preventDefault();
-		    var form = $(this).parents('form:first');
+			event.preventDefault();
+			var form = $(this).parents('form:first');
 
-		    var count = 0;
-		    form.find("select[data-val='true']").each(function () {
-		        if ($(this).val() == "") {
-		            AddPopOver($(this), "Preencha este campo!", $(this).attr("data-val-required"));
-		            count++;
-		            return;
-		        }
-		    });
-		    form.find("input[data-val='true']").each(function () {
-		        if ($(this).val() == "") {
-		            AddPopOver($(this), "Preencha este campo!", $(this).attr("data-val-required"));
-		            count++;
-		        }
-		    });
-		    if (count == 0) {
-		        form.submit();
-		    }
+			var count = 0;
+			form.find("select[data-val='true']").each(function () {
+				if ($(this).val() == "") {
+					AddPopOver($(this), "Preencha este campo!", $(this).attr("data-val-required"));
+					count++;
+					return;
+				}
+			});
+			form.find("input[data-val='true']").each(function () {
+				if ($(this).val() == "") {
+					AddPopOver($(this), "Preencha este campo!", $(this).attr("data-val-required"));
+					count++;
+				}
+			});
+			if (count == 0) {
+				form.submit();
+			}
 		});
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemDecoracaoSelecionado", "ItemDecoracaoSelecionado", FormMethod.Post, new { @id = "CreateItemDecoracao" }))
+@using (Html.BeginForm("CreateItemBebidaSelecionado", "ItemDecoracaoSelecionado", FormMethod.Post, new { @id = "CreateItemDecoracao" }))
 {
 	@Html.AntiForgeryToken()
 

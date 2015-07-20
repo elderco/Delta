@@ -12,12 +12,12 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemDecoracao entity)
 		{
-			Model.ItemDecoracao original = context.ItemDecoracao.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemDecoracao original = context.ItemDecoracao.FirstOrDefault(b => b.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
 
-		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.ItemDecoracao entity)
+		public override DbEntityEntry GetCurrent(Model.ItemDecoracao entity)
 		{
 			return context.Entry(entity);
 		}
@@ -30,11 +30,18 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemDecoracao> GetCollection()
 		{
-			return context.ItemDecoracao.Include(id => id.TipoItemDecoracao).ToList();
+			return context.ItemDecoracao.Include(i => i.TipoItemDecoracao).ToList();
 		}
+		public List<Model.ItemDecoracao> GetFromTipo(int tipoId)
+		{
+			return context.ItemDecoracao.Include(i => i.TipoItemDecoracao).Where(
+				(i => i.TipoItemDecoracaoId == tipoId || tipoId == 0)
+				).ToList();
+		}
+
 		public List<Model.ItemDecoracao> ListarPorTipo(int tipoId)
 		{
-			return context.ItemDecoracao.Where(m => m.TipoItemDecoracaoId == tipoId).ToList();
+			return context.ItemDecoracao.Where(ib => ib.TipoItemDecoracaoId == tipoId).ToList();
 		}
 		public List<Model.ItemDecoracao> Filtrar(int tipoId, string str)
 		{

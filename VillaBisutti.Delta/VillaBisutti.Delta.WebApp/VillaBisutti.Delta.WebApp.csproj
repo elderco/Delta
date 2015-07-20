@@ -529,7 +529,6 @@
     <Content Include="Views\Usuario\Details.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Usuario\ListPerfil.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Create.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Delete.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Details.cshtml" />
@@ -574,6 +573,8 @@
     <Content Include="Views\PratoSelecionado\Details.cshtml" />
     <Content Include="Views\PratoSelecionado\Edit.cshtml" />
     <Content Include="Views\PratoSelecionado\Index.cshtml" />
+    <Content Include="Views\TipoItemDecoracao\ListNaoSelecionados.cshtml" />
+    <Content Include="Views\ItemDecoracao\ListarPorTipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

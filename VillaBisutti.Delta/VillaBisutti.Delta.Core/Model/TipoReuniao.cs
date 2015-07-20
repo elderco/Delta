@@ -30,8 +30,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PodeSexta { get; set; }
 		[Display(Name = "Sábado")]
 		public bool PodeSabado { get; set; }
-		[Display(Name = "Àrea participante")]
-		public TipoAcesso AreaEnvolvida { get; set; }
+		//TODO: Quando estiver pronto o perfil, linkar isso aqui com o perfil
+		//[Display(Name = "Àrea participante")]
+		//public TipoEvento AreaEnvolvida { get; set; }
 		[Display(Name = "Reuniões simultâneas / área"), Range(0, 9 * 10E6)]
 		public int MaximoAreaEnvolvida { get; set; }
 		[Display(Name = "Duração")]

@@ -16,7 +16,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Usuario/
         public ActionResult Index()
         {
-			ViewBag.Perfis = new SelectList(Util.TiposAcesso, "Key", "Value");
+			//ViewBag.Perfis = new SelectList(Util.TiposAcesso, "Key", "Value");
 			return View(new data.Usuario().GetCollection(0));
         }
 
@@ -25,7 +25,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		public ActionResult Create()
 		{
-			ViewBag.Perfis = Util.TiposAcesso;
+			//ViewBag.Perfis = Util.TiposAcesso;
 			return View();
 		}
 		[HttpPost]
@@ -40,103 +40,78 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(usuario);
 		}
 
-		public ActionResult ListPerfil()
+         //GET: /Usuario/Details/5
+		public ActionResult Details(int? id)
 		{
-			ViewBag.Perfis = Util.TiposAcesso;
-			return View();
-
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+			if (usuario == null)
+			{
+				return HttpNotFound();
+			}
+			return View(usuario);
 		}
 
-        // GET: /Usuario/Details/5
-		//public ActionResult Details(int? id)
-		//{
-		//	if (id == null)
-		//	{
-		//		return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	}
-		//	Usuario usuario = db.Usuario.Find(id);
-		//	if (usuario == null)
-		//	{
-		//		return HttpNotFound();
-		//	}
-		//	return View(usuario);
-		//}
+		// GET: /Usuario/Edit/5
+		public ActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+			if (usuario == null)
+			{
+				return HttpNotFound();
+			}
+			return View(usuario);
+		}
 
-		//// GET: /Usuario/Create
-		//public ActionResult Create()
-		//{
-		//	return View();
-		//}
+		// POST: /Usuario/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Nome,Email,Senha")] model.Usuario usuario)
+		{
+			if (ModelState.IsValid)
+			{
+				new data.Usuario().Update(usuario);
+				return RedirectToAction("Index", "Usuario");
+			}
+			return View(usuario);
+		}
 
-		
+		// GET: /Usuario/Delete/5
+		public ActionResult Delete(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+			if (usuario == null)
+			{
+				return HttpNotFound();
+			}
+			return View(usuario);
+		}
 
-		//	return View(usuario);
-		//}
+		// POST: /Usuario/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			new data.Usuario().Delete(id);
+			return RedirectToAction("Index", "Usuario");
+		}
 
-		//// GET: /Usuario/Edit/5
-		//public ActionResult Edit(int? id)
-		//{
-		//	if (id == null)
-		//	{
-		//		return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	}
-		//	Usuario usuario = db.Usuario.Find(id);
-		//	if (usuario == null)
-		//	{
-		//		return HttpNotFound();
-		//	}
-		//	return View(usuario);
-		//}
-
-		//// POST: /Usuario/Edit/5
-		//// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		//// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//public ActionResult Edit([Bind(Include="Id,Nome,Email,Senha")] Usuario usuario)
-		//{
-		//	if (ModelState.IsValid)
-		//	{
-		//		db.Entry(usuario).State = EntityState.Modified;
-		//		db.SaveChanges();
-		//		return RedirectToAction("Index");
-		//	}
-		//	return View(usuario);
-		//}
-
-		//// GET: /Usuario/Delete/5
-		//public ActionResult Delete(int? id)
-		//{
-		//	if (id == null)
-		//	{
-		//		return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	}
-		//	Usuario usuario = db.Usuario.Find(id);
-		//	if (usuario == null)
-		//	{
-		//		return HttpNotFound();
-		//	}
-		//	return View(usuario);
-		//}
-
-		//// POST: /Usuario/Delete/5
-		//[HttpPost, ActionName("Delete")]
-		//[ValidateAntiForgeryToken]
-		//public ActionResult DeleteConfirmed(int id)
-		//{
-		//	Usuario usuario = db.Usuario.Find(id);
-		//	db.Usuario.Remove(usuario);
-		//	db.SaveChanges();
-		//	return RedirectToAction("Index");
-		//}
-
-		//protected override void Dispose(bool disposing)
-		//{
-		//	if (disposing)
-		//	{
-		//		db.Dispose();
-		//	}
-		//	base.Dispose(disposing);
-		//}
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+		}
     }
 }

@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
@@ -12,23 +11,23 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int EventoId { get; set; }
-		[Display(Name = "Evento")]
+		[Display(Name = "Decoração"), ForeignKey("EventoId")]
 		public Decoracao Decoracao { get; set; }
 		public int ContratoAditivoId { get; set; }
 		[Display(Name = "Contrato Aditivo")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemDecoracaoId { get; set; }
-		[Display(Name = "Item Decoração")]
+		[Display(Name = "Decoração")]
 		public ItemDecoracao ItemDecoracao { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
+		[Display(Name = "Contratado")]
+		public bool Contratado { get; set; }
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecido pela Villa Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
-		[Display(Name = "Contratado")]
-		public bool Contratado { get; set; }
-		[Display(Name = "Fornecedor Iniciado")]
+		[Display(Name = "Fornecedor Acionado")]
         public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
 		public int Quantidade { get; set; }
@@ -50,12 +49,12 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioMontagem = value.ToInt();
 			}
 		}
-		public bool StateErrorBisuttiItemDecoracao
+		public bool StateErrorBisutti
 		{
 			get
 			{
 				return (
-					(ItemDecoracao != null && (new Business.ItemBebida().GetQuantidadeItens(ItemDecoracaoId) < Quantidade))
+					(ItemDecoracao != null && (new Business.ItemDecoracao().GetQuantidadeItens(ItemDecoracaoId) < Quantidade))
 					);
 			}
 		}
