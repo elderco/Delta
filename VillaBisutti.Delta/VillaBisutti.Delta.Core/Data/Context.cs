@@ -56,7 +56,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.Reuniao> Reuniao { get; set; }
 		public DbSet<Model.RoteiroPadrao> RoteiroPadrao { get; set; }
 		public DbSet<Model.SomIluminacao> SomIluminacao { get; set; }
-		public DbSet<Model.TipoEvento> TipoEvento { get; set; }
 		public DbSet<Model.TipoItemBebida> TipoItemBebida { get; set; }
 		public DbSet<Model.TipoItemDecoracao> TipoItemDecoracao { get; set; }
 		public DbSet<Model.TipoItemDecoracaoCerimonial> TipoItemDecoracaoCerimonial { get; set; }
@@ -67,7 +66,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public DbSet<Model.TipoPrato> TipoPrato { get; set; }
 		public DbSet<Model.TipoPratoPadrao> TipoPratoPadrao { get; set; }
 		public DbSet<Model.TipoReuniao> TipoReuniao { get; set; }
-		public DbSet<Model.TipoServico> TipoServico { get; set; }
 		public DbSet<Model.Usuario> Usuario { get; set; }
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

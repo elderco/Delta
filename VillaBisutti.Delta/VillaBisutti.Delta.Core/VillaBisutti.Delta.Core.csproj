@@ -94,13 +94,11 @@
     <Compile Include="Data\Reuniao.cs" />
     <Compile Include="Data\SampleData.cs" />
     <Compile Include="Data\SomIluminacao.cs" />
-    <Compile Include="Data\TipoEvento.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
     <Compile Include="Data\TipoItemDecoracaoCerimonial.cs" />
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
-    <Compile Include="Data\TipoServico.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
     <Compile Include="DTO\PratoSelecionado.cs" />

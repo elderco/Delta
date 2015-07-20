@@ -31,8 +31,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Observação")]
 		public string Observacao { get; set; }
 		[Display(Name = "Tipo de Evento")]
-		public int? TipoServicoId { get; set; }
-		public TipoServico TipoServico { get; set; }
+		public TipoEvento? TipoEvento { get; set; }
 		public int? EventoId { get; set; }
 		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
