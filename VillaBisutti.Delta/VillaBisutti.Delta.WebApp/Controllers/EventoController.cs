@@ -16,7 +16,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     {
 		private void CriarControlesColecao()
 		{
-			ViewBag.TipoServico = new SelectList(Util.TiposServico, "key", "value");
+			ViewBag.TipoServico = new SelectList(new data.TipoServico().GetCollection(0), "key", "value");
 			ViewBag.TipoEvento = new SelectList(Util.TiposEvento, "key", "value");
 			ViewBag.LocalCerimonia = new SelectList(Util.LocalCerimonia, "key", "value");
 			ViewBag.CardapioId = new SelectList(new data.Cardapio().GetCollection(0), "Id", "Nome");

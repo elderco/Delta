@@ -45,7 +45,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Edited([Bind(Include="Id,Degustar")] model.PratoSelecionado pratoselecionado)
         {
 			model.PratoSelecionado original = new data.PratoSelecionado().GetElement(pratoselecionado.Id);
-			pratoselecionado.TipoServico = original.TipoServico;
+			pratoselecionado.TipoServicoId = original.TipoServicoId;
 			pratoselecionado.CardapioId = original.CardapioId;
 			new data.PratoSelecionado().Update(pratoselecionado);
             return Redirect(Request.UrlReferrer.AbsolutePath);
