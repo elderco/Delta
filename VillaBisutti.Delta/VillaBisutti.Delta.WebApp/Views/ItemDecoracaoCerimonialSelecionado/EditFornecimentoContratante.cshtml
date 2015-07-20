@@ -19,7 +19,8 @@
 			<input type="hidden" name="Id" value="@(Model.Id)" />
 			@Html.HiddenFor(model => model.FornecedorStartado)
 			@Html.HiddenFor(model => model.Contratado)
-			@(Model.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial
+			@(Model.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome) - @(Model.ItemDecoracaoCerimonial.Nome)
+		</td>
 		<td>
 			@Html.EditorFor(model => model.Quantidade)
 		</td>
@@ -27,7 +28,7 @@
 			@Html.EditorFor(model => model.ContatoFornecimento)
 		</td>
 		<td>
-			@Html.TextBoxFor(model => model.HorarioMontagem, new { @type = "number", @id = "HorarioMontagem__" + Model.Id })
+			@Html.TextBoxFor(model => model.HorarioMontagem, new { @type = "number", @id = "HorarioMontagem_" + Model.Id })
 		</td>
 		<td>
 			@Html.EditorFor(model => model.Observacoes)

@@ -77,7 +77,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemDecoracaoCerimonialSelecionado([Bind(Include = "Id,EventoId,ItemItemDecoracaoCerimonialId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemDecoracaoCerimonialSelecionado itemdecoracaoselecionado)
+		public ActionResult CreateItemDecoracaoCerimonialSelecionado([Bind(Include = "Id,EventoId,ItemDecoracaoCerimonialId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemDecoracaoCerimonialSelecionado itemdecoracaoselecionado)
 		{
 			new data.ItemDecoracaoCerimonialSelecionado().Insert(itemdecoracaoselecionado);
 			return Redirect(Request.UrlReferrer.AbsolutePath);

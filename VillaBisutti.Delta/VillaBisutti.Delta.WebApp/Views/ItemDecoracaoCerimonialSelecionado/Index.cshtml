@@ -26,7 +26,7 @@
 			@Html.DisplayNameFor(model => model.Contratado)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.Montagem)
+			@Html.DisplayNameFor(model => model.HorarioMontagem)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.ContatoFornecimento)
@@ -49,6 +49,8 @@
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.ItemDecoracaoCerimonial.Nome)
+			<td>
+				@Html.DisplayFor(modelItem => item.Evento.NomeResponsavel)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Definido)
@@ -69,7 +71,7 @@
 				@Html.DisplayFor(modelItem => item.Quantidade)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Montagem)
+				@Html.DisplayFor(modelItem => item.HorarioMontagem)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.ContatoFornecimento)

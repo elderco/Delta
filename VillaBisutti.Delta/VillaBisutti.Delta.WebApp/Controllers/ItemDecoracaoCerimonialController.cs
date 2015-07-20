@@ -117,7 +117,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.ItemDecoracaoCerimonial().Delete(id);
 			return RedirectToAction("Index");
 		}
-
+		public ActionResult ListarPorTipo(int tipoId)
+		{
+			return View(new data.ItemDecoracaoCerimonial().ListarPorTipo(tipoId));
+		}
 		protected override void Dispose(bool disposing)
 		{
 			base.Dispose(disposing);
