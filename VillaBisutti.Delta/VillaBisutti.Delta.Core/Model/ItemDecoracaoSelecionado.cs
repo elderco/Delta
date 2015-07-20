@@ -31,10 +31,6 @@ namespace VillaBisutti.Delta.Core.Model
         public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
 		public int Quantidade { get; set; }
-		[Display(Name = "Contato Fornecimento")]
-		public string ContatoFornecimento { get; set; }
-		[Display(Name = "Observações")]
-		public string Observacoes { get; set; }
 		[Display(Name = "Horário Montagem")]
 		public int HorarioMontagem { get; set; }
 		[NotMapped]
@@ -49,6 +45,13 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioMontagem = value.ToInt();
 			}
 		}
+		[Display(Name = "Contato do Fornecedor")]
+		public string ContatoFornecimento { get; set; }
+		[Display(Name = "Observações")]
+		public string Observacoes { get; set; }
+		[Display(Name = "Fotos")]
+		public List<Foto> Fotos { get; set; }
+		[NotMapped]
 		public bool StateErrorBisutti
 		{
 			get
