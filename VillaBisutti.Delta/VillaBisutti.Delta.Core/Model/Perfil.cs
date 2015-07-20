@@ -10,7 +10,6 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public String Nome { get; set; }
-
 		public List<PerfilModulo> Modulos { get; set; }
 	}
 }
