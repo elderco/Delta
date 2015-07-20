@@ -7,21 +7,9 @@ using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
-	public enum TipoEvento
+	public class TipoEvento : IEntityBase
 	{
-		[Display(Name = "Aniversário")]
-		Aniversario = 0,
-		[Display(Name = "Barmitzva")]
-		Barmitzva = 1,
-		[Display(Name = "Batmitzva")]
-		Batmitzva = 2,
-		[Display(Name = "Casamento")]
-		Casamento = 3,
-		[Display(Name = "Corporativo")]
-		Corporativo = 4,
-		[Display(Name = "Debutante")]
-		Debutante = 5,
-		[Display(Name = "Outro")]
-		Outro = 6 
+		public int Id { get; set; }
+		public string Nome { get; set; }
 	}
 }
