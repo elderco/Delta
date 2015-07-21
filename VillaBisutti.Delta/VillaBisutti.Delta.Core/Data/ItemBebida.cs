@@ -45,11 +45,13 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.ItemBebida> Filtrar(int tipoId, string str)
 		{
-			List<Model.ItemBebida> retorno = context.ItemBebida.Include(m => m.TipoItemBebida)
+			IEnumerable<Model.ItemBebida> retorno = context.ItemBebida.Include(m => m.TipoItemBebida)
 				.Where(item => (item.TipoItemBebidaId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoItemBebida.Nome)
 				.ToList();
-			return retorno;
 		}
 	}
 }

@@ -45,11 +45,13 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.ItemFotoVideo> Filtrar(int tipoId, string str)
 		{
-			List<Model.ItemFotoVideo> retorno = context.ItemFotoVideo.Include(m => m.TipoItemFotoVideo)
+			IEnumerable<Model.ItemFotoVideo> retorno = context.ItemFotoVideo.Include(m => m.TipoItemFotoVideo)
 				.Where(item => (item.TipoItemFotoVideoId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoItemFotoVideo.Nome)
 				.ToList();
-			return retorno;
 		}
 	}
 }

@@ -40,11 +40,13 @@ namespace VillaBisutti.Delta.Core.Data
         }
 		public List<Model.ItemMontagem> Filtrar(int tipoId, string str)
 		{
-			List<Model.ItemMontagem> retorno = context.ItemMontagem.Include(m => m.TipoItemMontagem)
+			IEnumerable<Model.ItemMontagem> retorno = context.ItemMontagem.Include(m => m.TipoItemMontagem)
 				.Where(item => (item.TipoItemMontagemId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoItemMontagem.Nome)
 				.ToList();
-			return retorno;
 		}
     }
 }

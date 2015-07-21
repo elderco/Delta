@@ -45,11 +45,13 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.ItemDecoracao> Filtrar(int tipoId, string str)
 		{
-			List<Model.ItemDecoracao> retorno = context.ItemDecoracao.Include(m => m.TipoItemDecoracao)
+			IEnumerable<Model.ItemDecoracao> retorno = context.ItemDecoracao.Include(m => m.TipoItemDecoracao)
 				.Where(item => (item.TipoItemDecoracaoId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoItemDecoracao.Nome)
 				.ToList();
-			return retorno;
 		}
 	}
 }
