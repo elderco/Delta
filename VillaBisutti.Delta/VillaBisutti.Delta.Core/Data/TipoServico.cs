@@ -30,8 +30,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.TipoServico> GetCollection()
 		{
-
-			return context.TipoServico.ToList();
+			List<Model.TipoServico> lista = context.TipoServico.ToList();
+			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			return lista;
 		}
 	}
 }
