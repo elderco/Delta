@@ -28,7 +28,7 @@ namespace VillaBisutti.Delta.Core.Business
 			context.SaveChanges();
 			List<Model.TipoPratoPadrao> tpp = new List<Model.TipoPratoPadrao>();
 			foreach (Model.TipoPrato tipoPrato in context.TipoPrato.ToList())
-				foreach (Model.TipoServico tipoServico in new Data.TipoServico().GetCollection(0))
+				foreach (Model.TipoServico tipoServico in context.TipoServico.ToList())
 					tpp.Add(new Model.TipoPratoPadrao { TipoPratoId = tipoPrato.Id, TipoServicoId = tipoServico.Id, CardapioId = cardapio.Id, QuantidadePratos = 1 });
 			context.TipoPratoPadrao.AddRange(tpp);
 			context.SaveChanges();
@@ -56,7 +56,7 @@ namespace VillaBisutti.Delta.Core.Business
 			context.SaveChanges();
 			List<Model.TipoPratoPadrao> tpp = new List<Model.TipoPratoPadrao>();
 			foreach(Model.Cardapio cardapio in context.Cardapio.ToList())
-				foreach (Model.TipoServico tipoServico in new Data.TipoServico().GetCollection(0))
+				foreach (Model.TipoServico tipoServico in context.TipoServico.ToList())
 					tpp.Add(new Model.TipoPratoPadrao { TipoPratoId = tipoPrato.Id, TipoServicoId = tipoServico.Id, CardapioId = cardapio.Id, QuantidadePratos = 1 });
 			context.TipoPratoPadrao.AddRange(tpp);
 			context.SaveChanges();
