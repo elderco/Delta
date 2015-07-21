@@ -43,6 +43,11 @@
 					@Html.ValidationMessageFor(model => model.PadraoCasamento)
 				</div>
 				<div class="row-fluid">
+					@Html.EditorFor(model => model.PadraoBodas)
+					@Html.LabelFor(model => model.PadraoBodas, new { @class = "control-label" })
+					@Html.ValidationMessageFor(model => model.PadraoBodas)
+				</div>
+				<div class="row-fluid">
 					@Html.EditorFor(model => model.PadraoCorporativo)
 					@Html.ValidationMessageFor(model => model.PadraoCorporativo)
 					@Html.LabelFor(model => model.PadraoCorporativo, new { @class = "control-label" })
