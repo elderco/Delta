@@ -34,7 +34,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(tpp => tpp.TipoPrato)
 				.Include(tpp => tpp.Cardapio)
 				.OrderBy(tpp => tpp.TipoPrato.Nome)
-				.OrderBy(tpp => tpp.TipoServico)
+				.OrderBy(tpp => tpp.TipoServico.Nome)
 				.OrderBy(tpp => tpp.Cardapio.Nome)
 				.ToList();
 		}
