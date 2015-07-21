@@ -37,10 +37,11 @@
 		LoadPage(url, id);
 	}
 	$(document).ready(function () {
-
-	    var windowHeight = $(window).height() - 70;
+	    var windowHeight = $(window).height() - 160;
 	    $("#PainelCardapios").css('height', windowHeight);
 	    $("#PainelTipoComida").css('height', windowHeight);
+	    $("#PainelCardapios").css('margin-bottom', -35);
+	    $("#PainelTipoComida").css('margin-bottom', -35);
 
 		$("#PainelCardapios a").click(function (e) {
 			e.preventDefault();

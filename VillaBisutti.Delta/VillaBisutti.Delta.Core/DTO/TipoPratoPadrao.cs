@@ -18,7 +18,7 @@ namespace VillaBisutti.Delta.Core.DTO
 			foreach (Model.Cardapio cardapio in context.Cardapio.OrderBy(c => c.Nome))
 			{
 				Dictionary<Model.TipoServico, List<Model.TipoPratoPadrao>> lista = new Dictionary<Model.TipoServico, List<Model.TipoPratoPadrao>>();
-				foreach(Model.TipoServico tipoServico in new Data.TipoServico().GetCollection(0))
+				foreach(Model.TipoServico tipoServico in context.TipoServico.ToList())
 				{
 					lista[(Model.TipoServico)tipoServico] = tiposPrato.Where(tp => tp.CardapioId == cardapio.Id && tp.TipoServico == (Model.TipoServico)tipoServico).ToList();
 				}
