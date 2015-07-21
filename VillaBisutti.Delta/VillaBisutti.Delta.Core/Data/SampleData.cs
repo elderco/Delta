@@ -29,14 +29,13 @@ namespace VillaBisutti.Delta.Core.Data
 			string[] boysNames = { "Steve", "Rogers", "Recruit", "Capitain", "Steve Rogers", "Buzz", "Lightyear", "Buzz Lightyear" };
 			string[] companyNames = { "Tabajara inc.", "ACME", "Pretobrás", "Falling Apple" };
 
-            context.Modulo.Add(new Model.Modulo { Nome = "Decoraçao" });
-            context.Modulo.Add(new Model.Modulo { Nome = "Montagem" });
-            context.Modulo.Add(new Model.Modulo { Nome = "Bebida" });
-            context.Modulo.Add(new Model.Modulo { Nome = "Bolo" });
-            context.Modulo.Add(new Model.Modulo { Nome = "Doce" });
-            context.Modulo.Add(new Model.Modulo { Nome = "BemCasado" });
-            context.Modulo.Add(new Model.Modulo { Nome = "Trolha" });
-            context.SaveChanges();
+			context.Modulo.Add(new Model.Modulo { Nome = "Decoraçao" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Montagem" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Bebida" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Bolo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Doce" });
+			context.Modulo.Add(new Model.Modulo { Nome = "BemCasado" });
+			context.SaveChanges();
 
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });
 			context.Local.Add(new Model.Local { SiglaCasa = "BE", NomeCasa = "Berrini", EnderecoCasa = "R. James Joule, 40" });
@@ -44,6 +43,14 @@ namespace VillaBisutti.Delta.Core.Data
 			context.Local.Add(new Model.Local { SiglaCasa = "QT", NomeCasa = "Quatá", EnderecoCasa = "R. Quatá, 567" });
 			context.Local.Add(new Model.Local { SiglaCasa = "T", NomeCasa = "Tenerife", EnderecoCasa = "R. Tenerife, 140" });
 			context.Local.Add(new Model.Local { SiglaCasa = "011", NomeCasa = "011 eventos", EnderecoCasa = "R. Alvorada, 180" });
+			context.SaveChanges();
+
+			context.TipoServico.Add(new Model.TipoServico { Nome = "À Inglesa" });
+			context.TipoServico.Add(new Model.TipoServico { Nome = "Franco-Americano" });
+			context.TipoServico.Add(new Model.TipoServico { Nome = "À Inglesa com sobremesa em ponto de apoio" });
+			context.TipoServico.Add(new Model.TipoServico { Nome = "Volante" });
+			context.TipoServico.Add(new Model.TipoServico { Nome = "Volante com ponto de apoio" });
+			context.TipoServico.Add(new Model.TipoServico { Nome = "volante e buffet simultâneos" });
 			context.SaveChanges();
 
 			context.TipoPrato.Add(new Model.TipoPrato { Nome = "Coquetel Frio" });
@@ -319,7 +326,7 @@ namespace VillaBisutti.Delta.Core.Data
 				CopiaFotoVideo = false,
 				CopiaOutrosItens = false,
 				CopiaSomIluminacao = false,
-				Nome = "Montagem teste",
+				Nome = "Mesa banquete",
 				PadraoAniversario = true,
 				PadraoBarmitzva = true,
 				PadraoBatmitzva = true,
@@ -328,7 +335,6 @@ namespace VillaBisutti.Delta.Core.Data
 				PadraoDebutante = false,
 				PadraoOutro = true
 			});
-
 			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
 			{
 				CopiaBebida = false,
@@ -337,7 +343,7 @@ namespace VillaBisutti.Delta.Core.Data
 				CopiaFotoVideo = false,
 				CopiaOutrosItens = false,
 				CopiaSomIluminacao = false,
-				Nome = "Montagem teste 2",
+				Nome = "Mesa redonda",
 				PadraoAniversario = true,
 				PadraoBarmitzva = true,
 				PadraoBatmitzva = true,
@@ -346,46 +352,219 @@ namespace VillaBisutti.Delta.Core.Data
 				PadraoDebutante = false,
 				PadraoOutro = true
 			});
-
 			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
-		   {
-			   CopiaBebida = false,
-			   CopiaBoloDoceBemCasado = false,
-			   CopiaDecoracao = false,
-			   CopiaFotoVideo = false,
-			   CopiaOutrosItens = false,
-			   CopiaSomIluminacao = false,
-			   Nome = "Montagem teste3",
-			   PadraoAniversario = true,
-			   PadraoBarmitzva = true,
-			   PadraoBatmitzva = true,
-			   PadraoCasamento = true,
-			   PadraoCorporativo = false,
-			   PadraoDebutante = false,
-			   PadraoOutro = true
-		   });
+			{
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				Nome = "Mesa bistrô",
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+			{
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = false,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				Nome = "Sous-plat",
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+			{
+				Nome = "Sofá",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = true,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
+			{
+				Nome = "Almofada",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = true,
+				CopiaFotoVideo = false,
+				CopiaOutrosItens = false,
+				CopiaSomIluminacao = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
 			context.SaveChanges();
 
 			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 12", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 11", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 13", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "12 lugares", Quantidade = 5, TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "10 lugares", Quantidade = 6, TipoItemMontagemId = 1 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "20 lugares", Quantidade = 5, TipoItemMontagemId = 1 });
 			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 15", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 16", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 17", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 18", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 19", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 2", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 3", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 4", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 51", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 6", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "10 lugares", Quantidade = 100, TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "8 lugares", Quantidade = 200, TipoItemMontagemId = 2 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "12 lugares", Quantidade = 150, TipoItemMontagemId = 2 });
 			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 8", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 9", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 10", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
-			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Item Montagem 124", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Alta com tampo de vidro 4 bancos", Quantidade = 120, TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Baixa com 6 puffs", Quantidade = 100, TipoItemMontagemId = 3 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 4 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Rattan", Quantidade = 2500, TipoItemMontagemId = 4 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Inox", Quantidade = 2500, TipoItemMontagemId = 4 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Cerâmica branco", Quantidade = 2500, TipoItemMontagemId = 4 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Outro", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 4 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 5 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Em L Cor XYZ", Quantidade = 8, TipoItemMontagemId = 5 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Marrom carniça todo rasgado", Quantidade = 8, TipoItemMontagemId = 5 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Da vó com aquele tecido característico", Quantidade = 4, TipoItemMontagemId = 5 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = false, Nome = "Outro", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 5 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Não Há", Quantidade = (int)(9 * 10E4), TipoItemMontagemId = 6 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Almofada bége", Quantidade = 800, TipoItemMontagemId = 6 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Almofada bége adamascada", Quantidade = 800, TipoItemMontagemId = 6 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Almofada azul", Quantidade = 800, TipoItemMontagemId = 6 });
+			context.ItemMontagem.Add(new Model.ItemMontagem { BloqueiaOutrasPropriedades = true, Nome = "Almofada azul adamascada", Quantidade = 800, TipoItemMontagemId = 6 });
+			context.SaveChanges();
+
+			context.TipoItemDecoracao.Add(new Model.TipoItemDecoracao { Nome = "Tipo de arranjo das mesas principais", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracao.Add(new Model.TipoItemDecoracao { Nome = "Tipo de arranjo das mesas convidados", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracao.Add(new Model.TipoItemDecoracao { Nome = "Vasos e bandejas", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracao.Add(new Model.TipoItemDecoracao { Nome = "Cor de toalha", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.SaveChanges();
+
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Clássico", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 1 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Moderno", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 1 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Clássico e moderno", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 1 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Clássico alto", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 2 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Moderno alto", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 2 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Clássico baixo", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 2 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Moderno bowl baixo", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 2 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Moderno vasinhos baixo", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 2 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Palha", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 4 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Off white", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 4 });
+			context.ItemDecoracao.Add(new Model.ItemDecoracao { Nome = "Preta adamascada", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoId = 4 });
+			context.SaveChanges();
+
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Bouquet", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Bouquezinho", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Tapete", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Vela", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Folha de ficus", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Aparador", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Arranjo para aparador", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.TipoItemDecoracaoCerimonial.Add(new Model.TipoItemDecoracaoCerimonial { Nome = "Arranjo Genoflexório", CopiaBebida = false, CopiaBoloDoceBemCasado = false, CopiaFotoVideo = false, CopiaMontagem = true, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = true, PadraoDebutante = true, PadraoOutro = true });
+			context.SaveChanges();
+
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 1 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Moderno", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 1 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Clássico", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 1 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 2 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Moderno", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 2 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Clássico", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 2 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 3 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Vime", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 3 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Vermelho", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 3 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Bége", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 3 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Branco", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 3 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 4 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Nas cadeiras ímpares", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 4 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 5 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Nas laterais do tapete", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 5 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Não há", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 6 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Clássico", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 6 });
+			context.ItemDecoracaoCerimonial.Add(new Model.ItemDecoracaoCerimonial { Nome = "Romano V", BloqueiaOutrasPropriedades = false, Quantidade = (int)9E5, TipoItemDecoracaoCerimonialId = 6 });
+			context.SaveChanges();
+
+			context.TipoItemOutrosItens.Add(new Model.TipoItemOutrosItens
+			{
+				Nome = "Gastronomia",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = true,
+				CopiaFotoVideo = false,
+				CopiaSomIluminacao = false,
+				CopiaMontagem = true,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.TipoItemOutrosItens.Add(new Model.TipoItemOutrosItens
+			{
+				Nome = "Serviço de saída",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = true,
+				CopiaFotoVideo = false,
+				CopiaSomIluminacao = false,
+				CopiaMontagem = true,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.TipoItemOutrosItens.Add(new Model.TipoItemOutrosItens
+			{
+				Nome = "Itens adicionais",
+				CopiaBebida = false,
+				CopiaBoloDoceBemCasado = false,
+				CopiaDecoracao = true,
+				CopiaFotoVideo = false,
+				CopiaSomIluminacao = false,
+				CopiaMontagem = false,
+				PadraoAniversario = true,
+				PadraoBarmitzva = true,
+				PadraoBatmitzva = true,
+				PadraoCasamento = true,
+				PadraoCorporativo = false,
+				PadraoDebutante = false,
+				PadraoOutro = true
+			});
+			context.SaveChanges();
+
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Não há", BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 1 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Carrinho de pipoca", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 1 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Algodão doce", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 1 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Não há", BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 2 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Mesa de café", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 2 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Variedades de chás", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 2 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Trufa de chocolate", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 2 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Outro sei lá o quê", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 2 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Não há", BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 3 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Havaianas / rasteirinhas", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 3 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Acessórios de pista", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 3 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Animador infantil", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 3 });
+			context.ItemOutrosItens.Add(new Model.ItemOutrosItens { Nome = "Kit toillet", BloqueiaOutrasPropriedades = false, Quantidade = (int)(9 * 10E4), TipoItemOutrosItensId = 3 });
 			context.SaveChanges();
 
 			List<Model.ContratoAditivo> contratos = new List<Model.ContratoAditivo>();

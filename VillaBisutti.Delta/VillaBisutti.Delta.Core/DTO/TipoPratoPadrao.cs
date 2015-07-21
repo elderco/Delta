@@ -14,7 +14,7 @@ namespace VillaBisutti.Delta.Core.DTO
 		{
 			Itens = new Dictionary<Model.Cardapio, Dictionary<Model.TipoServico, List<Model.TipoPratoPadrao>>>();
 			Data.Context context = new Data.Context();
-			List<Model.TipoPratoPadrao> tiposPrato = context.TipoPratoPadrao.Include(tp => tp.TipoPrato).OrderBy(tp => tp.TipoServico).ToList();
+			List<Model.TipoPratoPadrao> tiposPrato = context.TipoPratoPadrao.Include(tp => tp.TipoPrato).OrderBy(tp => tp.TipoServico.Nome).ToList();
 			foreach (Model.Cardapio cardapio in context.Cardapio.OrderBy(c => c.Nome))
 			{
 				Dictionary<Model.TipoServico, List<Model.TipoPratoPadrao>> lista = new Dictionary<Model.TipoServico, List<Model.TipoPratoPadrao>>();

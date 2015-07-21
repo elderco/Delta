@@ -56,11 +56,13 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.Prato> Filtrar(int tipoId, string str)
 		{
-			List<Model.Prato> retorno = context.Prato.Include(m => m.TipoPrato)
+			IEnumerable<Model.Prato> retorno = context.Prato.Include(m => m.TipoPrato)
 				.Where(item => (item.TipoPratoId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty))
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoPrato.Nome)
 				.ToList();
-			return retorno;
 		}
 
 		public DTO.PratoCardapio ExcluirDeCardapio(int pratoId, int cardapioId)
