@@ -29,7 +29,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.TipoReuniao> GetCollection()
 		{
-			return context.TipoReuniao.ToList();
+			List<Model.TipoReuniao> lista = context.TipoReuniao.ToList();
+			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			return lista;
 		}
 	}
 }
