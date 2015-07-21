@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
     <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-
+    <script>$(document).ready(function () {$('[data-rel=tooltip]').tooltip();})</script>
 
 </head>
 <body class="no-skin">
@@ -45,14 +45,37 @@
 
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
-					<li class="transparent">
-                        <a href="@Url.Action("HomeConfiguracao", "Home")"><i class="menu-icon fa fa-cog"></i></a>
+                    <li class="transparent">
+                        <a href="javascript:void(0)" data-rel="tooltip" data-placement="bottom" title data-original-title="Robôs e automatizações"><i class="menu-icon fa fa-cogs"></i></a>
+                    </li>
+                    <li class="transparent">
+                        <a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" title data-original-title="Usuários" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-group"></i>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+                        <ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
+                            <li>
+                                <a href="@Url.Action("Index", "Perfil")">
+                                    Perfil
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Usuário")">
+                                    Usuário
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="transparent">
+                        <a href="@Url.Action("HomeConfiguracao", "Home")" data-rel="tooltip" data-placement="bottom" title data-original-title="Configurações"><i class="menu-icon fa fa-cog"></i></a>
 					</li>
 					<li class="transparent">
-						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-calendar"></i>
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+                        <a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" title data-original-title="Eventos" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-calendar"></i>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
 						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
 							<li>
 								<a href="@Url.Action("Create", "Evento")">
@@ -66,7 +89,7 @@
 						</ul>
 					</li>
 					<li class="transparent">
-						<a href="#"><i class="menu-icon fa fa-dashboard"></i></a>
+                        <a href="#" data-rel="tooltip" data-placement="bottom" title data-original-title="Relatórios"><i class="menu-icon fa fa-dashboard"></i></a>
 					</li>
 					<li class="light-blue">
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">

@@ -6,34 +6,6 @@
 	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">
 		<ul class="nav nav-list nav-list-left">
 			<li>
-				<a href="javascript:void(0);">
-					<i class="menu-icon fa fa-cogs"></i>
-					<span class="menu-text"> Robôs e automatizações </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
-            <li>
-                <a class="dropdown-toggle" href="#">
-                    <i class="menu-icon fa fa-users"></i>
-                    <span class="menu-text"> Usuários </span>
-                </a>
-                <b class="arrow"></b>
-                <ul class="submenu">
-                    <li>
-                        <a href="@Url.Action("Index", "Perfil")">
-                            <i class="menu-icon fa fa-child-right"></i>
-                            <span class="menu-text">Perfil</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index","Usuario")">
-                            <i class="menu-icon fa fa-child-right"></i>
-                            <span class="menu-text">Usuário</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-			<li>
 				<a class="dropdown-toggle" href="#">
 					<i class="menu-icon fa fa-list-ul"></i>
 					<span class="menu-text"> Roteiro Padrão</span>
@@ -83,27 +55,34 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
-			<li>
-				<a href="@Url.Action("Index", "ItemDecoracao")">
-					<i class="menu-icon fa fa-leaf"></i>
-					<span class="menu-text"> Decoração </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
-			<li>
-				<a href="@Url.Action("Index", "ItemDecoracaoCerimonial")">
-					<i class="menu-icon fa fa-heart"></i>
-					<span class="menu-text"> Decoração Cerimonial </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
-			<li>
-				<a href="@Url.Action("Index", "ItemMontagem")">
-					<i class="menu-icon fa fa-trophy"></i>
-					<span class="menu-text"> Montagem </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="menu-icon fa fa-leaf"></i>
+                    <span class="menu-text"> Salão </span>
+                </a>
+                <b class="arrow"></b>
+                <ul class="submenu">
+                    <li>
+                        <a href="@Url.Action("Index", "ItemDecoracao")">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            <span class="menu-text">Decoração</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "ItemDecoracaoCerimonial")">
+                            <i class=" menu-icon fa fa-caret-right">
+                            </i>
+                            <span class="menu-text">Decoração Cerimonial</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "ItemMontagem")">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            <span class="menu-text">Montagem</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 			<li>
 				<a href="@Url.Action("Index", "TipoServico")">
 					<i class="menu-icon fa fa-meh-o"></i>
