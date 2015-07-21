@@ -29,7 +29,9 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		protected override List<Model.Prato> GetCollection()
 		{
-			return context.Prato.Include(i => i.TipoPrato).ToList();
+			List<Model.Prato> lista = context.Prato.Include(i => i.TipoPrato).ToList();
+			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			return lista;
 		}
 		public List<Model.Prato> GetFromTipo(int tipoId)
 		{

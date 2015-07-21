@@ -30,7 +30,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Local> GetCollection()
 		{
-			return context.Local.ToList();
+			List<Model.Local> lista = context.Local.ToList();
+			lista = lista.OrderBy(ir => ir.NomeCasa).ToList();
+			return lista;
 		}
 		public List<Model.Local> GetPorProdutor(int produtorId = 0)
 		{
