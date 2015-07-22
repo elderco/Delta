@@ -4,10 +4,12 @@
 }
 @using (Html.BeginForm("Edited", "TipoPratoPadrao", FormMethod.Post, new { @class = "form-inline panel" }))
 {
-	@Html.AntiForgeryToken()
-	@Html.ValidationSummary(true)
-	@Html.HiddenFor(model => model.Id)
-	<div class="form-group col-md-8">@(Model.TipoPrato.Nome)</div>
-	<div class="form-group col-md-2">@Html.TextBoxFor(model => model.QuantidadePratos, new { @type="number", @class = "form-control", @size = "2" })</div>
-	<div class="form-group col-md-2"><input type="submit" value="Save" class="btn btn-default form-group" /></div>
+	<div class="ui-helper-hidden">
+		@Html.AntiForgeryToken()
+		@Html.ValidationSummary(true)
+		@Html.HiddenFor(model => model.Id)
+	</div>
+	<div class="form-group">@(Model.TipoPrato.Nome)</div>
+	<div class="form-group pull-right"><input type="submit" value="Save" class="btn btn-default" /></div>
+	<div class="form-group pull-right">@Html.TextBoxFor(model => model.QuantidadePratos, new { @type = "number", @style = "width:45px;" })</div>
 }

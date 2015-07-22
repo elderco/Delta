@@ -5,9 +5,9 @@
 }
 @foreach (VillaBisutti.Delta.Core.Model.Cardapio item in Model.Itens.Keys)
 {
-	<div class="col-md-6">
-		@foreach (VillaBisutti.Delta.Core.Model.TipoServico tipoServico in Model.Itens[item].Keys)
-		{
+	foreach (VillaBisutti.Delta.Core.Model.TipoServico tipoServico in Model.Itens[item].Keys)
+	{
+		<div class="col-md-4">
 			<ul class="panel panel-info list-group">
 				<li class="list-group-item list-group-item-info">
 					@(item.Nome) <i class="ace-icon fa fa-angle-right"> </i> @(tipoServico.Nome)
@@ -19,6 +19,6 @@
 					</li>
 				}
 			</ul>
-		}
-	</div>
+		</div>
+	}
 }
