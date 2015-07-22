@@ -39,6 +39,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
 			SelectList Fornecedor = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
 			ViewBag.Fornecedor = Fornecedor;
+			SelectList TipoItemBoloDoceBemCasado = new SelectList(new data.TipoItemBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemBoloDoceBemCasado = TipoItemBoloDoceBemCasado;
 			return View();
         }
 
@@ -47,7 +49,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Quantidade,FornecedorId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
         {
             if (ModelState.IsValid)
             {
@@ -71,6 +73,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             }
 			SelectList Fornecedor = new SelectList(new data.FornecedorBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.NomeFornecedor), "Id", "NomeFornecedor");
 			ViewBag.Fornecedor = Fornecedor;
+			SelectList TipoItemBoloDoceBemCasado = new SelectList(new data.TipoItemBoloDoceBemCasado().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			ViewBag.TipoItemBoloDoceBemCasado = TipoItemBoloDoceBemCasado;
 			return View(itembolodocebemcasado);
         }
 
@@ -79,7 +83,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,Quantidade,FornecedorId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
+		public ActionResult Edit([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
         {
             if (ModelState.IsValid)
             {

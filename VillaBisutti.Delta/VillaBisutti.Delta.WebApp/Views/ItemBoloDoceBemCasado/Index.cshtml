@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemBoloDoceBemCasado>
-
 @{
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-	//ViewBag.Title = "Index";
+    //ViewBag.Title = "Index";
 }
+
 @section scripts {
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
@@ -14,41 +14,4 @@
 		});
 	</script>
 }
-
-    @Html.Action("Create", "ItemBoloDoceBemCasado")
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Fornecedor.NomeFornecedor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </th>
-		<th>
-			Opções
-		</th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fornecedor.NomeFornecedor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantidade)
-        </td>
-        <td>
-			@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
-			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
-        </td>
-    </tr>
-}
-
-</table>
+@Html.Action("Create", "ItemBoloDoceBemCasado")

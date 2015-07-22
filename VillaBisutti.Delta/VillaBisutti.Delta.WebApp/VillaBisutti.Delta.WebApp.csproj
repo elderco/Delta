@@ -406,9 +406,6 @@
     <Content Include="Views\Evento\Delete.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
     <Content Include="Views\Evento\Details.cshtml" />
-    <Content Include="Views\BoloDoceBemCasado\Create.cshtml" />
-    <Content Include="Views\BoloDoceBemCasado\Delete.cshtml" />
-    <Content Include="Views\BoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\BoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\BoloDoceBemCasado\Index.cshtml" />
     <Content Include="Views\FornecedorBoloDoceBemCasado\Create.cshtml" />
@@ -593,6 +590,8 @@
     <Content Include="Views\TipoItemBoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Index.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\Buscar.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasado\ListarPorTipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
