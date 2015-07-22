@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,5 +33,6 @@ namespace VillaBisutti.Delta.Core.Data
 			lista = lista.OrderBy(ir => ir.Nome).ToList();
 			return lista;
         }
-    }
+
+	}
 }

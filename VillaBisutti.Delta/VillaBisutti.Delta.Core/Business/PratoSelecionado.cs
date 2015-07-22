@@ -23,5 +23,20 @@ namespace VillaBisutti.Delta.Core.Business
 						Escolhido = false
 					});
 		}
+		public void ImportarPratosDosCardapios(int cardapioId, int tipoServicoId)
+		{
+			Data.Context context = new Data.Context();
+			foreach (Model.Cardapio cardapio in context.Cardapio.Include(c => c.Pratos).ToList())
+				foreach (Model.TipoServico tipoServico in new Data.TipoServico().GetCollection(0))
+					foreach (Model.Prato prato in cardapio.Pratos)
+						context.PratoSelecionado.Add(new Model.PratoSelecionado
+						{
+							PratoId = prato.Id,
+							CardapioId = cardapio.Id,
+							TipoServico = tipoServico,
+							Degustar = true,
+							Escolhido = false
+						});
+		}
 	}
 }

@@ -30,5 +30,6 @@ namespace VillaBisutti.Delta.Core.Data
         {
             return context.PratoSelecionado.ToList();
         }
-    }
+
+	}
 }
