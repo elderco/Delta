@@ -30,7 +30,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.FornecedorBoloDoceBemCasado> GetCollection()
 		{
-			return context.FornecedorBoloDoceBemCasado.ToList();
+			List<Model.FornecedorBoloDoceBemCasado> lista = context.FornecedorBoloDoceBemCasado.ToList();
+			lista = lista.OrderBy(ir => ir.NomeFornecedor).ToList();
+			return lista;
 		}
 	}
 }
