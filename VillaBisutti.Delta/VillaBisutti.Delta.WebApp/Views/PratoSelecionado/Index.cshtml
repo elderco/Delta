@@ -8,14 +8,20 @@
 		if(isNaN(cId) || isNaN(tId) || cId == "" || tId == "")
 		{
 			var emptyMessage = "";
-			emptyMessage += "<p>Selecione corretamente @Html.DisplayNameFor(model => model.Cardapio) e ";
-			emptyMessage += "@Html.DisplayNameFor(model => model.TipoServico) para editar os <span class=\"lead\">pratos padrão para degustação</span></p>."
+			emptyMessage += "<p class=\"alert-info\">Selecione corretamente @Html.DisplayNameFor(model => model.Cardapio) e ";
+			emptyMessage += "@Html.DisplayNameFor(model => model.TipoServico) para editar os <strong>pratos padrão para degustação</strong></p>."
 			$("#PratosContainer").html(emptyMessage);
+			$("#PratosCarregados").hide();
+			$("#CopiarCardapioTipoServico").attr("href", "#");
 			return;
 		}
-		var url = "@Url.Action("Configuracao", "PratoSelecionado", new { cardapioId = "CaRdApIoId", tipoServicoId = "TiPoSeRvIcOiD" })";
-		url = url.replace("CaRdApIoId", cId).replace("TiPoSeRvIcOiD", tId).replace("&amp;", "&");
-		LoadPage(url, "#PratosContainer");
+		$("#PratosCarregados").show();
+		var createUrl = "@(Url.Action("Copiar", "PratoSelecionado", new { cardapioId = "CaRdApIoId", tipoServicoId = "TiPoSeRvIcOiD" }))"
+		createUrl = createUrl.replace("CaRdApIoId", cId).replace("TiPoSeRvIcOiD", tId).replace("&amp;", "&");
+		$("#CopiarCardapioTipoServico").attr("href", createUrl);
+		var loadUrl = "@Url.Action("Configuracao", "PratoSelecionado", new { cardapioId = "CaRdApIoId", tipoServicoId = "TiPoSeRvIcOiD" })";
+		loadUrl = loadUrl.replace("CaRdApIoId", cId).replace("TiPoSeRvIcOiD", tId).replace("&amp;", "&");
+		LoadPage(loadUrl, "#PratosContainer");
 	}
 	$(document).ready(function () {
 		$("#CardapioId").change(function () {
@@ -24,9 +30,14 @@
 		$("#TipoServicoId").change(function () {
 			FiltrarPratos($("#CardapioId").val(), $(this).val());
 		});
+		$("#CopiarCardapioTipoServico").click(function (e) {
+			e.preventDefault();
+			LoadPage($(this).attr("href"), "#PratosContainer");
+		});
+		FiltrarPratos("");
 	});
 </script>
-<div class="row">
+<div class="row panel">
 	<div class="col-md-4">
 		@Html.DisplayNameFor(model => model.Cardapio)
 		@Html.DropDownList("CardapioId", (IEnumerable<SelectListItem>)ViewBag.CardapioId, "Selecione", new { @class = "form-control" })
@@ -35,9 +46,15 @@
 		@Html.DisplayNameFor(model => model.TipoServico)
 		@Html.DropDownList("TipoServicoId", (IEnumerable<SelectListItem>)ViewBag.TipoServicoId, "Selecione", new { @class = "form-control" })
 	</div>
+	<div class="col-md-4" id="PratosCarregados">
+		<p>
+			Não está encontrando o prato que está procurando?
+			<a id="CopiarCardapioTipoServico" class="btn btn-default" href="#">Copiar os pratos faltantes</a>
+		</p>
+	</div>
 </div>
 <div id="PratosContainer">
-	<p>
-		Selecione corretamente @Html.DisplayNameFor(model => model.Cardapio) e @Html.DisplayNameFor(model => model.TipoServico) para editar os <span class="lead">pratos padrão para degustação</span>
+	<p class="alert-info">
+		Selecione corretamente @Html.DisplayNameFor(model => model.Cardapio) e @Html.DisplayNameFor(model => model.TipoServico) para editar os <strong>pratos padrão para degustação</strong>
 	</p>
 </div>

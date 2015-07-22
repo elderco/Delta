@@ -33,7 +33,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Copiar(int cardapioId, int tipoServicoId)
 		{
 			new biz.PratoSelecionado().ImportarPratosDosCardapios(cardapioId, tipoServicoId);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return RedirectToAction("Configuracao", "PratoSelecionado", new { cardapioId = cardapioId, tipoServicoId = tipoServicoId });
 		}
         // GET: /PratoSelecionado/Edit/5
         public ActionResult Edit(int? id)

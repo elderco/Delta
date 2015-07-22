@@ -2,9 +2,19 @@
 @{
 	Layout = null;
 }
-<div class="row">
-	<p>
-		Não está encontrando o prato que está procurando?
-		<button class="btn">Copiar os pratos faltantes</button>
-	</p>
+<div class="panel">
+	@foreach (VillaBisutti.Delta.Core.Model.TipoPrato tipoPrato in Model.Itens.Keys)
+	{
+		<ul>
+			<li>
+				<p class="lead">@(tipoPrato.Nome)</p>
+			</li>
+			@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
+			{
+				<li>
+					@(prato.Prato.Nome)
+				</li>
+			}
+		</ul>
+	}
 </div>

@@ -15,13 +15,12 @@ namespace VillaBisutti.Delta.Core.DTO
 		{
 			Itens = new Dictionary<Model.TipoPrato, List<Model.PratoSelecionado>>();
 			Data.Context context = new Data.Context();
-			IQueryable<Model.TipoPrato> tiposDePrato = context.TipoPrato.Include(tp => tp.Pratos).Where(tp => tp.Pratos.Where(p => p.Cardapios.Where(c => c.Id == cardapioId).Count() > 0).Count() > 0);
-			IQueryable<Model.PratoSelecionado> pratos = context.PratoSelecionado
-				.Include(ps => ps.Prato).Include(ps => ps.Cardapio).Include(ps => ps.TipoServico);
-			foreach (Model.TipoPrato tp in tiposDePrato)
-			{
-				Itens[tp] = pratos.Where(p => p.CardapioId == cardapioId && p.TipoServicoId == tipoServicoId).ToList();
-			}
+			foreach (Model.TipoPrato tp in context.TipoPrato)
+				Itens[tp] = new List<Model.PratoSelecionado>();
+			foreach (Model.PratoSelecionado pratoSelecionado in context.PratoSelecionado
+				.Include(ps => ps.Prato.TipoPrato)
+				.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null))
+				Itens[pratoSelecionado.Prato.TipoPrato].Add(pratoSelecionado);
 		}
 	}
 }
