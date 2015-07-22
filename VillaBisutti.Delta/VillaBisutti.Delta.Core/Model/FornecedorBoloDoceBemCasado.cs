@@ -14,7 +14,5 @@ namespace VillaBisutti.Delta.Core.Model
 		public string NomeFornecedor { get; set; }
 		[Display(Name = "Doces Fornecidos")]
 		public List<ItemBoloDoceBemCasado> DocesFornecidos { get; set; }
-		[Display(Name = "Formas Fornecidos")]
-		public List<ItemFormaBoloDoceBemCasado> FormasFornecidos { get; set; }
 	}
 }

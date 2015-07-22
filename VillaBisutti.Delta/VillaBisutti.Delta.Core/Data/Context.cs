@@ -81,9 +81,5 @@ namespace VillaBisutti.Delta.Core.Data
 				.WithMany()
 				.WillCascadeOnDelete(false);
 		}
-
-		public System.Data.Entity.DbSet<VillaBisutti.Delta.Core.Data.TipoItemBoloDoceBemCasado> TipoItemBoloDoceBemCasadoes { get; set; }
-
-        
 	}
 }
