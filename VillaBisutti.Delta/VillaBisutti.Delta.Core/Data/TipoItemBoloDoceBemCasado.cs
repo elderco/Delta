@@ -12,9 +12,13 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.TipoItemBoloDoceBemCasado entity)
 		{
-			Model.TipoItemBoloDoceBemCasado original = context.TipoItemBoloDoceBemCasado.FirstOrDefault(s => s.Id == (entity.Id));
+			//Model.TipoItemBoloDoceBemCasado original = context.TipoItemBoloDoceBemCasado.FirstOrDefault(s => s.Id == (entity.Id));
+			//context.Entry(original).CurrentValues.SetValues(entity);
+			//context.SaveChanges();
+			Model.TipoItemBoloDoceBemCasado original = context.TipoItemBoloDoceBemCasado.Find(entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
+
 		}
 
 		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemBoloDoceBemCasado entity)

@@ -30,7 +30,28 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemBoloDoceBemCasado> GetCollection()
 		{
-			return context.ItemBoloDoceBemCasado.Include(ib => ib.Fornecedor).Include(it => it.TipoItemBoloDoceBemCasado).ToList();
+			return context.ItemBoloDoceBemCasado.Include(i => i.TipoItemBoloDoceBemCasado).ToList();
+		}
+		public List<Model.ItemBoloDoceBemCasado> GetFromTipo(int tipoId)
+		{
+			return context.ItemBoloDoceBemCasado.Include(i => i.TipoItemBoloDoceBemCasado).Where(
+				(i => i.TipoItemBoloDoceBemCasadoId == tipoId || tipoId == 0)
+				).ToList();
+		}
+
+		public List<Model.ItemBoloDoceBemCasado> ListarPorTipo(int tipoId)
+		{
+			return context.ItemBoloDoceBemCasado.Where(ib => ib.TipoItemBoloDoceBemCasadoId == tipoId).ToList();
+		}
+		public List<Model.ItemBoloDoceBemCasado> Filtrar(int tipoId, string str)
+		{
+			IEnumerable<Model.ItemBoloDoceBemCasado> retorno = context.ItemBoloDoceBemCasado.Include(m => m.TipoItemBoloDoceBemCasado)
+				.Where(item => (item.TipoItemBoloDoceBemCasadoId == tipoId || tipoId == 0)
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			return retorno
+				.OrderBy(p => p.Nome)
+				.OrderBy(p => p.TipoItemBoloDoceBemCasado.Nome)
+				.ToList();
 		}
 	}
 }
