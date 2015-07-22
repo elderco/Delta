@@ -168,6 +168,7 @@
     <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\FotoVideoController.cs" />
     <Compile Include="Controllers\ItemBebidaSelecionadoController.cs" />
+    <Compile Include="Controllers\ItemBoloDoceBemCasadoSelecionadoController.cs" />
     <Compile Include="Controllers\ItemDecoracaoCerimonialController.cs" />
     <Compile Include="Controllers\ItemDecoracaoCerimonialSelecionadoController.cs" />
     <Compile Include="Controllers\ItemDecoracaoSelecionadoController.cs" />
@@ -592,6 +593,11 @@
     <Content Include="Views\TipoItemBoloDoceBemCasado\Index.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasado\Buscar.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasado\ListarPorTipo.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Create.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Delete.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Details.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Edit.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
