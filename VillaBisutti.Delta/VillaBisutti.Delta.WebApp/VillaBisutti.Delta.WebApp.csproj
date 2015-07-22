@@ -199,6 +199,7 @@
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\SomIluminacaoController.cs" />
     <Compile Include="Controllers\TipoItemBebidaController.cs" />
+    <Compile Include="Controllers\TipoItemBoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\TipoItemDecoracaoCerimonialController.cs" />
     <Compile Include="Controllers\TipoItemDecoracaoController.cs" />
     <Compile Include="Controllers\TipoItemFotoVideoController.cs" />
@@ -587,6 +588,11 @@
     <Content Include="Views\TipoServico\Details.cshtml" />
     <Content Include="Views\TipoServico\Edit.cshtml" />
     <Content Include="Views\TipoServico\Index.cshtml" />
+    <Content Include="Views\TipoItemBoloDoceBemCasado\Create.cshtml" />
+    <Content Include="Views\TipoItemBoloDoceBemCasado\Delete.cshtml" />
+    <Content Include="Views\TipoItemBoloDoceBemCasado\Details.cshtml" />
+    <Content Include="Views\TipoItemBoloDoceBemCasado\Edit.cshtml" />
+    <Content Include="Views\TipoItemBoloDoceBemCasado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
