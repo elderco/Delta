@@ -97,6 +97,7 @@
     <Compile Include="Data\SampleData.cs" />
     <Compile Include="Data\SomIluminacao.cs" />
     <Compile Include="Data\TipoItemBebida.cs" />
+    <Compile Include="Data\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Data\TipoItemDecoracaoCerimonial.cs" />
     <Compile Include="Data\TipoPrato.cs" />
     <Compile Include="Data\TipoPratoPadrao.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Model\SomIluminacao.cs" />
     <Compile Include="Model\TipoEvento.cs" />
     <Compile Include="Model\TipoItemBebida.cs" />
+    <Compile Include="Model\TipoItemBoloDoceBemCasado.cs" />
     <Compile Include="Model\TipoItemDecoracao.cs" />
     <Compile Include="Model\TipoItemDecoracaoCerimonial.cs" />
     <Compile Include="Model\TipoItemFotoVideo.cs" />
