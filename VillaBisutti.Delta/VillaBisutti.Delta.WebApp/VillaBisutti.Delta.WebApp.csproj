@@ -598,6 +598,12 @@
     <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Details.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Edit.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\Index.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\EditFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\EditFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\EditFornecimentoTerceiro.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\ListFornecimentoBisutti.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\ListFornecimentoContratante.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\ListFornecimentoTerceiro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,10 +13,13 @@
 <table class="table">
 	<tr>
 		<th>
+			@Html.DisplayNameFor(model => model.Nome)
+		</th>
+		<th>
 			@Html.DisplayNameFor(model => model.TipoItemBoloDoceBemCasado.Nome)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.Nome)
+			@Html.DisplayNameFor(model => model.Fornecedor.NomeFornecedor)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.Quantidade)
@@ -30,10 +33,13 @@
 	{
 		<tr>
 			<td>
+				@Html.DisplayFor(modelItem => item.Nome)
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => item.TipoItemBoloDoceBemCasado.Nome)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Nome)
+				@Html.DisplayFor(modelItem => item.Fornecedor.NomeFornecedor)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Quantidade)
