@@ -122,7 +122,10 @@
 	@foreach (VillaBisutti.Delta.Core.Model.TipoPrato t in Model.TiposDePrato)
 	{
 		<div class="panel panel-info">
-			<div class="panel-heading collapsible" data-toggle="Tipo_@(t.Id)">@(t.Nome)</div>
+			<div class="panel-heading collapsible" data-toggle="Tipo_@(t.Id)">
+                @(t.Nome)
+                <i class="fa fa-caret-square-o-up pull-right"></i>
+            </div>
 			<ol class="list-group" id="Tipo_@(t.Id)">
 				@foreach (VillaBisutti.Delta.Core.Model.Prato p in t.Pratos)
 				{
