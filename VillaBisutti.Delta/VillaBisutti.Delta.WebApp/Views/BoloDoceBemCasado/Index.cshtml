@@ -1,54 +1,60 @@
-﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.BoloDoceBemCasado>
+﻿@model VillaBisutti.Delta.Core.Model.BoloDoceBemCasado
 @{
-	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-	//ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @section scripts {
 	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
-			$(".PopUpActionLinks").click(function (e) {
-				e.preventDefault();
-				ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+			$(".FormItemEditor").submit(function (evt) {
+				evt.preventDefault();
+				var myData = $(this).serialize();
+				var myUrl = $(this).attr("action");
+				var id = $(this).attr("id").split("_")[1];
+				$("#PlaceHolder_" + id).show();
+				$("#PlaceHolder_" + id).html("<i class=\"fa fa-refresh fa-spin\"></i>");
+				$.ajax({
+					type: "POST",
+					url: myUrl,
+					data: myData,
+					success: function () {
+						$("#PlaceHolder_" + id).parent().parent().removeClass("bg-warning");
+						$("#PlaceHolder_" + id).html("<i class=\"fa fa-check\"></i>").hide(1500);
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						$("#PlaceHolder_" + id).html("<p class=\"lead text-danger\"><i class=\"fa fa-thumbs-o-down lead text-danger\"></i>Este item não foi atualizado devido à um erro. Verifique, por favor, os dados preenchidos.</p>").parent().parent().effect("pulsate", {}, 5000).addClass("bg-warning");
+						window.setTimeout("$(\"#PlaceHolder_" + id + "\").hide(1500);", 5000);
+					}
+				});
+			});
+			$('form').each(function () {
+				$(this).validate();
 			});
 		});
 	</script>
+	@Scripts.Render("~/bundles/jqueryval")
 }
-
-
-    @Html.Action("Create", "BoloDoceBemCasado")
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Evento.NomeResponsavel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-		<th>
-			Opções
-		</th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Evento.NomeResponsavel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-			@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
-			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+	<fieldset class="col-md-4">
+		<legend>Informações básicas</legend>
+		@Html.Action("Edit", "BoloDoceBemCasado", new { id = @ViewBag.Id })
+	</fieldset>
+	<fieldset class="col-md-7 pull-right">
+		<legend>Adicionar item</legend>
+		@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado())
+	</fieldset>
+</div>
+<div class="row">
+	@Html.Action("ListNaoSelecionados", "TipoItemBoloDoceBemCasado", new { id = @ViewBag.Id })
+</div>
+<div class="row">
+	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
+	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
+</div>
+<div class="row">
+	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
+	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
+</div>
+<div class="row">
+	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
+	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
+</div>
