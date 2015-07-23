@@ -15,17 +15,28 @@
     </script>
 }
 @Html.Action("Create", "Perfil")
+
+
 <table class="table">
 <tr>
     <th>
         @Html.DisplayNameFor(model => model.Nome)
     </th>
+    <th>
+        Opções
+    </th>
+    <th></th>
+    <br />
 </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
             </td>
         </tr>
 

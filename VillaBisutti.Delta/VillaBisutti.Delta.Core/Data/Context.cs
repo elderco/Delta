@@ -17,6 +17,7 @@ namespace VillaBisutti.Delta.Core.Data
 		}
         public DbSet<Model.Modulo> Modulo { get; set; }
 		public DbSet<Model.Perfil> Perfil { get; set; }
+        public DbSet<Model.PerfilModulo> PerfilModulo { get; set; }
 		public DbSet<Model.Bebida> Bebida { get; set; }
 		public DbSet<Model.BoloDoceBemCasado> BoloDoceBemCasado { get; set; }
 		public DbSet<Model.Cardapio> Cardapio { get; set; }

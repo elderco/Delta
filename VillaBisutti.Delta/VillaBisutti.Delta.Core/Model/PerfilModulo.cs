@@ -12,6 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		public int ModuloId { get; set; }
 		public Modulo Modulo { get; set; }
+        public int PerfilId { get; set; }
 		[Display(Name="Leitura")]
         public bool PodeLer { get; set; }
         [Display(Name = "Acesso Total")]

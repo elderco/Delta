@@ -30,9 +30,21 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Perfil> GetCollection()
 		{
-			return context.Perfil
-				//.Include(p => p.Nome)
-				.ToList();
+			return context.Perfil.ToList();
 		}
-	}
+
+        public Model.Perfil GetContextPerfil(int id)
+        {
+            List<Model.PerfilModulo> modePerfil = (from perfil in context.Perfil.ToList()
+                                                   join perfilModulo in context.PerfilModulo.ToList()
+                                                       on perfil.Id equals perfilModulo.PerfilId
+                                                   where perfil.Id == id
+                                                   select perfilModulo).ToList();
+
+            Model.Perfil perfis = context.Perfil.SingleOrDefault(a => a.Id == id);
+            perfis.Modulos = modePerfil;
+            return perfis;
+            
+        }
+    }
 }
