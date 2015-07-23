@@ -13,11 +13,12 @@
 <table class="table">
 	<tr>
 		<th>
-			@Html.DisplayNameFor(model => model.TipoItemDecoracaoCerimonial.Nome)
-		</th>
-		<th>
 			@Html.DisplayNameFor(model => model.Nome)
 		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TipoItemDecoracaoCerimonial.Nome)
+		</th>
+		
 		<th>
 			@Html.DisplayNameFor(model => model.Quantidade)
 		</th>
@@ -30,10 +31,10 @@
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.TipoItemDecoracaoCerimonial.Nome)
+				@Html.DisplayFor(modelItem => item.Nome)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.Nome)
+				@Html.DisplayFor(modelItem => item.TipoItemDecoracaoCerimonial.Nome)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Quantidade)

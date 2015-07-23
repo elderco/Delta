@@ -30,7 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemBoloDoceBemCasado> GetCollection()
 		{
-			return context.ItemBoloDoceBemCasado.Include(i => i.TipoItemBoloDoceBemCasado).ToList();
+			return context.ItemBoloDoceBemCasado.Include(i => i.TipoItemBoloDoceBemCasado).Include(i => i.Fornecedor).ToList();
 		}
 		public List<Model.ItemBoloDoceBemCasado> GetFromTipo(int tipoId)
 		{
@@ -43,11 +43,14 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemBoloDoceBemCasado.Where(ib => ib.TipoItemBoloDoceBemCasadoId == tipoId).ToList();
 		}
-		public List<Model.ItemBoloDoceBemCasado> Filtrar(int tipoId, string str)
+		public List<Model.ItemBoloDoceBemCasado> Filtrar(int tipoId, int fornecedorId, string str)
 		{
-			IEnumerable<Model.ItemBoloDoceBemCasado> retorno = context.ItemBoloDoceBemCasado.Include(m => m.TipoItemBoloDoceBemCasado)
-				.Where(item => (item.TipoItemBoloDoceBemCasadoId == tipoId || tipoId == 0)
-					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty));
+			IEnumerable<Model.ItemBoloDoceBemCasado> retorno = context.ItemBoloDoceBemCasado.Include(i => i.Fornecedor).Include(m => m.TipoItemBoloDoceBemCasado)
+				.Where(item =>
+					(item.TipoItemBoloDoceBemCasadoId == tipoId || tipoId == 0)
+					&& (item.FornecedorId == fornecedorId || fornecedorId == 0)
+					&& (item.Nome.ToLower().Replace(str, "") != item.Nome.ToLower() || str == string.Empty)
+					);
 			return retorno
 				.OrderBy(p => p.Nome)
 				.OrderBy(p => p.TipoItemBoloDoceBemCasado.Nome)

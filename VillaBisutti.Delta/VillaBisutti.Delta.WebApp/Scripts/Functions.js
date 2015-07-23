@@ -185,6 +185,46 @@ function ValidateField(element, formId, postForm) {
 		$(formId).submit();
 }
 
+//function teste(editar, excluir, tipo, urlEditar, urlExcluir) {
+
+//	$(editar).attr("disabled", "disabled");
+//	$(excluir).attr("disabled", "disabled");
+//	$(tipo).change(function () {
+//		var id = $(this).val();
+//		if (id == "") {
+//			$(editar).attr("disabled", "disabled");
+//			$(excluir).attr("disabled", "disabled");
+//		} else {
+//			$(editar).removeAttr("disabled");
+//			$(excluir).removeAttr("disabled");
+//		}
+//		$(editar).click(function () {
+//			ShowPopUp(urlEditar + id, "Editar tipo de item", 790);
+//		});
+//		$(excluir).click(function () {
+//			ShowPopUp(urlDeletar + id, "Excluir tipo de item", 790);
+//		});
+//		Buscar($("#Nome").val(), $("#id").val());
+//	});
+//	$("#Nome").keyup(function () {
+//		if($(this).val().length > 3)
+//			Buscar($("#Nome").val(), $("#id").val());
+//	});
+//	PreventNegativeNumbers("Quantidade");
+//	Buscar($("#Nome").val(), $("#id").val());
+//}
+//var enviado;
+//function Buscar(texto, item, url) {
+//	window.clearTimeout(enviado);
+//	if (texto == undefined)
+//		texto = "";
+//	if (item == undefined || isNaN(item)|| item == "")
+//		item = 0;
+//	var url = "@Url.Action("Buscar", "ItemBebida", new { combo="~0", texto="~1" })";
+//	url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+//	enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
+//}
+
 function AddPopOver(element, title, text, popOverType) {
 	popOverType = (popOverType === undefined ? "popover-error" : popOverType);
 	element.addClass(popOverType)

@@ -13,13 +13,15 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemBoloDoceBemCasadoController : Controller
     {
-        // GET: /ItemBoloDoceBemCasado/
-        public ActionResult Index()
-        {
-			return View(new data.ItemBoloDoceBemCasado().GetCollection(0));
-        }
+		public ActionResult Buscar(int combo, int fornecedor, string texto)
+		{
+			return View(new data.ItemBoloDoceBemCasado().Filtrar(combo, fornecedor, texto));
+		}
 
-        // GET: /ItemBoloDoceBemCasado/Details/5
+		public ActionResult Index()
+		{
+			return View();
+		}
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -116,6 +118,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.ItemBoloDoceBemCasado().Delete(id);
             return RedirectToAction("Index");
         }
+		public ActionResult ListarPorTipo(int tipoId)
+		{
+			return View(new data.ItemBoloDoceBemCasado().ListarPorTipo(tipoId));
+		}
 
         protected override void Dispose(bool disposing)
         {
