@@ -1,25 +1,40 @@
 ﻿@model VillaBisutti.Delta.Core.DTO.PratoSelecionado
 @{
-    Layout = null;
+	Layout = null;
+	int i = 0;
 }
 <script language="javascript" type="text/javascript">
-	function DefinirDegustacao(PratoSelecionadoId, CardapioId) {
-
+	function DefinirDegustacao(pratoSelecionadoId, degustar) {
+		var url = '@Url.Action("DefinirDegustacao", "PratoSelecionado", new { pratoSelecionadoId = "PrImEiRo", degustar = "SeGuNdO" })';
+		url = url.replace("PrImEiRo", pratoSelecionadoId).replace("SeGuNdO", degustar).replace("&amp;", "&");
+		var id = "AddingTarget_" + (Math.random() + "").replace(".","");
+		var $targetDiv = $("<div />").attr("id", id);
+		$("body").append($targetDiv);
+		LoadPage(url, id);
 	}
+	$(document).ready(function () {
+		$(".set-degustar").change(function () {
+			var id = $(this).attr("id").split("_")[1];
+			$("#Degustar_" + id).attr("value", $("#Degustar_" + id).attr("value") == "True" ? "False" : "True");
+			DefinirDegustacao(id, $("#Degustar_" + id).attr("value"));
+		});
+	});
 </script>
 @foreach (VillaBisutti.Delta.Core.Model.TipoPrato tipoPrato in Model.Itens.Keys)
 {
-    <ul class="panel col-md-6 list-group">
-        <li class="list-group-item list-group-item-info"><h5>@(tipoPrato.Nome)</h5></li>
-        @foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
-        {
-            <li class="list-group-item">
-                @(prato.Prato.Nome)
-                <label class="pull-right">
-                    <input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" @(prato.Degustar ? "checked" : "")>
-                    <span class="lbl"></span>
-                </label>
-            </li>
-        }
-    </ul>
+	if ((int)(i / 2) == (int)((double)i / 2) && i > 0) { Response.Write("</div><div class=\"row\">"); }
+	<ul class="panel col-md-6 list-group">
+		<li class="list-group-item list-group-item-info"><h5>@(tipoPrato.Nome)</h5></li>
+		@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
+		{
+			<li class="list-group-item">
+				<label class="pull-right col-md-3" id="Prato_@(prato.Id)" for="Degustar_@(prato.Id)">
+					<input id="Degustar_@(prato.Id)" name="switch-field-@(i)" value="True" class="ace ace-switch ace-switch-3 set-degustar" type="checkbox" @(prato.Degustar ? "checked" : "")>
+					<span class="lbl" data-lbl="sim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;não"></span>
+				</label>
+				<span>@(prato.Prato.Nome)</span>
+			</li>
+			i++;
+		}
+	</ul>
 }

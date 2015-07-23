@@ -8,10 +8,10 @@
 		$(".set-acesso").click(function () {
 			var clicado = $(this).attr("id").split("_")[0];
 			var acao = $(this).attr("id").split("_")[1];
-			$("#" + clicado + "_TOTAL").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
-			$("#" + clicado + "_LEITURA").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
-			$("#" + clicado + "_SEM").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
-			$(this).removeClass("btn-sucess").addClass("btn-info");
+			$("#" + clicado + "_TOTAL").removeClass("active").removeClass("btn-info").removeClass("btn-success").addClass("btn-info");
+			$("#" + clicado + "_LEITURA").removeClass("active").removeClass("btn-info").removeClass("btn-success").addClass("btn-info");
+			$("#" + clicado + "_SEM").removeClass("active").removeClass("btn-info").removeClass("btn-success").addClass("btn-info");
+			$(this).removeClass("btn-info").addClass("btn-success");
 			if (acao == "TOTAL") {
 				$("#PodeAlterar_" + clicado).attr("value", "true");
 				$("#PodeLer_" + clicado).attr("value", "true");
@@ -44,17 +44,17 @@
 		<div class="form-group">
 			@foreach (VillaBisutti.Delta.Core.Model.Modulo item in ViewBag.Modulos)
 			{
-				<div class="panel btn-group col-lg-2 col-md-3" data-toggle="buttons">
-					<label class="btn btn-info col-xs-5">@item.Nome</label>
-					<label class="btn btn-sucess set-acesso col-xs-2" id="@(item.Id)_TOTAL"><span class="fa fa-pencil" title="Acesso Total"></span></label>
-					<label class="btn btn-sucess set-acesso col-xs-2" id="@(item.Id)_LEITURA"><span class="fa fa-eye" title="Somente Leitura"></span></label>
-					<label class="btn btn-info set-acesso active col-xs-2" id="@(item.Id)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
+				<div class="btn-group col-lg-3 col-md-4" data-toggle="buttons">
+					<label class="btn btn-info col-xs-8">@item.Nome</label>
+					<label class="btn btn-info set-acesso col-xs-1" id="@(item.Id)_TOTAL"><span class="fa fa-pencil" title="Acesso Total"></span></label>
+					<label class="btn btn-info set-acesso col-xs-1" id="@(item.Id)_LEITURA"><span class="fa fa-eye" title="Somente Leitura"></span></label>
+					<label class="btn btn-success set-acesso active col-xs-1" id="@(item.Id)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
+					<span class="ui-helper-hidden">
+						<input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.Id)" />
+						<input value="false" type="hidden" id="PodeAlterar_@(item.Id)" name="Modulos[@(i)].PodeAlterar" />
+						<input value="false" type="hidden" id="PodeLer_@(item.Id)" name="Modulos[@(i)].PodeLer" />
+					</span>
 				</div>
-				<span class="ui-helper-hidden">
-					<input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.Id)" />
-					<input value="false" type="hidden" id="PodeAlterar_@(item.Id)" name="Modulos[@(i)].PodeAlterar" />
-					<input value="false" type="hidden" id="PodeLer_@(item.Id)" name="Modulos[@(i)].PodeLer" />
-				</span>
 				i = i + 1;
 			}
 		</div>

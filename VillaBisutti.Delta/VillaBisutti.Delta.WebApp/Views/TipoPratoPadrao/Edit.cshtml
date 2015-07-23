@@ -9,7 +9,7 @@
 		@Html.ValidationSummary(true)
 		@Html.HiddenFor(model => model.Id)
 	</div>
-	<div class="form-group">@(Model.TipoPrato.Nome)</div>
 	<div class="form-group pull-right"><input type="submit" value="Save" class="btn btn-default" /></div>
 	<div class="form-group pull-right">@Html.TextBoxFor(model => model.QuantidadePratos, new { @type = "number", @style = "width:45px;" })</div>
+	<div class="form-group">@(Model.TipoPrato.Nome)</div>
 }

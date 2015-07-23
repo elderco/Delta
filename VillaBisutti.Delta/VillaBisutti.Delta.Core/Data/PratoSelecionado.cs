@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Data
 
         protected override List<Model.PratoSelecionado> GetCollection()
         {
-            return context.PratoSelecionado.ToList();
+            return context.PratoSelecionado.Include(ps => ps.Prato).Include(ps => ps.Cardapio).Include(ps => ps.TipoServico).ToList();
         }
 
 	}

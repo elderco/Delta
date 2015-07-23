@@ -110,8 +110,8 @@
 				@foreach (VillaBisutti.Delta.Core.Model.Prato p in c.Pratos)
 				{
 					<li class="list-group-item" id="PratoCardapio_@(c.Id)_@(p.Id)">
-						@(p.Nome)
 						<a href="@Url.Action("RemoverPratoCardapio", "Prato", new { pratoId = p.Id, cardapioId = c.Id })" id="Remover_@(c.Id)_@(p.Id)" class="badge bg-danger">remover</a>
+						@(p.Nome)
 					</li>
 				}
 			</ol>
