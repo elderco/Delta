@@ -20,12 +20,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new data.Usuario().GetCollection(0));
         }
 
-		// POST: /Usuario/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		public ActionResult Create()
 		{
-			//ViewBag.Perfis = Util.TiposAcesso;
+            ViewBag.Perfis = new SelectList(new data.Perfil().GetCollection(0),"Id","Nome");
 			return View();
 		}
 		[HttpPost]

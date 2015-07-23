@@ -39,15 +39,10 @@
 		</div>
 
 		<div class="form-group col-md-6">
-			<label class="control-label col-md-4">Perfis</label>
+			<label class="control-label col-md-4">Perfil</label>
 			<div class="col-md-8">
-				@foreach (var item in (Dictionary<int, string>)ViewBag.Perfis)
-				{
-					<label class="col-md-4">
-						<input type="checkbox" name="Perfis" value="@(item.Key)" />
-						@item.Value
-					</label>
-				}
+				@Html.DropDownList("Perfis", (IEnumerable<SelectListItem>)ViewBag.Perfis, string.Empty, new {@class= "form-control"})
+                @Html.ValidationMessageFor(model => model.Perfil.Nome)
 			</div>
 		</div>
 
