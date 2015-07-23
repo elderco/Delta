@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ItemSomIluminacaoController.cs" />
     <Compile Include="Controllers\ItemSomIluminacaoSelecionadoController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
+    <Compile Include="Controllers\Modulo.cs" />
     <Compile Include="Controllers\MontagemController.cs" />
     <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
