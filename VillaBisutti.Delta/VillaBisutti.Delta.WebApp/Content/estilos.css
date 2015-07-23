@@ -26,6 +26,8 @@ fieldset{border: 1px solid #522D1C !important;}
 .bg-primary { background-color: #522d1c !important; color: #fefefe !important; margin: 10px; padding: 5px;}
 .inline-form-group span, .inline-form-group input, .inline-form-group select  { margin-bottom: 15px; }
 .casa-submenu-menu { position: relative; }
+.alert-info{padding: 5px}
+.list-group-item h5{margin: 0}
 
 /* Pratos dos cardápios */
 #PainelTipoComida, #PainelCardapios{height: 600px; overflow-y: scroll}

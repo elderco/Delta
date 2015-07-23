@@ -46,10 +46,10 @@
 		@Html.DisplayNameFor(model => model.TipoServico)
 		@Html.DropDownList("TipoServicoId", (IEnumerable<SelectListItem>)ViewBag.TipoServicoId, "Selecione", new { @class = "form-control" })
 	</div>
-	<div class="col-md-4" id="PratosCarregados">
+	<div class="col-md-4" id="PratosCarregados" style="margin-top: 18px">
 		<p>
-			Não está encontrando o prato que está procurando?
-			<a id="CopiarCardapioTipoServico" class="btn btn-default" href="#">Copiar os pratos faltantes</a>
+			@*<a id="CopiarCardapioTipoServico" class="btn btn-default" href="#">Copiar os pratos faltantes</a>*@
+            <a id="CopiarCardapioTipoServico" class="btn btn-default tooltip-info" data-rel="tooltip" data-placement="bottom" title data-original-title="Caso não encontre algum item nos cardápios, clique neste botão para atualizá-los." href="#">Atualizar os pratos</a>
 		</p>
 	</div>
 </div>

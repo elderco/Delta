@@ -606,6 +606,7 @@
     <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\ListFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\ListFornecimentoTerceiro.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\ListNaoSelecionados.cshtml" />
+    <Content Include="Views\PratoSelecionado\DefinirDegustacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
