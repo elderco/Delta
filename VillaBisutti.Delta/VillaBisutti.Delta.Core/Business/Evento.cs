@@ -8,36 +8,67 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class Evento
 	{
-		public void CopiarRoteiroPadrao(int eventoId)
+		private Data.Context _context;
+		public Data.Context context
 		{
-			Model.Evento evento = new Data.Evento().GetElement(eventoId);			
-			List<Model.ItemRoteiro> itens = new List<Model.ItemRoteiro>();
-			foreach (Model.ItemRoteiro item in new Data.ItemRoteiro().GetCollection(0).Where(rp => rp.TipoEvento == evento.TipoEvento))
-				itens.Add(new Model.ItemRoteiro
+			get
+			{
+				if (_context == null)
+					_context = new Data.Context();
+				return _context;
+			}
+		}
+		public void CopiarRoteiroPadrao(Model.Evento evento, Data.Context CONTEXT)
+		{
+			CopiarRoteiroPadrao(evento);
+			CONTEXT.SaveChanges();
+		}
+		public void CopiarRoteiroPadrao(Model.Evento evento)
+		{
+			if (evento.Roteiro == null)
+				evento.Roteiro = new List<Model.ItemRoteiro>();
+			foreach (Model.ItemRoteiro item in context.ItemRoteiro.Where(rp => rp.TipoEvento == evento.TipoEvento && (rp.EventoId == 0 || rp.EventoId == null)))
+				evento.Roteiro.Add(new Model.ItemRoteiro
 				{
 					Titulo = item.Titulo,
 					HorarioInicio = evento.HorarioInicio + item.HorarioInicio,
-					EventoId = evento.Id,
 					Observacao = item.Observacao
 				});
-			new Data.ItemRoteiro().AddRange(itens);
 		}
-		public void CopiarCerimonialPadrao(int eventoId)
+		public void CopiarCerimonialPadrao(Model.Evento evento, Data.Context CONTEXT)
 		{
-			Model.Evento evento = new Data.Evento().GetElement(eventoId);
-			List<Model.ItemCerimonial> itens = new List<Model.ItemCerimonial>();
-			foreach (Model.ItemCerimonial item in new Data.ItemCerimonial().GetCollection(0).Where(rp => rp.TipoEvento == evento.TipoEvento))
-				itens.Add(new Model.ItemCerimonial
+			CopiarCerimonialPadrao(evento);
+			CONTEXT.SaveChanges();
+		}
+		public void CopiarCerimonialPadrao(Model.Evento evento)
+		{
+			if (evento.Cerimonial == null)
+				evento.Cerimonial = new List<Model.ItemCerimonial>();
+			foreach (Model.ItemCerimonial item in context.ItemCerimonial.Where(rp => rp.TipoEvento == evento.TipoEvento && (rp.EventoId == 0 || rp.EventoId == null)))
+				evento.Cerimonial.Add(new Model.ItemCerimonial
 				{
 					Titulo = item.Titulo,
 					HorarioInicio = evento.HorarioInicio + item.HorarioInicio,
-					EventoId = evento.Id,
 					Observacao = item.Observacao
 				});
-			new Data.ItemCerimonial().AddRange(itens);
 		}
-		public void CopiarCardapioPadrao(int eventoId)
+		public void CopiarCardapioPadrao(Model.Evento evento, Data.Context CONTEXT)
 		{
+			CopiarCardapioPadrao(evento);
+			CONTEXT.SaveChanges();
+		}
+		public void CopiarCardapioPadrao(Model.Evento evento)
+		{
+			if (evento.CardapioId == 0 || evento.TipoServicoId == 0)
+				return;
+			if (evento.Gastronomia.Pratos == null)
+				evento.Gastronomia.Pratos = new List<Model.PratoSelecionado>();
+			foreach (Model.PratoSelecionado prato in context.PratoSelecionado.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))
+				evento.Gastronomia.Pratos.Add(new Model.PratoSelecionado
+				{
+					PratoId = prato.PratoId,
+					Degustar = prato.Degustar
+				});
 		}
 		public void CriarEvento(Model.Evento evento)
 		{
@@ -50,13 +81,15 @@ namespace VillaBisutti.Delta.Core.Business
 			evento.Montagem = new Model.Montagem();
 			evento.OutrosItens = new Model.OutrosItens();
 			evento.SomIluminacao = new Model.SomIluminacao();
-			new Data.Evento().Insert(evento);
-			CopiarRoteiroPadrao(evento.Id);
-			CopiarCerimonialPadrao(evento.Id);
+			CopiarRoteiroPadrao(evento);
+			CopiarCerimonialPadrao(evento);
+			CopiarCardapioPadrao(evento);
+			context.Evento.Add(evento);
+			context.SaveChanges();
 		}
-        public void AcionarEventosTerceiros()
-        {
-            List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
-        }
+		public void AcionarEventosTerceiros()
+		{
+			List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
+		}
 	}
 }

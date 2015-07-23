@@ -26,15 +26,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.Modulos = new data.Modulo().GetCollection(0);
-            ViewBag.PodeAlterar = new model.PerfilModulo().PodeAlterar;
-            ViewBag.PodeLer = new model.PerfilModulo().PodeLer;
-            //ViewBag.SemAcesso = new model.PerfilModulo().SemAcesso;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ItemCreated([Bind(Include= "Id,Nome,Modulos")]model.Perfil perfil, model.PerfilModulo perfilModulo, model.Modulo modulo)
+        public ActionResult ItemCreated([Bind(Include= "Id,Nome,Modulos")]model.Perfil perfil)
         {
             return View();
         }
