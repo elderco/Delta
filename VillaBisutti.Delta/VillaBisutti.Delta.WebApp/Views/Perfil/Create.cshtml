@@ -8,6 +8,10 @@
 		$(".set-acesso").click(function () {
 			var clicado = $(this).attr("id").split("_")[0];
 			var acao = $(this).attr("id").split("_")[1];
+			$("#" + clicado + "_TOTAL").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
+			$("#" + clicado + "_LEITURA").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
+			$("#" + clicado + "_SEM").removeClass("active").removeClass("btn-sucess").removeClass("btn-info").addClass("btn-sucess");
+			$(this).removeClass("btn-sucess").addClass("btn-info");
 			if (acao == "TOTAL") {
 				$("#PodeAlterar_" + clicado).attr("value", "true");
 				$("#PodeLer_" + clicado).attr("value", "true");
@@ -40,27 +44,17 @@
 		<div class="form-group">
 			@foreach (VillaBisutti.Delta.Core.Model.Modulo item in ViewBag.Modulos)
 			{
-				<ul class="col-md-4 list-group">
-					<li class="list-group-item list-group-item-info">
-						<span class="ui-helper-hidden">
-							<input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.Id)" />
-							<input value="false" type="hidden" id="PodeAlterar_@(item.Id)" name="Modulos[@(i)].PodeAlterar" />
-							<input value="false" type="hidden" id="PodeLer_@(item.Id)" name="Modulos[@(i)].PodeLer" />
-						</span>
-						<h5>@item.Nome</h5>
-					</li>
-					<li class="list-group-item">
-						<label class="col-md-4">
-							<input type="radio" class="set-acesso" id="@(item.Id)_TOTAL" name="@item.Id" />Acesso Total
-						</label>
-						<label class="col-md-4">
-							<input type="radio" class="set-acesso" id="@(item.Id)_LEITURA" name="@item.Id" /> Somente Leitura
-						</label>
-						<label class="col-md-4">
-							<input type="radio" class="set-acesso" id="@(item.Id)_SEM" name="@item.Id" checked /> Sem Acesso
-						</label>
-					</li>
-				</ul>
+				<div class="panel btn-group col-lg-2 col-md-3" data-toggle="buttons">
+					<label class="btn btn-info col-xs-5">@item.Nome</label>
+					<label class="btn btn-sucess set-acesso col-xs-2" id="@(item.Id)_TOTAL"><span class="fa fa-pencil" title="Acesso Total"></span></label>
+					<label class="btn btn-sucess set-acesso col-xs-2" id="@(item.Id)_LEITURA"><span class="fa fa-eye" title="Somente Leitura"></span></label>
+					<label class="btn btn-info set-acesso active col-xs-2" id="@(item.Id)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
+				</div>
+				<span class="ui-helper-hidden">
+					<input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.Id)" />
+					<input value="false" type="hidden" id="PodeAlterar_@(item.Id)" name="Modulos[@(i)].PodeAlterar" />
+					<input value="false" type="hidden" id="PodeLer_@(item.Id)" name="Modulos[@(i)].PodeLer" />
+				</span>
 				i = i + 1;
 			}
 		</div>
