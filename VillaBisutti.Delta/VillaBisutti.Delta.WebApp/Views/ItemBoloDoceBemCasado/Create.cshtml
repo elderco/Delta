@@ -8,14 +8,16 @@
 @Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
 	var enviado;
-	function Buscar(texto, item) {
+	function Buscar(texto, fornecedor, item) {
 		window.clearTimeout(enviado);
 		if (texto == undefined)
 			texto = "";
+		if (fornecedor == undefined || isNaN(fornecedor) || fornecedor == "")
+			fornecedor = 0;
 		if (item == undefined || isNaN(item)|| item == "")
 			item = 0;
-		var url = "@Url.Action("Buscar", "ItemBoloDoceBemCasado", new { combo = "~0", texto = "~1" })";
-		url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+		var url = "@Url.Action("Buscar", "ItemBoloDoceBemCasado", new { combo = "~0", texto = "~1", fornecedor = "~2" })";
+		url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("~2", fornecedor).replace(/&amp;/g, "&");
 		enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
 	}
 	$(document).ready(function () {
