@@ -32,10 +32,10 @@
             </div>
         </div>
 		<div class="form-group">
-			@*@Html.LabelFor(model => model.Perfis, new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.PerfilId,"PerfilId", new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.Perfis)
-				@Html.ValidationMessageFor(model => model.Perfis)*@
+				@Html.DropDownList("PerfilId", (IEnumerable<SelectListItem>)ViewBag.Perfis, string.Empty)
+				@Html.ValidationMessageFor(model => model.Perfil)
 			</div>
 		</div>
 

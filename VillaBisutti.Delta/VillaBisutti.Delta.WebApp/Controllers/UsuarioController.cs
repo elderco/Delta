@@ -27,7 +27,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Email,Senha,Perfil")] model.Usuario usuario)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Email,Senha,PerfilId")] model.Usuario usuario)
 		{
 			if (ModelState.IsValid)
 			{
@@ -60,6 +60,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
 			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+            ViewBag.Perfis = new SelectList(new data.Usuario().GetCollection(0));
 			if (usuario == null)
 			{
 				return HttpNotFound();
