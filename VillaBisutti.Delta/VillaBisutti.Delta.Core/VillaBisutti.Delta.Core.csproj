@@ -67,6 +67,7 @@
     <Compile Include="Data\FornecedorBoloDoceBemCasado.cs" />
     <Compile Include="Data\Foto.cs" />
     <Compile Include="Data\FotoVideo.cs" />
+    <Compile Include="Data\Gastronomia.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />

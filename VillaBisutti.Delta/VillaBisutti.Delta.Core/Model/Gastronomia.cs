@@ -20,6 +20,7 @@ namespace VillaBisutti.Delta.Core.Model
 		}
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
+		public string Observacoes { get; set; }
 		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
 		public List<PratoSelecionado> Pratos { get; set; }

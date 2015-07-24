@@ -1,0 +1,34 @@
+﻿@model VillaBisutti.Delta.Core.Model.Gastronomia
+@{
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
+}
+@section scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
+<div class="row">
+	<fieldset class="col-md-4">
+		<legend>Informações básicas</legend>
+		@Html.Partial("../Gastronomia/Edit", Model)
+	</fieldset>
+	<fieldset class="col-md-7 pull-right">
+		<legend>Ações</legend>
+		<button>Importar degustação padrão</button>
+		<button>Gerar DOCUMENTO DE REUNIÃO DE DEGUSTAÇÃO</button>
+	</fieldset>
+</div>
+<div class="row">
+	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.TiposPratos)
+	{
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-info">@(tipoPrato.TipoPrato.Nome)</li>
+			@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Pratos.Where(p => p.Prato.TipoPratoId == tipoPrato.Id))
+			{
+				<li class="list-group-item">
+					<strong>@(prato.Prato.Nome)</strong>
+					<span>@(prato.Degustar)</span>
+					<span>@(prato.Escolhido)</span>
+				</li>
+			}
+		</ul>
+	}
+</div>
