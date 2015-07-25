@@ -77,7 +77,7 @@
 				if (tem) {
 					return false;
 				}
-				var $li = $("<li/>").text(ui.draggable.text())
+				var $li = $("<li/>")
 					.attr("id", "PratoCardapio_" + cId + "_" + pId)
 					.attr("class", "list-group-item");
 				var $aHref = $("<a />").text("remover")
@@ -89,7 +89,8 @@
 						DeleteItem($(this).attr("href"), $(this).attr("id"))
 					})
 					.appendTo($li);
-				$li.appendTo(this);
+				$li.html($li.html() + ui.draggable.text())
+					.appendTo(this);
 				SortItems($(this).attr("id"));
 				IncluirPrato(cId, pId);
 			}

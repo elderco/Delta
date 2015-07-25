@@ -20,8 +20,8 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CopiarRoteiroPadrao(Model.Evento evento, Data.Context CONTEXT)
 		{
+			_context = CONTEXT;
 			CopiarRoteiroPadrao(evento);
-			CONTEXT.SaveChanges();
 		}
 		public void CopiarRoteiroPadrao(Model.Evento evento)
 		{
@@ -34,11 +34,12 @@ namespace VillaBisutti.Delta.Core.Business
 					HorarioInicio = evento.HorarioInicio + item.HorarioInicio,
 					Observacao = item.Observacao
 				});
+			context.SaveChanges();
 		}
 		public void CopiarCerimonialPadrao(Model.Evento evento, Data.Context CONTEXT)
 		{
+			_context = CONTEXT;
 			CopiarCerimonialPadrao(evento);
-			CONTEXT.SaveChanges();
 		}
 		public void CopiarCerimonialPadrao(Model.Evento evento)
 		{
@@ -51,11 +52,12 @@ namespace VillaBisutti.Delta.Core.Business
 					HorarioInicio = evento.HorarioInicio + item.HorarioInicio,
 					Observacao = item.Observacao
 				});
+			context.SaveChanges();
 		}
 		public void CopiarCardapioPadrao(Model.Evento evento, Data.Context CONTEXT)
 		{
+			_context = CONTEXT;
 			CopiarCardapioPadrao(evento);
-			CONTEXT.SaveChanges();
 		}
 		public void CopiarCardapioPadrao(Model.Evento evento)
 		{
@@ -63,12 +65,21 @@ namespace VillaBisutti.Delta.Core.Business
 				return;
 			if (evento.Gastronomia.Pratos == null)
 				evento.Gastronomia.Pratos = new List<Model.PratoSelecionado>();
+			if (evento.Gastronomia.TiposPratos == null)
+				evento.Gastronomia.TiposPratos = new List<Model.TipoPratoPadrao>();
 			foreach (Model.PratoSelecionado prato in context.PratoSelecionado.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))
 				evento.Gastronomia.Pratos.Add(new Model.PratoSelecionado
 				{
 					PratoId = prato.PratoId,
 					Degustar = prato.Degustar
 				});
+			foreach (Model.TipoPratoPadrao tipo in context.TipoPratoPadrao.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))
+				evento.Gastronomia.TiposPratos.Add(new Model.TipoPratoPadrao
+				{
+					TipoPratoId = tipo.TipoPratoId,
+					QuantidadePratos = tipo.QuantidadePratos
+				});
+			context.SaveChanges();
 		}
 		public void CriarEvento(Model.Evento evento)
 		{
