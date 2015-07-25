@@ -15,7 +15,8 @@
 			$("#CopiarCardapioTipoServico").attr("href", "#");
 			return;
 		}
-		$("#PratosCarregados").show();
+	    $("#PratosCarregados").show();
+	    $('[data-rel=tooltip-info]').tooltip({trigger: 'manual' }).tooltip('show');
 		var createUrl = "@(Url.Action("Copiar", "PratoSelecionado", new { cardapioId = "CaRdApIoId", tipoServicoId = "TiPoSeRvIcOiD" }))"
 		createUrl = createUrl.replace("CaRdApIoId", cId).replace("TiPoSeRvIcOiD", tId).replace("&amp;", "&");
 		$("#CopiarCardapioTipoServico").attr("href", createUrl);
@@ -49,7 +50,7 @@
 	<div class="col-md-4" id="PratosCarregados" style="margin-top: 18px">
 		<p>
 			@*<a id="CopiarCardapioTipoServico" class="btn btn-default" href="#">Copiar os pratos faltantes</a>*@
-            <a id="CopiarCardapioTipoServico" class="btn btn-default tooltip-info" data-rel="tooltip" data-placement="bottom" title data-original-title="Caso não encontre algum item nos cardápios, clique neste botão para atualizá-los." href="#">Atualizar os pratos</a>
+            <a id="CopiarCardapioTipoServico" class="btn btn-default tooltip-info" data-rel="tooltip-info" data-placement="right" title data-original-title="Caso não encontre algum item nos cardápios, clique neste botão para atualizá-los." href="#">Atualizar os pratos</a>
 		</p>
 	</div>
 </div>

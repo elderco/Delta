@@ -35,6 +35,7 @@ namespace VillaBisutti.Delta.Core.Data
 					.Include(e => e.Cardapio)
 					.Include(e => e.DecoracaoCerimonial)
 					.Include(e => e.FotoVideo)
+					.Include(e => e.Gastronomia)
 					.Include(e => e.Local)
 					.Include(e => e.Montagem)
 					.Include(e => e.OutrosItens)

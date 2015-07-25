@@ -16,6 +16,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Gastronomia/
         public ActionResult Index(int id)
         {
+			ViewBag.Cardapios = new SelectList(new data.Cardapio().GetCollection(0).OrderBy(c => c.Nome), "Id", "Nome");
+			ViewBag.TipoServicos = new SelectList(new data.TipoServico().GetCollection(0).OrderBy(ts => ts.Nome), "Id", "Nome");
 			ViewBag.Id = id;
 			return View(new data.Gastronomia().GetElement(id));
 		}
@@ -41,7 +43,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edited([Bind(Include="EventoId,Id,Observacoes")] model.Gastronomia gastronomia)
+        public ActionResult Edited([Bind(Include="EventoId,Id,Observacoes,Evento")] model.Gastronomia gastronomia)
         {
 			new data.Gastronomia().Update(gastronomia);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
