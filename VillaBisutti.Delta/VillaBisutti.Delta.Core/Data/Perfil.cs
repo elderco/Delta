@@ -46,5 +46,12 @@ namespace VillaBisutti.Delta.Core.Data
             return perfis;
             
         }
+
+        public List<Model.Usuario> Filtrar(int tipoId, string texto)
+        {
+            IEnumerable<Model.Usuario> retorno = context.Usuario.Include(m => m.PerfilId)
+                .Where(item => item.PerfilId == tipoId || tipoId == 0);
+            return retorno.ToList();
+        }
     }
 }

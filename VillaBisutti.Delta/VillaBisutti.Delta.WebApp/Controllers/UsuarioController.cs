@@ -16,8 +16,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Usuario/
         public ActionResult Index()
         {
-			//ViewBag.Perfis = new SelectList(Util.TiposAcesso, "Key", "Value");
 			return View(new data.Usuario().GetCollection(0));
+        }
+        public ActionResult Buscar(int combo, string texto)
+        {
+            return View(new data.Perfil().Filtrar(combo, texto));
         }
 
 		public ActionResult Create()
@@ -55,16 +58,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Usuario/Edit/5
 		public ActionResult Edit(int? id)
 		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
-            ViewBag.Perfis = new SelectList(new data.Usuario().GetCollection(0));
-			if (usuario == null)
-			{
-				return HttpNotFound();
-			}
+            model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+            if (ModelState.IsValid)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+               
+                SelectList perfis = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
+                ViewBag.Profile = perfis;
+                if (usuario == null)
+                {
+                    return HttpNotFound();
+                } 
+            }
 			return View(usuario);
 		}
 
@@ -73,7 +81,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id,Nome,Email,Senha")] model.Usuario usuario)
+		public ActionResult Edit([Bind(Include = "Id,Nome,Email,PerfilId,Senha")] model.Usuario usuario)
 		{
 			if (ModelState.IsValid)
 			{

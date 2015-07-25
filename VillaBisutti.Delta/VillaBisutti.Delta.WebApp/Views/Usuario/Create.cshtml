@@ -3,12 +3,27 @@
 
 	Layout = null;
 }
+@Scripts.Render("~/bundles/jqueryval")
 <script language="javascript" type="text/javascript">
-    $("#TipoItemDecoracaoId").change(function () {
-        if (!$(this).val())
-            $("#ItensDecoracaoContainer").html("<select class=\"form-control\" />");
+    var enviado;
+    function Buscar(texto, item) {
+        window.clearTimeout(enviado);
+        if (texto == undefined)
+            texto = "";
+        if (item == undefined || isNaN(item) || item == "")
+            item = 0;
+        var url = "@Url.Action("Buscar", "Usuario", new { combo="~0", texto="~1" })";
+        url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
+        enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
+    }
+    $("#Nome").keyup(function () {
+        if ($(this).val().length > 3)
+            Buscar($("#Nome").val(), $("#PerfilId").val());
     });
-    </script>
+    $(document).ready(function () {
+        Buscar($("#Nome").val(),("#PerfilId"))
+    });
+</script>
     @*TODO: fazer a validação de e-mail*@
     
 @Scripts.Render("~/bundles/jqueryval")

@@ -15,6 +15,7 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Senha)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
@@ -32,9 +33,9 @@
             </div>
         </div>
 		<div class="form-group">
-			@Html.LabelFor(model => model.PerfilId,"PerfilId", new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.Perfil, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.DropDownList("PerfilId", (IEnumerable<SelectListItem>)ViewBag.Perfis, string.Empty)
+				@Html.DropDownList("PerfilId", (IEnumerable<SelectListItem>)ViewBag.Profile, string.Empty)
 				@Html.ValidationMessageFor(model => model.Perfil)
 			</div>
 		</div>
