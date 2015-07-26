@@ -30,7 +30,10 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Perfil> GetCollection()
 		{
-			return context.Perfil.ToList();
+            return context.Perfil
+                //.Include(m => m.Modulos.Select(c => c.Modulo))
+                .ToList();
+                
 		}
 
         public Model.Perfil GetContextPerfil(int id)
@@ -47,11 +50,12 @@ namespace VillaBisutti.Delta.Core.Data
             
         }
 
-        public List<Model.Usuario> Filtrar(int tipoId, string texto)
+        public Model.Perfil GetPerfil(int id = 0)
         {
-            IEnumerable<Model.Usuario> retorno = context.Usuario.Include(m => m.PerfilId)
-                .Where(item => item.PerfilId == tipoId || tipoId == 0);
-            return retorno.ToList();
+            return context.Perfil
+                .Include(m => m.Modulos.Select(c => c.Modulo))
+                .SingleOrDefault(m => m.Id == id);
+                
         }
     }
 }

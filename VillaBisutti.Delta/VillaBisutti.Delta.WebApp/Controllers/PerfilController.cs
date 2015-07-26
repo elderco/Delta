@@ -10,6 +10,7 @@ using VillaBisutti.Delta.Core.Data;
 using VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
 using model = VillaBisutti.Delta.Core.Model;
+using bus = VillaBisutti.Delta.Core.Business;
 
 
 namespace VillaBisutti.Delta.WebApp.Controllers
@@ -46,7 +47,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(model.Perfil perfil)
+        public ActionResult Edit([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +64,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            model.Perfil perfil = new data.Perfil().GetElement(id.HasValue? id.Value : 0);
+            model.Perfil perfil = new data.Perfil().GetPerfil(id.HasValue ? id.Value : 0);
             if (perfil == null)
             {
                 return HttpNotFound();
@@ -73,9 +74,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edited(model.Perfil perfil)
+        public ActionResult Edited([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
-            new data.Perfil().Update(perfil);
+            new bus.PerfilAlterado().AlterarPerfil(perfil);
             return Redirect(Request.UrlReferrer.AbsolutePath);
         }
         // GET: Perfils/Delete/5
@@ -101,50 +102,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             new data.Perfil().Delete(id);
             return RedirectToAction("Index");
         }
-
-       
-
-        //// POST: Perfils/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "Id,Nome")] Perfil perfil)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Perfil.Add(perfil);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(perfil);
-        //}
-
-       
-
-       
-
-
-        //// POST: Perfils/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Perfil perfil = db.Perfil.Find(id);
-        //    db.Perfil.Remove(perfil);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }
 

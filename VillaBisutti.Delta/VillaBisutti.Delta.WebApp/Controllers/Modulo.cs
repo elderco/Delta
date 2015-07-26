@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -24,7 +25,9 @@ namespace VillaBisutti.Delta.Core.Data
 
         protected override List<Model.Modulo> GetCollection()
         {
-            return context.Modulo.ToList();
+            return context.Modulo
+                .Include(m => m.PerfilModulo)
+                .ToList();
         }
     }
 }

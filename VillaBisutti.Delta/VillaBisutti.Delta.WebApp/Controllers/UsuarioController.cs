@@ -18,10 +18,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
 			return View(new data.Usuario().GetCollection(0));
         }
-        public ActionResult Buscar(int combo, string texto)
-        {
-            return View(new data.Perfil().Filtrar(combo, texto));
-        }
 
 		public ActionResult Create()
 		{

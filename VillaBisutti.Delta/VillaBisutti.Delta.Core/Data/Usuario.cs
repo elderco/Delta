@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Data
@@ -29,7 +30,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Usuario> GetCollection()
 		{
-			return context.Usuario.ToList();
+            return context.Usuario
+                .Include(u => u.Perfil)
+                .ToList();
 		}
 		//TODO: quando estiver pronto, ver o que fazer com isso
 		//public List<Model.Usuario> GetPorTipo(Model.TipoAcesso tipo)

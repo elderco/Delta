@@ -5,30 +5,22 @@
 }
 @Scripts.Render("~/bundles/jqueryval")
 <script language="javascript" type="text/javascript">
-    var enviado;
-    function Buscar(texto, item) {
-        window.clearTimeout(enviado);
-        if (texto == undefined)
-            texto = "";
-        if (item == undefined || isNaN(item) || item == "")
-            item = 0;
-        var url = "@Url.Action("Buscar", "Usuario", new { combo="~0", texto="~1" })";
-        url = url.replace("~0", item).replace("~1", encodeURI(texto)).replace("&amp;", "&");
-        enviado = window.setTimeout("LoadPage(\"" + url + "\", \"ResultView\");", 1000);
-    }
-    $("#Nome").keyup(function () {
-        if ($(this).val().length > 3)
-            Buscar($("#Nome").val(), $("#PerfilId").val());
-    });
     $(document).ready(function () {
-        Buscar($("#Nome").val(),("#PerfilId"))
+        $(".user-form").validate({
+            rules: {
+                field: {
+                    required: true,
+                    email: true
+                }
+            }
+        });
     });
 </script>
-    @*TODO: fazer a validação de e-mail*@
+    
     
 @Scripts.Render("~/bundles/jqueryval")
 
-@using (Html.BeginForm("ItemCreated", "Usuario"))
+@using (Html.BeginForm("ItemCreated", "Usuario", new { @class = "user-form" }))
 {
 	@Html.AntiForgeryToken()
 
@@ -48,7 +40,7 @@
             <div class="form-group col-md-6">
                 @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    @Html.EditorFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @type = "email" })
                     @Html.ValidationMessageFor(model => model.Email)
                 </div>
             </div>

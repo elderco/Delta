@@ -10,7 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Perfil: IEntityBase
 	{
 		public int Id { get; set; }
-        [Display(Name = "Perfil")]
+        [Display(Name = "Perfil"), Required]
 		public String Nome { get; set; }
 		public List<PerfilModulo> Modulos { get; set; }
 	}
