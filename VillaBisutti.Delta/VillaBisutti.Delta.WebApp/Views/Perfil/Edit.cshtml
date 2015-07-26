@@ -51,8 +51,8 @@
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeLer == false && item.PodeAlterar == false ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
                     <span class="ui-helper-hidden">
                         <input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.ModuloId)" />
-                        <input value="false" type="hidden" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
-                        <input value="false" type="hidden" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
+                        <input value="@(item.PodeAlterar)" type="hidden" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
+                        <input value="@(item.PodeLer)" type="hidden" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
                     </span>
                 </div>
                 i = i + 1;
