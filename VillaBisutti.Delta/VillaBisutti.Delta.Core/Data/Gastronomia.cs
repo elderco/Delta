@@ -35,7 +35,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Gastronomia> GetCollection()
 		{
-			return context.Gastronomia
+			List<Model.Gastronomia> lista = context.Gastronomia
 				.Include(g => g.Evento)
 				.Include(g => g.Evento.Cardapio)
 				.Include(g => g.Evento.TipoServico)
@@ -45,6 +45,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(g => g.Pratos.Select(p => p.Prato))
 				.Include(g => g.Pratos.Select(p => p.Prato))
 				.ToList();
+			return lista;
 		}
 	}
 }

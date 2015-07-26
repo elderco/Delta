@@ -1,0 +1,11 @@
+﻿@model VillaBisutti.Delta.Core.Model.PratoSelecionado
+@{
+	Layout = null;
+}
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		AddStack("Pratos do evento", "Prato @(Model.Prato.Nome) definido para @(Model.Escolhido ? "" : "não ")degustar.");
+		$("#Escolher_@(Model.Id)").removeClass("btn-success").removeClass("btn-danger").addClass("@(Model.Escolhido ? "btn-success" : "btn-danger")");
+		$("#Escolher_@(Model.Id)").attr("data-original-title", "Clique para @(Model.Escolhido ? "remover do" : "incluir no") evento");
+	});
+</script>

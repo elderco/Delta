@@ -21,6 +21,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new dto.TipoPratoPadrao());
 		}
 
+		public ActionResult DefinirQuantidade(int id, string act)
+		{
+			model.TipoPratoPadrao tpp = new data.TipoPratoPadrao().GetElement(id);
+			tpp.QuantidadePratos = tpp.QuantidadePratos + (act == "add" ? 1 : -1);
+			new data.TipoPratoPadrao().Update(tpp);
+			return View(tpp);
+		}
 		// POST: /TipoPratoPadrao/Edit/5
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using dto = VillaBisutti.Delta.Core.DTO;
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -19,7 +21,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			ViewBag.Cardapios = new SelectList(new data.Cardapio().GetCollection(0).OrderBy(c => c.Nome), "Id", "Nome");
 			ViewBag.TipoServicos = new SelectList(new data.TipoServico().GetCollection(0).OrderBy(ts => ts.Nome), "Id", "Nome");
 			ViewBag.Id = id;
-			return View(new data.Gastronomia().GetElement(id));
+			return View(new dto.Gastronomia(id));
 		}
 
         // GET: /Gastronomia/Edit/5
@@ -45,7 +47,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edited([Bind(Include="EventoId,Id,Observacoes,Evento")] model.Gastronomia gastronomia)
         {
-			new data.Gastronomia().Update(gastronomia);
+			new biz.Gastronomia().Save(gastronomia);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 

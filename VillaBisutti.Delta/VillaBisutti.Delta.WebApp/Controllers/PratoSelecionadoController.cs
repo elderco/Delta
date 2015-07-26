@@ -30,10 +30,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(new dto.PratoSelecionado(cardapioId, tipoServicoId));
 		}
 
-		public ActionResult DefinirDegustacao(int pratoSelecionadoId, bool degustar)
+		public ActionResult DefinirDegustacao(int id)
 		{
-			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(pratoSelecionadoId);
-			prato.Degustar = degustar;
+			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(id);
+			prato.Degustar = !prato.Degustar;
+			new data.PratoSelecionado().Update(prato);
 			return View(prato);
 		}
 		public ActionResult Copiar(int cardapioId, int tipoServicoId)
@@ -45,6 +46,20 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			new biz.Evento().CopiarCardapioPadrao(new data.Evento().GetElement(id));
 			return Redirect(Request.UrlReferrer.AbsolutePath);
+		}
+		public ActionResult ToggleDegustar(int id)
+		{
+			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(id);
+			prato.Degustar = !prato.Degustar;
+			new data.PratoSelecionado().Update(prato);
+			return View(prato);
+		}
+		public ActionResult ToggleEscolher(int id)
+		{
+			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(id);
+			prato.Escolhido = !prato.Escolhido;
+			new data.PratoSelecionado().Update(prato);
+			return View(prato);
 		}
 		// GET: /PratoSelecionado/Edit/5
 		public ActionResult Edit(int? id)
@@ -60,8 +75,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			}
 			return View(pratoselecionado);
 		}
-
-
 		// POST: /PratoSelecionado/Edit/5
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.

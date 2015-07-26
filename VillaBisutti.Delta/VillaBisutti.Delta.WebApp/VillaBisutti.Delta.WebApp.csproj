@@ -610,6 +610,9 @@
     <Content Include="Views\Gastronomia\Edit.cshtml" />
     <Content Include="Views\Gastronomia\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLessLayout.cshtml" />
+    <Content Include="Views\TipoPratoPadrao\DefinirQuantidade.cshtml" />
+    <Content Include="Views\PratoSelecionado\ToggleDegustar.cshtml" />
+    <Content Include="Views\PratoSelecionado\ToggleEscolher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

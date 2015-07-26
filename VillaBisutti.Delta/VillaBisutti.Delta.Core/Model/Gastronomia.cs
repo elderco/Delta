@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Gastronomia : IEntityBase
 	{
+		[NotMapped]
 		public int Id
 		{
 			get
@@ -24,7 +25,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Observacoes { get; set; }
 		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
+		[InverseProperty("Gastronomia")]
 		public List<PratoSelecionado> Pratos { get; set; }
+		[InverseProperty("Gastronomia")]
 		public List<TipoPratoPadrao> TiposPratos { get; set; }
 	}
 }

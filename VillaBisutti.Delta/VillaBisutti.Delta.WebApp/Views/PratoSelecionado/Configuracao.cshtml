@@ -5,8 +5,8 @@
 }
 <script language="javascript" type="text/javascript">
 	function DefinirDegustacao(pratoSelecionadoId, degustar) {
-		var url = '@Url.Action("DefinirDegustacao", "PratoSelecionado", new { pratoSelecionadoId = "PrImEiRo", degustar = "SeGuNdO" })';
-		url = url.replace("PrImEiRo", pratoSelecionadoId).replace("SeGuNdO", degustar).replace("&amp;", "&");
+		var url = '@Url.Action("DefinirDegustacao", "PratoSelecionado", new { id = "PrImEiRo" })';
+		url = url.replace("PrImEiRo", pratoSelecionadoId);
 		var id = "AddingTarget_" + (Math.random() + "").replace(".","");
 		var $targetDiv = $("<div />").attr("id", id);
 		$("body").append($targetDiv);

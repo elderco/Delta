@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +12,20 @@ namespace VillaBisutti.Delta.Core.Model
 	{
 		public int Id { get; set; }
 		public int PratoId { get; set; }
-		[Display(Name = "Prato"), Required]
+		[Display(Name = "Prato")]
 		public Prato Prato { get; set; }
+
 		public int? EventoId { get; set; }
 		[Display(Name = "Evento")]
-		public Evento Evento { get; set; }
+		public Gastronomia Gastronomia { get; set; }
+
 		public int? CardapioId { get; set; }
 		[Display(Name = "Cardápio")]
 		public Cardapio Cardapio { get; set; }
 		public int? TipoServicoId { get; set; }
 		[Display(Name = "Tipo de serviço")]
 		public TipoServico TipoServico { get; set; }
+
 		public bool Escolhido { get; set; }
 		public bool Degustar { get; set; }
 		[Display(Name = "Observações")]

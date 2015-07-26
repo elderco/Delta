@@ -1,32 +1,63 @@
-﻿@model VillaBisutti.Delta.Core.Model.Gastronomia
+﻿@model VillaBisutti.Delta.Core.DTO.Gastronomia
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @section scripts {
 	@Scripts.Render("~/bundles/jqueryval")
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".action-toggle").click(function (e) {
+				e.preventDefault();
+				var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
+				var $targetDiv = $("<div />").attr("id", id);
+				$("body").append($targetDiv);
+				LoadPage($(this).attr("href"), id);
+			})
+		});
+	</script>
 }
 <div class="col-xs-12">
 	<fieldset class="col-md-8">
 		<legend>Informações básicas</legend>
-		@Html.Partial("../Gastronomia/Edit", Model)
+		@Html.Partial("../Gastronomia/Edit", Model.ThisGastronomia)
 	</fieldset>
 	<fieldset class="col-md-3 pull-right">
 		<legend>Ações</legend>
-		<a href="@(Model.Evento.TipoServicoId != null && Model.Evento.CardapioId != null ? Url.Action("ImportarDoCardapio", "PratoSelecionado", new { @id = Model.EventoId }) : "javascript:void(0);")" class=" btn btn-default form-control">Importar degustação padrão</a>
-		<button class="btn btn-default form-control">Gerar DOCUMENTO DE REUNIÃO DE DEGUSTAÇÃO</button>
+		<a href="@(Model.ThisGastronomia.Evento.TipoServicoId != null && Model.ThisGastronomia.Evento.CardapioId != null ? Url.Action("ImportarDoCardapio", "PratoSelecionado", new { @id = Model.ThisGastronomia.EventoId }) : "javascript:void(0);")" class=" btn btn-default form-control">Importar degustação padrão</a>
+		<button class="btn btn-default form-control">Gerar PDF da degustação</button>
 	</fieldset>
 </div>
-<div>
-	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.TiposPratos)
+<div class="col-xs-12">
+	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.Itens.Keys)
 	{
 		<ul class="list-group">
-			<li class="list-group-item list-group-item-info">@(tipoPrato.TipoPrato.Nome)</li>
-			@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Pratos.Where(p => p.Prato.TipoPratoId == tipoPrato.Id))
+			<li class="list-group-item list-group-item-info">
+				<span class="pull-right">
+					Selecionar até
+					<a href="@Url.Action("DefinirQuantidade", "TipoPratoPadrao", new { id = tipoPrato.Id, act = "substract" })" class="btn btn-xs btn-info action-toggle">
+						<i class="fa fa-minus"></i>
+					</a>
+					<span id="Quantidade_@tipoPrato.Id">@(tipoPrato.QuantidadePratos)</span>
+					<a href="@Url.Action("DefinirQuantidade", "TipoPratoPadrao", new { id=tipoPrato.Id, act = "add" })" class="btn btn-xs btn-info action-toggle">
+						<i class="fa fa-plus"></i>
+					</a>
+					prato(s)
+				</span>
+				@(tipoPrato.TipoPrato.Nome)
+			</li>
+			@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
 			{
 				<li class="list-group-item">
+					<span class="pull-right">
+						<!-- Degustar / Aprovado / Descartado -->
+						<a id="Degustar_@(prato.Id)" href="@Url.Action("ToggleDegustar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Degustar ? "btn-success" : "btn-danger") tooltip-info action-toggle" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover da" : "incluir na") degustação">
+							Degustar
+						</a>
+						<a id="Escolher_@(prato.Id)" href="@Url.Action("ToggleEscolher", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Escolhido ? "btn-success" : "btn-danger") tooltip-info action-toggle" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover do" : "incluir no") evento">
+							Prato do evento
+						</a>
+					</span>
 					<strong>@(prato.Prato.Nome)</strong>
-					<span>@(prato.Degustar)</span>
-					<span>@(prato.Escolhido)</span>
 				</li>
 			}
 		</ul>
