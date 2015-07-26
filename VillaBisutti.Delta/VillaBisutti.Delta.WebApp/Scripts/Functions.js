@@ -7,6 +7,7 @@
     });
 }
 function ShowPopUp(url, title, w, h) {
+    $("#PopUp").remove();
     var $popUpContainer = $("<div/>").attr("id", "PopUp").attr("tabindex", "-1").attr("role", "dialog").attr("aria-labelledby", "myModalLabel").addClass("modal fade");
     var $popUpDialog = $("<div/>").attr("role", "document").addClass("modal-dialog");
     var $popUpContent = $("<div/>").addClass("modal-content");
@@ -31,10 +32,12 @@ function ShowPopUp(url, title, w, h) {
     $('.modal-title').text(title);
     $('.modal-dialog').css('width', pw + 'px');
     $('.modal-body').css('height', ph + 'px');
+
     $('.modal-body').load(URL, function (response, status, xhr) {
         HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
     });
     $("#PopUp").modal('show');
+    exit;
 }
 function ShowPopUp_2(url, title, w, h) {
     var $div = $("<div/>").attr("id", "PopUp");
@@ -234,7 +237,7 @@ function HandleCheckbox() {
         $(this).addClass('hide');
         var $label = $('label[for=' + $(this).attr('name') + ']');
         var texto = $label.text();
-        //$label.remove();
+        $label.remove();
         var $checkboxContainer = $("<span/>").addClass("button-checkbox");
         var $checkboxButton = $("<button/>")
             .attr("data-color", "primary")
@@ -471,4 +474,8 @@ $.extend($.gritter.options, {
 });
 $(function () {
     HandleCheckbox();
+    $(".PopUpActionLinks").click(function (e) {
+        e.preventDefault();
+        ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+    });
 });
