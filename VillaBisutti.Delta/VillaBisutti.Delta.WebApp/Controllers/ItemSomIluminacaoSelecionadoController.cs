@@ -12,62 +12,62 @@ using data = VillaBisutti.Delta.Core.Data;
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemSomIluminacaoSelecionadoController : Controller
-    {
-		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoBisutti/5
+	{
+		// GET: /ItemBebidaSelecionado/ListFornecimentoBisutti/5
 		public ActionResult ListFornecimentoBisutti(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, true));
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, true));
 		}
 
-		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoTerceiro/5
+		// GET: /ItemBebidaSelecionado/ListFornecimentoTerceiro/5
 		public ActionResult ListFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, true, false));
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, true, false));
 		}
 
-		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoContratante/5
+		// GET: /ItemBebidaSelecionado/ListFornecimentoContratante/5
 		public ActionResult ListFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetItensCompartimentados(id, false, false));
+			return View(new data.ItemBebidaSelecionado().GetItensCompartimentados(id, false, false));
 		}
 
 		public ActionResult EditFornecimentoBisutti(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
 
-		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoTerceiro/5
+		// GET: /ItemBebidaSelecionado/EditFornecimentoTerceiro/5
 		public ActionResult EditFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
 
-		// GET: /ItemSomIluminacaoSelecionado/ListFornecimentoContratante/5
+		// GET: /ItemBebidaSelecionado/EditFornecimentoContratante/5
 		public ActionResult EditFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
-			return View(new data.ItemSomIluminacaoSelecionado().GetElement(id));
+			return View(new data.ItemBebidaSelecionado().GetElement(id));
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioMontagem,Definido,FornecedorStartado,Contratado,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes,retorno")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			model.ItemSomIluminacaoSelecionado itemOriginal = new data.ItemSomIluminacaoSelecionado().GetElement(itemsomiluminacaoselecionado.Id);
-			itemOriginal.Quantidade = itemsomiluminacaoselecionado.Quantidade;
-			itemOriginal.ContatoFornecimento = itemsomiluminacaoselecionado.ContatoFornecimento;
-			itemOriginal.HorarioMontagem = itemsomiluminacaoselecionado.HorarioMontagem;
-			itemOriginal.Observacoes = itemsomiluminacaoselecionado.Observacoes;
-			itemOriginal.Definido = itemsomiluminacaoselecionado.Definido;
-			itemOriginal.Contratado = itemsomiluminacaoselecionado.Contratado;
-			itemOriginal.FornecedorStartado = itemsomiluminacaoselecionado.FornecedorStartado;
-			new data.ItemSomIluminacaoSelecionado().Update(itemOriginal);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			model.ItemBebidaSelecionado itemOriginal = new data.ItemBebidaSelecionado().GetElement(itembebidaselecionado.Id);
+			itemOriginal.Quantidade = itembebidaselecionado.Quantidade;
+			itemOriginal.ContatoFornecimento = itembebidaselecionado.ContatoFornecimento;
+			itemOriginal.HorarioEntrega = itembebidaselecionado.HorarioEntrega;
+			itemOriginal.Observacoes = itembebidaselecionado.Observacoes;
+			itemOriginal.Definido = itembebidaselecionado.Definido;
+			itemOriginal.Contratado = itembebidaselecionado.Contratado;
+			itemOriginal.FornecedorStartado = itembebidaselecionado.FornecedorStartado;
+			new data.ItemBebidaSelecionado().Update(itemOriginal);
+			return new HttpStatusCodeResult(HttpStatusCode.OK);
 		}
 
 		// GET: /ItemBebidaSelecionado/Create
@@ -75,7 +75,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.Id = id;
 			ViewBag.ContratoAditivoId = new SelectList(new data.ContratoAditivo().GetContratosEvento(id), "Id", "NumeroContrato");
-			ViewBag.TipoSomIluminacaoId = new SelectList(new data.TipoItemSomIluminacao().GetCollection(0), "Id", "Nome");
+			ViewBag.TipoItemBebidaId = new SelectList(new data.TipoItemBebida().GetCollection(0), "Id", "Nome");
 			return View();
 		}
 
@@ -84,16 +84,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemSomIluminacaoSelecionado([Bind(Include = "Id,EventoId,ItemSomIluminacaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
+		public ActionResult CreateItemBebidaSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBebidaSelecionado itembebidaselecionado)
 		{
-			new data.ItemSomIluminacaoSelecionado().Insert(itemsomiluminacaoselecionado);
+			new data.ItemBebidaSelecionado().Insert(itembebidaselecionado);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
 		// GET: /ItemBebidaSelecionado/Delete/5
 		public ActionResult Delete(int? id)
 		{
-			new data.ItemSomIluminacaoSelecionado().Delete(id.Value);
+			new data.ItemBebidaSelecionado().Delete(id.Value);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 

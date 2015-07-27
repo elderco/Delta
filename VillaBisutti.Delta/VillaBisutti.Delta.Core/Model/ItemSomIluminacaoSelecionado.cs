@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
@@ -30,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool FornecimentoBisutti { get; set; }
         [Display(Name = "Fornecedor Acionado")]
         public bool FornecedorStartado { get; set; }
-		[Display(Name = "Quantidade"), Range(0, 200)]
+		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Horário Montagem")]
 		public int HorarioMontagem { get; set; }

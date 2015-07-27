@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.ItemSomIluminacao entity)
 		{
-			Model.ItemSomIluminacao original = context.ItemSomIluminacao.FirstOrDefault(a => a.Id == entity.Id);
+			Model.ItemSomIluminacao original = context.ItemSomIluminacao.FirstOrDefault(b => b.Id == entity.Id);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -32,7 +32,6 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemSomIluminacao.Include(i => i.TipoItemSomIluminacao).ToList();
 		}
-
 		public List<Model.ItemSomIluminacao> GetFromTipo(int tipoId)
 		{
 			return context.ItemSomIluminacao.Include(i => i.TipoItemSomIluminacao).Where(

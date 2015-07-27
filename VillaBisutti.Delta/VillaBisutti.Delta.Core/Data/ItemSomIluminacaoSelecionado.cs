@@ -11,6 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 {
 	public class ItemSomIluminacaoSelecionado : DataAccessBase<Model.ItemSomIluminacaoSelecionado>
 	{
+
 		public override void Update(Model.ItemSomIluminacaoSelecionado entity)
 		{
 			Model.ItemSomIluminacaoSelecionado original = context.ItemSomIluminacaoSelecionado.FirstOrDefault(a => a.Id == entity.Id);
@@ -31,9 +32,8 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.ItemSomIluminacaoSelecionado> GetCollection()
 		{
-            return context.ItemSomIluminacaoSelecionado.Include(ibs => ibs.ItemSomIluminacao).Include(ibs => ibs.ItemSomIluminacao.TipoItemSomIluminacao).ToList();
-        }
-
+			return context.ItemSomIluminacaoSelecionado.Include(ibs => ibs.ItemSomIluminacao).Include(ibs => ibs.ItemSomIluminacao.TipoItemSomIluminacao).ToList();
+		}
 		public List<Model.ItemSomIluminacaoSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
 			return context.ItemSomIluminacaoSelecionado

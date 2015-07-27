@@ -12,14 +12,14 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.TipoItemSomIluminacao entity)
 		{
-            //context.TipoItemBebida.Attach(entity);
-            //context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-            //context.SaveChanges();
-            Model.TipoItemSomIluminacao original = context.TipoItemSomIluminacao.Find(entity.Id);
-            context.Entry(original).CurrentValues.SetValues(entity);
-            context.SaveChanges();
+			//context.TipoItemBebida.Attach(entity);
+			//context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+			//context.SaveChanges();
+			Model.TipoItemSomIluminacao original = context.TipoItemSomIluminacao.Find(entity.Id);
+			context.Entry(original).CurrentValues.SetValues(entity);
+			context.SaveChanges();
 		}
-        public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemSomIluminacao entity)
+		public override System.Data.Entity.Infrastructure.DbEntityEntry GetCurrent(Model.TipoItemSomIluminacao entity)
 		{
 			return context.Entry(entity);
 		}
@@ -85,8 +85,8 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		private IQueryable<Model.TipoItemSomIluminacao> GetTipoItensPreenchidos(int id)
 		{
-            return context.ItemSomIluminacaoSelecionado.Include(isi => isi.ItemSomIluminacao).Include(isi => isi.ItemSomIluminacao.TipoItemSomIluminacao)
-                                                .Where(isi => isi.EventoId == id).Select(isi => isi.ItemSomIluminacao.TipoItemSomIluminacao);
+			return context.ItemSomIluminacaoSelecionado.Include(ibs => ibs.ItemSomIluminacao).Include(ibs => ibs.ItemSomIluminacao.TipoItemSomIluminacao)
+										.Where(ibs => ibs.EventoId == id).Select(ibs => ibs.ItemSomIluminacao.TipoItemSomIluminacao);
 		}
 	}
 }

@@ -4,9 +4,9 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		$("body").off("change", "#ItemSomIluminacaoId");
-		$("#ItemSomIluminacaoId").change(function () {
-			if ($("#ItemSomIluminacaoId option:selected").attr("data-show-hide") != "False") {
+		$("body").off("change", "#IteItemSomIluminacaoId");
+		$("#ItemItemSomIluminacaoId").change(function () {
+			if ($("#ItemItemSomIluminacaoId option:selected").attr("data-show-hide") != "False") {
 				$(".deve-sumir").hide();
 			} else {
 				$(".deve-sumir").show();
@@ -14,12 +14,11 @@
 		});
 	});
 </script>
-<select name="ItemSomIluminacaoId" id="ItemSomIluminacaoId" class="form-control">
+<select name="ItemItemSomIluminacaoId" id="ItemItemSomIluminacaoId" class="form-control" data-val="true" data-val-required="Preencha este campo">
 	<option value=""></option>
 	@foreach (var item in Model)
 	{
 		<option value="@(item.Id)" data-show-hide="@(item.BloqueiaOutrasPropriedades)">@(item.Nome)</option>
 	}
 </select>
-<span class="field-validation-valid" data-valmsg-for="ItemSomIluminacaoId" data-valmsg-replace="true"></span>
-
+<span class="field-validation-valid" data-valmsg-for="ItemItemSomIluminacaoId" data-valmsg-replace="true"></span>

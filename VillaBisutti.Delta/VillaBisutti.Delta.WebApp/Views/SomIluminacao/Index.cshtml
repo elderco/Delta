@@ -4,32 +4,32 @@
 }
 @section scripts {
 <script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		$(".FormItemEditor").submit(function (evt) {
-			evt.preventDefault();
-			var myData = $(this).serialize();
-			var myUrl = $(this).attr("action");
-			var id = $(this).attr("id").split("_")[1];
-			$("#PlaceHolder_" + id).show();
-			$("#PlaceHolder_" + id).html("<i class=\"fa fa-refresh fa-spin\"></i>");
-			$.ajax({
-				type: "POST",
-				url: myUrl,
-				data: myData,
-				success: function () {
-					$("#PlaceHolder_" + id).parent().parent().removeClass("bg-warning");
-					$("#PlaceHolder_" + id).html("<i class=\"fa fa-check\"></i>").hide(1500);
-				},
-				error: function (XMLHttpRequest, textStatus, errorThrown) {
-					$("#PlaceHolder_" + id).html("<p class=\"lead text-danger\"><i class=\"fa fa-thumbs-o-down lead text-danger\"></i>Este item não foi atualizado devido à um erro. Verifique, por favor, os dados preenchidos.</p>").parent().parent().effect("pulsate", {}, 5000).addClass("bg-warning");
-					window.setTimeout("$(\"#PlaceHolder_" + id + "\").hide(1500);", 5000);
-				}
+		$(document).ready(function () {
+			$(".FormItemEditor").submit(function (evt) {
+				evt.preventDefault();
+				var myData = $(this).serialize();
+				var myUrl = $(this).attr("action");
+				var id = $(this).attr("id").split("_")[1];
+				$("#PlaceHolder_" + id).show();
+				$("#PlaceHolder_" + id).html("<i class=\"fa fa-refresh fa-spin\"></i>");
+				$.ajax({
+					type: "POST",
+					url: myUrl,
+					data: myData,
+					success: function () {
+						$("#PlaceHolder_" + id).parent().parent().removeClass("bg-warning");
+						$("#PlaceHolder_" + id).html("<i class=\"fa fa-check\"></i>").hide(1500);
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						$("#PlaceHolder_" + id).html("<p class=\"lead text-danger\"><i class=\"fa fa-thumbs-o-down lead text-danger\"></i>Este item não foi atualizado devido à um erro. Verifique, por favor, os dados preenchidos.</p>").parent().parent().effect("pulsate", {}, 5000).addClass("bg-warning");
+						window.setTimeout("$(\"#PlaceHolder_" + id + "\").hide(1500);", 5000);
+					}
+				});
+			});
+			$('form').each(function () {
+				$(this).validate();
 			});
 		});
-		$('form').each(function () {
-			$(this).validate();
-		});
-	});
 </script>
 @Scripts.Render("~/bundles/jqueryval")
 }
