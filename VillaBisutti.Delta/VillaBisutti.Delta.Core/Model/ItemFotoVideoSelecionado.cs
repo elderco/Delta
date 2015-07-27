@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Core.Model
 {
@@ -56,7 +55,9 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return (!Definido);
+				return (
+					(ItemFotoVideo != null && (new Business.ItemFotoVideo().GetQuantidadeItens(ItemFotoVideoId) < Quantidade))
+					);
 			}
 		}
 		[NotMapped]
@@ -65,7 +66,7 @@ namespace VillaBisutti.Delta.Core.Model
 			get
 			{
 				return (ContatoFornecimento == null || ContatoFornecimento == string.Empty)
-					|| (HorarioEntrega == 0);
+					|| (HorarioEntrega == 0); ;
 			}
 		}
 		[NotMapped]

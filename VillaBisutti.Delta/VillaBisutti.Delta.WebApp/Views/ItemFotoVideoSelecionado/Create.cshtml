@@ -3,7 +3,8 @@
 	Layout = null;
 }
 <script language="javascript" type="text/javascript">
-	$(document).ready(function () {
+	$(document).ready(function ()
+	{
 		$("#TipoItemFotoVideoId").change(function () {
 			if (!$(this).val())
 				$("#ItensFotoVideoContainer").html("<select class=\"form-control\" />");
@@ -48,7 +49,7 @@
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemBebida" }))
+@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemFotoVideo" }))
 {
 	@Html.AntiForgeryToken()
 
@@ -58,7 +59,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.ItemFotoVideo.TipoItemFotoVideo.Nome, new { @class = "control-label col-md-2" })
 			<div class="col-md-2">
-				@Html.DropDownList("TipoItemFotoVideoid", (IEnumerable<SelectListItem>)ViewBag.TipoItemFotoVideoid, "Selecione", new { @class = "form-control" })
+				@Html.DropDownList("TipoItemFotoVideoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemFotoVideoId, "Selecione", new { @class = "form-control" })
 			</div>
 			@Html.LabelFor(model => model.ItemFotoVideo.Nome, new { @class = "control-label col-md-2" })
 			<div class="col-md-2" id="ItensFotoVideoContainer">
