@@ -15,103 +15,96 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 	{
 		public ActionResult ListNaoSelecionados(int id)
 		{
-			return View(new data.TipoItemBebida().ListNaoSelecionados(id));
-		}
-		// GET: /TipoItemBebida/
-		public ActionResult Index()
-		{
-			return View(new data.TipoItemBebida().GetCollection(0));
+			return View(new data.TipoItemSomIluminacao().ListNaoSelecionados(id));
 		}
 
-		// GET: /TipoItemBebida/Details/5
+		public ActionResult Index()
+		{
+			return View(new data.TipoItemSomIluminacao().GetCollection(0));
+		}
+
 		public ActionResult Details(int? id)
 		{
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			model.TipoItemBebida tipoitembebida = new data.TipoItemBebida().GetElement(id.HasValue ? id.Value : 0);
-			if (tipoitembebida == null)
+			model.TipoItemSomIluminacao tiposomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (tiposomiluminacao == null)
 			{
 				return HttpNotFound();
 			}
-			return View(tipoitembebida);
+			return View(tiposomiluminacao);
 		}
 
-		// GET: /TipoItemBebida/Create
 		public ActionResult Create()
 		{
 			return View();
 		}
 
-		// POST: /TipoItemBebida/Create
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoBodas,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro,CopiaDecoracao,CopiaMontagem,CopiaBoloDoceBemCasado,CopiaFotoVideo,CopiaSomIluminacao,CopiaOutrosItens")] model.TipoItemBebida tipoitembebida)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoBodas,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro,CopiaBebida,CopiaDecoracao,CopiaMontagem,CopiaBoloDoceBemCasado,CopiaFotoVideo,CopiaOutrosItens")] model.TipoItemSomIluminacao tiposomiluminacao)
 		{
 			if (ModelState.IsValid)
 			{
-				new data.TipoItemBebida().Insert(tipoitembebida);
-				return RedirectToAction("Index", "ItemBebida");
+				new data.TipoItemSomIluminacao().Insert(tiposomiluminacao);
+				return RedirectToAction("Index", "ItemSomIluminacao");
 			}
 
-			return View(tipoitembebida);
+			return View(tiposomiluminacao);
 		}
 
-		// GET: /TipoItemBebida/Edit/5
 		public ActionResult Edit(int? id)
 		{
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			model.TipoItemBebida tipoitembebida = new data.TipoItemBebida().GetElement(id.HasValue ? id.Value : 0);
-			if (tipoitembebida == null)
+			model.TipoItemSomIluminacao tiposomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (tiposomiluminacao == null)
 			{
 				return HttpNotFound();
 			}
-			return View(tipoitembebida);
+			return View(tiposomiluminacao);
 		}
 
-		// POST: /TipoItemBebida/Edit/5
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoBodas,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro,CopiaDecoracao,CopiaMontagem,CopiaBoloDoceBemCasado,CopiaFotoVideo,CopiaSomIluminacao,CopiaOutrosItens")] model.TipoItemBebida tipoitembebida)
+		public ActionResult Edit([Bind(Include = "Id,Nome,PadraoAniversario,PadraoBarmitzva,PadraoBatmitzva,PadraoBodas,PadraoCasamento,PadraoCorporativo,PadraoDebutante,PadraoOutro,CopiaBebida,CopiaDecoracao,CopiaMontagem,CopiaBoloDoceBemCasado,CopiaFotoVideo,CopiaOutrosItens")] model.TipoItemSomIluminacao tiposomiluminacao)
 		{
 			if (ModelState.IsValid)
 			{
-				new data.TipoItemBebida().Update(tipoitembebida);
-				return RedirectToAction("Index", "ItemBebida");
+				new data.TipoItemSomIluminacao().Update(tiposomiluminacao);
+				return RedirectToAction("Index", "ItemSomIluminacao");
 			}
-			return View(tipoitembebida);
+			return View(tiposomiluminacao);
 		}
 
-		// GET: /TipoItemBebida/Delete/5
 		public ActionResult Delete(int? id)
 		{
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			model.TipoItemBebida tipoitembebida = new data.TipoItemBebida().GetElement(id.HasValue ? id.Value : 0);
-			if (tipoitembebida == null)
+			model.TipoItemSomIluminacao tiposomiluminacao = new data.TipoItemSomIluminacao().GetElement(id.HasValue ? id.Value : 0);
+			if (tiposomiluminacao == null)
 			{
 				return HttpNotFound();
 			}
-			return View(tipoitembebida);
+			return View(tiposomiluminacao);
 		}
 
-		// POST: /TipoItemBebida/Delete/5
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(int id)
 		{
-			new data.TipoItemBebida().Delete(id);
-			return RedirectToAction("Index", "ItemBebida");
+			new data.TipoItemSomIluminacao().Delete(id);
+			return RedirectToAction("Index", "ItemSomIluminacao");
 		}
 
 		protected override void Dispose(bool disposing)
