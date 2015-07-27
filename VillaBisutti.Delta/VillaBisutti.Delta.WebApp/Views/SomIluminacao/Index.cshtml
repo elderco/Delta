@@ -3,7 +3,7 @@
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @section scripts {
-<script language="javascript" type="text/javascript">
+	<script language="javascript" type="text/javascript">
 		$(document).ready(function () {
 			$(".FormItemEditor").submit(function (evt) {
 				evt.preventDefault();
@@ -30,8 +30,8 @@
 				$(this).validate();
 			});
 		});
-</script>
-@Scripts.Render("~/bundles/jqueryval")
+	</script>
+	@Scripts.Render("~/bundles/jqueryval")
 }
 <div class="row">
 	<fieldset class="col-md-4">
@@ -40,7 +40,7 @@
 	</fieldset>
 	<fieldset class="col-md-7 pull-right">
 		<legend>Adicionar item</legend>
-		@Html.Partial("../ItemSomIluminacaoSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemSomIluminacaoSelecionado())
+		@Html.Partial("../ItemSomIluminacaoSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemBebidaSelecionado())
 	</fieldset>
 </div>
 <div class="row">

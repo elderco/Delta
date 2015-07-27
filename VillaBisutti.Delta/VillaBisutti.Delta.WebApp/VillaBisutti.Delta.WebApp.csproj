@@ -429,10 +429,7 @@
     <Content Include="Views\Bebida\Index.cshtml" />
     <Content Include="Views\Evento\Cabecalho.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\Create.cshtml" />
-    <Content Include="Views\ItemBebidaSelecionado\Delete.cshtml" />
-    <Content Include="Views\ItemBebidaSelecionado\Details.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\Edit.cshtml" />
-    <Content Include="Views\ItemBebidaSelecionado\Index.cshtml" />
     <Content Include="Views\TipoItemBebida\ListNaoSelecionados.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\ListFornecimentoTerceiro.cshtml" />
@@ -462,10 +459,7 @@
     <Content Include="Views\SomIluminacao\Edit.cshtml" />
     <Content Include="Views\SomIluminacao\Index.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\Create.cshtml" />
-    <Content Include="Views\ItemSomIluminacaoSelecionado\Delete.cshtml" />
-    <Content Include="Views\ItemSomIluminacaoSelecionado\Details.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\Edit.cshtml" />
-    <Content Include="Views\ItemSomIluminacaoSelecionado\Index.cshtml" />
     <Content Include="Views\ItemFotoVideoSelecionado\EditFornecimentoBisutti.cshtml" />
     <Content Include="Views\ItemFotoVideoSelecionado\EditFornecimentoContratante.cshtml" />
     <Content Include="Views\ItemFotoVideoSelecionado\EditFornecimentoTerceiro.cshtml" />

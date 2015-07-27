@@ -12,7 +12,7 @@
 	});
 </script>
 <tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
-	@using (Html.BeginForm("EditFornecimentoContratantePost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
+	@using (Html.BeginForm("EditPost", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 	{
 		<td>
 			@Html.AntiForgeryToken()
