@@ -77,7 +77,10 @@ namespace VillaBisutti.Delta.Core.Business
 					{
 						EventoId = evento.Id,
 						PratoId = prato.PratoId,
-						Degustar = prato.Degustar
+						Degustar = prato.Degustar,
+						Escolhido = false,
+						Rejeitado = false
+
 					});
 			List<Model.TipoPratoPadrao> tipos = context.TipoPratoPadrao.Where(tps => tps.EventoId == evento.Id).ToList();
 			foreach (Model.TipoPratoPadrao tipo in context.TipoPratoPadrao.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))

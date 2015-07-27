@@ -56,10 +56,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 		public ActionResult ToggleEscolher(int id)
 		{
+			model.PratoSelecionado prato = new biz.PratoSelecionado().EscolherPrato(id);
+			if (prato == null)
+				return RedirectToAction("ErroMaisPratosQuePermitido");
+			return View(prato);
+		}
+		public ActionResult ToggleRejeitar(int id)
+		{
 			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(id);
-			prato.Escolhido = !prato.Escolhido;
+			prato.Rejeitado = !prato.Rejeitado;
 			new data.PratoSelecionado().Update(prato);
 			return View(prato);
+		}
+		public ActionResult ErroMaisPratosQuePermitido()
+		{
+			return View();
 		}
 		// GET: /PratoSelecionado/Edit/5
 		public ActionResult Edit(int? id)

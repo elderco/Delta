@@ -29,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Data
 
         protected override List<Model.PratoSelecionado> GetCollection()
         {
-            return context.PratoSelecionado.Include(ps => ps.Prato).Include(ps => ps.Cardapio).Include(ps => ps.TipoServico).ToList();
+			return context.PratoSelecionado.Include(ps => ps.Prato).Include(ps => ps.Prato.TipoPrato).Include(ps => ps.Cardapio).Include(ps => ps.TipoServico).ToList();
         }
 
 	}

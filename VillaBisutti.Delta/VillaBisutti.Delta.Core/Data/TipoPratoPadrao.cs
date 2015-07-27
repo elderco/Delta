@@ -38,5 +38,9 @@ namespace VillaBisutti.Delta.Core.Data
 				.OrderBy(tpp => tpp.Cardapio.Nome)
 				.ToList();
 		}
+		public Model.TipoPratoPadrao ObterPorCardapio(int eventoId, int tipoPratoId)
+		{
+			return GetCollection().FirstOrDefault(tpp => tpp.EventoId == eventoId && tpp.TipoPratoId == tipoPratoId);
+		}
 	}
 }

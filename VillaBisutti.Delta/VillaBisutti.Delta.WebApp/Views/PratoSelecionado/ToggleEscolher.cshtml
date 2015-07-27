@@ -4,8 +4,11 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		AddStack("Pratos do evento", "Prato @(Model.Prato.Nome) definido para @(Model.Escolhido ? "" : "não ")degustar.");
+		AddStack("Pratos do evento", "Prato @(Model.Prato.Nome) @(Model.Escolhido ? "" : "não ")será servido no evento.");
 		$("#Escolher_@(Model.Id)").removeClass("btn-success").removeClass("btn-danger").addClass("@(Model.Escolhido ? "btn-success" : "btn-danger")");
 		$("#Escolher_@(Model.Id)").attr("data-original-title", "Clique para @(Model.Escolhido ? "remover do" : "incluir no") evento");
+		$("#Escolher_@(Model.Id)").html("@(Html.Raw(Model.Escolhido ? "<i class=\\\"fa fa-check\\\"></i> Prato escolhido para o evento" : "<i class=\\\"fa fa-frown-o\\\"></i> Prato não escolhido para o evento"))");
+		$("#Rejeitar_@(Model.Id)").@(Model.Escolhido ? "addClass" : "removeClass")("hidden");
+		$("#Degustar_@(Model.Id)").@(Model.Escolhido ? "addClass" : "removeClass")("hidden");
 	});
 </script>

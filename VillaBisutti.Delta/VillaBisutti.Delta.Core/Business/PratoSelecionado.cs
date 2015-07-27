@@ -21,7 +21,8 @@ namespace VillaBisutti.Delta.Core.Business
 							CardapioId = cardapio.Id,
 							TipoServico = tipoServico,
 							Degustar = true,
-							Escolhido = false
+							Escolhido = false,
+							Rejeitado = false
 						});
 		}
 		public void ImportarPratosDosCardapios(int cardapioId, int tipoServicoId)
@@ -36,10 +37,30 @@ namespace VillaBisutti.Delta.Core.Business
 						CardapioId = cardapioId,
 						TipoServicoId = tipoServicoId,
 						Degustar = true,
-						Escolhido = false
+						Escolhido = false,
+						Rejeitado = false
 					});
 			context.SaveChanges();
 			context.Dispose();
+		}
+
+		public Model.PratoSelecionado EscolherPrato(int id)
+		{
+			Data.Context context = new Data.Context();
+			Model.PratoSelecionado prato = context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			int quantosEscolhidos = context.PratoSelecionado.Where(p => 
+				p.Prato.TipoPratoId == prato.Prato.TipoPratoId
+				&& p.EventoId == prato.EventoId
+				&& p.Escolhido
+				).Count();
+			int quantosPode = context.TipoPratoPadrao.FirstOrDefault(tpp => tpp.TipoPratoId == prato.Prato.TipoPratoId && tpp.EventoId == prato.EventoId).QuantidadePratos;
+			if (quantosEscolhidos >= quantosPode && prato.Escolhido == false)
+				return null;
+			prato.Escolhido = !prato.Escolhido;
+			new Data.PratoSelecionado().Update(prato);
+			context.SaveChanges();
+			context.Dispose();
+			return prato;
 		}
 	}
 }

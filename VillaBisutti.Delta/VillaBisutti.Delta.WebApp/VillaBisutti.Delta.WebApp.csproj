@@ -604,6 +604,8 @@
     <Content Include="Views\TipoPratoPadrao\DefinirQuantidade.cshtml" />
     <Content Include="Views\PratoSelecionado\ToggleDegustar.cshtml" />
     <Content Include="Views\PratoSelecionado\ToggleEscolher.cshtml" />
+    <Content Include="Views\PratoSelecionado\ToggleRejeitar.cshtml" />
+    <Content Include="Views\PratoSelecionado\ErroMaisPratosQuePermitido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

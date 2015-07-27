@@ -28,6 +28,7 @@ namespace VillaBisutti.Delta.Core.Model
 
 		public bool Escolhido { get; set; }
 		public bool Degustar { get; set; }
+		public bool Rejeitado { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
 	}
