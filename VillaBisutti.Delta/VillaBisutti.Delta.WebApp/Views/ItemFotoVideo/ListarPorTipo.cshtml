@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.ItemFotoVideo>
 @{
-    Layout = null;
+	Layout = null;
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
@@ -14,11 +14,11 @@
 		});
 	});
 </script>
-<select name="ItemFotoVideoId" id="ItemFotoVideoId" class="form-control">
+<select name="ItemFotoVideoId" id="ItemFotoVideoId" class="form-control" data-val="true" data-val-required="Preencha este campo">
 	<option value=""></option>
 	@foreach (var item in Model)
 	{
-	<option value="@(item.Id)" data-show-hide="@(item.BloqueiaOutrasPropriedades)">@(item.Nome)</option>
+		<option value="@(item.Id)" data-show-hide="@(item.BloqueiaOutrasPropriedades)">@(item.Nome)</option>
 	}
 </select>
 <span class="field-validation-valid" data-valmsg-for="ItemFotoVideoId" data-valmsg-replace="true"></span>

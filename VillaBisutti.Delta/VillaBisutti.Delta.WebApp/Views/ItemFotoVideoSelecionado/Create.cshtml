@@ -48,17 +48,17 @@
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemFotoVideo" }))
+@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemBebida" }))
 {
-    @Html.AntiForgeryToken()
-    
+	@Html.AntiForgeryToken()
+
 	<div class="form-horizontal">
 		@Html.ValidationSummary(true)
 		<input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
 		<div class="form-group">
 			@Html.LabelFor(model => model.ItemFotoVideo.TipoItemFotoVideo.Nome, new { @class = "control-label col-md-2" })
 			<div class="col-md-2">
-				@Html.DropDownList("TipoItemFotoVideoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemFotoVideoId, "Selecione", new { @class = "form-control" })
+				@Html.DropDownList("TipoItemFotoVideoid", (IEnumerable<SelectListItem>)ViewBag.TipoItemFotoVideoid, "Selecione", new { @class = "form-control" })
 			</div>
 			@Html.LabelFor(model => model.ItemFotoVideo.Nome, new { @class = "control-label col-md-2" })
 			<div class="col-md-2" id="ItensFotoVideoContainer">
@@ -94,10 +94,10 @@
 				@Html.ValidationMessageFor(model => model.Observacoes)
 			</div>
 		</div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-4">
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-4">
 				<button type="submit" class="btn btn-default form-control"><span class="menu-icon fa fa-plus"></span> Adicionar</button>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 }

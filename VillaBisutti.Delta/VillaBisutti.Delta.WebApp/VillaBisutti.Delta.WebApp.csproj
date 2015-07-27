@@ -452,10 +452,7 @@
     <Content Include="Views\FotoVideo\Edit.cshtml" />
     <Content Include="Views\FotoVideo\Index.cshtml" />
     <Content Include="Views\ItemFotoVideoSelecionado\Create.cshtml" />
-    <Content Include="Views\ItemFotoVideoSelecionado\Delete.cshtml" />
-    <Content Include="Views\ItemFotoVideoSelecionado\Details.cshtml" />
     <Content Include="Views\ItemFotoVideoSelecionado\Edit.cshtml" />
-    <Content Include="Views\ItemFotoVideoSelecionado\Index.cshtml" />
     <Content Include="Views\SomIluminacao\Edit.cshtml" />
     <Content Include="Views\SomIluminacao\Index.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\Create.cshtml" />

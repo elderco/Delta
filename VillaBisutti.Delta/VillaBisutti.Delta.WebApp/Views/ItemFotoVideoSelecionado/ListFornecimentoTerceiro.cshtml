@@ -32,10 +32,10 @@
 			</th>
 			<th class="col-md-1"></th>
 		</tr>
-			@foreach (var item in Model)
-			{
-				@Html.Partial("../ItemFotoVideoSelecionado/EditFornecimentoTerceiro", item)
-			}
+		@foreach (var item in Model)
+		{
+			@Html.Partial("../ItemFotoVideoSelecionado/EditFornecimentoTerceiro", item)
+		}
 	</table>
 }
 else

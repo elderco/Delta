@@ -2,12 +2,13 @@
 
 @{
 	Layout = null;
-    //ViewBag.Title = "Edit";
+	//ViewBag.Title = "Edit";
 }
+@Scripts.Render("~/bundles/jqueryval")
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
 		@Html.ValidationSummary(true)

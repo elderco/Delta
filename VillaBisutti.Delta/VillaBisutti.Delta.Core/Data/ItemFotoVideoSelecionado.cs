@@ -33,7 +33,6 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemFotoVideoSelecionado.Include(ibs => ibs.ItemFotoVideo).Include(ibs => ibs.ItemFotoVideo.TipoItemFotoVideo).ToList();
 		}
-
 		public List<Model.ItemFotoVideoSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
 			return context.ItemFotoVideoSelecionado

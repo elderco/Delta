@@ -12,22 +12,19 @@ using data = VillaBisutti.Delta.Core.Data;
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class ItemFotoVideoSelecionadoController : Controller
-    {
-		// GET: /ItemFotoVideoSelecionado/ListFornecimentoBisutti/5
+	{
 		public ActionResult ListFornecimentoBisutti(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemFotoVideoSelecionado().GetItensCompartimentados(id, true, true));
 		}
 
-		// GET: /ItemFotoVideoSelecionado/ListFornecimentoTerceiro/5
 		public ActionResult ListFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemFotoVideoSelecionado().GetItensCompartimentados(id, true, false));
 		}
 
-		// GET: /ItemFotoVideoSelecionado/ListFornecimentoContratante/5
 		public ActionResult ListFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
@@ -39,14 +36,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			ViewBag.Id = id;
 			return View(new data.ItemFotoVideoSelecionado().GetElement(id));
 		}
-		// GET: /ItemFotoVideoSelecionado/EditFornecimentoTerceiro/5
+
 		public ActionResult EditFornecimentoTerceiro(int id)
 		{
 			ViewBag.Id = id;
 			return View(new data.ItemFotoVideoSelecionado().GetElement(id));
 		}
 
-		// GET: /ItemFotoVideoSelecionado/EditFornecimentoContratante/5
 		public ActionResult EditFornecimentoContratante(int id)
 		{
 			ViewBag.Id = id;
@@ -69,7 +65,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return new HttpStatusCodeResult(HttpStatusCode.OK);
 		}
 
-		// GET: /ItemFotoVideoSelecionado/Create
 		public ActionResult Create(int id)
 		{
 			ViewBag.Id = id;
@@ -78,33 +73,26 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View();
 		}
 
-		// POST: /ItemBebidaSelecionado/Create
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult CreateItemFotoVideoSelecionado([Bind(Include = "Id,EventoId,ItemBebidaId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemFotoVideoSelecionado itemfotovideoselecionado)
+		public ActionResult CreateItemFotoVideoSelecionado([Bind(Include = "Id,EventoId,ItemFotoVideoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemFotoVideoSelecionado itemfotovideoselecionado)
 		{
 			new data.ItemFotoVideoSelecionado().Insert(itemfotovideoselecionado);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
-		// GET: /ItemFotoVideoSelecionado/Delete/5
 		public ActionResult Delete(int? id)
 		{
 			new data.ItemFotoVideoSelecionado().Delete(id.Value);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
 
-		// POST: /ItemFotoVideoSelecionado/Delete/5
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(int id)
 		{
-			//ItemFotoVideoSelecionado itemfotovideoselecionado = db.ItemFotoVideoSelecionado.Find(id);
-			//db.ItemFotoVideoSelecionado.Remove(itemfotovideoselecionado);
-			//db.SaveChanges();
-			//return RedirectToAction("Index");
 			return View();
 		}
 

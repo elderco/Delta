@@ -4,13 +4,12 @@
 	//ViewBag.Title = "Index";
 }
 
-    @Html.Action("Create", "TipoItemFotoVideo")
-
+@Html.Action("Create", "TipoItemFotoVideo")
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Nome)
+		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.PadraoAniversario)
 		</th>
@@ -35,40 +34,41 @@
 		<th>
 			Opções
 		</th>
-        <th></th>
-    </tr>
+		<th></th>
+	</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoAniversario)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoBarmitzva)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoBatmitzva)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoCasamento)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoCorporativo)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoDebutante)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PadraoOutro)
-		</td>
-        <td>		
-			@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
-			@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
- </td>
-    </tr>
-}
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoAniversario)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoBarmitzva)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoBatmitzva)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoCasamento)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoCorporativo)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoDebutante)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PadraoOutro)
+			</td>
+			<td>
+				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |
+				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			</td>
+		</tr>
+	}
 
 </table>
