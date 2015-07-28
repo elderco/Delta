@@ -10,15 +10,6 @@
 			else
 				LoadPage("@(Url.Action("ListarPorTipo", "ItemBoloDoceBemCasado"))/?tipoId=" + $(this).val(), "ItensTipoItemBoloDoceBemCasadoContainer");
 		});
-		$("#ContratacaoBisutti").button().change(function () {
-			if ($(this).is(':checked')) {
-				$("#FornecimentoBisuttiContainer").show();
-			} else {
-				$("#FornecimentoBisuttiContainer").hide();
-			}
-		});
-		$("#FornecimentoBisutti").button();
-		$("#ContratacaoBisutti").change();
 		PreventNegativeNumbers("Quantidade");
 
 
@@ -75,11 +66,6 @@
 				@Html.EditorFor(model => model.ContratacaoBisutti)
 				@Html.LabelFor(model => model.ContratacaoBisutti, new { @class = "control-label" })
 				@Html.ValidationMessageFor(model => model.ContratacaoBisutti)
-			</div>
-			<div class="col-md-6" id="FornecimentoBisuttiContainer">
-				@Html.CheckBoxFor(model => model.FornecimentoBisutti)
-				@Html.LabelFor(model => model.FornecimentoBisutti, new { @class = "control-label" })
-				@Html.ValidationMessageFor(model => model.FornecimentoBisutti)
 			</div>
 		</div>
 		<div class="form-group deve-sumir">

@@ -47,10 +47,6 @@
 	@Html.Action("ListNaoSelecionados", "TipoItemBoloDoceBemCasado", new { id = @ViewBag.Id })
 </div>
 <div class="row">
-	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
-</div>
-<div class="row">
 	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
 	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>

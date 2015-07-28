@@ -26,8 +26,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool Contratado { get; set; }
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
 		public bool ContratacaoBisutti { get; set; }
-		[Display(Name = "Fornecido pela Villa Bisutti")]
-		public bool FornecimentoBisutti { get; set; }
 		[Display(Name = "Fornecedor Iniciado")]
         public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
