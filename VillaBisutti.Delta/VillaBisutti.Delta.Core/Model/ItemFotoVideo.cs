@@ -17,6 +17,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int TipoItemFotoVideoId { get; set; }
 		[Display(Name = "Tipo")]
 		public TipoItemFotoVideo TipoItemFotoVideo { get; set; }
+		[Display(Name = "Bloqueia")]
 		public bool BloqueiaOutrasPropriedades { get; set; }
 	}
 }

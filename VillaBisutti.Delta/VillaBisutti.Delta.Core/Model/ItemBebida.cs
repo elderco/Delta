@@ -17,6 +17,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int TipoItemBebidaId { get; set; }
 		[Display(Name = "Tipo")]
 		public TipoItemBebida TipoItemBebida { get; set; }
+		[Display(Name = "Bloqueia")]
 		public bool BloqueiaOutrasPropriedades { get; set; }
 	}
 }

@@ -17,6 +17,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public int TipoItemMontagemId { get; set; }
 		[Display(Name = "Tipo")]
 		public TipoItemMontagem TipoItemMontagem { get; set; }
+		[Display(Name = "Bloqueia")]
         public bool BloqueiaOutrasPropriedades { get; set; }
 	}
 }
