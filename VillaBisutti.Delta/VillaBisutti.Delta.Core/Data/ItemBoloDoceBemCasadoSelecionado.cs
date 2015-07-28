@@ -43,7 +43,6 @@ namespace VillaBisutti.Delta.Core.Data
 				.Where(i =>
 					i.EventoId == eventoId
 					 && i.ContratacaoBisutti == ContratacaoVB
-					 && i.FornecimentoBisutti == FornecimentoVB
 				)
 				.ToList();
 		}

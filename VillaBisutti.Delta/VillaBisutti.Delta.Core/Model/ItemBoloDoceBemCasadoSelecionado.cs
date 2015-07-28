@@ -73,7 +73,7 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
+				return (ContratacaoBisutti && (!Definido || !FornecedorStartado || !Contratado));
 			}
 		}
 	}
