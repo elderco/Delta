@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemMontagem> GetCollection()
 		{
 			List<Model.TipoItemMontagem> lista = context.TipoItemMontagem.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 

@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemBebida> GetCollection()
 		{
 			List<Model.TipoItemBebida> lista = context.TipoItemBebida.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 		public List<Model.TipoItemBebida> ListNaoSelecionados(int id)

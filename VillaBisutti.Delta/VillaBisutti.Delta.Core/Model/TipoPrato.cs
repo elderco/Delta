@@ -13,5 +13,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Nome { get; set; }
 		[Display(Name = "Pratos")]
 		public List<Prato> Pratos { get; set; }
+		public int Ordem { get; set; }
 	}
 }

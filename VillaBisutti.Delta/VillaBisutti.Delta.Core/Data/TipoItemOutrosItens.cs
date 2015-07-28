@@ -31,7 +31,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemOutrosItens> GetCollection()
 		{
 			List<Model.TipoItemOutrosItens> lista = context.TipoItemOutrosItens.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 

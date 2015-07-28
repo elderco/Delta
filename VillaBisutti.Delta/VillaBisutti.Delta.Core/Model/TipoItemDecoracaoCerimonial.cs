@@ -45,6 +45,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool CopiaSomIluminacao { get; set; }
 		[Display(Name = "Copiar itens para Outros itens")]
 		public bool CopiaOutrosItens { get; set; }
+		public int Ordem { get; set; }
 	}
 }
 

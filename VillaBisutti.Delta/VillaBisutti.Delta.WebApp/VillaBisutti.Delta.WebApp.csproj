@@ -193,6 +193,7 @@
     <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\Modulo.cs" />
     <Compile Include="Controllers\MontagemController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
@@ -606,6 +607,8 @@
     <Content Include="Views\PratoSelecionado\ToggleEscolher.cshtml" />
     <Content Include="Views\PratoSelecionado\ToggleRejeitar.cshtml" />
     <Content Include="Views\PratoSelecionado\ErroMaisPratosQuePermitido.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\SetOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

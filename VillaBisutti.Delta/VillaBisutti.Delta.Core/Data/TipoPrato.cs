@@ -30,7 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
         protected override List<Model.TipoPrato> GetCollection()
         {
 			List<Model.TipoPrato> lista = context.TipoPrato.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
         }
 

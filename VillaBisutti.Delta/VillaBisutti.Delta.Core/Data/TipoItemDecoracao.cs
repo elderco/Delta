@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemDecoracao> GetCollection()
 		{
 			List<Model.TipoItemDecoracao> lista = context.TipoItemDecoracao.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 		public List<Model.TipoItemDecoracao> ListNaoSelecionados(int id)

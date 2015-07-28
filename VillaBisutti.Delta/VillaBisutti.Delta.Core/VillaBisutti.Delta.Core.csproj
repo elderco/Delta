@@ -58,6 +58,7 @@
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
     <Compile Include="Business\ItemFotoVideo.cs" />
+    <Compile Include="Business\Ordem.cs" />
     <Compile Include="Business\PerfilAlterado.cs" />
     <Compile Include="Business\PratoSelecionado.cs" />
     <Compile Include="Business\ItemDecoracao.cs" />

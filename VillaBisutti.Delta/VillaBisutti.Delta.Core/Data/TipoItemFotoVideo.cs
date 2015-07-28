@@ -29,7 +29,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemFotoVideo> GetCollection()
 		{
 			List<Model.TipoItemFotoVideo> lista = context.TipoItemFotoVideo.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 		public List<Model.TipoItemFotoVideo> ListNaoSelecionados(int id)

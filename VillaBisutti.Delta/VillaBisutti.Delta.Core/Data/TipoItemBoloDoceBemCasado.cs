@@ -35,7 +35,7 @@ namespace VillaBisutti.Delta.Core.Data
 		protected override List<Model.TipoItemBoloDoceBemCasado> GetCollection()
 		{
 			List<Model.TipoItemBoloDoceBemCasado> lista = context.TipoItemBoloDoceBemCasado.ToList();
-			lista = lista.OrderBy(ir => ir.Nome).ToList();
+			lista = lista.OrderBy(ir => ir.Ordem).ToList();
 			return lista;
 		}
 		public List<Model.TipoItemBoloDoceBemCasado> ListNaoSelecionados(int id)
