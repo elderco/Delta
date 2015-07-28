@@ -4,5 +4,7 @@
 }
 @foreach (var item in Model)
 {
-	<h5 class="text-danger"> Nenhum item de <strong>@Html.DisplayFor(modelItem => item.Nome)</strong> foi incluído neste evento, mas é necessário especificar ao menos 1.</h5>
+<h5 class="bg-danger col-md-12">
+	Defina o <strong>@Html.DisplayFor(modelItem => item.Nome)</strong>. Nenhum deste item foi selecionado até o momento.
+</h5>
 }

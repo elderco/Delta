@@ -1,37 +1,35 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Foto>
-
 @{
-	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
-	//ViewBag.Title = "Index";
+	Layout = null;
 }
-
-@Html.Action("Create", "Foto")
+@Html.Partial("../Foto/Create", new VillaBisutti.Delta.Core.Model.Foto(), new ViewDataDictionary { { "Qual", ViewBag.Qual }, { "Id", ViewBag.id } })
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.URL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Legenda)
-        </th>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.URL)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Legenda)
+		</th>
 		<th>
 			Opções
 		</th>
-        <th></th>
-    </tr>
+		<th></th>
+	</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img src="@Url.Content(Path.Combine("~/Content/Images/", item.URL))" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Legenda)
-        </td>
-        <td>
-           @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
-		</td>
-    </tr>
-}
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				<img src="@Url.Content(Path.Combine("~/Content/Images/", item.URL))" />
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Legenda)
+			</td>
+			<td>
+				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
+			</td>
+		</tr>
+	}
 
 </table>

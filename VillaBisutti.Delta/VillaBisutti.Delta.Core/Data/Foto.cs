@@ -32,5 +32,10 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.Foto.ToList();
 		}
+
+		public List<Model.Foto> GetQual(string qual)
+		{
+			return context.Foto.Where(f => f.Qual == qual).ToList();
+		}
 	}
 }

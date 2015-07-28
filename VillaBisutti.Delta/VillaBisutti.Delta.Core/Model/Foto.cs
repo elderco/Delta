@@ -21,5 +21,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string URL { get; set; }
 		[Display(Name = "Legenda")]
 		public string Legenda { get; set; }
+		public string Qual { get; set; }
 	}
 }

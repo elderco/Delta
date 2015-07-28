@@ -1,35 +1,15 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Foto
 @{
 	Layout = null;
-	//ViewBag.Title = "Create";
 }
-
-@{  WebImage photo = null;
-    var newFileName = "";
-    var imagePath = "";
-
-    if(IsPost){
-        photo = WebImage.GetImageFromRequest();
-        if(photo != null){
-            newFileName = Guid.NewGuid().ToString() + "_" +
-                Path.GetFileName(photo.FileName);
-            imagePath = @"images\" + newFileName;
-
-            photo.Save(@"~\" + imagePath);
-			
-        }
-    }
-}
-
-@Scripts.Render("~/bundles/jqueryval")
 @using (Html.BeginForm("ItemCreated", "Foto", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Foto</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<h4>Foto</h4>
+		<hr />
+		@Html.ValidationSummary(true)
 
 		<div class="form-group col-md-6">
 			@Html.LabelFor(model => model.URL, new { @class = "control-label col-md-4" })
@@ -40,17 +20,18 @@
 		</div>
 
 		<div class="form-group col-md-6">
-			<div class="col-md-offset-4 col-md-8">
-				<input type="submit" value="Salvar" class="btn btn-default form-control" />
-			</div>
-		</div>
-
-		<div class="form-group col-md-6">
 			@Html.LabelFor(model => model.Legenda, new { @class = "control-label col-md-4" })
 			<div class="col-md-8">
 				@Html.EditorFor(model => model.Legenda)
 				@Html.ValidationMessageFor(model => model.Legenda)
+				<input type="hidden" name="qual" value="@ViewData["Qual"]" />
 			</div>
 		</div>
-    </div>
+
+		<div class="form-group col-md-6">
+			<div class="col-md-offset-4 col-md-8">
+				<input type="submit" value="Salvar" class="btn btn-default form-control" />
+			</div>
+		</div>
+	</div>
 }
