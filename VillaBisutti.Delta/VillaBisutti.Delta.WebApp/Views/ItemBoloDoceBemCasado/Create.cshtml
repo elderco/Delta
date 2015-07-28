@@ -76,7 +76,7 @@
 	@Html.AntiForgeryToken()
 
 	<div class="form-horizontal">
-		<h4>Bolo, Doce e Bem-Casado</h4>
+		<h4>Configuração de itens de Bolo, Doce e Bem-Casado</h4>
 		<hr />
 		@Html.ValidationSummary(true)
 
@@ -118,6 +118,17 @@
 			</div>
 			<div class="col-md-4">
 				@Html.ValidationMessageFor(model => model.Nome)
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.BloqueiaOutrasPropriedades, new { @class = "control-label col-md-2" })
+			<span class="col-md-2"></span>
+			<div class="col-md-6">
+				@Html.EditorFor(model => model.BloqueiaOutrasPropriedades)
+			</div>
+			<div class="col-md-4">
+				@Html.ValidationMessageFor(model => model.BloqueiaOutrasPropriedades)
 			</div>
 		</div>
 

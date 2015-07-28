@@ -51,7 +51,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
+		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId,BloqueiaOutrasPropriedades")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
+		public ActionResult Edit([Bind(Include = "Id,Nome,Quantidade,FornecedorId,TipoItemBoloDoceBemCasadoId,BloqueiaOutrasPropriedades")] model.ItemBoloDoceBemCasado itembolodocebemcasado)
         {
             if (ModelState.IsValid)
             {

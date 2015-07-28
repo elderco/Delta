@@ -30,6 +30,16 @@
 		</div>
 
 		<div class="form-group">
+			@Html.LabelFor(model => model.BloqueiaOutrasPropriedades, new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.BloqueiaOutrasPropriedades)
+			</div>
+			<div class="col-md-10">
+				@Html.ValidationMessageFor(model => model.BloqueiaOutrasPropriedades)
+			</div>
+		</div>
+
+		<div class="form-group">
 			@Html.LabelFor(model => model.TipoItemDecoracao, new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				@Html.DropDownList("TipoItemDecoracaoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemDecoracao, String.Empty)
