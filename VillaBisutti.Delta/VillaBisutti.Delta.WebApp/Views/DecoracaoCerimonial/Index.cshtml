@@ -33,6 +33,11 @@
 	</script>
 	@Scripts.Render("~/bundles/jqueryval")
 }
+
+<div class="row">
+	@Html.Action("ListNaoSelecionados", "TipoItemDecoracaoCerimonial", new { id = @ViewBag.Id })
+</div>
+
 <div class="row">
 	<fieldset class="col-md-4">
 		<legend>Informações básicas</legend>
@@ -43,9 +48,7 @@
 		@Html.Partial("../ItemDecoracaoCerimonialSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemDecoracaoCerimonialSelecionado())
 	</fieldset>
 </div>
-<div class="row">
-	@Html.Action("ListNaoSelecionados", "TipoItemDecoracao", new { id = @ViewBag.Id })
-</div>
+
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
 	@Html.Partial("../ItemDecoracaoCerimonialSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
