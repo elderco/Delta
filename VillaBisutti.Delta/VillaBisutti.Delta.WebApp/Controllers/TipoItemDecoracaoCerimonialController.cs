@@ -13,6 +13,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class TipoItemDecoracaoCerimonialController : Controller
 	{
+		public ActionResult ListNaoSelecionados(int id)
+		{
+			return View(new data.TipoItemDecoracaoCerimonial().ListNaoSelecionados(id));
+		}
 		public ActionResult Index()
 		{
 			return View(new data.TipoItemDecoracaoCerimonial().GetCollection(0));

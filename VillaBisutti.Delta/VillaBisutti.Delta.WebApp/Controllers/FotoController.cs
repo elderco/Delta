@@ -41,7 +41,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				string fileName = Util.GetName(URL.FileName);
 				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
 				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName };
-				new biz.Foto().SalvarFoto(foto);
+				new biz.Foto().SalvarFoto(foto, eventoId);
 				SessionFacade.FotoEmMemoria = foto;
 			}
 			return Redirect(Request.UrlReferrer.AbsolutePath);

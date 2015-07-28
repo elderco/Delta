@@ -19,7 +19,7 @@
 		<h4>Roteiro padrão para @(((VillaBisutti.Delta.Core.Model.TipoEvento)ViewBag.TipoEvento).GetDescription())</h4>
 		<hr />
 		@Html.ValidationSummary(true)
-
+		<input type="hidden" name="TipoEvento" value="@ViewBag.TipoEvento" />
         <div class="form-group">
             @Html.LabelFor(model => model.Titulo, new { @class = "control-label col-md-2" })
             <div class="col-md-6">

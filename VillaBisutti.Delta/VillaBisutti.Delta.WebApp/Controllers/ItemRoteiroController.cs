@@ -50,7 +50,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,TipoEvento,RoteiroId")] model.ItemRoteiro itemroteiro)
 		{
 			new data.ItemRoteiro().Insert(itemroteiro);
-			return RedirectToAction("Index", new { TipoEvento = (int)itemroteiro.TipoEvento });
+			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
 		// GET: /ItemRoteiro/Edit/5
