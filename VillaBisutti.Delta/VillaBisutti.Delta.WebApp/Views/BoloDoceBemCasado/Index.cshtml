@@ -48,7 +48,7 @@
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
-	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
+	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti))
 </div>
 <div class="row">
 	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
