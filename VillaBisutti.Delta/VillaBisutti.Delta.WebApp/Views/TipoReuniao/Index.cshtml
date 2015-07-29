@@ -21,7 +21,7 @@
 			Dias disponíveis:
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.AreaEnvolvida)
+			@Html.DisplayNameFor(model => model.Perfil)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)
@@ -63,7 +63,7 @@
 				@if (item.PodeSabado) { @(Html.DisplayNameFor(m => m.PodeSabado) + "| ") }
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.AreaEnvolvida)
+				@Html.DisplayFor(modelItem => item.Perfil.Nome)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.MaximoAreaEnvolvida)
