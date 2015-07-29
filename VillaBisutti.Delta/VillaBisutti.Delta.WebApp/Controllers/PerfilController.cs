@@ -42,21 +42,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             return View(perfil);
         }
 
-        // POST: Perfils/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
-        {
-            if (ModelState.IsValid)
-            {
-                new data.Perfil().Update(perfil);
-                return Redirect(Request.UrlReferrer.AbsolutePath);
-            }
-            return View(perfil);
-        }
-
         // get: perfils/edit/5
         public ActionResult Edit(int? id)
         {
@@ -77,7 +62,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Edited([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
             new bus.PerfilAlterado().AlterarPerfil(perfil);
-            return Redirect(Request.UrlReferrer.AbsolutePath);
+            return Redirect(Request.UrlReferrer.AbsoluteUri);
         }
         // GET: Perfils/Delete/5
         public ActionResult Delete(int? id)

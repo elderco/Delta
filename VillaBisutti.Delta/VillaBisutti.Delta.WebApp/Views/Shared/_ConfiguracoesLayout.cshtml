@@ -33,7 +33,7 @@
 					@foreach (VillaBisutti.Delta.Core.Model.TipoEvento tipoEvento in Util.TiposEvento.Keys)
 					{
 						<li>
-							<a href="@Url.Action("Index", "ItemRoteiro", new { TipoEvento = (int)tipoEvento })">
+							<a href="@Url.Action("Index", "ItemCerimonial", new { TipoEvento = (int)tipoEvento })">
 								<i class="menu-icon fa caret-right"></i>
 								<span class="menu-text">@(tipoEvento.GetDescription())</span>
 							</a>

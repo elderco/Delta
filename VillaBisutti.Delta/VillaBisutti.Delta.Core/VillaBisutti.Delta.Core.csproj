@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CardapioTipoPrato.cs" />
+    <Compile Include="Business\Foto.cs" />
     <Compile Include="Business\Gastronomia.cs" />
     <Compile Include="Business\ItemBoloDoceBemCasado.cs" />
     <Compile Include="Business\ItemDecoracaoCerimonial.cs" />

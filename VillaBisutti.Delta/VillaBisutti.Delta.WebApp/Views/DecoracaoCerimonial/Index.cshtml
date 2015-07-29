@@ -48,7 +48,6 @@
 		@Html.Partial("../ItemDecoracaoCerimonialSelecionado/Create", new VillaBisutti.Delta.Core.Model.ItemDecoracaoCerimonialSelecionado())
 	</fieldset>
 </div>
-
 <div class="row">
 	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
 	@Html.Partial("../ItemDecoracaoCerimonialSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))

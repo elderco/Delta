@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using biz = VillaBisutti.Delta.Core.Business;
 using System.IO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
@@ -15,9 +16,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 	public class FotoController : Controller
 	{
 		// GET: /Foto/
-		public ActionResult Index()
+		public ActionResult Index(string qual = "EV")
 		{
-			return View(new data.Foto().GetCollection(0));
+			ViewBag.Qual = qual;
+			return View(new data.Foto().GetQual(qual));
 		}
 
 		// GET: /Foto/Create
@@ -31,14 +33,15 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult ItemCreated(HttpPostedFileBase URL, string legenda)
+		public ActionResult ItemCreated(HttpPostedFileBase URL, string legenda, string qual, int eventoId)
 		{
+
 			if (URL != null && URL.ContentLength > 0)
 			{
 				string fileName = Util.GetName(URL.FileName);
 				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
-				model.Foto foto = new model.Foto { Legenda = legenda, URL = fileName };
-				new data.Foto().Insert(foto);
+				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName };
+				new biz.Foto().SalvarFoto(foto, eventoId);
 				SessionFacade.FotoEmMemoria = foto;
 			}
 			return Redirect(Request.UrlReferrer.AbsolutePath);
