@@ -26,7 +26,7 @@
     });
 </script>
 @Scripts.Render("~/bundles/jqueryval")
-@using (Html.BeginForm("Edited", "Perfil"))
+@using (Html.BeginForm("Edited", "Perfil", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -49,10 +49,10 @@
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeAlterar == true && item.PodeLer == true ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_TOTAL"><span class="fa fa-pencil" title="Acesso Total"></span></label>
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeLer == true && item.PodeAlterar == false ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_LEITURA"><span class="fa fa-eye" title="Somente Leitura"></span></label>
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeLer == false && item.PodeAlterar == false ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
-                    <span class="ui-helper-hidden">
-                        <input type="hidden" name="Modulos[@(i)].ModuloId" value="@(item.ModuloId)" />
-                        <input value="@(item.PodeAlterar)" type="hidden" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
-                        <input value="@(item.PodeLer)" type="hidden" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
+                    <span class="hidden">
+                        <input value ="@(bool)(item.ModuloId)" type="text" name="Modulos[@(i)].ModuloId" />
+                        <input value="@(bool)(item.PodeAlterar)" type="text" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
+                        <input value="@(bool)(item.PodeLer)" type="text" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
                     </span>
                 </div>
                 i = i + 1;

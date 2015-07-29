@@ -53,6 +53,7 @@ namespace VillaBisutti.Delta.Core.Data
         public Model.Perfil GetPerfil(int id = 0)
         {
             return context.Perfil
+                .Include(m => m.Modulos)
                 .Include(m => m.Modulos.Select(c => c.Modulo))
                 .SingleOrDefault(m => m.Id == id);
                 
