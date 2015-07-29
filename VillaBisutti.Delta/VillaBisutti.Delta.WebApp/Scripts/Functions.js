@@ -37,7 +37,7 @@ function ShowPopUp(url, title, w, h) {
         HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
     });
     $("#PopUp").modal('show');
-    exit;
+    return;
 }
 function ShowPopUp_2(url, title, w, h) {
     var $div = $("<div/>").attr("id", "PopUp");
@@ -424,12 +424,12 @@ $(document)
 	})
 	.ajaxStop(function () {
 	    HideLoading();
-	    HandleCheckbox();
 	})
 	.ready(function () {
 	    InitializeLoading();
 	    ShowLoading();
 	    HideLoading();
+	    HandleCheckbox();
 	})
 	.error(function () {
 	    HideLoading();
@@ -440,11 +440,4 @@ $.extend($.gritter.options, {
     fade_in_speed: 100, // how fast notifications fade in (string or int)
     fade_out_speed: 100, // how fast the notices fade out
     time: 8000 // hang on the screen for...
-});
-$(function () {
-    HandleCheckbox();
-    $(".PopUpActionLinks").click(function (e) {
-        e.preventDefault();
-        ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
-    });
 });
