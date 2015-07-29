@@ -422,12 +422,13 @@ $(document)
 		ShowLoading();
 	})
 	.ajaxStop(function () {
-		HideLoading();
+	    HideLoading();
 	})
 	.ready(function () {
-		InitializeLoading();
-		ShowLoading();
-		HideLoading();
+	    InitializeLoading();
+	    ShowLoading();
+	    HideLoading();
+	    HandleCheckbox();
 	})
 	.error(function () {
 		HideLoading();

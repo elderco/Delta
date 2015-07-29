@@ -4,6 +4,18 @@
 	//ViewBag.Title = "Index";
 }
 
+@section scripts {
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $(".PopUpActionLinks").click(function (e) {
+                e.preventDefault();
+                ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+            });
+        });
+    </script>
+}
+
 @Html.Action("Create", "Local")
 <table class="table">
     <tr>

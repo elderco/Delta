@@ -16,7 +16,7 @@
 			return;
 		}
 	    $("#PratosCarregados").show();
-	    $('[data-rel=tooltip-info]').tooltip({trigger: 'manual' }).tooltip('show');
+	    $('[data-rel=tooltip-info]').tooltip({trigger: 'hover' }).tooltip('show');
 		var createUrl = "@(Url.Action("Copiar", "PratoSelecionado", new { cardapioId = "CaRdApIoId", tipoServicoId = "TiPoSeRvIcOiD" }))"
 		createUrl = createUrl.replace("CaRdApIoId", cId).replace("TiPoSeRvIcOiD", tId).replace("&amp;", "&");
 		$("#CopiarCardapioTipoServico").attr("href", createUrl);
