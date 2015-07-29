@@ -7,7 +7,7 @@
 	function DefinirDegustacao(pratoSelecionadoId, degustar) {
 		var url = '@Url.Action("DefinirDegustacao", "PratoSelecionado", new { id = "PrImEiRo" })';
 		url = url.replace("PrImEiRo", pratoSelecionadoId);
-		var id = "AddingTarget_" + (Math.random() + "").replace(".","");
+		var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
 		var $targetDiv = $("<div />").attr("id", id);
 		$("body").append($targetDiv);
 		LoadPage(url, id);
@@ -22,7 +22,7 @@
 </script>
 @foreach (VillaBisutti.Delta.Core.Model.TipoPrato tipoPrato in Model.Itens.Keys)
 {
-	if ((int)(i / 2) == (int)((double)i / 2) && i > 0) { Response.Write("</div><div class=\"row\">"); }
+	if (i == 2) { WriteLiteral("</div><div class=\"col-xs-12\">"); i = 0; }
 	<ul class="panel col-md-6 list-group">
 		<li class="list-group-item list-group-item-info"><h5>@(tipoPrato.Nome)</h5></li>
 		@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
@@ -34,7 +34,7 @@
 				</label>
 				<span>@(prato.Prato.Nome)</span>
 			</li>
-			i++;
 		}
 	</ul>
+	i++;
 }

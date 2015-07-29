@@ -10,6 +10,9 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Evento : IEntityBase
 	{
+
+		#region [ Dados Principais ]
+
 		public int Id { get; set; }
 		[Display(Name = "Tipo de Evento"), Required]
 		public TipoEvento TipoEvento { get; set; }
@@ -49,6 +52,7 @@ namespace VillaBisutti.Delta.Core.Model
 		}
 		[Display(Name = "Pax (real)"), Range(0, 202768562)] //População Brasileira 2014
 		public int Pax { get; set; }
+		[NotMapped]
 		public int PaxAproximado
 		{
 			get
@@ -56,27 +60,39 @@ namespace VillaBisutti.Delta.Core.Model
 				return (int)(Pax * 1.1);
 			}
 		}
-		public int CardapioId { get; set; }
+		[Display(Name = "Perfil da Festa")]
+		public string PerfilFesta { get; set; }
+
+		#endregion
+
+		#region [ Gastronomia ]
+		public int? CardapioId { get; set; }
 		[Display(Name = "Cardápio")]
 		public Cardapio Cardapio { get; set; }
 		public int? TipoServicoId { get; set; }
 		[Display(Name = "Tipo de Serviço")]
 		public TipoServico TipoServico { get; set; }
 
-		//Responsáveis
+		#endregion
+
+		#region [ Responsáveis ]
+
 		public int? ProdutoraId { get; set; }
 		[Display(Name = "Produtora")]
 		public Usuario Produtora { get; set; }
 		public int? PosVendedoraId { get; set; }
 		[Display(Name = "Pós Vendedora")]
 		public Usuario PosVendedora { get; set; }
-
 		//Assessoria
 		[Display(Name = "Possui assessoria")]
 		public bool PossuiAssessoria { get; set; }
 		[Display(Name = "Contato da assessoria")]
 		public string ContatoAssessoria { get; set; }
 
+		#endregion
+
+		#region [ Dados Cadastrais ]
+		
 		//Dados do contratante
 		[Display(Name = "Nome do Responsável")]
 		public string NomeResponsavel { get; set; }
@@ -88,14 +104,15 @@ namespace VillaBisutti.Delta.Core.Model
 		public string TelefoneContato { get; set; }
 		[Display(Name = "Nomes dos Homenageados")]
 		public string NomeHomenageados { get; set; }
-		[Display(Name = "Perfil da Festa")]
-		public string PerfilFesta { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
+
+		#endregion
+
+		#region [ Dados Complementares ]
+
 		[Display(Name = "Layout do salão")]
 		public Foto Layout { get; set; }
-
-		
 		//Dados da cerimônia
 		[Display(Name = "Cerimônia")]
 		public LocalCerimonia LocalCerimonia { get; set; }
@@ -103,17 +120,21 @@ namespace VillaBisutti.Delta.Core.Model
 		public string EnderecoCerimonia { get; set; }
 		[Display(Name = "Observações da cerimônia")]
 		public string ObservacoesCerimonia { get; set; }
-
-
-		[Display(Name = "Email de Boas Vindas Enviado")]
-		public bool EmailBoasVindasEnviado { get; set; }
-		[Display(Name = "OS Finalizada")]
-		public bool OSFinalizada { get; set; }
-
-
 		public List<ContratoAditivo> Contratos { get; set; }
 
+		#endregion
 
+		#region [ Interop ]
+
+		public bool EmailBoasVindasEnviado { get; set; }
+		public bool OSFinalizada { get; set; }
+		public bool OSAprovada { get; set; }
+
+		#endregion
+
+		#region [ Navigation Properties ]
+
+		public List<Reuniao> Reunioes { get; set; }
 		[InverseProperty("Evento")]
 		public Bebida Bebida { get; set; }
 		[InverseProperty("Evento")]
@@ -134,6 +155,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public SomIluminacao SomIluminacao { get; set; }
 		public List<ItemRoteiro> Roteiro { get; set; }
 		public List<ItemCerimonial> Cerimonial { get; set; }
+
+		#endregion
 
 	}
 }

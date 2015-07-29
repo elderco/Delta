@@ -144,5 +144,16 @@ namespace VillaBisutti.Delta
 				return tiposEvento;
 			}
 		}
+
+		public static Core.Data.Context context_;
+		public static Core.Data.Context context
+		{
+			get
+			{
+				if (context_ == null)
+					context_ = new Core.Data.Context();
+				return context_;
+			}
+		}
 	}
 }

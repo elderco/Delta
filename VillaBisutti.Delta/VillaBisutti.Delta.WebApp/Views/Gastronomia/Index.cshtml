@@ -51,13 +51,13 @@
 					<span class="pull-right">
 						<!-- Degustar / Aprovado / Descartado -->
 						<a id="Degustar_@(prato.Id)" href="@Url.Action("ToggleDegustar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Degustar ? "btn-success" : "btn-danger") tooltip-info action-toggle @(prato.Rejeitado || prato.Escolhido ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover da" : "incluir na") degustação">
-							@(Html.Raw(prato.Degustar ? "<i class=\"fa fa-check\"></i> Prato será degustado" : "<i class=\"fa fa-frown-o\"></i> Prato não será degustado"))
+							@(Html.Raw(prato.Degustar ? "<i class=\"fa fa-check\"></i> Item será degustado" : "<i class=\"fa fa-frown-o\"></i> Degustar item"))
 						</a>
-						<a id="Escolher_@(prato.Id)" href="@Url.Action("ToggleEscolher", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Escolhido ? "btn-success" : "btn-danger") tooltip-info action-toggle @(prato.Rejeitado ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover do" : "incluir no") evento">
-							@(Html.Raw(prato.Escolhido ? "<i class=\"fa fa-check\"></i> Prato escolhido para o evento" : "<i class=\"fa fa-frown-o\"></i> Prato não escolhido para o evento"))
+						<a id="Escolher_@(prato.Id)" href="@Url.Action("ToggleEscolher", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Escolhido ? "btn-success" : "btn-danger") tooltip-info action-toggle @(prato.Rejeitado ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Escolhido ? "remover do" : "incluir no") evento">
+							@(Html.Raw(prato.Escolhido ? "<i class=\"fa fa-check\"></i> Item definido" : "Definir item"))
 						</a>
-						<a id="Rejeitar_@(prato.Id)" href="@Url.Action("ToggleRejeitar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Rejeitado ? "btn-info" : "btn-danger") tooltip-info action-toggle @(prato.Escolhido ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover do" : "incluir no") evento">
-							@(Html.Raw(prato.Rejeitado ? "<i class=\"fa fa-frown-o\"></i> Prato rejeitado" : "Prato não rejeitado"))
+						<a id="Rejeitar_@(prato.Id)" href="@Url.Action("ToggleRejeitar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Rejeitado ? "btn-info" : "btn-danger") tooltip-info action-toggle @(prato.Escolhido ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Rejeitado ? "incluir no" : "remover do") evento">
+							@(Html.Raw(prato.Rejeitado ? "<i class=\"fa fa-frown-o\"></i> Item rejeitado" : "Rejeitar item"))
 						</a>
 					</span>
 					<span>
