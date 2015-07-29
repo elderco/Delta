@@ -50,9 +50,9 @@
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeLer == true && item.PodeAlterar == false ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_LEITURA"><span class="fa fa-eye" title="Somente Leitura"></span></label>
                     <label class="btn btn-info set-acesso col-xs-1 @(item.PodeLer == false && item.PodeAlterar == false ? "active btn-success" : "")" id="@(Model.Id)-@(item.ModuloId)_SEM"><span class="fa fa-eye-slash" title="Sem Acesso"></span></label>
                     <span class="hidden">
-                        <input value ="@(bool)(item.ModuloId)" type="text" name="Modulos[@(i)].ModuloId" />
-                        <input value="@(bool)(item.PodeAlterar)" type="text" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
-                        <input value="@(bool)(item.PodeLer)" type="text" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
+                        <input value ="@(item.ModuloId.ToString())" type="text" name="Modulos[@(i)].ModuloId" />
+                        <input value="@(item.PodeAlterar.ToString())" type="text" id="PodeAlterar_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeAlterar" />
+                        <input value="@(item.PodeLer.ToString())" type="text" id="PodeLer_@(Model.Id)-@(item.ModuloId)" name="Modulos[@(i)].PodeLer" />
                     </span>
                 </div>
                 i = i + 1;
