@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -29,7 +30,10 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.TipoReuniao> GetCollection()
 		{
-			List<Model.TipoReuniao> lista = context.TipoReuniao.ToList();
+            List<Model.TipoReuniao> lista = context
+                .TipoReuniao
+                .Include(p => p.Perfil)
+                .ToList();
 			lista = lista.OrderBy(ir => ir.Nome).ToList();
 			return lista;
 		}

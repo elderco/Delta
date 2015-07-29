@@ -35,10 +35,10 @@ namespace VillaBisutti.Delta.Core.Data
                 .ToList();
 		}
 		//TODO: quando estiver pronto, ver o que fazer com isso
-		//public List<Model.Usuario> GetPorTipo(Model.TipoAcesso tipo)
-		//{
-		//	return GetCollection().Where(pf => pf.Perfis.Where(p => p == tipo).Count() > 0).ToList();
-		//}
+        //public List<Model.Usuario> GetPorTipo(Model.Perfil tipo)
+        //{
+        //    return GetCollection().Where(pf => pf.Perfis.Where(p => p == tipo).Count() > 0).ToList();
+        //}
 
 	}
 }
