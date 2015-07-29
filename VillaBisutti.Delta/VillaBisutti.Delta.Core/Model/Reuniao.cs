@@ -16,13 +16,11 @@ namespace VillaBisutti.Delta.Core.Model
 		public int TipoReuniaoId { get; set; }
 		[Display(Name = "Tipo de Reuniao")]
 		public TipoReuniao TipoReuniao { get; set; }
-		[Display(Name = "Envolvidos")]
-		public List<Usuario> Envolvidos { get; set; }
 		[Display(Name = "Data")]
 		public DateTime Data { get; set; }
-		[Display(Name = "Horario da Reuniao")]
 		public int HorarioReuniao { get; set; }
 		[NotMapped]
+		[Display(Name = "Horario da Reuniao")]
 		public Horario Horario
 		{
 			get
