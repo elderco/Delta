@@ -151,13 +151,7 @@ function ValidateField(element, formId, postForm) {
 		//alert(element.attr("type"));
 		switch (element.attr("type")) {
 			case "number":
-				if (isNaN(element.val()) || element.val() == "") {
-					element.focus();
-					AddPopOver(element, "Ooooops", element.attr("data-val-number"))
-					valid = false;
-					break;
-				}
-				if (element.val() < parseInt(element.attr("data-val-range-min")) || element.val() > parseInt(element.attr("data-val-range-max"))) {
+				if (isNaN(element.val()) || element.val() == "" || element.val() < parseInt(element.attr("data-val-range-min")) || element.val() > parseInt(element.attr("data-val-range-max"))) {
 					element.focus();
 					AddPopOver(element, "Ooooops", element.attr("data-val-range"))
 					valid = false;

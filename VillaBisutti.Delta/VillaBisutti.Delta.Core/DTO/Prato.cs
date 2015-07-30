@@ -12,11 +12,10 @@ namespace VillaBisutti.Delta.Core.DTO
 		public List<Model.Cardapio> Cardapios { get; set; }
 		public List<Model.TipoPrato> TiposDePrato { get; set; }
 		public Prato() {
-			Data.Context context = new Data.Context();
-			Cardapios = context.Cardapio.Include(c => c.Pratos).OrderBy(c => c.Nome).ToList();
+			Cardapios = Util.context.Cardapio.Include(c => c.Pratos).OrderBy(c => c.Nome).ToList();
 			foreach(Model.Cardapio c in Cardapios)
 				c.Pratos = c.Pratos.OrderBy(p => p.Nome).ToList();
-			TiposDePrato = context.TipoPrato.Include(t => t.Pratos).OrderBy(t => t.Nome).ToList();
+			TiposDePrato = Util.context.TipoPrato.Include(t => t.Pratos).OrderBy(t => t.Nome).ToList();
 			foreach (Model.TipoPrato t in TiposDePrato)
 				t.Pratos = t.Pratos.OrderBy(p => p.Nome).ToList();
 		}

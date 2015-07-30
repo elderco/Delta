@@ -10,16 +10,15 @@ namespace VillaBisutti.Delta.Core.Business
     {
         public void AlterarPerfil(Model.Perfil entity)
         {
-            Data.Context context = new Data.Context();
-            Model.Perfil original = context.Perfil.FirstOrDefault(s => s.Id == entity.Id);
-            context.Perfil.Remove(original);
-            context.Perfil.Add(new Model.Perfil 
+			Model.Perfil original = Util.context.Perfil.FirstOrDefault(s => s.Id == entity.Id);
+			Util.context.Perfil.Remove(original);
+			Util.context.Perfil.Add(new Model.Perfil 
             {
                 Id = entity.Id,
                 Modulos = entity.Modulos,
                 Nome = entity.Nome
             });
-            context.SaveChanges();
+			Util.context.SaveChanges();
         }
     }
 }

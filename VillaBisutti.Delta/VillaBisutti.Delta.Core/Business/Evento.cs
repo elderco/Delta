@@ -9,20 +9,12 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class Evento
 	{
-		private Data.Context _context;
 		public Data.Context context
 		{
 			get
 			{
-				if (_context == null)
-					_context = new Data.Context();
-				return _context;
+				return Util.context;
 			}
-		}
-		public void CopiarRoteiroPadrao(Model.Evento evento, Data.Context CONTEXT)
-		{
-			_context = CONTEXT;
-			CopiarRoteiroPadrao(evento);
 		}
 		public void CopiarRoteiroPadrao(Model.Evento evento)
 		{
@@ -38,11 +30,6 @@ namespace VillaBisutti.Delta.Core.Business
 				});
 			context.SaveChanges();
 		}
-		public void CopiarCerimonialPadrao(Model.Evento evento, Data.Context CONTEXT)
-		{
-			_context = CONTEXT;
-			CopiarCerimonialPadrao(evento);
-		}
 		public void CopiarCerimonialPadrao(Model.Evento evento)
 		{
 			if (evento.Cerimonial == null)
@@ -56,11 +43,6 @@ namespace VillaBisutti.Delta.Core.Business
 					Observacao = item.Observacao
 				});
 			context.SaveChanges();
-		}
-		public void CopiarCardapioPadrao(Model.Evento evento, Data.Context CONTEXT)
-		{
-			_context = CONTEXT;
-			CopiarCardapioPadrao(evento);
 		}
 		public void CopiarCardapioPadrao(Model.Evento evento)
 		{

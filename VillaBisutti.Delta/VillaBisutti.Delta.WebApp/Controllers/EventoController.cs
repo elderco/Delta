@@ -21,9 +21,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			ViewBag.LocalCerimonia = new SelectList(Util.LocalCerimonia, "key", "value");
 			ViewBag.CardapioId = new SelectList(new data.Cardapio().GetCollection(0), "Id", "Nome");
 			ViewBag.LocalId = new SelectList(new data.Local().GetCollection(0), "Id", "NomeCasa");
-			//TODO: Arrumar isso aqui tbm para buscar por perfil
-			//ViewBag.PosVendedoraId = new SelectList(new data.Usuario().GetPorTipo(model.TipoAcesso.Posvenda), "Id", "Nome");
-			//ViewBag.ProdutoraId = new SelectList(new data.Usuario().GetPorTipo(model.TipoAcesso.Producao), "Id", "Nome");
 		}
 
 		// GET: /Evento/ListaPorCasa/5

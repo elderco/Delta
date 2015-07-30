@@ -8,20 +8,13 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class Cardapio
 	{
-		public Data.Context _context;
 		public Data.Context context { 
 			get 
 			{
-				if (_context == null)
-					_context = new Data.Context();
-				return _context;
+				return Util.context;
 			}
 		}
 		public Cardapio() { }
-		public Cardapio(Data.Context wichContext) 
-		{
-			_context = context;
-		}
 		public void CriarCardapio(Model.Cardapio cardapio)
 		{
 			context.Cardapio.Add(cardapio);
@@ -36,20 +29,13 @@ namespace VillaBisutti.Delta.Core.Business
 	}
 	public class TipoPrato
 	{
-		public Data.Context _context;
 		public Data.Context context { 
 			get 
 			{
-				if (_context == null)
-					_context = new Data.Context();
-				return _context;
+				return Util.context;
 			}
 		}
 		public TipoPrato() { }
-		public TipoPrato(Data.Context wichContext) 
-		{
-			_context = context;
-		}
 		public void CriarTipoPrato(Model.TipoPrato tipoPrato)
 		{
 			context.TipoPrato.Add(tipoPrato);

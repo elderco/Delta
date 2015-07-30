@@ -27,13 +27,13 @@
 		<li class="list-group-item list-group-item-info"><h5>@(tipoPrato.Nome)</h5></li>
 		@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
 		{
-			<li class="list-group-item">
-				<label class="pull-right col-md-3" id="Prato_@(prato.Id)" for="Degustar_@(prato.Id)">
-					<input id="Degustar_@(prato.Id)" name="switch-field-@(i)" value="True" class="ace ace-switch ace-switch-3 set-degustar" type="checkbox" @(prato.Degustar ? "checked" : "")>
-					<span class="lbl" data-lbl="sim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;não"></span>
-				</label>
-				<span>@(prato.Prato.Nome)</span>
-			</li>
+		<li class="list-group-item">
+			<label class="pull-right col-md-3" id="Prato_@(prato.Id)" for="Degustar_@(prato.Id)">
+				<input id="Degustar_@(prato.Id)" name="switch-field-@(i)" value="True" class="ace ace-switch ace-switch-3 set-degustar" type="checkbox" @(prato.Degustar ? "checked" : "")>
+				<span class="lbl" data-lbl="sim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;não"></span>
+			</label>
+			<span>@(prato.Prato.Nome)</span>
+		</li>
 		}
 	</ul>
 	i++;
