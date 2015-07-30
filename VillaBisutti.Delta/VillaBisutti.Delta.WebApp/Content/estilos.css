@@ -34,7 +34,6 @@ div.tooltip{min-width: 100px}
 /* Pratos dos cardápios */
 #PainelTipoComida, #PainelCardapios{height: 600px; overflow-y: scroll}
 
-
 /* Navbar toggle */
 
 @media (max-width: 991px) {
