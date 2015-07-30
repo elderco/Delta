@@ -37,7 +37,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /TipoReuniao/Create
         public ActionResult Create()
         {
-			ViewBag.AreaEnvolvida = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
+            ViewBag.AreaEnvolvida = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
 			return View();
         }
 
@@ -64,7 +64,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-			ViewBag.AreaEnvolvida = new SelectList(new data.Perfil().GetCollection(id.HasValue ? id.Value : 0), "key", "value");
+            ViewBag.AreaEnvolvida = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
             model.TipoReuniao tiporeuniao = new data.TipoReuniao().GetElement(id.Value);
             if (tiporeuniao == null)
             {
@@ -78,7 +78,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Nome,DiasAntesEvento,MaximoEventosEnvolvidos,PodeDomingo,PodeSegunda,PodeTerca,PodeQuarta,PodeQuinta,PodeSexta,PodeSabado,AreaEnvolvida,MaximoAreaEnvolvida,Duracao,HorarioDisponibilidadeInicio,HorarioDisponibilidadeTermino")] model.TipoReuniao tiporeuniao)
+        public ActionResult Edit([Bind(Include="Id,Nome,DiasAntesEvento,MaximoEventosEnvolvidos,PodeDomingo,PodeSegunda,PerfilId,PodeTerca,PodeQuarta,PodeQuinta,PodeSexta,PodeSabado,AreaEnvolvida,MaximoAreaEnvolvida,Duracao,HorarioDisponibilidadeInicio,HorarioDisponibilidadeTermino")] model.TipoReuniao tiporeuniao)
         {
             if (ModelState.IsValid)
             {
