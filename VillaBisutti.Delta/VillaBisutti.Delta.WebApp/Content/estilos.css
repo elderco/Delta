@@ -30,6 +30,7 @@ fieldset{border: 1px solid #522D1C !important;}
 .list-group-item h5{margin: 0}
 div.tooltip{min-width: 100px}
 .borderless{border-width: 0}
+.clear-margin { margin-left: -10px !important; margin-right: -10px !important; }
 
 /* Pratos dos cardápios */
 #PainelTipoComida, #PainelCardapios{height: 600px; overflow-y: scroll}
