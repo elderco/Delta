@@ -44,6 +44,11 @@
 		});
 		PreventNegativeNumbers("Quantidade");
 		Buscar($("#Nome").val(), $("#TipoItemDecoracaoCerimonialId").val());
+
+		$(".PopUpActionLinks").click(function (e) {
+		    e.preventDefault();
+		    ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
 	});
 </script>
 

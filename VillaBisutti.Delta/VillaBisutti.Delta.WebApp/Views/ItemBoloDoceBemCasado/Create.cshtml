@@ -68,6 +68,11 @@
 				Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
 		});
 		Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
+
+		$(".PopUpActionLinks").click(function (e) {
+		    e.preventDefault();
+		    ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
 	});
 </script>
 

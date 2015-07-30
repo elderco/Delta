@@ -4,7 +4,7 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		$(".PopUpActionLinks").click(function (e) {
+		$(".PopUpItemLinks").click(function (e) {
 			e.preventDefault();
 			ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
 		});
@@ -34,8 +34,8 @@
 				@Html.DisplayFor(modelItem => item.Nome)
 			</td>
 			<td>
-				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks" }) |
-				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks" })
+				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpItemLinks" }) |
+				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpItemLinks" })
 			</td>
 		</tr>
 	}

@@ -45,6 +45,11 @@
 		});
 		PreventNegativeNumbers("Quantidade");
 		Buscar($("#Nome").val(), $("#TipoItemSomIluminacaoId").val());
+
+		$(".PopUpActionLinks").click(function (e) {
+		    e.preventDefault();
+		    ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
+		});
 	});
 </script>
 
