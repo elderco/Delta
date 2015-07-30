@@ -13,6 +13,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class UsuarioController : Controller
     {
+        public ActionResult Login()
+        {
+            return View();
+        }
+        
         // GET: /Usuario/
         public ActionResult Index()
         {

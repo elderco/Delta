@@ -10,10 +10,25 @@ namespace VillaBisutti.Delta.Core.Business
 {
     public class Usuario
     {
-        public static bool GetProfile(model.Usuario usuario, string URL)
+        /// <summary>
+        /// Retorna true/false se o usuário tem perfil para alteração ou não
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public bool PodeAlterar(model.Usuario usuario, string url)
         {
-            //verificar se a URL tem acesso de leitura, total ou não tem acesso
             
+            return false;
+        }
+        /// <summary>
+        /// Retorna true/false se o usuário tem perfil para leitura ou não
+        /// </summary>
+        /// <param name="?"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public bool PodeLer(model.Usuario usuario, string url)
+        {
             return false;
         }
     }
