@@ -87,13 +87,13 @@
             @Html.DisplayFor(model => model.PodeSabado)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.AreaEnvolvida)
+        <dt>
+            @Html.DisplayNameFor(model => model.Perfil)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AreaEnvolvida)
-        </dd>*@
+            @Html.DropDownList(model => model.Perfil)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)

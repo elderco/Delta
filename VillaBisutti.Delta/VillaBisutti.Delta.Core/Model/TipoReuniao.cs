@@ -30,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool PodeSexta { get; set; }
 		[Display(Name = "Sábado")]
 		public bool PodeSabado { get; set; }
+        [Display(Name = "Àrea Participante")]
         public Perfil Perfil { get; set; }
         [Display(Name = "Àrea Participante")]
         public int PerfilId { get; set; }

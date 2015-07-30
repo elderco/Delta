@@ -10,20 +10,19 @@ namespace VillaBisutti.Delta.Core.Business
 	{
 		public void SalvarFoto(Model.Foto foto, int eventoId)
 		{
-			Data.Context context = new Data.Context();
 			string[] attributes;
 			switch (foto.Qual)
 			{
 				case "EV":	//Evento
-					Model.Evento evento = context.Evento.Find(eventoId);
+					Model.Evento evento = Util.context.Evento.Find(eventoId);
 					evento.Layout = foto;
 					attributes =  new string[]{ "Layout" };
-						foreach(string name in context.Entry(evento).CurrentValues.PropertyNames.Except(attributes))
-							context.Entry(evento).Property(name).IsModified = false;
-						context.Entry(evento).Property("Layout").IsModified = true;
+					foreach (string name in Util.context.Entry(evento).CurrentValues.PropertyNames.Except(attributes))
+						Util.context.Entry(evento).Property(name).IsModified = false;
+					Util.context.Entry(evento).Property("Layout").IsModified = true;
 					break;
 				case "DR":	//Decoração da recepção
-					Model.Decoracao decoracao = context.Decoracao.Find(eventoId);
+					Model.Decoracao decoracao = Util.context.Decoracao.Find(eventoId);
 					break;
 				case "DC":	//Decoração do cerimonial
 					break;
@@ -42,8 +41,7 @@ namespace VillaBisutti.Delta.Core.Business
 				case "OI":	//Outros itens
 					break;
 			}
-			context.SaveChanges();
-			context.Dispose();
+			Util.context.SaveChanges();
 		}
 	}
 }
