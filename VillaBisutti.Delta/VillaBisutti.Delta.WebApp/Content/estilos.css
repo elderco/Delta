@@ -31,6 +31,7 @@ fieldset{border: 1px solid #522D1C !important;}
 div.tooltip{min-width: 100px}
 .borderless{border-width: 0}
 .clear-margin { margin-left: -10px !important; margin-right: -10px !important; }
+.tababble-min-height { height: 330px; overflow: auto; padding-top: 10px; padding-bottom: 0px; }
 
 /* Pratos dos cardápios */
 #PainelTipoComida, #PainelCardapios{height: 600px; overflow-y: scroll}

@@ -1,18 +1,7 @@
 ﻿@model VillaBisutti.Delta.Core.Model.Evento
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_EventosLayout.cshtml";
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="col-lg-6">
+	@Html.Action("Edit", "Evento", new { @id = ViewBag.Id })
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

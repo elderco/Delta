@@ -601,7 +601,6 @@
     <Content Include="Views\PratoSelecionado\DefinirDegustacao.cshtml" />
     <Content Include="Views\Gastronomia\Edit.cshtml" />
     <Content Include="Views\Gastronomia\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutLessLayout.cshtml" />
     <Content Include="Views\TipoPratoPadrao\DefinirQuantidade.cshtml" />
     <Content Include="Views\PratoSelecionado\ToggleDegustar.cshtml" />
     <Content Include="Views\PratoSelecionado\ToggleEscolher.cshtml" />
@@ -609,10 +608,12 @@
     <Content Include="Views\PratoSelecionado\ErroMaisPratosQuePermitido.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\SetOrder.cshtml" />
+    <Content Include="Views\Evento\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TEMP\" />
+    <Folder Include="Views\EventoB\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
