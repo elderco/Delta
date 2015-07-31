@@ -1,0 +1,42 @@
+﻿@model VillaBisutti.Delta.Core.Model.Usuario
+
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&Delta; - Villa Bisutti</title>
+	@Styles.Render("~/Content/default")
+	@Scripts.Render("~/bundles/bootstrap")
+	
+</head>
+<body>
+	<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-primary clearfix">
+					<h1 class="text-center">Login</h1>
+				</div>
+				<div class="modal-body bg-">
+					@using (Html.BeginForm("Login", "Usuario", FormMethod.Post, new { @class = "form center-block" }))
+					{
+						<div class="form-group">
+							@Html.AntiForgeryToken()
+							@Html.TextBoxFor(model => model.Email, new { @placeholder = "email@villabisutti.com.br", @class = "form-control input-lg" })
+						</div>
+						<div class="form-group">
+							@Html.PasswordFor(model => model.Senha, new { @placeholder = "Senha", @class = "form-control input-lg" })
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Entrar" class="btn btn-success form-control" />
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+   
+</body>
+</html>
