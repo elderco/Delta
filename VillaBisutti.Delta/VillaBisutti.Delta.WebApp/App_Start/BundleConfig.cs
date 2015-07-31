@@ -36,6 +36,9 @@ namespace VillaBisutti.Delta.WebApp
 					  "~/Content/jquery.gritter.css",
                       "~/Content/estilos.css"));
 
+			bundles.Add(new StyleBundle("~/Content/default").Include(
+					  "~/Content/bootstrap.min.css"));
+
 			bundles.Add(new ScriptBundle("~/bundles/own").Include("~/Scripts/Functions.js"));
         }
     }
