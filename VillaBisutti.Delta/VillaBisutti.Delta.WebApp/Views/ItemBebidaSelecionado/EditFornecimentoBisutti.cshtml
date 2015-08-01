@@ -29,7 +29,7 @@
 			@Html.EditorFor(model => model.Observacoes)
 		</td>
 		<td>
-			@Html.EditorFor(model => model.Definido)
+			<input class="check-box" type="checkbox" name="Definido" id="Definido" value="@(Model.Definido ? "True" : "False")" @(Model.Definido ? "checked=\"checked\" " : "") />
 		</td>
 		<td class="col-md-1">
 			<a href="@Url.Action("Delete", "ItemBebidaSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">

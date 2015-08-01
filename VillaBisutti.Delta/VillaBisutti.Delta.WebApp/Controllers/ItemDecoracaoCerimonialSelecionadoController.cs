@@ -62,7 +62,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			itemOriginal.Contratado = itemdecoracaocerimonialselecionado.Contratado;
 			itemOriginal.FornecedorStartado = itemdecoracaocerimonialselecionado.FornecedorStartado;
 			new data.ItemDecoracaoCerimonialSelecionado().Update(itemOriginal);
-			return new HttpStatusCodeResult(HttpStatusCode.OK);
+			return View(itemOriginal);
 		}
 
 		public ActionResult Create(int id)
