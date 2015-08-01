@@ -7,7 +7,12 @@
 @using (Html.BeginForm("ItemCreated", "TipoItemMontagem"))
 {
     @Html.AntiForgeryToken()
-	<div class="form-horizontal">
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			HandleCheckbox("CreateMontagem");
+		});
+	</script>
+	<div class="form-horizontal" id="CreateMontagem">
 		@Html.ValidationSummary(true)
 		<h4>Tipo de Item de Montagem</h4>
 		<hr />

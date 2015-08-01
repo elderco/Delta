@@ -6,7 +6,12 @@
 @using (Html.BeginForm("ItemCreated", "TipoItemSomIluminacao"))
 {
 	@Html.AntiForgeryToken()
-	<div class="form-horizontal">
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			HandleCheckbox("CreateSomIluminacao");
+		});
+	</script>
+	<div class="form-horizontal" id="CreateSomIluminacao">
 		@Html.ValidationSummary(true)
 		<h4>Tipo de Item de Som e Iluminação</h4>
 		<hr />

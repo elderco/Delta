@@ -32,7 +32,6 @@ namespace VillaBisutti.Delta.Core.Data
 		{
             List<Model.TipoReuniao> lista = context
                 .TipoReuniao
-                .Include(p => p.Perfil)
                 .ToList();
 			lista = lista.OrderBy(ir => ir.Nome).ToList();
 			return lista;

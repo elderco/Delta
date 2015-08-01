@@ -181,8 +181,9 @@ function ValidateField(element, formId, postForm) {
 		$(formId).submit();
 }
 
-function HandleCheckbox() {
-	$('.check-box').each(function () {
+function HandleCheckbox(elementId) {
+	elementId = elementId.replace("#", "") == elementId ? "#" + elementId : elementId;
+	$(elementId + " input[type='checkbox']").each(function () {
 		if ($(this).hasClass('changed'))
 			return false;
 
@@ -422,7 +423,7 @@ $(document)
 	    InitializeLoading();
 	    ShowLoading();
 	    HideLoading();
-	    HandleCheckbox();
+	    HandleCheckbox("main-container");
 	})
 	.error(function () {
 		HideLoading();

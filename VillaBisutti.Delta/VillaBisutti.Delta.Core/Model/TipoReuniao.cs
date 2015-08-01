@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,32 +13,18 @@ namespace VillaBisutti.Delta.Core.Model
 		public int Id { get; set; }
 		[Display(Name = "Tipo de reunião"), Required]
 		public string Nome { get; set; }
-		[Display(Name = "Dias Restantes até o Evento"), Range(0, 9 * 10E6)]
+		[Display(Name = "Dias antes do evento que esta reunião deve ocorrer"), Range(0, 9E6)]
 		public int DiasAntesEvento { get; set; }
-		[Display(Name = "Reuniões simultâneas / tipo"), Range(0, 9 * 10E6)]
-		public int MaximoEventosEnvolvidos { get; set; }
-		[Display(Name = "Domingo")]
-		public bool PodeDomingo { get; set; }
-		[Display(Name = "Segunda-feira")]
-		public bool PodeSegunda { get; set; }
-		[Display(Name = "Terça-feira")]
-		public bool PodeTerca { get; set; }
-		[Display(Name = "Quarta-feira")]
-		public bool PodeQuarta { get; set; }
-		[Display(Name = "Quinta-feira")]
-		public bool PodeQuinta { get; set; }
-		[Display(Name = "Sexta-feira")]
-		public bool PodeSexta { get; set; }
-		[Display(Name = "Sábado")]
-		public bool PodeSabado { get; set; }
-        [Display(Name = "Àrea Participante")]
-        public Perfil Perfil { get; set; }
-        [Display(Name = "Àrea Participante")]
-        public int PerfilId { get; set; }
-		[Display(Name = "Reuniões simultâneas / área"), Range(0, 9 * 10E6)]
-		public int MaximoAreaEnvolvida { get; set; }
+		[Display(Name = "Pode occorrer Domingo")] public bool PodeDomingo { get; set; }
+		[Display(Name = "Pode occorrer Segunda-feira")] public bool PodeSegunda { get; set; }
+		[Display(Name = "Pode occorrer Terça-feira")] public bool PodeTerca { get; set; }
+		[Display(Name = "Pode occorrer Quarta-feira")] public bool PodeQuarta { get; set; }
+		[Display(Name = "Pode occorrer Quinta-feira")] public bool PodeQuinta { get; set; }
+		[Display(Name = "Pode occorrer Sexta-feira")] public bool PodeSexta { get; set; }
+		[Display(Name = "Pode occorrer Sábado")] public bool PodeSabado { get; set; }
 		[Display(Name = "Duração")]
 		public int HorarioDuracao { get; set; }
+		[NotMapped]
 		public Horario Duracao
 		{
 			get
@@ -49,34 +36,5 @@ namespace VillaBisutti.Delta.Core.Model
 				HorarioDuracao = value.ToInt();
 			}
 		}
-		[Display(Name = "Disponibilidade (das)")]
-		public int HorarioDisponibilidadeInicio { get; set; }
-		public Horario DisponibilidadeInicio
-		{
-			get
-			{
-				return Horario.Parse(HorarioDisponibilidadeInicio);
-			}
-			set
-			{
-				HorarioDisponibilidadeInicio = value.ToInt();
-			}
-		}
-
-		[Display(Name = "Disponibilidade (às)")]
-		public int HorarioDisponibilidadeTermino { get; set; }
-		public Horario DisponibilidadeTermino
-		{
-			get
-			{
-				return Horario.Parse(HorarioDisponibilidadeTermino);
-			}
-			set
-			{
-				HorarioDisponibilidadeTermino = value.ToInt();
-			}
-		}
-		[Display(Name = "Reunioes")]
-		public List<Reuniao> Reunioes { get; set; }
 	}
 }
