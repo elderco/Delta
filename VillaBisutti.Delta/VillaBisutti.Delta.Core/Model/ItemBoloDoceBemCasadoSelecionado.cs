@@ -34,8 +34,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoFornecimento { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
-		[Display(Name = "Fotos")]
-		public List<Foto> Fotos { get; set; }
 		[Display(Name = "Horário Entrega")]
 		public int HorarioEntrega { get; set; }
 		public Horario Entrega

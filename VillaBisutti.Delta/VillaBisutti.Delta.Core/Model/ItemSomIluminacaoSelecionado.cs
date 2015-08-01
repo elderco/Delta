@@ -49,7 +49,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoFornecimento { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
-        public List<Foto> Fotos { get; set; }
         [NotMapped]
         public bool StateErrorBisutti
         {

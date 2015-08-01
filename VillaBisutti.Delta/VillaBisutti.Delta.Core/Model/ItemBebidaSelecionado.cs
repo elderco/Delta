@@ -28,8 +28,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Fornecido pela Villa Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
 		[Display(Name = "Fornecedor Acionado")]
-        public bool FornecedorStartado { get; set; }
-		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
+		public bool FornecedorStartado { get; set; }
+		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Horario de Entrega")]
 		public int HorarioEntrega { get; set; }
@@ -49,12 +49,10 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoFornecimento { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
-		[Display(Name = "Fotos")]
-		public List<Foto> Fotos { get; set; }
 		[NotMapped]
 		public bool StateErrorBisutti
-		{ 
-			get 
+		{
+			get
 			{
 				return (
 					(ItemBebida != null && (new Business.ItemBebida().GetQuantidadeItens(ItemBebidaId) < Quantidade))
@@ -75,7 +73,7 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return (ContratacaoBisutti && !FornecimentoBisutti && ( !Definido || !FornecedorStartado || !Contratado));
+				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado || ContatoFornecimento == null || ContatoFornecimento == string.Empty));
 			}
 		}
 	}
