@@ -27,28 +27,10 @@
 			@Html.DisplayNameFor(model => model.DiasAntesEvento)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.MaximoEventosEnvolvidos)
-		</th>
-		<th>
-			Dias disponíveis:
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Perfil)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.MaximoAreaEnvolvida)
-		</th>
-		<th>
 			@Html.DisplayNameFor(model => model.HorarioDuracao)
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.HorarioDisponibilidadeInicio)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.HorarioDisponibilidadeTermino)
-		</th>
-		<th>
-			Opções
+			Dias disponíveis:
 		</th>
 		<th></th>
 	</tr>
@@ -63,7 +45,7 @@
 				@Html.DisplayFor(modelItem => item.DiasAntesEvento)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.MaximoEventosEnvolvidos)
+				@(item.HorarioDuracao.ToString())
 			</td>
 			<td>
 				@if (item.PodeDomingo) { @(Html.DisplayNameFor(m => m.PodeDomingo) + "| ") }
@@ -73,21 +55,6 @@
 				@if (item.PodeQuinta) { @(Html.DisplayNameFor(m => m.PodeQuinta) + "| ") }
 				@if (item.PodeSexta) { @(Html.DisplayNameFor(m => m.PodeSexta) + "| ") }
 				@if (item.PodeSabado) { @(Html.DisplayNameFor(m => m.PodeSabado) + "| ") }
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Perfil.Nome)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.MaximoAreaEnvolvida)
-			</td>
-			<td>
-				@(item.HorarioDuracao.ToString())
-			</td>
-			<td>
-				@(item.DisponibilidadeInicio.ToString())
-			</td>
-			<td>
-				@(item.DisponibilidadeTermino.ToString())
 			</td>
 			<td>
 				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |

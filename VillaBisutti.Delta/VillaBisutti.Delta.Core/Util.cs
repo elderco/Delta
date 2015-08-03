@@ -102,44 +102,30 @@ namespace VillaBisutti.Delta
 			return destImage;
 		}
 
-		private static Dictionary<int, string> locaisCerimonia;
-		public static Dictionary<int, string> LocalCerimonia
+		private static Dictionary<Core.Model.LocalCerimonia, string> locaisCerimonia;
+		public static Dictionary<Core.Model.LocalCerimonia, string> LocalCerimonia
 		{
 			get
 			{
 				if (locaisCerimonia == null)
 				{
-					locaisCerimonia = new Dictionary<int, string>();
+					locaisCerimonia = new Dictionary<Core.Model.LocalCerimonia, string>();
 					foreach (Delta.Core.Model.LocalCerimonia item in Enum.GetValues(typeof(Delta.Core.Model.LocalCerimonia)).Cast<Delta.Core.Model.LocalCerimonia>())
-						locaisCerimonia[(int)item] = item.GetDescription();
+						locaisCerimonia[item] = item.GetDescription();
 				}
 				return locaisCerimonia;
 			}
 		}
-		//private static Dictionary<int, string> tiposAcesso;
-		//public static Dictionary<int, string> TiposAcesso
-		//{
-		//	get
-		//	{
-		//		if (tiposAcesso == null)
-		//		{
-		//			tiposAcesso = new Dictionary<int, string>();
-		//			foreach (Delta.Core.Model.TipoAcesso item in Enum.GetValues(typeof(Delta.Core.Model.TipoAcesso)).Cast<Delta.Core.Model.TipoAcesso>())
-		//				tiposAcesso[(int)item] = item.GetDescription();
-		//		}
-		//		return tiposAcesso;
-		//	}
-		//}
-		private static Dictionary<int, string> tiposEvento;
-		public static Dictionary<int, string> TiposEvento
+		private static Dictionary<Core.Model.TipoEvento, string> tiposEvento;
+		public static Dictionary<Core.Model.TipoEvento, string> TiposEvento
 		{
 			get
 			{
 				if (tiposEvento == null)
 				{
-					tiposEvento = new Dictionary<int, string>();
+					tiposEvento = new Dictionary<Core.Model.TipoEvento, string>();
 					foreach (Delta.Core.Model.TipoEvento item in Enum.GetValues(typeof(Delta.Core.Model.TipoEvento)).Cast<Delta.Core.Model.TipoEvento>())
-						tiposEvento[(int)item] = item.GetDescription();
+						tiposEvento[item] = item.GetDescription();
 				}
 				return tiposEvento;
 			}

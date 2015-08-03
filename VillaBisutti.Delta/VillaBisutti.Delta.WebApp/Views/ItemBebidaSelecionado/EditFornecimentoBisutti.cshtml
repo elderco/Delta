@@ -10,7 +10,7 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorBisutti ? "bg-danger" : "bg-success")">
+<tr id="Item_@(Model.Id)" class="inline-row-editor@(Model.Id) @(Model.StateErrorBisutti ? "bg-danger" : "bg-success")">
 	@using (Html.BeginForm("EditPost", "ItemBebidaSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 	{
 		<td>
@@ -20,7 +20,6 @@
 			@Html.HiddenFor(model => model.HorarioEntrega)
 			@Html.HiddenFor(model => model.FornecedorStartado)
 			@Html.HiddenFor(model => model.Contratado)
-			<span id="PlaceHolder_@(Model.Id)"></span>
 			@(Model.ItemBebida.TipoItemBebida.Nome) - @(Model.ItemBebida.Nome)
 		</td>
 		<td>
@@ -30,7 +29,7 @@
 			@Html.EditorFor(model => model.Observacoes)
 		</td>
 		<td>
-			@Html.EditorFor(model => model.Definido)
+			<input class="check-box" type="checkbox" name="Definido" id="Definido" value="@(Model.Definido ? "True" : "False")" @(Model.Definido ? "checked=\"checked\" " : "") />
 		</td>
 		<td class="col-md-1">
 			<a href="@Url.Action("Delete", "ItemBebidaSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">

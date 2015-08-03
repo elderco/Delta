@@ -8,6 +8,8 @@ namespace VillaBisutti.Delta.WebApp
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+			bundles.UseCdn = true;
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-2.0.3.min.js",
 						"~/Scripts/ace-extra.min.js",
@@ -40,6 +42,8 @@ namespace VillaBisutti.Delta.WebApp
 					  "~/Content/bootstrap.min.css"));
 
 			bundles.Add(new ScriptBundle("~/bundles/own").Include("~/Scripts/Functions.js"));
+
+			bundles.IgnoreList.Clear();
         }
     }
 }

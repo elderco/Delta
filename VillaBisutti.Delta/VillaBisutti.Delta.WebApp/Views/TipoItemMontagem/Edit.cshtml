@@ -9,8 +9,12 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-	<div class="form-horizontal">
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			HandleCheckbox("EditMontagem");
+		});
+	</script>
+	<div class="form-horizontal" id="EditMontagem">
 		@Html.ValidationSummary(true)
 		@Html.HiddenFor(model => model.Id)
 		<div class="form-group row">

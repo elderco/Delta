@@ -12,6 +12,7 @@ namespace VillaBisutti.Delta.WebApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+			routes.IgnoreRoute("{*browserlink}", new { browserlink = @".*__browserLink.*" });
 
             routes.MapRoute(
                 name: "Default",

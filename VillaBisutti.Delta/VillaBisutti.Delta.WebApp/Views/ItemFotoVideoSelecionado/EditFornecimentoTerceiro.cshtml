@@ -29,13 +29,13 @@
 			@Html.TextBoxFor(model => model.HorarioEntrega, new { @type = "number", @id = "HorarioEntrega_" + Model.Id })
 		</td>
 		<td class="col-md-1">
-			@Html.EditorFor(model => model.Definido)
+			<input class="check-box" type="checkbox" name="Definido" id="Definido" value="@(Model.Definido ? "True" : "False")" @(Model.Definido ? "checked=\"checked\" " : "") />
 		</td>
 		<td class="col-md-1">
-			@Html.EditorFor(model => model.FornecedorStartado)
+			<input class="check-box" type="checkbox" name="FornecedorStartado" id="FornecedorStartado" value="@(Model.FornecedorStartado ? "True" : "False")" @(Model.FornecedorStartado ? "checked=\"checked\" " : "") />
 		</td>
 		<td class="col-md-1">
-			@Html.EditorFor(model => model.Contratado)
+			<input class="check-box" type="checkbox" name="Contratado" id="Contratado" value="@(Model.Contratado ? "True" : "False")" @(Model.Contratado ? "checked=\"checked\" " : "") />
 		</td>
 		<td class="col-md-2">
 			@Html.EditorFor(model => model.Observacoes)
