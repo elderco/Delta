@@ -12,6 +12,7 @@ using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class CardapioController : Controller
     {
         // GET: /Cardapio/
@@ -38,6 +39,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Cardapio/Create
         public ActionResult Create()
         {
+            ViewData["acesso"] = new biz.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Cardapio/ItemCreated/");
             return View();
         }
 

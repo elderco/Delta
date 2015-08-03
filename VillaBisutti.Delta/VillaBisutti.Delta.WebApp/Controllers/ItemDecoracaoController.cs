@@ -12,6 +12,7 @@ using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class ItemDecoracaoController : Controller
     {
 		//Filtro/
@@ -41,9 +42,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create()
         {
 			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			model.Usuario usuarioSession = Session["Usuario"] as model.Usuario;
-			bool somenteleitura = new bus.Usuario().SomenteLeitura(usuarioSession, "/ItemDecoracao/ItemCreated/");
-			ViewData["acesso"] = somenteleitura;
+			ViewData["acesso"] = new bus.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/ItemDecoracao/ItemCreated/");
 			ViewBag.TipoItemDecoracao = TipoItemDecoracao;
             return View();
         }

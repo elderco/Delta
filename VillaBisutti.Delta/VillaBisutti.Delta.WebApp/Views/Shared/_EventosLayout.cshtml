@@ -11,7 +11,7 @@
 	</script>
 	@RenderSection("scripts", required: false)
 }
-@{VillaBisutti.Delta.Core.Model.Usuario usuario = Session["Usuario"] as VillaBisutti.Delta.Core.Model.Usuario;}
+@{VillaBisutti.Delta.Core.Model.Usuario usuario = VillaBisutti.Delta.SessionFacade.UsuarioLogado;}
 
 @section MenuLateral{
 	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">

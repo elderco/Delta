@@ -11,6 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class ItemSomIluminacaoSelecionadoController : Controller
 	{
 		public ActionResult ListFornecimentoBisutti(int id)

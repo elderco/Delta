@@ -11,6 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class TipoItemBoloDoceBemCasadoController : Controller
 	{
 		public ActionResult ListNaoSelecionados(int id)

@@ -11,6 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
 	public class ItemBebidaSelecionadoController : Controller
 	{
 		// GET: /ItemBebidaSelecionado/ListFornecimentoBisutti/5

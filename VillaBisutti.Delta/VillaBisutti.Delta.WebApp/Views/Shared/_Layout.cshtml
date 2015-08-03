@@ -32,7 +32,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<div class="navbar-header pull-left">
-				<a href="#" class="navbar-brand">
+				<a href="@Url.Action("Index", "Home")" class="navbar-brand">
 					<small><!-- style="font-family: 'Satisfy', cursive;" style="vertical-align: middle; width: 30px" -->
 						<img src="~/Content/Images/delta.png" /> Delta - Villa Bisutti
 					</small>
@@ -42,7 +42,7 @@
 					<b>RV</b>
 				</button>
 			</div>
-			@{VillaBisutti.Delta.Core.Model.Usuario usuario = Session["Usuario"] as VillaBisutti.Delta.Core.Model.Usuario;}
+			@{VillaBisutti.Delta.Core.Model.Usuario usuario = VillaBisutti.Delta.SessionFacade.UsuarioLogado;}
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
 					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Cerimonial")))
@@ -130,7 +130,7 @@
 
 						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 							<li>
-								<a href="@Url.Action("Login", "Usuario", new {id = @ViewBag.Id})">
+								<a href="@Url.Action("Logout", "Usuario", new {id = @ViewBag.Id})">
 									<i class="ace-icon fa fa-power-off"></i>
 									Logout
 								</a>

@@ -15,13 +15,13 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Nome { get; set; }
 		[Display(Name = "Dias antes do evento que esta reunião deve ocorrer"), Range(0, 9E6)]
 		public int DiasAntesEvento { get; set; }
-		[Display(Name = "Pode occorrer Domingo")] public bool PodeDomingo { get; set; }
-		[Display(Name = "Pode occorrer Segunda-feira")] public bool PodeSegunda { get; set; }
-		[Display(Name = "Pode occorrer Terça-feira")] public bool PodeTerca { get; set; }
-		[Display(Name = "Pode occorrer Quarta-feira")] public bool PodeQuarta { get; set; }
-		[Display(Name = "Pode occorrer Quinta-feira")] public bool PodeQuinta { get; set; }
-		[Display(Name = "Pode occorrer Sexta-feira")] public bool PodeSexta { get; set; }
-		[Display(Name = "Pode occorrer Sábado")] public bool PodeSabado { get; set; }
+		[Display(Name = "Pode ocorrer Domingo")] public bool PodeDomingo { get; set; }
+		[Display(Name = "Pode ocorrer Segunda-feira")] public bool PodeSegunda { get; set; }
+		[Display(Name = "Pode ocorrer Terça-feira")] public bool PodeTerca { get; set; }
+		[Display(Name = "Pode ocorrer Quarta-feira")] public bool PodeQuarta { get; set; }
+		[Display(Name = "Pode ocorrer Quinta-feira")] public bool PodeQuinta { get; set; }
+		[Display(Name = "Pode ocorrer Sexta-feira")] public bool PodeSexta { get; set; }
+		[Display(Name = "Pode ocorrer Sábado")] public bool PodeSabado { get; set; }
 		[Display(Name = "Duração")]
 		public int HorarioDuracao { get; set; }
 		[NotMapped]

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using System.Web.Mvc;
 
 namespace VillaBisutti.Delta.Core.Data
 {
+    [Authorize]
     public class Modulo : DataAccessBase<Model.Modulo>
     {
         public override void Update(Model.Modulo entity)

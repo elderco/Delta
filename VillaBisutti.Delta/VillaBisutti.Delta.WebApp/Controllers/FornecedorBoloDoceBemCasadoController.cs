@@ -11,6 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class FornecedorBoloDoceBemCasadoController : Controller
     {
         // GET: /FornecedorBoloDoceBemCasado/

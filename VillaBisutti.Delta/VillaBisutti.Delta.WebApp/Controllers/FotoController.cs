@@ -13,6 +13,7 @@ using System.IO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
 	public class FotoController : Controller
 	{
 		// GET: /Foto/
