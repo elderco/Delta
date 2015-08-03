@@ -49,6 +49,19 @@
 		    e.preventDefault();
 		    ShowPopUp($(this).attr("href"), $(this).attr("title"), 790);
 		});
+		var disabled = $("#Disabled").val().toString();
+		if (disabled == "True") {
+			$('input', 'form').attr("disabled", "disabled");
+			$('select', 'form').attr("disabled", "disabled");
+			$('button', 'form').attr("disabled", "disabled");
+			$('a', 'form').attr("disabled", "disabled").attr("readonly", "readonly");
+		}
+		else {
+			$('input', 'form').removeAttr("disabled");
+			$('select', 'form').removeAttr("disabled");
+			$('button', 'form').removeAttr("disabled");
+			$('a', 'form').removeAttr("disabled").removeAttr("readonly");
+		}
 	});
 </script>
 
@@ -61,6 +74,7 @@
 		<h4>Configuração de itens de Decoração</h4>
 		<hr />
 		@Html.ValidationSummary(true)
+		@Html.Hidden("Disabled", ViewData["acesso"].ToString())
 
         <div class="form-group">
             @Html.LabelFor(model => model.TipoItemDecoracao, new { @class = "control-label col-md-2" })

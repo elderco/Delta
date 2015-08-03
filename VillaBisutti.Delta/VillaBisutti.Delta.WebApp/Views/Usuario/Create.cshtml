@@ -14,7 +14,20 @@
                 }
             }
         });
+        
     });
+    $(document).ready(function () {
+    	var disabled = $("#Disabled").val().toString();
+    	if (disabled == "True") {
+    		$('input', 'form').attr("disabled", "disabled");
+    		$('select', 'form').attr("disabled", "disabled");
+    	}
+    	else
+    	{
+    		$('input', 'form').removeAttr("disabled");
+    		$('select', 'form').removeAttr("disabled");
+    	}
+	});
 </script>
     
     
@@ -23,6 +36,7 @@
 @using (Html.BeginForm("ItemCreated", "Usuario", new { @class = "user-form" }))
 {
 	@Html.AntiForgeryToken()
+	@Html.Hidden("Disabled", ViewData["acesso"].ToString())
 
 	<div class="form-horizontal">
             <h4>Usuários</h4>
@@ -32,7 +46,7 @@
             <div class="form-group col-md-6">
                 @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-4" })
                 <div class="col-md-8">
-                    @Html.EditorFor(model => model.Nome)
+                    @Html.EditorFor(model => model.Nome, new { @id = "editor-nome"})
                     @Html.ValidationMessageFor(model => model.Nome)
                 </div>
             </div>
@@ -56,7 +70,7 @@
             <div class="form-group col-md-6">
                 <label class="control-label col-md-4">Perfil</label>
                 <div class="col-md-8">
-                    @Html.DropDownListFor(model => model.PerfilId, (IEnumerable<SelectListItem>)ViewBag.Perfis, "Selecione", new { @class = "form-control" })
+                    @Html.DropDownListFor(model => model.PerfilId, (IEnumerable<SelectListItem>)ViewBag.Perfis, "Selecione", new { @id = "form-control" })
                     @Html.ValidationMessageFor(model => model.Perfil.Nome)
                 </div>
             </div>

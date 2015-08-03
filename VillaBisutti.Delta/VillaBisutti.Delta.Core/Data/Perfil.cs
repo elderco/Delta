@@ -38,16 +38,10 @@ namespace VillaBisutti.Delta.Core.Data
 
         public Model.Perfil GetContextPerfil(int id)
         {
-            List<Model.PerfilModulo> modePerfil = (from perfil in context.Perfil.ToList()
-                                                   join perfilModulo in context.PerfilModulo.ToList()
-                                                       on perfil.Id equals perfilModulo.PerfilId
-                                                   where perfil.Id == id
-                                                   select perfilModulo).ToList();
-
-            Model.Perfil perfis = context.Perfil.SingleOrDefault(a => a.Id == id);
-            perfis.Modulos = modePerfil;
-            return perfis;
-            
+			return context.Perfil
+				.Include(m => m.Modulos)
+				.Where(m => m.Id == id)
+				.FirstOrDefault();
         }
 
         public Model.Perfil GetPerfil(int id = 0)

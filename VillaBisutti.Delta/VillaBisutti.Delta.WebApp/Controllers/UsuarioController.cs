@@ -8,25 +8,45 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
     public class UsuarioController : Controller
     {
-        public ActionResult Login()
+        public ActionResult Login(model.Usuario usuario, string returnUrl)
         {
-            return View();
+			model.Usuario usuarioLogando = new data.Usuario().ValidUser(usuario);
+			if (usuarioLogando != null)
+			{
+				Session["Usuario"] = usuarioLogando;
+				if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")&& !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+				{
+					return Redirect(returnUrl);
+				}
+				else
+					return RedirectToAction("Index", "Home");
+			}
+			else
+			{
+				return View();
+			}
+			
         }
         
         // GET: /Usuario/
         public ActionResult Index()
         {
-			return View(new data.Usuario().GetCollection(0));
+			List<model.Usuario> usuarios = new data.Usuario().GetCollection(0);
+			return View(usuarios);
         }
 
 		public ActionResult Create()
 		{
             ViewBag.Perfis = new SelectList(new data.Perfil().GetCollection(0),"Id","Nome");
+			model.Usuario usuarioSession = Session["Usuario"] as model.Usuario;
+			bool somenteleitura = new bus.Usuario().SomenteLeitura(usuarioSession, "/Usuario/ItemCreated");
+			ViewData["acesso"] = somenteleitura;
 			return View();
 		}
 		[HttpPost]
@@ -69,6 +89,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
                
                 SelectList perfis = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
                 ViewBag.Profile = perfis;
+				model.Usuario usuarioSession = Session["Usuario"] as model.Usuario;
+				ViewBag.SomenteLeitura = new bus.Usuario().SomenteLeitura(usuarioSession, "/Usuario/Edit/");
                 if (usuario == null)
                 {
                     return HttpNotFound();

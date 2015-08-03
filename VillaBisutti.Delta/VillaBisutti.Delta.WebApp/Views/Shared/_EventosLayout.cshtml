@@ -11,6 +11,8 @@
 	</script>
 	@RenderSection("scripts", required: false)
 }
+@{VillaBisutti.Delta.Core.Model.Usuario usuario = Session["Usuario"] as VillaBisutti.Delta.Core.Model.Usuario;}
+
 @section MenuLateral{
 	<div data-sidebar-hover="true" data-sidebar-scroll="true" data-sidebar="true" id="sidebar" class="sidebar responsive sidebar-fixed sidebar-scroll menu-min">
 		<ul class="nav nav-list nav-list-left">
@@ -21,20 +23,28 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
-			<li>
-				<a href="@Url.Action("Index", "Decoracao", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-leaf"></i>
-					<span class="menu-text"> Decoração da recepção </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
-			<li>
-				<a href="@Url.Action("Index", "DecoracaoCerimonial", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-heart"></i>
-					<span class="menu-text"> Decoração do cerimonial </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			@if(new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Decoracao")))
+			{
+				<li>
+					<a href="@Url.Action("Index", "Decoracao", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-leaf"></i>
+						<span class="menu-text"> Decoração da recepção </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "DecoracaoCerimonial")))
+			{ 
+				<li>
+					<a href="@Url.Action("Index", "DecoracaoCerimonial", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-heart"></i>
+						<span class="menu-text"> Decoração do cerimonial </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Montagem")))
+			{
 			<li>
 				<a href="@Url.Action("Index", "Montagem", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-trophy"></i>
@@ -42,6 +52,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Gastronomia")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "Gastronomia", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-cutlery"></i>
@@ -49,6 +62,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Gastronomia")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "Bebida", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-glass"></i>
@@ -56,6 +72,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "BoloDoceBemCasado")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "BoloDoceBemCasado", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-birthday-cake"></i>
@@ -63,6 +82,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "FotoVideo")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "FotoVideo", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-camera-retro"></i>
@@ -70,6 +92,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "SomIluminacao")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "SomIluminacao", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-headphones"></i>
@@ -77,6 +102,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "OutrosItens")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "OutrosItens", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-gift"></i>
@@ -84,6 +112,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Roteiro")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "Roteiro", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-list-ul"></i>
@@ -91,6 +122,9 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
+			@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Cerimonial")))
+			{ 
 			<li>
 				<a href="@Url.Action("Index", "Cerimonial", new { id = ViewBag.Id })">
 					<i class="menu-icon fa fa-list-ol"></i>
@@ -98,6 +132,7 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
+			}
 		</ul>
 		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 			<i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

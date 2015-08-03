@@ -61,7 +61,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edited([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
-            new bus.PerfilAlterado().AlterarPerfil(perfil);
+            new bus.Perfil().AlterarPerfil(perfil);
             return Redirect(Request.UrlReferrer.AbsoluteUri);
         }
         // GET: Perfils/Delete/5
@@ -71,11 +71,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            model.Perfil perfil = new data.Perfil().GetContextPerfil(id.Value);
+            model.Perfil perfil = new data.Perfil().GetContextPerfil(id.HasValue ? id.Value : 0);
             if (perfil == null)
             {
                 return HttpNotFound();
             }
+			foreach (var item in perfil.Modulos)
+			{
+				item.Modulo = null;
+			}
+			
             return View(perfil);
         }
 
@@ -84,7 +89,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            new data.Perfil().Delete(id);
+            new bus.Perfil().RemoverPerfil(id);
             return RedirectToAction("Index");
         }
     }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -18,7 +19,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			return View(new data.ItemDecoracao().Filtrar(combo, texto));
 		}
-		
+		[Authorize]
         public ActionResult Index()
         {
             return View();
@@ -41,6 +42,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create()
         {
 			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
+			model.Usuario usuarioSession = Session["Usuario"] as model.Usuario;
+			bool somenteleitura = new bus.Usuario().SomenteLeitura(usuarioSession, "/ItemDecoracao/ItemCreated/");
+			ViewData["acesso"] = somenteleitura;
 			ViewBag.TipoItemDecoracao = TipoItemDecoracao;
             return View();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -29,13 +30,59 @@ namespace VillaBisutti.Delta.Core.Data
 			string[] boysNames = { "Steve", "Rogers", "Recruit", "Capitain", "Steve Rogers", "Buzz", "Lightyear", "Buzz Lightyear" };
 			string[] companyNames = { "Tabajara inc.", "ACME", "Pretobrás", "Falling Apple" };
 
-			context.Modulo.Add(new Model.Modulo { Nome = "Decoraçao" });
+
+			//context.Modulo.Add(new Model.Modulo { Nome = "Decoração", URL = "/ItemDecoracaoSelecionado/ListFornecimentoBisutti|/ItemDecoracaoSelecionado/ListFornecimentoTerceiro|ItemDecoracaoSelecionado/ListFornecimentoContratante|ItemDecoracaoSelecionado/EditFornecimentoBisutti|ItemDecoracaoSelecionado/EditFornecimentoTerceiro|ItemDecoracaoSelecionado/EditFornecimentoContratante|ItemDecoracaoSelecionado/EditPost|ItemDecoracaoSelecionado/Create|ItemDecoracaoSelecionado/CreateItemDecoracaoSelecionado|ItemDecoracaoSelecionado/Delete|ItemDecoracaoSelecionado/DeleteConfirmed|/Decoracao/*|/TipoItemDecoracao/ListNaoSelecionados|/ItemDecoracao/ListarPorTipo" });
+			//context.Modulo.Add(new Model.Modulo { Nome = "Configurar decoração", URL = "/TipoItemDecoracao/*|/ItemDecoracao/*" });
+
+			context.Modulo.Add(new Model.Modulo { Nome = "Decoração", URL = "ItemDecoracaoSelecionado|Decoracao|/TipoItemDecoracao/ListNaoSelecionados/|/ItemDecoracao/ListarPorTipo/" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar decoração", URL = "TipoItemDecoracao|ItemDecoracao" });
+
 			context.Modulo.Add(new Model.Modulo { Nome = "Montagem" });
 			context.Modulo.Add(new Model.Modulo { Nome = "Bebida" });
 			context.Modulo.Add(new Model.Modulo { Nome = "Bolo" });
 			context.Modulo.Add(new Model.Modulo { Nome = "Doce" });
 			context.Modulo.Add(new Model.Modulo { Nome = "BemCasado" });
 			context.SaveChanges();
+
+			using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["VillaBisuttiDelta"].ConnectionString))
+			{
+				conn.Open(); 
+				string statement1 = @"insert into Perfil(Nome)values('Admin')";
+				string statement2 = @"insert into Usuario (Email, Nome, PerfilId, Senha) values('ravena@villabisutti.com.br','Ravena',1,'123')";
+				string statement3 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 1),(select id from Perfil where id = 1), 1, 1)";
+				string statement4 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 2),(select id from Perfil where id = 1), 1, 1) ";
+				string statement5 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 3),(select id from Perfil where id = 1), 1, 1)";
+				string statement6 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 4),(select id from Perfil where id = 1), 1, 1) ";
+				string statement7 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 5),(select id from Perfil where id = 1), 1, 1)";
+				string statement8 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
+										values((select Id from Modulo where id = 6),(select id from Perfil where id = 1), 1, 1)";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = System.Data.CommandType.Text;
+					cmd.Connection = conn;
+					cmd.CommandText = statement1;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement2;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement3;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement4;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement5;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement6;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement7;
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = statement8;
+					cmd.ExecuteNonQuery();
+				}
+			}
 
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });
 			context.Local.Add(new Model.Local { SiglaCasa = "BE", NomeCasa = "Berrini", EnderecoCasa = "R. James Joule, 40" });

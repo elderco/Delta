@@ -40,5 +40,23 @@ namespace VillaBisutti.Delta.Core.Data
         //    return GetCollection().Where(pf => pf.Perfis.Where(p => p == tipo).Count() > 0).ToList();
         //}
 
+
+		public Model.Usuario ValidUser(Model.Usuario usuario)
+		{
+			return context.Usuario.Where(a => a.Email.Equals(usuario.Email) && a.Senha.Equals(usuario.Senha))
+				.Include(a => a.Perfil)
+				.Include(a => a.Perfil.Modulos)
+				.Include(a => a.Perfil.Modulos.Select(m => m.Modulo))
+				.FirstOrDefault();
+		}
+		public Model.Usuario EntireUser(int usuarioId)
+		{
+			return context.Usuario
+				.Include(u => u.Perfil)
+				.Include(u => u.Perfil.Modulos)
+				.Include(u => u.Perfil.Modulos.Select(c => c.Modulo))
+				.Where(u => u.Id == usuarioId)
+				.FirstOrDefault();
+		}
 	}
 }
