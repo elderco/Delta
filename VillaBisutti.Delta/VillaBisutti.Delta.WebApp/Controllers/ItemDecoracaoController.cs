@@ -19,7 +19,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			return View(new data.ItemDecoracao().Filtrar(combo, texto));
 		}
-		[Authorize]
         public ActionResult Index()
         {
             return View();
