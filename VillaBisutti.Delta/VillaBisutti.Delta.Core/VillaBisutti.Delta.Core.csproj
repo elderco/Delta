@@ -84,7 +84,6 @@
     <Compile Include="Data\ItemDecoracaoCerimonialSelecionado.cs" />
     <Compile Include="Data\ItemDecoracaoSelecionado.cs" />
     <Compile Include="Data\Evento.cs" />
-    <Compile Include="Data\ItemFormaBoloDoceBemCasado.cs" />
     <Compile Include="Data\ItemFotoVideoSelecionado.cs" />
     <Compile Include="Data\ItemBebida.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasado.cs" />
@@ -128,7 +127,6 @@
     <Compile Include="Model\ItemCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonialSelecionado.cs" />
-    <Compile Include="Model\ItemFormaBoloDoceBemCasado.cs" />
     <Compile Include="Model\ItemRoteiro.cs" />
     <Compile Include="Model\LocalCerimonia.cs" />
     <Compile Include="Data\ItemMontagemSelecionado.cs" />

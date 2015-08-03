@@ -18,7 +18,6 @@ namespace VillaBisutti.Delta.Core.Business
         /// <returns></returns>
         public bool SomenteLeitura(model.Usuario usuario, string url)
 		{
-			//Método para bloquear ou não os forms
 			bool somenteLeitura = false;
 			Dictionary<string, string> dic = new Dictionary<string, string>();
 
@@ -33,10 +32,7 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 			foreach (var item in dic)
 			{
-				//bool podeLer = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.Where(x => x.Value.Equals(item)).FirstOrDefault().Key)).Select(a => a.PodeLer).FirstOrDefault();
-				//bool podeAlterar = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Equals(item)).Key)).Select(a => a.PodeAlterar).FirstOrDefault();
 				string[] itemSplitted = item.Value.Split('|');
-				//pega a Url completa que veio do parametro, pois pode ser que so naquele controller e action ele tem ou não acesso
 				if (itemSplitted.Contains(url))
 				{
 					bool podeLer = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Contains(item.Value.ToString())).Key)).Select(a => a.PodeLer).SingleOrDefault();
@@ -48,14 +44,13 @@ namespace VillaBisutti.Delta.Core.Business
 					else
 						somenteLeitura = false;
 				}
-				else //neste caso o cara não tem acesso em nenhuma action do respectivo controller
+				else
 				{
 					string novaUrl = url.Substring(1).Split('/')[0];
 					if (itemSplitted.Contains(novaUrl))
 					{
 						bool podeLer = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Equals(item.Value.ToString())).Key)).Select(a => a.PodeLer).SingleOrDefault();
 						bool podeAlterar = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Equals(item.Value.ToString())).Key)).Select(a => a.PodeAlterar).SingleOrDefault();
-						//Esta logica é para pegar o valor do atribulo pode 
 						if (podeLer == true && podeAlterar == false)
 						{
 							somenteLeitura = true;
@@ -66,21 +61,6 @@ namespace VillaBisutti.Delta.Core.Business
 				}
 			}
 			
-			//foreach (string item in modulos)
-			//{
-			//	string[] moduloSplitado = item.Split('|');
-			//	string[] novaUrl = url.Substring(1).Replace('/', ' ').Split(' ');
-			//	if (moduloSplitado.Contains(url))
-			//	{
-			//		somenteLeitura = VericaPermissaoSomenteLeitura(usuario, somenteLeitura);
-			//	}
-			//	else if (moduloSplitado.Contains(novaUrl[0]))
-			//	{
-			//		somenteLeitura = VericaPermissaoSomenteLeitura(usuario, somenteLeitura);
-			//	}
-			//	else
-			//		somenteLeitura = true;
-			//}
 			return somenteLeitura;
 		}
 
