@@ -84,7 +84,7 @@ namespace VillaBisutti.Delta.Core.Business
             {
                 List<model.Modulo> modulos = usuario.Perfil.Modulos.Select(a => a.Modulo).ToList();
                 List<model.PerfilModulo> perfilModulo = usuario.Perfil.Modulos;
-                bool podeLer = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Contains(item.Value.ToString())).Key)).Select(a => a.PodeLer).SingleOrDefault();
+               
                 foreach (var item in modulos)
                 {
                     if (!string.IsNullOrEmpty(item.URL))
@@ -94,6 +94,7 @@ namespace VillaBisutti.Delta.Core.Business
                 }
                 foreach (var item in dic)
                 {
+                    bool podeLer = perfilModulo.Where(a => a.Modulo.Nome.Equals(dic.FirstOrDefault(x => x.Value.Contains(item.Value.ToString())).Key)).Select(a => a.PodeLer).SingleOrDefault();
                     string[] itemSplitted = item.Value.Split('|');
                     if (itemSplitted.Contains(url))
                     {
