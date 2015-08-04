@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Data
 {
@@ -29,7 +30,21 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Reuniao> GetCollection()
 		{
-			return context.Reuniao.ToList();
+			return context.Reuniao.Include(r => r.TipoReuniao).Include(r => r.Usuario).ToList();
+		}
+		public List<Model.Reuniao> ReunioesEvento(int eventoId)
+		{
+			return GetCollection().Where(r => r.EventoId == eventoId).ToList();
+		}
+		public List<Model.Reuniao> ReunioesUsuario(int usuarioId)
+		{
+			return context.Reuniao
+				.Include(r => r.Evento)
+				.Include(r => r.Evento.TipoEvento)
+				.Include(r => r.Evento.Local)
+				.Include(r => r.TipoReuniao)
+				.Include(r => r.Usuario)
+				.Where(r => r.UsuarioId == usuarioId).ToList();
 		}
 	}
 }

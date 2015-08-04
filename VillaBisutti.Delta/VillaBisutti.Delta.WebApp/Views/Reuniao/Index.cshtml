@@ -1,0 +1,45 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Reuniao>
+
+@{
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
+}
+<div class="row">
+	<div class="col-md-8">
+		@Html.Partial("/Create", new VillaBisutti.Delta.Core.Model.Reuniao())
+	</div>
+	<a href="@Url.Action("Copy", "Reuniao", new { id = ViewBag.Id })" class="col-md-2">Copiar padrão</a>
+</div>
+<div class="row">
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.TipoReuniao.Nome)
+			</th>
+			<th>
+				Participante
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Data)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Horario)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Definida)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Executada)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Observacoes)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (VillaBisutti.Delta.Core.Model.Reuniao item in Model)
+		{
+			@Html.Partial("/Edit", item)
+		}
+
+	</table>
+</div>

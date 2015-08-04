@@ -42,7 +42,6 @@ namespace VillaBisutti.Delta
 			}
 			return value;
 		}
-
 		internal static List<T> GetList<T>(string name, char separator = ',')
 		{
 			string config = ConfigurationManager.AppSettings[name];
@@ -54,13 +53,11 @@ namespace VillaBisutti.Delta
 			}
 			return value;
 		}
-
 		public static string GetName(string fileName)
 		{
 			string fileExtension = fileName.Split('.')[fileName.Split('.').Length - 1];
 			return DateTime.Now.ToString("yyyyMMddhhmmss") + "." + fileExtension;
 		}
-
 		public static void HandleImage(HttpPostedFileBase URL, string path)
 		{
 			Image image = Image.FromStream(URL.InputStream);
@@ -140,6 +137,11 @@ namespace VillaBisutti.Delta
 					context_ = new Core.Data.Context();
 				return context_;
 			}
+		}
+		internal static void ResetContext()
+		{
+			context_.Dispose();
+			context_ = null;
 		}
 	}
 }

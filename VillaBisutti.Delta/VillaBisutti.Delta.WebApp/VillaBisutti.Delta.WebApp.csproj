@@ -197,6 +197,7 @@
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\PratoSelecionadoController.cs" />
+    <Compile Include="Controllers\ReuniaoController.cs" />
     <Compile Include="Controllers\RoteiroController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
     <Compile Include="Controllers\SomIluminacaoController.cs" />
@@ -605,6 +606,8 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\ItemBebidaSelecionado\EditPost.cshtml" />
     <Content Include="Views\TipoReuniao\Edit.cshtml" />
+    <Content Include="Views\Reuniao\Index.cshtml" />
+    <Content Include="Views\Reuniao\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

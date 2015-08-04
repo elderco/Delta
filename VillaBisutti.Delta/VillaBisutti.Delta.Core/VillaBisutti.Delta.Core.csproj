@@ -63,6 +63,7 @@
     <Compile Include="Business\Perfil.cs" />
     <Compile Include="Business\PratoSelecionado.cs" />
     <Compile Include="Business\ItemDecoracao.cs" />
+    <Compile Include="Business\Reuniao.cs" />
     <Compile Include="Business\Usuario.cs" />
     <Compile Include="Data\Bebida.cs" />
     <Compile Include="Data\BoloDoceBemCasado.cs" />

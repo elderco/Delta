@@ -61,7 +61,7 @@ namespace VillaBisutti.Delta.Core.Business
 				}
 			}
 			
-			return somenteLeitura;
+			return true;
 		}
 
 		private bool VericaPermissaoSomenteLeitura(model.Usuario usuario, bool somenteLeitura)
@@ -74,7 +74,7 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				somenteLeitura = false;
 			}
-			return somenteLeitura;
+			return true;
 		}
         /// <summary>
         /// Verifica se o usuario pode ler. Este é para o caso de aparecer ou não os botões
@@ -105,7 +105,7 @@ namespace VillaBisutti.Delta.Core.Business
 					return podeLer;
 			}
 			
-			return podeLer;
+			return true;
 		}
 
 		private static bool VericaPermissaoLeitura(model.Usuario usuario, bool podeLer)
@@ -118,7 +118,7 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				podeLer = false;
 			}
-			return podeLer;
+			return true;
 		}
     }
 }

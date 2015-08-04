@@ -28,6 +28,7 @@ namespace VillaBisutti.Delta.Core.Business
 					Util.context.Entry(tipoPrato).State = System.Data.Entity.EntityState.Deleted;
 			}
 			Util.context.SaveChanges();
+			Util.ResetContext();
 		}
 	}
 }

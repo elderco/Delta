@@ -1,0 +1,36 @@
+﻿@model VillaBisutti.Delta.Core.Model.Reuniao
+@{
+    Layout = null;
+}
+<tr>
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+		<td>
+			@Html.DisplayFor(model => model.TipoReuniao.Nome)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Usuario.Nome)
+		</td>
+		<td id="DataReuniao_@(Model.Id)" title="@Model.Data.ToString("ddd, dd/MM/yyyy")">
+			@Html.EditorFor(model => model.Data)
+		</td>
+		<td>
+			@Html.EditorFor(model => model.HorarioReuniao)
+		</td>
+		<td>
+			<input type="checkbox" class="check-box" name="Definida" id="Definida" value="@(Model.Definida)"@(Model.Definida ? "checked=\"checked\"" : "") />
+		</td>
+		<td>
+			<input type="checkbox" class="check-box" name="Executada" id="Executada" value="@(Model.Executada)" @(Model.Executada ? "checked=\"checked\"" : "") />
+		</td>
+		<td>
+			@Html.EditorFor(model => model.Observacoes)
+		</td>
+		<td>
+			<a href="@Url.Action("Delete", "Reuniao", new { id = Model.Id })" class="btn btn-default" title="Remover este item">
+				<span class="menu-icon fa fa-trash"></span>
+			</a>
+		</td>
+	}
+</tr>

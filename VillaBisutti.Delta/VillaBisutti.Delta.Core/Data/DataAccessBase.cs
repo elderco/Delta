@@ -9,11 +9,14 @@ namespace VillaBisutti.Delta.Core.Data
 {
 	public abstract class DataAccessBase<T> where T : Model.IEntityBase
 	{
+		protected Context _context;
 		protected Context context
 		{
 			get
 			{
-				return VillaBisutti.Delta.Util.context;
+				if (_context == null)
+					_context = new Context();
+				return _context;
 			}
 		}
 		public T GetElement(int id = 0)

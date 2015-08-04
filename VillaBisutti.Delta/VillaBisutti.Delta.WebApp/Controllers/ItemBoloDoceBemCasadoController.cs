@@ -118,9 +118,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.ItemBoloDoceBemCasado().Delete(id);
             return RedirectToAction("Index");
         }
-		public ActionResult ListarPorTipo(int tipoId)
+		public ActionResult ListarPorTipo(int tipoId, int fornecedorId)
 		{
-			return View(new data.ItemBoloDoceBemCasado().ListarPorTipo(tipoId));
+			return View(new data.ItemBoloDoceBemCasado().Filtrar(tipoId, fornecedorId, string.Empty));
 		}
 
         protected override void Dispose(bool disposing)
