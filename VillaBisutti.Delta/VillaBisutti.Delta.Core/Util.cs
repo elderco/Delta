@@ -69,36 +69,56 @@ namespace VillaBisutti.Delta
 		}
 		private static Bitmap ResizeImage(Image image)
 		{
-			//TODO: Não redimensionar imagem menor que o padrão
 			int defaultWidth = Get<int>("largura");
 			int defaultHeight = Get<int>("altura");
 			int width = defaultWidth;
 			int height = defaultHeight;
-			double x = (double)defaultWidth / (double)image.Width;
-			double y = (double)defaultHeight / (double)image.Height;
-			if (x < y)
-				height = (int)(image.Height * x);
-			else
-				width = (int)(image.Width * y);
-			var destRect = new Rectangle(0, 0, width, height);
-			Bitmap destImage = new Bitmap(width, height);
-			destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-			using (var graphics = Graphics.FromImage(destImage))
-			{
-				graphics.SmoothingMode = SmoothingMode.AntiAlias;
-				graphics.CompositingQuality = CompositingQuality.HighQuality;
-				graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-				graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-				using (ImageAttributes wrapMode = new ImageAttributes())
-				{
-					wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-					graphics.DrawImage(image, new Rectangle(0, 0, width, height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-				}
-				Rectangle rect = new Rectangle(0, height - 20, destImage.Width, destImage.Height);
-				graphics.FillRectangle(Brushes.White, rect);
-				graphics.DrawString(Get<string>("disclaimerImagem"), new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
-				graphics.Flush();
-			}
+            Bitmap destImage = new Bitmap(width, height);
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+            if (image.Height < defaultHeight && image.Width < defaultWidth)
+            {
+                destImage = new Bitmap(width, height);
+                destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    //Rectangle rect = new Rectangle(0, 0, defaultWidth, defaultHeight);
+                    using (ImageAttributes wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImageUnscaled(image, new Rectangle(0, 0, image.Width, image.Height));
+                    }
+                    Rectangle rect = new Rectangle(0, image.Height + 20, 400, 15);
+                    graphics.FillRectangle(Brushes.White, rect);
+                    graphics.DrawString("Imagem Meramente ilustrativa", new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
+                }
+            }
+            else
+            {
+                double x = (double)defaultWidth / (double)image.Width;
+                double y = (double)defaultHeight / (double)image.Height;
+                if (x < y)
+                    height = (int)(image.Height * x);
+                else
+                    width = (int)(image.Width * y);
+                var destRect = new Rectangle(0, 0, width, height);
+
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    using (ImageAttributes wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImage(image, new Rectangle(0, 0, width, height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    }
+                    Rectangle rect = new Rectangle(0, height - 20, destImage.Width, destImage.Height);
+                    graphics.FillRectangle(Brushes.White, rect);
+                    graphics.DrawString(Get<string>("disclaimerImagem"), new Font("Helvetica", 11, FontStyle.Bold, GraphicsUnit.Pixel), new SolidBrush(Color.Black), rect);
+                    graphics.Flush();
+                }
+            }
 			return destImage;
 		}
 
