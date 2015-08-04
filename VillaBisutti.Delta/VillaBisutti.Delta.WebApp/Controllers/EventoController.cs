@@ -62,6 +62,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Evento/Create
 		public ActionResult Create()
 		{
+			ViewData["acesso"] = new biz.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Evento/Create/");
 			CriarControlesColecao();
 			return View();
 		}

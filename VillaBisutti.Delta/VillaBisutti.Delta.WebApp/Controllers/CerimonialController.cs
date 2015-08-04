@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Cerimonial/Create
 		public ActionResult Create(int Id)
 		{
+			ViewData["acesso"] = new biz.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Cerimonial/ItemCreated/");
 			ViewBag.Id = Id;
 			return View();
 		}

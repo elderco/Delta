@@ -13,7 +13,18 @@
 	@RenderSection("scripts", required: false)
     <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <script>$(document).ready(function () {$('[data-rel=tooltip]').tooltip();})</script>
-	
+	@if(ViewBag.IsBlocked == "TRUE")
+	{
+		
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$('input', 'form').attr("disabled", "disabled");
+			$('select', 'form').attr("disabled", "disabled");
+			$('button', 'form').attr("disabled", "disabled");
+			$('.PopUpActionLinks', 'form').attr("href", "javascript:void(0);");
+		});
+	</script>
+	}
 </head>
 <body class="no-skin">
 	<div id="navbar" class="navbar navbar-default navbar-collapse navbar-fixed-top">

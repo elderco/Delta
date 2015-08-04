@@ -75,7 +75,7 @@
                 </a>
                 <b class="arrow"></b>
                 <ul class="submenu">
-					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "ItemDecoracao")))
+					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "ItemDecoracao")))
 					{ 
                     <li>
                         <a href="@Url.Action("Index", "ItemDecoracao")">

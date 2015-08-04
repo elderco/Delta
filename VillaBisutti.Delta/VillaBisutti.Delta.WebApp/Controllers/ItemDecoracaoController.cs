@@ -15,6 +15,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     [Authorize]
     public class ItemDecoracaoController : Controller
     {
+		protected override IAsyncResult BeginExecute(System.Web.Routing.RequestContext requestContext, AsyncCallback callback, object state)
+		{
+			if (bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+				ViewBag.IsBlocked = "TRUE";
+			return base.BeginExecute(requestContext, callback, state);
+		}
 		//Filtro/
 		public ActionResult Buscar(int combo, string texto)
 		{
@@ -42,7 +48,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Create()
         {
 			SelectList TipoItemDecoracao = new SelectList(new data.TipoItemDecoracao().GetCollection(0).OrderBy(tid => tid.Nome), "Id", "Nome");
-			ViewData["acesso"] = new bus.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/ItemDecoracao/ItemCreated/");
 			ViewBag.TipoItemDecoracao = TipoItemDecoracao;
             return View();
         }
