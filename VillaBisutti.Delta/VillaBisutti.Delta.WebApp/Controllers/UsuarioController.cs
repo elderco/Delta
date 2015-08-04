@@ -45,7 +45,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Create()
 		{
             ViewBag.Perfis = new SelectList(new data.Perfil().GetCollection(0),"Id","Nome");
-            ViewData["acesso"] = new bus.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Usuario/ItemCreated");
+            ViewData["acesso"] = new bus.Usuario().UsuarioPodeAlterar(SessionFacade.UsuarioLogado, "/Usuario/ItemCreated");
 			return View();
 		}
 		[HttpPost]
@@ -89,7 +89,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
                 }
                
                 ViewBag.Profile= new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
-				ViewBag.SomenteLeitura = new bus.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Usuario/Edit/");
+				ViewBag.SomenteLeitura = new bus.Usuario().UsuarioPodeAlterar(SessionFacade.UsuarioLogado, "/Usuario/Edit/");
                 if (usuario == null)
                 {
                     return HttpNotFound();

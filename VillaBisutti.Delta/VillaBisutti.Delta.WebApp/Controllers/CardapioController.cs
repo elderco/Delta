@@ -39,7 +39,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         // GET: /Cardapio/Create
         public ActionResult Create()
         {
-            ViewData["acesso"] = new biz.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Cardapio/ItemCreated/");
+            ViewData["acesso"] = new biz.Usuario().UsuarioPodeAlterar(SessionFacade.UsuarioLogado, "/Cardapio/ItemCreated/");
             return View();
         }
 

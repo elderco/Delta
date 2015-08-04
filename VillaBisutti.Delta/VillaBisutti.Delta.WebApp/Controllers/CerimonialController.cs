@@ -25,7 +25,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Cerimonial/Create
 		public ActionResult Create(int Id)
 		{
-			ViewData["acesso"] = new biz.Usuario().SomenteLeitura(SessionFacade.UsuarioLogado, "/Cerimonial/ItemCreated/");
+			ViewData["acesso"] = new biz.Usuario().UsuarioPodeAlterar(SessionFacade.UsuarioLogado, "/Cerimonial/ItemCreated/");
 			ViewBag.Id = Id;
 			return View();
 		}
