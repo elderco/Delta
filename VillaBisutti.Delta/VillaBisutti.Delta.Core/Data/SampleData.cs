@@ -11,6 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		protected override void Seed(Context context)
 		{
+			int NumEventos = 350;
 			string[] sampleText = { "Ut mollis enim ut erat dictum elementum", "Integer molestie odio in venenatis cursus", "Aliquam hendrerit turpis magna, ut congue est sollicitudin eget",
 									  "Nulla et consequat felis", "Vestibulum vel auctor ligula", "Aenean eros nunc, consectetur eu condimentum eu, volutpat quis arcu", "Sed non quam porta, tempus ligula sed, eleifend purus",
 									  "Praesent vel metus eu mi tincidunt congue et et sapien", "Sed pretium libero vel mauris pellentesque aliquet", "Morbi id diam ex", "Curabitur eget risus eget neque ullamcorper placerat a vitae nulla",
@@ -26,69 +27,55 @@ namespace VillaBisutti.Delta.Core.Data
 									  "Sed id faucibus eros, in auctor justo", "Nulla sagittis tempus turpis", "Donec id magna a enim faucibus consequat id pharetra metus", "Cras semper aliquet lectus, vel egestas est tincidunt sed",
 									  "Fusce eget risus nec mauris auctor efficitur vitae sed turpis", "Sed at velit sed dolor ornare sodales in tristique ex", "Nulla mollis vulputate arcu, sed maximus mi gravida eget",
 									  "Etiam sodales urna eu nisi congue sagittis", "Suspendisse potenti", "Morbi et mattis nisl, vehicula finibus arcu" };
-			string[] girlsNames = { "Romanov", "Natasha", "Natasha Romanov", "Viuva Negra", "Agent Carter", "Peggy", "Peggy Carter", "Carter" };
-			string[] boysNames = { "Steve", "Rogers", "Recruit", "Capitain", "Steve Rogers", "Buzz", "Lightyear", "Buzz Lightyear" };
-			string[] companyNames = { "Tabajara inc.", "ACME", "Pretobrás", "Falling Apple" };
+			string[] girlsNames = { "Aline", "Bianca", "Camila", "Débora", "Eliana", "Fabiane", "Gabriela", "Helen", "Ingrid", "Juliana", "Karina", "Laura", "Michelle", "Neusa", "Ofélia", "Patrícia" };
+			string[] boysNames = { "André", "Bruno", "César", "Dênis", "Edilson", "Fabrício", "Germano", "Henrique", "Ingmar", "Josemar", "Kléber", "Leandro", "Marcos", "Newton", "Odair", "Paulo" };
+			string[] companyNames = { "Apple Computer", "Bosch", "Coca-cola company", "Demareste-Almeida Advogados", "Enron", "FIAM", "Globo", "HTC" };
 
-
-			//context.Modulo.Add(new Model.Modulo { Nome = "Decoração", URL = "/ItemDecoracaoSelecionado/ListFornecimentoBisutti|/ItemDecoracaoSelecionado/ListFornecimentoTerceiro|ItemDecoracaoSelecionado/ListFornecimentoContratante|ItemDecoracaoSelecionado/EditFornecimentoBisutti|ItemDecoracaoSelecionado/EditFornecimentoTerceiro|ItemDecoracaoSelecionado/EditFornecimentoContratante|ItemDecoracaoSelecionado/EditPost|ItemDecoracaoSelecionado/Create|ItemDecoracaoSelecionado/CreateItemDecoracaoSelecionado|ItemDecoracaoSelecionado/Delete|ItemDecoracaoSelecionado/DeleteConfirmed|/Decoracao/*|/TipoItemDecoracao/ListNaoSelecionados|/ItemDecoracao/ListarPorTipo" });
-			//context.Modulo.Add(new Model.Modulo { Nome = "Configurar decoração", URL = "/TipoItemDecoracao/*|/ItemDecoracao/*" });
-
-			context.Modulo.Add(new Model.Modulo { Nome = "Decoração", URL = "ItemDecoracaoSelecionado|Decoracao|/TipoItemDecoracao/ListNaoSelecionados/|/ItemDecoracao/ListarPorTipo/" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Bebida", URL = "ItemBebidaSelecionado|Bebida|/TipoItemBebida/ListNaoSelecionados|/ItemBebida/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar bebidas", URL = "TipoItemBebida|ItemBebida" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Bolo, doce e bem-casado", URL = "ItemBoloDoceBemCasadoSelecionado|BoloDoceBemCasado|/TipoItemBoloDoceBemCasado/ListNaoSelecionados|/ItemBoloDoceBemCasado/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar bolo, doce e bem-casado", URL = "TipoItemBoloDoceBemCasado|ItemBoloDoceBemCasado|FornecedorBoloDoceBemCasado" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Decoração", URL = "ItemDecoracaoSelecionado|Decoracao|/TipoItemDecoracao/ListNaoSelecionados|/ItemDecoracao/ListarPorTipo" });
 			context.Modulo.Add(new Model.Modulo { Nome = "Configurar decoração", URL = "TipoItemDecoracao|ItemDecoracao" });
-
-			context.Modulo.Add(new Model.Modulo { Nome = "Montagem" });
-			context.Modulo.Add(new Model.Modulo { Nome = "Bebida" });
-			context.Modulo.Add(new Model.Modulo { Nome = "Bolo" });
-			context.Modulo.Add(new Model.Modulo { Nome = "Doce" });
-			context.Modulo.Add(new Model.Modulo { Nome = "BemCasado" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Decoração Cerimonial", URL = "ItemDecoracaoCerimonialSelecionado|DecoracaoCerimonial|/TipoItemDecoracaoCerimonial/ListNaoSelecionados|/ItemDecoracaoCerimonial/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar decoração Cerimonial", URL = "TipoItemDecoracaoCerimonial|ItemDecoracaoCerimonial" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Foto e vídeo", URL = "ItemFotoVideoSelecionado|FotoVideo|/TipoItemFotoVideo/ListNaoSelecionados|/ItemFotoVideo/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar foto e vídeo", URL = "TipoItemFotoVideo|ItemFotoVideo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Gastronomia", URL = "Gastronomia|/PratoSelecionado/ToggleDegustar|/PratoSelecionado/ToggleEscolher|/PratoSelecionado/ToggleRejeitar|/PratoSelecionado/ErroMaisPratosQuePermitido|/TipoPratoPadrao/DefinirQuantidade" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar gastronomia", URL = "TipoPrato|TipoPratoPadrao|PratoSelecionado|Prato|Cardapio" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Montagem", URL = "ItemMontagemSelecionado|Montagem|/TipoItemMontagem/ListNaoSelecionados|/ItemMontagem/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar montagem", URL = "TipoItemMontagem|ItemMontagem" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Outros itens", URL = "ItemOutrosItensSelecionado|OutrosItens|/TipoItemOutrosItens/ListNaoSelecionados|/ItemOutrosItens/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar outros itens", URL = "TipoItemOutrosItens|ItemOutrosItens" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Som e iluminação", URL = "ItemSomIluminacaoSelecionado|SomIluminacao|/TipoItemSomIluminacao/ListNaoSelecionados|/ItemSomIluminacao/ListarPorTipo" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar som e iluminação", URL = "TipoItemSomIluminacao|ItemSomIluminacao" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Roteiro padrão", URL = "ItemRoteiro|ItemRoteiro" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Cerimonial padrão", URL = "ItemCerimonial|ItemCerimonial" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Roteiro", URL = "Roteiro|Cerimonial" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Cerimonial", URL = "Cerimonial|Cerimonial" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Eventos", URL = "Evento|Reuniao" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar reuniões", URL = "TipoReuniao|TipoReuniao" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Reuniões", URL = "Reuniao|Reuniao" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar casas", URL = "Local|Local" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Configurar tipo de serviço", URL = "TipoServico|TipoServico" });
+			context.Modulo.Add(new Model.Modulo { Nome = "Perfil e usuarios", URL = "Perfil|Usuario" });
+			//Falta relatórios e configurações de robôs
 			context.SaveChanges();
 
-			using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["VillaBisuttiDelta"].ConnectionString))
-			{
-				conn.Open(); 
-				string statement1 = @"insert into Perfil(Nome)values('Admin')";
-				string statement2 = @"insert into Usuario (Email, Nome, PerfilId, Senha) values('ravena@villabisutti.com.br','Ravena',1,'123')";
-				string statement3 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 1),(select id from Perfil where id = 1), 1, 1)";
-				string statement4 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 2),(select id from Perfil where id = 1), 1, 1) ";
-				string statement5 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 3),(select id from Perfil where id = 1), 1, 1)";
-				string statement6 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 4),(select id from Perfil where id = 1), 1, 1) ";
-				string statement7 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 5),(select id from Perfil where id = 1), 1, 1)";
-				string statement8 = @"insert into PerfilModulo(ModuloId, PerfilId, PodeAlterar, PodeLer)
-										values((select Id from Modulo where id = 6),(select id from Perfil where id = 1), 1, 1)";
-				using (SqlCommand cmd = new SqlCommand())
-				{
-					cmd.CommandType = System.Data.CommandType.Text;
-					cmd.Connection = conn;
-					cmd.CommandText = statement1;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement2;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement3;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement4;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement5;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement6;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement7;
-					cmd.ExecuteNonQuery();
-					cmd.CommandText = statement8;
-					cmd.ExecuteNonQuery();
-				}
-			}
+			IEnumerable<Model.Modulo> modulos = context.Modulo;
+			context.Perfil.Add(new Model.Perfil { Nome = "Master", Modulos = modulos.Select(m => new Model.PerfilModulo { ModuloId = m.Id, PodeAlterar = true, PodeLer = true }).ToList() });
+			context.Perfil.Add(new Model.Perfil { Nome = "Zóião", Modulos = modulos.Select(m => new Model.PerfilModulo { ModuloId = m.Id, PodeAlterar = false, PodeLer = true }).ToList() });
+			context.SaveChanges();
+
+			context.Usuario.Add(new Model.Usuario { Email = "master", Nome = "He-Man -> The Master of the Universe", PerfilId = 1, Senha = "123" });
+			context.Usuario.Add(new Model.Usuario { Email = "aranha", Nome = "Aranha com um monte de olho pra olhar tudo", PerfilId = 2, Senha = "123" });
+			context.SaveChanges();
 
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });
 			context.Local.Add(new Model.Local { SiglaCasa = "BE", NomeCasa = "Berrini", EnderecoCasa = "R. James Joule, 40" });
 			context.Local.Add(new Model.Local { SiglaCasa = "GC", NomeCasa = "Gomes de Carvalho", EnderecoCasa = "R. Gomes de carvalho, 420" });
 			context.Local.Add(new Model.Local { SiglaCasa = "QT", NomeCasa = "Quatá", EnderecoCasa = "R. Quatá, 567" });
-			context.Local.Add(new Model.Local { SiglaCasa = "T", NomeCasa = "Tenerife", EnderecoCasa = "R. Tenerife, 140" });
+			context.Local.Add(new Model.Local { SiglaCasa = "TE", NomeCasa = "Tenerife", EnderecoCasa = "R. Tenerife, 140" });
 			context.Local.Add(new Model.Local { SiglaCasa = "011", NomeCasa = "011 eventos", EnderecoCasa = "R. Alvorada, 180" });
 			context.SaveChanges();
 
@@ -365,6 +352,74 @@ namespace VillaBisutti.Delta.Core.Data
 			context.ItemBebida.Add(new Model.ItemBebida { Nome = "Não Há", TipoItemBebidaId = 3, BloqueiaOutrasPropriedades = true, Quantidade = (int)(9 * 10E4) });
 			context.SaveChanges();
 
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Bolo real", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 0 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Bolo Cenográfico", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 0 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Bem casado", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 1 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Doce", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 1 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Forma para doce", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 1 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Papel", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 1 });
+			context.TipoItemBoloDoceBemCasado.Add(new Model.TipoItemBoloDoceBemCasado { Nome = "Fita", CopiaBebida = false, CopiaDecoracao = false, CopiaFotoVideo = false, CopiaMontagem = false, CopiaOutrosItens = false, CopiaSomIluminacao = false, PadraoAniversario = true, PadraoBarmitzva = true, PadraoBatmitzva = true, PadraoBodas = true, PadraoCasamento = true, PadraoCorporativo = false, PadraoDebutante = true, PadraoOutro = false, Ordem = 1 });
+			context.SaveChanges();
+
+			context.FornecedorBoloDoceBemCasado.Add(new Model.FornecedorBoloDoceBemCasado { NomeFornecedor = "Vagner Furioto" });
+			context.FornecedorBoloDoceBemCasado.Add(new Model.FornecedorBoloDoceBemCasado { NomeFornecedor = "Fernanda Gabriel" });
+			context.FornecedorBoloDoceBemCasado.Add(new Model.FornecedorBoloDoceBemCasado { NomeFornecedor = "Ana Cristina" });
+			context.FornecedorBoloDoceBemCasado.Add(new Model.FornecedorBoloDoceBemCasado { NomeFornecedor = "Outro" });
+			context.SaveChanges();
+
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Tartelette de cereja" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Creme de laranja c/ physalis" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Coco queimado caramelado" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Ovomaltine" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Bombom de banana com nozes" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Tubo de framboesa" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Copinho de maracujá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Bowl de pérola" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Morango noivo e noiva" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Trouxinha de coco com abacaxi" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Uva com leite ninho" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Bombom de damasco c/ laranja" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Trufa de gianduia" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Dourada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Kraft" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Marfim rendada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Pistache rendada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Marrom com poá branco" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Havana rendada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Kraft" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 1, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Caixinha de Gianduia com Geléia de Morango" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Caixinha de Maracujá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Caixinha de Limão" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Trufa amarga" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Coração de Nutella" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Caixinha de Praline" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Brigadeiro Dourado" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Marfim" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Azul marinho" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 2, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 3, Nome = "Sim" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 3, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Creme" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Verde pistache" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Rosa" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Dourado" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Prata" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = true, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Não haverá" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#340 - Marrom" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#149 - Dourada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#228 - Dourada" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#215 - Azul marinho" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#p066 - Laranja" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 3, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "#303 - Pink" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 4, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 4, Nome = "Especificar" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 4, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 5, Nome = "Especificar" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 4, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 6, Nome = "Especificar" });
+			context.ItemBoloDoceBemCasado.Add(new Model.ItemBoloDoceBemCasado { BloqueiaOutrasPropriedades = false, FornecedorId = 4, Quantidade = 999999, TipoItemBoloDoceBemCasadoId = 7, Nome = "Especificar" });
+			context.SaveChanges();
+
 			context.TipoItemMontagem.Add(new Model.TipoItemMontagem
 			{
 				CopiaBebida = false,
@@ -616,7 +671,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 			List<Model.ContratoAditivo> contratos = new List<Model.ContratoAditivo>();
 			Random rdm = new Random();
-			for (int i = 0; i < 50; i++)
+			for (int i = 0; i < NumEventos; i++)
 			{
 				Model.Horario inicio = new Model.Horario { Hora = (17 + rdm.Next(0, 5)), Minuto = 30 };
 				Model.Horario termino = new Model.Horario { Hora = inicio.Hora - 15, Minuto = 30 };
