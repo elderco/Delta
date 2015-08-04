@@ -52,6 +52,7 @@ div.tooltip{min-width: 100px}
 /* Content Background */
 .main-content { background:url(images/bg-logo-villa-bisutti.png); background-attachment:fixed; background-position: center center; background-repeat:no-repeat; background-attachment: fixed; }
 .page-content{background-color: transparent}
+.bg-list-warning{background-color: #fcf8e3 !important}
 
 /* Botões */
 

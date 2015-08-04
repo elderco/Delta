@@ -2,8 +2,10 @@
 @{
 	Layout = null;
 }
-@foreach (var item in Model)
-{
-	<h5 class="text-danger"> Nenhum item de <strong>@Html.DisplayFor(modelItem => item.Nome)</strong> foi incluído neste evento, mas é necessário especificar ao menos 1.</h5>
-}
-
+<ul class="item-list">
+    @foreach (var item in Model)
+    {
+        <li class="item-orange clearfix alert-warning bg-list-warning"><i class="fa fa-icon fa-exclamation-circle">&nbsp;</i>Nenhum item de <strong>@Html.DisplayFor(modelItem => item.Nome)</strong> foi incluído neste evento, mas é necessário especificar ao menos 1.</li>
+    }
+</ul>
+<br>
