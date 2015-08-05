@@ -61,7 +61,6 @@
 		<h4>Configuração de itens de Decoração</h4>
 		<hr />
 		@Html.ValidationSummary(true)
-		@Html.Hidden("Disabled", ViewData["acesso"].ToString())
 
         <div class="form-group">
             @Html.LabelFor(model => model.TipoItemDecoracao, new { @class = "control-label col-md-2" })

@@ -180,7 +180,25 @@ function ValidateField(element, formId, postForm) {
 	if (valid && postForm)
 		$(formId).submit();
 }
-
+function LockPage() {
+	var title = "Recurso bloqueado";
+	var message = "<p>Desculpem, mas o seu perfil não deixa você acessar estas áreas / ações.<h5><i class=\"fa fa-frown-o\"></i></h5>Não fiquem bravos com o sistema que a culpa não é dele, tá?";
+	$('input', 'form').attr("disabled", "disabled");
+	$('select', 'form').attr("disabled", "disabled");
+	$('button', 'form').attr("disabled", "disabled");
+	$('.PopUpActionLinks', 'form').unbind("click")
+		.attr("href", "javascript:void(0);")
+		.click(function (e) {
+			e.preventDefault();
+			AddError(title, message);
+			});
+	$('.PopUpItemLinks', 'td').unbind("click")
+		.attr("href", "javascript:void(0);")
+		.click(function (e) {
+			e.preventDefault();
+			AddError(title, message);
+		});
+}
 function HandleCheckbox(elementId) {
 	elementId = elementId.replace("#", "") == elementId ? "#" + elementId : elementId;
 	$(elementId + " input[type='checkbox']").each(function () {
@@ -417,13 +435,13 @@ $(document)
 		ShowLoading();
 	})
 	.ajaxStop(function () {
-	    HideLoading();
+		HideLoading();
 	})
 	.ready(function () {
-	    InitializeLoading();
-	    ShowLoading();
-	    HideLoading();
-	    HandleCheckbox("main-container");
+		InitializeLoading();
+		ShowLoading();
+		HideLoading();
+		HandleCheckbox("main-container");
 	})
 	.error(function () {
 		HideLoading();

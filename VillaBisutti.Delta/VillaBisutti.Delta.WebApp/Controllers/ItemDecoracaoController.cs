@@ -17,9 +17,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     {
 		protected override IAsyncResult BeginExecute(System.Web.Routing.RequestContext requestContext, AsyncCallback callback, object state)
 		{
-			if (bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
-				ViewBag.IsBlocked = "TRUE";
 			return base.BeginExecute(requestContext, callback, state);
+		}
+		protected override void EndExecute(IAsyncResult asyncResult)
+		{
+			if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+				ViewBag.IsBlocked = "TRUE";
+			base.EndExecute(asyncResult);
 		}
 		//Filtro/
 		public ActionResult Buscar(int combo, string texto)

@@ -16,7 +16,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     
     public class UsuarioController : Controller
     {
-        public ActionResult Login(model.Usuario usuario, string returnUrl)
+		public ActionResult Login()
+		{
+			return View();
+		}
+		[HttpPost]
+		public ActionResult Login(model.Usuario usuario, string returnUrl)
         {
 			model.Usuario usuarioLogando = new data.Usuario().ValidUser(usuario);
 			if (usuarioLogando != null)
@@ -30,6 +35,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			}
 			else
 			{
+				ViewBag.ErrorMessage = "error";
 				return View();
 			}
 			

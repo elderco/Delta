@@ -36,7 +36,6 @@
 @using (Html.BeginForm("ItemCreated", "Usuario", new { @class = "user-form" }))
 {
 	@Html.AntiForgeryToken()
-	@Html.Hidden("Disabled", ViewData["acesso"].ToString())
 
 	<div class="form-horizontal">
             <h4>Usuários</h4>
