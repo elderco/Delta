@@ -5,9 +5,9 @@
 }
 <div class="row">
 	<div class="col-md-8">
-		@Html.Partial("/Create", new VillaBisutti.Delta.Core.Model.Reuniao())
+		@Html.Partial("../Reuniao/Create", new VillaBisutti.Delta.Core.Model.Reuniao())
 	</div>
-	<a href="@Url.Action("Copy", "Reuniao", new { id = ViewBag.Id })" class="col-md-2">Copiar padrão</a>
+	<a href="@Url.Action("Copy", "Reuniao", new { id = ViewBag.Id })" class="col-md-2">Importar padrões</a>
 </div>
 <div class="row">
 	<table class="table">

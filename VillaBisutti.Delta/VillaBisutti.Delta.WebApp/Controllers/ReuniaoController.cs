@@ -19,9 +19,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Index(int id)
 		{
 			ViewBag.Id = id;
-			ViewBag.TipoReuniaoId = new data.TipoReuniao().GetCollection(0);
-			ViewBag.UsuarioId = new data.Usuario().GetCollection(0);
+			ViewBag.TipoReuniaoId = new SelectList( new data.TipoReuniao().GetCollection(0), "Id", "Nome") ;
+			ViewBag.UsuarioId = new SelectList(new data.Usuario().GetCollection(0), "Id", "Nome");
 			return View(new data.Reuniao().ReunioesEvento(id));
+		}
+
+		public ActionResult Create()
+		{
+			return View();
 		}
 
 		// POST: /Reuniao/Create
