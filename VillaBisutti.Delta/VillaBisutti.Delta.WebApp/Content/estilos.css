@@ -33,7 +33,7 @@ div.tooltip{min-width: 100px}
 .clear-margin { margin-left: -10px !important; margin-right: -10px !important; }
 .tababble-min-height { height: 330px; overflow: auto; padding-top: 10px; padding-bottom: 0px; }
 
-.row{margin-left: 0 !important; margin-right: 0 !important}
+.row{margin-left: 0 !important; margin-right: 0 !important; margin-bottom: 15px}
 
 /* Pratos dos cardápios */
 #PainelTipoComida, #PainelCardapios{height: 600px; overflow-y: scroll}
@@ -52,6 +52,7 @@ div.tooltip{min-width: 100px}
 /* Content Background */
 .main-content { background:url(images/bg-logo-villa-bisutti.png); background-attachment:fixed; background-position: center center; background-repeat:no-repeat; background-attachment: fixed; }
 .page-content{background-color: transparent}
+.bg-list-warning{background-color: #fcf8e3 !important}
 
 /* Botões */
 

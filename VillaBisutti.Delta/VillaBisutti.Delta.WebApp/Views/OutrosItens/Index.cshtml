@@ -56,14 +56,14 @@ Layout = "~/Views/Shared/_EventosLayout.cshtml";
 </div>
 
 <div class="row">
-	<h3>Itens Villa Bisutti (Contratação e Fornecimento)</h3>
+	<h3 class="header smaller blue">Itens Villa Bisutti (Contratação e Fornecimento)</h3>
 	@Html.Partial("../ItemOutrosItensSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 </div>
 <div class="row">
-	<h3>Fornecedores externos (Contratação Villa Bisutti)</h3>
+	<h3 class="header smaller blue">Fornecedores externos (Contratação Villa Bisutti)</h3>
 	@Html.Partial("../ItemOutrosItensSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>
 <div class="row">
-	<h3>Fornecedores externos (Responsabilidade do contratante)</h3>
+	<h3 class="header smaller blue">Fornecedores externos (Responsabilidade do contratante)</h3>
 	@Html.Partial("../ItemOutrosItensSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
 </div>

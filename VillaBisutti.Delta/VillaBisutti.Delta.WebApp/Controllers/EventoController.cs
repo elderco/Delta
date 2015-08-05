@@ -12,6 +12,7 @@ using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
 	public class EventoController : Controller
 	{
 		private void CriarControlesColecao()

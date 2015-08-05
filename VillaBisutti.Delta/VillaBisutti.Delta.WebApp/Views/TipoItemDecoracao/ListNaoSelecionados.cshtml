@@ -2,9 +2,10 @@
 @{
 	Layout = null;
 }
-@foreach (var item in Model)
+<ul class="item-list">
+    @foreach (var item in Model)
 {
-<h5 class="bg-danger col-md-12">
-	Defina o <strong>@Html.DisplayFor(modelItem => item.Nome)</strong>. Nenhum deste item foi selecionado até o momento.
-</h5>
+    <li class="item-orange clearfix alert-warning bg-list-warning"><i class="fa fa-icon fa-exclamation-circle">&nbsp;</i>Defina o <strong>@Html.DisplayFor(modelItem => item.Nome)</strong>. Nenhum deste item foi selecionado até o momento.</li>
 }
+</ul>
+<br>

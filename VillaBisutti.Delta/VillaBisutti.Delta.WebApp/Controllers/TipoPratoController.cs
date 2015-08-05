@@ -12,9 +12,9 @@ using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class TipoPratoController : Controller
     {
-
         // GET: /TipoPrato/
         public ActionResult Index()
         {

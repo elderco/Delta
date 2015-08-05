@@ -13,6 +13,7 @@ using dto = VillaBisutti.Delta.Core.DTO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
 	public class PratoSelecionadoController : Controller
 	{
 

@@ -42,16 +42,16 @@
 					<b>RV</b>
 				</button>
 			</div>
-			@{VillaBisutti.Delta.Core.Model.Usuario usuario = Session["Usuario"] as VillaBisutti.Delta.Core.Model.Usuario;}
+			@{VillaBisutti.Delta.Core.Model.Usuario usuario = VillaBisutti.Delta.SessionFacade.UsuarioLogado;}
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
-					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Cerimonial")))
+					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Cerimonial")))
 					{ 
                     <li class="transparent">
                         <a href="javascript:void(0)" data-rel="tooltip" data-placement="bottom" data-original-title="Robôs e automatizações"><i class="menu-icon fa fa-cogs"></i></a>
                     </li>
 					}
-					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Order")))
+					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Order")))
 					{ 
                     <li class="transparent">
 						<a href="@Url.Action("Index", "Order")" data-rel="tooltip" data-placement="bottom" data-original-title="Ordem de ítens da OS"><i class="menu-icon fa fa-sort-numeric-desc"></i></a>
@@ -64,7 +64,7 @@
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
                         <ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
-							@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Perfil")))
+							@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Perfil")))
 							{ 
                             <li>
                                 <a href="@Url.Action("Index", "Perfil")">
@@ -73,7 +73,7 @@
                                 <b class="arrow"></b>
                             </li>
 							}
-							@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Index", "Usuario")))
+							@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Usuario")))
 							{
                             <li>
                                 <a href="@Url.Action("Index", "Usuario")">
@@ -84,13 +84,13 @@
 							}
                         </ul>
                     </li>
-					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("HomeConfiguracao", "Home")))
+					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("HomeConfiguracao", "Home")))
 					{
                     <li class="transparent">
                         <a href="@Url.Action("HomeConfiguracao", "Home")" data-rel="tooltip" data-placement="bottom" title data-original-title="Configurações"><i class="menu-icon fa fa-cog"></i></a>
 					</li>
 					}
-					@if (new VillaBisutti.Delta.Core.Business.Usuario().PodeLer(usuario, Url.Action("Create", "Evento")))
+					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Create", "Evento")))
 					{
 					<li class="transparent">
                         <a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" title data-original-title="Eventos" class="dropdown-toggle">

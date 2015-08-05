@@ -8,9 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class ContratoAditivoController : Controller
     {
 

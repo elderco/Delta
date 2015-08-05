@@ -11,6 +11,7 @@ using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
+    [Authorize]
     public class ItemDecoracaoCerimonialController : Controller
     {
 		public ActionResult Buscar(int combo, string texto)
