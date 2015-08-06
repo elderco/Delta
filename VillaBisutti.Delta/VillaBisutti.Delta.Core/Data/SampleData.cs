@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		protected override void Seed(Context context)
 		{
-			int NumEventos = 350;
+			int NumEventos = 50;
 			string[] sampleText = { "Ut mollis enim ut erat dictum elementum", "Integer molestie odio in venenatis cursus", "Aliquam hendrerit turpis magna, ut congue est sollicitudin eget",
 									  "Nulla et consequat felis", "Vestibulum vel auctor ligula", "Aenean eros nunc, consectetur eu condimentum eu, volutpat quis arcu", "Sed non quam porta, tempus ligula sed, eleifend purus",
 									  "Praesent vel metus eu mi tincidunt congue et et sapien", "Sed pretium libero vel mauris pellentesque aliquet", "Morbi id diam ex", "Curabitur eget risus eget neque ullamcorper placerat a vitae nulla",

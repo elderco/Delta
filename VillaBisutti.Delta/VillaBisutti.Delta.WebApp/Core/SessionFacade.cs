@@ -24,7 +24,6 @@ namespace VillaBisutti.Delta
 		}
 		private static void RenovaCredencialUsuario()
 		{
-			throw new NotImplementedException();
 		}
 		public static Foto FotoEmMemoria
 		{
