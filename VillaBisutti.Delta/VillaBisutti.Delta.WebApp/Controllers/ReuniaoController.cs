@@ -65,9 +65,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.Reuniao().Delete(id);
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
-		public ActionResult Copy(int eventoId)
+		public ActionResult Copy(int id)
 		{
-			new biz.Reuniao().CopiarReunioesPadrao(eventoId);
+			new biz.Reuniao().CopiarReunioesPadrao(id);
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 		protected override void Dispose(bool disposing)

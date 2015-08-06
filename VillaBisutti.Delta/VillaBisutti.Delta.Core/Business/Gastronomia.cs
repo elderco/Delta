@@ -30,5 +30,10 @@ namespace VillaBisutti.Delta.Core.Business
 			Util.context.SaveChanges();
 			Util.ResetContext();
 		}
+		public void GerarCardapioDegustacao(Model.Gastronomia entity)
+		{
+
+
+		}
 	}
 }

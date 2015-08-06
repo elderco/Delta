@@ -613,6 +613,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\Background\" />
     <Folder Include="Content\TEMP\" />
   </ItemGroup>
   <ItemGroup>
