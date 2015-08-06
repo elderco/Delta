@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Business
 {
@@ -10,7 +11,10 @@ namespace VillaBisutti.Delta.Core.Business
     {
         public void AlterarPerfil(Model.Perfil entity)
         {
-			Model.Perfil perfil = Util.context.Perfil.Where(a => a.Id == entity.Id).FirstOrDefault();
+			Model.Perfil perfil = Util.context.Perfil
+				.Include(m => m.Modulos)
+				.Include(m => m.Modulos.Select(a => a.Modulo))
+				.Where(a => a.Id == entity.Id).FirstOrDefault();
 			int id = perfil.Modulos.Select(m => m.PerfilId).FirstOrDefault();
 			Model.Usuario usuario = Util.context.Usuario.Where(u => u.PerfilId == id).FirstOrDefault();
 			Util.context.Perfil.Remove(perfil);
