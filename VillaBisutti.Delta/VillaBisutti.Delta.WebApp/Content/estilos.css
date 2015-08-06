@@ -69,3 +69,6 @@ div.tooltip{min-width: 100px}
 .footer{background: #FEFEFE !important; width: 100%}
 .footer-content {background-color: #FEFEFE !important;}
 .footer .footer-inner .footer-content{right: 5px !important}
+
+/* Login */
+.field-validation-error{font-weight: normal; font-size: 14px;}
