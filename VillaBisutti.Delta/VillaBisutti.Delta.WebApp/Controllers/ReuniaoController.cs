@@ -20,7 +20,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.Id = id;
 			ViewBag.TipoReuniaoId = new SelectList( new data.TipoReuniao().GetCollection(0), "Id", "Nome") ;
-			ViewBag.UsuarioId = new SelectList(new data.Usuario().GetCollection(0), "Id", "Nome");
+			ViewBag.UsuarioId = new data.Usuario().GetCollection(0);
 			return View(new data.Reuniao().ReunioesEvento(id));
 		}
 
@@ -52,9 +52,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 
 		// GET: /Reuniao/Delete/5
-		public ActionResult Delete(int? id)
+		public ActionResult Delete(int id)
 		{
-			return View(new data.Reuniao().GetElement(id.Value));
+			new data.Reuniao().Delete(id);
+			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
 		// POST: /Reuniao/Delete/5

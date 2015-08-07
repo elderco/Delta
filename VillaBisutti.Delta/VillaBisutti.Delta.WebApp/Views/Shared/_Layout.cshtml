@@ -4,15 +4,15 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>&Delta; - Villa Bisutti</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/jquery")
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/modernizr")
 	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/own")
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
-    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <script>$(document).ready(function () {$('[data-rel=tooltip]').tooltip();})</script>
+	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<script>$(document).ready(function () { $('[data-rel=tooltip]').tooltip(); })</script>
 	@if (ViewBag.IsBlocked == "TRUE")
 	{
 		<script language="javascript" type="text/javascript">
@@ -38,7 +38,8 @@
 			</button>
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand">
-					<small><!-- style="font-family: 'Satisfy', cursive;" style="vertical-align: middle; width: 30px" -->
+					<small>
+						<!-- style="font-family: 'Satisfy', cursive;" style="vertical-align: middle; width: 30px" -->
 						<img src="~/Content/Images/delta.png" /> Delta - Villa Bisutti
 					</small>
 				</a>
@@ -51,62 +52,70 @@
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
 					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Cerimonial")))
-					{ 
-                    <li class="transparent">
-                        <a href="javascript:void(0)" data-rel="tooltip" data-placement="bottom" data-original-title="Robôs e automatizações"><i class="menu-icon fa fa-cogs"></i></a>
-                    </li>
+					{
+						<li class="transparent">
+							<a href="javascript:void(0)" data-rel="tooltip" data-placement="bottom" data-original-title="Robôs e automatizações"><i class="menu-icon fa fa-cogs"></i></a>
+						</li>
 					}
 					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Order")))
-					{ 
-                    <li class="transparent">
-						<a href="@Url.Action("Index", "Order")" data-rel="tooltip" data-placement="bottom" data-original-title="Ordem de ítens da OS"><i class="menu-icon fa fa-sort-numeric-desc"></i></a>
-                    </li>
+					{
+						<li class="transparent">
+							<a href="@Url.Action("Index", "Order")" data-rel="tooltip" data-placement="bottom" data-original-title="Ordem de ítens da OS"><i class="menu-icon fa fa-sort-numeric-desc"></i></a>
+						</li>
 					}
-					
-                    <li class="transparent">
-                        <a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Usuários" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-group"></i>
-                            <b class="arrow fa fa-angle-down"></b>
-                        </a>
-                        <ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
+
+					<li class="transparent">
+						<a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Usuários" class="dropdown-toggle">
+							<i class="menu-icon fa fa-group"></i>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
 							@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Perfil")))
-							{ 
-                            <li>
-                                <a href="@Url.Action("Index", "Perfil")">
-                                    Perfil
-                                </a>
-                                <b class="arrow"></b>
-                            </li>
+							{
+								<li>
+									<a href="@Url.Action("Index", "Perfil")">
+										Perfil
+									</a>
+									<b class="arrow"></b>
+								</li>
 							}
 							@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Usuario")))
 							{
-                            <li>
-                                <a href="@Url.Action("Index", "Usuario")">
-                                    Usuário
-                                </a>
-                                <b class="arrow"></b>
-                            </li>
+								<li>
+									<a href="@Url.Action("Index", "Usuario")">
+										Usuário
+									</a>
+									<b class="arrow"></b>
+								</li>
 							}
-                        </ul>
-                    </li>
+						</ul>
+					</li>
 					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("HomeConfiguracao", "Home")))
 					{
-                    <li class="transparent">
-                        <a href="@Url.Action("HomeConfiguracao", "Home")" data-rel="tooltip" data-placement="bottom" data-original-title="Configurações"><i class="menu-icon fa fa-cog"></i></a>
-					</li>
+						<li class="transparent">
+							<a href="@Url.Action("HomeConfiguracao", "Home")" data-rel="tooltip" data-placement="bottom" data-original-title="Configurações"><i class="menu-icon fa fa-cog"></i></a>
+						</li>
 					}
-					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Create", "Evento")))
-					{
 					<li class="transparent">
-                        <a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Eventos" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-calendar"></i>
-                            <b class="arrow fa fa-angle-down"></b>
-                        </a>
+						<a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Eventos" class="dropdown-toggle">
+							<i class="menu-icon fa fa-calendar"></i>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
 						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
+							@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Create", "Evento")))
+							{
+								<li>
+									<a href="@Url.Action("Create", "Evento")">
+										<i class="ace-icon fa fa-plus"></i>
+										Adicionar Evento
+									</a>
+									<b class="arrow"></b>
+								</li>
+							}
 							<li>
-								<a href="@Url.Action("Create", "Evento")">
-									<i class="ace-icon fa fa-plus"></i>
-									Adicionar Evento
+								<a href="@Url.Action("Filtrar", "Evento")">
+									<i class="ace-icon fa fa-search"></i>
+									Buscar evento
 								</a>
 								<b class="arrow"></b>
 							</li>
@@ -114,9 +123,8 @@
 							@Html.Action("MenuEventos", "Home")
 						</ul>
 					</li>
-					}
 					<li class="transparent">
-                        <a href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Relatórios"><i class="menu-icon fa fa-dashboard"></i></a>
+						<a href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Relatórios"><i class="menu-icon fa fa-dashboard"></i></a>
 					</li>
 					<li class="light-blue">
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -127,7 +135,7 @@
 								{
 									@usuario.Nome
 								}
-								
+
 							</span>
 
 							<i class="ace-icon fa fa-caret-down"></i>

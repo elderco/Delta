@@ -17,8 +17,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 	public class FotoController : Controller
 	{
 		// GET: /Foto/
-		public ActionResult Index(string qual = "EV")
+		public ActionResult Index(int eventoId, string qual = "EV")
 		{
+			ViewBag.EventoId = eventoId;
 			ViewBag.Qual = qual;
 			return View(new data.Foto().GetQual(qual));
 		}
@@ -43,9 +44,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
 				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName };
 				new biz.Foto().SalvarFoto(foto, eventoId);
-				SessionFacade.FotoEmMemoria = foto;
 			}
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
 

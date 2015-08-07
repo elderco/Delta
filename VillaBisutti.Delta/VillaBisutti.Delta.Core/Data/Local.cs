@@ -36,10 +36,12 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public List<Model.Local> GetPorProdutor(int produtorId = 0)
 		{
-			return context.Local
-				.Include(l => l.Eventos)
+			List<Model.Local> menu = context.Local
 				.Where(l => l.Eventos.Where(e => e.ProdutoraId == produtorId || produtorId == 0).Count() > 0)
 				.ToList();
+			foreach (Model.Local local in menu)
+				local.Eventos = context.Evento.Where(e => e.LocalId == local.Id && e.ProdutoraId == produtorId || produtorId == 0).ToList();
+			return menu;
 		}
 	}
 }

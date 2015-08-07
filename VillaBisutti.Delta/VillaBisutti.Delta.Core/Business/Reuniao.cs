@@ -19,6 +19,8 @@ namespace VillaBisutti.Delta.Core.Business
 		public void CopiarReunioesPadrao(int eventoId)
 		{
 			Model.Evento evento = context.Evento.Include(e => e.Reunioes).FirstOrDefault(e => e.Id == eventoId);
+			if (evento.Reunioes.Count > 0)
+				return;
 			foreach (Model.TipoReuniao tipo in context.TipoReuniao.ToList())
 			{
 				context.Reuniao.Add(new Model.Reuniao {

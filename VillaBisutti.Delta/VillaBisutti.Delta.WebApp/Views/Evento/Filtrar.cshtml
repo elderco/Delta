@@ -1,0 +1,78 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Evento>
+@{
+    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+<div class="widget-box">
+
+</div>
+<table class="table">
+	<tr>
+		<th></th>
+		<th>
+			Evento
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Data)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.HorarioInicio)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.HorarioTermino)
+		</th>
+		<th>
+			Produtor(a)
+		</th>
+		<th>
+			Possui assessoria?
+		</th>
+		<th>
+			Boas vindas enviado?
+		</th>
+		<th>
+			OS finalizada?
+		</th>
+		<th>
+			OS Aprovada?
+		</th>
+	</tr>
+
+	@foreach (VillaBisutti.Delta.Core.Model.Evento item in Model)
+	{
+		<tr>
+			<td>
+				<input type="checkbox" name="Selecionado" value="@(item.Id)" />
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Local.NomeCasa) &gt;
+				@Html.DisplayFor(modelItem => item.TipoEvento) &gt;
+				@Html.DisplayFor(modelItem => item.NomeHomenageados)
+			</td>
+			<td>
+				@item.Data.ToString("ddd, dd/MM/yyyy")
+			</td>
+			<td>
+				@(item.Inicio.ToString())
+			</td>
+			<td>
+				@(item.Termino.ToString())
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Produtora.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PossuiAssessoria)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.EmailBoasVindasEnviado)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.OSFinalizada)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.OSAprovada)
+			</td>
+		</tr>
+}
+
+</table>

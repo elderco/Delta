@@ -13,49 +13,62 @@ using System.Web.Security;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    
-    public class UsuarioController : Controller
-    {
+
+	public class UsuarioController : Controller
+	{
 		public ActionResult Login()
 		{
-				return View();
+			return View();
 		}
 		[HttpPost]
 		public ActionResult Login(model.Usuario usuario, string returnUrl)
-        {
+		{
 			model.Usuario usuarioLogando = new data.Usuario().ValidUser(usuario);
 			if (usuarioLogando != null)
 			{
-                SessionFacade.UsuarioLogado = usuarioLogando;
-                FormsAuthenticationTicket auth = new FormsAuthenticationTicket(1, SessionFacade.UsuarioLogado.Email, DateTime.Now, DateTime.Now.AddMinutes(30), false, SessionFacade.UsuarioLogado.Nome, "/");
-                HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(auth));
+				SessionFacade.UsuarioLogado = usuarioLogando;
+				FormsAuthenticationTicket auth = new FormsAuthenticationTicket(1, SessionFacade.UsuarioLogado.Email, DateTime.Now, DateTime.Now.AddMinutes(30), false, SessionFacade.UsuarioLogado.Nome, "/");
+				HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(auth));
 
-                Response.Cookies.Add(cookie);
-					return RedirectToAction("Index", "Home");
+				Response.Cookies.Add(cookie);
+				if (string.IsNullOrEmpty(returnUrl))
+				{
+					UrlHelper u = new UrlHelper(this.ControllerContext.RequestContext);
+					returnUrl = u.Action("Index", "Home", null);
+				}
+				return Redirect(returnUrl);
 			}
 			else
 			{
 				ViewBag.ErrorMessage = "error";
 				return View();
 			}
-			
-        }
-        [Authorize]
-        // GET: /Usuario/
-        public ActionResult Index()
-        {
+
+		}
+		public ActionResult Logout()
+		{
+			FormsAuthentication.SignOut();
+
+			SessionFacade.LogoutUsuario();
+			return RedirectToAction("Login");
+		}
+
+		[Authorize]
+		// GET: /Usuario/
+		public ActionResult Index()
+		{
 			List<model.Usuario> usuarios = new data.Usuario().GetCollection(0);
 			return View(usuarios);
-        }
-        [Authorize]
+		}
+		[Authorize]
 		public ActionResult Create()
 		{
-            ViewBag.Perfis = new SelectList(new data.Perfil().GetCollection(0),"Id","Nome");
+			ViewBag.Perfis = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
 			return View();
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-        [Authorize]
+		[Authorize]
 		public ActionResult ItemCreated([Bind(Include = "Id,Nome,Email,Senha,PerfilId")] model.Usuario usuario)
 		{
 			if (ModelState.IsValid)
@@ -66,8 +79,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return View(usuario);
 		}
 
-         //GET: /Usuario/Details/5
-        [Authorize]
+		//GET: /Usuario/Details/5
+		[Authorize]
 		public ActionResult Details(int? id)
 		{
 			if (id == null)
@@ -81,24 +94,24 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			}
 			return View(usuario);
 		}
-        [Authorize]
+		[Authorize]
 		// GET: /Usuario/Edit/5
 		public ActionResult Edit(int? id)
 		{
-            model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
-            if (ModelState.IsValid)
-            {
-                if (id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-               
-                ViewBag.Profile= new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
-                if (usuario == null)
-                {
-                    return HttpNotFound();
-                } 
-            }
+			model.Usuario usuario = new data.Usuario().GetElement(id.HasValue ? id.Value : 0);
+			if (ModelState.IsValid)
+			{
+				if (id == null)
+				{
+					return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+				}
+
+				ViewBag.Profile = new SelectList(new data.Perfil().GetCollection(0), "Id", "Nome");
+				if (usuario == null)
+				{
+					return HttpNotFound();
+				}
+			}
 			return View(usuario);
 		}
 
@@ -107,7 +120,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-        [Authorize]
+		[Authorize]
 		public ActionResult Edit([Bind(Include = "Id,Nome,Email,PerfilId,Senha")] model.Usuario usuario)
 		{
 			if (ModelState.IsValid)
@@ -119,7 +132,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 
 		// GET: /Usuario/Delete/5
-        [Authorize]
+		[Authorize]
 		public ActionResult Delete(int? id)
 		{
 			if (id == null)
@@ -137,24 +150,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// POST: /Usuario/Delete/5
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
-        [Authorize]
+		[Authorize]
 		public ActionResult DeleteConfirmed(int id)
 		{
 			new data.Usuario().Delete(id);
 			return RedirectToAction("Index", "Usuario");
 		}
 
-        public ActionResult Logout()
-        {
-            FormsAuthentication.SignOut();
-
-            SessionFacade.UsuarioLogado = null; 
-            return RedirectToAction("Login");
-        }
-
 		protected override void Dispose(bool disposing)
 		{
 			base.Dispose(disposing);
 		}
-    }
+	}
 }

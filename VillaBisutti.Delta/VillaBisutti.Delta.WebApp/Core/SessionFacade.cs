@@ -20,10 +20,24 @@ namespace VillaBisutti.Delta
 			set
 			{
 				HttpContext.Current.Session["UsuarioLogado"] = value;
+				if (value == null)
+					return;
+				HttpCookie UserCookie = new HttpCookie("UsuarioLogado");
+				UserCookie.Expires = DateTime.Now.AddMinutes(30);
+				UserCookie.Value = value.Id.ToString();
+				HttpContext.Current.Response.SetCookie(UserCookie);
 			}
 		}
 		private static void RenovaCredencialUsuario()
 		{
+			UsuarioLogado = new Core.Data.Usuario().EntireUser(int.Parse(HttpContext.Current.Request.Cookies["UsuarioLogado"].Value));
+		}
+		internal static void LogoutUsuario()
+		{
+			UsuarioLogado = null;
+			HttpCookie UserCookie = new HttpCookie("UsuarioLogado");
+			UserCookie.Expires = DateTime.Today.AddDays(-1D);
+			HttpContext.Current.Response.SetCookie(UserCookie);
 		}
 		public static Foto FotoEmMemoria
 		{
@@ -36,5 +50,6 @@ namespace VillaBisutti.Delta
 				HttpContext.Current.Session["FotoEmMemoria"] = value;
 			}
 		}
+
 	}
 }

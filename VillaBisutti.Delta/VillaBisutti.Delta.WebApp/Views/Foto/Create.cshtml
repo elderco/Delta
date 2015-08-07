@@ -14,6 +14,8 @@
 		<div class="form-group col-md-6">
 			@Html.LabelFor(model => model.URL, new { @class = "control-label col-md-4" })
 			<div class="col-md-8">
+				<input type="hidden" name="qual" value="@ViewBag.Qual" />
+				<input type="hidden" name="eventoId" value="@ViewBag.EventoId" />
 				@Html.TextBoxFor(model => model.URL, new { @type = "file" })
 				@Html.ValidationMessageFor(model => model.URL)
 			</div>
@@ -24,7 +26,6 @@
 			<div class="col-md-8">
 				@Html.EditorFor(model => model.Legenda)
 				@Html.ValidationMessageFor(model => model.Legenda)
-				<input type="hidden" name="qual" value="@ViewData["Qual"]" />
 			</div>
 		</div>
 

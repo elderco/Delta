@@ -239,6 +239,7 @@
     <Content Include="Content\images\delta-logo-white.png" />
     <Content Include="Content\images\delta-logo.png" />
     <Content Include="Content\images\delta.png" />
+    <Content Include="Content\images\logo-villa-bisutti-login.png" />
     <Content Include="Content\images\ui-bg_diagonals-medium_10_000000_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_0_ffffff_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -281,7 +282,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -616,6 +616,7 @@
     <Content Include="Views\Reuniao\Index.cshtml" />
     <Content Include="Views\Reuniao\Edit.cshtml" />
     <Content Include="Views\Reuniao\Create.cshtml" />
+    <Content Include="Views\Evento\Filtrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

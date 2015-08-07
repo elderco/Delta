@@ -16,10 +16,7 @@ namespace VillaBisutti.Delta.Core.Business
 				case "EV":	//Evento
 					Model.Evento evento = Util.context.Evento.Find(eventoId);
 					evento.Layout = foto;
-					attributes =  new string[]{ "Layout" };
-					foreach (string name in Util.context.Entry(evento).CurrentValues.PropertyNames.Except(attributes))
-						Util.context.Entry(evento).Property(name).IsModified = false;
-					Util.context.Entry(evento).Property("Layout").IsModified = true;
+					Util.context.Foto.Add(foto);
 					break;
 				case "DR":	//Decoração da recepção
 					Model.Decoracao decoracao = Util.context.Decoracao.Find(eventoId);

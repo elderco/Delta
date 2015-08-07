@@ -12,7 +12,7 @@ using biz = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    [Authorize]
+	[Authorize]
 	public class EventoController : Controller
 	{
 		private void CriarControlesColecao()
@@ -58,7 +58,21 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			}
 			return View(evento);
 		}
-
+		public ActionResult Filtrar(DateTime? inicio = null, DateTime? termino = null,
+			int localId = 0,
+			model.TipoEvento? tipoEvento = null,
+			int produtorId = 0,
+			bool? possuiAssessoria = null,
+			bool? fechado = null,
+			bool? enviado = null,
+			bool? aprovado = null
+			)
+		{
+			CriarControlesColecao();
+			return View(new data.Evento().Filtrar(inicio.HasValue ? inicio.Value : DateTime.MinValue,
+				termino.HasValue ? termino.Value : DateTime.MaxValue,
+				localId, produtorId, possuiAssessoria, fechado, enviado, aprovado));
+		}
 		// GET: /Evento/Create
 		public ActionResult Create()
 		{
