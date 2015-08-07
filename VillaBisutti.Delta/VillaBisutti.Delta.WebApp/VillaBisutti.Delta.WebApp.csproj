@@ -313,7 +313,6 @@
     <Content Include="Views\ContratoAditivo\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Create.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Delete.cshtml" />
-    <Content Include="Views\TipoItemDecoracao\Details.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Edit.cshtml" />
     <Content Include="Views\TipoItemDecoracao\Index.cshtml" />
     <Content Include="Views\ItemDecoracao\Create.cshtml" />
@@ -323,7 +322,6 @@
     <Content Include="Views\ItemDecoracao\Index.cshtml" />
     <Content Include="Views\TipoItemMontagem\Create.cshtml" />
     <Content Include="Views\TipoItemMontagem\Delete.cshtml" />
-    <Content Include="Views\TipoItemMontagem\Details.cshtml" />
     <Content Include="Views\TipoItemMontagem\Edit.cshtml" />
     <Content Include="Views\TipoItemMontagem\Index.cshtml" />
     <Content Include="Views\ItemMontagem\Create.cshtml" />
@@ -333,7 +331,6 @@
     <Content Include="Views\ItemMontagem\Index.cshtml" />
     <Content Include="Views\Cardapio\Create.cshtml" />
     <Content Include="Views\Cardapio\Delete.cshtml" />
-    <Content Include="Views\Cardapio\Details.cshtml" />
     <Content Include="Views\Cardapio\Edit.cshtml" />
     <Content Include="Views\Cardapio\Index.cshtml" />
     <Content Include="Views\Prato\Create.cshtml" />
@@ -343,23 +340,18 @@
     <Content Include="Views\Prato\Index.cshtml" />
     <Content Include="Views\TipoPrato\Create.cshtml" />
     <Content Include="Views\TipoPrato\Delete.cshtml" />
-    <Content Include="Views\TipoPrato\Details.cshtml" />
     <Content Include="Views\TipoPrato\Edit.cshtml" />
     <Content Include="Views\TipoPrato\Index.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Delete.cshtml" />
-    <Content Include="Views\TipoItemFotoVideo\Details.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Edit.cshtml" />
     <Content Include="Views\TipoItemFotoVideo\Index.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Delete.cshtml" />
-    <Content Include="Views\TipoItemSomIluminacao\Details.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Edit.cshtml" />
     <Content Include="Views\TipoItemSomIluminacao\Index.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Delete.cshtml" />
-    <Content Include="Views\TipoItemOutrosItens\Details.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Edit.cshtml" />
     <Content Include="Views\TipoItemOutrosItens\Index.cshtml" />
     <Content Include="Views\TipoItemBebida\Delete.cshtml" />
-    <Content Include="Views\TipoItemBebida\Details.cshtml" />
     <Content Include="Views\TipoItemBebida\Edit.cshtml" />
     <Content Include="Views\TipoItemBebida\Index.cshtml" />
     <Content Include="Views\ItemSomIluminacao\Create.cshtml" />
@@ -393,7 +385,6 @@
     <Content Include="Views\ItemRoteiro\Index.cshtml" />
     <Content Include="Views\Local\Create.cshtml" />
     <Content Include="Views\Local\Delete.cshtml" />
-    <Content Include="Views\Local\Details.cshtml" />
     <Content Include="Views\Local\Edit.cshtml" />
     <Content Include="Views\Local\Index.cshtml" />
     <Content Include="Views\Shared\_EventosLayout.cshtml" />
@@ -411,7 +402,6 @@
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\TipoReuniao\Create.cshtml" />
     <Content Include="Views\TipoReuniao\Delete.cshtml" />
-    <Content Include="Views\TipoReuniao\Details.cshtml" />
     <Content Include="Views\TipoReuniao\Index.cshtml" />
     <Content Include="Views\Evento\Delete.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
@@ -536,7 +526,6 @@
     <Content Include="Views\ItemDecoracaoCerimonial\Index.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Create.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Delete.cshtml" />
-    <Content Include="Views\TipoItemDecoracaoCerimonial\Details.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Edit.cshtml" />
     <Content Include="Views\TipoItemDecoracaoCerimonial\Index.cshtml" />
     <Content Include="Views\ItemDecoracaoCerimonial\Buscar.cshtml" />
@@ -577,12 +566,10 @@
     <Content Include="Views\ItemDecoracao\ListarPorTipo.cshtml" />
     <Content Include="Views\TipoServico\Create.cshtml" />
     <Content Include="Views\TipoServico\Delete.cshtml" />
-    <Content Include="Views\TipoServico\Details.cshtml" />
     <Content Include="Views\TipoServico\Edit.cshtml" />
     <Content Include="Views\TipoServico\Index.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Create.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Delete.cshtml" />
-    <Content Include="Views\TipoItemBoloDoceBemCasado\Details.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Edit.cshtml" />
     <Content Include="Views\TipoItemBoloDoceBemCasado\Index.cshtml" />
     <Content Include="Views\PratoSelecionado\Configuracao.cshtml" />

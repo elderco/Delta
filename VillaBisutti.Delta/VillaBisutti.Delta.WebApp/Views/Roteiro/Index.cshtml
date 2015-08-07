@@ -2,6 +2,14 @@
 @{
 	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
+@if (ViewBag.IsBlocked == "TRUE")
+{
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			LockPage();
+		});
+	</script>
+}
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
 		$(".PopUpActionLinks").click(function (e) {
