@@ -260,6 +260,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Padrao Emails\EmailBoasVindas.txt" />
     <Content Include="Scripts\ace-elements.min.js" />
     <Content Include="Scripts\ace-extra.min.js" />
     <Content Include="Scripts\ace.min.js" />
@@ -634,6 +635,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VillaBisutti.Delta.Automation\VillaBisutti.Delta.Automation.csproj">
+      <Project>{6dc92543-6db6-4843-a716-05b75dd6edfd}</Project>
+      <Name>VillaBisutti.Delta.Automation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj">
       <Project>{83fb85ef-3d61-495b-be38-e28eac6307e7}</Project>
       <Name>VillaBisutti.Delta.Core</Name>

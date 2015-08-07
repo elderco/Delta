@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 
+
 namespace VillaBisutti.Delta.WebApp
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -18,6 +19,7 @@ namespace VillaBisutti.Delta.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+			//VillaBisutti.Delta.Automation.Program.IniciarBoasVindas();
         }
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {

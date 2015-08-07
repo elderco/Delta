@@ -1,0 +1,5 @@
+﻿Olá, {NOME}.
+Seja bem vindo à Villa Bisutti. Você escolheu nossos serviços no dia {DATA}.
+Sinto muito lhe dizer, mas agora vc se FUDEU, SEU TROUXA. Bem vindo ao inferno visto que você vai casar.
+Atenciosamente,
+Villa Biscate!
