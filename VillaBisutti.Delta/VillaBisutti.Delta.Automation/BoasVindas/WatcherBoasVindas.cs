@@ -49,32 +49,38 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
 			List<model.Evento> eventos = Util.context.Evento
 				.Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false)
 				.ToList();
-			string file = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)) + "\\Padrao Emails\\" + EmailBoasVindasFileName;
-			foreach (model.Evento evento in eventos)
-			{
-				if (File.Exists(file))
-				{
-					string message = ReadFile(file, evento);
-					Email email = new Email();
-					email.Assunto = "Oi";
-					email.CorpoEmail = message;
-					email.Destinatario = new List<string>() { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulo.frizzo01@gmail.com" };
-					email.NomedoRemetente = "Seu macho";
-					email.SendMail();
-				}
-			}
+            
+            foreach (model.Evento evento in eventos)
+            {
+                string message = ReadFile(evento);
+                Email email = new Email();
+                email.Assunto = "Oi";
+                email.CorpoEmail = message;
+                email.Destinatario = new List<string>() { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulo.frizzo01@gmail.com" };
+                email.NomedoRemetente = "Seu macho";
+                email.SendMail();
+            }
 		}
 
-		private static string ReadFile(string file, model.Evento evento)
+		private static string ReadFile(model.Evento evento)
 		{
 			string message = string.Empty;
-			using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.None))
-			{
-				using (StreamReader reader = new StreamReader(fileStream))
-				{
-					return message = reader.ReadToEnd().Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
-				}
-			}
+            string file = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)) + "\\Padrao Emails\\" + EmailBoasVindasFileName;
+            if (File.Exists(file))
+            {
+                using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        message = reader.ReadToEnd().Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
+                        reader.Close();
+                        reader.Dispose();
+                    }
+                    fileStream.Close();
+                    fileStream.Dispose();
+                }
+            }
+            return message;
 		}
 	}
 }

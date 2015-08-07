@@ -76,36 +76,47 @@ namespace VillaBisutti.Delta.Core
 
         public void SendMail()
         {
-            MailMessage message = new MailMessage();
-			SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-			client.EnableSsl = true;
-            foreach (Attachment item in Anexos)
+            using (SmtpClient client = new SmtpClient())
             {
-                message.Attachments.Add(item);
-            }
-            message.Body = CorpoEmail;
-            message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
-            message.Subject = Assunto;
-            if (Destinatario.Count > 0)
-            {
-                foreach (string item in Destinatario)
+                client.EnableSsl = true;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.Credentials = new System.Net.NetworkCredential("foda-se", "n é da sua conta");
+                client.Host = "smtp.live.com";
+                client.Port = 587;
+                //client.Timeout = 20000;
+
+                using (MailMessage message = new MailMessage())
                 {
-                    MailAddress to = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
-                    message.To.Add(item);
+                    if (Anexos != null)
+                    {
+                        foreach (Attachment item in Anexos)
+                        {
+                            message.Attachments.Add(item);
+                        }
+                    }
+
+                    if (Destinatario != null && Destinatario.Count > 0)
+                    {
+                        foreach (string item in Destinatario)
+                        {
+                            MailAddress to = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
+                            message.To.Add(item);
+                        }
+                    }
+                    if (CCO != null && CCO.Count > 0)
+                    {
+                        foreach (string item in CCO)
+                        {
+                            MailAddress bcc = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
+                            message.Bcc.Add(bcc);
+                        }
+                    }
+                    message.Body = CorpoEmail;
+                    message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
+                    message.Subject = Assunto;
+                    client.Send(message);
                 }
             }
-            if (CCO.Count > 0)
-            {
-                foreach (string item in CCO)
-                {
-                    MailAddress bcc = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
-                    message.Bcc.Add(bcc);
-                }
-            }
-            client.Credentials = new System.Net.NetworkCredential("talesdealmeida@gmail.com", "aac#j100174");
-            client.Host = EnderecoSMTP;
-            client.Port = Porta;
-            client.Send(message);
         }
     }
 }
