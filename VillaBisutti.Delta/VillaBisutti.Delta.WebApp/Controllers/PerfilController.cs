@@ -69,7 +69,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edited([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
-            new bus.Perfil().AlterarPerfil(perfil);
+            //new bus.Perfil().AlterarPerfil(perfil);
+            new data.Perfil().Update(perfil);
             return Redirect(Request.UrlReferrer.AbsoluteUri);
         }
         // GET: Perfils/Delete/5

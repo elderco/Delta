@@ -74,16 +74,16 @@ namespace VillaBisutti.Delta.Core
             set;
         }
 
-        public void SendMail()
+        public bool SendMail()
         {
+            bool sent = false;
             using (SmtpClient client = new SmtpClient())
             {
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("foda-se", "n é da sua conta");
+                client.Credentials = new System.Net.NetworkCredential("taleskiske@hotmail.com", "santos1989");
                 client.Host = "smtp.live.com";
                 client.Port = 587;
-                //client.Timeout = 20000;
 
                 using (MailMessage message = new MailMessage())
                 {
@@ -94,7 +94,6 @@ namespace VillaBisutti.Delta.Core
                             message.Attachments.Add(item);
                         }
                     }
-
                     if (Destinatario != null && Destinatario.Count > 0)
                     {
                         foreach (string item in Destinatario)
@@ -115,8 +114,10 @@ namespace VillaBisutti.Delta.Core
                     message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
                     message.Subject = Assunto;
                     client.Send(message);
+                    sent = true;
                 }
             }
+            return sent;
         }
     }
 }

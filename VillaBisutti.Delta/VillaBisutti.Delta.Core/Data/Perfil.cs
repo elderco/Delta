@@ -12,8 +12,13 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Perfil entity)
 		{
-			Model.Perfil original = context.Perfil.FirstOrDefault(s => s.Id == entity.Id);
-			context.Entry(original).CurrentValues.SetValues(entity);
+			List<Model.PerfilModulo> originalLocal = context.Perfil.Include(e=>e.Modulos).FirstOrDefault(s => s.Id == entity.Id).Modulos.ToList();
+            foreach (var item in originalLocal)
+            {
+                var antigo = context.PerfilModulo.FirstOrDefault(e => e.Id == item.Id);
+                var novo = entity.Modulos.FirstOrDefault(e => e.Id == item.Id);
+                context.Entry(antigo).CurrentValues.SetValues(novo);
+            }
 			context.SaveChanges();
 		}
 

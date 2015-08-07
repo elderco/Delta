@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Automation
 		public static void IniciarBoasVindas()
 		{
 			VillaBisutti.Delta.Automation.BoasVindas.WatcherBoasVindas boasVindas = new BoasVindas.WatcherBoasVindas();
-			boasVindas.EmailBoasVindas();
+			//boasVindas.EmailBoasVindas();
 		}
 		/// <summary>
 		/// The main entry point for the application.

@@ -44,7 +44,9 @@
         <div class="form-group">
             @foreach (var item in Model.Modulos)
             {
-                
+                <input value="@(item.Id.ToString())" type="hidden" name="Modulos[@(i)].Id" />
+                <input value="@(item.PerfilId.ToString())" type="hidden" name="Modulos[@(i)].PerfilId" />
+                <input value="@(item.Modulo.ToString())" type="hidden" name="Modulos[@(i)].Modulo" />
                 <div class="btn-group col-md-4" style="margin-bottom: 5px" data-toggle="buttons">
 					<button class="btn btn-primary btn-sm col-xs-6">@item.Modulo.Nome</button>
                     <button class="btn set-acesso btn-sm @(item.PodeAlterar == true && item.PodeLer == true ? "active btn-success" : "btn-info")" id="@(Model.Id)-@(item.ModuloId)_TOTAL"><i class="fa fa-pencil" title="Acesso Total"></i></button>
