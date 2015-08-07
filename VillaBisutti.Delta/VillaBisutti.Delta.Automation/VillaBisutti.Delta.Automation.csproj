@@ -73,6 +73,7 @@
     <Compile Include="ContratacaoServicoTerceiro\ServicoTerceiro.Designer.cs">
       <DependentUpon>ServicoTerceiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContratacaoServicoTerceiro\WacherContratacaoServicoTerceiro.cs" />
     <Compile Include="Helpers\ExtensionMethods.cs" />
     <Compile Include="OSFinalizada\OSFinalizada.cs">
       <SubType>Component</SubType>
