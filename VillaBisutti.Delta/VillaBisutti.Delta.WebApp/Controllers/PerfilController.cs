@@ -17,7 +17,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     [Authorize]
     public class PerfilController : Controller
-    {
+	{
+		protected override void EndExecute(IAsyncResult asyncResult)
+		{
+			if (SessionFacade.UsuarioLogado != null)
+				if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+					ViewBag.IsBlocked = "TRUE";
+			base.EndExecute(asyncResult);
+		}
         // GET: Perfils
         public ActionResult Index()
         {

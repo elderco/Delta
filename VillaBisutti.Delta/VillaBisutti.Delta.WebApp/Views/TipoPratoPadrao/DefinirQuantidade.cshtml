@@ -2,6 +2,14 @@
 @{
 	Layout = null;
 }
+@if (ViewBag.IsBlocked == "TRUE")
+{
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			LockPage();
+		});
+	</script>
+}
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
 		AddStack("Pratos do cardápio", "Quantidade de pratos definida para @(Model.TipoPrato.Nome): escolher @(Model.QuantidadePratos) pratos");

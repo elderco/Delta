@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
+using bus = VillaBisutti.Delta.Core.Business;
 
 
 namespace VillaBisutti.Delta.WebApp.Controllers
@@ -15,7 +16,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
     [Authorize]
     public class TipoItemMontagemController : Controller
     {
-
+		protected override void EndExecute(IAsyncResult asyncResult)
+		{
+			if (SessionFacade.UsuarioLogado != null)
+				if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+					ViewBag.IsBlocked = "TRUE";
+			base.EndExecute(asyncResult);
+		}
         // GET: /TipoItemMontagem/
         public ActionResult Index()
         {
