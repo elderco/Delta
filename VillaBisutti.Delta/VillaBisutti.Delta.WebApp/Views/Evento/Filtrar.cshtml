@@ -1,11 +1,62 @@
 ﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Evento>
 @{
-    Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 }
-<div class="widget-box">
-
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$("#FiltroEventos input, #FiltroEventos select").change(function () {
+			this.form.submit();
+		});
+	});
+</script>
+<div class="col-xl-12 widget-container-col">
+	<div class="widget-box transparent">
+		<div class="widget-header widget-header-flat">
+			<h4 class="widget-title lighter">
+				<i class="fa fa-filter green"></i>
+				Filtros
+			</h4>
+			<div class="widget-toolbar">
+				<a href="#" data-toggle="collapse" data-target="#Filtro">
+					<i class="fa fa-chevron-up" onclick="$(this).toggleClass('fa-chevron-up fa-chevron-down')"></i>
+				</a>
+			</div>
+		</div>
+		<div class="widget-body" id="Filtro">
+			<div class="widget-main padding-8">
+				<form id="FiltroEventos" class="form-horizontal">
+					<div class="row">
+						<label for="inicio" class="control-label col-md-2"> Data inicial </label>
+						<input type="date" name="inicio" id="inicio" value="@((Request.QueryString["inicio"] != null ? DateTime.Parse(Request.QueryString["inicio"]) : DateTime.Now).ToString("yyyy-MM-dd"))" class="col-md-2" />
+						<label for="termino" class="control-label col-md-2"> Data final </label>
+						<input type="date" name="termino" id="termino" value="@((Request.QueryString["termino"] != null ? DateTime.Parse(Request.QueryString["termino"]) : DateTime.Now.AddDays(7)).ToString("yyyy-MM-dd"))" class="col-md-2" />
+					</div>
+					<div class="row">
+						<label for="localId" class="control-label col-md-2">Casa</label>
+						@Html.DropDownList("localId", (SelectList)ViewBag.LocalId, "Selecione", new { @class = "col-md-2" })
+						<label for="tipoEvento" class="control-label col-md-2">Tipo de evento</label>
+						@Html.DropDownList("tipoEvento", (SelectList)ViewBag.TipoEvento, "Selecione", new { @class = "col-md-2" })
+						<label for="produtorId" class="control-label col-md-2">Produção</label>
+						@Html.DropDownList("produtorId", (SelectList)ViewBag.ProdutorId, "Selecione", new { @class = "col-md-2" })
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<label for="possuiAssessoria" class="control-label col-md-2">Possui assessoria</label>
+						<input type="checkbox" name="possuiAssessoria" id="possuiAssessoria" value="True" class="col-md-2" @(Request.QueryString["possuiAssessoria"] != null ? " checked=\"checked\"" : "") />
+						<label for="enviado" class="control-label col-md-2">Email de boas vindas já enviado</label>
+						<input type="checkbox" name="enviado" id="enviado" value="True" class="col-md-2" @(Request.QueryString["enviado"] != null ? " checked=\"checked\"" : "") />
+						<label for="fechado" class="control-label col-md-2">Está com OS fechada</label>
+						<input type="checkbox" name="fechado" id="fechado" value="True" class="col-md-2" @(Request.QueryString["fechado"] != null ? " checked=\"checked\"" : "") />
+						<label for="aprovado" class="control-label col-md-2">Já foi aprovado</label>
+						<input type="checkbox" name="aprovado" id="aprovado" value="True" class="col-md-2" @(Request.QueryString["aprovado"] != null ? " checked=\"checked\"" : "") />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
-<table class="table">
+@if (Model.Count() > 0) { 
+<table class="table table-striped">
 	<tr>
 		<th></th>
 		<th>
@@ -73,6 +124,12 @@
 				@Html.DisplayFor(modelItem => item.OSAprovada)
 			</td>
 		</tr>
-}
+	}
 
 </table>
+} else{
+	<div class="alert alert-warning">
+		<h5><i class="fa fa-exclamation-triangle"></i>Sem dados para este filtro</h5>
+		<p>Modifique a seleção nos filtros e tente novamente </p>
+	</div>
+		 }

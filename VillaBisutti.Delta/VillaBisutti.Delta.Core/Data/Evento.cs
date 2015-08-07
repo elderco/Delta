@@ -81,9 +81,9 @@ namespace VillaBisutti.Delta.Core.Data
 			return context.Evento.Where(e => e.LocalId == localId).ToList();
 		}
 
-		public List<Model.Evento> Filtrar(DateTime inicio, DateTime termino, int localId, int produtorId, bool? possuiAssessoria, bool? fechado, bool? enviado, bool? aprovado)
+		public List<Model.Evento> Filtrar(DateTime inicio, DateTime termino, int localId, Model.TipoEvento? tipoEvento, int produtorId, bool? possuiAssessoria, bool? fechado, bool? enviado, bool? aprovado)
 		{
-			return context.Evento
+			IEnumerable<Model.Evento> eventos = context.Evento
 					.Include(e => e.Local)
 					.Include(e => e.PosVendedora)
 					.Include(e => e.Produtora)
@@ -91,12 +91,14 @@ namespace VillaBisutti.Delta.Core.Data
 				e.Data.CompareTo(inicio) >= 0
 				&& e.Data.CompareTo(termino) <= 0
 				&& (e.LocalId == localId || localId == 0)
+				&& (e.TipoEvento == tipoEvento.Value || !tipoEvento.HasValue)
 				&& (e.ProdutoraId == produtorId || produtorId == 0)
 				&& (e.PossuiAssessoria == possuiAssessoria.Value || !possuiAssessoria.HasValue)
 				&& (e.OSFinalizada == fechado.Value || !fechado.HasValue)
 				&& (e.OSAprovada == aprovado.Value || !aprovado.HasValue)
 				&& (e.EmailBoasVindasEnviado == enviado.Value || !enviado.HasValue)
-				).Take(100).ToList();
+				).Take(100);
+			return eventos.ToList();
 		}
 	}
 }
