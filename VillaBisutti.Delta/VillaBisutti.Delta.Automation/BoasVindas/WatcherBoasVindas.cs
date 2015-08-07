@@ -46,9 +46,9 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
 
 		public void EmailBoasVindas()
 		{
-			List<model.Evento> eventos = Util.context.Evento
-				.Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false)
-				.ToList();
+            List<model.Evento> eventos = new data.Evento().GetCollection(0)
+                .Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false)
+                .ToList();
             
             foreach (model.Evento evento in eventos)
             {
@@ -56,9 +56,13 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
                 Email email = new Email();
                 email.Assunto = "Oi";
                 email.CorpoEmail = message;
-                email.Destinatario = new List<string>() { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulo.frizzo01@gmail.com" };
+                email.Destinatario = new List<string>() { "talesdealmeida@gmail.com" };
                 email.NomedoRemetente = "Seu macho";
-                email.SendMail();
+                if (email.SendMail() == true)
+                {
+                    evento.EmailBoasVindasEnviado = true;
+                    new data.Evento().Update(evento);
+                }
             }
 		}
 

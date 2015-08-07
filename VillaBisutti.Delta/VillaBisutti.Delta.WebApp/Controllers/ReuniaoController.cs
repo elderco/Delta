@@ -9,11 +9,19 @@ using System.Web.Mvc;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
 using biz = VillaBisutti.Delta.Core.Business;
+using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
 	public class ReuniaoController : Controller
 	{
+		protected override void EndExecute(IAsyncResult asyncResult)
+		{
+			if (SessionFacade.UsuarioLogado != null)
+				if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+					ViewBag.IsBlocked = "TRUE";
+			base.EndExecute(asyncResult);
+		}
 
 		// GET: /Reuniao/
 		public ActionResult Index(int id)

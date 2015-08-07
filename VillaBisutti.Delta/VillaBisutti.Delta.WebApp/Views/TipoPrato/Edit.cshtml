@@ -2,6 +2,14 @@
 @{
 	Layout = null;
 }
+@if (ViewBag.IsBlocked == "TRUE")
+{
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			LockPage();
+		});
+	</script>
+}
 @section scripts{
 	@Scripts.Render("~/bundles/jqueryval")
 }

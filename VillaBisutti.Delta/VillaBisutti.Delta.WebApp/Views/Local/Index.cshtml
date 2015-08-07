@@ -3,7 +3,14 @@
 	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 	//ViewBag.Title = "Index";
 }
-
+@if (ViewBag.IsBlocked == "TRUE")
+{
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			LockPage();
+		});
+	</script>
+}
 @section scripts {
 
     <script language="javascript" type="text/javascript">

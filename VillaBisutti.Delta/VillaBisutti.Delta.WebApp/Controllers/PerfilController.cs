@@ -17,7 +17,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 {
     [Authorize]
     public class PerfilController : Controller
-    {
+	{
+		protected override void EndExecute(IAsyncResult asyncResult)
+		{
+			if (SessionFacade.UsuarioLogado != null)
+				if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+					ViewBag.IsBlocked = "TRUE";
+			base.EndExecute(asyncResult);
+		}
         // GET: Perfils
         public ActionResult Index()
         {
@@ -62,7 +69,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edited([Bind(Include="Id,Nome,Modulos")] model.Perfil perfil)
         {
-            new bus.Perfil().AlterarPerfil(perfil);
+            //new bus.Perfil().AlterarPerfil(perfil);
+            new data.Perfil().Update(perfil);
             return Redirect(Request.UrlReferrer.AbsoluteUri);
         }
         // GET: Perfils/Delete/5

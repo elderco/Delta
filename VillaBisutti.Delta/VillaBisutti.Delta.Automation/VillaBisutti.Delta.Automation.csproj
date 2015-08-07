@@ -73,6 +73,7 @@
     <Compile Include="ContratacaoServicoTerceiro\ServicoTerceiro.Designer.cs">
       <DependentUpon>ServicoTerceiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContratacaoServicoTerceiro\WacherContratacaoServicoTerceiro.cs" />
     <Compile Include="Helpers\ExtensionMethods.cs" />
     <Compile Include="OSFinalizada\OSFinalizada.cs">
       <SubType>Component</SubType>
@@ -106,9 +107,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ContratacaoServicoTerceiro\Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj">
       <Project>{83fb85ef-3d61-495b-be38-e28eac6307e7}</Project>
