@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core
 {
     public class Email
     {
+		//TODO: alterar isso para pegar via JSon. Não será mais no Webconfig pq é uma puta de uma cagada
         public String Assunto
         {
             get;
@@ -76,13 +77,14 @@ namespace VillaBisutti.Delta.Core
         public void SendMail()
         {
             MailMessage message = new MailMessage();
-            SmtpClient client = new SmtpClient();
+			SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+			client.EnableSsl = true;
             foreach (Attachment item in Anexos)
             {
                 message.Attachments.Add(item);
             }
             message.Body = CorpoEmail;
-            message.From = new MailAddress(Remetente, NomedoRemetente, Encoding.UTF8);
+            message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
             message.Subject = Assunto;
             if (Destinatario.Count > 0)
             {
@@ -100,11 +102,10 @@ namespace VillaBisutti.Delta.Core
                     message.Bcc.Add(bcc);
                 }
             }
-            client.Credentials = new System.Net.NetworkCredential(Usuario, Senha);
+            client.Credentials = new System.Net.NetworkCredential("talesdealmeida@gmail.com", "aac#j100174");
             client.Host = EnderecoSMTP;
             client.Port = Porta;
             client.Send(message);
-            //TODO: Implentar os exceptions de erro ao enviar e-mail
         }
     }
 }

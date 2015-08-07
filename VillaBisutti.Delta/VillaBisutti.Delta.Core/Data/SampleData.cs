@@ -30,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 			string[] girlsNames = { "Aline", "Bianca", "Camila", "Débora", "Eliana", "Fabiane", "Gabriela", "Helen", "Ingrid", "Juliana", "Karina", "Laura", "Michelle", "Neusa", "Ofélia", "Patrícia" };
 			string[] boysNames = { "André", "Bruno", "César", "Dênis", "Edilson", "Fabrício", "Germano", "Henrique", "Ingmar", "Josemar", "Kléber", "Leandro", "Marcos", "Newton", "Odair", "Paulo" };
 			string[] companyNames = { "Apple Computer", "Bosch", "Coca-cola company", "Demareste-Almeida Advogados", "Enron", "FIAM", "Globo", "HTC" };
+			string[] emails = {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com","paulofrizzo01@gmail.com"};
 
 			context.Modulo.Add(new Model.Modulo { Nome = "Bebida", URL = "ItemBebidaSelecionado|Bebida|/TipoItemBebida/ListNaoSelecionados|/ItemBebida/ListarPorTipo" });
 			context.Modulo.Add(new Model.Modulo { Nome = "Configurar bebidas", URL = "TipoItemBebida|ItemBebida" });
@@ -701,7 +702,7 @@ namespace VillaBisutti.Delta.Core.Data
 					CardapioId = rdm.Next(1, 3),
 					EmailBoasVindasEnviado = false,
 					CPFResponsavel = CPF,
-					EmailContato = string.Empty,
+					EmailContato = emails[rdm.Next(0, emails.Length)],
 					TelefoneContato = string.Empty,
 					Inicio = inicio,
 					Termino = termino,
