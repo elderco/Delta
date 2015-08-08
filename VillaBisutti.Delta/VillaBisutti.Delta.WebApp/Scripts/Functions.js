@@ -191,13 +191,28 @@ function LockPage() {
 		.click(function (e) {
 			e.preventDefault();
 			AddError(title, message);
-			});
-	$('.PopUpItemLinks', 'td').unbind("click")
+		});
+	$('.PopUpActionLinks').unbind("click")
+		.attr("href", "javascript:void(0);")
+		.click(function (e) {
+		    e.preventDefault();
+		    AddError(title, message);
+		});
+	$('.PopUpItemLinks').unbind("click")
 		.attr("href", "javascript:void(0);")
 		.click(function (e) {
 			e.preventDefault();
 			AddError(title, message);
 		});
+    $("a[id^='Remover']").unbind("click")
+    		.attr("href", "javascript:void(0);")
+		.click(function (e) {
+		    e.preventDefault();
+		    AddError(title, message);
+		});
+	$("#PainelTipoComida li").draggable({ disabled: true });
+	$("#PainelCardapios ol").droppable({ disabled: true });
+	$("#SortItems").sortable("disable");
 }
 function HandleCheckbox(elementId) {
 	elementId = elementId.replace("#", "") == elementId ? "#" + elementId : elementId;
