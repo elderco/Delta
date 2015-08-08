@@ -81,12 +81,14 @@
     <Compile Include="OSFinalizada\OSFinalizada.Designer.cs">
       <DependentUpon>OSFinalizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSFinalizada\WatcherOSFinalizada.cs" />
     <Compile Include="PrazoFinal\PrazoFinal.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="PrazoFinal\PrazoFinal.Designer.cs">
       <DependentUpon>PrazoFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrazoFinal\WatcherOSPrazoFinal.cs" />
     <Compile Include="ProdutosContratados\ProdutosContratados.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -101,6 +103,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Watcher.cs" />
   </ItemGroup>
   <ItemGroup>

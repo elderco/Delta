@@ -158,10 +158,31 @@ namespace VillaBisutti.Delta
 				return context_;
 			}
 		}
-		internal static void ResetContext()
+		public static void ResetContext()
 		{
 			context_.Dispose();
 			context_ = null;
+		}
+
+		public static string ReadFileEmail(Core.Model.Evento evento, string nomeArquivoEmail)
+		{
+			string message = string.Empty;
+			string file = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)) + "\\Padrao Emails\\" + nomeArquivoEmail;
+			if (File.Exists(file))
+			{
+				using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read))
+				{
+					using (StreamReader reader = new StreamReader(fileStream))
+					{
+						message = reader.ReadToEnd();
+						reader.Close();
+						reader.Dispose();
+					}
+					fileStream.Close();
+					fileStream.Dispose();
+				}
+			}
+			return message;
 		}
 	}
 }

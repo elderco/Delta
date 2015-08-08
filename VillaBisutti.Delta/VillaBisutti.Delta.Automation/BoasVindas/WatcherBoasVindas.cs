@@ -46,45 +46,36 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
 
 		public void EmailBoasVindas()
 		{
-            List<model.Evento> eventos = new data.Evento().GetCollection(0)
-                .Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false)
-                .ToList();
+            List<model.Evento> eventos = Util.context.Evento
+					.Include(e => e.Bebida)
+					.Include(e => e.BoloDoceBemCasado)
+					.Include(e => e.Cardapio)
+					.Include(e => e.DecoracaoCerimonial)
+					.Include(e => e.FotoVideo)
+					.Include(e => e.Gastronomia)
+					.Include(e => e.Local)
+					.Include(e => e.Montagem)
+					.Include(e => e.OutrosItens)
+					.Include(e => e.PosVendedora)
+					.Include(e => e.Produtora)
+					.Include(e => e.SomIluminacao)
+				.Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false).ToList();
             
             foreach (model.Evento evento in eventos)
             {
-                string message = ReadFile(evento);
+				model.Evento eventoAntigo = Util.context.Evento.Find(evento.Id);
+				string message = Util.ReadFileEmail(evento, EmailBoasVindasFileName).Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
                 Email email = new Email();
                 email.Assunto = "Oi";
                 email.CorpoEmail = message;
                 email.Destinatario = new List<string>() { "talesdealmeida@gmail.com" };
                 email.NomedoRemetente = "Seu macho";
-                if (email.SendMail() == true)
-                {
-                    evento.EmailBoasVindasEnviado = true;
-                    new data.Evento().Update(evento);
-                }
+				email.SendMail();
+				evento.EmailBoasVindasEnviado = true;
+				Util.context.Entry(eventoAntigo).OriginalValues.SetValues(evento);
             }
-		}
-
-		private static string ReadFile(model.Evento evento)
-		{
-			string message = string.Empty;
-            string file = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)) + "\\Padrao Emails\\" + EmailBoasVindasFileName;
-            if (File.Exists(file))
-            {
-                using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read))
-                {
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        message = reader.ReadToEnd().Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
-                        reader.Close();
-                        reader.Dispose();
-                    }
-                    fileStream.Close();
-                    fileStream.Dispose();
-                }
-            }
-            return message;
+			Util.context.SaveChanges();
+			Util.ResetContext();
 		}
 	}
 }

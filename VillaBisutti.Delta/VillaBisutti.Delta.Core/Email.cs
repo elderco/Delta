@@ -74,14 +74,13 @@ namespace VillaBisutti.Delta.Core
             set;
         }
 
-        public bool SendMail()
+        public void SendMail()
         {
-            bool sent = false;
             using (SmtpClient client = new SmtpClient())
             {
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("taleskiske@hotmail.com", "santos1989");
+                client.Credentials = new System.Net.NetworkCredential("", "");
                 client.Host = "smtp.live.com";
                 client.Port = 587;
 
@@ -114,10 +113,8 @@ namespace VillaBisutti.Delta.Core
                     message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
                     message.Subject = Assunto;
                     client.Send(message);
-                    sent = true;
                 }
             }
-            return sent;
         }
     }
 }
