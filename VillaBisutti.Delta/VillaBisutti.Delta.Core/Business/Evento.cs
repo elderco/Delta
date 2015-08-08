@@ -96,5 +96,10 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
 		}
+
+		public static void GerarOS(int id)
+		{
+		//TODO: implementar Gerar OS	
+		}
 	}
 }

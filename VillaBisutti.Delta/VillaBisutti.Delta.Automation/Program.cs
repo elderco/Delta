@@ -11,8 +11,8 @@ namespace VillaBisutti.Delta.Automation
 	{
 		public static void IniciarBoasVindas()
 		{
-            VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro contrataST = new ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro();
-            contrataST.EmailContratacaoServicoTerceiro();
+            VillaBisutti.Delta.Automation.PrazoFinal.WatcherOSPrazoFinal prazoFinal = new PrazoFinal.WatcherOSPrazoFinal();
+			prazoFinal.EmailPrazoFinalOS();
 		}
 		/// <summary>
 		/// The main entry point for the application.
