@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-			VillaBisutti.Delta.Automation.Program.IniciarBoasVindas();
+			//VillaBisutti.Delta.Automation.Program.IniciarBoasVindas();
         }
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {

@@ -60,11 +60,11 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
 					.Include(e => e.Produtora)
 					.Include(e => e.SomIluminacao)
 				.Where(x => !String.IsNullOrEmpty(x.EmailContato) && x.EmailBoasVindasEnviado == false).ToList();
-            
+            string message = Util.ReadFileEmail(EmailBoasVindasFileName);
             foreach (model.Evento evento in eventos)
             {
 				model.Evento eventoAntigo = Util.context.Evento.Find(evento.Id);
-				string message = Util.ReadFileEmail(evento, EmailBoasVindasFileName).Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
+				message.Replace("{NOME}", evento.NomeResponsavel).Replace("{DATA}", evento.Data.ToString("dd/MM/yyyy"));
                 Email email = new Email();
                 email.Assunto = "Oi";
                 email.CorpoEmail = message;

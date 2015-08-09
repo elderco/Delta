@@ -24,5 +24,20 @@ namespace VillaBisutti.Delta.Automation
 			}
 		}
 
+		public static int EventosProximosDias
+		{
+			get
+			{
+				return 15;
+			}
+		}
+		public static int EnviarEmailAposXDiasEvento 
+		{
+			get
+			{
+				return 30;
+			}
+		}
+
 	}
 }

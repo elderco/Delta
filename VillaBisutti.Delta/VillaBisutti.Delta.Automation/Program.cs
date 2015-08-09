@@ -11,8 +11,8 @@ namespace VillaBisutti.Delta.Automation
 	{
 		public static void IniciarBoasVindas()
 		{
-            VillaBisutti.Delta.Automation.PrazoFinal.WatcherOSPrazoFinal prazoFinal = new PrazoFinal.WatcherOSPrazoFinal();
-			prazoFinal.EmailPrazoFinalOS();
+			VillaBisutti.Delta.Automation.AgendaSemanal.WatcherAgendaSemanal agendaSemanal = new AgendaSemanal.WatcherAgendaSemanal();
+			agendaSemanal.EmailAgendaSemanal();
 		}
 		/// <summary>
 		/// The main entry point for the application.
