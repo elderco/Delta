@@ -1,11 +1,3 @@
-﻿Prezado cliente, no dia {DATAEVENTO} ocorrerá uma demonstração de {TIPOEVENTO} no espaço {LOCAL}.
-A casa abrirá às {HORADOEVENTO}.
+﻿{DIAEXTENSO} - {DIA}
 
-As cores usadas não decoração serão essas: {CORES}
-
-Venha fazer uma visita para conhecer melhor nossa decoração.
-
-Atenciosamente,
-
-Villa Biscatte (agora não errei o nome, Ravena)
-
+{LOCAL} ({TIPOEVENTO}): Cores: {COR} - {HORA}

@@ -73,20 +73,6 @@ namespace VillaBisutti.Delta.Core.Data
                 
         }
 
-        public List<Model.Evento> GetEventosServicoTerceiroRobo()
-        {
-            //TODO: terminar de ver isso aqui
-             return context.Evento
-                .Include(e => e.DecoracaoCerimonial).Include(e => e.DecoracaoCerimonial.Itens)
-                .Include(e => e.Montagem).Include(e => e.Montagem.Itens)
-                .Include(e => e.Bebida).Include(e => e.Bebida.Itens)
-                .Include(e => e.BoloDoceBemCasado).Include(e => e.BoloDoceBemCasado.Itens)
-                .Include(e => e.FotoVideo).Include(e => e.FotoVideo.Itens)
-                .Include(e => e.SomIluminacao).Include(e => e.SomIluminacao.Itens)
-                .Include(e => e.OutrosItens).Include(e => e.OutrosItens.Itens)
-                .ToList();
-        }
-
 		public List<Model.Evento> GetListaPorCasaProducao(int localId, int responsavelId)
 		{
 			return context.Evento.Where(e => e.LocalId == localId && (e.ProdutoraId == responsavelId || e.PosVendedoraId == responsavelId)).ToList();

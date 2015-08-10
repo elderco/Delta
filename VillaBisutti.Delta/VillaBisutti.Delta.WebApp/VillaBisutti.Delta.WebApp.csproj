@@ -260,10 +260,12 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Padrao Emails\CabecalhoAgendaSemanal.txt" />
     <Content Include="Padrao Emails\EmailAcabouPrazo.txt" />
     <Content Include="Padrao Emails\EmailAgendaSemanal.txt" />
     <Content Include="Padrao Emails\EmailBoasVindas.txt" />
     <Content Include="Padrao Emails\EmailOSPrazoFinal.txt" />
+    <Content Include="Padrao Emails\RodapeAgendaSemanal.txt" />
     <Content Include="Scripts\ace-elements.min.js" />
     <Content Include="Scripts\ace-extra.min.js" />
     <Content Include="Scripts\ace.min.js" />
