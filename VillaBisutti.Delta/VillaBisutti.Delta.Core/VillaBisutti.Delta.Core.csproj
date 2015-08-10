@@ -110,6 +110,7 @@
     <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="Data\TipoServico.cs" />
+    <Compile Include="DTO\ItemEvento.cs" />
     <Compile Include="DTO\Gastronomia.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
