@@ -164,7 +164,7 @@ namespace VillaBisutti.Delta
 			context_ = null;
 		}
 
-		public static string ReadFileEmail(Core.Model.Evento evento, string nomeArquivoEmail)
+		public static string ReadFileEmail(string nomeArquivoEmail)
 		{
 			string message = string.Empty;
 			string file = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)) + "\\Padrao Emails\\" + nomeArquivoEmail;

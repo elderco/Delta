@@ -60,6 +60,7 @@
     <Compile Include="AgendaSemanal\AgendaSemanal.Designer.cs">
       <DependentUpon>AgendaSemanal.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgendaSemanal\WatcherAgendaSemanal.cs" />
     <Compile Include="BoasVindas\BoasVindas.cs">
       <SubType>Component</SubType>
     </Compile>
