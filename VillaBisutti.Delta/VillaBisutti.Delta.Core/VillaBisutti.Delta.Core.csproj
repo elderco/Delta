@@ -116,6 +116,7 @@
     <Compile Include="DTO\PratoSelecionado.cs" />
     <Compile Include="DTO\TipoPratoPadrao.cs" />
     <Compile Include="Email.cs" />
+    <Compile Include="File.cs" />
     <Compile Include="Model\Bebida.cs" />
     <Compile Include="Model\BoloDoceBemCasado.cs" />
     <Compile Include="Model\Cardapio.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Model\TipoReuniao.cs" />
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\Usuario.cs" />
+    <Compile Include="PDF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>

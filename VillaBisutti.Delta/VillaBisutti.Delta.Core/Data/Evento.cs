@@ -112,7 +112,7 @@ namespace VillaBisutti.Delta.Core.Data
 				&& (e.OSFinalizada == fechado.Value || !fechado.HasValue)
 				&& (e.OSAprovada == aprovado.Value || !aprovado.HasValue)
 				&& (e.EmailBoasVindasEnviado == enviado.Value || !enviado.HasValue)
-				).Take(100);
+				).Take(300);
 			return eventos.ToList();
 		}
 	}

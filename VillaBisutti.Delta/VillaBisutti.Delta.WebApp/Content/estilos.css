@@ -32,6 +32,7 @@ div.tooltip{min-width: 100px}
 .borderless{border-width: 0}
 .clear-margin { margin-left: -10px !important; margin-right: -10px !important; }
 .tababble-min-height { height: 330px; overflow: auto; padding-top: 10px; padding-bottom: 0px; }
+.button-padding { padding-left: 15px !important; padding-right: 5px !important; }
 
 .row{margin-left: 0 !important; margin-right: 0 !important; margin-bottom: 15px}
 

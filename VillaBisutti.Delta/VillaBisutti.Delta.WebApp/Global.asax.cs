@@ -19,7 +19,8 @@ namespace VillaBisutti.Delta.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-			VillaBisutti.Delta.Automation.Program.IniciarBoasVindas();
+			//VillaBisutti.Delta.Automation.Program.IniciarBoasVindas();
+			//Session.Timeout = 60;
         }
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {

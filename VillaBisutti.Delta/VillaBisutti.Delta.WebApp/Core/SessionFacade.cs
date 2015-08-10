@@ -23,7 +23,7 @@ namespace VillaBisutti.Delta
 				if (value == null)
 					return;
 				HttpCookie UserCookie = new HttpCookie("UsuarioLogado");
-				UserCookie.Expires = DateTime.Now.AddMinutes(30);
+				UserCookie.Expires = DateTime.Now.AddMinutes(60);
 				UserCookie.Value = value.Id.ToString();
 				HttpContext.Current.Response.SetCookie(UserCookie);
 			}
