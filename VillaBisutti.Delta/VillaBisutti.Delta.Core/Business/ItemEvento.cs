@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-namespace VillaBisutti.Delta.Core.DTO
+namespace VillaBisutti.Delta.Core.Business
 {
 	public class ItemEvento
 	{

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
-using VillaBisutti.Delta.Core.DTO;
+using VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 {
