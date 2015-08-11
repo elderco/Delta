@@ -28,15 +28,15 @@ namespace VillaBisutti.Delta.Automation
         private void Run(object state)
         {
             //O serviço nunca para de executar
-            timerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            //timerExecution.Change(Timeout.Infinite, Timeout.Infinite);
 
-            //TODO: inicio da lógica da execuçao dos Robôs
-
-            //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution.Change(time, time);
+            ////TODO: inicio da lógica da execuçao dos Robôs
+            //WatcherContrataca
+            ////Terminou de rodar, prepara a próxima execução
+            //ExtensionMethods.ModifyDate();
+            //date = ExtensionMethods.GetDateXML();
+            //time = ExtensionMethods.ReturnTimeToRun(date);
+            //timerExecution.Change(time, time);
 
         }
     }

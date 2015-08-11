@@ -80,7 +80,7 @@ namespace VillaBisutti.Delta.Core
             {
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("", "");
+                client.Credentials = new System.Net.NetworkCredential("","");
                 client.Host = "smtp.live.com";
                 client.Port = 587;
 
@@ -108,6 +108,7 @@ namespace VillaBisutti.Delta.Core
                             MailAddress bcc = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
                             message.Bcc.Add(bcc);
                         }
+                        //message.IsBodyHtml = true;
                     }
                     message.Body = CorpoEmail;
                     message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);

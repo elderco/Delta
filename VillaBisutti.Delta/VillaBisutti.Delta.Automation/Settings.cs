@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace VillaBisutti.Delta.Automation
 {
@@ -35,9 +36,25 @@ namespace VillaBisutti.Delta.Automation
 		{
 			get
 			{
-				return 30;
+				return 5;
 			}
 		}
+        //TODO: mudar para JSON
+        public static String LoadTemplate 
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["TimeToRun"].ToString();
+            }
+        }
+
+        public static string[] EmailResponsavelTerceiro
+        {
+            get
+            {
+                return new string[] {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com"};
+            }
+        }
 
 	}
 }

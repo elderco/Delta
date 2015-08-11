@@ -11,8 +11,8 @@ namespace VillaBisutti.Delta.Automation
 	{
 		public static void IniciarBoasVindas()
 		{
-			VillaBisutti.Delta.Automation.AgendaSemanal.WatcherAgendaSemanal agendaSemanal = new AgendaSemanal.WatcherAgendaSemanal();
-			agendaSemanal.EmailAgendaSemanal();
+            VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro wst = new ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro();
+            wst.EmailContratacaoServicoTerceiro();
 		}
 		/// <summary>
 		/// The main entry point for the application.
