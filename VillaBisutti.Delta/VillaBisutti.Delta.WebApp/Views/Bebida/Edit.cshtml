@@ -2,7 +2,6 @@
 @{
 	Layout = null;
 }
-
 @using (Html.BeginForm("Edited", "Bebida", FormMethod.Post, new { @id = "DadosBebida" }))
 {
 	@Html.AntiForgeryToken()
@@ -24,3 +23,6 @@
 		</div>
 	</div>
 }
+<div class="row">
+	@Html.Action("Index", "Foto", new { qual = "BB", eventoId = Model.EventoId })
+</div>

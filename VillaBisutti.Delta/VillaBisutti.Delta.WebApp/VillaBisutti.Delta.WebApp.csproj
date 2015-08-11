@@ -270,6 +270,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\VillaBisutti.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Functions.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -608,6 +609,7 @@
     <Content Include="Views\Reuniao\Edit.cshtml" />
     <Content Include="Views\Reuniao\Create.cshtml" />
     <Content Include="Views\Evento\Filtrar.cshtml" />
+    <Content Include="Views\Foto\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

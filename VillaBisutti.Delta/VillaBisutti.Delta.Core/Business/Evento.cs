@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity.Validation;
+using System.Data.Entity;
 
 namespace VillaBisutti.Delta.Core.Business
 {
@@ -96,10 +97,76 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
 		}
-
 		public static void GerarOS(int id)
 		{
-		//TODO: implementar Gerar OS	
+			IEnumerable<Model.ItemBebidaSelecionado> itensBebida = Util.context.ItemBebidaSelecionado
+				.Include(i => i.ItemBebida)
+				.Include(i => i.ItemBebida.TipoItemBebida)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemBebida.Nome)
+				.OrderBy(i => i.ItemBebida.TipoItemBebida.Ordem);
+			IEnumerable<Model.ItemBoloDoceBemCasadoSelecionado> itensBolo = Util.context.ItemBoloDoceBemCasadoSelecionado
+				.Include(i => i.ItemBoloDoceBemCasado)
+				.Include(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemBoloDoceBemCasado.Nome)
+				.OrderBy(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem);
+			IEnumerable<Model.ItemDecoracaoSelecionado> itensDecoracao = Util.context.ItemDecoracaoSelecionado
+				.Include(i => i.ItemDecoracao)
+				.Include(i => i.ItemDecoracao.TipoItemDecoracao)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemDecoracao.Nome)
+				.OrderBy(i => i.ItemDecoracao.TipoItemDecoracao.Ordem);
+			IEnumerable<Model.ItemDecoracaoCerimonialSelecionado> itensDecoracaoCerimonial = Util.context.ItemDecoracaoCerimonialSelecionado
+				.Include(i => i.ItemDecoracaoCerimonial)
+				.Include(i => i.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemDecoracaoCerimonial.Nome)
+				.OrderBy(i => i.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Ordem);
+			IEnumerable<Model.ItemFotoVideoSelecionado> itensFotoVideo = Util.context.ItemFotoVideoSelecionado
+				.Include(i => i.ItemFotoVideo)
+				.Include(i => i.ItemFotoVideo.TipoItemFotoVideo)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemFotoVideo.Nome)
+				.OrderBy(i => i.ItemFotoVideo.TipoItemFotoVideo.Ordem);
+			IEnumerable<Model.PratoSelecionado> itensGastronomia = Util.context.PratoSelecionado
+				.Include(i => i.Prato)
+				.Include(i => i.Prato.TipoPrato)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.Prato.Nome)
+				.OrderBy(i => i.Prato.TipoPrato.Ordem);
+			IEnumerable<Model.ItemMontagemSelecionado> itensMontagem = Util.context.ItemMontagemSelecionado
+				.Include(i => i.ItemMontagem)
+				.Include(i => i.ItemMontagem.TipoItemMontagem)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemMontagem.Nome)
+				.OrderBy(i => i.ItemMontagem.TipoItemMontagem.Ordem);
+			IEnumerable<Model.ItemOutrosItensSelecionado> itensOutrosItens = Util.context.ItemOutrosItensSelecionado
+				.Include(i => i.ItemOutrosItens)
+				.Include(i => i.ItemOutrosItens.TipoItemOutrosItens)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemOutrosItens.Nome)
+				.OrderBy(i => i.ItemOutrosItens.TipoItemOutrosItens.Ordem);
+			IEnumerable<Model.ItemSomIluminacaoSelecionado> itensSomIluminacao = Util.context.ItemSomIluminacaoSelecionado
+				.Include(i => i.ItemSomIluminacao)
+				.Include(i => i.ItemSomIluminacao.TipoItemSomIluminacao)
+				.Where(i => i.EventoId == id)
+				.OrderBy(i => i.ItemSomIluminacao.Nome)
+				.OrderBy(i => i.ItemSomIluminacao.TipoItemSomIluminacao.Ordem); 
+			Model.Evento evento = Util.context.Evento
+				.Include(e => e.Roteiro)
+				.Include(e => e.Cerimonial)
+				.Include(e => e.Local)
+				.Include(e => e.Produtora)
+				.Include(e => e.Cardapio)
+				.Include(e => e.TipoServico)
+				.FirstOrDefault(e => e.Id == id);
+			Dictionary<string, DTO.ItemEvento> itens = new Dictionary<string, DTO.ItemEvento>();
+			foreach(Model.ItemBebidaSelecionado item in itensBebida)
+			{
+
+			}
 		}
+			 
 	}
 }

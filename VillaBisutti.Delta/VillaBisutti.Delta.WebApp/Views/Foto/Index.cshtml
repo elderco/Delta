@@ -2,35 +2,14 @@
 @{
 	Layout = null;
 }
-@*@Html.Partial("../Foto/Create", new VillaBisutti.Delta.Core.Model.Foto(), new ViewDataDictionary { { "Qual", ViewBag.Qual }, { "Id", ViewBag.id } })*@
+<h5>Fotos:</h5>
 @Html.Partial("../Foto/Create", new VillaBisutti.Delta.Core.Model.Foto())
-<table class="table">
-	<tr>
-		<th>
-			@Html.DisplayNameFor(model => model.URL)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Legenda)
-		</th>
-		<th>
-			Opções
-		</th>
-		<th></th>
-	</tr>
-
-	@foreach (var item in Model)
-	{
-		<tr>
-			<td>
-				<img src="@Url.Content(Path.Combine("~/Content/Images/", item.URL))" />
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Legenda)
-			</td>
-			<td>
-				@Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Excluir" })
-			</td>
-		</tr>
-	}
-
-</table>
+@foreach (var item in Model)
+{
+	<div class="col-xs-6 col-md-4">
+		<a class="thumbnail PopUpActionLinks" href="@Url.Action("Delete", "Foto", new { id = item.Id })">
+			<img src="@Url.Content(Path.Combine("~/Content/Images/", item.URL))" alt="@(item.Legenda)" />
+			@Html.DisplayFor(modelItem => item.Legenda)
+		</a>
+	</div>
+}

@@ -29,7 +29,13 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.EventoId = eventoId;
 			ViewBag.Qual = qual;
-			return View(new data.Foto().GetQual(qual));
+			return View(new data.Foto().GetQual(qual, eventoId));
+		}
+
+		// GET: /Foto/Create
+		public ActionResult Layout(int eventoId, string qual = "EV")
+		{
+			return View(new data.Foto().GetQual(qual, eventoId).FirstOrDefault());
 		}
 
 		// GET: /Foto/Create
@@ -50,8 +56,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			{
 				string fileName = Util.GetName(URL.FileName);
 				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
-				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName };
-				new biz.Foto().SalvarFoto(foto, eventoId);
+				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName, EventoId = eventoId };
+				new data.Foto().Insert(foto);
 			}
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}

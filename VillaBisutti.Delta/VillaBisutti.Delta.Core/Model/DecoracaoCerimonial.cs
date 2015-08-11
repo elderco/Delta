@@ -29,7 +29,5 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Observacoes { get; set; }
 		[Display(Name = "Itens")]
 		public List<ItemDecoracaoCerimonialSelecionado> Itens { get; set; }
-		[Display(Name = "Fotos")]
-		public List<Foto> Fotos { get; set; }
 	}
 }

@@ -111,8 +111,6 @@ namespace VillaBisutti.Delta.Core.Model
 
 		#region [ Dados Complementares ]
 
-		[Display(Name = "Layout do salão")]
-		public Foto Layout { get; set; }
 		//Dados da cerimônia
 		[Display(Name = "Cerimônia")]
 		public LocalCerimonia LocalCerimonia { get; set; }

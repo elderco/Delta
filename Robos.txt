@@ -1,29 +1,24 @@
-Serviços terceiros (SVC3OS)						
+Serviços terceiros (SVC3OS) DESENV...
 	IntervaloServicosTerceiros
 
-Agenda Produção (AGPROD)						
-	IntervaloAgendaProducao
-	IgnoraFimDeSemana
-	IgnoraFeriado
-
-Boas Vindas e Manual de Eventos (BVMNEV)						
+Boas Vindas e Manual de Eventos (BVMNEV) OK
 	IntervaloBoasVindas
 	LayoutBoasVindas
 
-Agenda Semanal (AGSMNL)						
+Agenda Semanal (AGSMNL) OK
 	IntervaloAgendaSemanal
 	LayoutAgendaSemanal
 	TiposIncluir
 
-Produtos Contratados (PRDCTR)						
+Produtos Contratados (PRDCTR)
 	IntervaloProdutosContratados
 
-Prazo final OS (PRZOSF)						
+Prazo final OS (PRZOSF) OK
 	IntervaloPrazoFinalOS
 	Envios
 		MotivoEnvio
 		PeriodoEnvio
 	LayoutPrazoFinalOS
 
-OS Finalizada (OSFNLD)						
+OS Finalizada (OSFNLD) OK
 	IntervaloOSFinalizada

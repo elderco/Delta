@@ -15,7 +15,7 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				case "EV":	//Evento
 					Model.Evento evento = Util.context.Evento.Find(eventoId);
-					evento.Layout = foto;
+					//evento.Layout = foto;
 					Util.context.Foto.Add(foto);
 					break;
 				case "DR":	//Decoração da recepção
