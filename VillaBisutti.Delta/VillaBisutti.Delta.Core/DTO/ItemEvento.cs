@@ -97,6 +97,18 @@ namespace VillaBisutti.Delta.Core.DTO
 				&& a.Contratado == false)
 			.ToList();
 		}
+        public static List<Model.ItemDecoracaoSelecionado> GetItemDecorao()
+        {
+            return Util.context.ItemDecoracaoSelecionado
+                .Include(i => i.ItemDecoracao)
+                .Include(i => i.ItemDecoracao.TipoItemDecoracao)
+                .Include(i => i.Decoracao.Evento)
+            .Where(a => a.ContratacaoBisutti == true
+                && a.FornecimentoBisutti == false
+                && a.Definido == true
+                && a.Contratado == false)
+            .ToList();
+        }
 
 	}
 }

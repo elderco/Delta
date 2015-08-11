@@ -48,5 +48,13 @@ namespace VillaBisutti.Delta.Automation
             }
         }
 
+        public static string[] EmailResponsavelTerceiro
+        {
+            get
+            {
+                return new string[] {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com"};
+            }
+        }
+
 	}
 }
