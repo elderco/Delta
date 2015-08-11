@@ -13,25 +13,24 @@
 	<div class="form-inline">
 		@Html.ValidationSummary(true)
 		<div class="form-group">
-			<div class="input-group">
-				<input type="hidden" name="qual" value="@ViewBag.Qual" />
-				<input type="hidden" name="eventoId" value="@ViewBag.EventoId" />
-				<span class="hidden">
-					@Html.TextBoxFor(model => model.URL, new { @type = "file" })
-				</span>
-				<div class="input-group-addon">
-					<button id="FileSearch" type="button" class="btn btn-xs btn-default form-control">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
-				@Html.TextBoxFor(model => model.Legenda, new { @placeholder = "Legenda", @class = "form-control" })
-				<div class="input-group-addon">
-					<button type="submit" class="btn btn-xs btn-default form-control">
-						<i class="fa fa-cloud-upload"></i>
-					</button>
-
-				</div>
-			</div>
+            <div class="input-group">
+                <input type="hidden" name="qual" value="@ViewBag.Qual" />
+                <input type="hidden" name="eventoId" value="@ViewBag.EventoId" />
+                <span class="hidden">
+                    @Html.TextBoxFor(model => model.URL, new { @type = "file" })
+                </span>
+                <span class="input-group-btn">
+                    <button id="FileSearch" type="button" class="btn btn-xs btn-default col-xs-12 form-control">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                @Html.TextBoxFor(model => model.Legenda, new { @placeholder = "Legenda", @class = "form-control" })
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-xs btn-default form-control">
+                        <i class="fa fa-cloud-upload"></i>
+                    </button>
+                </span>
+            </div>
 		</div>
 	</div>
 }

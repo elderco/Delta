@@ -46,6 +46,10 @@ div.tooltip{min-width: 100px}
     .page-content{padding-top: 60px}
 }
 
+@media (min-width: 768px){
+    .form-inline .input-group .form-control,.form-inline .input-group .input-group-addon,.form-inline .input-group .input-group-btn{}
+}
+
 /* Modal */
 .modal-header{background: #11100C; color:#DBC6B1}
 .modal-body{overflow: auto}
