@@ -12,12 +12,22 @@ namespace VillaBisutti.Delta.WebApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-			routes.IgnoreRoute("{*browserlink}", new { browserlink = @".*__browserLink.*" });
+            routes.IgnoreRoute("{*browserlink}", new { browserlink = @".*__browserLink.*" });
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Usuario", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                "404-PageNotFound",
+                "{*url}",
+                new { controller = "Home", action = "PageNotFound" }
+            );
+            routes.MapRoute(
+                "500-InternalServerError",
+                "{*url}",
+                new { controller = "Home", action = "InternalServerError" }
             );
         }
     }

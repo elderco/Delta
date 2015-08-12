@@ -29,6 +29,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
             return View();
         }
+        public ActionResult PageNotFound()
+        {
+            return View();
+        }
+        public ActionResult InternalServerError()
+        {
+            return View();
+        }
 		public ActionResult MenuEventos()
 		{
 			//Buscar no Data.Localizacao todas as casas

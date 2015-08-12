@@ -228,6 +228,7 @@
     <Content Include="Content\bootstrap-glyphs.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilos.css" />
+    <Content Include="Content\images\500.jpg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\backgrounds\bg-villabisutti-01.jpg" />
     <Content Include="Content\images\backgrounds\bg-villabisutti-02.jpg" />
@@ -240,6 +241,7 @@
     <Content Include="Content\images\delta-logo.png" />
     <Content Include="Content\images\delta.png" />
     <Content Include="Content\images\logo-villa-bisutti-login.png" />
+    <Content Include="Content\images\searching.jpg" />
     <Content Include="Content\images\ui-bg_diagonals-medium_10_000000_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_0_ffffff_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -261,11 +263,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Padrao Emails\CabecalhoAgendaSemanal.txt" />
+    <Content Include="Padrao Emails\CabecalhoContratacaoTerceiro.txt" />
     <Content Include="Padrao Emails\EmailAcabouPrazo.txt" />
     <Content Include="Padrao Emails\EmailAgendaSemanal.txt" />
     <Content Include="Padrao Emails\EmailBoasVindas.txt" />
     <Content Include="Padrao Emails\EmailContratacaoServicoTerceiro.txt" />
     <Content Include="Padrao Emails\EmailOSPrazoFinal.txt" />
+    <Content Include="Padrao Emails\RodapeAgendaSemanal.txt" />
     <Content Include="Scripts\ace-elements.min.js" />
     <Content Include="Scripts\ace-extra.min.js" />
     <Content Include="Scripts\ace.min.js" />
@@ -619,6 +623,9 @@
     <Content Include="Views\ItemMontagemSelecionado\EditPost.cshtml" />
     <Content Include="Views\ItemOutrosItensSelecionado\EditPost.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\EditPost.cshtml" />
+    <Content Include="Views\Home\PageNotFound.cshtml" />
+    <Content Include="Views\Home\InternalServerError.cshtml" />
+    <Content Include="Views\Reuniao\Filtrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
