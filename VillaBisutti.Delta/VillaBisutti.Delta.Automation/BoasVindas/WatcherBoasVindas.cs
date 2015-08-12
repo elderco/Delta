@@ -68,7 +68,7 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
                 Email email = new Email();
                 email.Assunto = "Oi";
                 email.CorpoEmail = message;
-                email.Destinatario = new List<string>() { "talesdealmeida@gmail.com" };
+                email.Destinatario = new List<string> { "talesdealmeida@gmail.com" };
                 email.NomedoRemetente = "Seu macho";
 				email.SendMail();
 				evento.EmailBoasVindasEnviado = true;

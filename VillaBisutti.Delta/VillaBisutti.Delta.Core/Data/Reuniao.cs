@@ -46,5 +46,21 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(r => r.Usuario)
 				.Where(r => r.UsuarioId == usuarioId).ToList();
 		}
-	}
+
+        public List<Model.Reuniao> Filtrar(DateTime inicio, DateTime fim, bool? realizada)
+        {
+            IEnumerable <Model.Reuniao> reunioes = context.Reuniao
+                 .Include(a => a.Usuario)
+                 .Include(a => a.Evento)
+                 .Include(a => a.TipoReuniao)
+                 .Include(a => a.Evento.Local)
+                 .Where(x =>
+                     x.Data.CompareTo(inicio) >= 0
+                     && x.Data.CompareTo(fim) <= 0
+                     && (x.Executada == realizada.Value || !realizada.HasValue)
+                     //&& (x.TipoReuniao == tipoReuniao.Value || !tipoReuniao.HasValue)
+                     ).Take(200);
+            return reunioes.ToList();
+        }
+    }
 }

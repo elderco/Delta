@@ -74,6 +74,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.Reuniao().Delete(id);
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
+
+        public ActionResult Filtrar(DateTime? inicio = null, DateTime? termino = null, 
+            bool? realizada = null)
+        {
+            ViewBag.TipoReuniao = new SelectList(new data.TipoReuniao().GetCollection(0), "Id", "Nome");
+            return View(new data.Reuniao().Filtrar(inicio.HasValue ? inicio.Value : DateTime.MinValue, termino.HasValue ? termino.Value : DateTime.MaxValue, realizada));
+        }
+
 		public ActionResult Copy(int id)
 		{
 			new biz.Reuniao().CopiarReunioesPadrao(id);

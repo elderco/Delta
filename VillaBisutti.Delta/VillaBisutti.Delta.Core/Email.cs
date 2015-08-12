@@ -42,7 +42,7 @@ namespace VillaBisutti.Delta.Core
             get;
             set;
         }
-        public List<String> CCO
+        public List<string> CCO
         {
             get;
             set;
@@ -101,7 +101,7 @@ namespace VillaBisutti.Delta.Core
                             message.Attachments.Add(item);
                         }
                     }
-                    if (Destinatario != null && Destinatario.Count > 0)
+                    if (Destinatario != null)
                     {
                         foreach (string item in Destinatario)
                         {
@@ -109,7 +109,7 @@ namespace VillaBisutti.Delta.Core
                             message.To.Add(item);
                         }
                     }
-                    if (CCO != null && CCO.Count > 0)
+                    if (CCO != null)
                     {
                         foreach (string item in CCO)
                         {
