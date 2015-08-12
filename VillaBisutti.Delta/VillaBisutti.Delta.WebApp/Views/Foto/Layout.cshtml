@@ -4,14 +4,14 @@
 }
 @if (Model == null)
 {
+	@Html.Partial("../Foto/Create")
+}
+else
+{
 	<div class="col-xs-12">
 		<a class="thumbnail PopUpActionLinks" href="@Url.Action("Delete", "Foto", new { id = Model.Id })">
 			<img src="@Url.Content(Path.Combine("~/Content/Images/", Model.URL))" alt="@(Model.Legenda)" />
 			@Html.DisplayFor(model => model.Legenda)
 		</a>
 	</div>
-}
-else
-{
-	@Html.Action("Create", "Foto", new { eventoId = @ViewBag.EventoId, qual = "EV" })
 }

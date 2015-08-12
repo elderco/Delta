@@ -8,36 +8,18 @@ using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation
 {
-    public class Watcher
+    public abstract class Watcher
     {
-        private Timer timerExecution { get; set; }
-        private DateTime date { get; set; }
-        private long time { get; set; }
-
-        public Watcher()
+		public Timer TimerExecution { get; set; }
+		public DateTime Date { get; set; }
+		public long Time { get; set; }
+		public bool IsSetToRun { get; set; }
+        public void Set(long time, DateTime date)
         {
-            //Define o tempo de execução cadastrado no (banco ou xml)
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution = new Timer(new TimerCallback(Run), null, time, time);
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(date);
+            TimerExecution = new Timer(new TimerCallback(Run), null, time, time);
         }
-        /// <summary>
-        /// Começa a execução do Robô
-        /// </summary>
-        /// <param name="state"></param>
-        private void Run(object state)
-        {
-            //O serviço nunca para de executar
-            //timerExecution.Change(Timeout.Infinite, Timeout.Infinite);
-
-            ////TODO: inicio da lógica da execuçao dos Robôs
-            //WatcherContrataca
-            ////Terminou de rodar, prepara a próxima execução
-            //ExtensionMethods.ModifyDate();
-            //date = ExtensionMethods.GetDateXML();
-            //time = ExtensionMethods.ReturnTimeToRun(date);
-            //timerExecution.Change(time, time);
-
-        }
+        public abstract void Run(object state);
     }
 }

@@ -221,7 +221,10 @@
 		</div>
 	</div>
 }
-
 @section Scripts {
 	@Scripts.Render("~/bundles/jqueryval")
 }
+<div class="alert alert-info">
+	<strong>Layout do salão</strong>
+@Html.Action("Layout", "Foto", new { eventoId = Model.Id, qual = "EV" })
+</div>
