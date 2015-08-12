@@ -240,6 +240,7 @@
     <Content Include="Content\images\delta-logo.png" />
     <Content Include="Content\images\delta.png" />
     <Content Include="Content\images\logo-villa-bisutti-login.png" />
+    <Content Include="Content\images\searching.jpg" />
     <Content Include="Content\images\ui-bg_diagonals-medium_10_000000_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_0_ffffff_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -612,6 +613,8 @@
     <Content Include="Views\Reuniao\Create.cshtml" />
     <Content Include="Views\Evento\Filtrar.cshtml" />
     <Content Include="Views\Foto\Layout.cshtml" />
+    <Content Include="Views\Home\PageNotFound.cshtml" />
+    <Content Include="Views\Home\InternalServerError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
