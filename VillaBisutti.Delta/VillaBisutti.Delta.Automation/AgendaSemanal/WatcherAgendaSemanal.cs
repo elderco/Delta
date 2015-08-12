@@ -10,35 +10,22 @@ using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation.AgendaSemanal
 {
-	public class WatcherAgendaSemanal
+	public class WatcherAgendaSemanal : Watcher
 	{
 		private const string EmailAgendaSemana = "EmailAgendaSemanal.txt";
         private const string CabecalhoAgendasemanal = "CabecalhoAgendaSemanal.txt";
 		private const string RodapeAgendasemanal = "RodapeAgendaSemanal.txt";
-
-        private Timer timerExecution { get; set; }
-        private DateTime date { get; set; }
-        private long time { get; set; }
-
-        public WatcherAgendaSemanal()
-        {
-            //Define o tempo de execução cadastrado no (xml)
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution = new Timer(new TimerCallback(Run), null, time, time);
-        }
-      
-        private void Run(object state)
+		public override void Run(object state)
         {
             //O serviço nunca para de executar
-            timerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
 
             EmailAgendaSemanal();
             //Terminou de rodar, prepara a próxima execução
             ExtensionMethods.ModifyDate();
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution.Change(time, time);
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(Date);
+            TimerExecution.Change(Time, Time);
 
         }
         

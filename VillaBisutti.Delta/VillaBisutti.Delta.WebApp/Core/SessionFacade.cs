@@ -30,6 +30,8 @@ namespace VillaBisutti.Delta
 		}
 		private static void RenovaCredencialUsuario()
 		{
+			if (HttpContext.Current.Request.Cookies["UsuarioLogado"] == null)
+				HttpContext.Current.Response.Redirect("~/Usuario/Login/");
 			UsuarioLogado = new Core.Data.Usuario().EntireUser(int.Parse(HttpContext.Current.Request.Cookies["UsuarioLogado"].Value));
 		}
 		internal static void LogoutUsuario()

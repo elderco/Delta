@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace VillaBisutti.Delta.Automation
 {
 	public static class Program
 	{
-		public static void IniciarBoasVindas()
+		public static Dictionary<Thread, Status> Services { get; set; }
+		public static void StartServicesRunner()
 		{
-            VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro wst = new ContratacaoServicoTerceiro.WacherContratacaoServicoTerceiro();
-            wst.EmailContratacaoServicoTerceiro();
+			//Registrar todos os watchers
 		}
 		/// <summary>
 		/// The main entry point for the application.

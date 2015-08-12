@@ -35,6 +35,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Foto/Create
 		public ActionResult Layout(int eventoId, string qual = "EV")
 		{
+			ViewBag.EventoId = eventoId;
+			ViewBag.Qual = qual;
 			return View(new data.Foto().GetQual(qual, eventoId).FirstOrDefault());
 		}
 

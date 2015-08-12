@@ -616,6 +616,13 @@
     <Content Include="Views\Reuniao\Create.cshtml" />
     <Content Include="Views\Evento\Filtrar.cshtml" />
     <Content Include="Views\Foto\Layout.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemFotoVideoSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\EditPost.cshtml" />
+    <Content Include="Views\ItemSomIluminacaoSelecionado\EditPost.cshtml" />
     <Content Include="Views\Home\PageNotFound.cshtml" />
     <Content Include="Views\Home\InternalServerError.cshtml" />
     <Content Include="Views\Reuniao\Filtrar.cshtml" />
