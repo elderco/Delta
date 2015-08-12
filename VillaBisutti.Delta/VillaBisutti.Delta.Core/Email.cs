@@ -88,7 +88,7 @@ namespace VillaBisutti.Delta.Core
             {
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("taleskiske@hotmail.com","santos1989");
+                client.Credentials = new System.Net.NetworkCredential("","");
                 client.Host = "smtp.live.com";
                 client.Port = 587;
 
