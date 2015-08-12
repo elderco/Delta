@@ -10,6 +10,10 @@ namespace VillaBisutti.Delta.Core
 {
     public class Email
     {
+		public Email()
+		{
+			IsMailHTML = false;
+		}
 		//TODO: alterar isso para pegar via JSon. Não será mais no Webconfig pq é uma puta de uma cagada
         public String Assunto
         {
@@ -28,7 +32,11 @@ namespace VillaBisutti.Delta.Core
                 return Util.Get<string>("Remetente");
             }
         }
-
+		public bool IsMailHTML
+		{
+			get;
+			set;
+		}
         public List<String> Destinatario
         {
             get;
@@ -80,7 +88,7 @@ namespace VillaBisutti.Delta.Core
             {
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("","");
+                client.Credentials = new System.Net.NetworkCredential("taleskiske@hotmail.com","santos1989");
                 client.Host = "smtp.live.com";
                 client.Port = 587;
 
@@ -108,8 +116,8 @@ namespace VillaBisutti.Delta.Core
                             MailAddress bcc = new MailAddress(item, String.IsNullOrEmpty(NomedoRemetente) ? null : NomedoRemetente);
                             message.Bcc.Add(bcc);
                         }
-                        //message.IsBodyHtml = true;
                     }
+					message.IsBodyHtml = IsMailHTML;
                     message.Body = CorpoEmail;
                     message.From = new MailAddress("talesdealmeida@gmail.com", NomedoRemetente, Encoding.UTF8);
                     message.Subject = Assunto;

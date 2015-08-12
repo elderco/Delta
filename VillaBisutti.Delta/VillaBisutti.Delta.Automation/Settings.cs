@@ -56,5 +56,13 @@ namespace VillaBisutti.Delta.Automation
             }
         }
 
+		public static string  NomeResponsavel 
+		{
+			get
+			{
+				return "Biazinha Lindinha";
+			}
+		}
+
 	}
 }
