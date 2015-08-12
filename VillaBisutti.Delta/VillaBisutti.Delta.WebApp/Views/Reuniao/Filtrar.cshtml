@@ -2,14 +2,7 @@
 @{
     Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
 }
-@if (ViewBag.IsBlocked == "TRUE")
-{
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            LockPage();
-        });
-    </script>
-}
+
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
         $("#FiltroReuniao input, #FiltroReuniao select").change(function () {
@@ -41,12 +34,12 @@
                     </div>
                     <div class="row">
                         <label for="produtorId" class="control-label col-md-2">Tipo de Reunião</label>
-                        @Html.DropDownList("tipoReuniao", (SelectList)ViewBag.TipoReuniao, "Selecione", new { @class = "col-md-2" })
+                        @Html.DropDownList("tipoReuniaoId", (SelectList)ViewBag.TipoReuniao, "Selecione", new { @class = "col-md-2" })
                     </div>
                     <div class="row">
                         <div class="col-md-2">&nbsp;</div>
                         <label for="realizada" class="control-label">realizada</label>
-                        <input type="checkbox" name="realizada" id="realizada" value="True" class="col-md-2" @(Request.QueryString["realizada"] != null ? " checked=\"checked\"" : "") />
+                        <input type="checkbox" disabled="disabled" name="realizada" id="realizada" value="True" class="col-md-2" @(Request.QueryString["realizada"] != null ? " checked=\"checked\"" : "") />
                     </div>
                 </form>
             </div>
@@ -112,7 +105,7 @@
                                     @item.Data.ToString("ddd, dd / MM / yyyy")
                                 </td>
                                 <td>
-                                    @item.HorarioReuniao.ToString()
+                                    @item.Horario.ToString()
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Definida)

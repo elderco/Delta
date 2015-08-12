@@ -47,7 +47,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Where(r => r.UsuarioId == usuarioId).ToList();
 		}
 
-        public List<Model.Reuniao> Filtrar(DateTime inicio, DateTime fim, bool? realizada)
+        public List<Model.Reuniao> Filtrar(DateTime inicio, DateTime fim, bool? realizada, int? tipoReuniaoId)
         {
             IEnumerable <Model.Reuniao> reunioes = context.Reuniao
                  .Include(a => a.Usuario)
@@ -58,7 +58,7 @@ namespace VillaBisutti.Delta.Core.Data
                      x.Data.CompareTo(inicio) >= 0
                      && x.Data.CompareTo(fim) <= 0
                      && (x.Executada == realizada.Value || !realizada.HasValue)
-                     //&& (x.TipoReuniao == tipoReuniao.Value || !tipoReuniao.HasValue)
+					 && (x.TipoReuniaoId == tipoReuniaoId.Value || !tipoReuniaoId.HasValue)
                      ).Take(200);
             return reunioes.ToList();
         }
