@@ -617,6 +617,7 @@
     <Content Include="Views\Foto\Layout.cshtml" />
     <Content Include="Views\Home\PageNotFound.cshtml" />
     <Content Include="Views\Home\InternalServerError.cshtml" />
+    <Content Include="Views\Reuniao\Filtrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
