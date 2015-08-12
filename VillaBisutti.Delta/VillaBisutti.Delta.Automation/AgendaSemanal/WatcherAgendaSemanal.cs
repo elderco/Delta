@@ -14,6 +14,8 @@ namespace VillaBisutti.Delta.Automation.AgendaSemanal
 	{
 		private const string EmailAgendaSemana = "EmailAgendaSemanal.txt";
         private const string CabecalhoAgendasemanal = "CabecalhoAgendaSemanal.txt";
+		private const string RodapeAgendasemanal = "RodapeAgendaSemanal.txt";
+
         private Timer timerExecution { get; set; }
         private DateTime date { get; set; }
         private long time { get; set; }
@@ -48,10 +50,8 @@ namespace VillaBisutti.Delta.Automation.AgendaSemanal
 
 			string message = Util.ReadFileEmail(EmailAgendaSemana);
             string mensagemInteira = Util.ReadFileEmail(CabecalhoAgendasemanal);
-            string rodape = @"*PARA VISITAR A CASA QUATÁ A ENTRADA É FEITA PELA CASA DO ATOR.
-Lembrando que o melhor horário para visitação é sempre uma hora antes do descrito acima, ok?
-Pois neste horário ainda não temos convidados e a casa já estará montada para o início e abertura da festa!
-Um super beijo!";
+			string rodape = Util.ReadFileEmail(RodapeAgendasemanal);
+
             StringBuilder builder = new StringBuilder();
 			List<model.Evento> proximosEventos = Util.context.Evento.Include(l => l.Local).Include(d => d.Decoracao).Where(e => DbFunctions.TruncateTime(e.Data) >= de && DbFunctions.TruncateTime(e.Data) <= ate).ToList();
             List<string> enviarEmails = Util.context.Evento.Where(e => DbFunctions.TruncateTime(e.Data) > diasAposEventoEnvioEmail).Select(a => a.EmailContato).Distinct().ToList();
@@ -63,7 +63,7 @@ Um super beijo!";
                     .Replace("{LOCAL}", proximoeEvento.Local.NomeCasa)
                     .Replace("{TIPOEVENTO}", proximoeEvento.TipoEvento.ToString())
                     .Replace("{COR}", proximoeEvento.Decoracao.CoresCerimonia.ToString())
-                    .Replace("{HORA}", proximoeEvento.HorarioInicio.ToString()));  
+					.Replace("{HORA}", proximoeEvento.Inicio.ToString()));  
             }
             
             message = builder.ToString();

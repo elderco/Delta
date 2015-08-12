@@ -263,11 +263,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Padrao Emails\CabecalhoAgendaSemanal.txt" />
+    <Content Include="Padrao Emails\CabecalhoContratacaoTerceiro.txt" />
     <Content Include="Padrao Emails\EmailAcabouPrazo.txt" />
     <Content Include="Padrao Emails\EmailAgendaSemanal.txt" />
     <Content Include="Padrao Emails\EmailBoasVindas.txt" />
     <Content Include="Padrao Emails\EmailContratacaoServicoTerceiro.txt" />
     <Content Include="Padrao Emails\EmailOSPrazoFinal.txt" />
+    <Content Include="Padrao Emails\RodapeAgendaSemanal.txt" />
     <Content Include="Scripts\ace-elements.min.js" />
     <Content Include="Scripts\ace-extra.min.js" />
     <Content Include="Scripts\ace.min.js" />
@@ -616,6 +618,7 @@
     <Content Include="Views\Foto\Layout.cshtml" />
     <Content Include="Views\Home\PageNotFound.cshtml" />
     <Content Include="Views\Home\InternalServerError.cshtml" />
+    <Content Include="Views\Reuniao\Filtrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

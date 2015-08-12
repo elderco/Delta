@@ -1,0 +1,49 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Reuniao>
+
+@{
+	Layout = "~/Views/Shared/_ConfiguracoesLayout.cshtml";
+}
+@if (ViewBag.IsBlocked == "TRUE")
+{
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			LockPage();
+		});
+	</script>
+}
+<div class="col-xl-12 widget-container-col row">
+	<div class="widget-box">
+		<div class="widget-header widget-header-flat">
+			<h4 class="widget-title lighter">
+				<i class="fa fa-filter green"></i>
+				Filtros
+			</h4>
+			<div class="widget-toolbar">
+				<a href="#" data-toggle="collapse" data-target="#Filtro">
+					<i class="fa fa-chevron-up" onclick="$(this).toggleClass('fa-chevron-up fa-chevron-down')"></i>
+				</a>
+			</div>
+		</div>
+		<div class="widget-body" id="Filtro">
+			<div class="widget-main padding-8">
+				<form id="FiltroEventos" class="form-horizontal">
+					<div class="row">
+						<label for="inicio" class="control-label col-md-2"> Data inicial </label>
+						<input type="date" name="inicio" id="inicio" value="@((Request.QueryString["inicio"] != null ? DateTime.Parse(Request.QueryString["inicio"]) : DateTime.Now).ToString("yyyy-MM-dd"))" class="col-md-2" />
+						<label for="termino" class="control-label col-md-2"> Data final </label>
+						<input type="date" name="termino" id="termino" value="@((Request.QueryString["termino"] != null ? DateTime.Parse(Request.QueryString["termino"]) : DateTime.Now.AddDays(7)).ToString("yyyy-MM-dd"))" class="col-md-2" />
+					</div>
+					<div class="row">
+						<label for="produtorId" class="control-label col-md-2">Produção</label>
+						@Html.DropDownList("produtorId", (SelectList)ViewBag.ProdutorId, "Selecione", new { @class = "col-md-2" })
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<label for="possuiAssessoria" class="control-label col-md-2">Possui assessoria</label>
+						<input type="checkbox" name="realizada" id="realizada" value="True" class="col-md-2" @(Request.QueryString["realizada"] != null ? " checked=\"checked\"" : "") />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
