@@ -31,10 +31,13 @@
                         <input type="date" name="inicio" id="inicio" value="@((Request.QueryString["inicio"] != null ? DateTime.Parse(Request.QueryString["inicio"]) : DateTime.Now).ToString("yyyy-MM-dd"))" class="col-md-2" />
                         <label for="termino" class="control-label col-md-2"> Data final </label>
                         <input type="date" name="termino" id="termino" value="@((Request.QueryString["termino"] != null ? DateTime.Parse(Request.QueryString["termino"]) : DateTime.Now.AddDays(7)).ToString("yyyy-MM-dd"))" class="col-md-2" />
+						
                     </div>
                     <div class="row">
                         <label for="produtorId" class="control-label col-md-2">Tipo de Reunião</label>
                         @Html.DropDownList("tipoReuniaoId", (SelectList)ViewBag.TipoReuniao, "Selecione", new { @class = "col-md-2" })
+						<label for="termino" class="control-label col-md-2"> Filtro </label>
+						<input type="text" id="filtro" value="@Request.QueryString["filtro"]" />
                     </div>
                     <div class="row">
                         <div class="col-md-2">&nbsp;</div>
