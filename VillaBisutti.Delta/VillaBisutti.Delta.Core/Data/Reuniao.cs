@@ -65,7 +65,7 @@ namespace VillaBisutti.Delta.Core.Data
 						|| x.Evento.EmailContato.IndexOf(filtro.ToLower()) >= 0
 						|| x.Evento.TelefoneContato.IndexOf(filtro.ToLower()) >= 0
 						|| x.Evento.Local.NomeCasa.IndexOf(filtro.ToLower()) >= 0
-						|| String.IsNullOrEmpty(filtro)
+						|| string.IsNullOrEmpty(filtro)
 					 )
 					 ).Take(200);
             return reunioes.ToList();

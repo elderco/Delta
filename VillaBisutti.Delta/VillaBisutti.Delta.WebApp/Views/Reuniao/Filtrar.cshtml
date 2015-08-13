@@ -37,7 +37,7 @@
                         <label for="produtorId" class="control-label col-md-2">Tipo de Reunião</label>
                         @Html.DropDownList("tipoReuniaoId", (SelectList)ViewBag.TipoReuniao, "Selecione", new { @class = "col-md-2" })
 						<label for="termino" class="control-label col-md-2"> Filtro </label>
-						<input type="text" id="filtro" value="@Request.QueryString["filtro"]" />
+						<input type="text" name="filtro" value="@Request.QueryString["filtro"]" />
                     </div>
                     <div class="row">
                         <div class="col-md-2">&nbsp;</div>
@@ -102,7 +102,11 @@
                                     @item.TipoReuniao.Nome
                                 </td>
                                 <td>
-                                    @item.Usuario.Nome
+									@if (@item.Usuario != null)
+									{
+										@item.Usuario.Nome
+									}
+                                    
                                 </td>
                                 <td>
                                     @item.Data.ToString("ddd, dd / MM / yyyy")
