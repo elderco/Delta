@@ -28,8 +28,9 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 			List<model.ItemSomIluminacaoSelecionado> itemSomIluminacao = ItemEvento.GetItemSomIluminacao();
             List<model.ItemDecoracaoSelecionado> itemDecoracao = ItemEvento.GetItemDecorao();
             List<model.ItemOutrosItensSelecionado> itemOutrosItens = ItemEvento.GetItemOutrosItens();
-
 			int currentId = 0;
+
+            #region Decoracao
             foreach (model.ItemDecoracaoCerimonialSelecionado item in itemDecoracaoCerimonial)
             {
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonialId != currentId)
@@ -45,8 +46,16 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					.Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
 			currentId = 0;
+            #endregion
+            
+            #region Montagem
             foreach (model.ItemMontagemSelecionado item in itemMontagem)
             {
+                if (item.ItemMontagem.TipoItemMontagemId != currentId)
+                {
+                    currentId = item.ItemMontagem.TipoItemMontagemId;
+                    builder.AppendLine(item.ItemMontagem.TipoItemMontagem.Nome + ":");
+                }
 				builder.AppendLine(message
                 .Replace("{TIPOEVENTO}", item.Montagem.Evento.TipoEvento.ToString())
 					.Replace("{DIA}", item.Montagem.Evento.Data.ToString("dd/MM"))
@@ -55,8 +64,17 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					.Replace("{ITEMNOME}", item.ItemMontagem.Nome)
 					.Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
+            currentId = 0;
+            #endregion
+
+            #region Bebida
             foreach (model.ItemBebidaSelecionado item in itemBebida)
             {
+                if (item.ItemBebida.TipoItemBebidaId!= currentId)
+                {
+                    currentId = item.ItemBebida.TipoItemBebidaId;
+                    builder.AppendLine(item.ItemBebida.TipoItemBebida.Nome + ":");
+                }
 				builder.AppendLine(message
 				 .Replace("{TIPOEVENTO}", item.Bebida.Evento.TipoEvento.ToString())
 					 .Replace("{DIA}", item.Bebida.Evento.Data.ToString("dd/MM"))
@@ -65,6 +83,10 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMNOME}", item.ItemBebida.Nome)
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
+            currentId = 0;
+            #endregion
+
+            #region Bolo/Doce/Bem Casado
             foreach (model.ItemBoloDoceBemCasadoSelecionado item in itemBoloDoceBemCasado)
             {
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentId)
@@ -81,9 +103,16 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
 			currentId = 0;
+            #endregion
 
+            #region Foto Video
             foreach (model.ItemFotoVideoSelecionado item in itemFotoVideo)
             {
+                if (item.ItemFotoVideo.TipoItemFotoVideoId != currentId)
+                {
+                    currentId = item.ItemFotoVideo.TipoItemFotoVideoId;
+                    builder.AppendLine(item.ItemFotoVideo.TipoItemFotoVideo.Nome + ":");
+                }
 				builder.AppendLine(message
 				 .Replace("{TIPOEVENTO}", item.FotoVideo.Evento.TipoEvento.ToString())
 					 .Replace("{DIA}", item.FotoVideo.Evento.Data.ToString("dd/MM"))
@@ -92,8 +121,17 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMNOME}", item.ItemFotoVideo.Nome)
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
+            currentId = 0;
+            #endregion
+
+            #region Som Iluminação
             foreach (model.ItemSomIluminacaoSelecionado item in itemSomIluminacao)
             {
+                if (item.ItemSomIluminacao.TipoItemSomIluminacaoId != currentId)
+                {
+                    currentId = item.ItemSomIluminacao.TipoItemSomIluminacaoId;
+                    builder.AppendLine(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome + ":");
+                }
 				builder.AppendLine(message
 				 .Replace("{TIPOEVENTO}", item.SomIluminacao.Evento.TipoEvento.ToString())
 					 .Replace("{DIA}", item.SomIluminacao.Evento.Data.ToString("dd/MM"))
@@ -102,8 +140,17 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMNOME}", item.ItemSomIluminacao.Nome)
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
+            currentId = 0;
+            #endregion
+
+            #region Decoração
             foreach (model.ItemDecoracaoSelecionado item in itemDecoracao)
             {
+                if (item.ItemDecoracao.TipoItemDecoracaoId != currentId)
+                {
+                    currentId = item.ItemDecoracao.TipoItemDecoracaoId;
+                    builder.AppendLine(item.ItemDecoracao.TipoItemDecoracao.Nome + ":");
+                }
 				builder.AppendLine(message
 				 .Replace("{TIPOEVENTO}", item.Decoracao.Evento.TipoEvento.ToString())
 					 .Replace("{DIA}", item.Decoracao.Evento.Data.ToString("dd/MM"))
@@ -112,8 +159,17 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMNOME}", item.ItemDecoracao.Nome)
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
+            currentId = 0;
+            #endregion
+
+            #region Outros Itens
             foreach (model.ItemOutrosItensSelecionado item in itemOutrosItens)
             {
+                if (item.ItemOutrosItens.TipoItemOutrosItensId != currentId)
+                {
+                    currentId = item.ItemOutrosItens.TipoItemOutrosItensId;
+                    builder.AppendLine(item.ItemOutrosItens.TipoItemOutrosItens.Nome + ":");
+                }
 				builder.AppendLine(message
 				 .Replace("{TIPOEVENTO}", item.OutrosItens.Evento.TipoEvento.ToString())
 					 .Replace("{DIA}", item.OutrosItens.Evento.Data.ToString("dd/MM"))
@@ -122,11 +178,14 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 					 .Replace("{ITEMNOME}", item.ItemOutrosItens.Nome)
 					 .Replace("{ITEMSELECIONADOQTDE}", item.Quantidade.ToString()));
             }
-			message = builder.ToString();
+            currentId = 0;
+            #endregion
+
+            message = builder.ToString();
 			string mensagemInteira = cabecalho.Replace("{RESPONSAVELBISUTTI}", Settings.NomeResponsavel) + message;
 			Core.Email mail = new Core.Email()
 			{
-				CCO = new List<string> {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com" },
+				CCO = Settings.EmailResponsavelTerceiro,
 				Assunto = "F0DA-SE TO MANDANDO UM MONTE DE EMAIL MESMO",
 				CorpoEmail = mensagemInteira,
 				NomedoRemetente = "Villa Biscate"

@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Automation
 {
 	public static class Settings
 	{
+        //TODO: mudar para JSON
 		public static int[] QuantidadesDiasAntesEvento 
 		{ 
 			get
@@ -17,6 +18,7 @@ namespace VillaBisutti.Delta.Automation
 				return new int[] {17, 20, 30};
 			}
 		}
+        //TODO: mudar para JSON
 		public static int AcabouPrazoEvento
 		{
 			get
@@ -24,7 +26,7 @@ namespace VillaBisutti.Delta.Automation
 				return 47;
 			}
 		}
-
+        //TODO: mudar para JSON
 		public static int EventosProximosDias
 		{
 			get
@@ -32,6 +34,7 @@ namespace VillaBisutti.Delta.Automation
 				return 15;
 			}
 		}
+        //TODO: mudar para JSON
 		public static int EnviarEmailAposXDiasEvento 
 		{
 			get
@@ -39,23 +42,19 @@ namespace VillaBisutti.Delta.Automation
 				return 5;
 			}
 		}
+        
+    
         //TODO: mudar para JSON
-        public static String LoadTemplate 
+        //Email para envio do robo Contratação Serviço Terceiro
+        public static List<String> EmailResponsavelTerceiro
         {
             get
             {
-                return ConfigurationManager.AppSettings["TimeToRun"].ToString();
+                return new List<string> {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com"};
             }
         }
-
-        public static string[] EmailResponsavelTerceiro
-        {
-            get
-            {
-                return new string[] {"talesdealmeida@gmail.com", "rafael.ravena@gmail.com"};
-            }
-        }
-
+        //TODO: mudar para JSON
+        //Nome da pessoa responsavel do robo Contratação Serviço Terceiro
 		public static string  NomeResponsavel 
 		{
 			get
@@ -64,5 +63,12 @@ namespace VillaBisutti.Delta.Automation
 			}
 		}
 
+        public static String LoadTemplate
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["TimeToRun"].ToString();
+            }
+        }
 	}
 }

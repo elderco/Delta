@@ -30,7 +30,7 @@ namespace VillaBisutti.Delta.Automation.PrazoFinal
 					Email email = new Email();
 					email.Assunto = "Oi";
 					email.CorpoEmail = message;
-					email.Destinatario = new List<string>() { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulofrizzo01@gmail.com", "leal_554@msn.com" };
+					email.Destinatario = new List<String> { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulofrizzo01@gmail.com", "leal_554@msn.com" };
 					email.NomedoRemetente = "Seu macho";
 					email.SendMail();
 				}
@@ -39,7 +39,7 @@ namespace VillaBisutti.Delta.Automation.PrazoFinal
 					Email email = new Email();
 					email.Assunto = "Oi";
 					email.CorpoEmail = messageAcabouPrazo;
-					email.Destinatario = new List<string>() { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulofrizzo01@gmail.com", "leal_554@msn.com" };
+					email.Destinatario = new List<String> { "talesdealmeida@gmail.com", "rafael.ravena@gmail.com", "paulofrizzo01@gmail.com", "leal_554@msn.com" };
 					email.NomedoRemetente = "Seu macho";
 					email.SendMail();
 				}
