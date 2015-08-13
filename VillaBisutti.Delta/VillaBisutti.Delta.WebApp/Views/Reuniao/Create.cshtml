@@ -7,11 +7,12 @@
 		CreateHorarioEditor("HorarioReuniao");
 	});
 </script>
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Reuniao")) 
 {
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
+		<input type="hidden" name="EventoId" value="@ViewBag.Id" />
         <div class="form-group">
             @Html.LabelFor(model => model.TipoReuniaoId, "TipoReuniaoId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">

@@ -37,7 +37,9 @@
 						<label for="inicio" class="control-label col-md-2"> Data inicial </label>
 						<input type="date" name="inicio" id="inicio" value="@((Request.QueryString["inicio"] != null ? DateTime.Parse(Request.QueryString["inicio"]) : DateTime.Now).ToString("yyyy-MM-dd"))" class="col-md-2" />
 						<label for="termino" class="control-label col-md-2"> Data final </label>
-						<input type="date" name="termino" id="termino" value="@((Request.QueryString["termino"] != null ? DateTime.Parse(Request.QueryString["termino"]) : DateTime.Now.AddDays(7)).ToString("yyyy-MM-dd"))" class="col-md-2" />
+						<input type="date" name="termino" id="termino" value="@((Request.QueryString["termino"] != null ? DateTime.Parse(Request.QueryString["termino"]) : DateTime.Now.AddMonths(7)).ToString("yyyy-MM-dd"))" class="col-md-2" />
+						<label for="termino" class="control-label col-md-2" title="Procure pelo nome do responsável, cpf do responsável, email, nome do(s) homenageado(s), telefone de contato"> Filtro </label>
+						<input type="text" name="filtro" value="@Request.QueryString["filtro"]" />
 					</div>
 					<div class="row">
 						<label for="localId" class="control-label col-md-2">Casa</label>
