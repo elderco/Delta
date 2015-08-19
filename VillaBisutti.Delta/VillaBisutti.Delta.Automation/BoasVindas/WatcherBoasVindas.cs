@@ -11,37 +11,23 @@ using VillaBisutti.Delta.Core;
 
 namespace VillaBisutti.Delta.Automation.BoasVindas
 {
-	public class WatcherBoasVindas
+	public class WatcherBoasVindas : Watcher
 	{
-		private Timer timerExecution { get; set; }
-        private DateTime date { get; set; }
-        private long time { get; set; }
 		private const String EmailBoasVindasFileName = "EmailBoasVindas.txt";
-
-		public WatcherBoasVindas()
-        {
-            //Define o tempo de execução cadastrado no (banco ou xml)
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution = new Timer(new TimerCallback(Run), null, time, time);
-        }
         /// <summary>
         /// Começa a execução do Robô
         /// </summary>
         /// <param name="state"></param>
-        private void Run(object state)
+        public override void Run(object state)
         {
             //O serviço nunca para de executar
-            timerExecution.Change(Timeout.Infinite, Timeout.Infinite);
-
-			EmailBoasVindas();
-
+            TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            EmailBoasVindas();
             //Terminou de rodar, prepara a próxima execução
             ExtensionMethods.ModifyDate();
-            date = ExtensionMethods.GetDateXML();
-            time = ExtensionMethods.ReturnTimeToRun(date);
-            timerExecution.Change(time, time);
-
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(Date);
+            TimerExecution.Change(Time, Time);
         }
 
 		public void EmailBoasVindas()

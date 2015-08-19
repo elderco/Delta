@@ -7,13 +7,26 @@ using System.Data.Entity;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
 using VillaBisutti.Delta.Core.Business;
+using System.Threading;
+using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
 {
-    public class WacherContratacaoServicoTerceiro
+    public class WacherContratacaoServicoTerceiro : Watcher
     {
         private const string EmailContratacaoTerceiro = "EmailContratacaoServicoTerceiro.txt";
 		private const string CabecalhoContratacaoTerceiro = "CabecalhoContratacaoTerceiro.txt";
+        public override void Run(object state)
+        {
+            TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            EmailContratacaoServicoTerceiro();
+            //Terminou de rodar, prepara a próxima execução
+            ExtensionMethods.ModifyDate();
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(Date);
+            TimerExecution.Change(Time, Time);
+        }
+
         public void EmailContratacaoServicoTerceiro()
         {
             string message = Util.ReadFileEmail(EmailContratacaoTerceiro);

@@ -7,15 +7,23 @@ using System.Threading.Tasks;
 using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
 using bus = VillaBisutti.Delta.Core.Business;
+using System.Threading;
+using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation.OSFinalizada
 {
-	public class WatcherOSFinalizada
+	public class WatcherOSFinalizada: Watcher
 	{
-		//todos eventos q estao como
-			//apriovado = true
-			//finalizada = false
-			//chama este método e seta finalizado = true 
+        public override void Run(object state)
+        {
+            TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            OSFinalizada();
+            //Terminou de rodar, prepara a próxima execução
+            ExtensionMethods.ModifyDate();
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(Date);
+            TimerExecution.Change(Time, Time);
+        }
 		public void OSFinalizada()
 		{
 			List<model.Evento> eventos = Util.context.Evento

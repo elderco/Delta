@@ -6,13 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using model = VillaBisutti.Delta.Core.Model;
 using VillaBisutti.Delta.Core;
+using System.Threading;
+using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation.PrazoFinal
 {
-	public class WatcherOSPrazoFinal
+	public class WatcherOSPrazoFinal : Watcher
 	{
 		private const String OSPrazoFinal = "EmailOSPrazoFinal.txt";
 		private const String AcabouPrazo = "EmailAcabouPrazo.txt";
+        public override void Run(object state)
+        {
+            TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
+            EmailPrazoFinalOS();
+
+            //Terminou de rodar, prepara a próxima execução
+            ExtensionMethods.ModifyDate();
+            Date = ExtensionMethods.GetDateXML();
+            Time = ExtensionMethods.ReturnTimeToRun(Date);
+            TimerExecution.Change(Time, Time);
+        }
+
 		public void EmailPrazoFinalOS()
 		{
 			int[] dias = Settings.QuantidadesDiasAntesEvento;
