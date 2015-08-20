@@ -16,7 +16,8 @@ namespace VillaBisutti.Delta.Automation
 		public bool IsSetToRun { get; set; }
         public void Set(long time, DateTime date)
         {
-            Date = ExtensionMethods.GetDateXML();
+            //TODO: verificar como vai ficar isso aqui já que precisa de parametro e é dinamico
+            Date = ExtensionMethods.GetDateXML("");
             Time = ExtensionMethods.ReturnTimeToRun(date);
             TimerExecution = new Timer(new TimerCallback(Run), null, time, time);
         }

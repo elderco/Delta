@@ -21,8 +21,8 @@ namespace VillaBisutti.Delta.Automation.ContratacaoServicoTerceiro
             TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
             EmailContratacaoServicoTerceiro();
             //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            Date = ExtensionMethods.GetDateXML();
+            ExtensionMethods.ModifyDate("DataEmailContrataServTerceiro", "FrequenciaContrataServTerceiro");
+            Date = ExtensionMethods.GetDateXML("DataEmailContrataServTerceiro");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
         }

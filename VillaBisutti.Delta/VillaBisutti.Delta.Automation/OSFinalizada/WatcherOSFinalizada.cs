@@ -19,8 +19,8 @@ namespace VillaBisutti.Delta.Automation.OSFinalizada
             TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
             OSFinalizada();
             //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            Date = ExtensionMethods.GetDateXML();
+            ExtensionMethods.ModifyDate("DataFinalizacaoOS","FrequenciaOSFinalizada");
+            Date = ExtensionMethods.GetDateXML("DataFinalizacaoOS");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
         }

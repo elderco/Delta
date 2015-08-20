@@ -24,8 +24,8 @@ namespace VillaBisutti.Delta.Automation.BoasVindas
             TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
             EmailBoasVindas();
             //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            Date = ExtensionMethods.GetDateXML();
+            ExtensionMethods.ModifyDate("DataEmailBoasVindas", "FrequenciaBoasVindas");
+            Date = ExtensionMethods.GetDateXML("DataEmailBoasVindas");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
         }

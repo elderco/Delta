@@ -21,8 +21,8 @@ namespace VillaBisutti.Delta.Automation.PrazoFinal
             EmailPrazoFinalOS();
 
             //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            Date = ExtensionMethods.GetDateXML();
+            ExtensionMethods.ModifyDate("DataEmailPrazoFinalOS","FrequenciaPrazoFinalOS");
+            Date = ExtensionMethods.GetDateXML("DataEmailPrazoFinalOS");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
         }

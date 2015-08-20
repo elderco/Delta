@@ -22,8 +22,8 @@ namespace VillaBisutti.Delta.Automation.AgendaSemanal
 
             EmailAgendaSemanal();
             //Terminou de rodar, prepara a próxima execução
-            ExtensionMethods.ModifyDate();
-            Date = ExtensionMethods.GetDateXML();
+            ExtensionMethods.ModifyDate("DataEmailAgendaSemanal", "FrequenciaAgendaSemanal");
+            Date = ExtensionMethods.GetDateXML("DataEmailAgendaSemanal");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
 

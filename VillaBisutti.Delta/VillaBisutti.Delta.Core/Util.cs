@@ -31,7 +31,7 @@ namespace VillaBisutti.Delta
 				return DisplayAttribute.Name;
 			return value.ToString();
 		}
-		internal static T Get<T>(string name)
+		public static T Get<T>(string name)
 		{
 			string config = ConfigurationManager.AppSettings[name];
 			T value = default(T);
@@ -42,7 +42,7 @@ namespace VillaBisutti.Delta
 			}
 			return value;
 		}
-		internal static List<T> GetList<T>(string name, char separator = ',')
+		public static List<T> GetList<T>(string name, char separator = ',')
 		{
 			string config = ConfigurationManager.AppSettings[name];
 			List<T> value = new List<T>();
