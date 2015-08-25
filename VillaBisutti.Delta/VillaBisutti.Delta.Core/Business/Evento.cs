@@ -161,6 +161,7 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(e => e.Cardapio)
 				.Include(e => e.TipoServico)
 				.FirstOrDefault(e => e.Id == id);
+			IEnumerable<Model.Foto> fotos = Util.context.Foto.Where(f => f.EventoId == id);
 			Dictionary<string, DTO.ItemEvento> itens = new Dictionary<string, DTO.ItemEvento>();
 			foreach(Model.ItemBebidaSelecionado item in itensBebida)
 			{
