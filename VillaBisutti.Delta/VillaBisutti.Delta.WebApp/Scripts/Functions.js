@@ -37,6 +37,9 @@ function ShowPopUp(url, title, w, h) {
 		HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
 	});
 	$("#PopUp").modal('show');
+	var zIndex = GetTopMostIndex();
+	$('.modal-backdrop').css("z-index", zIndex);
+	$('.modal-dialog').css("z-index", zIndex++);
 }
 function ShowPopUp_2(url, title, w, h) {
 	var $div = $("<div/>").attr("id", "PopUp");
