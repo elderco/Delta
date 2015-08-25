@@ -10,7 +10,6 @@ using model = VillaBisutti.Delta.Core.Model;
 using data = VillaBisutti.Delta.Core.Data;
 using biz = VillaBisutti.Delta.Core.Business;
 using System.IO;
-using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -20,7 +19,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		protected override void EndExecute(IAsyncResult asyncResult)
 		{
 			if (SessionFacade.UsuarioLogado != null)
-				if (!bus.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
+				if (!biz.Usuario.UsuarioPodeAlterar(SessionFacade.UsuarioLogado, Request.Url.AbsolutePath))
 					ViewBag.IsBlocked = "TRUE";
 			base.EndExecute(asyncResult);
 		}
