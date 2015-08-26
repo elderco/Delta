@@ -68,8 +68,8 @@ namespace VillaBisutti.Delta.Core.Data
 			context.Perfil.Add(new Model.Perfil { Nome = "Zóião", Modulos = modulos.Select(m => new Model.PerfilModulo { ModuloId = m.Id, PodeAlterar = false, PodeLer = true }).ToList() });
 			context.SaveChanges();
 
-			context.Usuario.Add(new Model.Usuario { Email = "master", Nome = "He-Man -> The Master of the Universe", PerfilId = 1, Senha = "123" });
-			context.Usuario.Add(new Model.Usuario { Email = "aranha", Nome = "Aranha com um monte de olho pra olhar tudo", PerfilId = 2, Senha = "123" });
+			context.Usuario.Add(new Model.Usuario { Email = "master", Nome = "He-Man -> The Master of the Universe", PerfilId = 1, Senha = "123", Telefone = "" });
+			context.Usuario.Add(new Model.Usuario { Email = "aranha", Nome = "Aranha com um monte de olho pra olhar tudo", PerfilId = 2, Senha = "123", Telefone = "" });
 			context.SaveChanges();
 
 			context.Local.Add(new Model.Local { SiglaCasa = "CA", NomeCasa = "Casa do Ator", EnderecoCasa = "Rua Casa do Ator, 642" });

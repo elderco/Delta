@@ -53,7 +53,12 @@ namespace VillaBisutti.Delta
 			}
 			return value;
 		}
-		public static string GetName(string fileName)
+		public static string GetPDFName(Core.Model.Evento evento)
+		{
+			string name = string.Format("{0}-{1}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.NomeCasa);
+			return HttpContext.Current.Server.MapPath("~/OS/" + name);
+		}
+		public static string GetImageName(string fileName)
 		{
 			string fileExtension = fileName.Split('.')[fileName.Split('.').Length - 1];
 			return DateTime.Now.ToString("yyyyMMddhhmmss") + "." + fileExtension;

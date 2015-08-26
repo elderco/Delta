@@ -55,7 +55,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 			if (URL != null && URL.ContentLength > 0)
 			{
-				string fileName = Util.GetName(URL.FileName);
+				string fileName = Util.GetImageName(URL.FileName);
 				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
 				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName, EventoId = eventoId };
 				new data.Foto().Insert(foto);

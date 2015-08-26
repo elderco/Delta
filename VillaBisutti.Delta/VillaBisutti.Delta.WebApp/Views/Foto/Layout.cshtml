@@ -4,14 +4,20 @@
 }
 @if (Model == null)
 {
+<div class="alert alert-info">
+	<strong>Layout do salão</strong>
 	@Html.Partial("../Foto/Create")
+</div>
 }
 else
 {
-	<div class="col-xs-12">
-		<a class="thumbnail PopUpActionLinks" href="@Url.Action("Delete", "Foto", new { id = Model.Id })">
-			<img src="@Url.Content(Path.Combine("~/Content/Images/", Model.URL))" alt="@(Model.Legenda)" />
-			@Html.DisplayFor(model => model.Legenda)
-		</a>
-	</div>
+<div class="alert alert-info">
+	<strong>Layout do salão</strong>
+</div>
+<div class="col-xs-12">
+	<a class="thumbnail PopUpActionLinks" href="@Url.Action("Delete", "Foto", new { id = Model.Id })">
+		<img src="@Url.Content(Path.Combine("~/Content/Images/", Model.URL))" alt="@(Model.Legenda)" />
+		@Html.DisplayFor(model => model.Legenda)
+	</a>
+</div>
 }

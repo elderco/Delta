@@ -8,7 +8,8 @@
 }
 function ShowPopUp(url, title, w, h) {
 	$("#PopUp").remove();
-	var $popUpContainer = $("<div/>").attr("id", "PopUp").attr("tabindex", "-1").attr("role", "dialog").attr("aria-labelledby", "myModalLabel").addClass("modal fade");
+	var zIndex = GetTopMostIndex();
+	var $popUpContainer = $("<div/>").attr("id", "PopUp").attr("tabindex", "-1").attr("role", "dialog").attr("aria-labelledby", "myModalLabel").addClass("modal fade").css("z-index", zIndex + 2);
 	var $popUpDialog = $("<div/>").attr("role", "document").addClass("modal-dialog");
 	var $popUpContent = $("<div/>").addClass("modal-content");
 	var $popUpHeader = $("<div/>").addClass("modal-header");
@@ -37,9 +38,7 @@ function ShowPopUp(url, title, w, h) {
 		HandleResponse(response, status, xhr.status, xhr.statusText, "#PopUp_body");
 	});
 	$("#PopUp").modal('show');
-	var zIndex = GetTopMostIndex();
 	$('.modal-backdrop').css("z-index", zIndex);
-	$('.modal-dialog').css("z-index", zIndex++);
 }
 function ShowPopUp_2(url, title, w, h) {
 	var $div = $("<div/>").attr("id", "PopUp");

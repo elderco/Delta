@@ -16,6 +16,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Email { get; set; }
 		[Display(Name = "Senha"), Required]
 		public string Senha{ get; set; }
+		[Display(Name = "Celular (profissional)")]
+		public string Telefone { get; set; }
 		public int PerfilId { get; set; }
 		public Perfil Perfil { get; set; }
 	}

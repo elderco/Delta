@@ -10,7 +10,7 @@ using System.Drawing.Imaging;
 
 namespace VillaBisutti.Delta.Core
 {
-	class PDF
+	public class PDF
 	{
 		private const int headingSize = 13;
 		private const int leadSize = 12;
@@ -65,37 +65,17 @@ namespace VillaBisutti.Delta.Core
 			writer.Close();
 			writer.Dispose();
 		}
-		public void AddHeader(DateTime data, string casa, string homenageados, string tipoEvento, string cerimonial, string horario, string perfil)
+		private iPdf.PdfPTable header;
+		private iPdf.PdfPTable Header
 		{
-			iPdf.PdfPTable table = new iPdf.PdfPTable(3);
-			table.WidthPercentage = 100F;
-			table.SetWidths(new float[] { 1F, 1F, 1F });
-			table.SpacingBefore = 10F;
-			table.SpacingAfter = 10F;
-			iText.Chunk headChunk = new iText.Chunk(string.Format("{0} > {1} > {2}", data.ToString("dd/MM/yyyy"), casa, homenageados));
-			headChunk.Font = iText.FontFactory.GetFont(baseFont, headingSize, iText.Font.BOLD);
-			iPdf.PdfPCell headerCell = new iPdf.PdfPCell(new iText.Phrase(headChunk));
-			headerCell.Colspan = 3;
-			table.AddCell(headerCell);
-			table.AddCell(new iPdf.PdfPCell(MakePhrase("Evento: ", tipoEvento)));
-			if (string.IsNullOrEmpty(cerimonial))
-				table.AddCell(new iPdf.PdfPCell(MakePhrase("", "")));
-			else
-				table.AddCell(new iPdf.PdfPCell(MakePhrase("Cerimonial:", tipoEvento)));
-			table.AddCell(new iPdf.PdfPCell(MakePhrase("Horário:", horario)));
-			iPdf.PdfPCell detailCell = new iPdf.PdfPCell(MakePhrase("Perfil: ", perfil));
-			detailCell.Colspan = 3;
-			table.AddCell(new iPdf.PdfPCell(detailCell));
-			document.Add(table);
+			get
+			{
+				if (header == null)
+					throw new InvalidOperationException("Cabeçalho não definido");
+				return header;
+			}
 		}
-		public void AddLeadText(string text)
-		{
-			iText.Chunk chunck = new iText.Chunk(text);
-			chunck.Font = iText.FontFactory.GetFont(baseFont, 11, iText.Font.BOLD, iText.BaseColor.BLACK);
-			iText.Paragraph paragraph = new iText.Paragraph(chunck);
-			document.Add(paragraph);
-		}
-		public iText.Phrase MakePhrase(string lead, string text)
+		private iText.Phrase MakePhrase(string lead, string text)
 		{
 			iText.Chunk leadChunk = new iText.Chunk(lead);
 			leadChunk.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.Font.BOLD);
@@ -105,13 +85,70 @@ namespace VillaBisutti.Delta.Core
 			phrase.Add(textChunck);
 			return phrase;
 		}
+		public void SetHeader(DateTime data, string casa, string tipoEvento, string homenageados, int pax, string horario, string cerimonial, string produtor, string contatoProdutor, string assessoria, string contatoAssessoria, string responsavel, string contatoResponsavel, string perfil)
+		{
+			header = new iPdf.PdfPTable(3);
+			header.WidthPercentage = 100F;
+			header.SetWidths(new float[] { 1F, 1F, 1F });
+			header.SpacingBefore = 10F;
+			header.SpacingAfter = 10F;
+
+			iText.Chunk headChunk = new iText.Chunk(
+				string.Format("{0} > {1} > {2} > {3}", data.ToString("dd/MM/yyyy"), casa, tipoEvento, homenageados));
+			headChunk.Font = iText.FontFactory.GetFont(baseFont, headingSize, iText.Font.BOLD);
+			iPdf.PdfPCell headerCell = new iPdf.PdfPCell(new iText.Phrase(headChunk));
+			headerCell.Colspan = 3;
+			header.AddCell(headerCell);
+
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Pax: ", string.Format("{0} +10% ({1})", pax, (int)(pax * 1.1)))));
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Horário:", horario)));
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Cerimonial: ", cerimonial)));
+
+			iPdf.PdfPCell detailCell = new iPdf.PdfPCell(MakePhrase("Perfil: ", perfil));
+			detailCell.Rowspan = 3;
+			header.AddCell(new iPdf.PdfPCell(detailCell));
+
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Produtor(a): ", produtor)));
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Contato: ", contatoProdutor)));
+
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Assessoria: ", assessoria)));
+			if (string.IsNullOrEmpty(contatoAssessoria))
+				header.AddCell(new iPdf.PdfPCell(new iText.Phrase("")));
+			else
+				header.AddCell(new iPdf.PdfPCell(MakePhrase("Contato: ", contatoAssessoria)));
+
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Responsável(a): ", responsavel)));
+			header.AddCell(new iPdf.PdfPCell(MakePhrase("Contato: ", contatoResponsavel)));
+		}
+		public void AddHeader()
+		{
+			document.Add(Header);
+		}
+		public void AddLeadText(string text)
+		{
+			iText.Chunk chunck = new iText.Chunk(text);
+			chunck.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD, iText.BaseColor.BLACK);
+			iText.Paragraph paragraph = new iText.Paragraph(chunck);
+			document.Add(paragraph);
+		}
+		public void AddLineNoEmphasis(string text)
+		{
+			iText.Chunk chunck = new iText.Chunk(text);
+				chunck.Font = iText.FontFactory.GetFont(baseFont, smallSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
+			iText.Paragraph paragraph = new iText.Paragraph(chunck);
+			document.Add(paragraph);
+		}
+		public void AddLine(string text)
+		{
+			AddLine(text, false);
+		}
 		public void AddLine(string text, bool important)
 		{
 			iText.Chunk chunck = new iText.Chunk(text);
 			if (important)
-				chunck.Font = iText.FontFactory.GetFont(baseFont, 11, iText.Font.BOLD, iText.BaseColor.RED);
+				chunck.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD, iText.BaseColor.RED);
 			else
-				chunck.Font = iText.FontFactory.GetFont(baseFont, 11, iText.Font.NORMAL, iText.BaseColor.BLACK);
+				chunck.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
 			document.Add(paragraph);
 		}
@@ -127,6 +164,16 @@ namespace VillaBisutti.Delta.Core
 			chunk.Font = iText.FontFactory.GetFont(baseFont, smallSize, iText.BaseColor.DARK_GRAY);
 			paragraph.Add(chunk);
 			document.Add(paragraph);
+		}
+		public void AddBreakRule()
+		{
+			iPdf.draw.LineSeparator line = new iPdf.draw.LineSeparator(1F, 100F, iText.BaseColor.DARK_GRAY, iText.Element.ALIGN_CENTER, -8F);
+			document.Add(line);
+			AddLine(" ", false);
+		}
+		public void BreakLine()
+		{
+			AddLine("");
 		}
 		public void BreakPage()
 		{

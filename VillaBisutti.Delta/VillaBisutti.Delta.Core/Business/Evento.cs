@@ -152,22 +152,60 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(i => i.ItemSomIluminacao.TipoItemSomIluminacao)
 				.Where(i => i.EventoId == id)
 				.OrderBy(i => i.ItemSomIluminacao.Nome)
-				.OrderBy(i => i.ItemSomIluminacao.TipoItemSomIluminacao.Ordem); 
+				.OrderBy(i => i.ItemSomIluminacao.TipoItemSomIluminacao.Ordem);
 			Model.Evento evento = Util.context.Evento
 				.Include(e => e.Roteiro)
 				.Include(e => e.Cerimonial)
 				.Include(e => e.Local)
 				.Include(e => e.Produtora)
+				.Include(e => e.PosVendedora)
 				.Include(e => e.Cardapio)
 				.Include(e => e.TipoServico)
 				.FirstOrDefault(e => e.Id == id);
 			IEnumerable<Model.Foto> fotos = Util.context.Foto.Where(f => f.EventoId == id);
-			Dictionary<string, DTO.ItemEvento> itens = new Dictionary<string, DTO.ItemEvento>();
-			foreach(Model.ItemBebidaSelecionado item in itensBebida)
-			{
+			PDF pdf = new PDF(Util.GetPDFName(evento));
+			pdf.PrepareForWriting();
+			pdf.SetHeader(evento.Data, evento.Local.NomeCasa, evento.TipoEvento.GetDescription(), evento.NomeHomenageados, evento.Pax,
+				string.Format("Das {0} às {1}", evento.Inicio.ToString(), evento.Termino.ToString()), evento.LocalCerimonia.GetDescription(),
+				evento.Produtora.Nome, evento.Produtora.Telefone, evento.PossuiAssessoria ? "Sim" : "Não", evento.ContatoAssessoria,
+				evento.NomeResponsavel, evento.TelefoneContato, evento.PerfilFesta);
 
+			pdf.AddHeader();
+
+			pdf.AddLeadText(evento.NomeHomenageados);
+			pdf.AddLine("Contato: " + evento.NomeResponsavel + " - " + evento.EmailContato + " - " + evento.TelefoneContato);
+			pdf.AddLine("CPF: " + evento.CPFResponsavel);
+			pdf.AddLine("Observações: " + evento.Observacoes);
+			pdf.AddLine("Perfil da festa: " + evento.PerfilFesta);
+			pdf.AddBreakRule();
+
+			pdf.AddLeadText("Pós-venda: " + evento.PosVendedora.Nome + " - " + evento.PosVendedora.Telefone);
+			pdf.AddLeadText("Produção: " + evento.Produtora.Nome + " - " + evento.Produtora.Telefone + " - " + evento.Produtora.Telefone);
+			pdf.AddLeadText("Possui assessoria? " + (evento.PossuiAssessoria ? "Sim" : "Não"));
+			if (evento.PossuiAssessoria)
+				pdf.AddLine("Contato: " + evento.ContatoAssessoria);
+			pdf.AddBreakRule();
+
+			pdf.AddLeadText("Tipo de evento: " + evento.TipoEvento.GetDescription());
+			pdf.AddLeadText("Local: " + evento.Local.NomeCasa);
+			pdf.AddLine(evento.Local.EnderecoCasa);
+			pdf.AddLeadText("Data: " + evento.Data.ToString("dddd, dd/MM/yyyy") + ", das " + evento.Inicio.ToString() + " às " + evento.Termino.ToString());
+			pdf.AddLeadText("Pax: " + evento.Pax + " (+10%: " + (evento.Pax * 1.1) + ") pessoas.");
+			pdf.AddLeadText("Cerimonial: " + evento.LocalCerimonia.GetDescription());
+			if (!string.IsNullOrEmpty(evento.EnderecoCerimonia))
+				pdf.AddLine(evento.EnderecoCerimonia);
+			if (!string.IsNullOrEmpty(evento.ObservacoesCerimonia))
+				pdf.AddLine(evento.ObservacoesCerimonia);
+			pdf.AddBreakRule();
+
+			pdf.AddLeadText("Cardápio: " + evento.Cardapio.Nome);
+			pdf.AddLeadText("Tipo de serviço: " + evento.TipoServico.Nome);
+			pdf.AddBreakRule();
+
+			foreach (Model.ItemBebidaSelecionado item in itensBebida)
+			{
 			}
 		}
-			 
+
 	}
 }
