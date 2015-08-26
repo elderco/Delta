@@ -9,8 +9,8 @@ using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+	[Authorize]
+	public class HomeController : Controller
 	{
 		protected override void EndExecute(IAsyncResult asyncResult)
 		{
@@ -19,24 +19,24 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 					ViewBag.IsBlocked = "TRUE";
 			base.EndExecute(asyncResult);
 		}
-        //
-        // GET: /Home/
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult HomeConfiguracao()
-        {
-            return View();
-        }
-        public ActionResult PageNotFound()
-        {
-            return View();
-        }
-        public ActionResult InternalServerError()
-        {
-            return View();
-        }
+		//
+		// GET: /Home/
+		public ActionResult Index()
+		{
+			return View();
+		}
+		public ActionResult HomeConfiguracao()
+		{
+			return View();
+		}
+		public ActionResult PageNotFound()
+		{
+			return View();
+		}
+		public ActionResult InternalServerError()
+		{
+			return View();
+		}
 		public ActionResult MenuEventos()
 		{
 			//Buscar no Data.Localizacao todas as casas
@@ -44,5 +44,6 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			List<model.Local> casas = new data.Local().GetPorProdutor(SessionFacade.UsuarioLogado.Id);//SessionFacade.UsuarioLogado.Id);
 			return View(casas);
 		}
+		public ActionResult KeepAlive() { return View(); }
 	}
 }

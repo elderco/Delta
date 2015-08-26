@@ -632,6 +632,8 @@
     <Content Include="Views\Shared\_AjaxLayout.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Foto\Definir.cshtml" />
+    <Content Include="Views\Home\KeepAlive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

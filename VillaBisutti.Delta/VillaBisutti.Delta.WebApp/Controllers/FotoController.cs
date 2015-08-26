@@ -50,13 +50,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult ItemCreated(HttpPostedFileBase URL, string legenda, string qual, int eventoId)
+		public ActionResult ItemCreated(HttpPostedFileBase URL, string legenda, string qual, int eventoId, bool resize = true)
 		{
-
 			if (URL != null && URL.ContentLength > 0)
 			{
 				string fileName = Util.GetImageName(URL.FileName);
-				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName));
+				Util.HandleImage(URL, Path.Combine(Server.MapPath("~/Content/Images/"), fileName), resize);
 				model.Foto foto = new model.Foto { Qual = qual, Legenda = legenda, URL = fileName, EventoId = eventoId };
 				new data.Foto().Insert(foto);
 			}

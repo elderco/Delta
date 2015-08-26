@@ -55,13 +55,13 @@
 				@(item.Duracao.ToString())
 			</td>
 			<td>
-				@if (item.PodeDomingo) { @(Html.DisplayNameFor(m => m.PodeDomingo) + "| ") }
-				@if (item.PodeSegunda) { @(Html.DisplayNameFor(m => m.PodeSegunda) + "| ") }
-				@if (item.PodeTerca) { @(Html.DisplayNameFor(m => m.PodeTerca) + "| ") }
-				@if (item.PodeQuarta) { @(Html.DisplayNameFor(m => m.PodeQuarta) + "| ") }
-				@if (item.PodeQuinta) { @(Html.DisplayNameFor(m => m.PodeQuinta) + "| ") }
-				@if (item.PodeSexta) { @(Html.DisplayNameFor(m => m.PodeSexta) + "| ") }
-				@if (item.PodeSabado) { @(Html.DisplayNameFor(m => m.PodeSabado) + "| ") }
+				@if (item.PodeDomingo) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeDomingo).ToHtmlString()) + "| ") }
+				@if (item.PodeSegunda) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeSegunda).ToHtmlString()) + "| ") }
+				@if (item.PodeTerca) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeTerca).ToHtmlString()) + "| ") }
+				@if (item.PodeQuarta) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeQuarta).ToHtmlString()) + "| ") }
+				@if (item.PodeQuinta) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeQuinta).ToHtmlString()) + "| ") }
+				@if (item.PodeSexta) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeSexta).ToHtmlString()) + "| ") }
+				@if (item.PodeSabado) { @(HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.PodeSabado).ToHtmlString()) + "| ") }
 			</td>
 			<td>
 				@Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "PopUpActionLinks", @title = "Editar" }) |

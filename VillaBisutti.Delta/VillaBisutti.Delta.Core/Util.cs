@@ -65,9 +65,20 @@ namespace VillaBisutti.Delta
 		}
 		public static void HandleImage(HttpPostedFileBase URL, string path)
 		{
+			HandleImage(URL, path, true);
+		}
+		public static void HandleImage(HttpPostedFileBase URL, string path, bool resize)
+		{
 			Image image = Image.FromStream(URL.InputStream);
-			System.Drawing.Bitmap imageResized = ResizeImage(image);
-			imageResized.Save(path);
+			if (resize)
+			{
+				System.Drawing.Bitmap imageResized = ResizeImage(image);
+				imageResized.Save(path);
+			}
+			else
+			{
+				Image.FromStream(URL.InputStream).Save(path);
+			}
 		}
 		private static Bitmap ResizeImage(Image image)
 		{

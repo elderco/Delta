@@ -10,6 +10,11 @@
 		});
 	</script>
 }
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		CreateHorarioEditor("HorarioDuracao_@(Model.Id)");
+	});
+</script>
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
@@ -47,7 +52,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.HorarioDuracao, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
-				@Html.EditorFor(model => model.HorarioDuracao)
+				@Html.TextBoxFor(model => model.HorarioDuracao, new { @id = "HorarioDuracao_" + Model.Id, @type = "number" })
 			</div>
 			<div class="col-md-6">
 				@Html.ValidationMessageFor(model => model.HorarioDuracao)

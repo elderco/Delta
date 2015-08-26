@@ -14,16 +14,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 14:22:03</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/12/2015 15:51:11</publishTime>
+      <publishTime>08/26/2015 13:59:26</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/12/2015 15:51:11</publishTime>
+      <publishTime>08/26/2015 13:59:25</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/16/2015 14:22:07</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>06/16/2015 14:22:07</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>08/10/2015 15:26:21</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>06/16/2015 14:22:10</publishTime>
@@ -92,13 +95,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 14:22:00</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Automation.dll">
-      <publishTime>08/12/2015 15:32:26</publishTime>
+      <publishTime>08/26/2015 13:55:32</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Core.dll">
-      <publishTime>08/12/2015 15:32:24</publishTime>
+      <publishTime>08/26/2015 13:55:31</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.WebApp.dll">
-      <publishTime>08/12/2015 15:51:03</publishTime>
+      <publishTime>08/26/2015 13:55:34</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>06/16/2015 14:22:04</publishTime>
@@ -107,10 +110,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/23/2015 20:42:50</publishTime>
     </File>
     <File Include="Content/bootstrap-glyphs.min.css">
-      <publishTime>06/29/2015 22:07:34</publishTime>
+      <publishTime>08/25/2015 12:17:48</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>08/11/2015 21:26:07</publishTime>
+      <publishTime>08/25/2015 12:17:48</publishTime>
     </File>
     <File Include="Content/estilos.css">
       <publishTime>08/11/2015 21:26:07</publishTime>
@@ -257,7 +260,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2015 15:07:39</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/12/2015 15:51:05</publishTime>
+      <publishTime>08/26/2015 13:58:21</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/VillaBisutti.pubxml.user">
+      <publishTime>08/12/2015 15:54:42</publishTime>
     </File>
     <File Include="Scripts/ace-elements.min.js">
       <publishTime>06/29/2015 22:07:34</publishTime>
@@ -275,7 +281,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/29/2015 22:07:35</publishTime>
     </File>
     <File Include="Scripts/Functions.js">
-      <publishTime>08/08/2015 16:50:11</publishTime>
+      <publishTime>08/25/2015 15:59:54</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>06/16/2015 14:21:56</publishTime>
@@ -431,10 +437,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2015 18:18:29</publishTime>
     </File>
     <File Include="Views/Evento/Edit.cshtml">
-      <publishTime>08/11/2015 20:55:43</publishTime>
+      <publishTime>08/25/2015 21:52:40</publishTime>
     </File>
     <File Include="Views/Evento/Filtrar.cshtml">
-      <publishTime>08/10/2015 13:17:29</publishTime>
+      <publishTime>08/25/2015 22:00:39</publishTime>
     </File>
     <File Include="Views/FornecedorBoloDoceBemCasado/Create.cshtml">
       <publishTime>07/07/2015 14:53:50</publishTime>
@@ -461,7 +467,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2015 17:48:18</publishTime>
     </File>
     <File Include="Views/Foto/Layout.cshtml">
-      <publishTime>08/11/2015 21:25:04</publishTime>
+      <publishTime>08/25/2015 21:53:10</publishTime>
     </File>
     <File Include="Views/FotoVideo/Edit.cshtml">
       <publishTime>08/12/2015 14:58:53</publishTime>
@@ -1049,16 +1055,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2015 12:08:18</publishTime>
     </File>
     <File Include="Views/Reuniao/Create.cshtml">
-      <publishTime>08/06/2015 16:49:38</publishTime>
+      <publishTime>08/12/2015 20:44:24</publishTime>
     </File>
     <File Include="Views/Reuniao/Edit.cshtml">
       <publishTime>08/06/2015 17:00:07</publishTime>
     </File>
     <File Include="Views/Reuniao/Filtrar.cshtml">
-      <publishTime>08/12/2015 15:07:39</publishTime>
+      <publishTime>08/25/2015 12:17:49</publishTime>
     </File>
     <File Include="Views/Reuniao/Index.cshtml">
-      <publishTime>08/07/2015 19:28:13</publishTime>
+      <publishTime>08/12/2015 20:41:11</publishTime>
     </File>
     <File Include="Views/Roteiro/Create.cshtml">
       <publishTime>07/16/2015 17:16:30</publishTime>
@@ -1100,7 +1106,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2015 17:59:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/12/2015 15:07:39</publishTime>
+      <publishTime>08/12/2015 21:24:55</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/03/2015 12:35:48</publishTime>
@@ -1301,7 +1307,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 14:21:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/12/2015 15:51:04</publishTime>
+      <publishTime>08/26/2015 13:56:47</publishTime>
     </File>
   </ItemGroup>
 </Project>

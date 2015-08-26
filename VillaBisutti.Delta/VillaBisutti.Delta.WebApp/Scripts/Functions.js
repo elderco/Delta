@@ -1,4 +1,13 @@
-﻿function LoadPage(url, target) {
+﻿function KeepAlive() {
+	$div = $("<div/>").attr("id", "keepAlive").css("position", "absolute").css("left", "250px").css("top", "250px").css("width", "350");
+	$("body").append($div);
+	var url = (window.location.origin ? window.location.origin : window.location.protocol + '/' + window.location.host) + "/Home/KeepAlive";
+	$div.load(url, function (response, status, xhr) {
+		window.setTimeout("KeepAlive();", 300000);
+		$div.remove();
+	});
+}
+function LoadPage(url, target) {
 	target = target.replace("#", "") == target ? "#" + target : target;
 	var URL = url.indexOf("?") >= 0 ? "&" : "?";
 	URL = url + URL + "sid=" + Math.random();
@@ -39,6 +48,7 @@ function ShowPopUp(url, title, w, h) {
 	});
 	$("#PopUp").modal('show');
 	$('.modal-backdrop').css("z-index", zIndex);
+	$('.modal-dialog').css("z-index", zIndex + 3);
 }
 function ShowPopUp_2(url, title, w, h) {
 	var $div = $("<div/>").attr("id", "PopUp");
@@ -197,8 +207,8 @@ function LockPage() {
 	$('.PopUpActionLinks').unbind("click")
 		.attr("href", "javascript:void(0);")
 		.click(function (e) {
-		    e.preventDefault();
-		    AddError(title, message);
+			e.preventDefault();
+			AddError(title, message);
 		});
 	$('.PopUpItemLinks').unbind("click")
 		.attr("href", "javascript:void(0);")
@@ -206,11 +216,11 @@ function LockPage() {
 			e.preventDefault();
 			AddError(title, message);
 		});
-    $("a[id^='Remover']").unbind("click")
-    		.attr("href", "javascript:void(0);")
+	$("a[id^='Remover']").unbind("click")
+			.attr("href", "javascript:void(0);")
 		.click(function (e) {
-		    e.preventDefault();
-		    AddError(title, message);
+			e.preventDefault();
+			AddError(title, message);
 		});
 	$("#PainelTipoComida li").draggable({ disabled: true });
 	$("#PainelCardapios ol").droppable({ disabled: true });
@@ -230,9 +240,9 @@ function HandleCheckbox(elementId) {
 		$label.remove();
 		var $checkboxContainer = $("<span/>").addClass("button-checkbox");
 		var $checkboxButton = $("<button/>")
-            .attr("data-color", "primary")
-            .attr("type", "button").text(texto)
-            .addClass("btn btn-xs borderless btn-primary active");
+			.attr("data-color", "primary")
+			.attr("type", "button").text(texto)
+			.addClass("btn btn-xs borderless btn-primary active");
 		var $checkboxIcon = $("<i/>");
 
 		$checkboxContainer.insertBefore($(this));
@@ -243,17 +253,17 @@ function HandleCheckbox(elementId) {
 	$('.button-checkbox').each(function () {
 		// Settings
 		var $widget = $(this),
-            $button = $widget.find('button'),
-            $checkbox = $widget.find('input:checkbox'),
-            color = $button.data('color'),
-            settings = {
-            	on: {
-            		icon: 'glyphicon glyphicon-check'
-            	},
-            	off: {
-            		icon: 'glyphicon glyphicon-unchecked'
-            	}
-            };
+			$button = $widget.find('button'),
+			$checkbox = $widget.find('input:checkbox'),
+			color = $button.data('color'),
+			settings = {
+				on: {
+					icon: 'glyphicon glyphicon-check'
+				},
+				off: {
+					icon: 'glyphicon glyphicon-unchecked'
+				}
+			};
 
 		// Event Handlers
 		$button.on('click', function () {
@@ -275,19 +285,19 @@ function HandleCheckbox(elementId) {
 
 			// Set the button's icon
 			$button.find('.state-icon')
-                .removeClass()
-                .addClass('state-icon ' + settings[$button.data('state')].icon);
+				.removeClass()
+				.addClass('state-icon ' + settings[$button.data('state')].icon);
 
 			// Update the button's color
 			if (isChecked) {
 				$button
-                    .removeClass('btn-white')
-                    .addClass('btn-' + color + ' active');
+					.removeClass('btn-white')
+					.addClass('btn-' + color + ' active');
 			}
 			else {
 				$button
-                    .removeClass('btn-' + color + ' active')
-                    .addClass('btn-white');
+					.removeClass('btn-' + color + ' active')
+					.addClass('btn-white');
 			}
 		}
 
@@ -459,6 +469,7 @@ $(document)
 		ShowLoading();
 		HideLoading();
 		HandleCheckbox("main-container");
+		KeepAlive();
 	})
 	.error(function () {
 		HideLoading();
