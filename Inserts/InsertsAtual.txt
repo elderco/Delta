@@ -1,0 +1,1774 @@
+﻿1	Cardápio Ilha de degustação	Queijos Nobres	1	Queijo branco
+2	Cardápio Ilha de degustação	Queijos Nobres	1	Meia cura
+3	Cardápio Ilha de degustação	Queijos Nobres	1	Gorgonzola
+4	Cardápio Ilha de degustação	Queijos Nobres	1	Provolone
+5	Cardápio Ilha de degustação	Queijos Nobres	1	Parmesão
+6	Cardápio Ilha de degustação	Queijos Nobres	1	Mussarela de búfala
+7	Cardápio Ilha de degustação	Queijos Nobres	1	Pasta de Ricota temperada
+8	Cardápio Ilha de degustação	Queijos Nobres	1	Pasta de Tapenade de Azeitonas Chilenas
+9	Cardápio Ilha de degustação	Queijos Nobres	1	Stick de legumes variados
+10	Cardápio Ilha de degustação	Queijos Nobres	1	Bowl de pães artesanais
+11	Cardápio Ilha de degustação	Queijos Nobres	1	Grissinis e casquinhas
+12	Cardápio Ilha de degustação	Ilha de frios	1	Queijo branco
+13	Cardápio Ilha de degustação	Ilha de frios	1	Meia cura
+14	Cardápio Ilha de degustação	Ilha de frios	1	Gorgonzola
+15	Cardápio Ilha de degustação	Ilha de frios	1	Provolone
+16	Cardápio Ilha de degustação	Ilha de frios	1	Parmesão
+17	Cardápio Ilha de degustação	Ilha de frios	1	Mussarela de búfala
+18	Cardápio Ilha de degustação	Ilha de frios	1	Pasta de Ricota temperada
+19	Cardápio Ilha de degustação	Ilha de frios	1	Pasta de Tapenade de Azeitonas Chilenas
+20	Cardápio Ilha de degustação	Ilha de frios	1	Stick de legumes variados
+21	Cardápio Ilha de degustação	Ilha de frios	1	Mortadela com pistache
+22	Cardápio Ilha de degustação	Ilha de frios	1	Limão e tapenade
+23	Cardápio Ilha de degustação	Ilha de frios	1	Copa defumada
+24	Cardápio Ilha de degustação	Ilha de frios	1	Peito de peru
+25	Cardápio Ilha de degustação	Ilha de frios	1	Salame da colônia
+26	Cardápio Ilha de degustação	Ilha de frios	1	Azeitonas
+27	Cardápio Ilha de degustação	Ilha de frios	1	Bowl de pães artesanais
+28	Cardápio Ilha de degustação	Ilha de frios	1	Grissinis e casquinhas
+29	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Queijo branco
+30	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Meia cura
+31	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Gorgonzola
+32	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Provolone
+33	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Parmesão
+34	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Mussarela de búfala
+35	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Pasta de Ricota temperada
+36	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Pasta de Tapenade de Azeitonas Chilenas
+37	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Stick de legumes variados
+38	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Mortadela com pistache
+39	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Limão e tapenade
+40	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Copa defumada
+41	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Peito de peru
+42	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Salame da colônia
+43	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Azeitonas
+44	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Presunto Parma
+45	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Figos secos
+46	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Damasco
+47	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Nuts
+48	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Bowl de pães artesanais
+49	Cardápio Ilha de degustação	Ilha de frios com presunto parma	1	Grissinis e casquinhas
+50	Lanche da madrugada	Wraps	1	Roast Beef Salad
+51	Lanche da madrugada	Wraps	1	Caesar Chicken
+52	Lanche da madrugada	Mini Hamburguer	1	Mini Hamburguer
+53	Lanche da madrugada	Tostex	1	Presunto e Queijo
+54	Lanche da madrugada	Tostex	1	Queijo com Tomate
+55	Lanche da madrugada	Pão de Queijo	1	Mini Pão de Queijo
+56	Lanche da madrugada	Pão de Batata	1	Mini Pão de Batata
+57	Lanche da madrugada	Caldinhos	1	Feijão / Verde (indicado para inverno)
+58	Lanche da madrugada	Caldinhos	1	Mandioquinha (indicado para inverno)
+59	Lanche da madrugada	Caldinhos	1	Gaspachio (indicado para
+verão)
+60	Lanche da madrugada	Caldinhos	1	Andaluz (indicado para
+verão)
+61	Lanche da madrugada	Caldinhos	1	Vichyssoise (indicado para
+verão)
+62	Lanche da madrugada	Caldinhos	1	Pepino com Hortelã (indicado para
+verão)
+63	Lanche da madrugada	Mini Churros	1	Chocolate
+64	Lanche da madrugada	Mini Churros	1	Doce de Leite
+65	Lanche da madrugada	Mini Milk Skake	1	Morango
+66	Lanche da madrugada	Mini Milk Skake	1	Baunilha
+67	Lanche da madrugada	Mini Milk Skake	1	Chocolate
+68	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Stick de legumes variados, acompanhados de pasta de Ervas Finas e Azeitonas Pretas
+69	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Stick de coalho e melaço de cana
+70	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Capuccino de abóbora e alecrim
+71	Cardápio Executivo I	SALADAS VOLANTES	1	Caesar Salad ao molho tradiconal
+72	Cardápio Executivo I	SALADAS VOLANTES	1	Salada de folhas e legumes grelhados ao molho cremoso de siciliano de dill fresco
+73	Cardápio Executivo I	SALADAS VOLANTES	1	Alface americana, tomates e croutons ao molho de Mostarda e Mel
+74	Cardápio Executivo I	SALADAS VOLANTES	1	Salada Fresh – Folhas, cenourinhas raladas, tomates marinados, croutons de pão sírio com azeites aromatizados
+75	Cardápio Executivo I	Prato Principal	1	Picadinho à Brasileira com Chalotas douradas
+76	Cardápio Executivo I	Prato Principal	1	Blanquet de chester ao molho champagne
+77	Cardápio Executivo I	Prato Principal	1	Frango ao Curry
+78	Cardápio Executivo I	Arroz	1	Arroz branco com alho porro crisp
+79	Cardápio Executivo I	Arroz	1	Arroz Milanês
+80	Cardápio Executivo I	Arroz	1	Arroz branco com salsinha
+81	Cardápio Executivo I	Acompanhamento	1	Purê de mandioquinha com brócolis
+82	Cardápio Executivo I	Acompanhamento	1	Batata Soute
+83	Cardápio Executivo I	Acompanhamento	1	Gratin de legumes
+84	Cardápio Executivo I	Acompanhamento	1	Cuscuz de mini legumes
+85	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Torta de chocolate belga
+86	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Cheese cake com calda de frutas silvestres
+87	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Cubo de frutas da estação
+92	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Stick de legumes variados, acompanhados de pasta de Ervas Finas e Azeitonas Pretas
+93	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Stick de coalho e melaço de cana
+94	Cardápio Executivo I	Degustações Especiais volante ou servidas nas mesas	1	Capuccino de abóbora e alecrim
+95	Cardápio Executivo I	SALADAS VOLANTES	1	Caesar Salad ao molho tradiconal
+96	Cardápio Executivo I	SALADAS VOLANTES	1	Salada de folhas e legumes grelhados ao molho cremoso de siciliano de dill fresco
+97	Cardápio Executivo I	SALADAS VOLANTES	1	Alface americana, tomates e croutons ao molho de Mostarda e Mel
+98	Cardápio Executivo I	SALADAS VOLANTES	1	Salada Fresh – Folhas, cenourinhas raladas, tomates marinados, croutons de pão sírio com azeites aromatizados
+99	Cardápio Executivo I	Prato Principal	1	Picadinho à Brasileira com Chalotas douradas
+100	Cardápio Executivo I	Prato Principal	1	Blanquet de chester ao molho champagne
+101	Cardápio Executivo I	Prato Principal	1	Frango ao Curry
+102	Cardápio Executivo I	Arroz	1	Arroz branco com alho porro crisp
+103	Cardápio Executivo I	Arroz	1	Arroz Milanês
+104	Cardápio Executivo I	Arroz	1	Arroz branco com salsinha
+105	Cardápio Executivo I	Acompanhamento	1	Purê de mandioquinha com brócolis
+106	Cardápio Executivo I	Acompanhamento	1	Batata Soute
+107	Cardápio Executivo I	Acompanhamento	1	Gratin de legumes
+108	Cardápio Executivo I	Acompanhamento	1	Cuscuz de mini legumes
+109	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Torta de chocolate belga
+110	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Cheese cake Orange com calda de frutas silvestres
+111	Cardápio Executivo I	SOBREMESAS VOLANTES	1	Cubo de frutas da estação
+112	Cardápio Executivo I	BEBIDAS	1	Água sem gás
+113	Cardápio Executivo I	BEBIDAS	1	Café
+114	Cardápio Executivo I	BEBIDAS	1	Chás diversos
+115	Cardápio Executivo I	BEBIDAS	1	Petit fours
+116	Cardápio Executivo I	BEBIDAS	1	Refrigerantes
+117	Cardápio Executivo I	BEBIDAS	1	Água com gás
+118	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Stick de legumes variados, acompanhados de pasta de ervas Finas e Azeitonas Pretas
+119	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Stick de coalho e melaço de cana
+122	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Capuccino de abóbora e alecrim
+123	Cardápio Executivo II	SALADAS VOLANTES	1	Caesar Salad ao molho tradiconal
+124	Cardápio Executivo II	SALADAS VOLANTES	1	Salada de folhas e legumes grelhados ao molho cremoso de siciliano de dill fresco
+125	Cardápio Executivo II	SALADAS VOLANTES	1	Alface americana, tomates e croutons ao molho de Mostarda e Mel
+126	Cardápio Executivo II	SALADAS VOLANTES	1	Salada Fresh – Folhas, cenourinhas raladas, tomates marinados, croutons de pão sírio com azeites aromatizados
+127	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Mussarela ao molho de Tomates e Azeitonas Chilenas
+128	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Carne ao molho de Tomates
+129	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Lagarto e alho porro ao seu próprio molho
+130	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Penne à primavera
+131	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Fusilli ao molho 4 queijos
+132	Cardápio Executivo II	Prato Principal	1	Picadinho à Brasileira com Chalotas douradas
+133	Cardápio Executivo II	Prato Principal	1	Boeuf Bourguignon
+134	Cardápio Executivo II	Prato Principal	1	Blanquet de chester ao molho champagne
+135	Cardápio Executivo II	Prato Principal	1	Frango ao Curry
+136	Cardápio Executivo II	Arroz	1	Arroz branco com alho porro crisp
+137	Cardápio Executivo II	Arroz	1	Arroz Milanês
+138	Cardápio Executivo II	Arroz	1	Arroz branco com salsinha
+139	Cardápio Executivo II	Arroz	1	Arroz à primavera
+140	Cardápio Executivo II	Acompanhamento	1	Purê de mandioquinha com brócolis
+141	Cardápio Executivo II	Acompanhamento	1	Batata Rústica
+142	Cardápio Executivo II	Acompanhamento	1	Gratin de legumes
+143	Cardápio Executivo II	Acompanhamento	1	Cuscuz de mini legumes
+144	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Torta de chocolate belga
+145	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Cheese cake com calda de frutas silvestres
+146	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Cubos de frutas da estação
+147	Cardápio Executivo II	SOBREMESAS VOLANTES	1	NULL
+148	Cardápio Executivo II	BEBIDAS	1	Água com gás
+149	Cardápio Executivo II	BEBIDAS	1	Água sem gás
+150	Cardápio Executivo II	BEBIDAS	1	Refrigerantes
+151	Cardápio Executivo II	BEBIDAS	1	Café
+152	Cardápio Executivo II	BEBIDAS	1	Chás diversos
+153	Cardápio Executivo II	BEBIDAS	1	Petit fours
+154	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Stick de legumes variados, acompanhados de pasta de ervas Finas e Azeitonas Pretas
+155	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Stick de coalho e melaço de cana
+156	Cardápio Executivo II	Degustações Especiais volante ou servidas nas mesas	1	Capuccino de abóbora e alecrim
+157	Cardápio Executivo II	SALADAS VOLANTES	1	Caesar Salad ao molho tradiconal
+158	Cardápio Executivo II	SALADAS VOLANTES	1	Salada de folhas e legumes grelhados ao molho cremoso de siciliano de dill fresco
+159	Cardápio Executivo II	SALADAS VOLANTES	1	Alface americana, tomates e croutons ao molho de Mostarda e Mel
+160	Cardápio Executivo II	SALADAS VOLANTES	1	Salada Fresh – Folhas, cenourinhas raladas, tomates marinados, croutons de pão sírio com azeites aromatizados
+161	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Mussarela ao molho de Tomates e Azeitonas Chilenas
+162	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Carne ao molho de Tomates
+163	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Lagarto e alho porro ao seu próprio molho
+164	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Penne à primavera
+165	Cardápio Executivo II	Tortellini Original “ArtGusto”	1	Fusilli ao molho 4 queijos
+166	Cardápio Executivo II	Prato Principal	1	Picadinho à Brasileira com Chalotas douradas
+167	Cardápio Executivo II	Prato Principal	1	Boeuf Bourguignon
+168	Cardápio Executivo II	Prato Principal	1	Blanquet de chester ao molho champagne
+169	Cardápio Executivo II	Prato Principal	1	Frango ao Curry
+170	Cardápio Executivo II	Arroz	1	Arroz branco com alho porro crisp
+171	Cardápio Executivo II	Arroz	1	Arroz Milanês
+172	Cardápio Executivo II	Arroz	1	Arroz branco com salsinha
+173	Cardápio Executivo II	Arroz	1	Arroz à primavera
+174	Cardápio Executivo II	Acompanhamento	1	Purê de mandioquinha com brócolis
+175	Cardápio Executivo II	Acompanhamento	1	Batata Rústica
+176	Cardápio Executivo II	Acompanhamento	1	Gratin de legumes
+177	Cardápio Executivo II	Acompanhamento	1	Cuscuz de mini legumes
+178	Cardápio Executivo II	Arroz	1	Arroz branco com alho porro crisp
+179	Cardápio Executivo II	Arroz	1	Arroz Milanês
+180	Cardápio Executivo II	Arroz	1	Arroz branco com salsinha
+181	Cardápio Executivo II	Arroz	1	Arroz à primavera
+182	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Torta de chocolate belga
+183	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Cheese cake Orange com calda de frutas silvestres
+184	Cardápio Executivo II	SOBREMESAS VOLANTES	1	Cubos de frutas da estação
+185	Cardápio Executivo II	BEBIDAS	1	Água com gás
+186	Cardápio Executivo II	BEBIDAS	1	Água sem gás
+187	Cardápio Executivo II	BEBIDAS	1	Café
+188	Cardápio Executivo II	BEBIDAS	1	Chás diversos
+189	Cardápio Executivo II	BEBIDAS	1	Petit fours
+190	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+191	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+192	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+193	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+194	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+195	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+196	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com tapenade e azeite de trufas
+197	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+198	Cardápio Amalfi	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+199	Cardápio Amalfi	COQUETEL FRIO	1	Camarões com sour cream de limão siciliano e dill
+200	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+201	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+202	Cardápio Amalfi	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+203	Cardápio Amalfi	ENTRADAS FRIAS	1	Phyllos de abóbora e carne de sol marinada em tangerina
+204	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+205	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+206	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+207	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+208	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de camarões
+209	Cardápio Amalfi	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+210	Cardápio Amalfi	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+211	Cardápio Amalfi	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+212	Cardápio Amalfi	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+213	Cardápio Amalfi	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+214	Cardápio Amalfi	CONSOMMÉS	1	Consommé de alho porro e natas
+215	Cardápio Amalfi	CONSOMMÉS	1	Escondidinho de carne seca
+216	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+217	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+218	Finger Food	ENTRADAS FRIAS	1	Mix de tomates coloridos e manjericão ao molho de limão galego
+219	Finger Food	ENTRADAS FRIAS	1	Salada Gamberetti - Folhas da estação, composição de pupunha, arroz selvagem, erva doce e camarões ao molho
+siciliano
+251	Finger Food	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+252	Finger Food	ENTRADAS FRIAS	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+253	Finger Food	ENTRADAS FRIAS	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+254	Finger Food	ENTRADAS FRIAS	1	Mix de verdes com aspargos, presunto de parma e croutons
+255	Finger Food	ENTRADAS FRIAS	1	Salada de frutas da estação marinadas em redução de balsâmico e spicy pecans
+256	Finger Food	ENTRADAS FRIAS	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+257	Finger Food	ENTRADAS FRIAS	1	Frisse salad com beterrabas e roquefort
+Temperadas com molho de azeite, limão, sal, pimenta e ervas
+258	Finger Food	MINI QUICHE	1	Queijos Nobres
+259	Finger Food	MINI QUICHE	1	Cogumelos selvagens al limone
+260	Finger Food	MINI QUICHE	1	Figos e gorgonzola
+261	Finger Food	MINI QUICHE	1	Fungui Secchi
+262	Finger Food	MINI QUICHE	1	Verdíssima de vegetais precoces e castanhas
+263	Finger Food	MINI MASSA	1	Mini tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+264	Finger Food	MINI MASSA	1	Mini tortellini de Vitela ao molho de sálvia
+265	Finger Food	MINI MASSA	1	Mini tortellini de Pêras e queijos finos ao molho de sálvia
+266	Finger Food	MINI MASSA	1	Mini tortelloni de Salmão defumado e ricota ao molho bechamel
+267	Finger Food	MINI MASSA	1	Mini sofioli Verde com queijos especiais ao molho de tomates rústicos
+268	Finger Food	MINI MASSA	1	Mini tortellini de Lagarto ao molho de alho porro
+269	Finger Food	PRATO PRINCIPAL	1	Filé mignon em crosta de amêndoas e nozes recheado com cogumelos acompanhado de batatas rústicas com ervas e
+risotto milanês
+270	Finger Food	PRATO PRINCIPAL	1	Escalope de Filet Mignon com molho roti acompanhado com Gratin de gruyere com presunto cru e mel e
+risotto de cogumelos selvagens
+271	Finger Food	PRATO PRINCIPAL	1	Tiras de filé mignon ao jus de seu próprio caldo acompanhado de Phyllos de gorgonzola e figos marinados em
+balsâmico e risotto acomanhado de risotto de alho porro
+272	Finger Food	PRATO PRINCIPAL	1	Salmão tostado em molho de sakê e jus de cítricos acompanhado de verdíssimo de espinafre e risotto de aspargos
+273	Finger Food	PRATO PRINCIPAL	1	Roulade de Saint Peter e velouté de laranja acompanhado de legumes grelhados em azeite de tomilho
+e risotto de alho porro
+274	Finger Food	PRATO PRINCIPAL	1	Salmão ao molho de Maracujá acompanhados de legumes grelhados em azeite de tomilho e risotto de aspargos
+275	Finger Food	SOBREMESA	1	Lasagna de chocolate acompanhada de sorvete de creme
+276	Finger Food	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+277	Finger Food	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+278	Finger Food	SOBREMESA	1	Mini profiterolis recheados de doce de leite acompanhados de sorvete de morango
+279	Finger Food	BEBIDAS	1	Café
+280	Finger Food	BEBIDAS	1	Chás diversos
+281	Finger Food	BEBIDAS	1	Água com gás 
+282	Finger Food	BEBIDAS	1	Água sem gás 
+283	Finger Food	BEBIDAS	1	Refrigerantes
+284	Finger Food	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+285	Finger Food	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+286	Finger Food	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+287	Finger Food	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+288	Finger Food	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+289	Finger Food	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+290	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Paté de foie ao jus de frutas vermelhas e suas torradinhas
+291	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Mousse de damasco e amêndoas
+292	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Dome de salmão e maçãs Granny Smith
+293	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Stick de coalho em teriyaki de melaço de cana
+294	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Petit Caprese com Pesto Genovese
+295	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Ceviche de Robalo e cebouletes com salsa cítrica
+296	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Carpaccio com tapenade e azeite de trufas
+297	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Cestinhas de chevre e chutney de tomates
+298	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Toast de provolone com roast beef “homemade” e Dijon
+299	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Camarões com sour cream de limão siciliano e dill
+300	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Mousse de tomates secos e pesto Genovese
+301	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Carpaccio com mostarda dijon e Grana Padano
+302	Cardápio Amalfi	BEBIDAS	1	 COQUETEL FRIO - Rools de berinjela e mussarela de búfala cremosa
+303	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Phyllos de abóbora e carne de sol marinada em tangerina
+304	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Pasteizinhos de linguiça toscana e erva doce
+305	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Quiche de gorgonzola e figos
+306	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Polpette de carne de panela e dip de pimentas brasileiras
+307	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Samosa de queijo ementhal e suas ervas
+308	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Vol au vent de camarões
+309	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Crocantes de frango flocado com aioli
+310	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Micro quiche de alho porro e limão galego
+311	Cardápio Amalfi	BEBIDAS	1	COQUETEL QUENTE - Crispies de queijos nobres e manjerona
+312	Cardápio Amalfi	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+313	Cardápio Amalfi	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+314	Cardápio Amalfi	CONSOMMÉS	1	Consommé de alho porro e natas
+315	Cardápio Amalfi	CONSOMMÉS	1	Escondidinho de carne seca
+316	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+317	Cardápio Amalfi	CONSOMMÉS	1	Brie com mel e amêndoas laminadas
+318	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de tomates e pesto Genovese
+319	Jantar Franco Americano	ENTRADAS FRIAS	1	Placa de mini legumes grelhados
+320	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de grãos nobres com salmão gravlax
+321	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de gorgonzola
+322	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de tomates coloridos e manjericão ao molho de limão galego
+323	Jantar Franco Americano	ENTRADAS FRIAS	1	Torre de trigo, tamarindo e cebolas carameladas
+324	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada Gamberetti - Folhas da estação, composição de pupunha, arroz selvagem, erva doce e camarões ao molho
+siciliano
+325	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+326	Jantar Franco Americano	ENTRADAS FRIAS	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+327	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+328	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de verdes com aspargos, presunto de parma e croutons
+329	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada de frutas da estação marinadas em redução de balsâmico e spicy pecans
+330	Jantar Franco Americano	ENTRADAS FRIAS	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+331	Jantar Franco Americano	ENTRADAS FRIAS	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+332	Jantar Franco Americano	ENTRADAS FRIAS	1	Prosciutto com melão Orange e folhas precoces
+333	Jantar Franco Americano	ENTRADAS FRIAS	1	Frisse salad com beterrabas e roquefort
+334	Jantar Franco Americano	ENTRADAS FRIAS	1	Risoni com tomates secos, folhas amargas e grana padanno
+335	Jantar Franco Americano	QUICHE	1	Queijos Nobres
+336	Jantar Franco Americano	QUICHE	1	Cogumelos selvagens al limone
+337	Jantar Franco Americano	QUICHE	1	Figos e gorgonzola
+338	Jantar Franco Americano	QUICHE	1	Fungui Secchi
+339	Jantar Franco Americano	QUICHE	1	Verdíssima de vegetais precoces e castanhas
+340	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+341	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Vitela ao molho de sálvia
+342	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+343	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+344	Jantar Franco Americano	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+345	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Lagarto ao molho de alho porro
+346	Jantar Franco Americano	Carne Vermelha	1	Corte alto de mignon ao jus de seu próprio caldo
+347	Jantar Franco Americano	Carne Vermelha	1	Peça de mignon selada em trio de mostardas
+348	Jantar Franco Americano	Carne Vermelha	1	Filé em croute recheado com cogumelos
+349	Jantar Franco Americano	Carne Vermelha	1	Escalope de Filet Mignon com molho roti
+350	Jantar Franco Americano	Peixe	1	Salmão tostado em molho de sakê e jus de cítricos
+351	Jantar Franco Americano	Peixe	1	Roulade de Saint Peter e velouté de laranja
+352	Jantar Franco Americano	Peixe	1	Salmão ao molho de Maracujá
+353	Jantar Franco Americano	Risotto	1	Risotto de pêras e Gorgonzola
+354	Jantar Franco Americano	Risotto	1	Risotto milanês
+355	Jantar Franco Americano	Risotto	1	Risotto de brie e champagne
+356	Jantar Franco Americano	Risotto	1	Risotto de cogumelos selvagens al limone
+357	Jantar Franco Americano	Risotto	1	Risotto de Zucchini e ementhal
+358	Jantar Franco Americano	Risotto	1	Risotto de aspargos
+359	Jantar Franco Americano	Acompanhamento	1	Batatas Duchese e gruyere
+360	Jantar Franco Americano	Acompanhamento	1	Legumes grelhados em azeite de tominho
+361	Jantar Franco Americano	Acompanhamento	1	Batatas rústicas com ervas
+362	Jantar Franco Americano	Acompanhamento	1	Gratin de batatas com gruyere
+363	Jantar Franco Americano	Acompanhamento	1	Verdíssimo de creme de espinafre
+364	Jantar Franco Americano	Acompanhamento	1	Tarte de zucca com lentilhas de puy e erva doce
+365	Jantar Franco Americano	Acompanhamento	1	Purê de banana da terra com vanilla
+366	Jantar Franco Americano	Acompanhamento	1	Phyllos de gorgonzola e figos marinados em balsâmico
+367	Jantar Franco Americano	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+368	Jantar Franco Americano	SOBREMESA	1	Tarte Tatin aux Pommes (maçãs)
+369	Jantar Franco Americano	SOBREMESA	1	Altura mousse de três brigadeiros
+370	Jantar Franco Americano	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+371	Jantar Franco Americano	SOBREMESA	1	Lasagna de chocolate
+372	Jantar Franco Americano	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+373	Jantar Franco Americano	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+374	Jantar Franco Americano	SOBREMESA	1	Mini profiterolis recheados de doce de leite
+375	Jantar Franco Americano	SOBREMESA	1	Zucotto de frutas vermelhas
+376	Jantar Franco Americano	SORVETE	1	Pistache
+377	Jantar Franco Americano	SORVETE	1	Chocolate
+378	Jantar Franco Americano	SORVETE	1	Creme
+379	Jantar Franco Americano	SORVETE	1	Morango
+380	Jantar Franco Americano	SORVETE	1	Caldas - Frutas vermelhas
+381	Jantar Franco Americano	SORVETE	1	Caldas - Chocolate meio amargo
+382	Jantar Franco Americano	BEBIDAS	1	Café
+383	Jantar Franco Americano	BEBIDAS	1	Chás diversos
+384	Jantar Franco Americano	BEBIDAS	1	Água com gás
+385	Jantar Franco Americano	BEBIDAS	1	Água sem gás
+386	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+387	Jantar Franco Americano	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+388	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+389	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+390	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+391	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+392	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+393	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+394	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+395	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+396	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+397	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+398	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+399	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+400	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com tapenade e azeite de trufas
+401	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+402	Cardápio Amalfi	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+403	Cardápio Amalfi	COQUETEL FRIO	1	Camarões com sour cream de limão siciliano e dill
+404	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+405	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+406	Cardápio Amalfi	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+407	Cardápio Amalfi	COQUETEL QUENTE	1	Phyllos de abóbora e carne de sol marinada em tangerina
+408	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+409	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+410	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+411	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+412	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de camarões laqueados em molho de ostras
+413	Cardápio Amalfi	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+414	Cardápio Amalfi	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+415	Cardápio Amalfi	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+416	Cardápio Amalfi	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+417	Cardápio Amalfi	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+418	Cardápio Amalfi	CONSOMMÉS	1	Consommé de alho porro e natas
+419	Cardápio Amalfi	CONSOMMÉS	1	Escondidinho de carne seca
+420	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+421	Cardápio Amalfi	CONSOMMÉS	1	Brie com mel e amêndoas laminadas
+422	Jantar Franco Americano	ENTRADAS FRIAS	1	Cuscuz marroquino com pupunha, endívias e pistache
+423	Jantar Franco Americano	ENTRADAS FRIAS	1	Bloco de Philadélfia, tomates e pesto Genovese
+424	Jantar Franco Americano	ENTRADAS FRIAS	1	Placa de mini legumes grelhados
+425	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de grãos nobres com salmão gravlax
+426	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrina de zucchini, chevre cremoso e hortelã acompanhado de variados pães
+427	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de tomates coloridos e manjericão ao molho de limão galego
+428	Jantar Franco Americano	ENTRADAS FRIAS	1	Torre de trigo, tamarindo e cebolas carameladas
+429	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada Gamberetti - Folhas da estação, composição de pupunha, arroz selvagem, erva doce e camarões ao molho
+siciliano
+430	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+431	Jantar Franco Americano	ENTRADAS FRIAS	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+432	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+433	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada de frutas da estação marinadas em redução de balsâmico e spicy pecans
+434	Jantar Franco Americano	ENTRADAS FRIAS	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+435	Jantar Franco Americano	ENTRADAS FRIAS	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+436	Jantar Franco Americano	ENTRADAS FRIAS	1	Prosciutto com melão Orange e folhas precoces
+437	Jantar Franco Americano	ENTRADAS FRIAS	1	Frisse salad com beterrabas e roquefort
+438	Jantar Franco Americano	ENTRADAS FRIAS	1	Risoni com tomates secos, folhas amargas e grana padanno
+439	Jantar Franco Americano	QUICHE	1	Queijos Nobres
+440	Jantar Franco Americano	QUICHE	1	Cogumelos selvagens al limone
+441	Jantar Franco Americano	QUICHE	1	Figos e gorgonzola
+442	Jantar Franco Americano	QUICHE	1	Fungui Secchi
+443	Jantar Franco Americano	QUICHE	1	Verdíssima de vegetais precoces e castanhas
+444	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+445	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Vitela ao molho de sálvia
+446	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+447	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+448	Jantar Franco Americano	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+449	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Lagarto ao molho de alho porro
+450	Jantar Franco Americano	Carne Vermelha	1	Corte alto de mignon ao jus de seu próprio caldo
+451	Jantar Franco Americano	Carne Vermelha	1	Peça de mignon selada em trio de mostardas
+452	Jantar Franco Americano	Carne Vermelha	1	Filé em croute recheado com cogumelos
+453	Jantar Franco Americano	Carne Vermelha	1	Escalope de Filet Mignon com molho roti
+454	Jantar Franco Americano	Peixe	1	Salmão tostado em molho de sakê e jus de cítricos
+455	Jantar Franco Americano	Peixe	1	Roulade de Saint Peter e velouté de laranja
+456	Jantar Franco Americano	Peixe	1	Salmão ao molho de Maracujá
+457	Jantar Franco Americano	Risotto	1	Risotto de pêras e Gorgonzola
+458	Jantar Franco Americano	Risotto	1	Risotto milanês
+459	Jantar Franco Americano	Risotto	1	Risotto de brie e champagne
+460	Jantar Franco Americano	Risotto	1	Risotto de cogumelos selvagens al limone
+461	Jantar Franco Americano	Risotto	1	Risotto de Zucchini e ementhal
+462	Jantar Franco Americano	Risotto	1	Risotto de aspargos
+463	Jantar Franco Americano	Acompanhamento	1	Batatas Duchese e gruyere
+464	Jantar Franco Americano	Acompanhamento	1	Legumes grelhados em azeite de tominho
+465	Jantar Franco Americano	Acompanhamento	1	Batatas rústicas com ervas
+466	Jantar Franco Americano	Acompanhamento	1	Gratin de batatas com gruyere
+467	Jantar Franco Americano	Acompanhamento	1	Verdíssimo de creme de espinafre
+468	Jantar Franco Americano	Acompanhamento	1	Tarte de zucca com lentilhas de puy e erva doce
+469	Jantar Franco Americano	Acompanhamento	1	Purê de banana da terra com vanilla
+470	Jantar Franco Americano	Acompanhamento	1	Phyllos de gorgonzola e figos marinados em balsâmico
+471	Jantar Franco Americano	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+472	Jantar Franco Americano	SOBREMESA	1	Tarte Tatin aux Pommes (maçãs)
+473	Jantar Franco Americano	SOBREMESA	1	Altura mousse de três brigadeiros
+474	Jantar Franco Americano	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+475	Jantar Franco Americano	SOBREMESA	1	Lasagna de chocolate meio amargo e seus suspiros “homemade”
+476	Jantar Franco Americano	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+477	Jantar Franco Americano	SOBREMESA	1	Cheesecake Orange com calda de frutas silvestre
+478	Jantar Franco Americano	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+479	Jantar Franco Americano	SOBREMESA	1	Zucotto de frutas vermelhas
+480	Jantar Franco Americano	SORVETE	1	Pistache
+481	Jantar Franco Americano	SORVETE	1	Chocolate
+482	Jantar Franco Americano	SORVETE	1	Creme
+483	Jantar Franco Americano	SORVETE	1	Morango
+484	Jantar Franco Americano	SORVETE	1	Caldas - Frutas vermelhas
+485	Jantar Franco Americano	SORVETE	1	Caldas - Chocolate meio amargo
+486	Jantar Franco Americano	BEBIDAS	1	Café
+487	Jantar Franco Americano	BEBIDAS	1	Chás diversos
+488	Jantar Franco Americano	BEBIDAS	1	Água com gás
+489	Jantar Franco Americano	BEBIDAS	1	Água sem gás 
+490	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+491	Jantar Franco Americano	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+492	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+493	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+494	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+495	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+496	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+497	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+498	Jantar Franco Americano	Petit fours	1	Trufinhas de chocolate
+499	Jantar Franco Americano	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+500	Jantar Franco Americano	Petit fours	1	Micro de cookies de limão
+501	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+502	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+503	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+504	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+505	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+506	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+507	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com tapenade e azeite de trufas
+508	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+509	Cardápio Amalfi	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+510	Cardápio Amalfi	COQUETEL FRIO	1	Camarões com sour cream de limão siciliano e dill
+511	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+512	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+513	Cardápio Amalfi	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+514	Cardápio Amalfi	COQUETEL QUENTE	1	Phyllos de abóbora e carne de sol marinada em tangerina
+515	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+516	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+517	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+518	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+519	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de camarões
+520	Cardápio Amalfi	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+521	Cardápio Amalfi	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+522	Cardápio Amalfi	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+523	Cardápio Amalfi	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+524	Cardápio Amalfi	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+525	Cardápio Amalfi	CONSOMMÉS	1	Consommé de alho porro e natas
+526	Cardápio Amalfi	CONSOMMÉS	1	Escondidinho de carne seca
+527	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+528	Cardápio Amalfi	CONSOMMÉS	1	Brie com mel e amêndoas laminadas
+529	Jantar à Inglesa	ENTRADA	1	Salada Gamberetti - Folhas da estação, composição de pupunha, arroz selvagem, erva doce e camarões ao molho
+siciliano
+530	Jantar à Inglesa	ENTRADA	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+531	Jantar à Inglesa	ENTRADA	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+532	Jantar à Inglesa	ENTRADA	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+533	Jantar à Inglesa	ENTRADA	1	Mix de verdes com aspargos, presunto de parma e croutons
+534	Jantar à Inglesa	ENTRADA	1	Salada de frutas da estação marinadas em redução de balsâmico (molho) e spicy pecans
+535	Jantar à Inglesa	ENTRADA	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+536	Jantar à Inglesa	ENTRADA	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+537	Jantar à Inglesa	ENTRADA	1	Prosciutto com melão Orange e folhas precoces
+538	Jantar à Inglesa	ENTRADA	1	Frisse salad com beterrabas e roquefort
+539	Jantar à Inglesa	ENTRADA	1	Risoni com tomates secos, folhas amargas e grana padanno
+540	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Vitela ao molho de sálvia
+541	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+542	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+543	Jantar à Inglesa	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+544	Jantar à Inglesa	PRATO PRINCIPAL	1	Filé mignon em crosta de amêndoas e nozes recheado com cogumelos acompanhado de batatas rústicas com ervas e
+risotto milanês
+545	Jantar à Inglesa	PRATO PRINCIPAL	1	Escalope de Filet Mignon com molho roti acompanhado com Gratin de gruyere com presunto cru e mel e
+risotto de cogumelos selvagens
+546	Jantar à Inglesa	PRATO PRINCIPAL	1	Corte alto de mignon ao jus de seu próprio caldo acompanhado de Phyllos de gorgonzola e figos marinados em
+balsâmico e risotto acomanhado de risotto de alho porro
+547	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão tostado em molho de sakê e jus de cítricos acompanhado de verdíssimo de espinafre e risotto de aspargos
+548	Jantar à Inglesa	PRATO PRINCIPAL	1	Roulade de Saint Peter e velouté de laranja acompanhado de legumes grelhados em azeite de tomilho
+e risotto de alho porro
+549	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão ao molho de Maracujá acompanhados de legumes grelhados em azeite de tomilho e risotto de aspargos
+550	Jantar à Inglesa	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+551	Jantar à Inglesa	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+552	Jantar à Inglesa	SOBREMESA	1	Lasagna de chocolate acompanhada de sorvete de creme
+553	Jantar à Inglesa	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+554	Jantar à Inglesa	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+555	Jantar à Inglesa	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+556	Jantar à Inglesa	SOBREMESA	1	Mini profiterolis recheados de doce de leite acompanhados de sorvete de morango
+557	Jantar à Inglesa	SOBREMESA	1	Zucotto de frutas vermelhas
+558	Jantar à Inglesa	SOBREMESA	1	Standby
+Frutas frescas laminadas
+559	Jantar à Inglesa	BEBIDAS	1	Refrigerantes
+560	Jantar à Inglesa	BEBIDAS	1	Água sem gás
+561	Jantar à Inglesa	BEBIDAS	1	Água com gás
+562	Jantar à Inglesa	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+563	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+564	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+565	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+566	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+567	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+568	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+569	Jantar à Inglesa	Petit fours	1	Trufinhas de chocolate
+570	Jantar à Inglesa	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+571	Jantar à Inglesa	Petit fours	1	Micro cookies de limão
+572	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+573	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+574	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+575	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+576	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+577	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+578	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com tapenade e azeite de trufas
+579	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+580	Cardápio Amalfi	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+581	Cardápio Amalfi	COQUETEL FRIO	1	Camarões com sour cream de limão siciliano e dill
+582	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+583	Cardápio Amalfi	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+584	Cardápio Amalfi	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+585	Cardápio Amalfi	COQUETEL QUENTE	1	Phyllos de abóbora e carne de sol marinada em tangerina
+586	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+587	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+588	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+589	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+590	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de camarões laqueados em molho de ostras
+591	Cardápio Amalfi	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+592	Cardápio Amalfi	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+593	Cardápio Amalfi	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+594	Cardápio Amalfi	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+595	Cardápio Amalfi	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+596	Cardápio Amalfi	CONSOMMÉS	1	Consommé de alho porro e natas
+597	Cardápio Amalfi	CONSOMMÉS	1	Escondidinho de carne seca
+598	Cardápio Amalfi	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+599	Cardápio Amalfi	CONSOMMÉS	1	Brie com mel e amêndoas laminadas
+600	Jantar à Inglesa	ENTRADA	1	Salada Gamberetti - Folhas da estação, composição de pupunha, arroz selvagem, erva doce e camarões ao molho
+siciliano
+601	Jantar à Inglesa	ENTRADA	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+602	Jantar à Inglesa	ENTRADA	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+603	Jantar à Inglesa	ENTRADA	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+604	Jantar à Inglesa	ENTRADA	1	Salada de frutas da estação marinadas em redução de balsâmico (molho) e spicy pecans
+605	Jantar à Inglesa	ENTRADA	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+606	Jantar à Inglesa	ENTRADA	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+607	Jantar à Inglesa	ENTRADA	1	Prosciutto com melão Orange e folhas precoces
+608	Jantar à Inglesa	ENTRADA	1	Frisse salad com beterrabas e roquefort
+609	Jantar à Inglesa	ENTRADA	1	Risoni com tomates secos, folhas amargas e grana padanno
+610	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Vitela ao molho de sálvia
+611	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+612	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+613	Jantar à Inglesa	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+614	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Lagarto ao molho de alho porro
+615	Jantar à Inglesa	PRATO PRINCIPAL	1	Filé mignon em crosta de amêndoas e nozes recheado com cogumelos acompanhado de batatas rústicas com ervas e
+risotto milanês
+616	Jantar à Inglesa	PRATO PRINCIPAL	1	Escalope de Filet Mignon com molho roti acompanhado com Gratin de gruyere com presunto cru e mel e
+risotto de cogumelos selvagens
+617	Jantar à Inglesa	PRATO PRINCIPAL	1	Corte alto de mignon ao jus de seu próprio caldo acompanhado de Phyllos de gorgonzola e figos marinados em
+balsâmico e risotto de alho porro
+618	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão tostado em molho de sakê e jus de cítricos acompanhado de verdíssimo de espinafre e risotto de aspargos
+619	Jantar à Inglesa	PRATO PRINCIPAL	1	Roulade de Saint Peter e velouté de laranja acompanhado de legumes grelhados em azeite de tomilho
+e risotto de alho porro
+620	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão ao molho de Maracujá acompanhados de legumes grelhados em azeite de tomilho e risotto de aspargos
+621	Jantar à Inglesa	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+622	Jantar à Inglesa	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+623	Jantar à Inglesa	SOBREMESA	1	Lasagna de chocolate meio amargo e seus suspiros “homemade”
+624	Jantar à Inglesa	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+625	Jantar à Inglesa	SOBREMESA	1	Cheesecake Orange com calda de frutas silvestres
+626	Jantar à Inglesa	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+627	Jantar à Inglesa	SOBREMESA	1	Zucotto de frutas vermelhas
+628	Jantar à Inglesa	SOBREMESA	1	Standby
+Frutas frescas laminadas
+629	Jantar à Inglesa	BEBIDAS	1	Água sem gás
+630	Jantar à Inglesa	BEBIDAS	1	Água com gás
+631	Jantar à Inglesa	BEBIDAS	1	Refrigerantes
+632	Jantar à Inglesa	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+633	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+634	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+635	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+636	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+637	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+638	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+639	Jantar à Inglesa	Petit fours	1	Trufinhas de chocolate
+640	Jantar à Inglesa	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+641	Jantar à Inglesa	Petit fours	1	Micro cookies de limão
+642	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+643	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+644	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+645	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+646	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+647	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+648	Cardápio Amalfi	COQUETEL FRIO	1	Gefilte fish com chrein e suas cenourinhas
+649	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+650	Cardápio Amalfi	COQUETEL FRIO	1	Pumpernickel com lâminas de salmão defumado, sour cream e dill
+651	Cardápio Amalfi	COQUETEL QUENTE	1	Phyllos de meia cura
+652	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de batata, ricota e cebolas carameladas
+653	Cardápio Amalfi	COQUETEL QUENTE	1	Crab Fish com mousseline de cítricos
+654	Cardápio Amalfi	COQUETEL QUENTE	1	Croquetinhos de haddock defumado
+655	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+656	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de salmão e dip de pimentas brasileiras
+657	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+658	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de brie e mel de acácias
+659	Cardápio Amalfi	CONSOMMES	1	Capuccino de abóbora e alecrim
+660	Cardápio Amalfi	CONSOMMES	1	Creme de mandioquinha com chips de cebola e sal de Guerand
+661	Cardápio Amalfi	CONSOMMES	1	Consommé de alho porro e natas
+662	Cardápio Amalfi	CONSOMMES	1	Brie com mel e amêndoas laminadas
+663	Cardápio Amalfi	CONSOMMES	1	Gratin de queijos nobres
+664	Cardápio Amalfi	CONSOMMES	1	Polenta Bergamasca com ragu de cogumelos selvagens
+665	Cardápio Amalfi	CONSOMMES	1	Saiadié – Risoto de peixe
+666	Cardápio Amalfi	CONSOMMES	1	Cestinha com mandioquinha cremosa, crispies de cebola e Laranja
+667	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de tomates e pesto Genovese
+668	Jantar Franco Americano	ENTRADAS FRIAS	1	Placa de mini legumes grelhados
+669	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de grãos nobres com salmão gravlax
+670	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de gorgonzola
+671	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de tomates coloridos e manjericão ao molho de limão galego
+672	Jantar Franco Americano	ENTRADAS FRIAS	1	Torre de trigo, tamarindo e cebolas carameladas
+673	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+674	Jantar Franco Americano	ENTRADAS FRIAS	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+675	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+676	Jantar Franco Americano	ENTRADAS FRIAS	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+677	Jantar Franco Americano	ENTRADAS FRIAS	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+678	Jantar Franco Americano	ENTRADAS FRIAS	1	Frisse salad com beterrabas e roquefort
+679	Jantar Franco Americano	ENTRADAS FRIAS	1	Risoni com tomates secos, folhas amargas e grana padanno
+680	Jantar Franco Americano	QUICHE	1	Queijos Nobres
+681	Jantar Franco Americano	QUICHE	1	Cogumelos selvagens al limone
+682	Jantar Franco Americano	QUICHE	1	Figos e gorgonzola
+683	Jantar Franco Americano	QUICHE	1	Fungui Secchi
+684	Jantar Franco Americano	QUICHE	1	Verdíssima de vegetais precoces e castanhas
+685	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+686	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+687	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+688	Jantar Franco Americano	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+689	Jantar Franco Americano	Peixe	1	Salmão tostado em molho de sakê e jus de cítricos
+690	Jantar Franco Americano	Peixe	1	Roulade de Saint Peter e velouté de laranja
+691	Jantar Franco Americano	Peixe	1	Salmão ao molho de Maracujá
+692	Jantar Franco Americano	Risotto	1	Risotto de pêras e Gorgonzola
+693	Jantar Franco Americano	Risotto	1	Risotto milanês
+694	Jantar Franco Americano	Risotto	1	Risotto de brie e champagne
+695	Jantar Franco Americano	Risotto	1	Risotto de cogumelos selvagens al limone
+696	Jantar Franco Americano	Risotto	1	Risotto de Zucchini e ementhal
+697	Jantar Franco Americano	Risotto	1	Risotto de aspargos
+698	Jantar Franco Americano	Acompanhamento	1	Batatas Duchese e gruyere
+699	Jantar Franco Americano	Acompanhamento	1	Legumes grelhados em azeite de tominho
+700	Jantar Franco Americano	Acompanhamento	1	Batatas rústicas com ervas
+701	Jantar Franco Americano	Acompanhamento	1	Gratin de batatas com gruyere
+702	Jantar Franco Americano	Acompanhamento	1	Verdíssimo de creme de espinafre
+703	Jantar Franco Americano	Acompanhamento	1	Purê de banana da terra com vanilla
+704	Jantar Franco Americano	Acompanhamento	1	Phyllos de gorgonzola e figos marinados em balsâmico
+705	Jantar Franco Americano	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+706	Jantar Franco Americano	SOBREMESA	1	Tarte Tatin aux Pommes (maçãs)
+707	Jantar Franco Americano	SOBREMESA	1	Altura mousse de três brigadeiros
+708	Jantar Franco Americano	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+709	Jantar Franco Americano	SOBREMESA	1	Lasagna de chocolate
+710	Jantar Franco Americano	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+711	Jantar Franco Americano	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+712	Jantar Franco Americano	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+713	Jantar Franco Americano	SOBREMESA	1	Mini profiterolis recheados de doce de leite acompanhados de sorvete de morango
+714	Jantar Franco Americano	SOBREMESA	1	Zucotto de frutas vermelhas
+715	Jantar Franco Americano	SORVETE	1	Pistache
+716	Jantar Franco Americano	SORVETE	1	Chocolate
+717	Jantar Franco Americano	SORVETE	1	Creme
+718	Jantar Franco Americano	SORVETE	1	Morango
+719	Jantar Franco Americano	SORVETE	1	Caldas - Frutas vermelhas
+720	Jantar Franco Americano	SORVETE	1	Caldas - Chocolate meio amargo
+721	Jantar Franco Americano	BEBIDAS	1	Água com gás 
+722	Jantar Franco Americano	BEBIDAS	1	Água sem gás
+723	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+724	Jantar Franco Americano	BEBIDAS	1	Águas Aromatizadas  - Hortelã e Alecrim com canela
+725	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+726	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+727	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+728	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+729	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+730	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+731	Cardápio Amalfi	COQUETEL FRIO	1	Paté de foie ao jus de frutas vermelhas e suas torradinhas
+732	Cardápio Amalfi	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+733	Cardápio Amalfi	COQUETEL FRIO	1	Dome de salmão e maçãs Granny Smith
+734	Cardápio Amalfi	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+735	Cardápio Amalfi	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+736	Cardápio Amalfi	COQUETEL FRIO	1	Ceviche de Robalo e cebouletes com salsa cítrica
+737	Cardápio Amalfi	COQUETEL FRIO	1	Gefilte fish com chrein e suas cenourinhas
+738	Cardápio Amalfi	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+739	Cardápio Amalfi	COQUETEL FRIO	1	Pumpernickel com lâminas de salmão defumado, sour cream e dill.
+740	Cardápio Amalfi	COQUETEL QUENTE	1	Phyllos de meia cura
+741	Cardápio Amalfi	COQUETEL QUENTE	1	Pasteizinhos de batata, ricota e cebolas carameladas
+742	Cardápio Amalfi	COQUETEL QUENTE	1	Crab Fish com mousseline de cítricos
+743	Cardápio Amalfi	COQUETEL QUENTE	1	Croquetinhos de haddock defumado
+744	Cardápio Amalfi	COQUETEL QUENTE	1	Quiche de gorgonzola e figos
+745	Cardápio Amalfi	COQUETEL QUENTE	1	Polpette de salmão e dip de pimentas brasileiras
+746	Cardápio Amalfi	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+747	Cardápio Amalfi	COQUETEL QUENTE	1	Vol au vent de brie e mel de acácias
+748	Cardápio Amalfi	CONSOMMES	1	Capuccino de abóbora e alecrim
+749	Cardápio Amalfi	CONSOMMES	1	Creme de mandioquinha com chips de cebola e sal de Guerand
+750	Cardápio Amalfi	CONSOMMES	1	Consommé de alho porro e natas
+751	Cardápio Amalfi	CONSOMMES	1	Brie com mel e amêndoas laminadas
+752	Cardápio Amalfi	CONSOMMES	1	Gratin de queijos nobres
+753	Cardápio Amalfi	CONSOMMES	1	Polenta Bergamasca com ragu de cogumelos selvagens
+754	Cardápio Amalfi	CONSOMMES	1	Saiadié – Risoto de peixe
+755	Cardápio Amalfi	CONSOMMES	1	Cestinha com mandioquinha cremosa, crispies de cebola e Laranja
+756	Jantar à Inglesa	ENTRADA	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+757	Jantar à Inglesa	ENTRADA	1	Melangé de folhas da estação com cubinhos de ceviche bicolor – Salmão e robalo
+758	Jantar à Inglesa	ENTRADA	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+759	Jantar à Inglesa	ENTRADA	1	Ceviche de salmão, suas folhas e maçãs Granny Smith
+760	Jantar à Inglesa	ENTRADA	1	Carpaccio com tapenade e tomatinhos Sweet Grape
+761	Jantar à Inglesa	ENTRADA	1	Frisse salad com beterrabas e roquefort
+762	Jantar à Inglesa	ENTRADA	1	Risoni com tomates secos, folhas amargas e grana padanno
+763	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+764	Jantar à Inglesa	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+765	Jantar à Inglesa	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+766	Jantar à Inglesa	Massa Original “ArtGusto”	1	Gnocchi especial de salmão defumado ao jus de saque e laranja
+767	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão tostado em molho de sakê e jus de cítricos acompanhado de verdíssimo de espinafre e risotto de aspargos
+768	Jantar à Inglesa	PRATO PRINCIPAL	1	Roulade de Saint Peter e velouté de laranja acompanhado de legumes grelhados em azeite de tomilho
+e risotto de alho porro
+769	Jantar à Inglesa	PRATO PRINCIPAL	1	Salmão ao molho de Maracujá acompanhado de batatas rústicas com ervas e risotto de aspargos
+770	Jantar à Inglesa	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+771	Jantar à Inglesa	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+772	Jantar à Inglesa	SOBREMESA	1	Lasagna de chocolate acompanhada de sorvete de creme
+773	Jantar à Inglesa	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+774	Jantar à Inglesa	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+775	Jantar à Inglesa	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+776	Jantar à Inglesa	SOBREMESA	1	Mini profiterolis recheados de doce de leite acompanhados de sorvete de morango
+777	Jantar à Inglesa	SOBREMESA	1	Zucotto de frutas vermelhas
+778	Jantar à Inglesa	SOBREMESA	1	Standby
+Frutas frescas laminadas
+779	Jantar à Inglesa	BEBIDAS	1	Café
+780	Jantar à Inglesa	BEBIDAS	1	Chás diversos
+781	Jantar à Inglesa	BEBIDAS	1	Refrigerantes
+782	Jantar à Inglesa	BEBIDAS	1	Água com gás
+783	Jantar à Inglesa	BEBIDAS	1	Água sem gás
+784	Jantar à Inglesa	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+785	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+786	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+787	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+788	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+789	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+790	Jantar à Inglesa	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+791	Jantar à Inglesa	Petit fours	1	Trufinhas de chocolate
+792	Jantar à Inglesa	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+793	Jantar à Inglesa	Petit fours	1	Micro de cookies de limão
+794	Cardápio Bergamo	COQUETEL FRIO	1	Crostini de Grana Padano Roast Beef “homemade”
+795	Cardápio Bergamo	COQUETEL FRIO	1	Cestinhas com pêras laqueadas e Roquefort
+796	Cardápio Bergamo	COQUETEL FRIO	1	Provolone empanado em calda de melaço de cana e limão galego
+797	Cardápio Bergamo	COQUETEL FRIO	1	Sablé de castanhas com mousse Caprese
+798	Cardápio Bergamo	COQUETEL FRIO	1	Tartar de Congrio Chileno com Sálvia e nirá
+799	Cardápio Bergamo	COQUETEL FRIO	1	Bavaroise de alcachofras com azeite de trufas
+800	Cardápio Bergamo	COQUETEL FRIO	1	Tartelete de chevre, kinkan e nozes pecan
+801	Cardápio Bergamo	COQUETEL FRIO	1	Tuille de Ementhal com tapenade e carpaccio de cordeiro
+802	Cardápio Bergamo	COQUETEL FRIO	1	Prosciutto com figos e balsâmico
+803	Cardápio Bergamo	COQUETEL FRIO	1	Robalo sobre brioches tostados
+804	Cardápio Bergamo	COQUETEL QUENTE	1	Samosa de fetta, abobrinha e hortelã
+805	Cardápio Bergamo	COQUETEL QUENTE	1	Phyllos de lombo de bacalhau
+806	Cardápio Bergamo	COQUETEL QUENTE	1	Cestinhas de alcachofras e pinólis
+807	Cardápio Bergamo	COQUETEL QUENTE	1	Crocantes de caranguejo com mousseline de funghi e seus toasts
+808	Cardápio Bergamo	COQUETEL QUENTE	1	Quiche de prosciutto e mel de acácias
+809	Cardápio Bergamo	COQUETEL QUENTE	1	Spring roll de galinha D’Angola
+810	Cardápio Bergamo	COQUETEL QUENTE	1	Gnocchi Rústico de semolina e avelãs com molho de tomates
+811	Cardápio Bergamo	COQUETEL QUENTE	1	Vol au vent de Haddock defumado
+812	Cardápio Bergamo	COQUETEL QUENTE	1	Vol au vent de camarões
+813	Cardápio Bergamo	COQUETEL QUENTE	1	Polpetini de cordeiro ao sumo de hortelã
+814	Cardápio Bergamo	CONSOMMES	1	Capuccino de alcachofras e azeite de trufas
+815	Cardápio Bergamo	CONSOMMES	1	Caldinho de feijão com pimentas brasileiras
+816	Cardápio Bergamo	CONSOMMES	1	Capuccino de cenouras e anis estrelado
+817	Cardápio Bergamo	CONSOMMES	1	Verdíssimo de aspargos trufado com pistache Siciliano
+818	Cardápio Bergamo	CONSOMMES	1	Consomê de palmito pupunha e Pesto Genovese
+819	Cardápio Bergamo	CONSOMMES	1	Brie com favos de mel e crocantes de Pistache
+820	Cardápio Bergamo	CONSOMMES	1	Polenta Bergamasca gratinada com parmesão
+821	Cardápio Bergamo	CONSOMMES	1	Camembert com frutti di bosco – frutas silvestres
+822	Cardápio Bergamo	CONSOMMES	1	Involtini de perú com prosciutto e roti de tâmaras
+823	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Paté di Fegatto D’Anatra e seus brioches tostados – Patê de pato
+824	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Mousse de gorgonzola e tâmaras
+825	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Patê de pato com pistache siciliano e pimenta verde
+826	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Terrina de Jabuticabas e castanhas do brasil
+827	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Dome de salmão Gravlax com sour cream e blinis
+828	Jantar Franco Americano	ENTRADAS FRIAS	1	Insalata de folhas e ceviche de salmão marinado em ervas
+829	Jantar Franco Americano	ENTRADAS FRIAS	1	Placa de legumes precoces – Palmito pupunha em troncos, erva doce, endívias, micro abobrinhas, mini berinjelas e
+cenourinhas
+830	Jantar Franco Americano	ENTRADAS FRIAS	1	Esfera gigante de salmão gravlax com suas ovas, creme azedo e blinis ou tartar de robalo e salsa picante
+831	Jantar Franco Americano	ENTRADAS FRIAS	1	Tarte de tomatinhos sweet grape com tapenade
+832	Jantar Franco Americano	ENTRADAS FRIAS	1	Telha de agrião com legumes precoces e queijo chevre
+833	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de grãos nobres- Trigo, arroz selvagem, lentilhas de puy, mohgrabieh e edamame
+834	Jantar Franco Americano	ENTRADAS FRIAS	1	Brie gigante com frutti di bosco e amêndoas
+835	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de roquefort e figos
+836	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de salmão com lentilhas verdes, aspargos e suas folhas crocantesr
+837	Jantar Franco Americano	QUICHE	1	Queijos Nobres
+838	Jantar Franco Americano	QUICHE	1	Cogumelos selvagens al limone
+839	Jantar Franco Americano	QUICHE	1	Figos e gorgonzola
+840	Jantar Franco Americano	QUICHE	1	Fungui Secchi
+841	Jantar Franco Americano	QUICHE	1	Verdíssima de vegetais precoces e castanhas
+842	Jantar Franco Americano	Massa Original “ArtGusto”	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+843	Jantar Franco Americano	Massa Original “ArtGusto”	1	Mezzaluna de Vitela ao molho de sálvia
+844	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+845	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+846	Jantar Franco Americano	Massa Original “ArtGusto”	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+847	Jantar Franco Americano	Massa Original “ArtGusto”	1	Zucchini Gnocchi e brie com molho de sálvia
+848	Jantar Franco Americano	Massa Original “ArtGusto”	1	Mezza luna de mussarela de búfala ao molho rústico de tomates Bisutti
+849	Jantar Franco Americano	Massa Original “ArtGusto”	1	Gnocchi Rustico de olivas negras al tintoretto di seppia com molho de tomates
+850	Jantar Franco Americano	Massa Original “ArtGusto”	1	Fiore de Zucca ao sumo de sálvia
+851	Jantar Franco Americano	Carne Vermelha	1	Mignon alto ao molho de cogumelos selvagens e limão siciliano
+852	Jantar Franco Americano	Carne Vermelha	1	Corte alto de mignon em molho de três mostardas
+853	Jantar Franco Americano	Carne Vermelha	1	Agnello (cordeiro) assado por 12 horas em seu próprio molho com crostata de pistache
+854	Jantar Franco Americano	Peixe	1	Congrio Chileno e espinafre ao molho de laranja e conhaque
+855	Jantar Franco Americano	Peixe	1	Salmão ou robalo em molho de saque e tangerina com camarões graudos
+856	Jantar Franco Americano	Risotto	1	Risotto de brie e pêras
+857	Jantar Franco Americano	Risotto	1	Risotto de cogumelos selvagens regado com limão siciliano
+858	Jantar Franco Americano	Risotto	1	Risotto de brie e champagne
+859	Jantar Franco Americano	Risotto	1	Risotto de aspargos
+860	Jantar Franco Americano	Risotto	1	Risotto de frutos do mar
+861	Jantar Franco Americano	Acompanhamento	1	Batatas Duchese e gruyere
+862	Jantar Franco Americano	Acompanhamento	1	Legumes grelhados em azeite de tominho
+863	Jantar Franco Americano	Acompanhamento	1	Batatas rústicas com ervas
+864	Jantar Franco Americano	Acompanhamento	1	Gratin de batatas com gruyere
+865	Jantar Franco Americano	Acompanhamento	1	Verdíssimo de creme de espinafre
+866	Jantar Franco Americano	Acompanhamento	1	Purê de banana da terra com vanilla
+867	Jantar Franco Americano	Acompanhamento	1	Phyllos de gorgonzola e figos marinados em balsâmico
+868	Jantar Franco Americano	SOBREMESA	1	Trifle de chocolate e banana com calda de Nutella
+869	Jantar Franco Americano	SOBREMESA	1	Lasanha de chocolate com sorvete de creme
+870	Jantar Franco Americano	SOBREMESA	1	Creme Brullé de Laranja
+871	Jantar Franco Americano	SOBREMESA	1	Gelato al Pistachio Bisutti– Torta de sorvete de pistache com toucinho do CE
+872	Jantar Franco Americano	SOBREMESA	1	Tarte tatin aux pommes e seu creme anglaise
+873	Jantar Franco Americano	SOBREMESA	1	Dome de chocolates – Brownie, mousse de chocolate belga e Sticky toffee pudding
+874	Jantar Franco Americano	SOBREMESA	1	Panna cotta
+875	Jantar Franco Americano	SOBREMESA	1	Crostata de figos e amêndoas
+876	Jantar Franco Americano	SOBREMESA	1	Cheese Cake com calda de framboesas
+877	Jantar Franco Americano	SORVETE	1	Gelato em dueto de coco e coco queimado com suas balas carameladas
+878	Jantar Franco Americano	SORVETE	1	Gelato alla Vaniglia e mandorle croccanti – sorvete de baunilha e praliné de amêndoas
+879	Jantar Franco Americano	SORVETE	1	Chocolate
+880	Jantar Franco Americano	SORVETE	1	Morango
+881	Jantar Franco Americano	SORVETE	1	Caldas - Frutas vermelhas
+882	Jantar Franco Americano	SORVETE	1	Caldas - Nutella
+883	Jantar Franco Americano	SORVETE	1	Caldas - Chocolate meio amargo
+884	Jantar Franco Americano	BEBIDAS	1	Água com gás
+885	Jantar Franco Americano	BEBIDAS	1	Água sem gás
+886	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+887	Jantar Franco Americano	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+888	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+889	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Pêssego natural com pimenta dedo de moça
+890	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Abacaxi com capim santo e gengibre
+891	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Tomates com talos de mini alho porro
+892	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá doce, anis estrelado e lichias
+893	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Aperol Spritz
+894	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Cramberries, saquê e laranja
+895	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Tiziano – Sumo de uvas com Prosecco
+896	Cardápio Bergamo	COQUETEL FRIO	1	Crostini de Grana Padano Roast Beef “homemade”
+897	Cardápio Bergamo	COQUETEL FRIO	1	Cestinhas com pêras laqueadas e Roquefort
+898	Cardápio Bergamo	COQUETEL FRIO	1	Provolone empanado em calda de melaço de cana e limão galego
+899	Cardápio Bergamo	COQUETEL FRIO	1	Sablé de castanhas com mousse Caprese
+900	Cardápio Bergamo	COQUETEL FRIO	1	Tartar de Congrio Chileno com Sálvia e nirá
+901	Cardápio Bergamo	COQUETEL FRIO	1	Bavaroise de alcachofras com azeite de trufas
+902	Cardápio Bergamo	COQUETEL FRIO	1	Tartelete de chevre, kinkan e nozes pecan
+903	Cardápio Bergamo	COQUETEL FRIO	1	Dedinhos de tapioca com taleggio e praliné de avelãs
+904	Cardápio Bergamo	COQUETEL FRIO	1	Tuille de Ementhal com tapenade e carpaccio de cordeiro
+905	Cardápio Bergamo	COQUETEL FRIO	1	Prosciutto com figos e balsâmico
+906	Cardápio Bergamo	COQUETEL FRIO	1	Robalo sobre brioches tostados
+907	Cardápio Bergamo	COQUETEL QUENTE	1	Samosa de fetta, abobrinha e hortelã
+908	Cardápio Bergamo	COQUETEL QUENTE	1	Phyllos de lombo de bacalhau
+909	Cardápio Bergamo	COQUETEL QUENTE	1	Cestinhas de alcachofras e pinólis
+910	Cardápio Bergamo	COQUETEL QUENTE	1	Crocantes de caranguejo com mousseline de funghi e seus toasts
+911	Cardápio Bergamo	COQUETEL QUENTE	1	Quiche de prosciutto e mel de acácias
+912	Cardápio Bergamo	COQUETEL QUENTE	1	Spring roll de galinha D’Angola
+913	Cardápio Bergamo	COQUETEL QUENTE	1	Gnocchi Rústico de semolina e avelãs com molho de tomates
+914	Cardápio Bergamo	COQUETEL QUENTE	1	Vol au vent de Haddock defumado
+915	Cardápio Bergamo	COQUETEL QUENTE	1	Vol au vent de camarões
+916	Cardápio Bergamo	COQUETEL QUENTE	1	Polpetini de cordeiro ao sumo de hortelã
+917	Cardápio Bergamo	CONSOMMES	1	Capuccino de alcachofras e azeite de trufas
+918	Cardápio Bergamo	CONSOMMES	1	Caldinho de feijão com pimentas brasileiras
+919	Cardápio Bergamo	CONSOMMES	1	Capuccino de cenouras e anis estrelado
+920	Cardápio Bergamo	CONSOMMES	1	Verdíssimo de aspargos trufado com pistache Siciliano
+921	Cardápio Bergamo	CONSOMMES	1	Consomê de palmito pupunha e Pesto Genovese
+922	Cardápio Bergamo	CONSOMMES	1	Brie com favos de mel e crocantes de Pistache
+923	Cardápio Bergamo	CONSOMMES	1	Polenta Bergamasca gratinada com parmesão
+924	Cardápio Bergamo	CONSOMMES	1	Camembert com frutti di bosco – frutas silvestres
+925	Cardápio Bergamo	CONSOMMES	1	Involtini de perú com prosciutto e roti de tâmaras
+926	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Paté di Fegatto D’Anatra e seus brioches tostados – Patê de pato
+927	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Mousse de gorgonzola e tâmaras
+928	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Patê de pato com pistache siciliano e pimenta verde
+929	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Terrina de Jabuticabas e castanhas do brasil
+930	Cardápio Bergamo	MINI DEGUSTAÇÃO	1	Dome de salmão Gravlax com sour cream e blinis
+931	Jantar Franco Americano	ENTRADA	1	Insalata de folhas e ceviche de salmão marinado em ervas
+932	Jantar Franco Americano	ENTRADA	1	Tarte de tomatinhos sweet grape com tapenade
+933	Jantar Franco Americano	ENTRADA	1	Mix de grãos nobres- Trigo, arroz selvagem, lentilhas de puy, mohgrabieh e edamame
+934	Jantar Franco Americano	ENTRADA	1	Mix de verdes com aspargos, presunto de parma e croutons
+935	Jantar Franco Americano	ENTRADA	1	Terrine de roquefort e figos aqcompanhada de torradas
+936	Jantar Franco Americano	ENTRADA	1	Terrine de gtorgonzola acompanhada de torradas
+937	Jantar Franco Americano	PRIMEIRO PRATO	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+938	Jantar Franco Americano	PRIMEIRO PRATO	1	Mezzaluna de Vitela ao molho de sálvia
+939	Jantar Franco Americano	PRIMEIRO PRATO	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+940	Jantar Franco Americano	PRIMEIRO PRATO	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+941	Jantar Franco Americano	PRIMEIRO PRATO	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+942	Jantar Franco Americano	PRIMEIRO PRATO	1	Zucchini Gnocchi e brie com molho de sálvia
+943	Jantar Franco Americano	PRIMEIRO PRATO	1	Mezza luna de mussarela de búfala ao molho rústico de tomates Bisutti
+944	Jantar Franco Americano	PRIMEIRO PRATO	1	Gnocchi Rustico de olivas negras al tintoretto di seppia com molho de tomates
+945	Jantar Franco Americano	PRIMEIRO PRATO	1	Fiore de Zucca ao sumo de sálvia
+946	Jantar Franco Americano	SEGUNDO PRATO	1	Congrio Chileno e espinafre ao molho de laranja e conhaque Legumes acompanhado de legumes grelhados em azeite
+de tominho
+947	Jantar Franco Americano	SEGUNDO PRATO	1	Salmão ou robalo em molho de saque e tangerina com camarões graúdos acompanhado de batatas rústicas com
+ervas
+948	Jantar Franco Americano	PRATO PRINCIPAL	1	Mignon alto ao molho de cogumelos selvagens e limão siciliano acompanhado de risotto de aspargos
+949	Jantar Franco Americano	PRATO PRINCIPAL	1	Corte alto de mignon em molho de três mostardas acompanhado de risotto de alho porro
+950	Jantar Franco Americano	PRATO PRINCIPAL	1	Agnello (cordeiro) assado por 12 horas em seu próprio molho com crostata de pistache acompanhado de risotto de
+cogumelos selvagens
+951	Jantar Franco Americano	SOBREMESA	1	Trifle de chocolate e banana com calda de Nutella
+952	Jantar Franco Americano	SOBREMESA	1	Lasanha de chocolate com sorvete de creme
+953	Jantar Franco Americano	SOBREMESA	1	Creme Brullé de Laranja
+954	Jantar Franco Americano	SOBREMESA	1	Dome de chocolates – Brownie, mousse de chocolate belga e Sticky toffee pudding
+955	Jantar Franco Americano	SOBREMESA	1	Panna cotta
+956	Jantar Franco Americano	SOBREMESA	1	Cheese Cake com calda de framboesas
+957	Jantar Franco Americano	SOBREMESA	1	Standby
+Frutas frescas laminadas
+958	Jantar Franco Americano	BEBIDAS	1	Café
+959	Jantar Franco Americano	BEBIDAS	1	Chás diversos
+960	Jantar Franco Americano	BEBIDAS	1	Água com gás
+961	Jantar Franco Americano	BEBIDAS	1	Água sem gás
+962	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+963	Jantar Franco Americano	BEBIDAS	1	Águas Aromatizadas - Hortelã e Alecrim com canela
+964	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+965	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Pêssego natural com pimenta dedo de moça
+966	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Abacaxi com capim santo e gengibre
+967	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Tomates com talos de mini alho porro
+968	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá doce, anis estrelado e lichias
+969	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Aperol Spritz
+970	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Cramberries, saquê e laranja
+971	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Tiziano – Sumo de uvas com Prosecco
+972	Boteco I	COQUETEL VOLANTE	1	Coxinha creme de palito
+973	Boteco I	COQUETEL VOLANTE	1	Croquetinhos de carne de panela e alecrim com dips de pimenta
+974	Boteco I	COQUETEL VOLANTE	1	Pasteizinhos de queijo meia cura e laranja
+975	Boteco I	COQUETEL VOLANTE	1	Polenta com linguiça e vinagrete
+976	Boteco I	BUFFET MONTADO	1	Esfiha de carne
+977	Boteco I	BUFFET MONTADO	1	Micro quiche de queijos
+978	Boteco I	BUFFET MONTADO	1	Capuccino de Abóbora e Alecrim
+979	Boteco I	BUFFET MONTADO	1	Caldinho de feijão preto spicy
+980	Boteco I	BUFFET MONTADO	1	Mini Pão Francês com roast beef e Mostarda de Dijon
+981	Boteco I	BUFFET MONTADO	1	Piccolini ao molho de Tomates Frescos
+982	Boteco I	SOBREMESA VOLANTE	1	Pudim de leite
+983	Boteco I	SOBREMESA VOLANTE	1	Frapê tricolor de frutas vermelhas
+984	Boteco I	SOBREMESA VOLANTE	1	Cubos de frutas da estação ao perfume de água de laranjeira
+985	Boteco I	BEBIDAS	1	Café
+986	Boteco I	BEBIDAS	1	Chás diversos
+987	Boteco I	BEBIDAS	1	Petit fours
+988	Boteco I	BEBIDAS	1	NULL
+989	Boteco I	BEBIDAS	1	NULL
+990	Boteco I	BEBIDAS	1	NULL
+991	Boteco II	COQUETEL VOLANTE	1	Coxinha creme de palito
+992	Boteco II	COQUETEL VOLANTE	1	Espetinho de linguiça calabresa
+993	Boteco II	COQUETEL VOLANTE	1	Micro quiche de queijo
+994	Boteco II	COQUETEL VOLANTE	1	Croquetinhos de carne de panela e alecrim com dips de pimenta
+995	Boteco II	COQUETEL VOLANTE	1	Pasteizinhos de carne
+996	Boteco II	BUFFET MONTADO	1	Esfiha de carne
+997	Boteco II	BUFFET MONTADO	1	Nuguets “homemade” de carne seca com abóbora
+998	Boteco II	BUFFET MONTADO	1	Creme de abóbora aromatizado
+999	Boteco II	BUFFET MONTADO	1	Caldinho de feijão preto spicy
+1000	Boteco II	BUFFET MONTADO	1	Vaca atolada
+1001	Boteco II	BUFFET MONTADO	1	Mini pão francês com roast beef e mostarda dijon
+1002	Boteco II	BUFFET MONTADO	1	Escondidinho de carne seca com purê de mandioquinha
+1003	Boteco II	BUFFET MONTADO	1	Ragú de Linguiça com Polenta
+1004	Boteco II	BUFFET MONTADO	1	Farfale ao molho basílico
+1005	Boteco II	SOBREMESA VOLANTE	1	Pudim de doce de leite
+1006	Boteco II	SOBREMESA VOLANTE	1	Torta de chocolate belga
+1007	Boteco II	SOBREMESA VOLANTE	1	Cubos de frutas da estação ao perfume de água de laranjeira
+1008	Boteco II	BEBIDAS	1	Café
+1009	Boteco II	BEBIDAS	1	Chás diversos
+1010	Boteco II	BEBIDAS	1	Petit fours
+1011	Boteco III	COQUETEL VOLANTE	1	Coxinha creme de palito
+1012	Boteco III	COQUETEL VOLANTE	1	Espetinho de linguiça calabresa
+1013	Boteco III	COQUETEL VOLANTE	1	Micro quiche de queijo
+1014	Boteco III	COQUETEL VOLANTE	1	Croquetinhos de carne de panela e alecrim com dips de pimenta
+1015	Boteco III	COQUETEL VOLANTE	1	Pasteizinhos de carne
+1016	Boteco III	COQUETEL VOLANTE	1	Pérolas de queijo
+1019	Boteco III	BUFFET MONTADO	1	Esfiha de carne
+1017	Boteco III	BUFFET MONTADO	1	Micro quiche de queijos
+1018	Boteco III	BUFFET MONTADO	1	Nuguets “homemade” de carne seca com abóbora
+1020	Boteco III	BUFFET MONTADO	1	Creme de abóbora aromatizado servido em xícara de porcelana
+1021	Boteco III	BUFFET MONTADO	1	Caldinho de feijão preto spicy servido em xícara de porcelana
+1022	Boteco III	BUFFET MONTADO	1	Vaca atolada
+1023	Boteco III	BUFFET MONTADO	1	Mini pão francês com roast beef e mostarda dijon
+1024	Boteco III	BUFFET MONTADO	1	Escondidinho de carne seca com purê de mandioquinha
+1025	Boteco III	BUFFET MONTADO	1	Ragú de Linguiça com Polenta
+1026	Boteco III	BUFFET MONTADO	1	Farfale ao molho basílico
+1027	Boteco III	SOBREMESA VOLANTE	1	Pudim de doce de leite
+1028	Boteco III	SOBREMESA VOLANTE	1	Torta de chocolate belga
+1029	Boteco III	SOBREMESA VOLANTE	1	Cubos de frutas da estação ao perfume de água de laranjeira
+1030	Boteco III	BEBIDAS	1	Água sem gás
+1031	Boteco III	BEBIDAS	1	Água com gás
+1032	Boteco III	BEBIDAS	1	Água Refrigerantes
+1033	Boteco III	BEBIDAS	1	Café
+1034	Boteco III	BEBIDAS	1	Chás diversos
+1035	Boteco III	BEBIDAS	1	Petit fours
+1036	Cardápio Brunch	Ilha de Degustações	1	Tramezzini de salmão com cream cheese
+1037	Cardápio Brunch	Ilha de Degustações	1	Quiche gigante de alho porro al limone
+1038	Cardápio Brunch	Ilha de Degustações	1	Sanduichinhos de roast beef e mostarda
+1039	Cardápio Brunch	Ilha de Degustações	1	Panini de tomates secos com mussarela
+1040	Cardápio Brunch	Ilha de Degustações	1	Bolo de fubá cremoso com goiabada cascão
+1041	Cardápio Brunch	Ilha de Degustações	1	Bolo de castanhas do pará e calda de jabuticabas
+1042	Cardápio Brunch	Ilha de Degustações	1	Piccolini ao molho de tomates frescos
+1043	Cardápio Brunch	Ilha de Degustações	1	Torta mousse de chocolate
+1044	Cardápio Brunch	Ilha de Degustações	1	Tortinhas de maçãs
+1045	Cardápio Brunch	Ilha de Degustações	1	Petit fours diversos
+1046	Cardápio Brunch	Ilha de Degustações	1	Saladinha de frutas da estação
+1047	Cardápio Brunch	BEBIDAS	1	Chá gelado de pêssego
+1048	Cardápio Brunch	BEBIDAS	1	Café
+1049	Cardápio Brunch	BEBIDAS	1	Chás diversos
+1050	Cardápio Brunch	Petit fours	1	Trufinhas de chocolate
+1051	Cardápio Brunch	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+1052	Cardápio Brunch	Petit fours	1	Micro cookies de limão
+1053	Cardápio Brunch	BEBIDAS	1	Café
+1054	Cardápio Brunch	BEBIDAS	1	Suco de Laranja
+1055	Cardápio Brunch	BEBIDAS	1	Chá mate gelado com hortelã
+1056	Cardápio Brunch	BEBIDAS	1	Água sem gás
+1057	Cardápio Capri	COQUETEL FRIO	1	Blinis com trio de salmão defumado ao creme azedo e suas ovas
+1058	Cardápio Capri	COQUETEL FRIO	1	Foie gras com caules de frutas vermelhas sobre torrada de Brioche
+1059	Cardápio Capri	COQUETEL FRIO	1	Cannoli de queijo grana padano com confit de pato e chutney de manga
+1060	Cardápio Capri	COQUETEL FRIO	1	Petit Caprese
+1061	Cardápio Capri	COQUETEL FRIO	1	Tartelete crocante com queijo chèvre e tartare de tomate cereja
+1062	Cardápio Capri	COQUETEL FRIO	1	Canapé de carpaccio em torrada de pão de miga, tapenade de azeitonas, azeite de trufas e pinoli
+1063	Cardápio Capri	COQUETEL QUENTE	1	Croquete villa bisutti com dip de pimenta
+1064	Cardápio Capri	COQUETEL QUENTE	1	Filos de bacalhau
+1065	Cardápio Capri	COQUETEL QUENTE	1	Vol au vent de camarão e creme azedo
+1066	Cardápio Capri	COQUETEL QUENTE	1	Bruschetta caprese
+1067	Cardápio Capri	COQUETEL QUENTE	1	Bruschetta de cogumelos selvagens com limão Siciliano
+1068	Cardápio Capri	COQUETEL QUENTE	1	Bruschetta de alcachofra e alho porro
+1069	Cardápio Capri	CONSOMMÉS	1	Creme de cenoura e anis estrelado
+1070	Cardápio Capri	CONSOMMÉS	1	Creme de alcachofra com lascas de grana padano e azeite de trufas
+1071	Cardápio Capri	CONSOMMÉS	1	Creme de batata com queijo chèvre e redução de balsâmico
+1072	Cardápio Capri	CONSOMMÉS	1	Polenta bergamasca com ragu de ossobuco
+1073	Cardápio Capri	CONSOMMÉS	1	Polenta bergamasca com funghi porcini
+1074	Cardápio Capri	CONSOMMÉS	1	Polenta bergamasca com molho roquefort
+1075	Jantar Franco Americano	SALADAS	1	Carpaccio de filé mignon com tapenade de azeitonas chilenas, grana padano e pinolis
+1076	Jantar Franco Americano	SALADAS	1	Salada de alface romana baby com burrata, peras glaceadas e sementes de Romã
+1077	Jantar Franco Americano	SALADAS	1	Folhas verdes com presunto de parma, queijo de cabra, figos, mel e pinoli
+1078	Jantar Franco Americano	SALADAS	1	Salada baby mesclum com queijo emmental, crispies de presunto Parma e amêndoas
+1079	Jantar Franco Americano	SALADAS	1	Crostata de mini legumes, queijo chèvre e mel de trufas
+1080	Jantar Franco Americano	SALADAS	1	Terrine de gorgonzola com uvas marinadas em vinho Marsala e ervas e magret de pato
+1081	Jantar Franco Americano	SALADAS	1	Carpaccio de robalo com molho de azeite extra virgem e ciboulette
+1082	Jantar Franco Americano	SALADAS	1	acompanhado de palmito pupunha desfiado
+1083	Jantar Franco Americano	PRATOS QUENTES	1	carne vermelha
+1084	Jantar Franco Americano	PRATOS QUENTES	1	peixe
+1085	Jantar Franco Americano	PRATOS QUENTES	1	massa
+1086	Jantar Franco Americano	PRATOS QUENTES	1	risotto
+1087	Jantar Franco Americano	PRATOS QUENTES	1	acompanhamento
+1088	Jantar Franco Americano	MASSA	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+1089	Jantar Franco Americano	MASSA	1	Tortellini de Vitela ao molho de sálvia
+1090	Jantar Franco Americano	MASSA	1	Tortellini de Pêras e queijos finos ao molho de sálvia
+1091	Jantar Franco Americano	MASSA	1	Tortelloni de Salmão defumado e ricota ao molho bechamel
+1092	Jantar Franco Americano	MASSA	1	Sofioli Verde com queijos especiais ao molho de tomates rústicos
+1093	Jantar Franco Americano	CARNES E PEIXES	1	Medalhão de filet mignon recheado de purê de cogumelos selvagens ao molho de vinho tinto
+1094	Jantar Franco Americano	CARNES E PEIXES	1	Escalope de filet mignon ao molho mostarda dijon
+1095	Jantar Franco Americano	CARNES E PEIXES	1	Carré de cordeiro em crosta de ervas ao molho de vinho do Porto
+1096	Jantar Franco Americano	CARNES E PEIXES	1	Pernil de vitela assado servido no próprio molho
+1097	Jantar Franco Americano	CARNES E PEIXES	1	Robalo em crosta de castanhas ao molho de maçãs
+1098	Jantar Franco Americano	CARNES E PEIXES	1	Robalo ao molho curry com fitas de coco e edamame
+1099	Jantar Franco Americano	CARNES E PEIXES	1	Salmão poché ao molho de tomates confit e azeitonas pretas
+1100	Jantar Franco Americano	CARNES E PEIXES	1	Robalo recheado com caponata de berinjela ao molho ao sugo
+1101	Jantar Franco Americano	RISOTO	1	Risoto de tomate seco mussarela de búfalo e rúcula
+1102	Jantar Franco Americano	RISOTO	1	Risoto de champanhe, queijo brie e pera
+1103	Jantar Franco Americano	RISOTO	1	Risoto de cogumelos selvagens e raspas de limão siciliano
+1104	Jantar Franco Americano	RISOTO	1	Risoto de salmão defumado e queijo mascarpone
+1105	Jantar Franco Americano	RISOTO	1	Risoto de alho porró
+1106	Jantar Franco Americano	RISOTO	1	Risoto de ervas finas
+1107	Jantar Franco Americano	RISOTO	1	Risotto de grana padano
+1108	Jantar Franco Americano	ACOMPANHAMENTOS	1	Torta de batatas com queijo parmesão e alecrim
+1109	Jantar Franco Americano	ACOMPANHAMENTOS	1	Legumes grelhados em azeite de tominho
+1110	Jantar Franco Americano	ACOMPANHAMENTOS	1	Batatas rústicas com ervas e alecrim
+1111	Jantar Franco Americano	ACOMPANHAMENTOS	1	Gratin de batatas com gruyere
+1112	Jantar Franco Americano	ACOMPANHAMENTOS	1	Verdíssimo de creme de espinafre
+1113	Jantar Franco Americano	ACOMPANHAMENTOS	1	Phyllos de gorgonzola e figos marinados em balsâmico
+1114	Jantar Franco Americano	SOBREMESAS	1	Torta tres mousses de chocolate com calda de frutas vermelhas
+1115	Jantar Franco Americano	SOBREMESAS	1	Torta de caramelo cremoso salgado com chocolate Belga
+1116	Jantar Franco Americano	SOBREMESAS	1	Entremet de chocolate com laranja e biscuit de amêndoas
+1117	Jantar Franco Americano	SOBREMESAS	1	Charlote de limão Siciliano com confit de framboesas, biscuit de pistache e renda de chocolate
+branco com farofa de pistache
+1118	Jantar Franco Americano	SOBREMESAS	1	Torre de merengue de pistache recheado de creme de chocolate branco e frutas do bosque
+1119	Jantar Franco Americano	SOBREMESAS	1	Cheesecake com calda de framboesa
+1120	Jantar Franco Americano	SOBREMESAS	1	Mille Foglie de doce de leite
+1121	Jantar Franco Americano	SOBREMESAS	1	Frutas frescas fatiadas
+1122	Jantar Franco Americano	BEBIDAS	1	Café Nespresso - Ristretto
+1123	Jantar Franco Americano	BEBIDAS	1	Café Nespresso - Leggero
+1124	Jantar Franco Americano	BEBIDAS	1	Café Nespresso - Descafeinado
+1125	Jantar Franco Americano	BEBIDAS	1	Chás diversos
+1126	Jantar Franco Americano	BEBIDAS	1	Água sem gás
+1127	Jantar Franco Americano	BEBIDAS	1	Água com gás
+1128	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+1129	Jantar Franco Americano	BEBIDAS	1	Suco de laranja natural
+1130	Jantar Franco Americano	BEBIDAS	1	Água Aromatizada - Hortelã 
+1131	Jantar Franco Americano	BEBIDAS	1	Água Aromatizada - Alecrim com canela
+1132	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Framboesas com limão galego
+1133	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Maracujá e morangos concaseé
+1134	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Caju natural e lichias
+1135	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Coco e suas especiarias
+1136	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Morangos com saquê
+1137	Jantar Franco Americano	BEBIDAS	1	Welcome Drinks - Limão, espumante e hortelã
+1138	Jantar Franco Americano	Petit fours	1	Mini alfajor
+1139	Jantar Franco Americano	Petit fours	1	Financier
+1140	Jantar Franco Americano	Petit fours	1	Gotas de baunilha
+1141	Cardápio Debutante	COQUETEL	1	Rodada de Batatinhas fritas na hora
+1142	Cardápio Debutante	COQUETEL	1	Coxinha de Frango
+1143	Cardápio Debutante	COQUETEL	1	Mini hambúrgueres de picanha com cheddar e remoulade de picles
+1144	Cardápio Debutante	COQUETEL	1	Cakes crocantes de peito de peru
+1145	Cardápio Debutante	COQUETEL	1	Tostex de presunto e queijo
+1146	Cardápio Debutante	COQUETEL	1	Mini pizza de mussarela e calabresa
+1147	Cardápio Debutante	MINI DEGUSTAÇÃO VOLANTE	1	Picadinho de filet mignon servido em seu próprio molho acompanhado de batatas campana
+1148	Cardápio Debutante	ILHA DIVERTIDA	1	Mini hot dog acompanhado de catchup, mostarda, maionese e batata palha
+1149	Cardápio Debutante	ILHA DIVERTIDA	1	Mini esfiha de carne
+1150	Cardápio Debutante	ILHA DIVERTIDA	1	Mini esfiha de queijo
+1151	Cardápio Debutante	ILHA DIVERTIDA	1	kibe assado de tabuleiro
+1152	Cardápio Debutante	ILHA DIVERTIDA	1	Taco
+1153	Cardápio Debutante	ILHA DIVERTIDA	1	Frango com molho especial
+1154	Cardápio Debutante	ILHA DIVERTIDA	1	Carne com molho especial
+1155	Cardápio Debutante	ILHA DIVERTIDA	1	Piccolini com molho de tomates frescos(Acompanha queijo ralado)
+1156	Cardápio Debutante	SOBREMESA	1	Tortinha mousse de chocolate
+1157	Cardápio Debutante	SOBREMESA	1	Lasagna de chocolate “Art Gusto”
+1158	Cardápio Debutante	SOBREMESA	1	Torta brownie
+1159	Cardápio Debutante	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+1160	Cardápio Debutante	SOBREMESA	1	Cheesecake mousse com goiabada
+1161	Cardápio Debutante	SORVETE	1	Pistache
+1162	Cardápio Debutante	SORVETE	1	Chocolate
+1163	Cardápio Debutante	SORVETE	1	Creme
+1164	Cardápio Debutante	SORVETE	1	Morango
+1165	Cardápio Debutante	SORVETE	1	Caldas - Frutas vermelhas
+1166	Cardápio Debutante	SORVETE	1	Caldas - Chocolate meio amargo
+1167	Cardápio Debutante	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+1168	Cardápio Debutante	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+1169	Cardápio Debutante	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+1170	Cardápio Debutante	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+1171	Cardápio Debutante	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+1172	Cardápio Debutante	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+1173	Cardápio Debutante	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+1174	Cardápio Debutante	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+1175	Cardápio Debutante	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+1176	Cardápio Debutante	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+1177	Cardápio Debutante	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+1178	Cardápio Debutante	COQUETEL QUENTE	1	Toast de provolone com roast beef “homemade” e dijon
+1179	Cardápio Debutante	CONSOMMES	1	Capuccino de abóbora e alecrim
+1180	Cardápio Debutante	CONSOMMES	1	Creme de mandioquinha com chips de bacon L’Orange
+1181	Cardápio Debutante	CONSOMMES	1	Escondidinho de carne seca
+1182	Cardápio Debutante	CONSOMMES	1	Polenta cremosa com parmesão Grana Padanno
+1183	Cardápio Debutante	CONSOMMES	1	Mini vaca atolada
+1184	Cardápio Debutante	CONSOMMES	1	Escondidinho de abóbora, coalho e couve crispie
+1185	Cardápio Debutante	ENTRADAS FRIAS	1	Salada de frutas da estação marinadas em cítricos e seus croutons de ervas
+1186	Cardápio Debutante	ENTRADAS FRIAS	1	Mix de verdes com carpaccio, alcaparras e mostarda Dijon
+1187	Cardápio Debutante	ENTRADAS FRIAS	1	Salada Waldorf de maçãs e nozes
+1188	Cardápio Debutante	ENTRADAS FRIAS	1	Melangé de folhas da estação e composição de tomates cereja, cubinhos de búfala e manga grelhada
+1189	Cardápio Debutante	ENTRADAS FRIAS	1	Caesar Salad
+1190	Cardápio Debutante	ENTRADAS FRIAS	1	Terrina de legumes grelhados, castanhas em redução de balsâmico e suas folhas frescas
+1191	Cardápio Debutante	QUICHE	1	Alho porro
+1192	Cardápio Debutante	QUICHE	1	Queijos suave
+1193	Cardápio Debutante	QUICHE	1	Peras e gorgonzola
+1194	Cardápio Debutante	QUICHE	1	Funghi
+1195	Cardápio Debutante	Massa Original “ArtGusto”	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+1196	Cardápio Debutante	Massa Original “ArtGusto”	1	Sofiolli Verde com queijos especias ao molho de tomates rústicos
+1197	Cardápio Debutante	Massa Original “ArtGusto”	1	Tortellini de Zucca ao molho branco e sálvia
+1198	Cardápio Debutante	Massa Original “ArtGusto”	1	Raviolli de mussarela de búfala ao molho de tomates
+1199	Cardápio Debutante	Carne Vermelha	1	Boeuf Bourguignon – receita francesa de carne de panela ao vinho
+1200	Cardápio Debutante	Carne Vermelha	1	Maminha assada em seu caldo demi-glace
+1201	Cardápio Debutante	Carne Vermelha	1	Cubos de filé Mignon ao jus de mostarda L’Ansienne
+1202	Cardápio Debutante	Carne Vermelha	1	Escalopes de Mignon em Roti Tradicional da Casa
+1203	Cardápio Debutante	Carne Branca	1	Blanquet de frango ao molho Champagne
+1204	Cardápio Debutante	Carne Branca	1	Escalope de filet de frango ao curry
+1205	Cardápio Debutante	Risotto	1	Risotto milanês
+1206	Cardápio Debutante	Risotto	1	Risotto de queijos nobres
+1207	Cardápio Debutante	Risotto	1	Arroz com amêndoas
+1208	Cardápio Debutante	Risotto	1	Risotto de abobrinha e ricota defumada
+1209	Cardápio Debutante	Risotto	1	Risotto de alho porro
+1210	Cardápio Debutante	Acompanhamento	1	Gratin de batatas com gruyere
+1211	Cardápio Debutante	Acompanhamento	1	Batatas Duchese
+1212	Cardápio Debutante	Acompanhamento	1	Legumes grelhados em azeite de tominho
+1213	Cardápio Debutante	Acompanhamento	1	Batatas rústicas com ervas
+1214	Cardápio Debutante	Acompanhamento	1	Cestinha de mandioquinha cremosa, crispies de bacon e laranja
+1215	Cardápio Debutante	Acompanhamento	1	Purê de banana da terra
+1216	Cardápio Debutante	Acompanhamento	1	Rosti de batatas e funghi
+1217	Cardápio Debutante	SOBREMESA	1	Tortinha mousse de chocolate
+1218	Cardápio Debutante	SOBREMESA	1	Lasagna de chocolate “Art Gusto"
+1219	Cardápio Debutante	SOBREMESA	1	Torta brownie
+1220	Cardápio Debutante	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+1221	Cardápio Debutante	SOBREMESA	1	Cheesecake mousse com goiabada
+1222	Cardápio Debutante	SOBREMESA	1	Cubos de frutas da estação e lichias
+1223	Cardápio Debutante	SORVETE	1	Pistache
+1224	Cardápio Debutante	SORVETE	1	Chocolate
+1225	Cardápio Debutante	SORVETE	1	Creme
+1226	Cardápio Debutante	SORVETE	1	Morango
+1227	Cardápio Debutante	SORVETE	1	Caldas - Frutas vermelhas
+1228	Cardápio Debutante	SORVETE	1	Caldas - Chocolate meio amargo
+1229	Cardápio Debutante	BEBIDAS	1	Café
+1230	Cardápio Debutante	BEBIDAS	1	Água sem gás
+1231	Cardápio Debutante	BEBIDAS	1	Água com gás
+1232	Cardápio Debutante	BEBIDAS	1	Refrigerantes
+1233	Cardápio Debutante	BEBIDAS	1	Chás diversos
+1234	Cardápio Debutante	Petit fours	1	Trufinhas de chocolate
+1235	Cardápio Debutante	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+1236	Cardápio Debutante	Petit fours	1	Micro cookies de limão
+1237	Cardápio Debutante	Ilha Oriental	1	Uramaki Califórnia Roll (Alga, Kani-kama, Manga e Pepino)
+1238	Cardápio Debutante	Ilha Oriental	1	Uramaki Salmão Skin (Salmão Grelha do com Pele e Cebolinha)
+1239	Cardápio Debutante	Ilha Oriental	1	Hakutsuru Roll (Salmão e Cebolinha envolto com acelga)
+1240	Cardápio Debutante	Ilha Oriental	1	Spice Salmon (Uramaki de salmão envolto com massagô)
+1241	Cardápio Debutante	Ilha Oriental	1	Kappa Maki (Hossomaki de Pepino)
+1242	Cardápio Debutante	Ilha Oriental	1	Tekka Maki (Hossomaki de Atum)
+1243	Cardápio Debutante	Ilha Oriental	1	Salmão Maki (Hossomaki de Salmão)
+1244	Cardápio Debutante	Ilha Oriental	1	Kani Maki (Hossomaki de Kani-kama)
+1245	Cardápio Debutante	Ilha Oriental	1	Niguirizushi: Atum, Salmão, Peixes Brancos
+1246	Cardápio Debutante	Ilha Oriental	1	Temaki de California (pepino, manga e kani-kama)
+1247	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão-Negui (Salmão picado com Cebolinha)
+1248	Cardápio Debutante	Ilha Oriental	1	Temaki de Atum-Negui (Atum picado com Cebolinha)
+1249	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão Skin (Salmão grelhado com Pele)
+1250	Cardápio Debutante	COQUETEL	1	Rodada de Batatinhas fritas na hora
+1251	Cardápio Debutante	COQUETEL	1	Coxinha de Frango
+1252	Cardápio Debutante	COQUETEL	1	Mini hambúrgueres de picanha com cheddar e remoulade de picles
+1253	Cardápio Debutante	COQUETEL	1	Cakes crocantes de peito de peru
+1254	Cardápio Debutante	COQUETEL	1	Tostex de presunto e queijo
+1255	Cardápio Debutante	COQUETEL	1	Mini pizza de mussarela e calabresa
+1256	Cardápio Debutante	MINI DEGUSTAÇÕES VOLANTES	1	Picadinho de filet mignon servido em seu próprio molho acompanhado de batatas campana
+1257	Cardápio Debutante	MINI DEGUSTAÇÕES VOLANTES	1	Escondidinho de carne seca
+1258	Cardápio Debutante	MINI DEGUSTAÇÕES VOLANTES	1	Mini ravióli de mussarela de búfala ao molho de tomates
+1259	Cardápio Debutante	ILHA DIVERTIDA	1	Mini hot dog acompanhado de catchup, mostarda, maionese e batata palha
+1260	Cardápio Debutante	ILHA DIVERTIDA	1	Mini esfiha de carne
+1261	Cardápio Debutante	ILHA DIVERTIDA	1	Mini esfiha de queijo
+1262	Cardápio Debutante	ILHA DIVERTIDA	1	kibe assado de tabuleiro
+1263	Cardápio Debutante	ILHA DIVERTIDA	1	Taco
+1264	Cardápio Debutante	ILHA DIVERTIDA	1	Frango com molho especial
+1265	Cardápio Debutante	ILHA DIVERTIDA	1	Carne com molho especial
+1266	Cardápio Debutante	ILHA DIVERTIDA	1	Piccolini com molho de tomates frescos
+1267	Cardápio Debutante	ILHA DIVERTIDA	1	Acompanha queijo ralado
+1268	Cardápio Debutante	SOBREMESA	1	Tortinha mousse de chocolate
+1269	Cardápio Debutante	SOBREMESA	1	Lasagna de chocolate “Art Gusto”
+1270	Cardápio Debutante	SOBREMESA	1	Torta brownie
+1271	Cardápio Debutante	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+1272	Cardápio Debutante	Tarte cappuccino	1	Cheesecake mousse com goiabada
+1273	Cardápio Debutante	SORVETE	1	Pistache
+1274	Cardápio Debutante	SORVETE	1	Chocolate
+1275	Cardápio Debutante	SORVETE	1	Creme
+1276	Cardápio Debutante	SORVETE	1	Morango
+1277	Cardápio Debutante	SORVETE	1	Caldas - Frutas vermelhas
+1278	Cardápio Debutante	SORVETE	1	Caldas - Chocolate meio amargo
+1279	Cardápio Debutante	BEBIDAS	1	Refrigerantes
+1280	Cardápio Debutante	BEBIDAS	1	Água com gás
+1281	Cardápio Debutante	BEBIDAS	1	Água sem gás
+1282	Cardápio Debutante	BEBIDAS	1	Café
+1283	Cardápio Debutante	BEBIDAS	1	Chás diversos
+1284	Cardápio Debutante	Petit fours	1	Trufinhas de chocolate
+1285	Cardápio Debutante	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+1286	Cardápio Debutante	Petit fours	1	Micro cookies de limão
+1287	Cardápio Debutante	Ilha Oriental	1	Uramaki Califórnia Roll (Alga, Kani-kama, Manga e Pepino)
+1288	Cardápio Debutante	Ilha Oriental	1	Uramaki Salmão Skin (Salmão Grelha do com Pele e Cebolinha)
+1289	Cardápio Debutante	Ilha Oriental	1	Hakutsuru Roll (Salmão e Cebolinha envolto com acelga)
+1290	Cardápio Debutante	Ilha Oriental	1	Spice Salmon (Uramaki de salmão envolto com massagô)
+1291	Cardápio Debutante	Ilha Oriental	1	Tekka Maki (Hossomaki de Atum)
+1292	Cardápio Debutante	Ilha Oriental	1	Kappa Maki (Hossomaki de Pepino)
+1293	Cardápio Debutante	Ilha Oriental	1	Salmão Maki (Hossomaki de Salmão)
+1294	Cardápio Debutante	Ilha Oriental	1	Kani Maki (Hossomaki de Kani-kama)
+1295	Cardápio Debutante	Ilha Oriental	1	Niguirizushi: Atum, Salmão, Peixes Brancos
+1296	Cardápio Debutante	Ilha Oriental	1	Temaki de California (pepino, manga e kani-kama)
+1297	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão-Negui (Salmão picado com Cebolinha)
+1298	Cardápio Debutante	Ilha Oriental	1	Temaki de Atum-Negui (Atum picado com Cebolinha)
+1299	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão Skin (Salmão grelhado com Pele)
+1300	Cardápio Debutante	COQUETEL	1	Rodada de Batatinhas fritas na hora
+1301	Cardápio Debutante	COQUETEL	1	Coxinha de Frango
+1302	Cardápio Debutante	COQUETEL	1	Pérola de Queijo
+1303	Cardápio Debutante	COQUETEL	1	Mini dog gourmet: salsicha, cebola roxa e molho barbecue
+1304	Cardápio Debutante	COQUETEL	1	Mini hambúrgueres de picanha com cheddar e remoulade de picles
+1305	Cardápio Debutante	COQUETEL	1	Cakes crocantes de peito de peru
+1306	Cardápio Debutante	COQUETEL	1	Tostex de presunto e queijo
+1307	Cardápio Debutante	COQUETEL	1	Mini pizza de mussarela e calabresa
+1308	Cardápio Debutante	ENTRADAS FRIAS	1	Caesar Salad com molho tradicional
+1309	Cardápio Debutante	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+1310	Cardápio Debutante	QUICHE	1	Queijos Nobres
+1311	Cardápio Debutante	QUICHE	1	Cogumelos selvagens al limone
+1312	Cardápio Debutante	QUICHE	1	Figos e gorgonzola
+1313	Cardápio Debutante	QUICHE	1	Fungui Secchi
+1314	Cardápio Debutante	QUICHE	1	Verdíssima de vegetais precoces e castanhas
+1315	Cardápio Debutante	Carne	1	Estrogonoff de filet mignon acompanhado de arroz branco e batata palha
+1316	Cardápio Debutante	Carne	1	Picadinho de filet mignon servido em seu próprio molho acompanhado com arroz branco e mousseline de banana da
+terra
+1317	Cardápio Debutante	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+1318	Cardápio Debutante	SOBREMESA	1	Tarte Tatin aux Pommes (maçãs)
+1319	Cardápio Debutante	SOBREMESA	1	Altura mousse de três brigadeiros
+1320	Cardápio Debutante	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+1321	Cardápio Debutante	SOBREMESA	1	Lasagna de chocolate meio amargo e seus suspiros “homemade”
+1322	Cardápio Debutante	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+1323	Cardápio Debutante	SOBREMESA	1	Cheesecake Orange com calda de frutas silvestres
+1324	Cardápio Debutante	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+1325	Cardápio Debutante	SOBREMESA	1	Zucotto de frutas vermelhas
+1326	Cardápio Debutante	SORVETE	1	Pistache
+1327	Cardápio Debutante	SORVETE	1	Chocolate
+1328	Cardápio Debutante	SORVETE	1	Creme
+1329	Cardápio Debutante	SORVETE	1	Morango
+1330	Cardápio Debutante	SORVETE	1	Caldas - Frutas vermelhas
+1331	Cardápio Debutante	SORVETE	1	Caldas - Chocolate meio amargo
+1332	Cardápio Debutante	Ilha de massas – Bella Itália	1	NULL
+1333	Cardápio Debutante	Ravioli Original “ArtGusto”:	1	Carne
+1334	Cardápio Debutante	Ravioli Original “ArtGusto”:	1	Mussarela de búfala
+1335	Cardápio Debutante	Massas Grano Duro	1	Piccolini
+1336	Cardápio Debutante	Molhos	1	Tomates frescos
+1337	Cardápio Debutante	Molhos	1	Quatro queijos
+1338	Cardápio Debutante	Ilha Mexicana	1	Tortilha Chips
+1339	Cardápio Debutante	Ilha Mexicana	1	Guacamole
+1340	Cardápio Debutante	Ilha Mexicana	1	Sour Cream
+1341	Cardápio Debutante	Ilha Mexicana	1	Chilli
+1342	Cardápio Debutante	Ilha Mexicana	1	Quesadilha de mussarela, cheddar e tomate
+1343	Cardápio Debutante	Ilha Mexicana	1	Taco
+1344	Cardápio Debutante	Ilha Mexicana	1	Frango com molho especial
+1345	Cardápio Debutante	Ilha Mexicana	1	Carne com molho especial
+1346	Cardápio Debutante	Ilha Mexicana	1	Burrito
+1347	Cardápio Debutante	Ilha Mexicana	1	Carne e cheddar
+1348	Cardápio Debutante	Ilha Mexicana	1	Frango desfiado com alface e molho especial
+1349	Cardápio Debutante	Ilha Oriental	1	Uramaki Califórnia Roll (Alga, Kani-kama, Manga e Pepino)
+1350	Cardápio Debutante	Ilha Oriental	1	Uramaki Califórnia Roll (Alga, Kani-kama, Manga e Pepino)
+1351	Cardápio Debutante	Ilha Oriental	1	Uramaki Califórnia Roll (Alga, Kani-kama, Manga e Pepino)
+1352	Cardápio Debutante	Ilha Oriental	1	Spice Salmon (Uramaki de salmão envolto com massagô)
+1353	Cardápio Debutante	Ilha Oriental	1	Tekka Maki (Hossomaki de Atum)
+1354	Cardápio Debutante	Ilha Oriental	1	Kappa Maki (Hossomaki de Pepino)
+1355	Cardápio Debutante	Ilha Oriental	1	Salmão Maki (Hossomaki de Salmão)
+1356	Cardápio Debutante	Ilha Oriental	1	Kani Maki (Hossomaki de Kani-kama)
+1357	Cardápio Debutante	Ilha Oriental	1	Niguirizushi: Atum, Salmão, Peixes Brancos
+1358	Cardápio Debutante	Ilha Oriental	1	Temaki de California (pepino, manga e kani-kama)
+1359	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão-Negui (Salmão picado com Cebolinha)
+1360	Cardápio Debutante	Ilha Oriental	1	Temaki de Atum-Negui (Atum picado com Cebolinha)
+1361	Cardápio Debutante	Ilha Oriental	1	Temaki de Salmão Skin (Salmão grelhado com Pele)
+1362	Cardápio Debutante	BEBIDAS	1	Água com e sem gás
+1363	Cardápio Debutante	BEBIDAS	1	Água sem gás
+1364	Cardápio Debutante	BEBIDAS	1	Refrigerantes
+1365	Cardápio Debutante	BEBIDAS	1	Suco de laranja
+1366	Cardápio Debutante	BEBIDAS	1	Suco de uva
+1367	Cardápio Amalfi Leite	Cocktail	1	Petit Caprese com Pesto Genovese
+1368	Cardápio Amalfi Leite	Cocktail	1	Ceviche de Robalo e cebouletes com salsa cítrica
+1369	Cardápio Amalfi Leite	Cocktail	1	Dome de salmão e maçãs Granny Smith
+1370	Cardápio Amalfi Leite	Cocktail	1	Stick de coalho em teriyaki de melaço de cana
+1371	Cardápio Amalfi Leite	Cocktail	1	Cestinhas de chevre e chutney de tomates
+1372	Cardápio Amalfi Leite	Snacks Quentes	1	Croquetinhos de haddock defumado
+1373	Cardápio Amalfi Leite	Snacks Quentes	1	Pasteizinhos de batata, ricota e cebolas carameladas
+1374	Cardápio Amalfi Leite	Snacks Quentes	1	Polpette de salmão e dip de pimentas brasileiras
+1375	Cardápio Amalfi Leite	Snacks Quentes	1	Samosa de queijo ementhal e suas ervas
+1376	Cardápio Amalfi Leite	Snacks Quentes	1	Vol au vent de brie e mel de acácias
+1377	Cardápio Amalfi Leite	Zuppa - Cremes e Consommés	1	Capuccino de abóbora e alecrim
+1378	Cardápio Amalfi Leite	Zuppa - Cremes e Consommés	1	Creme de mandioquinha com chips de cebola e sal de Guerand
+1379	Cardápio Amalfi Leite	Miniature – Mini Degustações	1	Brie com mel e amêndoas laminadas
+1380	Cardápio Amalfi Leite	Miniature – Mini Degustações	1	Polenta Bergamasca com ragu de cogumelos selvagens
+1381	Cardápio Amalfi Leite	Entrada Fria	1	Cuscuz marroquino com pupunha, endívias e pistache
+1382	Cardápio Amalfi Leite	Entrada Fria	1	Terrina de zucchini, chevre cremoso e hortelã acompanhado de variados pães
+1383	Cardápio Amalfi Leite	Salada	1	Mix de verdes com aspargos, trigo e carpaccio de robalo curado em mostarda rústica
+1384	Cardápio Amalfi Leite	Quiche Gigante	1	Quiche de queijos nobres
+1385	Cardápio Amalfi Leite	Quiche Gigante	1	Quiche de cogumelos selvagens al limone
+1386	Cardápio Amalfi Leite	Pasta Original “ArtGusto”	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+1387	Cardápio Amalfi Leite	Pasta Original “ArtGusto”	1	Varenikes e suas cebolas
+1388	Cardápio Amalfi Leite	Pratos Principais	1	 Salmão tostado em molho de sakê e jus de cítricos acompanhado de risotto de aspargos(Servidos com batatas rústicas e ervas)
+1389	Cardápio Amalfi Leite	Pratos Principais	1	Roulade de Saint Peter e velouté de laranja acompanhado de Risotto de cogumelos selvagens al limone(Servidos com batatas rústicas e ervas)
+1390	Cardápio Amalfi Leite	Sobremesas	1	Torta Brownie
+1391	Cardápio Amalfi Leite	Sobremesas	1	Cheesecake de frutas vermelhas
+2305	Cardápio Amalfi Leite	Sobremesas	1	Lasagna de chocolate
+2306	Cardápio Amalfi Leite	Sobremesas	1	Bavaroise de coco com baba de moça
+2307	Cardápio Amalfi	Cocktail	1	Petit Caprese com Pesto Genovese
+2308	Cardápio Amalfi	Cocktail	1	Ceviche de Robalo e cebouletes com salsa cítrica
+2309	Cardápio Amalfi	Cocktail	1	Carpaccio com tapenade e azeite de trufas
+2310	Cardápio Amalfi	Cocktail	1	Camarões com sour cream de limão siciliano e dill
+2311	Cardápio Amalfi	Cocktail	1	Rool de berinjela e mussarela de búfala cremosa
+2312	Cardápio Amalfi	Snacks Quentes	1	Pastelzinho de linguiça toscana e erva doce
+2313	Cardápio Amalfi	Snacks Quentes	1	Polpette de carne de panela e dip de pimentas brasileiras
+2314	Cardápio Amalfi	Snacks Quentes	1	Vol au vent de camarões laqueados em molho de ostras
+2315	Cardápio Amalfi	Snacks Quentes	1	Samosa de queijo ementhal e suas ervas
+2316	Cardápio Amalfi	Snacks Quentes	1	Crocante de frango flocado com aioli
+2317	Cardápio Amalfi	Zuppa - Cremes e Consommés	1	Capuccino de abóbora e alecrim
+2318	Cardápio Amalfi	Zuppa - Cremes e Consommés	1	Creme de mandioquinha com chips de bacon
+2319	Cardápio Amalfi	Miniature – Mini Degustações	1	Ragú de Linguiça com Polenta
+2320	Cardápio Amalfi	Miniature – Mini Degustações	1	Escondidinho de carne seca
+2321	Cardápio Amalfi	Entrada Fria	1	Cuscuz marroquino com pupunha, endívias e pistache
+2322	Cardápio Amalfi	Entrada Fria	1	Terrina de zucchini, chevre cremoso e hortelã acompanhado de variados pães
+2323	Cardápio Amalfi	Salada	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+2324	Cardápio Amalfi	Quiche Gigante	1	Quiche de queijos nobres
+2325	Cardápio Amalfi	Quiche Gigante	1	Quiche de cogumelos selvagens al limone
+2326	Cardápio Amalfi	Pasta Original “ArtGusto”	1	Tortellini de Ementhal e limão siciliano ao molho de tomates frescos
+2327	Cardápio Amalfi	Pasta Original “ArtGusto”	1	Tortellini de Vitela ao molho branco com amêndoas
+2328	Cardápio Amalfi	Pratos Principais	1	Escalope de Filet Mignon com molho roti e acompanhado de risotto de cogumelos selvagens al limone - Servidos com batatas rústicas e ervas
+(Sugestão de Peixe para acompanhar o cardápio, valor R$ 25,00 por convidado)
+2329	Cardápio Amalfi	Pratos Principais	1	Salmão tostado em molho de sakê e jus de cítricos acompanhado de risotto de aspargos - Servidos com batatas rústicas e ervas
+(Sugestão de Peixe para acompanhar o cardápio, valor R$ 25,00 por convidado)
+2330	Cardápio Amalfi	Sobremesas	1	Torta Brownie
+2331	Cardápio Amalfi	Sobremesas	1	Cheesecake de frutas vermelhas
+2332	Cardápio Amalfi	Sobremesas	1	Lasagna de chocolate
+2333	Cardápio Amalfi	Sobremesas	1	Bavaroise de coco com baba de moça
+2334	Cardápio Degustação Comercial
+Receptivo	Coquetel frio	1	Mousse de damasco e amêndoas
+2335	Cardápio Degustação Comercial
+Receptivo	Coquetel frio	1	Carpaccio com tapenade e azeite de trufas
+2336	Cardápio Degustação Comercial
+Receptivo	Coquetel frio	1	Cestinhas de chevre e chutney de tomates
+2337	Cardápio Degustação Comercial
+Receptivo	Coquetel frio	1	Toast de provolone com roast beef “homemade” e Dijon
+2338	Cardápio Degustação Comercial
+Receptivo	Coquetel quente	1	Polpette de carne de panela e dip de pimentas brasileiras
+2339	Cardápio Degustação Comercial
+Receptivo	Coquetel quente	1	Vol au vent de camarões laqueados em molho de ostras
+2340	Cardápio Degustação Comercial
+Receptivo	Coquetel quente	1	Crocante de frango flocado com aioli
+2341	Cardápio Degustação Comercial
+Receptivo	Coquetel quente	1	Capuccino de abóbora e alecrim
+2342	Cardápio Degustação Comercial
+Receptivo	Coquetel quente	1	Mini quiche de gorgonzola e figos
+2343	Cardápio Degustação Comercial
+Receptivo	Mini Degustações italianas	1	Piccolino ao molho bechamel
+2344	Cardápio Degustação Comercial
+Receptivo	Mini Degustações italianas	1	Ravioli de Queijo Ementhal e limão siciliano ao molho Rústico de Tomates
+2345	Cardápio Degustação Comercial
+Receptivo	Mini Degustações italianas	1	Risotto de aspargos com presunto cru
+2346	Cardápio Degustação Comercial
+Receptivo	Sobremesas	1	Lasagna de chocolate
+2347	Cardápio Degustação Comercial
+Receptivo	Sobremesas	1	Cheesecake Orange com calda de frutas silvestres
+2348	Cardápio Portovenere	Cocktail	1	Petit Caprese ao Pesto Genovese
+2349	Cardápio Portovenere	Cocktail	1	Carpaccio com mostarda dijon e Grana Padano
+2350	Cardápio Portovenere	Cocktail	1	Cestinhas de chevre e chutney de tomates
+2351	Cardápio Portovenere	Cocktail	1	Toast de provolone com roast beef “homemade” e Dijon
+2352	Cardápio Portovenere	Cocktail	1	Rools de berinjela e mussarela de búfala cremosa
+2353	Cardápio Portovenere	Snacks Quentes	1	Pasteizinhos de linguiça toscana e erva doce
+2354	Cardápio Portovenere	Snacks Quentes	1	Crocantes de frango flocado com aioli
+2355	Cardápio Portovenere	Snacks Quentes	1	Polpette de carne de panela e dip de pimentas brasileiras
+2356	Cardápio Portovenere	Snacks Quentes	1	Roulade de frango e damascos Turcos
+2357	Cardápio Portovenere	Snacks Quentes	1	Crispies de queijos nobres e manjerona
+2358	Cardápio Portovenere	Mini Degustações	1	Escondidinho de carne seca
+2359	Cardápio Portovenere	Mini Degustações	1	Polenta cremosa com parmesão Grana Padanno
+2360	Cardápio Portovenere	Saladas da estação – Insalata	1	Caesar Salad com molho tradicional
+2361	Cardápio Portovenere	QUICHE	1	Alho porro
+2362	Cardápio Portovenere	QUICHE	1	Queijos suave
+2363	Cardápio Portovenere	Tortellini Original “ArtGusto”	1	Tortellini de Zucca ao molho branco e sálvia
+2364	Cardápio Portovenere	Tortellini Original “ArtGusto”	1	Raviolli de mussarela de búfala ao molho de tomates
+2365	Cardápio Portovenere	Pratos principais	1	Escalopes de Mignon em Roti Tradicional da Casa acompanhado de risotto de milanês - Servidos com batatas rústicas com ervas
+(Sugestão de Peixe para acompanhar o cardápio, valor R$ 25,00 por convidado)
+2366	Cardápio Portovenere	Pratos principais	1	Sugestão: Salmão tostado ao molho de sakê e jus de cítricos acompanhado de risotto de açafrão e seus crispies - Servidos com batatas rústicas com ervas
+(Sugestão de Peixe para acompanhar o cardápio, valor R$ 25,00 por convidado)
+2367	Cardápio Portovenere	Sobremesas	1	Lasagna de chocolate “Art Gusto” com calda de chocolate
+2368	Cardápio Portovenere	Sobremesas	1	Bavaroise de coco com baba de moça
+2369	Cardápio Portovenere	Sobremesas	1	Cheese cake Mousse com goiabada com sorvete
+2370	Menu Degustação Soft	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+2371	Menu Degustação Soft	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2372	Menu Degustação Soft	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+2373	Menu Degustação Soft	COQUETEL FRIO	1	Toast de parmesão com roast beef “homemade” e Dijon
+2374	Menu Degustação Soft	COQUETEL FRIO	1	Carpaccio de Robalo e cebouletes com salsa cítrica
+2375	Menu Degustação Soft	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2376	Menu Degustação Soft	COQUETEL FRIO	1	Carpaccio com tapenade e castanhas
+2377	Menu Degustação Soft	COQUETEL QUENTE	1	Phyllos de abóbora e carne de sol marinada em tangerina
+2378	Menu Degustação Soft	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2379	Menu Degustação Soft	COQUETEL QUENTE	1	Crocantes de caranguejo com mousseline de cítricos
+2380	Menu Degustação Soft	COQUETEL QUENTE	1	Quiche lorraine
+2381	Menu Degustação Soft	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2382	Menu Degustação Soft	COQUETEL QUENTE	1	Samosa de queijo ementhal e suas ervas
+2383	Menu Degustação Soft	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2384	Menu Degustação Soft	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+2385	Menu Degustação Soft	CONSOMMÉS	1	Consommé de alho porro e natas
+2386	Menu Degustação Soft	CONSOMMÉS	1	Consommé de alho porro e natas
+2387	Menu Degustação Soft	CONSOMMÉS	1	Escondidinho de carne seca
+2388	Menu Degustação Soft	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+2389	Menu Degustação Soft	CONSOMMÉS	1	Mandioquinha cremosa, crispies de bacon e Laranja
+2390	Menu Degustação Soft	SALADINHAS VOLANTES	1	Saladinha caprese e suas folhas
+2391	Menu Degustação Soft	SALADINHAS VOLANTES	1	Caesar Salad com molho tradicional
+2392	Menu Degustação Soft	SALADINHAS VOLANTES	1	Mix de grãos, rúcula e queijo coalho
+2393	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Queijo com molho de tomates frescos
+2394	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Carne com jus de tomatinhos sweet Grape e azeitonas chilenas
+2395	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Frango com molho de sálvia
+2396	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Mussarela de búfala com molho de tomates frescos
+2397	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Lagarto com molho de alho porro
+2398	Menu Degustação Soft	Prato principal	1	Lâminas de Mignon selado em trio de mostarda acompanhado de risotto de alho porro
+2399	Menu Degustação Soft	Prato principal	1	Cubos de Mignon ao jus do seu próprio caldo acompanhado de risotto milanês
+2400	Menu Degustação Soft	Prato principal	1	Blanquet de Chester ao molho de champagne acompanhado de risotto de alho porro
+2401	Menu Degustação Soft	SOBREMESAS	1	Lasagna de chocolate com sorvete de creme
+2402	Menu Degustação Soft	SOBREMESAS	1	Tarte Tiramissu
+2403	Menu Degustação Soft	SOBREMESAS	1	Zucotto de frutas vermelhas
+2404	Menu Degustação Soft	SOBREMESAS	1	Cubos de frutas da estação ao perfume de água de laranjeira
+2405	Menu Degustação Soft	BEBIDAS	1	Café
+2406	Menu Degustação Soft	BEBIDAS	1	Chás diversos
+2407	Menu Degustação Soft	BEBIDAS	1	Água sem gás
+2408	Menu Degustação Soft	BEBIDAS	1	Água com gás
+2409	Menu Degustação Soft	BEBIDAS	1	Refrigerantes
+2410	Menu Degustação Soft	Petit fours	1	Trufinhas de chocolate
+2411	Menu Degustação Soft	COQUETEL FRIO	1	Mousse de damasco e amêndoas
+2412	Menu Degustação Soft	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2413	Menu Degustação Soft	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+2414	Menu Degustação Soft	COQUETEL FRIO	1	Toast de parmesão com roast beef “homemade” e Dijon
+2415	Menu Degustação Soft	COQUETEL FRIO	1	Carpaccio de Robalo e cebouletes com salsa cítrica
+2416	Menu Degustação Soft	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2417	Menu Degustação Soft	COQUETEL FRIO	1	Carpaccio com tapenade e castanhas
+2418	Menu Degustação Soft	COQUETEL QUENTE	1	Phyllos de abóbora e carne de sol marinada em tangerina
+2419	Menu Degustação Soft	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2420	Menu Degustação Soft	COQUETEL QUENTE	1	Crocantes de caranguejo com mousseline de cítricos
+2421	Menu Degustação Soft	COQUETEL QUENTE	1	Quiche lorraine
+2422	Menu Degustação Soft	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2423	Menu Degustação Soft	COQUETEL QUENTE	1	Crispies de queijo gouda e pistache
+2424	Menu Degustação Soft	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2425	Menu Degustação Soft	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon
+2426	Menu Degustação Soft	CONSOMMÉS	1	Consommé de alho porro e natas
+2427	Menu Degustação Soft	CONSOMMÉS	1	Escondidinho de carne seca
+2428	Menu Degustação Soft	CONSOMMÉS	1	Ragú de Linguiça com Polenta
+2429	Menu Degustação Soft	CONSOMMÉS	1	Mandioquinha cremosa, crispies de bacon e Laranja
+2430	Menu Degustação Soft	SALADINHAS VOLANTES	1	Saladinha caprese e suas folhas
+2431	Menu Degustação Soft	SALADINHAS VOLANTES	1	Caesar Salad com molho tradicional
+2432	Menu Degustação Soft	SALADINHAS VOLANTES	1	Mix de grãos, rúcula e queijo coalho
+2433	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Queijo com molho de tomates frescos
+2434	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Carne com jus de tomatinhos sweet Grape e azeitonas chilenas
+2435	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Frango com molho de sálvia
+2436	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Mussarela de búfala com molho de tomates frescos
+2437	Menu Degustação Soft	Ravioli Original “ArtGusto”	1	Lagarto com molho de alho porro
+2438	Menu Degustação Soft	Prato principal	1	Lâminas de Mignon selado em trio de mostarda acompanhado de risotto de alho porro
+2439	Menu Degustação Soft	Prato principal	1	Cubos de Mignon ao jus do seu próprio caldo acompanhado de risotto milanês
+2440	Menu Degustação Soft	Prato principal	1	Blanquet de Chester ao molho de champagne acompanhado de risotto de alho porro
+2441	Menu Degustação Soft	SOBREMESAS	1	Lasagna de chocolate com sorvete de creme
+2442	Menu Degustação Soft	SOBREMESAS	1	Tarte Tiramissu
+2443	Menu Degustação Soft	SOBREMESAS	1	Zucotto de frutas vermelhas
+2444	Menu Degustação Soft	SOBREMESAS	1	Cubos de frutas da estação ao perfume de água de laranjeira
+
+2445	Menu Degustação Soft	BEBIDAS	1	Café
+2446	Menu Degustação Soft	BEBIDAS	1	Chás diversos
+2447	Menu Degustação Soft	BEBIDAS	1	Refrigerantes
+2448	Menu Degustação Soft	BEBIDAS	1	Água com gás
+2449	Menu Degustação Soft	BEBIDAS	1	Água sem gás
+2450	Menu Degustação Soft	Petit fours	1	Trufinhas de chocolate
+2451	Cardápio Portovenere	COQUETEL FRIO	1	COQUETEL FRIO
+2452	Cardápio Portovenere	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2453	Cardápio Portovenere	COQUETEL FRIO	1	Petit Caprese ao Pesto Genovese
+2454	Cardápio Portovenere	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+2455	Cardápio Portovenere	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2456	Cardápio Portovenere	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+2457	Cardápio Portovenere	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+2458	Cardápio Portovenere	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2459	Cardápio Portovenere	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+2460	Cardápio Portovenere	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+2461	Cardápio Portovenere	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2462	Cardápio Portovenere	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+2463	Cardápio Portovenere	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2464	Cardápio Portovenere	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon L’Orange
+2465	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de carne seca
+2466	Cardápio Portovenere	CONSOMMÉS	1	Polenta cremosa com parmesão Grana Padanno
+2467	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de abóbora, coalho e couve crispie
+2468	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Salada de frutas da estação marinadas em cítricos e seus croutons de ervas
+2469	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Mix de verdes com carpaccio, alcaparras e mostarda Dijon
+2470	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Salada Waldorf de maçãs e nozes ao molho tradicional
+2471	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Melangé de folhas da estação e composição de tomates cereja, cubinhos de búfala e manga grelhada
+2472	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Caesar Salad ao molho tradicional
+2473	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Terrine de legumes grelhados, castanhas em redução de balsâmico e suas folhas frescas
+2474	Cardápio Portovenere	Massa Original “ArtGusto”	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+2475	Cardápio Portovenere	Massa Original “ArtGusto”	1	Sofiolli Verde com queijos especias ao molho de tomates rústicos
+2476	Cardápio Portovenere	Massa Original “ArtGusto”	1	Tortellini de Zucca ao molho branco e sálvia
+2477	Cardápio Portovenere	Massa Original “ArtGusto”	1	Raviolli de mussarela de búfala ao molho de tomates
+2478	Cardápio Portovenere	Risotto	1	Risotto milanês
+2479	Cardápio Portovenere	Risotto	1	Risotto de queijos nobres
+2480	Cardápio Portovenere	Risotto	1	Risotto de abobrinha e ricota defumada
+2481	Cardápio Portovenere	Risotto	1	Risotto de alho porro
+2482	Cardápio Portovenere	Risotto	1	Risotto de pêras e Gorgonzola
+2483	Cardápio Portovenere	Pratos principais	1	Boeuf Bourguignon – Receita francesa de carne de panela ao vinho acompanhado de legumes grelhados em azeite de
+tominho
+2484	Cardápio Portovenere	Pratos principais	1	Cubos de filé Mignon ao jus de mostarda L’Ansienne acompanhado de batata campana com alecrim e tomilho
+2485	Cardápio Portovenere	Pratos principais	1	Blanquet de frango ao molho Champagne acompanhado de mousseline de mandioquinha
+2486	Cardápio Portovenere	Pratos principais	1	Iscas de Mignon em Roti Tradicional da Casa acompanhado de purê de banana da terra
+2487	Cardápio Portovenere	SOBREMESAS MONTADAS	1	Lasagna de chocolate
+2488	Cardápio Portovenere	SOBREMESAS MONTADAS	1	Bavaroise de coco com baba de moça
+2489	Cardápio Portovenere	SOBREMESAS MONTADAS	1	Pudim de leite condensado
+2490	Cardápio Portovenere	SOBREMESAS MONTADAS	1	Tarte cappuccino
+2491	Cardápio Portovenere	SOBREMESAS MONTADAS	1	Cheese cake de goiabada
+2492	Cardápio Portovenere	SORVETE	1	Pistache
+2493	Cardápio Portovenere	SORVETE	1	Chocolate
+2494	Cardápio Portovenere	SORVETE	1	Creme
+2495	Cardápio Portovenere	SORVETE	1	Morango
+2496	Cardápio Portovenere	BEBIDAS	1	Café
+2497	Cardápio Portovenere	BEBIDAS	1	Chás diversos
+2498	Cardápio Portovenere	BEBIDAS	1	Refrigerantes
+2499	Cardápio Portovenere	BEBIDAS	1	Água com gás
+2500	Cardápio Portovenere	BEBIDAS	1	Água sem gás
+2501	Cardápio Portovenere	Petit fours	1	Micro cookies de limão
+2502	Cardápio Portovenere	Petit fours	1	Sablé de chocolate
+2503	Cardápio Portovenere	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2504	Cardápio Portovenere	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+2505	Cardápio Portovenere	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2506	Cardápio Portovenere	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+2507	Cardápio Portovenere	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+2508	Cardápio Portovenere	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+2509	Cardápio Portovenere	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2510	Cardápio Portovenere	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2511	Cardápio Portovenere	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+2512	Cardápio Portovenere	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+2513	Cardápio Portovenere	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+2514	Cardápio Portovenere	COQUETEL QUENTE	1	Toast de provolone com roast beef “homemade” e dijon
+2515	Cardápio Portovenere	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2516	Cardápio Portovenere	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon L’Orange
+2517	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de carne seca
+2518	Cardápio Portovenere	CONSOMMÉS	1	Polenta cremosa com parmesão Grana Padanno
+2519	Cardápio Portovenere	CONSOMMÉS	1	Mini vaca atolada
+2520	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de abóbora, coalho e couve crispie
+2521	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada de frutas da estação marinadas em cítricos e seus croutons de ervas
+2522	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+2523	Jantar Franco Americano	ENTRADAS FRIAS	1	Mix de verdes com carpaccio, alcaparras e mostarda Dijon
+2524	Jantar Franco Americano	ENTRADAS FRIAS	1	Salada Waldorf de maçãs e nozes
+2525	Jantar Franco Americano	ENTRADAS FRIAS	1	Melangé de folhas da estação e composição de tomates cereja, cubinhos de búfala e manga grelhada
+2526	Jantar Franco Americano	ENTRADAS FRIAS	1	Caesar Salad
+2527	Jantar Franco Americano	ENTRADAS FRIAS	1	Terrine de legumes grelhados, castanhas em redução de balsâmico e suas folhas frescas
+2528	Jantar Franco Americano	QUICHE	1	Alho porro
+2529	Jantar Franco Americano	QUICHE	1	Queijos suave
+2530	Jantar Franco Americano	QUICHE	1	Peras e gorgonzola
+2531	Jantar Franco Americano	QUICHE	1	Funghi
+2532	Jantar Franco Americano	Massa Original “ArtGusto”	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+2533	Jantar Franco Americano	Massa Original “ArtGusto”	1	Sofiolli Verde com queijos especias ao molho de tomates rústicos
+2534	Jantar Franco Americano	Massa Original “ArtGusto”	1	Tortellini de Zucca ao molho branco e sálvia
+2535	Jantar Franco Americano	Massa Original “ArtGusto”	1	Raviolli de mussarela de búfala ao molho de tomates
+2536	Jantar Franco Americano	Carne Vermelha	1	Boeuf Bourguignon – receita francesa de carne de panela ao vinho
+2537	Jantar Franco Americano	Carne Vermelha	1	Maminha assada em seu caldo demi-glace
+2538	Jantar Franco Americano	Carne Vermelha	1	Cubos de filé Mignon ao jus de mostarda L’Ansienne
+2539	Jantar Franco Americano	Carne Vermelha	1	Escalopes de Mignon em Roti Tradicional da Casa
+2540	Jantar Franco Americano	Carne Branca	1	Blanquet de frango ao molho Champagne
+2541	Jantar Franco Americano	Carne Branca	1	Escalope de filet de frango ao curry
+2542	Jantar Franco Americano	Risotto	1	Risotto milanês
+2543	Jantar Franco Americano	Risotto	1	Risotto de queijos nobres
+2544	Jantar Franco Americano	Risotto	1	Arroz com amêndoas
+2545	Jantar Franco Americano	Risotto	1	Risotto de abobrinha e ricota defumada
+2546	Jantar Franco Americano	Risotto	1	Risotto de alho porro
+2547	Jantar Franco Americano	Acompanhamento	1	Gratin de batatas com gruyere
+2548	Jantar Franco Americano	Acompanhamento	1	Batatas Duchese
+2549	Jantar Franco Americano	Acompanhamento	1	Legumes grelhados em azeite de tominho
+2550	Jantar Franco Americano	Acompanhamento	1	Batatas rústicas com ervas
+2551	Jantar Franco Americano	Acompanhamento	1	Cestinha de mandioquinha cremosa, crispies de bacon e laranja
+2552	Jantar Franco Americano	Acompanhamento	1	Purê de banana da terra
+2553	Jantar Franco Americano	Acompanhamento	1	Rosti de batatas e funghi
+2554	Jantar Franco Americano	SOBREMESA	1	Tortinha mousse de chocolate
+2555	Jantar Franco Americano	SOBREMESA	1	Lasagna de chocolate
+2556	Jantar Franco Americano	SOBREMESA	1	Torta brownie
+2557	Jantar Franco Americano	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+2558	Jantar Franco Americano	SOBREMESA	1	Tarte cappuccino
+2559	Jantar Franco Americano	SOBREMESA	1	Cheesecake com goiabada
+2560	Jantar Franco Americano	SOBREMESA	1	Cubos de frutas da estação e lichias
+2561	Jantar Franco Americano	SORVETE	1	Pistache
+2562	Jantar Franco Americano	SORVETE	1	Chocolate
+2563	Jantar Franco Americano	SORVETE	1	Creme
+2564	Jantar Franco Americano	SORVETE	1	Morango
+2565	Jantar Franco Americano	Caldas	1	Frutas vermelhas e Chocolate meio amargo
+2566	Jantar Franco Americano	BEBIDAS	1	Água com gás 
+2567	Jantar Franco Americano	BEBIDAS	1	Água sem gás 
+2568	Jantar Franco Americano	BEBIDAS	1	Refrigerantes
+2569	Jantar Franco Americano	BEBIDAS	1	Café
+2570	Jantar Franco Americano	BEBIDAS	1	Chás diversos
+2571	Jantar Franco Americano	Petit fours	1	Trufinhas de chocolate
+2572	Jantar Franco Americano	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+2573	Jantar Franco Americano	Petit fours	1	Micro cookies de limão
+2574	Cardápio Portovenere	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2575	Cardápio Portovenere	COQUETEL FRIO	1	Petit Caprese com Pesto Genovese
+2576	Cardápio Portovenere	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2577	Cardápio Portovenere	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+2578	Cardápio Portovenere	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+2579	Cardápio Portovenere	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+2580	Cardápio Portovenere	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2581	Cardápio Portovenere	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2582	Cardápio Portovenere	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+2583	Cardápio Portovenere	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+2584	Cardápio Portovenere	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+2585	Cardápio Portovenere	COQUETEL QUENTE	1	Toast de provolone com roast beef “homemade” e dijon
+2586	Cardápio Portovenere	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2587	Cardápio Portovenere	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon L’Orange
+2588	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de carne seca
+2589	Cardápio Portovenere	CONSOMMÉS	1	Polenta cremosa com parmesão Grana Padanno
+2590	Cardápio Portovenere	CONSOMMÉS	1	Mini vaca atolada
+2591	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de abóbora, coalho e couve crispie
+2592	Jantar à Inglesa	ENTRADA	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+2593	Jantar à Inglesa	ENTRADA	1	Salada de frutas da estação marinadas em cítricos e seus croutons de ervas
+2594	Jantar à Inglesa	ENTRADA	1	Mix de verdes com carpaccio e alcaparras
+2595	Jantar à Inglesa	ENTRADA	1	Salada Waldorf de maçãs e nozes ao molho tradicional
+2596	Jantar à Inglesa	ENTRADA	1	Melangé de folhas da estação e composição de tomates cereja, cubinhos de búfala e manga grelhada
+2597	Jantar à Inglesa	ENTRADA	1	Caesar Salad ao molho tradicional
+2598	Jantar à Inglesa	ENTRADA	1	Terrine de legumes grelhados, castanhas em redução de balsâmico (molho) e suas folhas frescas
+2599	Jantar à Inglesa	PRIMEIRO PRATO	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+2600	Jantar à Inglesa	PRIMEIRO PRATO	1	Sofiolli Verde com queijos especias ao molho de tomates rústicos
+2601	Jantar à Inglesa	PRIMEIRO PRATO	1	Tortellini de Zucca ao molho branco e sálvia
+2602	Jantar à Inglesa	PRIMEIRO PRATO	1	Raviolli de mussarela de búfala ao molho de tomates
+2603	Jantar à Inglesa	PRATO PRINCIPAL	1	Maminha assada em seu caldo demi-glace acompanhada de batatas duchese e risotto milanês
+2604	Jantar à Inglesa	PRATO PRINCIPAL	1	Cubos de filé Mignon ao jus de mostarda L’Ansienne acompanhado de purê de banana da terra e risotto de alho
+porro
+2605	Jantar à Inglesa	PRATO PRINCIPAL	1	Escalopes de Mignon em Roti Tradicional da Casa acompanhados de legumes grelhados em azeite de tominho e
+risotto de queijos nobres
+2606	Jantar à Inglesa	PRATO PRINCIPAL	1	Blanquet de frango ao molho Champagne acompanhado de batatas rústicas com ervas e risotto de abobrinha e
+ricota defumada
+2607	Jantar à Inglesa	PRATO PRINCIPAL	1	Escalopes de frango ao curry acompanhado de legumes grelhados em azeite de tominho e risotto de alho porro
+2608	Jantar à Inglesa	SOBREMESA	1	Bavaroise de coco e calda de baba e moça
+2609	Jantar à Inglesa	SOBREMESA	1	Quindim Piazza, fitas de coco carameladas e flores de mel
+2610	Jantar à Inglesa	SOBREMESA	1	Lasagna de chocolate acompanhada de sorvete de creme
+2611	Jantar à Inglesa	SOBREMESA	1	Torta dueto de mousse de cappuccino e brownie
+2612	Jantar à Inglesa	SOBREMESA	1	Cheesecake com calda de frutas silvestres
+2613	Jantar à Inglesa	SOBREMESA	1	Bloco de Chocolate Nero e coulis de frutas silvestres
+2614	Jantar à Inglesa	SOBREMESA	1	Standby
+ Frutas frescas fatiadas
+2615	Jantar à Inglesa	BEBIDAS	1	Café
+2616	Jantar à Inglesa	BEBIDAS	1	Chás diversos
+2617	Jantar à Inglesa	BEBIDAS	1	Água sem gás 
+2618	Jantar à Inglesa	BEBIDAS	1	Água com gás 
+2619	Jantar à Inglesa	BEBIDAS	1	Refrigerantes
+2620	Jantar à Inglesa	Petit fours	1	Trufinhas de chocolate
+2621	Jantar à Inglesa	Petit fours	1	Suspiros de pimenta dedo de moça e gengibre
+2622	Jantar à Inglesa	Petit fours	1	Micro cookies de limão
+2623	Cardápio Portovenere	COQUETEL FRIO	1	Mousse de tomates secos e pesto Genovese
+2624	Cardápio Portovenere	COQUETEL FRIO	1	Stick de coalho em teriyaki de melaço de cana
+2625	Cardápio Portovenere	COQUETEL FRIO	1	Petit Caprese ao Pesto Genovese
+2626	Cardápio Portovenere	COQUETEL FRIO	1	Carpaccio com mostarda dijon e Grana Padano
+2627	Cardápio Portovenere	COQUETEL FRIO	1	Cestinhas de chevre e chutney de tomates
+2628	Cardápio Portovenere	COQUETEL FRIO	1	Toast de provolone com roast beef “homemade” e Dijon
+2629	Cardápio Portovenere	COQUETEL FRIO	1	Rools de berinjela e mussarela de búfala cremosa
+2630	Cardápio Portovenere	COQUETEL QUENTE	1	Pasteizinhos de linguiça toscana e erva doce
+2631	Cardápio Portovenere	COQUETEL QUENTE	1	Crocantes de frango flocado com aioli
+2632	Cardápio Portovenere	COQUETEL QUENTE	1	Micro quiche de alho porro e limão galego
+2633	Cardápio Portovenere	COQUETEL QUENTE	1	Polpette de carne de panela e dip de pimentas brasileiras
+2634	Cardápio Portovenere	COQUETEL QUENTE	1	Crispies de queijos nobres e manjerona
+2635	Cardápio Portovenere	CONSOMMÉS	1	Capuccino de abóbora e alecrim
+2636	Cardápio Portovenere	CONSOMMÉS	1	Creme de mandioquinha com chips de bacon L’Orange
+2637	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de carne seca
+2638	Cardápio Portovenere	CONSOMMÉS	1	Polenta cremosa com parmesão Grana Padanno
+2639	Cardápio Portovenere	CONSOMMÉS	1	Escondidinho de abóbora, coalho e couve crispie
+2640	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Salada caprese com mussarela de búfala, tomate cereja e molho pesto
+2641	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Melangé de folhas da estação e composição de tomates cereja, cubinhos de búfala e manga grelhada
+2642	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Caesar Salad ao molho tradicional
+2643	Cardápio Portovenere	ENTRADAS FRIAS VOLANTES	1	Terrine de legumes grelhados, castanhas em redução de balsâmico e suas folhas frescas
+2644	Cardápio Portovenere	Massa Original “ArtGusto”	1	Raviolli de Ementhal e limão siciliano ao molho de tomates frescos
+2645	Cardápio Portovenere	Massa Original “ArtGusto”	1	Sofiolli Verde com queijos especias ao molho de tomates rústicos
+2646	Cardápio Portovenere	Massa Original “ArtGusto”	1	Tortellini de Zucca ao molho branco e sálvia
+2647	Cardápio Portovenere	Massa Original “ArtGusto”	1	Raviolli de mussarela de búfala ao molho de tomates
+2648	Cardápio Portovenere	Risotto	1	Risotto milanês
+2649	Cardápio Portovenere	Risotto	1	Risotto de abobrinha e ricota defumada
+2650	Cardápio Portovenere	Risotto	1	Risotto de alho porro
+2651	Cardápio Portovenere	Risotto	1	Risotto de limão siciliano
+2652	Cardápio Portovenere	Pratos principais	1	Boeuf Bourguignon – Receita francesa de carne de panela ao vinho acompanhado de mousseline de mandioquinha
+2653	Cardápio Portovenere	Pratos principais	1	Cubos de filé Mignon ao jus de mostarda L’Ansienne acompanhado de batata campana com alecrim e tomilho
+2654	Cardápio Portovenere	Pratos principais	1	Blanquet de frango ao molho Champagne acompanhado de legumes grelhados em azeite de tomilho
+2655	Cardápio Portovenere	Pratos principais	1	Iscas de Mignon em Roti Tradicional da Casa acompanhado de purê de banana da terra
+2656	Cardápio Portovenere	SOBREMESAS VOLANTES	1	Lasagna de chocolate acompanhada de sorvete de creme
+2657	Cardápio Portovenere	SOBREMESAS VOLANTES	1	Pudim de leite condensado
+2658	Cardápio Portovenere	SOBREMESAS VOLANTES	1	Tarte cappuccino
+2659	Cardápio Portovenere	SOBREMESAS VOLANTES	1	Cheese cake com goiabada
+2660	Cardápio Portovenere	SOBREMESAS VOLANTES	1	Cubos de frutas da estação e lichias
+2661	Cardápio Portovenere	BEBIDAS	1	Refrigerantes
+2662	Cardápio Portovenere	BEBIDAS	1	Água sem gás
+2663	Cardápio Portovenere	BEBIDAS	1	Água com gás
+2664	Cardápio Portovenere	BEBIDAS	1	Café
+2665	Cardápio Portovenere	BEBIDAS	1	Chás diversos
+2666	Cardápio Portovenere	Petit fours	1	Micro cookies de limão
+2667	Cardápio Portovenere	Petit fours	1	Sablé de chocolate
