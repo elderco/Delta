@@ -49,7 +49,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edited([Bind(Include = "EventoId,Id,Observacoes")] model.Decoracao decoracao)
+		public ActionResult Edited([Bind(Include = "EventoId,Id,Observacoes,Cores")] model.Decoracao decoracao)
 		{
 			new data.Decoracao().Update(decoracao);
 			return Redirect(Request.UrlReferrer.AbsolutePath);

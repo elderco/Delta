@@ -10,6 +10,7 @@ namespace VillaBisutti.Delta.Core.DTO
 	{
 		public int Ordem { get; set; }
 		public string Texto { get; set; }
+		public int Quantidade { get; set; }
 		public List<SubItemEvento> SubItens { get; set; }
 	}
 	public class SubItemEvento
@@ -22,5 +23,12 @@ namespace VillaBisutti.Delta.Core.DTO
 		public string Observacao { get; set; }
 		public string ContatoFornecedor { get; set; }
 		public int HorarioEntrega { get; set; }
+	}
+	public class ItemRoteiroEvento
+	{
+		public string Acontecimento { get; set; }
+		public string Observacoes { get; set; }
+		public Model.Horario Horario { get; set; }
+		public bool Importante { get; set; }
 	}
 }

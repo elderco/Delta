@@ -32,6 +32,17 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 
 		// GET: /Evento/ListaPorCasa/5
+		public ActionResult Gerar(int id)
+		{
+			biz.OS os = new bus.OS(id);
+			os.GerarOS();
+			os.Kill();
+			model.Evento evento = Util.context.Evento.FirstOrDefault(e => e.Id == id);
+			ViewBag.GeneratedUrl = Util.GetPDFName(evento);
+			return View();
+		}
+
+		// GET: /Evento/ListaPorCasa/5
 		public ActionResult ListaPorCasa(int id)
 		{
 			return View(new data.Evento().GetListaPorCasa(id));

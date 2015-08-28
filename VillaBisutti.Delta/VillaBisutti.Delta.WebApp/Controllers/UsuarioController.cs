@@ -34,7 +34,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				if (string.IsNullOrEmpty(returnUrl))
 				{
 					UrlHelper u = new UrlHelper(this.ControllerContext.RequestContext);
-					returnUrl = u.Action("Index", "Home", null);
+					returnUrl = u.Action("Filtrar", "Evento", null);
 				}
 				return Redirect(returnUrl);
 			}

@@ -124,6 +124,13 @@ namespace VillaBisutti.Delta.Core
 		{
 			document.Add(Header);
 		}
+		public void AddHeaderText(string text)
+		{
+			iText.Chunk chunck = new iText.Chunk(text);
+			chunck.Font = iText.FontFactory.GetFont(baseFont, headingSize, iText.Font.BOLD, iText.BaseColor.BLACK);
+			iText.Paragraph paragraph = new iText.Paragraph(chunck);
+			document.Add(paragraph);
+		}
 		public void AddLeadText(string text)
 		{
 			iText.Chunk chunck = new iText.Chunk(text);
@@ -134,7 +141,7 @@ namespace VillaBisutti.Delta.Core
 		public void AddLineNoEmphasis(string text)
 		{
 			iText.Chunk chunck = new iText.Chunk(text);
-				chunck.Font = iText.FontFactory.GetFont(baseFont, smallSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
+			chunck.Font = iText.FontFactory.GetFont(baseFont, smallSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
 			document.Add(paragraph);
 		}
@@ -151,6 +158,16 @@ namespace VillaBisutti.Delta.Core
 				chunck.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
 			document.Add(paragraph);
+		}
+		public void AddImage(string path, string legenda)
+		{
+			AddImage(path, legenda, (int)iText.Image.GetInstance(path).Width);
+		}
+		public void AddImage(string path, string legenda, bool fullscreen)
+		{
+			iText.Rectangle mediabox = document.PageSize;
+			float width = mediabox.Width - document.LeftMargin - document.RightMargin;
+			AddImage(path, "(" + width + ")" + legenda, (int)width);
 		}
 		public void AddImage(string path, string legenda, int width)
 		{

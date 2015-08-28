@@ -55,7 +55,7 @@ namespace VillaBisutti.Delta
 		}
 		public static string GetPDFName(Core.Model.Evento evento)
 		{
-			string name = string.Format("{0}-{1}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.NomeCasa);
+			string name = string.Format("{0}-{1}-{2}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.SiglaCasa, evento.Id);
 			return HttpContext.Current.Server.MapPath("~/OS/" + name);
 		}
 		public static string GetImageName(string fileName)
@@ -176,6 +176,28 @@ namespace VillaBisutti.Delta
 				}
 			}
 			return message;
+		}
+
+		public static string TextoFornecimentoBisutti
+		{
+			get
+			{
+				return "Itens fornecidos pela Villa Bisutti";
+			}
+		}
+		public static string TextoFornecimentoTerceiro
+		{
+			get
+			{
+				return "Itens a serem contratados pela Villa Bisutti";
+			}
+		}
+		public static string TextoFornecimentoContratante
+		{
+			get
+			{
+				return "Itens dinsponibilizados pelo contratante";
+			}
 		}
 	}
 }

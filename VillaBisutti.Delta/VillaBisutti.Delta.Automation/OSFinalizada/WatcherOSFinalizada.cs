@@ -27,28 +27,14 @@ namespace VillaBisutti.Delta.Automation.OSFinalizada
 		public void OSFinalizada()
 		{
 			List<model.Evento> eventos = Util.context.Evento
-				.Include(e => e.Bebida)
-				.Include(e => e.BoloDoceBemCasado)
-				.Include(e => e.Cardapio)
-				.Include(e => e.DecoracaoCerimonial)
-				.Include(e => e.FotoVideo)
-				.Include(e => e.Gastronomia)
-				.Include(e => e.Local)
-				.Include(e => e.Montagem)
-				.Include(e => e.OutrosItens)
-				.Include(e => e.PosVendedora)
-				.Include(e => e.Produtora)
-				.Include(e => e.SomIluminacao)
 			.Where(e => e.OSAprovada == true && e.OSFinalizada == false).ToList();
 			foreach (model.Evento item in eventos)
 			{
-				model.Evento evento = Util.context.Evento.Find(item.Id);
-				bus.Evento.GerarOS(item.Id);
-				item.OSFinalizada = true;
-				Util.context.Entry(evento).OriginalValues.SetValues(item);
+				bus.OS os = new bus.OS(item.Id);
+				os.GerarOS();
+				os.SetOSFinalizada();
+				os.Kill();
 			}
-			Util.context.SaveChanges();
-			Util.ResetContext();
 		}
 	}
 }

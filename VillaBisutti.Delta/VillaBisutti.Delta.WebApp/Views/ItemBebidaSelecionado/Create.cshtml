@@ -3,6 +3,16 @@
 	Layout = null;
 }
 <script language="javascript" type="text/javascript">
+	function DefinirCheckboxes(checado) {
+		if (checado && $("#FornecimentoBisutti").attr("checked")) {
+			$("#FornecimentoBisutti").click();
+			$("#ContratacaoBisutti").click();
+		} else {
+			$("#FornecimentoBisutti").attr("checked", "checked")
+			$("#ContratacaoBisutti").attr("checked", "checked")
+		}
+
+	}
 	$(document).ready(function () {
 		$("#TipoItemBebidaId").change(function () {
 			if (!$(this).val())
