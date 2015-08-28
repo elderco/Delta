@@ -14,7 +14,7 @@
         @Html.ValidationSummary(true)
 		<input type="hidden" name="EventoId" value="@ViewBag.Id" />
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoReuniaoId, "TipoReuniaoId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoReuniaoId, "Tipo Reunião", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 				@Html.DropDownList("TipoReuniaoId", (IEnumerable<SelectListItem>)ViewBag.TipoReuniaoId, "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoReuniaoId)
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UsuarioId, "UsuarioId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UsuarioId, "Responsável", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 				@Html.DropDownListFor(model => model.UsuarioId, new SelectList((IEnumerable<VillaBisutti.Delta.Core.Model.Usuario>)ViewBag.UsuarioId, "Id", "Nome"), string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UsuarioId)

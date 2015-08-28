@@ -40,10 +40,13 @@
 						<input type="text" name="filtro" value="@Request.QueryString["filtro"]" />
                     </div>
                     <div class="row">
-                        <div class="col-md-2">&nbsp;</div>
-                        <label for="realizada" class="control-label">realizada</label>
-                        <input type="checkbox" disabled="disabled" name="realizada" id="realizada" value="True" class="col-md-2" @(Request.QueryString["realizada"] != null ? " checked=\"checked\"" : "") />
+						<label for="Id" class="control-label col-md-2">Responsável</label>
+						@Html.DropDownList("usuarioId", (SelectList)ViewBag.Usuario, "Selecione", new { @class = "col-md-2" })
+						<span class="col-md-2"> </span>
+						<label for="realizada" class="control-label col-md-2">realizada</label>
+                        <input type="checkbox"  name="realizada" id="realizada" value="True" class="col-md-2" @(Request.QueryString["realizada"] != null ? " checked=\"checked\"" : "") />
                     </div>
+				
                 </form>
             </div>
         </div>

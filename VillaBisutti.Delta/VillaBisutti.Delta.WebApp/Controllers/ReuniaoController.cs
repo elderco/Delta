@@ -75,11 +75,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
-        public ActionResult Filtrar(string filtro, DateTime? inicio = null, DateTime? termino = null, 
-            bool? realizada = null, int? tipoReuniaoId = null )
+		public ActionResult Filtrar(string filtro, int? usuarioId = null, DateTime? inicio = null, DateTime? termino = null,
+			bool? realizada = null, int? tipoReuniaoId = null)
         {
             ViewBag.TipoReuniao = new SelectList(new data.TipoReuniao().GetCollection(0), "Id", "Nome");
-			return View(new data.Reuniao().Filtrar(inicio.HasValue ? inicio.Value : DateTime.MinValue, termino.HasValue ? termino.Value : DateTime.MaxValue, realizada, tipoReuniaoId, filtro));
+			ViewBag.Usuario = new SelectList(new data.Usuario().GetCollection(0), "Id", "Nome");
+			return View(new data.Reuniao().Filtrar(inicio.HasValue ? inicio.Value : DateTime.MinValue, termino.HasValue ? termino.Value : DateTime.MaxValue, realizada, tipoReuniaoId, filtro, usuarioId));
         }
 
 		public ActionResult Copy(int id)
