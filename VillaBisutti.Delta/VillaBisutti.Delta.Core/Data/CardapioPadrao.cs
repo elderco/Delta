@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.CardapioPadrao entity)
 		{
 			Model.CardapioPadrao original = context.CardapioPadrao.FirstOrDefault(s => s.Id == entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -24,7 +25,9 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.CardapioPadrao entity)
 		{
+			SetCreated(entity);
 			context.CardapioPadrao.Add(entity);
+			context.SaveChanges();
 		}
 
 		protected override List<Model.CardapioPadrao> GetCollection()

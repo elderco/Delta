@@ -16,6 +16,7 @@ namespace VillaBisutti.Delta.Core.Data
 			//context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 			//context.SaveChanges();
 			Model.TipoItemDecoracao original = context.TipoItemDecoracao.Find(entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -25,6 +26,7 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public override void Insert(Model.TipoItemDecoracao entity)
 		{
+			SetCreated(entity);
 			context.TipoItemDecoracao.Add(entity);
 			context.SaveChanges();
 		}

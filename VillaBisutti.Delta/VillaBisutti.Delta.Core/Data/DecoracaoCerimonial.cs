@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.DecoracaoCerimonial entity)
 		{
 			Model.DecoracaoCerimonial original = context.DecoracaoCerimonial.FirstOrDefault(s => s.Id == (entity.Id));
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.DecoracaoCerimonial entity)
 		{
+			SetCreated(entity);
 			context.DecoracaoCerimonial.Add(entity);
 			context.SaveChanges();
 		}

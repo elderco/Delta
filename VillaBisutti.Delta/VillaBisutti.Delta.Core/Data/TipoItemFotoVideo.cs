@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.TipoItemFotoVideo entity)
 		{
 			Model.TipoItemFotoVideo original = context.TipoItemFotoVideo.Find(entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -22,6 +23,7 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public override void Insert(Model.TipoItemFotoVideo entity)
 		{
+			SetCreated(entity);
 			context.TipoItemFotoVideo.Add(entity);
 			context.SaveChanges();
 		}

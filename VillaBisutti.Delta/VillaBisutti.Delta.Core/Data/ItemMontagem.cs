@@ -14,6 +14,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.ItemMontagem entity)
 		{
 			Model.ItemMontagem original = context.ItemMontagem.FirstOrDefault(a => a.Id == entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -25,6 +26,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemMontagem entity)
 		{
+			SetCreated(entity);
 			context.ItemMontagem.Add(entity);
 			context.SaveChanges();
 		}

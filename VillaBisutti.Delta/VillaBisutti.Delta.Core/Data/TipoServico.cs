@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.TipoServico entity)
 		{
 			Model.TipoServico original = context.TipoServico.FirstOrDefault(s => s.Id.Equals(entity.Id));
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.TipoServico entity)
 		{
+			SetCreated(entity);
 			context.TipoServico.Add(entity);
 			context.SaveChanges();
 		}

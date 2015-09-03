@@ -12,6 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 		//TODO: Implementar os métodos abaixo (Gabriel)
 		public override void Update(Model.TipoReuniao entity)
 		{
+			SetUpdated(entity);
 			Model.TipoReuniao tiporeuniao = context.TipoReuniao.FirstOrDefault(s => s.Id.Equals(entity.Id));
 			context.Entry(tiporeuniao).CurrentValues.SetValues(entity);
 			context.SaveChanges();
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.TipoReuniao entity)
 		{
+			SetCreated(entity);
 			context.TipoReuniao.Add(entity);
 			context.SaveChanges();
 		}

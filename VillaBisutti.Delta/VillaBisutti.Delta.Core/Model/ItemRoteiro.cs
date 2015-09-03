@@ -10,6 +10,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemRoteiro : IEntityBase
 	{
 		public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		[Display(Name = "Título"), Required]
 		public string Titulo { get; set; }
 		[Display(Name = "Início")]

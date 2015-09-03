@@ -10,6 +10,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class Modulo : IEntityBase
 	{
 		public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		public string Nome { get; set; }
 		public String URL { get; set; }
 		public List<PerfilModulo> PerfilModulo { get; set; }

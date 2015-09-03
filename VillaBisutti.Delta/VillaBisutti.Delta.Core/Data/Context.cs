@@ -13,7 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public Context()
 			: base("VillaBisuttiDelta")
 		{
-			Database.SetInitializer<Context>(new SampleData());
+			Database.SetInitializer<Context>(null);//new SampleData());
 		}
 
 		//ATENÇÃO:	PARA MELHOR ORGANIZAR E VERIFICAR A EXISTÊNCIA E DISPONIBILIDADE DOS DBSETS

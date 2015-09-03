@@ -11,6 +11,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class TipoReuniao : IEntityBase
 	{
 		public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		[Display(Name = "Tipo de reunião"), Required]
 		public string Nome { get; set; }
 		[Display(Name = "Dias antes do evento que esta reunião deve ocorrer"), Range(0, 9E6)]

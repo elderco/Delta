@@ -16,6 +16,7 @@ namespace VillaBisutti.Delta.Core.Data
 			//context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 			//context.SaveChanges();
 			Model.TipoItemBebida original = context.TipoItemBebida.Find(entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -25,6 +26,7 @@ namespace VillaBisutti.Delta.Core.Data
 		}
 		public override void Insert(Model.TipoItemBebida entity)
 		{
+			SetCreated(entity);
 			context.TipoItemBebida.Add(entity);
 			context.SaveChanges();
 		}

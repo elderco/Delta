@@ -45,7 +45,10 @@ namespace VillaBisutti.Delta.Core
 			get
 			{
 				if (_writer == null)
+				{
 					_writer = iPdf.PdfWriter.GetInstance(document, stream);
+					_writer.PageEvent = new PDFWriterEvents();
+				}
 				return _writer;
 			}
 		}
@@ -195,6 +198,55 @@ namespace VillaBisutti.Delta.Core
 		public void BreakPage()
 		{
 			document.NewPage();
+		}
+	}
+	internal class PDFWriterEvents : iPdf.IPdfPageEvent
+	{
+		public iText.Image waterMark
+		{
+			get
+			{
+				return iText.Image.GetInstance(Util.WaterMark);
+			}
+		}
+		public void OnStartPage(iPdf.PdfWriter writer, iText.Document document)
+		{
+			iPdf.PdfContentByte under = writer.DirectContentUnder;
+			under.BeginText();
+			iText.Image imagem = waterMark;
+			imagem.SetAbsolutePosition((float)((document.PageSize.Width - imagem.Width) / 2), ((float)(document.PageSize.Height - imagem.Height) / 2));
+			under.AddImage(imagem);
+			under.EndText();
+		}
+		public void OnChapter(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition, iText.Paragraph title)
+		{
+		}
+		public void OnChapterEnd(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition)
+		{
+		}
+		public void OnCloseDocument(iPdf.PdfWriter writer, iText.Document document)
+		{
+		}
+		public void OnEndPage(iPdf.PdfWriter writer, iText.Document document)
+		{
+		}
+		public void OnGenericTag(iPdf.PdfWriter writer, iText.Document document, iText.Rectangle rect, string text)
+		{
+		}
+		public void OnOpenDocument(iPdf.PdfWriter writer, iText.Document document)
+		{
+		}
+		public void OnParagraph(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition)
+		{
+		}
+		public void OnParagraphEnd(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition)
+		{
+		}
+		public void OnSection(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition, int depth, iText.Paragraph title)
+		{
+		}
+		public void OnSectionEnd(iPdf.PdfWriter writer, iText.Document document, float paragraphPosition)
+		{
 		}
 	}
 }

@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.Foto entity)
 		{
 			Model.Foto original = context.Foto.FirstOrDefault(s => s.Id == (entity.Id));
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Foto entity)
 		{
+			SetCreated(entity);
 			context.Foto.Add(entity);
 			context.SaveChanges();
 		}

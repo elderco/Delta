@@ -216,7 +216,6 @@
     <Compile Include="Controllers\TipoServicoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\ServicesFacade.cs" />
-    <Compile Include="Core\SessionFacade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -641,6 +640,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TEMP\" />
+    <Folder Include="OS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

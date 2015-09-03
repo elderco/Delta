@@ -78,6 +78,8 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CriarEvento(Model.Evento evento)
 		{
+			Model.ContratoAditivo contrato = evento.Contratos[0];
+			evento.Contratos.Clear();
 			evento.Bebida = new Model.Bebida();
 			evento.BoloDoceBemCasado = new Model.BoloDoceBemCasado();
 			evento.Decoracao = new Model.Decoracao();
@@ -88,6 +90,9 @@ namespace VillaBisutti.Delta.Core.Business
 			evento.OutrosItens = new Model.OutrosItens();
 			evento.SomIluminacao = new Model.SomIluminacao();
 			context.Evento.Add(evento);
+			context.SaveChanges();
+			contrato.EvtId = evento.Id;
+			context.ContratoAditivo.Add(contrato);
 			context.SaveChanges();
 			CopiarRoteiroPadrao(evento);
 			CopiarCerimonialPadrao(evento);

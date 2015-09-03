@@ -12,6 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.ContratoAditivo entity)
 		{
 			Model.ContratoAditivo original = context.ContratoAditivo.FirstOrDefault(a => a.Id == entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -23,6 +24,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ContratoAditivo entity)
 		{
+			SetCreated(entity);
 			context.ContratoAditivo.Add(entity);
 			context.SaveChanges();
 		}

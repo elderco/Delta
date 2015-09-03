@@ -15,6 +15,10 @@ namespace VillaBisutti.Delta.Core.Model
             get { return EventoId; }
             set { }
 		}
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		[Key, ForeignKey("Evento")]
 		public int EventoId { get; set; }
 		[Display(Name = "Evento")]

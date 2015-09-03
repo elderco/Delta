@@ -32,13 +32,17 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 
 		// GET: /Evento/ListaPorCasa/5
-		public ActionResult Gerar(int id)
+		public ActionResult Gerar(int id, string qual = "EV", bool generate = false)
 		{
 			biz.OS os = new bus.OS(id);
-			os.GerarOS();
+			if (qual == "EV")
+				os.GerarOS();
+			else if (qual == "RD")
+				os.GerarDegustacao();
 			os.Kill();
 			model.Evento evento = Util.context.Evento.FirstOrDefault(e => e.Id == id);
-			ViewBag.GeneratedUrl = Util.GetPDFName(evento);
+			string PdfUrl = Util.GetPDFUrl(evento);
+			ViewBag.GeneratedUrl = PdfUrl;
 			return View();
 		}
 
@@ -107,7 +111,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada")] model.Evento evento)
+		public ActionResult Create([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada,")] model.Evento evento)
 		{
 			new biz.Evento().CriarEvento(evento);
 			return RedirectToAction("Details", new { id = evento.Id });
@@ -117,6 +121,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Edit(int? id)
 		{
 			model.Evento evento = new data.Evento().GetElement(id.Value);
+			evento.OSFinalizada = false;
 			if (evento == null)
 			{
 				return HttpNotFound();

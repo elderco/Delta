@@ -67,7 +67,7 @@ namespace VillaBisutti.Delta.Core.Data
 			context.TipoServico.Add(new Model.TipoServico { Nome = "volante e buffet simultâneos" });
 			context.SaveChanges();
 
-			int NumEventos = 350;
+			int NumEventos = 35;
 			string[] sampleText = { "Ut mollis enim ut erat dictum elementum", "Integer molestie odio in venenatis cursus", "Aliquam hendrerit turpis magna, ut congue est sollicitudin eget",
 									  "Nulla et consequat felis", "Vestibulum vel auctor ligula", "Aenean eros nunc, consectetur eu condimentum eu, volutpat quis arcu", "Sed non quam porta, tempus ligula sed, eleifend purus",
 									  "Praesent vel metus eu mi tincidunt congue et et sapien", "Sed pretium libero vel mauris pellentesque aliquet", "Morbi id diam ex", "Curabitur eget risus eget neque ullamcorper placerat a vitae nulla",
@@ -672,6 +672,7 @@ namespace VillaBisutti.Delta.Core.Data
 			context.SaveChanges();
 
 			List<Model.ContratoAditivo> contratos = new List<Model.ContratoAditivo>();
+
 			Random rdm = new Random();
 			for (int i = 0; i < NumEventos; i++)
 			{
@@ -717,11 +718,143 @@ namespace VillaBisutti.Delta.Core.Data
 					LocalId = rdm.Next(1, 7)
 				};
 				new Business.Evento().CriarEvento(evento);
-				for (int j = 0; j < rdm.Next(10); j++)
+
+				for (int j = 0; j < rdm.Next(2, 4); j++)
 					contratos.Add(new Model.ContratoAditivo { DataContrato = DateTime.Now.AddDays(-1 * rdm.Next(j, 15)), NumeroContrato = Guid.NewGuid().ToString(), EvtId = evento.Id });
 			}
-
 			context.ContratoAditivo.AddRange(contratos);
+			context.SaveChanges();
+
+			int qtdBebida = context.ItemBebida.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdBebida; j++)
+					context.ItemBebidaSelecionado.Add(new Model.ItemBebidaSelecionado
+					{
+						EventoId = i + 1,
+						ItemBebidaId = j + 1,
+						HorarioEntrega = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						FornecimentoBisutti = (Math.Ceiling((double)i / 3) == (double)i / 5),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdBolo = context.ItemBoloDoceBemCasado.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdBolo; j++)
+					context.ItemBoloDoceBemCasadoSelecionado.Add(new Model.ItemBoloDoceBemCasadoSelecionado
+					{
+						EventoId = i + 1,
+						ItemBoloDoceBemCasadoId = j + 1,
+						HorarioEntrega = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdDecoracao = context.ItemDecoracao.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdDecoracao; j++)
+					context.ItemDecoracaoSelecionado.Add(new Model.ItemDecoracaoSelecionado
+					{
+						EventoId = i + 1,
+						ItemDecoracaoId = j + 1,
+						HorarioMontagem = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						FornecimentoBisutti = (Math.Ceiling((double)i / 3) == (double)i / 5),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdCerimonial = context.ItemDecoracaoCerimonial.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdCerimonial; j++)
+					context.ItemDecoracaoCerimonialSelecionado.Add(new Model.ItemDecoracaoCerimonialSelecionado
+					{
+						EventoId = i + 1,
+						ItemDecoracaoCerimonialId = j + 1,
+						HorarioMontagem = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						FornecimentoBisutti = (Math.Ceiling((double)i / 3) == (double)i / 5),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdFoto = context.ItemFotoVideo.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdFoto; j++)
+					context.ItemFotoVideoSelecionado.Add(new Model.ItemFotoVideoSelecionado
+					{
+						EventoId = i + 1,
+						ItemFotoVideoId = j + 1,
+						HorarioEntrega = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdMontagem = context.ItemMontagem.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdMontagem; j++)
+					context.ItemMontagemSelecionado.Add(new Model.ItemMontagemSelecionado
+					{
+						EventoId = i + 1,
+						ItemMontagemId = j + 1,
+						HorarioEntrega = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						FornecimentoBisutti = (Math.Ceiling((double)i / 3) == (double)i / 5),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdOutros = context.ItemOutrosItens.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdOutros; j++)
+					context.ItemOutrosItensSelecionado.Add(new Model.ItemOutrosItensSelecionado
+					{
+						EventoId = i + 1,
+						ItemOutrosItensId = j + 1,
+						HorarioEntrega = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
+			context.SaveChanges();
+
+			int qtdSom = context.ItemSomIluminacao.Count();
+			for (int i = 0; i < 35; i++)
+				for (int j = 0; j < qtdSom; j++)
+					context.ItemSomIluminacaoSelecionado.Add(new Model.ItemSomIluminacaoSelecionado
+					{
+						EventoId = i + 1,
+						ItemSomIluminacaoId = j + 1,
+						HorarioMontagem = rdm.Next(12 * 60, 16 * 60),
+						Observacoes = sampleText[rdm.Next(0, sampleText.Length)],
+						Quantidade = rdm.Next(1, 15),
+						ContratacaoBisutti = (Math.Ceiling((double)i / 3) != (double)i / 2),
+						ContratoAditivoId = rdm.Next(1, 3),
+						ContatoFornecimento = boysNames[rdm.Next(0, boysNames.Length)]
+					});
 			context.SaveChanges();
 
 		}

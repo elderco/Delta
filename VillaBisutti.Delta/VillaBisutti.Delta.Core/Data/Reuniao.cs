@@ -9,9 +9,9 @@ namespace VillaBisutti.Delta.Core.Data
 {
 	public class Reuniao : DataAccessBase<Model.Reuniao>
 	{
-		//TODO: Implementar os métodos abaixo (Gabriel)
 		public override void Update(Model.Reuniao entity)
 		{
+			SetUpdated(entity);
 			Model.Reuniao reuniao = context.Reuniao.FirstOrDefault(s => s.Id.Equals(entity.Id));
 			context.Entry(reuniao).CurrentValues.SetValues(entity);
 			context.SaveChanges();
@@ -24,6 +24,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Reuniao entity)
 		{
+			SetCreated(entity);
 			context.Reuniao.Add(entity);
 			context.SaveChanges();
 		}

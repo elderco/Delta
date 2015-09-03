@@ -17,6 +17,7 @@ namespace VillaBisutti.Delta.Core.Data
 			Model.Evento modified = context.Evento.FirstOrDefault(e => e.Id == entity.Id);
 			modified.CardapioId = entity.Evento.CardapioId;
 			modified.TipoServicoId = entity.Evento.TipoServicoId;
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.Entry(evento).CurrentValues.SetValues(modified);
 			context.SaveChanges();
@@ -29,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Gastronomia entity)
 		{
+			SetCreated(entity);
 			context.Gastronomia.Add(entity);
 			context.SaveChanges();
 		}

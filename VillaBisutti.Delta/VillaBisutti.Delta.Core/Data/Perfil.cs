@@ -12,6 +12,7 @@ namespace VillaBisutti.Delta.Core.Data
 	{
 		public override void Update(Model.Perfil entity)
 		{
+			SetUpdated(entity);
 			List<Model.PerfilModulo> originalLocal = context.Perfil.Include(e=>e.Modulos).FirstOrDefault(s => s.Id == entity.Id).Modulos.ToList();
             foreach (var item in originalLocal)
             {
@@ -29,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.Perfil entity)
 		{
+			SetCreated(entity);
 			context.Perfil.Add(entity);
 			context.SaveChanges();
 		}

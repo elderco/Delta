@@ -13,6 +13,7 @@ namespace VillaBisutti.Delta.Core.Data
 		public override void Update(Model.ItemSomIluminacao entity)
 		{
 			Model.ItemSomIluminacao original = context.ItemSomIluminacao.FirstOrDefault(b => b.Id == entity.Id);
+			SetUpdated(entity);
 			context.Entry(original).CurrentValues.SetValues(entity);
 			context.SaveChanges();
 		}
@@ -24,6 +25,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public override void Insert(Model.ItemSomIluminacao entity)
 		{
+			SetCreated(entity);
 			context.ItemSomIluminacao.Add(entity);
 			context.SaveChanges();
 		}

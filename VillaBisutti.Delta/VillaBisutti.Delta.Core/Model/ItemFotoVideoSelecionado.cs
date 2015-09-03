@@ -10,6 +10,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class ItemFotoVideoSelecionado : IEntityBase
 	{
 		public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		public int EventoId { get; set; }
 		[Display(Name = "Evento"), ForeignKey("EventoId")]
 		public FotoVideo FotoVideo { get; set; }

@@ -11,6 +11,10 @@ namespace VillaBisutti.Delta.Core.Model
     public class ItemMontagemSelecionado : IEntityBase
     {
         public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
         public int EventoId { get; set; }
         [Display(Name = "Montagem"), ForeignKey("EventoId")]
         public Montagem Montagem { get; set; }
@@ -76,5 +80,5 @@ namespace VillaBisutti.Delta.Core.Model
 				return (ContratacaoBisutti && !FornecimentoBisutti && (!Definido || !FornecedorStartado || !Contratado));
 			}
         }
-    }
+	}
 }

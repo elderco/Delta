@@ -194,6 +194,7 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="PDF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionFacade.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>

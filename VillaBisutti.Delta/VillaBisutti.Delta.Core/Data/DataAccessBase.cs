@@ -36,6 +36,16 @@ namespace VillaBisutti.Delta.Core.Data
 			GetCurrent(entity).State = System.Data.Entity.EntityState.Deleted;
 			context.SaveChanges();
 		}
+		protected void SetUpdated(T entity)
+		{
+			entity.UsuarioUpdateData = DateTime.Now;
+			entity.UsuarioUpdateId = SessionFacade.UsuarioLogado.Id;
+		}
+		protected void SetCreated(T entity)
+		{
+			entity.UsuarioCreateData = DateTime.Now;
+			entity.UsuarioCreateId = SessionFacade.UsuarioLogado.Id;
+		}
 		public abstract void Update(T entity);
 		public abstract DbEntityEntry GetCurrent(T entity);
 		public abstract void Insert(T entity);

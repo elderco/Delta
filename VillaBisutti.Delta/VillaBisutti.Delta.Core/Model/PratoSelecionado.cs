@@ -11,6 +11,10 @@ namespace VillaBisutti.Delta.Core.Model
 	public class PratoSelecionado : IEntityBase
 	{
 		public int Id { get; set; }
+		public int? UsuarioCreateId { get; set; }
+		public DateTime? UsuarioCreateData { get; set; }
+		public int? UsuarioUpdateId { get; set; }
+		public DateTime? UsuarioUpdateData { get; set; }
 		public int PratoId { get; set; }
 		[Display(Name = "Prato")]
 		public Prato Prato { get; set; }

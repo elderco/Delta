@@ -58,6 +58,11 @@ namespace VillaBisutti.Delta
 			string name = string.Format("{0}-{1}-{2}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.SiglaCasa, evento.Id);
 			return HttpContext.Current.Server.MapPath("~/OS/" + name);
 		}
+		public static string GetPDFUrl(Core.Model.Evento evento)
+		{
+			string name = string.Format("{0}-{1}-{2}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.SiglaCasa, evento.Id);
+			return "~/OS/" + name;
+		}
 		public static string GetImageName(string fileName)
 		{
 			string fileExtension = fileName.Split('.')[fileName.Split('.').Length - 1];
@@ -189,7 +194,7 @@ namespace VillaBisutti.Delta
 		{
 			get
 			{
-				return "Itens a serem contratados pela Villa Bisutti";
+				return "Itens a ser contratados pela Villa Bisutti";
 			}
 		}
 		public static string TextoFornecimentoContratante
@@ -197,6 +202,13 @@ namespace VillaBisutti.Delta
 			get
 			{
 				return "Itens dinsponibilizados pelo contratante";
+			}
+		}
+		public static string WaterMark
+		{ 
+			get
+			{
+				return HttpContext.Current.Server.MapPath("~/Content/Images/bg-logo-villa-bisutti.png");
 			}
 		}
 	}

@@ -13,7 +13,8 @@ namespace VillaBisutti.Delta.Core.Data
         public override void Update(Model.PratoSelecionado entity)
         {
             Model.PratoSelecionado original = context.PratoSelecionado.FirstOrDefault(x => x.Id.Equals(entity.Id));
-            context.Entry(original).CurrentValues.SetValues(entity);
+            SetUpdated(entity);
+			context.Entry(original).CurrentValues.SetValues(entity);
             context.SaveChanges();
         }
 
@@ -24,7 +25,9 @@ namespace VillaBisutti.Delta.Core.Data
 
         public override void Insert(Model.PratoSelecionado entity)
         {
-            context.PratoSelecionado.Add(entity);
+			SetCreated(entity);
+			context.PratoSelecionado.Add(entity);
+			context.SaveChanges();
         }
 
         protected override List<Model.PratoSelecionado> GetCollection()
