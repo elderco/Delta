@@ -1,9 +1,12 @@
+--use villabisutti_delta
+
 SELECT
 	'ALTER TABLE ' + name + ' ADD UsuarioCreateId INT NULL, UsuarioCreateData DATETIME NULL, UsuarioUpdateId INT NULL, UsuarioUpdateData DATETIME NULL'
 from
 	sysobjects
 where
 	xtype = 'U'
+	AND name <> '__MigrationHistory'
 order by
 	1
 

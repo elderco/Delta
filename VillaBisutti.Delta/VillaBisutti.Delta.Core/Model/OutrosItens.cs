@@ -29,7 +29,9 @@ namespace VillaBisutti.Delta.Core.Model
         public Evento Evento { get; set; }
 		[Display(Name = "Observações")]
         public string Observacoes { get; set; }
-        [Display(Name = "Itens")]
+		[Display(Name = "Área encerrada")]
+		public bool Encerrado { get; set; }
+		[Display(Name = "Itens")]
         public List<ItemOutrosItensSelecionado> Itens { get; set; }
     }
 }

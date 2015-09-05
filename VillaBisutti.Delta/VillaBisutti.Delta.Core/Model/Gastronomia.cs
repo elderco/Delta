@@ -29,6 +29,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public string Observacoes { get; set; }
 		[Display(Name = "Evento")]
 		public Evento Evento { get; set; }
+		[Display(Name = "Área encerrada")]
+		public bool Encerrado { get; set; }
 		[InverseProperty("Gastronomia")]
 		public List<PratoSelecionado> Pratos { get; set; }
 		[InverseProperty("Gastronomia")]
