@@ -44,5 +44,17 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return GetCollection().FirstOrDefault(tpp => tpp.EventoId == eventoId && tpp.TipoPratoId == tipoPratoId);
 		}
+
+		public void UpdateBatch(IEnumerable<Model.TipoPratoPadrao> valueCollection)
+		{
+			foreach (Model.TipoPratoPadrao padrao in valueCollection)
+			{
+				context.TipoPratoPadrao.Attach(padrao);
+				DbEntityEntry<Model.TipoPratoPadrao> entry = context.Entry(padrao);
+				entry.Property(e => e.QuantidadePratos).IsModified = true;
+			}
+			context.SaveChanges();
+			Util.ResetContext();
+		}
 	}
 }

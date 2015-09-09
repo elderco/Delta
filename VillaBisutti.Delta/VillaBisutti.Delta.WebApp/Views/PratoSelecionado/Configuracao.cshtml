@@ -29,7 +29,7 @@
 		{
 		<li class="list-group-item">
 			<label class="pull-right col-md-3" id="Prato_@(prato.Id)" for="Degustar_@(prato.Id)">
-				<input id="Degustar_@(prato.Id)" name="switch-field-@(i)" value="True" class="ace ace-switch ace-switch-3 set-degustar" type="checkbox" @(prato.Degustar ? "checked" : "")>
+				<input id="Degustar_@(prato.Id)" name="switch-field-@(i)" value="@(prato.Degustar ? "True" : "False")" class="ace ace-switch ace-switch-3 set-degustar" type="checkbox" @(prato.Degustar ? "checked" : "")>
 				<span class="lbl" data-lbl="sim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;não"></span>
 			</label>
 			<span>@(prato.Prato.Nome)</span>

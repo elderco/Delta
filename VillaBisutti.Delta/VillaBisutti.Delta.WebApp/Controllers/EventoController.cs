@@ -111,7 +111,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada,")] model.Evento evento)
+		public ActionResult Create([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,PerfilFesta,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,Observacoes,EmailBoasVindasEnviado,OSFinalizada,Contratos")] model.Evento evento)
 		{
 			new biz.Evento().CriarEvento(evento);
 			return RedirectToAction("Details", new { id = evento.Id });

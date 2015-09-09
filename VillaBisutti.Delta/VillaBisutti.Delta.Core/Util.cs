@@ -159,6 +159,8 @@ namespace VillaBisutti.Delta
 		}
 		public static void ResetContext()
 		{
+			if (context_ == null)
+				return;
 			context_.Dispose();
 			context_ = null;
 		}

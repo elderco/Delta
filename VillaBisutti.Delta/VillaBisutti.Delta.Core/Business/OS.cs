@@ -65,8 +65,7 @@ namespace VillaBisutti.Delta.Core.Business
 					IEnumerable<Model.PratoSelecionado> itens = Util.context.PratoSelecionado
 						.Include(i => i.Prato)
 						.Include(i => i.Prato.TipoPrato)
-						.Where(i => i.EventoId == Evento.Id)
-						.OrderBy(i => i.Prato.Nome)
+						.Where(i => i.EventoId == Evento.Id && (i.Degustar || i.Escolhido))
 						.OrderBy(i => i.Prato.TipoPrato.Ordem);
 					foreach (Model.PratoSelecionado item in itens)
 					{
@@ -759,12 +758,14 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void AdicionarPaginaLayout()
 		{
+			Model.Foto layout = Fotos.FirstOrDefault(f => f.Qual == "EV");
+			if (layout == null)
+				return;
 			pdf.BreakPage();
 			pdf.AddHeader();
 			pdf.AddLeadText("Layout do salão");
 			pdf.AddBreakRule();
 
-			Model.Foto layout = Fotos.FirstOrDefault(f => f.Qual == "EV");
 			pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + layout.URL), layout.Legenda, true);
 			pdf.BreakPage();
 		}
@@ -1017,10 +1018,13 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddHeader();
 			pdf.AddHeaderText("Gastronomia");
 			pdf.AddBreakRule();
-			foreach (DTO.ItemEvento grupo in ItensGastronomia)
+			foreach (DTO.ItemEvento grupo in ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades).Count() > 0))
 			{
-				pdf.AddLeadText(grupo.Texto + (incluiDegustar ? " (Escolher " + grupo.Quantidade + " itens)" : ""));
-				foreach (DTO.SubItemEvento item in grupo.SubItens.OrderBy(i => i.BloqueiaOutrasPropriedades).OrderBy(i => i.Responsabilidade).OrderBy(i => i.Fornecido))
+				if (!incluiDegustar && grupo.SubItens.Where(si => si.Responsabilidade == true).Count() == 0)
+					continue;
+				pdf.AddLeadText(grupo.Texto + (incluiDegustar ? " (Escolher " + grupo.Quantidade + " ite" + (grupo.Quantidade > 1 ? "ns" : "m") + ")" : ""));
+				pdf.BreakLine();
+				foreach (DTO.SubItemEvento item in grupo.SubItens.OrderBy(i => i.NomeItem))
 				{
 					//BloqueiaOutrasPropriedades = item.Rejeitado,
 					//Responsabilidade = item.Escolhido,
@@ -1028,8 +1032,9 @@ namespace VillaBisutti.Delta.Core.Business
 					if (item.BloqueiaOutrasPropriedades)
 						continue;
 					if ((item.Fornecido && incluiDegustar) || (item.Responsabilidade))
-						pdf.AddLine(item.NomeItem, true);
+						pdf.AddLine(item.NomeItem);
 				}
+				pdf.AddLine(" ");
 				pdf.BreakLine();
 			}
 			pdf.BreakPage();

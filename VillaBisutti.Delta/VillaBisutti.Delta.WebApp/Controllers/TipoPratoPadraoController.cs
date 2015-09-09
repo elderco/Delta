@@ -25,9 +25,17 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			base.EndExecute(asyncResult);
 		}
 		// GET: /TipoPratoPadrao/
-		public ActionResult Index()
+		public ActionResult Index(int cardapioId = 0, int tipoServicoId = 0)
 		{
-			return View(new dto.TipoPratoPadrao());
+			ViewBag.Cardapios = new SelectList(new data.Cardapio().GetCollection(0).OrderBy(c => c.Nome), "Id", "Nome");
+			ViewBag.TipoServicos = new SelectList(new data.TipoServico().GetCollection(0).OrderBy(ts => ts.Nome), "Id", "Nome");
+			return View(new dto.TipoPratoPadrao(cardapioId, tipoServicoId));
+		}
+		[HttpPost]
+		public ActionResult Index(List<model.TipoPratoPadrao> itens)
+		{
+			new data.TipoPratoPadrao().UpdateBatch(itens);
+			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
 		public ActionResult DefinirQuantidade(int id, string act)

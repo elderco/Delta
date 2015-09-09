@@ -2,13 +2,6 @@
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		$("#FiltroEventos input, #FiltroEventos select").change(function () {
-			this.form.submit();
-		});
-	});
-</script>
 @if (ViewBag.IsBlocked == "TRUE")
 {
 	<script language="javascript" type="text/javascript">
@@ -17,6 +10,13 @@
 		});
 	</script>
 }
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$("#FiltroEventos input, #FiltroEventos select").change(function () {
+			this.form.submit();
+		});
+	});
+</script>
 <div class="col-xl-12 widget-container-col row">
 	<div class="widget-box">
 		<div class="widget-header widget-header-flat">

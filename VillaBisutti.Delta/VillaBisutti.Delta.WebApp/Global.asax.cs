@@ -35,7 +35,8 @@ namespace VillaBisutti.Delta.WebApp
                                                       roles);
                 Context.User = userPrincipal;
             }
-        }
+			VillaBisutti.Delta.Util.ResetContext();
+		}
         protected void Application_PreRequestHandlerExecute()
         {
             if (HttpContext.Current.CurrentHandler is MvcHandler)

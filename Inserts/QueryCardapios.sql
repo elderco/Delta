@@ -1,4 +1,15 @@
 /*
+ALTER TABLE Cardapio ADD UsuarioCreateId INT NULL, UsuarioCreateData DATETIME NULL, UsuarioUpdateId INT NULL, UsuarioUpdateData DATETIME NULL
+ALTER TABLE Prato ADD UsuarioCreateId INT NULL, UsuarioCreateData DATETIME NULL, UsuarioUpdateId INT NULL, UsuarioUpdateData DATETIME NULL
+ALTER TABLE PratoCardapio ADD UsuarioCreateId INT NULL, UsuarioCreateData DATETIME NULL, UsuarioUpdateId INT NULL, UsuarioUpdateData DATETIME NULL
+ALTER TABLE TipoPrato ADD UsuarioCreateId INT NULL, UsuarioCreateData DATETIME NULL, UsuarioUpdateId INT NULL, UsuarioUpdateData DATETIME NULL
+
+UPDATE Cardapio SET UsuarioCreateId = 1, UsuarioCreateData = GETDATE(), UsuarioUpdateId = 1, UsuarioUpdateData = GETDATE()
+UPDATE Prato SET UsuarioCreateId = 1, UsuarioCreateData = GETDATE(), UsuarioUpdateId = 1, UsuarioUpdateData = GETDATE()
+UPDATE PratoCardapio SET UsuarioCreateId = 1, UsuarioCreateData = GETDATE(), UsuarioUpdateId = 1, UsuarioUpdateData = GETDATE()
+UPDATE TipoPrato SET UsuarioCreateId = 1, UsuarioCreateData = GETDATE(), UsuarioUpdateId = 1, UsuarioUpdateData = GETDATE()
+
+
 --DROP TABLE Cardapio
 CREATE TABLE Cardapio(
 	Id int IDENTITY(1,1) PRIMARY KEY,
@@ -40,20 +51,51 @@ order by 1
 DELETE FROM PratosImportados
 
 */
+/*
+--INSERT INTO PratoCardapio
+select distinct P.Id PratoId, C.Id CardapioId--, C.Nome Cardapio, P.Nome Prato
+from PratosImportados I
+	INNER JOIN Prato P ON I.Prato = P.Nome
+	INNER JOIN Cardapio C ON I.Cardapio = C.Nome
+--WHERE Cardapio <> ''
+group by P.Id, C.Id, P.Nome, C.Nome
+order by 3, 4 
+*/
 
-select distinct(Prato), count(1)
-from PratosImportados
-group by prato
-order by 1, 2 DESC
+SELECT
+	C.Nome, TP.Nome, P.Nome
+from 
+	Cardapio C 
+	INNER JOIN PratoCardapio PC ON C.Id = PC.CardapioId
+	INNER JOIN Prato P ON P.Id = PC.PratoId
+	INNER JOIN TipoPrato TP ON P.TipoPratoId = TP.Id
+ORDER BY
+	1,2,3
 
---SELECT * FROM PratosImportados WHERE Prato LIKE 'welcome drinks - %'
---UPDATE PratosImportados SET Prato = LTRIM(RTRIM(Prato))
---UPDATE PratosImportados SET Prato = REPLACE(Prato, 'gtorgonzola', 'gorgonzola')
+--SELECT * FROM Prato WHERE Prato like '%ragú de linguiça com polenta%'
+--UPDATE PratosImportados SET Prato = 'salmão tostado ao molho de sakê e jus de cítricos' WHERE prato = 'salmão tostado em molho de sakê e jus de cítricos'
+--UPDATE PratosImportados SET Prato = REPLACE(Prato, 'sofiolli verde com queijos especias ao molho de tomates rústicos', 'sofioli verde com queijos especiais ao molho de tomates rústicos')
 
 /*
 
+DELETE FROM PratosImportados WHERE TipoPrato = 'coquetel quente' AND Prato = 'toast de provolone com roast beef “homemade” e dijon' IN(
+	'ceviche de robalo e cebouletes com salsa cítrica',
+	'paté de foie ao jus de frutas vermelhas e suas torradinhas',
+	'toast de provolone com roast beef “homemade” e dijon',
+	'stick de coalho em teriyaki de melaço de cana',
+	'rools de berinjela e mussarela de búfala cremosa',
+	'petit caprese ao pesto genovese',
+	'mousse de tomates secos e pesto genovese',
+	'mousse de damasco e amêndoas',
+	'dome de salmão e maçãs granny smith',
+	'cestinhas de chevre e chutney de tomates',
+	'carpaccio com tapenade e azeite de trufas',
+	'carpaccio com mostarda dijon e grana padano',
+	'camarões com sour cream de limão siciliano e dill'
+)
+
 UPDATE PratosImportados
-SET Prato = LTRIM(RTRIM(LEFT(lower(Prato), CHARINDEX('acompanhad', Prato) - 1)))
+SET TipoPrato = LTRIM(RTRIM(lower(TipoPrato)))
 WHERE CHARINDEX('acompanhad', Prato) - 1 > 0
 
 UPDATE PratosImportados SET Prato = lower(Prato)
@@ -93,4 +135,27 @@ frutas frescas laminadas
 terrine de legumes grelhados, castanhas em redução de balsâmico (molho) e suas folhas frescas
 terrine de legumes grelhados, castanhas em redução de balsâmico e suas folhas frescas
 
+
+2649 consommé
+outros quente
+
+
+
+SELECT * FROM PratosImportados WHERE PRATO IN(
+'ceviche de robalo e cebouletes com salsa cítrica',
+'paté de foie ao jus de frutas vermelhas e suas torradinhas',
+'toast de provolone com roast beef “homemade” e dijon',
+'stick de coalho em teriyaki de melaço de cana',
+'rools de berinjela e mussarela de búfala cremosa',
+'petit caprese ao pesto genovese',
+'mousse de tomates secos e pesto genovese',
+'mousse de damasco e amêndoas',
+'dome de salmão e maçãs granny smith',
+'cestinhas de chevre e chutney de tomates',
+'carpaccio com tapenade e azeite de trufas',
+'carpaccio com mostarda dijon e grana padano',
+'camarões com sour cream de limão siciliano e dill')
+
+EXCLUIR : tarte cappuccino	cheesecake mousse com goiabada
+DELETE FROM PratosImportados WHERE TipoPrato = 'tarte cappuccino'
 */
