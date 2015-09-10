@@ -21,8 +21,7 @@
 		$("#ContratacaoBisutti").change();
 		PreventNegativeNumbers("Quantidade");
 
-
-        //Script para validar se todos os selects tem item selecionado
+		//Script para validar se todos os selects tem item selecionado
 		$("button[type=submit]").click(function () {
 		    event.preventDefault();
 		    var form = $(this).parents('form:first');
@@ -64,8 +63,8 @@
 			<div class="col-md-2" id="ItensDecoracaoCerimonialContainer">
 				<select class="form-control" data-val="true"></select>
 			</div>
-			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
+			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2 deve-sumir" })
+			<div class="col-md-2 deve-sumir">
 				@Html.DropDownListFor(model => model.ContratoAditivoId, (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.ContratoAditivoId)
 			</div>
@@ -82,9 +81,9 @@
 				@Html.ValidationMessageFor(model => model.FornecimentoBisutti)
 			</div>
 		</div>
-		<div class="form-group deve-sumir">
-			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2" })
-			<div class="col-md-2">
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2 deve-sumir" })
+			<div class="col-md-2 deve-sumir">
 				@Html.EditorFor(model => model.Quantidade)
 				@Html.ValidationMessageFor(model => model.Quantidade)
 			</div>

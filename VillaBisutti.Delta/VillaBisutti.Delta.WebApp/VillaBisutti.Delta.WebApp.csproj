@@ -223,6 +223,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="Content\ace.min.css" />
     <Content Include="Content\bootstrap-glyphs.min.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -640,7 +642,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TEMP\" />
-    <Folder Include="OS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -35,7 +35,7 @@
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "DecoracaoCerimonial")))
 			{ 
-				<li>
+				<li id="LinkDecoracaoCerimonialMenu">
 					<a href="@Url.Action("Index", "DecoracaoCerimonial", new { id = ViewBag.Id })">
 						<i class="menu-icon fa fa-heart"></i>
 						<span class="menu-text"> Decoração do cerimonial </span>

@@ -13,7 +13,7 @@ using System.IO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    [Authorize]
+	[Authorize]
 	public class FotoController : Controller
 	{
 		protected override void EndExecute(IAsyncResult asyncResult)
@@ -86,7 +86,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			//System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), URL));
 
 			model.Foto fotodelete = new data.Foto().GetElement(id);
-			System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), fotodelete.URL));
+			if (System.IO.File.Exists(Path.Combine(Server.MapPath("~/Content/Images/"), fotodelete.URL)))
+				System.IO.File.Delete(Path.Combine(Server.MapPath("~/Content/Images/"), fotodelete.URL));
 			new data.Foto().Delete(id);
 
 			return Redirect(Request.UrlReferrer.AbsolutePath);

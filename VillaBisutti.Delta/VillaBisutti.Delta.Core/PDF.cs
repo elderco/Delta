@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using iText = iTextSharp.text;
 using iPdf = iTextSharp.text.pdf;
 using System.Drawing.Imaging;
+using System.Web;
 
 namespace VillaBisutti.Delta.Core
 {
@@ -107,7 +108,7 @@ namespace VillaBisutti.Delta.Core
 			header.AddCell(new iPdf.PdfPCell(MakePhrase("Horário:", horario)));
 			header.AddCell(new iPdf.PdfPCell(MakePhrase("Cerimonial: ", cerimonial)));
 
-			iPdf.PdfPCell detailCell = new iPdf.PdfPCell(MakePhrase("Perfil: ", perfil));
+			iPdf.PdfPCell detailCell = new iPdf.PdfPCell(MakePhrase("Observações: ", perfil));
 			detailCell.Rowspan = 3;
 			header.AddCell(new iPdf.PdfPCell(detailCell));
 

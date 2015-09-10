@@ -8,6 +8,11 @@
 		$("#ItemFotoVideoId").change(function () {
 			if ($("#ItemFotoVideoId option:selected").attr("data-show-hide") != "False") {
 				$(".deve-sumir").hide();
+				$("#ContratoAditivoId option:eq(1)").attr("selected", "selected");
+				$("#FornecimentoBisutti").attr("checked", "checked");
+				$("#FornecimentoBisutti").val("true");
+				$("#ContratacaoBisutti").attr("checked", "checked");
+				$("#ContratacaoBisutti").val("true");
 			} else {
 				$(".deve-sumir").show();
 			}

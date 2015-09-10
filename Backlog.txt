@@ -1,0 +1,12 @@
+		Correção nas telas
+			- Ocultar quantidade de itens "BloqueiaOutros" na OS
+OK			- Ocultar link "Decoração Cerimonial" quando não tem cerimonial
+			- OS > Itens copiados > Tipo Item no texto na linha
+		relatórios
+			- Itens / período
+			-
+		Importação de bolo, doce e bem-casado
+		Layout de cada e-mail para clientes
+		Configuração de envio de email por evento
+		Inicialização e verificação do funcionamento dos robôs
+		Configuração dos robôs

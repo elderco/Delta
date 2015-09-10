@@ -64,7 +64,7 @@ namespace VillaBisutti.Delta.Core.Model
 				return (int)(Pax * 1.1);
 			}
 		}
-		[Display(Name = "Perfil da Festa")]
+		[Display(Name = "Observações (Atenção! Estas informações estarão impressas na OS)")]
 		public string PerfilFesta { get; set; }
 
 		#endregion
@@ -108,7 +108,7 @@ namespace VillaBisutti.Delta.Core.Model
 		public string TelefoneContato { get; set; }
 		[Display(Name = "Nomes dos Homenageados")]
 		public string NomeHomenageados { get; set; }
-		[Display(Name = "Observações")]
+		[Display(Name = "Perfil (Informações pertinentes à equipe)")]
 		public string Observacoes { get; set; }
 
 		#endregion
