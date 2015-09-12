@@ -8,6 +8,7 @@ namespace VillaBisutti.Delta.Core.DTO
 {
 	public class ItemEvento
 	{
+		public int id { get; set; }
 		public int Ordem { get; set; }
 		public string Texto { get; set; }
 		public int Quantidade { get; set; }
@@ -23,6 +24,19 @@ namespace VillaBisutti.Delta.Core.DTO
 		public string Observacao { get; set; }
 		public string ContatoFornecedor { get; set; }
 		public int HorarioEntrega { get; set; }
+		public SubItemEvento Copiar(string prefixoItem)
+		{
+			SubItemEvento returnValue = new SubItemEvento();
+			returnValue.NomeItem = prefixoItem + " > " + this.NomeItem;
+			returnValue.QuantidadeItem = this.QuantidadeItem;
+			returnValue.BloqueiaOutrasPropriedades = this.BloqueiaOutrasPropriedades;
+			returnValue.Responsabilidade = this.Responsabilidade;
+			returnValue.Fornecido = this.Fornecido;
+			returnValue.Observacao = this.Observacao;
+			returnValue.ContatoFornecedor = this.ContatoFornecedor;
+			returnValue.HorarioEntrega = this.HorarioEntrega;
+			return returnValue;
+		}
 	}
 	public class ItemRoteiroEvento
 	{

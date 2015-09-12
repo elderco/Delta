@@ -10,14 +10,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>ftp://177.70.106.26/delta.villabisutti.com.br</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="404.html">
+      <publishTime>09/09/2015 18:07:45</publishTime>
+    </File>
+    <File Include="500.html">
+      <publishTime>09/09/2015 18:15:26</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>06/16/2015 14:22:03</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/09/2015 13:00:35</publishTime>
+      <publishTime>09/11/2015 21:21:51</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/09/2015 13:00:34</publishTime>
+      <publishTime>09/11/2015 21:21:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/16/2015 14:22:07</publishTime>
@@ -86,22 +92,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 14:21:58</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>06/16/2015 14:22:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>06/16/2015 14:22:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>06/16/2015 14:22:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Automation.dll">
-      <publishTime>09/08/2015 22:36:40</publishTime>
+      <publishTime>09/11/2015 21:21:25</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Core.dll">
-      <publishTime>09/08/2015 22:36:38</publishTime>
+      <publishTime>09/11/2015 21:21:24</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.WebApp.dll">
-      <publishTime>09/09/2015 12:59:59</publishTime>
+      <publishTime>09/11/2015 21:21:27</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>06/16/2015 14:22:04</publishTime>
@@ -260,10 +266,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2015 15:07:39</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/09/2015 13:00:07</publishTime>
+      <publishTime>09/11/2015 21:21:43</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/VillaBisutti.pubxml.user">
-      <publishTime>09/08/2015 22:40:32</publishTime>
+      <publishTime>09/10/2015 14:30:25</publishTime>
     </File>
     <File Include="Scripts/ace-elements.min.js">
       <publishTime>06/29/2015 22:07:34</publishTime>
@@ -416,7 +422,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2015 14:01:47</publishTime>
     </File>
     <File Include="Views/Decoracao/Index.cshtml">
-      <publishTime>09/04/2015 17:20:00</publishTime>
+      <publishTime>09/10/2015 14:22:01</publishTime>
     </File>
     <File Include="Views/DecoracaoCerimonial/Edit.cshtml">
       <publishTime>08/11/2015 18:04:52</publishTime>
@@ -425,7 +431,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2015 17:19:52</publishTime>
     </File>
     <File Include="Views/Evento/Cabecalho.cshtml">
-      <publishTime>09/03/2015 16:11:15</publishTime>
+      <publishTime>09/10/2015 19:47:09</publishTime>
     </File>
     <File Include="Views/Evento/Create.cshtml">
       <publishTime>09/03/2015 16:06:42</publishTime>
@@ -482,7 +488,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2015 17:19:44</publishTime>
     </File>
     <File Include="Views/Gastronomia/Edit.cshtml">
-      <publishTime>07/24/2015 23:07:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Gastronomia/Index.cshtml">
       <publishTime>09/04/2015 17:21:17</publishTime>
@@ -500,7 +506,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/02/2015 20:51:11</publishTime>
     </File>
     <File Include="Views/Home/InternalServerError.cshtml">
-      <publishTime>08/12/2015 15:07:39</publishTime>
+      <publishTime>09/09/2015 16:26:21</publishTime>
     </File>
     <File Include="Views/Home/KeepAlive.cshtml">
       <publishTime>08/26/2015 19:06:13</publishTime>
@@ -509,7 +515,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2015 20:39:42</publishTime>
     </File>
     <File Include="Views/Home/PageNotFound.cshtml">
-      <publishTime>08/12/2015 15:07:39</publishTime>
+      <publishTime>09/09/2015 17:19:25</publishTime>
     </File>
     <File Include="Views/ItemBebida/Buscar.cshtml">
       <publishTime>08/07/2015 19:28:12</publishTime>
@@ -1103,7 +1109,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2015 15:19:37</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>07/02/2015 20:51:11</publishTime>
+      <publishTime>09/09/2015 18:15:13</publishTime>
     </File>
     <File Include="Views/Shared/_AjaxLayout.cshtml">
       <publishTime>07/26/2015 03:50:40</publishTime>
@@ -1112,7 +1118,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2015 22:26:21</publishTime>
     </File>
     <File Include="Views/Shared/_EventosLayout.cshtml">
-      <publishTime>08/05/2015 17:59:24</publishTime>
+      <publishTime>09/09/2015 20:11:46</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>08/12/2015 21:24:55</publishTime>
@@ -1133,7 +1139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 19:28:13</publishTime>
     </File>
     <File Include="Views/TipoItemBebida/Edit.cshtml">
-      <publishTime>08/07/2015 19:28:13</publishTime>
+      <publishTime>09/10/2015 10:44:28</publishTime>
     </File>
     <File Include="Views/TipoItemBebida/Index.cshtml">
       <publishTime>08/07/2015 19:28:13</publishTime>
@@ -1163,7 +1169,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2015 19:28:13</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/Edit.cshtml">
-      <publishTime>08/07/2015 19:28:13</publishTime>
+      <publishTime>09/10/2015 10:52:51</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/Index.cshtml">
       <publishTime>08/07/2015 19:28:13</publishTime>
@@ -1316,7 +1322,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 14:21:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/09/2015 13:00:03</publishTime>
+      <publishTime>09/10/2015 11:02:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

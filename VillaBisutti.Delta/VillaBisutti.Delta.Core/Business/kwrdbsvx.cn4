@@ -13,14 +13,6 @@ namespace VillaBisutti.Delta.Core.Business
 	{
 		public OS(int eventoId)
 		{
-			Initialize(eventoId, false);
-		}
-		public OS(int eventoId, bool IsDegustacao)
-		{
-			Initialize(eventoId, IsDegustacao);
-		}
-		private void Initialize(int eventoId, bool IsDegustacao)
-		{
 			if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS")))
 				System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS"));
 			Evento = Util.context.Evento
@@ -40,18 +32,14 @@ namespace VillaBisutti.Delta.Core.Business
 			PopularItensMontagem();
 			PopularItensOutrosItens();
 			PopularItensSomIluminacao();
-			FileName = Util.GetPDFName(Evento);
-			if (IsDegustacao)
-				FileName = FileName.Replace(".pdf", "-degustacao.pdf");
 		}
-		public string FileName { get; set; }
 		private PDF _pdf;
 		private PDF pdf
 		{
 			get
 			{
 				if (_pdf == null)
-					_pdf = new PDF(FileName);
+					_pdf = new PDF(Util.GetPDFName(Evento));
 				if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS")))
 					System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS"));
 				return _pdf;
@@ -191,15 +179,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBebidaBisutti[ItensBebidaBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaDecoracao)
-					CopiaDecoracaoBisutti.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaDecoracaoBisutti.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaMontagem)
-					CopiaMontagemBisutti.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaMontagemBisutti.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaOutrosItens)
-					CopiaOutrosItensBisutti.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaOutrosItensBisutti.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaSomIluminacao)
-					CopiaSomIluminacaoBisutti.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaSomIluminacaoBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemBebidaSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -222,17 +210,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBebidaTerceiro[ItensBebidaTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemBebidaSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -255,17 +243,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBebidaContratante[ItensBebidaContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaDecoracao)
-					CopiaDecoracaoContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaDecoracaoContratante.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaMontagemContratante.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaOutrosItensContratante.Add(subitem);
 				if (item.ItemBebida.TipoItemBebida.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem.Copiar(item.ItemBebida.TipoItemBebida.Nome));
+					CopiaSomIluminacaoContratante.Add(subitem);
 			}
 		}
 		private void PopularItensBolo()
@@ -273,7 +261,6 @@ namespace VillaBisutti.Delta.Core.Business
 			IEnumerable<Model.ItemBoloDoceBemCasadoSelecionado> itens = Util.context.ItemBoloDoceBemCasadoSelecionado
 				.Include(i => i.ItemBoloDoceBemCasado)
 				.Include(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado)
-				.Include(i => i.ItemBoloDoceBemCasado.Fornecedor)
 				.Where(i => i.EventoId == Evento.Id)
 				.OrderBy(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem);
 			int currentId = 0;
@@ -297,15 +284,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBoloTerceiro[ItensBoloTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemBoloDoceBemCasadoSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -368,15 +355,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoBisutti[ItensDecoracaoBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaBebida)
-					CopiaBebidaBisutti.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaBebidaBisutti.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaMontagem)
-					CopiaMontagemBisutti.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaMontagemBisutti.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaOutrosItens)
-					CopiaOutrosItensBisutti.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaOutrosItensBisutti.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaSomIluminacao)
-					CopiaSomIluminacaoBisutti.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaSomIluminacaoBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemDecoracaoSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -399,17 +386,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoTerceiro[ItensDecoracaoTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaBebida)
-					CopiaBebidaTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaBebidaTerceiro.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemDecoracaoSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -432,17 +419,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoContratante[ItensDecoracaoContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaBebida)
-					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaBebidaContratante.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaMontagemContratante.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaOutrosItensContratante.Add(subitem);
 				if (item.ItemDecoracao.TipoItemDecoracao.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem.Copiar(item.ItemDecoracao.TipoItemDecoracao.Nome));
+					CopiaSomIluminacaoContratante.Add(subitem);
 			}
 		}
 		private void PopularItensDecoracaoCerimonial()
@@ -474,15 +461,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoCerimonialBisutti[ItensDecoracaoCerimonialBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaBebida)
-					CopiaBebidaBisutti.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaBebidaBisutti.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaMontagem)
-					CopiaMontagemBisutti.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaMontagemBisutti.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaOutrosItens)
-					CopiaOutrosItensBisutti.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaOutrosItensBisutti.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaSomIluminacao)
-					CopiaSomIluminacaoBisutti.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaSomIluminacaoBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemDecoracaoCerimonialSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -505,17 +492,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoCerimonialTerceiro[ItensDecoracaoCerimonialTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaBebida)
-					CopiaBebidaTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaBebidaTerceiro.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemDecoracaoCerimonialSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -538,17 +525,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensDecoracaoCerimonialContratante[ItensDecoracaoCerimonialContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaBebida)
-					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaBebidaContratante.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaMontagemContratante.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaOutrosItensContratante.Add(subitem);
 				if (item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem.Copiar(item.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial.Nome));
+					CopiaSomIluminacaoContratante.Add(subitem);
 			}
 		}
 		private void PopularItensFotoVideo()
@@ -686,15 +673,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensMontagemBisutti[ItensMontagemBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaDecoracao)
-					CopiaDecoracaoBisutti.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaDecoracaoBisutti.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaBebida)
-					CopiaBebidaBisutti.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaBebidaBisutti.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaOutrosItens)
-					CopiaOutrosItensBisutti.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaOutrosItensBisutti.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaSomIluminacao)
-					CopiaSomIluminacaoBisutti.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaSomIluminacaoBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemMontagemSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -717,17 +704,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensMontagemTerceiro[ItensMontagemTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaBebida)
-					CopiaBebidaTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaBebidaTerceiro.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemMontagemSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -750,17 +737,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensMontagemContratante[ItensMontagemContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaDecoracao)
-					CopiaDecoracaoContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaDecoracaoContratante.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaBebida)
-					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaBebidaContratante.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaOutrosItensContratante.Add(subitem);
 				if (item.ItemMontagem.TipoItemMontagem.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem.Copiar(item.ItemMontagem.TipoItemMontagem.Nome));
+					CopiaSomIluminacaoContratante.Add(subitem);
 			}
 		}
 		private void PopularItensOutrosItens()
@@ -792,15 +779,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensOutrosItensBisutti[ItensOutrosItensBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaDecoracao)
-					CopiaDecoracaoBisutti.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaDecoracaoBisutti.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaMontagem)
-					CopiaMontagemBisutti.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaMontagemBisutti.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaBebida)
-					CopiaBebidaBisutti.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaBebidaBisutti.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaSomIluminacao)
-					CopiaSomIluminacaoBisutti.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaSomIluminacaoBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemOutrosItensSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -823,17 +810,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensOutrosItensTerceiro[ItensOutrosItensTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaBebida)
-					CopiaBebidaTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaBebidaTerceiro.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemOutrosItensSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -856,17 +843,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensOutrosItensContratante[ItensOutrosItensContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaDecoracao)
-					CopiaDecoracaoContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaDecoracaoContratante.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaMontagemContratante.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaBebida)
-					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaBebidaContratante.Add(subitem);
 				if (item.ItemOutrosItens.TipoItemOutrosItens.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem.Copiar(item.ItemOutrosItens.TipoItemOutrosItens.Nome));
+					CopiaSomIluminacaoContratante.Add(subitem);
 			}
 		}
 		private void PopularItensSomIluminacao()
@@ -898,15 +885,15 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensSomIluminacaoBisutti[ItensSomIluminacaoBisutti.Count - 1].SubItens.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaDecoracao)
-					CopiaDecoracaoBisutti.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaDecoracaoBisutti.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaFotoVideo)
-					CopiaFotoVideoBisutti.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaFotoVideoBisutti.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaMontagem)
-					CopiaMontagemBisutti.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaMontagemBisutti.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaOutrosItens)
-					CopiaOutrosItensBisutti.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaOutrosItensBisutti.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaBebida)
-					CopiaBebidaBisutti.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaBebidaBisutti.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemSomIluminacaoSelecionado item in itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
@@ -929,17 +916,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensSomIluminacaoTerceiro[ItensSomIluminacaoTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaBoloDoceBemCasado)
-					CopiaBoloTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaBoloTerceiro.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaMontagemTerceiro.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaBebida)
-					CopiaBebidaTerceiro.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaBebidaTerceiro.Add(subitem);
 			}
 			currentId = 0;
 			foreach (Model.ItemSomIluminacaoSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
@@ -962,17 +949,17 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensSomIluminacaoContratante[ItensSomIluminacaoContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaBoloDoceBemCasado)
-					CopiaBoloContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaBoloContratante.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaDecoracao)
-					CopiaDecoracaoContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaDecoracaoContratante.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaFotoVideoContratante.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaMontagemContratante.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaOutrosItensContratante.Add(subitem);
 				if (item.ItemSomIluminacao.TipoItemSomIluminacao.CopiaBebida)
-					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
+					CopiaBebidaContratante.Add(subitem);
 			}
 		}
 
@@ -1066,7 +1053,7 @@ namespace VillaBisutti.Delta.Core.Business
 				return;
 			pdf.BreakPage();
 			pdf.AddHeader();
-			pdf.AddLeadText("LAYOUT DO SALÃO");
+			pdf.AddLeadText("Layout do salão");
 			pdf.AddBreakRule();
 
 			pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + layout.URL), layout.Legenda, true);
@@ -1075,7 +1062,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaBebidas()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("BEBIDAS");
+			pdf.AddHeaderText("Bebidas");
 			pdf.AddBreakRule();
 
 			if (ItensBebidaBisutti.Count() > 0)
@@ -1127,7 +1114,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaDecoracao()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("DECORAÇÃO DA RECEPÇÃO");
+			pdf.AddHeaderText("Decoração da recepção");
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoBisutti.Count() > 0)
@@ -1181,7 +1168,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (Evento.LocalCerimonia == Model.LocalCerimonia.Externo || Evento.LocalCerimonia == Model.LocalCerimonia.NaoPossui)
 				return;
 			pdf.AddHeader();
-			pdf.AddHeaderText("DECORAÇÃO DA CERIMÔNIA");
+			pdf.AddHeaderText("Decoração da cerimônia");
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoCerimonialBisutti.Count() > 0)
@@ -1233,7 +1220,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaFotoVideo()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("ITENS DE FOTO & VÍDEO");
+			pdf.AddHeaderText("Itens de Foto & Vídeo");
 			pdf.AddBreakRule();
 
 			if (ItensFotoVideoBisutti.Count() > 0)
@@ -1285,7 +1272,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaGastronomia(bool incluiDegustar)
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("GASTRONOMIA");
+			pdf.AddHeaderText("Gastronomia");
 			pdf.AddBreakRule();
 			foreach (DTO.ItemEvento grupo in ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades).Count() > 0))
 			{
@@ -1301,9 +1288,9 @@ namespace VillaBisutti.Delta.Core.Business
 					if (item.BloqueiaOutrasPropriedades)
 						continue;
 					if (item.Responsabilidade)
-						pdf.AddLine((incluiDegustar ? "Item escolhido > " : "") + item.NomeItem);
-					else if (item.Fornecido && incluiDegustar)
 						pdf.AddLine(item.NomeItem);
+					else if (item.Fornecido && incluiDegustar)
+						pdf.AddLine(incluiDegustar ? "Item escolhido > " : "" + item.NomeItem);
 				}
 				pdf.AddLine(" ");
 				pdf.BreakLine();
@@ -1313,7 +1300,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaMontagem()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("MONTAGEM DO SALÃO");
+			pdf.AddHeaderText("Montagem do Salão");
 			pdf.AddBreakRule();
 
 			if (ItensMontagemBisutti.Count() > 0)
@@ -1365,7 +1352,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaOutrosItens()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("OUTROS ITENS");
+			pdf.AddHeaderText("Outros itens");
 			pdf.AddBreakRule();
 
 			if (ItensOutrosItensBisutti.Count() > 0)
@@ -1417,7 +1404,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaSomIluminacao()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("ITENS DE SOM E ILUMINAÇÃO");
+			pdf.AddHeaderText("Itens de Som e Iluminação");
 			pdf.AddBreakRule();
 
 			if (ItensSomIluminacaoBisutti.Count() > 0)
@@ -1469,7 +1456,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaRoteiro()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("ROTEIRO");
+			pdf.AddHeaderText("Roteiro");
 			pdf.AddBreakRule();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiro)
 			{
@@ -1480,7 +1467,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarPaginaRoteiroCerimonial()
 		{
 			pdf.AddHeader();
-			pdf.AddHeaderText("ROTEIRO DO CERIMONIAL");
+			pdf.AddHeaderText("Roteiro do cerimonial");
 			pdf.AddBreakRule();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiroCerimonial)
 			{

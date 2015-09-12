@@ -47,13 +47,19 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CopiarCardapioPadrao(Model.Evento evento)
 		{
+			IEnumerable<Model.PratoSelecionado> pratos = context.PratoSelecionado.Where(ps => ps.EventoId == evento.Id);
+			context.PratoSelecionado.RemoveRange(pratos);
+			IEnumerable<Model.TipoPratoPadrao> tipos = context.TipoPratoPadrao.Where(tpp => tpp.EventoId == evento.Id);
+			context.TipoPratoPadrao.RemoveRange(tipos);
+			context.SaveChanges();
+			Util.ResetContext();
 			if (evento.CardapioId == 0 || evento.TipoServicoId == 0)
 				return;
 			if (evento.Gastronomia.Pratos == null)
 				evento.Gastronomia.Pratos = new List<Model.PratoSelecionado>();
 			if (evento.Gastronomia.TiposPratos == null)
 				evento.Gastronomia.TiposPratos = new List<Model.TipoPratoPadrao>();
-			List<Model.PratoSelecionado> pratos = context.PratoSelecionado.Where(ps => ps.EventoId == evento.Id).ToList();
+			pratos = context.PratoSelecionado.Where(ps => ps.EventoId == evento.Id).ToList();
 			foreach (Model.PratoSelecionado prato in context.PratoSelecionado.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))
 				if (pratos.Where(p => p.PratoId == prato.PratoId).Count() <= 0)
 					context.PratoSelecionado.Add(new Model.PratoSelecionado
@@ -65,7 +71,7 @@ namespace VillaBisutti.Delta.Core.Business
 						Rejeitado = false
 
 					});
-			List<Model.TipoPratoPadrao> tipos = context.TipoPratoPadrao.Where(tps => tps.EventoId == evento.Id).ToList();
+			tipos = context.TipoPratoPadrao.Where(tps => tps.EventoId == evento.Id).ToList();
 			foreach (Model.TipoPratoPadrao tipo in context.TipoPratoPadrao.Where(p => p.EventoId == null && p.CardapioId == evento.CardapioId && p.TipoServicoId == evento.TipoServicoId))
 				if (tipos.Where(t => t.TipoPratoId == tipo.TipoPratoId).Count() <= 0)
 					context.TipoPratoPadrao.Add(new Model.TipoPratoPadrao

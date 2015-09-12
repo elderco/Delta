@@ -23,7 +23,7 @@
 				</a>
 				<b class="arrow"></b>
 			</li>
-			@if(VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Decoracao")))
+			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Decoracao")))
 			{
 				<li>
 					<a href="@Url.Action("Index", "Decoracao", new { id = ViewBag.Id })">
@@ -34,8 +34,8 @@
 				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "DecoracaoCerimonial")))
-			{ 
-				<li id="LinkDecoracaoCerimonialMenu">
+			{
+				<li class="LinkDecoracaoCerimonialMenu">
 					<a href="@Url.Action("Index", "DecoracaoCerimonial", new { id = ViewBag.Id })">
 						<i class="menu-icon fa fa-heart"></i>
 						<span class="menu-text"> Decoração do cerimonial </span>
@@ -45,93 +45,93 @@
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Montagem")))
 			{
-			<li>
-				<a href="@Url.Action("Index", "Montagem", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-trophy"></i>
-					<span class="menu-text"> Montagem do salão </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+				<li>
+					<a href="@Url.Action("Index", "Montagem", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-trophy"></i>
+						<span class="menu-text"> Montagem do salão </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Gastronomia")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "Gastronomia", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-cutlery"></i>
-					<span class="menu-text"> Gastronomia </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "Gastronomia", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-cutlery"></i>
+						<span class="menu-text"> Gastronomia </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Gastronomia")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "Bebida", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-glass"></i>
-					<span class="menu-text"> Bebidas </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "Bebida", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-glass"></i>
+						<span class="menu-text"> Bebidas </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "BoloDoceBemCasado")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "BoloDoceBemCasado", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-birthday-cake"></i>
-					<span class="menu-text"> Bolo, doces e bem-casado </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "BoloDoceBemCasado", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-birthday-cake"></i>
+						<span class="menu-text"> Bolo, doces e bem-casado </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "FotoVideo")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "FotoVideo", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-camera-retro"></i>
-					<span class="menu-text"> Foto e vídeo </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "FotoVideo", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-camera-retro"></i>
+						<span class="menu-text"> Foto e vídeo </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "SomIluminacao")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "SomIluminacao", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-headphones"></i>
-					<span class="menu-text"> Som e iluminação </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "SomIluminacao", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-headphones"></i>
+						<span class="menu-text"> Som e iluminação </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "OutrosItens")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "OutrosItens", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-gift"></i>
-					<span class="menu-text"> Outros itens </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "OutrosItens", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-gift"></i>
+						<span class="menu-text"> Outros itens </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Roteiro")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "Roteiro", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-list-ul"></i>
-					<span class="menu-text"> Roteiro </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li>
+					<a href="@Url.Action("Index", "Roteiro", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-list-ul"></i>
+						<span class="menu-text"> Roteiro </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 			@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Cerimonial")))
-			{ 
-			<li>
-				<a href="@Url.Action("Index", "Cerimonial", new { id = ViewBag.Id })">
-					<i class="menu-icon fa fa-list-ol"></i>
-					<span class="menu-text"> Cerimonial </span>
-				</a>
-				<b class="arrow"></b>
-			</li>
+			{
+				<li class="LinkDecoracaoCerimonialMenu">
+					<a href="@Url.Action("Index", "Cerimonial", new { id = ViewBag.Id })">
+						<i class="menu-icon fa fa-list-ol"></i>
+						<span class="menu-text"> Cerimonial </span>
+					</a>
+					<b class="arrow"></b>
+				</li>
 			}
 		</ul>
 		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

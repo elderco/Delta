@@ -1,11 +1,15 @@
 		Correção nas telas
-			- Ocultar quantidade de itens "BloqueiaOutros" na OS
+OK			- Ocultar quantidade de itens "BloqueiaOutros" na OS
 OK			- Ocultar link "Decoração Cerimonial" quando não tem cerimonial
 			- OS > Itens copiados > Tipo Item no texto na linha
+OK			- Edit TipoItemDecoracao -> antiforgery faltando
+		Importação de bolo, doce e bem-casado
+		Várias fotos de layout
+		Botão para enviar e-mail
+		Lista dos não preenchidos seleciona o item na combo (incluir item)
 		relatórios
 			- Itens / período
 			-
-		Importação de bolo, doce e bem-casado
 		Layout de cada e-mail para clientes
 		Configuração de envio de email por evento
 		Inicialização e verificação do funcionamento dos robôs

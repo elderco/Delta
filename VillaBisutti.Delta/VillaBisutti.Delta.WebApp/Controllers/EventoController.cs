@@ -34,12 +34,19 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /Evento/ListaPorCasa/5
 		public ActionResult Gerar(int id, string qual = "EV", bool generate = false)
 		{
-			biz.OS os = new bus.OS(id);
+			biz.OS os;
 			if (qual == "EV")
+			{
+				os = new bus.OS(id);
 				os.GerarOS();
+				os.Kill();
+			}
 			else if (qual == "RD")
+			{
+				os = new bus.OS(id, true);
 				os.GerarDegustacao();
-			os.Kill();
+				os.Kill();
+			}
 			model.Evento evento = Util.context.Evento.FirstOrDefault(e => e.Id == id);
 			string PdfUrl = Util.GetPDFUrl(evento);
 			ViewBag.GeneratedUrl = PdfUrl;

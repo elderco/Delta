@@ -22,6 +22,7 @@
 	</script>
 	<div class="form-horizontal" id="EditDecoracao">
 		@Html.ValidationSummary(true)
+		@Html.AntiForgeryToken()
 		@Html.HiddenFor(model => model.Id)
 		<div class="form-group row">
 			@Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })

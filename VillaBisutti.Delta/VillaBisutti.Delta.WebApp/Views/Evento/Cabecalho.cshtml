@@ -15,7 +15,7 @@
 @if (Model.LocalCerimonia == VillaBisutti.Delta.Core.Model.LocalCerimonia.Externo || Model.LocalCerimonia == VillaBisutti.Delta.Core.Model.LocalCerimonia.NaoPossui)
 {
 	<script language="javascript" type="text/javascript">
-		$("#LinkDecoracaoCerimonialMenu").hide();
+		$(".LinkDecoracaoCerimonialMenu").hide();
 	</script>
 }
 <div class="col-xs-12 widget-container-col" style="min-height: 50px; margin-bottom: 20px">
@@ -36,6 +36,12 @@
 				</a>
 			</div>
 
+			<div class="widget-toolbar">
+				<a href="/Evento/Details/@Model.Id" title="Página principal do evento">
+					<i class="ace-icon fa fa-level-up red"></i>
+					<font class="sr-only" color="White">Página principal do evento</font>
+				</a>
+			</div>
 			<div class="widget-toolbar">
 				<a href="/ContratoAditivo/Index/@Model.Id" class="GeneralPopUpLinks" title="Aditivos contratuais (gerenciar)" aria-set-w="650" aria-set-h="450">
 					<i class="ace-icon fa fa-folder-open red"></i>

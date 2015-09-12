@@ -13,9 +13,9 @@ namespace VillaBisutti.Delta.Core
 {
 	public class PDF
 	{
-		private const int headingSize = 13;
-		private const int leadSize = 12;
-		private const int normalSize = 11;
+		private const int headingSize = 18;
+		private const int leadSize = 14;
+		private const int normalSize = 12;
 		private const int smallSize = 9;
 
 		string baseFont = "Verdana";
@@ -99,7 +99,7 @@ namespace VillaBisutti.Delta.Core
 
 			iText.Chunk headChunk = new iText.Chunk(
 				string.Format("{0} > {1} > {2} > {3}", data.ToString("dd/MM/yyyy"), casa, tipoEvento, homenageados));
-			headChunk.Font = iText.FontFactory.GetFont(baseFont, headingSize, iText.Font.BOLD);
+			headChunk.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD);
 			iPdf.PdfPCell headerCell = new iPdf.PdfPCell(new iText.Phrase(headChunk));
 			headerCell.Colspan = 3;
 			header.AddCell(headerCell);

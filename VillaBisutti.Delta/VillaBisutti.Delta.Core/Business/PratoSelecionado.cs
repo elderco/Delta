@@ -26,7 +26,11 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void ImportarPratosDosCardapios(int cardapioId, int tipoServicoId)
 		{
-			IQueryable<Model.PratoSelecionado> pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			IEnumerable<Model.PratoSelecionado> pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			Util.context.PratoSelecionado.RemoveRange(pratos);
+			Util.context.SaveChanges();
+			Util.ResetContext();
+			pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
 			foreach (Model.Prato prato in Util.context.Prato.Include(p => p.Cardapios).Where(p => p.Cardapios.Where(c => c.Id == cardapioId).Count() > 0).ToList())
 				if (pratos.Where(p => p.PratoId == prato.Id).Count() <= 0)
 					Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
@@ -39,6 +43,7 @@ namespace VillaBisutti.Delta.Core.Business
 						Rejeitado = false
 					});
 			Util.context.SaveChanges();
+			Util.ResetContext();
 		}
 
 		public Model.PratoSelecionado EscolherPrato(int id)
