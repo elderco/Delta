@@ -38,9 +38,10 @@
 	<div class="form-horizontal">
 		@Html.ValidationSummary(true)
 		@Html.HiddenFor(model => model.Id)
+		<input type="hidden" name="UsuarioCreateId" value="@(Model.UsuarioCreateId)" />
+		<input type="hidden" name="UsuarioCreateData" value="@(Model.UsuarioCreateData)" />
 		<input type="hidden" name="CardapioId" value="@(Model.CardapioId)" />
 		<input type="hidden" name="TipoServico" value="@(Model.TipoServico)" />
-		<input type="hidden" name="EmailBoasVindasEnviado" value="@(Model.EmailBoasVindasEnviado)" />
 		<input type="hidden" name="OSFinalizada" value="@(Model.OSFinalizada)" />
 		<input type="hidden" name="OSAprovada" value="@(Model.OSAprovada)" />
 		<div class="tabbable tabs-left">
@@ -50,14 +51,13 @@
 				<li><a href="#Informacoes" data-toggle="tab"><i class="green fa fa-asterisk"></i> Informações</a></li>
 				<li><a href="#Responsaveis" data-toggle="tab"><i class="green fa fa-asterisk"></i> Responsáveis</a></li>
 				<li><a href="#DadosComplementares" data-toggle="tab"><i class="green fa fa-asterisk"></i> Dados complementares</a></li>
+				<li><a href="#DadosAutomatizar" data-toggle="tab"><i class="green fa fa-asterisk"></i> Interações automáticas</a></li>
 				<li>&nbsp;</li>
 				<li>&nbsp;</li>
 				<li>&nbsp;</li>
 				<li>&nbsp;</li>
 				<li>&nbsp;</li>
-				<li>&nbsp;</li>
-				<li>&nbsp;</li>
-				<li><input type="submit" value="Salvar" class="btn btn-default form-control" /></li>
+				<li style="margin-top:2px;"><input type="submit" value="Salvar" class="btn btn-default form-control" /></li>
 			</ul>
 			<div class="tab-content tababble-min-height">
 				<div class="tab-pane in active" id="DadosPrincipais">
@@ -213,6 +213,22 @@
 						</div>
 					</div>
 				</div>
+				<div class="tab-pane" id="DadosAutomatizar">
+					<div class="form-group clear-margin">
+						<div class="col-md-1"></div>
+						<label for="EmailBoasVindasEnviado">
+							Não enviar e-mail de boas vindas (ou já foi enviado)
+						</label>
+						@Html.EditorFor(model => model.EmailBoasVindasEnviado)
+					</div>
+					<div class="form-group clear-margin">
+						<div class="col-md-1"></div>
+						<label for="EnviarAgendaSemanal">
+							Incluir na listagem para recebimento da agenda semanal
+						</label>
+						@Html.EditorFor(model => model.EnviarAgendaSemanal)
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -224,4 +240,4 @@
 @section Scripts {
 	@Scripts.Render("~/bundles/jqueryval")
 }
-@Html.Action("Layout", "Foto", new { eventoId = Model.Id, qual = "EV" })
+@Html.Action("Index", "Foto", new { eventoId = Model.Id, qual = "EV" })

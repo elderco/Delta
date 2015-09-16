@@ -16,9 +16,9 @@ namespace VillaBisutti.Delta.Core.Model
 		public DateTime? UsuarioUpdateData { get; set; }
 		public int EventoId { get; set; }
 		[Display(Name = "Som Iluminacao"), ForeignKey("EventoId")]
-        public SomIluminacao SomIluminacao { get; set; }
+		public SomIluminacao SomIluminacao { get; set; }
 		public int ContratoAditivoId { get; set; }
-		[Display(Name = "Contrato Aditivo")]
+		[Display(Name = "Contrato / Aditivos")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemSomIluminacaoId { get; set; }
 		[Display(Name = "Som Iluminacao")]
@@ -31,8 +31,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecido pela Villa Bisutti")]
 		public bool FornecimentoBisutti { get; set; }
-        [Display(Name = "Fornecedor Acionado")]
-        public bool FornecedorStartado { get; set; }
+		[Display(Name = "Fornecedor Acionado")]
+		public bool FornecedorStartado { get; set; }
 		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Horário Montagem")]
@@ -53,31 +53,31 @@ namespace VillaBisutti.Delta.Core.Model
 		public string ContatoFornecimento { get; set; }
 		[Display(Name = "Observações")]
 		public string Observacoes { get; set; }
-        [NotMapped]
-        public bool StateErrorBisutti
-        {
-            get
-            {
-                return (
-                    (ItemSomIluminacao != null && (ItemSomIluminacao.Quantidade < Quantidade))
-                    );
-            }
-        }
-        [NotMapped]
-        public bool StateErrorContratante
-        {
-            get
-            {
-                return false;
-            }
-        }
-        [NotMapped]
-        public bool StateErrorFornecedor
-        {
-            get
-            {
-                return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
-            }
-        }
+		[NotMapped]
+		public bool StateErrorBisutti
+		{
+			get
+			{
+				return (
+					(ItemSomIluminacao != null && (ItemSomIluminacao.Quantidade < Quantidade))
+					);
+			}
+		}
+		[NotMapped]
+		public bool StateErrorContratante
+		{
+			get
+			{
+				return false;
+			}
+		}
+		[NotMapped]
+		public bool StateErrorFornecedor
+		{
+			get
+			{
+				return (ContratacaoBisutti && !FornecimentoBisutti && Definido && (!FornecedorStartado || !Contratado));
+			}
+		}
 	}
 }

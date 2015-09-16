@@ -1,12 +1,17 @@
+OK		Itens da harmonização dos cardápios (importar apenas faltantes)
+OK		Criar ambiente de homologação
+		BDBC -> Adicionar campo "Grupo" e agrupar na OS
+		BDBC -> Nova entidade para definir padrões do evento 
+		Organização dos botões para separação de responsabilidade (ResponsabilidadeVB, FornecidoBisutti)
 		Correção nas telas
 OK			- Ocultar quantidade de itens "BloqueiaOutros" na OS
 OK			- Ocultar link "Decoração Cerimonial" quando não tem cerimonial
 			- OS > Itens copiados > Tipo Item no texto na linha
 OK			- Edit TipoItemDecoracao -> antiforgery faltando
-		Importação de bolo, doce e bem-casado
-		Várias fotos de layout
-		Botão para enviar e-mail
-		Lista dos não preenchidos seleciona o item na combo (incluir item)
+OK		Importação de bolo, doce e bem-casado
+OK		Várias fotos de layout
+OK		Botão para enviar e-mail no cabeçalho
+		Lista dos não preenchidos, ao clicar, seleciona o item na combo TipoItemXXXId (incluir item)
 		relatórios
 			- Itens / período
 			-

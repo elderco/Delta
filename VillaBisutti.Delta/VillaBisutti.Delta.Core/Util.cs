@@ -213,5 +213,12 @@ namespace VillaBisutti.Delta
 				return HttpContext.Current.Server.MapPath("~/Content/Images/bg-logo-villa-bisutti.png");
 			}
 		}
+		public static string GenerateMailtoString(string unformattedList)
+		{
+			unformattedList = unformattedList.Replace(" ", string.Empty);
+			unformattedList = unformattedList.Replace(';', ',');
+			unformattedList = unformattedList.Replace('/', ',');
+			return unformattedList;
+		}
 	}
 }

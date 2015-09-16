@@ -33,5 +33,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool Encerrado { get; set; }
 		[Display(Name = "Itens")]
 		public List<ItemBoloDoceBemCasadoSelecionado> Itens { get; set; }
+		public List<ItemBoloDoceBemCasadoEvento> TipoItens { get; set; }
 	}
 }

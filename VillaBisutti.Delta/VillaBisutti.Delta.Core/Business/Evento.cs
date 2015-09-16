@@ -82,6 +82,19 @@ namespace VillaBisutti.Delta.Core.Business
 					});
 			context.SaveChanges();
 		}
+		private void CopiarDoces(Model.Evento evento)
+		{
+			foreach(Model.TipoItemBoloDoceBemCasado item in context.TipoItemBoloDoceBemCasado.ToList())
+			{
+				context.ItemBoloDoceBemCasadoEvento.Add(new Model.ItemBoloDoceBemCasadoEvento
+				{
+					EventoId = evento.Id,
+					TipoItemBoloDoceBemCasadoId = item.Id,
+					Quantidade = 1
+				});
+			}
+			context.SaveChanges();
+		}
 		public void CriarEvento(Model.Evento evento)
 		{
 			Model.ContratoAditivo contrato = evento.Contratos[0];
@@ -101,6 +114,7 @@ namespace VillaBisutti.Delta.Core.Business
 			context.ContratoAditivo.Add(contrato);
 			context.SaveChanges();
 			CopiarRoteiroPadrao(evento);
+			CopiarDoces(evento);
 			CopiarCerimonialPadrao(evento);
 			CopiarCardapioPadrao(evento);
 		}

@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Decoração Cerimonial"), ForeignKey("EventoId")]
 		public DecoracaoCerimonial DecoracaoCerimonial { get; set; }
 		public int ContratoAditivoId { get; set; }
-		[Display(Name = "Contrato Aditivo")]
+  [Display(Name = "Contrato / Aditivos")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemDecoracaoCerimonialId { get; set; }
 		[Display(Name = "Decoração Cerimonial")]

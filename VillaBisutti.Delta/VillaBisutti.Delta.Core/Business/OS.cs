@@ -92,7 +92,7 @@ namespace VillaBisutti.Delta.Core.Business
 						{
 							positions[item.Prato.TipoPratoId] = itensGastronomia.Count();
 							Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.CardapioId == Evento.CardapioId.Value && t.TipoServicoId == Evento.TipoServicoId.Value && t.TipoPratoId == item.Prato.TipoPratoId);
-							int quantidade = tpp == null ? 1 :tpp.QuantidadePratos;
+							int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
 							itensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
 						}
 						itensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
@@ -1061,15 +1061,15 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void AdicionarPaginaLayout()
 		{
-			Model.Foto layout = Fotos.FirstOrDefault(f => f.Qual == "EV");
-			if (layout == null)
+			IEnumerable<Model.Foto> layouts = Fotos.Where(f => f.Qual == "EV");
+			if (layouts == null)
 				return;
 			pdf.BreakPage();
 			pdf.AddHeader();
-			pdf.AddLeadText("LAYOUT DO SALÃO");
+			pdf.AddLeadText("LAYOUT");
 			pdf.AddBreakRule();
-
-			pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + layout.URL), layout.Legenda, true);
+			foreach (Model.Foto imagem in layouts)
+				pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + imagem.URL), imagem.Legenda, true);
 			pdf.BreakPage();
 		}
 		private void AdicionarPaginaBebidas()

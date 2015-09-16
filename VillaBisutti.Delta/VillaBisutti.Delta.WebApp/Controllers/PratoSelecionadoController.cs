@@ -51,6 +51,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new biz.PratoSelecionado().ImportarPratosDosCardapios(cardapioId, tipoServicoId);
 			return RedirectToAction("Configuracao", "PratoSelecionado", new { cardapioId = cardapioId, tipoServicoId = tipoServicoId });
 		}
+		public ActionResult Importar(int cardapioId, int tipoServicoId)
+		{
+			new biz.PratoSelecionado().ImportarPratosDosCardapiosFaltantes(cardapioId, tipoServicoId);
+			return RedirectToAction("Configuracao", "PratoSelecionado", new { cardapioId = cardapioId, tipoServicoId = tipoServicoId });
+		}
 		public ActionResult ImportarDoCardapio(int id)
 		{
 			new biz.Evento().CopiarCardapioPadrao(new data.Evento().GetElement(id));

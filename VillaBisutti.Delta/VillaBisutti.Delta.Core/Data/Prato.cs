@@ -47,7 +47,6 @@ namespace VillaBisutti.Delta.Core.Data
         }
 		public DTO.PratoCardapio IncluirEmCardapio(int pratoId, int cardapioId)
 		{
-
 			Model.Prato p = context.Prato.Include(prato => prato.Cardapios).FirstOrDefault(prato => prato.Id == pratoId);
 			Model.Cardapio c = context.Cardapio.Find(cardapioId);
 			if(p.Cardapios == null)

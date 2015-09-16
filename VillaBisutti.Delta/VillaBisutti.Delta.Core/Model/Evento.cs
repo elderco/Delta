@@ -13,21 +13,21 @@ namespace VillaBisutti.Delta.Core.Model
 
 		#region [ Dados Principais ]
 
-		public int Id { get; set; }
-		public int? UsuarioCreateId { get; set; }
-		public DateTime? UsuarioCreateData { get; set; }
-		public int? UsuarioUpdateId { get; set; }
-		public DateTime? UsuarioUpdateData { get; set; }
+		public int Id { get; set; } //OK
+		public int? UsuarioCreateId { get; set; } //OK
+		public DateTime? UsuarioCreateData { get; set; } //OK
+		public int? UsuarioUpdateId { get; set; } //OK
+		public DateTime? UsuarioUpdateData { get; set; } //OK
 		[Display(Name = "Tipo de Evento"), Required]
-		public TipoEvento TipoEvento { get; set; }
-		public int LocalId { get; set; }
+		public TipoEvento TipoEvento { get; set; } //OK
+		public int LocalId { get; set; } //OK
 		[Display(Name = "Local")]
 		public Local Local { get; set; }
 		//Dados do evento
 		[Display(Name = "Data")]
-		public DateTime Data { get; set; }
+		public DateTime Data { get; set; } //OK
 		[Display(Name = "Horário Inicio")]
-		public int HorarioInicio { get; set; }
+		public int HorarioInicio { get; set; } //OK
 		[NotMapped]
 		public Horario Inicio
 		{
@@ -41,7 +41,7 @@ namespace VillaBisutti.Delta.Core.Model
 			}
 		}
 		[Display(Name = "Horário Termino")]
-		public int HorarioTermino { get; set; }
+		public int HorarioTermino { get; set; } //OK
 		[NotMapped]
 		public Horario Termino
 		{
@@ -55,7 +55,7 @@ namespace VillaBisutti.Delta.Core.Model
 			}
 		}
 		[Display(Name = "Pax (real)"), Range(0, 202768562)] //População Brasileira 2014
-		public int Pax { get; set; }
+		public int Pax { get; set; } //OK
 		[NotMapped]
 		public int PaxAproximado
 		{
@@ -65,15 +65,15 @@ namespace VillaBisutti.Delta.Core.Model
 			}
 		}
 		[Display(Name = "Observações (Atenção! Estas informações estarão impressas na OS)")]
-		public string PerfilFesta { get; set; }
+		public string PerfilFesta { get; set; } //OK
 
 		#endregion
 
 		#region [ Gastronomia ]
-		public int? CardapioId { get; set; }
+		public int? CardapioId { get; set; } //OK
 		[Display(Name = "Cardápio")]
 		public Cardapio Cardapio { get; set; }
-		public int? TipoServicoId { get; set; }
+		public int? TipoServicoId { get; set; } //OK
 		[Display(Name = "Tipo de Serviço")]
 		public TipoServico TipoServico { get; set; }
 
@@ -81,17 +81,17 @@ namespace VillaBisutti.Delta.Core.Model
 
 		#region [ Responsáveis ]
 
-		public int? ProdutoraId { get; set; }
+		public int? ProdutoraId { get; set; } //OK
 		[Display(Name = "Produtora")]
 		public Usuario Produtora { get; set; }
-		public int? PosVendedoraId { get; set; }
+		public int? PosVendedoraId { get; set; } //OK
 		[Display(Name = "Pós Vendedora")]
 		public Usuario PosVendedora { get; set; }
 		//Assessoria
 		[Display(Name = "Possui assessoria")]
-		public bool PossuiAssessoria { get; set; }
+		public bool PossuiAssessoria { get; set; } //OK
 		[Display(Name = "Contato da assessoria")]
-		public string ContatoAssessoria { get; set; }
+		public string ContatoAssessoria { get; set; } //OK
 
 		#endregion
 
@@ -99,17 +99,17 @@ namespace VillaBisutti.Delta.Core.Model
 		
 		//Dados do contratante
 		[Display(Name = "Nome do Responsável")]
-		public string NomeResponsavel { get; set; }
+		public string NomeResponsavel { get; set; } //OK
 		[Display(Name = "CPF do Responsável")]
-		public string CPFResponsavel { get; set; }
+		public string CPFResponsavel { get; set; } //OK
 		[Display(Name = "Email de Contato")]
-		public string EmailContato { get; set; }
+		public string EmailContato { get; set; } //OK
 		[Display(Name = "Telefone de Contato")]
-		public string TelefoneContato { get; set; }
+		public string TelefoneContato { get; set; } //OK
 		[Display(Name = "Nomes dos Homenageados")]
-		public string NomeHomenageados { get; set; }
+		public string NomeHomenageados { get; set; } //OK
 		[Display(Name = "Perfil (Informações pertinentes à equipe)")]
-		public string Observacoes { get; set; }
+		public string Observacoes { get; set; } //OK
 
 		#endregion
 
@@ -117,21 +117,20 @@ namespace VillaBisutti.Delta.Core.Model
 
 		//Dados da cerimônia
 		[Display(Name = "Cerimônia")]
-		public LocalCerimonia LocalCerimonia { get; set; }
+		public LocalCerimonia LocalCerimonia { get; set; } //OK
 		[Display(Name = "Endereço da Cerimônia")]
-		public string EnderecoCerimonia { get; set; }
+		public string EnderecoCerimonia { get; set; } //OK
 		[Display(Name = "Observações da cerimônia")]
-		public string ObservacoesCerimonia { get; set; }
+		public string ObservacoesCerimonia { get; set; } //OK
 		public List<ContratoAditivo> Contratos { get; set; }
 
 		#endregion
 
 		#region [ Interop ]
-
-		public bool EmailBoasVindasEnviado { get; set; }
-		public bool OSFinalizada { get; set; }
-		public bool OSAprovada { get; set; }
-
+		public bool EmailBoasVindasEnviado { get; set; } //OK
+		public bool EnviarAgendaSemanal { get; set; } //OK
+		public bool OSFinalizada { get; set; } //OK
+		public bool OSAprovada { get; set; } //OK
 		#endregion
 
 		#region [ Navigation Properties ]

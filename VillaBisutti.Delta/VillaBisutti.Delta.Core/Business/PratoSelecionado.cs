@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Business
 		public void ImportarPratosDosCardapios()
 		{
 			foreach (Model.Cardapio cardapio in Util.context.Cardapio.Include(c => c.Pratos).ToList())
-				foreach (Model.TipoServico tipoServico in new Data.TipoServico().GetCollection(0))
+				foreach (Model.TipoServico tipoServico in Util.context.TipoServico.ToList())
 					foreach (Model.Prato prato in cardapio.Pratos)
 						Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
 						{
@@ -23,6 +23,23 @@ namespace VillaBisutti.Delta.Core.Business
 							Escolhido = false,
 							Rejeitado = false
 						});
+		}
+		public void ImportarPratosDosCardapiosFaltantes(int cardapioId, int tipoServicoId)
+		{
+			IEnumerable<Model.PratoSelecionado> pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			foreach (Model.Prato prato in Util.context.Cardapio.Include(c => c.Pratos).FirstOrDefault(c => c.Id == cardapioId).Pratos)
+				if (pratos.Where(p => p.PratoId == prato.Id).Count() <= 0)
+					Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
+					{
+						PratoId = prato.Id,
+						CardapioId = cardapioId,
+						TipoServicoId = tipoServicoId,
+						Degustar = true,
+						Escolhido = false,
+						Rejeitado = false
+					});
+			Util.context.SaveChanges();
+			Util.ResetContext();
 		}
 		public void ImportarPratosDosCardapios(int cardapioId, int tipoServicoId)
 		{
@@ -45,11 +62,10 @@ namespace VillaBisutti.Delta.Core.Business
 			Util.context.SaveChanges();
 			Util.ResetContext();
 		}
-
 		public Model.PratoSelecionado EscolherPrato(int id)
 		{
 			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
-			int quantosEscolhidos = Util.context.PratoSelecionado.Where(p => 
+			int quantosEscolhidos = Util.context.PratoSelecionado.Where(p =>
 				p.Prato.TipoPratoId == prato.Prato.TipoPratoId
 				&& p.EventoId == prato.EventoId
 				&& p.Escolhido

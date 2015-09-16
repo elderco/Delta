@@ -81,6 +81,7 @@
     <Compile Include="Data\FotoVideo.cs" />
     <Compile Include="Data\Gastronomia.cs" />
     <Compile Include="Data\ItemBebidaSelecionado.cs" />
+    <Compile Include="Data\ItemBoloDoceBemCasadoEvento.cs" />
     <Compile Include="Data\ItemBoloDoceBemCasadoSelecionado.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\ContratoAditivo.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Model\FornecedorBoloDoceBemCasado.cs" />
     <Compile Include="Model\FotoVideo.cs" />
     <Compile Include="Model\Gastronomia.cs" />
+    <Compile Include="Model\ItemBoloDoceBemCasadoEvento.cs" />
     <Compile Include="Model\ItemCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonialSelecionado.cs" />
