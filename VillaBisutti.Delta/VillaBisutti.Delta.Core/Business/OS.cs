@@ -1061,15 +1061,13 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void AdicionarPaginaLayout()
 		{
-			IEnumerable<Model.Foto> layouts = Fotos.Where(f => f.Qual == "EV");
-			if (layouts == null)
+			if (Fotos.Where(f => f.Qual == "EV") == null)
 				return;
 			pdf.BreakPage();
 			pdf.AddHeader();
 			pdf.AddLeadText("LAYOUT");
 			pdf.AddBreakRule();
-			foreach (Model.Foto imagem in layouts)
-				pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + imagem.URL), imagem.Legenda, true);
+			AdicionarFotosArea("EV");
 			pdf.BreakPage();
 		}
 		private void AdicionarPaginaBebidas()

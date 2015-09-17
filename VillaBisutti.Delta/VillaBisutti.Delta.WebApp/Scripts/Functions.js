@@ -1,4 +1,9 @@
-﻿function KeepAlive() {
+﻿function SetTooltip() {
+	//Para Mobile e Tablets o baguiu é loco e o processo é lento
+	if ($(window).width() > 991)
+		$('[data-rel=tooltip]').tooltip();
+}
+function KeepAlive() {
 	$div = $("<div/>").attr("id", "keepAlive").css("position", "absolute").css("left", "250px").css("top", "250px").css("width", "350");
 	$("body").append($div);
 	var url = (window.location.origin ? window.location.origin : window.location.protocol + '/' + window.location.host) + "/Home/KeepAlive";
@@ -470,6 +475,8 @@ $(document)
 		HideLoading();
 		HandleCheckbox("main-container");
 		KeepAlive();
+		SetTooltip();
+		$(window).resize(function () { window.location.reload(false) }); //Caso a browser seja redimensionado, a página será recarregada para que seus ítens sejam ajustados
 	})
 	.error(function () {
 		HideLoading();

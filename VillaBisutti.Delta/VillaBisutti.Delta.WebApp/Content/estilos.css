@@ -31,6 +31,8 @@ fieldset{border: 1px solid #522D1C !important;}
 div.tooltip{min-width: 100px}
 .borderless{border-width: 0}
 .clear-margin { margin-left: -10px !important; margin-right: -10px !important; }
+.clear-margin-vert { margin-top: 0px !important; margin-bottom: 0px !important; }
+.clear-padding { padding: 3px !important; }
 .tababble-min-height { height: 330px; overflow: auto; padding-top: 10px; padding-bottom: 0px; }
 .button-padding { padding-left: 15px !important; padding-right: 5px !important; }
 
@@ -42,12 +44,40 @@ div.tooltip{min-width: 100px}
 /* Navbar toggle */
 
 @media (max-width: 991px) {
+	#sidebar{margin-top: 47px}
+
     .navbar-toggle {display: block !important;}
     .page-content{padding-top: 60px}
+
+	.navbar.navbar-collapse .navbar-buttons .user-info {
+		position: absolute;
+		margin-top: 40px;
+		margin-left: 1px;
+		right: 2px;
+		z-index: 1032;
+		color: #777;
+		font-size: 14px;
+		width: 156px;
+		max-width: 156px;
+		padding-left: 8px;
+		padding-right: 8px;
+		height: 32px;
+		line-height: 26px!important;
+		display: none;
+		border-bottom: 1px solid #E5E5E5;
+		text-align: center;
+		vertical-align: none;
+		line-height: normal;
+		cursor: text;
+	}
 }
 
 @media (min-width: 768px){
     .form-inline .input-group .form-control,.form-inline .input-group .input-group-addon,.form-inline .input-group .input-group-btn{}
+}
+
+@media (min-width: 300px){
+	.col-sm-12 { width: 100%; margin: 0 auto}
 }
 
 /* Modal */

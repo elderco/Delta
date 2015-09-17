@@ -32,5 +32,41 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return context.ItemBoloDoceBemCasadoEvento.ToList();
 		}
+
+		public IEnumerable<Model.ItemBoloDoceBemCasadoEvento> ListarEvento(int id)
+		{
+			return context.ItemBoloDoceBemCasadoEvento
+				.Include(i => i.TipoItemBoloDoceBemCasado)
+				.Where(i => i.EventoId == id);
+		}
+		public void CopiarParaEvento(int id)
+		{
+			IEnumerable<Model.ItemBoloDoceBemCasadoEvento> existentes = context.ItemBoloDoceBemCasadoEvento.Where(i => i.EventoId == id).ToList();
+			foreach(Model.TipoItemBoloDoceBemCasado item in context.TipoItemBoloDoceBemCasado.ToList())
+			{
+				if (existentes.Where(i => i.TipoItemBoloDoceBemCasadoId == item.Id).Count() > 0)
+					continue;
+				Model.ItemBoloDoceBemCasadoEvento novo = new Model.ItemBoloDoceBemCasadoEvento {
+					TipoItemBoloDoceBemCasadoId = item.Id,
+					EventoId = id,
+					Quantidade = 1
+				};
+				SetCreated(novo);
+				SetUpdated(novo);
+				context.ItemBoloDoceBemCasadoEvento.Add(novo);
+			}
+			context.SaveChanges();
+		}
+
+		public Model.ItemBoloDoceBemCasadoEvento Alterar(int id, int quantidade)
+		{
+			Model.ItemBoloDoceBemCasadoEvento original = context.ItemBoloDoceBemCasadoEvento.Find(id);
+			Model.ItemBoloDoceBemCasadoEvento alterado = original;
+			alterado.Quantidade = quantidade;
+			SetUpdated(alterado);
+			context.Entry(original).CurrentValues.SetValues(alterado);
+			context.SaveChanges();
+			return alterado;
+		}
 	}
 }

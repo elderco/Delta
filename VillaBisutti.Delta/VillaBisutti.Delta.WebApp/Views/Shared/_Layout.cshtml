@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
 	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-	<script>$(document).ready(function () { $('[data-rel=tooltip]').tooltip(); })</script>
+	<script>//</script>
 	@if (ViewBag.IsBlocked == "TRUE")
 	{
 		<script language="javascript" type="text/javascript">
@@ -182,9 +182,9 @@
 			</div>
 		</div><!-- /.main-content -->
 	</div>
-	<div class="footer" style="bottom: 0">
+	<div class="footer" style="bottom: 0;">
 		<div class="footer-inner">
-			<div class="footer-content">
+			<div class="footer-content" style="z-index:1000">
 				<span class="bolder bigger-120" style="color: #522d1c">Villa Bisutti &reg;</span>
 				@(DateTime.Now.Year)
 

@@ -44,7 +44,7 @@
 		<div class="form-group">
 			@foreach (VillaBisutti.Delta.Core.Model.Modulo item in ViewBag.Modulos)
 			{
-				<div class="btn-group col-lg-3 col-md-4" style="margin-bottom: 5px" data-toggle="buttons">
+				<div class="btn-group col-lg-3 col-md-4 col-sm-12" style="margin-bottom: 5px" data-toggle="buttons">
 					<button class="btn btn-primary col-xs-6">@item.Nome</button>
 					<button class="btn btn-info set-acesso" id="@(item.Id)_TOTAL"><i class="fa fa-pencil" title="Acesso Total"></i></button>
 					<button class="btn btn-info set-acesso" id="@(item.Id)_LEITURA"><i class="fa fa-eye" title="Somente Leitura"></i></button>
