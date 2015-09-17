@@ -60,13 +60,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes,retorno")] model.ItemBoloDoceBemCasadoSelecionado itembolodocebemcasado)
+		public ActionResult EditPost([Bind(Include = "Id,Quantidade,ContatoFornecimento,HorarioEntrega,Definido,FornecedorStartado,Contratado,Observacoes,AgrupamentoItem,retorno")] model.ItemBoloDoceBemCasadoSelecionado itembolodocebemcasado)
 		{
 			model.ItemBoloDoceBemCasadoSelecionado itemOriginal = new data.ItemBoloDoceBemCasadoSelecionado().GetElement(itembolodocebemcasado.Id);
 			itemOriginal.Quantidade = itembolodocebemcasado.Quantidade;
 			itemOriginal.ContatoFornecimento = itembolodocebemcasado.ContatoFornecimento;
 			itemOriginal.HorarioEntrega = itembolodocebemcasado.HorarioEntrega;
 			itemOriginal.Observacoes = itembolodocebemcasado.Observacoes;
+			itemOriginal.AgrupamentoItem = itembolodocebemcasado.AgrupamentoItem;
 			itemOriginal.Definido = itembolodocebemcasado.Definido;
 			itemOriginal.Contratado = itembolodocebemcasado.Contratado;
 			itemOriginal.FornecedorStartado = itembolodocebemcasado.FornecedorStartado;

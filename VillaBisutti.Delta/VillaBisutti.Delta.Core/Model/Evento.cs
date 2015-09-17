@@ -96,7 +96,7 @@ namespace VillaBisutti.Delta.Core.Model
 		#endregion
 
 		#region [ Dados Cadastrais ]
-		
+
 		//Dados do contratante
 		[Display(Name = "Nome do Responsável")]
 		public string NomeResponsavel { get; set; } //OK
@@ -159,5 +159,11 @@ namespace VillaBisutti.Delta.Core.Model
 
 		#endregion
 
+		#region [ OS ]
+
+		public string OS { get; set; }
+		public string OSDegustacao { get; set; }
+
+		#endregion
 	}
 }

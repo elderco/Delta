@@ -19,11 +19,12 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Evento"), ForeignKey("EventoId")]
 		public BoloDoceBemCasado BoloDoceBemCasado { get; set; }
 		public int ContratoAditivoId { get; set; }
-  [Display(Name = "Contrato / Aditivos")]
+		[Display(Name = "Contrato / Aditivos")]
 		public ContratoAditivo ContratoAditivo { get; set; }
 		public int ItemBoloDoceBemCasadoId { get; set; }
 		[Display(Name = "Bolo Doce BemCasado")]
 		public ItemBoloDoceBemCasado ItemBoloDoceBemCasado { get; set; }
+		public string AgrupamentoItem { get; set; }
 		[Display(Name = "Definido")]
 		public bool Definido { get; set; }
 		[Display(Name = "Contratado")]
@@ -31,8 +32,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Responsabilidade da Villa Bisutti (contratar)")]
 		public bool ContratacaoBisutti { get; set; }
 		[Display(Name = "Fornecedor Iniciado")]
-        public bool FornecedorStartado { get; set; }
-		[Display(Name = "Quantidade"), Range(0, 9*10E6)]
+		public bool FornecedorStartado { get; set; }
+		[Display(Name = "Quantidade"), Range(0, 9 * 10E6)]
 		public int Quantidade { get; set; }
 		[Display(Name = "Contato Fornecedor")]
 		public string ContatoFornecimento { get; set; }

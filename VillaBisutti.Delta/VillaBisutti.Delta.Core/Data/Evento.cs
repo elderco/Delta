@@ -108,7 +108,7 @@ namespace VillaBisutti.Delta.Core.Data
 					|| e.CPFResponsavel.ToLower().IndexOf(filtro.ToLower()) >= 0
 					|| string.IsNullOrEmpty(filtro))
 				).Take(300);
-			return eventos.ToList();
+			return eventos.OrderBy(e => e.Data).ToList();
 		}
 	}
 }

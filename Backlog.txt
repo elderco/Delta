@@ -1,12 +1,16 @@
+		URGENTE - Prevenir double click nos "cadastrar" e "salvar" da vida
 OK		Itens da harmonização dos cardápios (importar apenas faltantes)
 OK		Criar ambiente de homologação
-		BDBC -> Adicionar campo "Grupo" e agrupar na OS
-		BDBC -> Nova entidade para definir padrões do evento 
+OK		BDBC -> Adicionar campo "Grupo" e agrupar na OS
+OK		BDBC -> Nova entidade para definir padrões do evento 
 		Organização dos botões para separação de responsabilidade (ResponsabilidadeVB, FornecidoBisutti)
 		Correção nas telas
 OK			- Ocultar quantidade de itens "BloqueiaOutros" na OS
 OK			- Ocultar link "Decoração Cerimonial" quando não tem cerimonial
+			- não deixar entrar em nenhuma área se não tem contrato pro evento
+			- evento com cerimônia externa está aparecendo decoração do cerimonial
 			- OS > Itens copiados > Tipo Item no texto na linha
+			- OS Degustação > Trazer o nome correto
 OK			- Edit TipoItemDecoracao -> antiforgery faltando
 OK		Importação de bolo, doce e bem-casado
 OK		Várias fotos de layout

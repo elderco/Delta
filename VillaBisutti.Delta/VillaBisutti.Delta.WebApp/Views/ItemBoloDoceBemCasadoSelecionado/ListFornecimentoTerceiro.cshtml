@@ -6,31 +6,32 @@
 {
 	<table class="table">
 		<tr>
-			<th class="col-md-2">
+			<th width="20%"><!--20-->
 				@Html.DisplayNameFor(model => model.ItemBoloDoceBemCasado.Nome)
 			</th>
-			<th class="col-md-1">
+			<th width="5%"><!--25-->
 				@Html.DisplayNameFor(model => model.Quantidade)
 			</th>
-			<th class="col-md-2">
+			<th width="15%"><!--40-->
 				@Html.DisplayNameFor(model => model.ContatoFornecimento)
 			</th>
-			<th class="col-md-1">
+			<th width="10%"><!--50-->
 				@Html.DisplayNameFor(model => model.HorarioEntrega)
 			</th>
-			<th class="col-md-1">
+			<th width="2%"><!--52-->
 				@Html.DisplayNameFor(model => model.Definido)
 			</th>
-			<th class="col-md-1">
+			<th width="2%"><!--54-->
 				@Html.DisplayNameFor(model => model.FornecedorStartado)
 			</th>
-			<th class="col-md-1">
+			<th width="2%"><!--56-->
 				@Html.DisplayNameFor(model => model.Contratado)
 			</th>
-			<th class="col-md-2">
+			<th width="22%"><!--78-->
 				@Html.DisplayNameFor(model => model.Observacoes)
 			</th>
-			<th class="col-md-1"></th>
+			<th width="20%">Agrupar itens</th><!--98-->
+			<th width="2%"></th><!--100-->
 		</tr>
 		@foreach (var item in Model)
 		{
