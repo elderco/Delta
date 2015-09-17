@@ -17,24 +17,13 @@ namespace VillaBisutti.Delta.Automation.OSFinalizada
         public override void Run(object state)
         {
             TimerExecution.Change(Timeout.Infinite, Timeout.Infinite);
-            OSFinalizada();
+            bus.OSFinalizada.EnviaOSFinalizada();
             //Terminou de rodar, prepara a próxima execução
             ExtensionMethods.ModifyDate("DataFinalizacaoOS","FrequenciaOSFinalizada");
             Date = ExtensionMethods.GetDateXML("DataFinalizacaoOS");
             Time = ExtensionMethods.ReturnTimeToRun(Date);
             TimerExecution.Change(Time, Time);
         }
-		public void OSFinalizada()
-		{
-			List<model.Evento> eventos = Util.context.Evento
-			.Where(e => e.OSAprovada == true && e.OSFinalizada == false).ToList();
-			foreach (model.Evento item in eventos)
-			{
-				bus.OS os = new bus.OS(item.Id);
-				os.GerarOS();
-				os.SetOSFinalizada();
-				os.Kill();
-			}
-		}
+		
 	}
 }

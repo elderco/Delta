@@ -14,6 +14,8 @@ namespace VillaBisutti.Delta.Automation
 		public static void StartServicesRunner()
 		{
 			//Registrar todos os watchers
+			Watcher watcher = Watcher.Factory("WatcherBoasVindas");
+			watcher.Run(null);
 		}
 		/// <summary>
 		/// The main entry point for the application.

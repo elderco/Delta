@@ -1,9 +1,10 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using VillaBisutti.Delta.Automation.BoasVindas;
 using VillaBisutti.Delta.Automation.Helpers;
 
 namespace VillaBisutti.Delta.Automation
@@ -22,5 +23,10 @@ namespace VillaBisutti.Delta.Automation
             TimerExecution = new Timer(new TimerCallback(Run), null, time, time);
         }
         public abstract void Run(object state);
+
+		public static Watcher Factory(string qual)
+		{
+			return new WatcherBoasVindas();
+		}
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace VillaBisutti.Delta.Automation
+namespace VillaBisutti.Delta
 {
 	public static class Settings
 	{
