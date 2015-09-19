@@ -34,7 +34,7 @@ namespace VillaBisutti.Delta.Core.Data
 			return context.ContratoAditivo.ToList();
 		}
 
-		public System.Collections.IEnumerable GetContratosEvento(int id)
+		public IEnumerable<Model.ContratoAditivo> GetContratosEvento(int id)
 		{
 			return GetCollection(0).Where(c => c.EvtId == id);
 		}

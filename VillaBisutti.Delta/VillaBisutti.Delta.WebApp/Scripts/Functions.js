@@ -116,42 +116,36 @@ function HandleResponse(responseText, statusResponse, statusCode, statusText, co
 	}
 }
 function MostrarAlerta(text, title) {
-	if (!title) { title = "Atenção:"; }
-	var $background = $("<div/>")
-		.attr("id", "AlertBoxOverlay")
-		.css("padding", "50px")
-		.css("z-index", GetTopMostIndex())
-		.addClass("ui-widget-overlay")
-	var $container = $("<div/>")
-		.attr("id", "AlertBox")
-		.addClass("ui-state-highlight")
-		.addClass("ui-corner-all")
-		.css("width", "400px")
-		.css("padding", "5px")
-		.css("text-align", "center")
-		.css("z-index", GetTopMostIndex())
-		.append("<h3 class=\"ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix\" style=\"margin-top: 0px;\">" + title + "</h3>")
-		.append("<p>" + text + "</p>")
-		.draggable({ handle: "h3" })
-		.position({
-			of: $(window),
-			my: "center top",
-			at: "center top+50"
-		});
-	var $btn = $("<a/>")
-		.attr("href", "javascript:void(0)")
-		.append("Ok")
-		.button({
-			icons: {
-				primary: "ui-icon-check"
-			}
-		}).click(function () {
-			$("#AlertBox").remove();
-			$("#AlertBoxOverlay").remove();
-		});
-	$container.append($btn);
-	$("body").append($background);
-	$("body").append($container);
+	$("#PopUp").remove();
+	var zIndex = GetTopMostIndex();
+	var $popUpContainer = $("<div/>").attr("id", "PopUp").attr("tabindex", "-1").attr("role", "dialog").attr("aria-labelledby", "myModalLabel").addClass("modal fade").css("z-index", zIndex + 2);
+	var $popUpDialog = $("<div/>").attr("role", "document").addClass("modal-dialog");
+	var $popUpContent = $("<div/>").addClass("modal-content");
+	var $popUpHeader = $("<div/>").addClass("modal-header");
+	var $popUpCloseButton = $("<button/>").attr("type", "button").attr("data-dismiss", "modal").attr("aria-label", "Close").addClass("close white").html("<span aria-hidden=\"true\">&times;</span>");
+	var $popUpHeaderText = $("<h4/>").addClass("modal-title");
+	$popUpHeader.append($popUpCloseButton);
+	$popUpHeader.append($popUpHeaderText);
+	var $popUpBody = $("<div/>").attr("id", "PopUp_body").addClass("modal-body");
+	$popUpContent.append($popUpHeader);
+	$popUpContent.append($popUpBody);
+	$popUpDialog.append($popUpContent);
+	$popUpContainer.append($popUpDialog);
+	$("body").append($popUpContainer);
+
+	var $btn = $("<p id=\"OkBtn\" align=\"center\"/>")
+		.addClass("col-xs-12 center-block");
+
+	title = title ? title : 'Atenção';
+	$('.modal-title').text(title);
+	$('.modal-dialog').css('width', '550px');
+	$('.modal-body').css('height', '108px');
+
+	$('.modal-body').html(text + "<br />").append($btn);
+	$("#OkBtn").html("<a href=\"javascript:void(0);\" data-dismiss=\"modal\" aria-label=\"Close\" class=\"btn btn-xs btn-info\"><i class=\"fa fa-thumbs-up\"></i>OK</a>");
+	$("#PopUp").modal('show');
+	$('.modal-backdrop').css("z-index", zIndex);
+	$('.modal-dialog').css("z-index", zIndex + 3);
 }
 function GetTopMostIndex() {
 	return Math.max(0, Math.max.apply(null, $.map($.makeArray(document.getElementsByTagName("*")),
@@ -455,6 +449,13 @@ function InitializeLoading() {
 	$("body").append($background);
 	$("body").append($container);
 }
+function PreventDoubleClick() {
+	$("form").submit(function () {
+		$(this).submit(function (e) {
+			e.preventDefault();
+		});
+	});
+}
 function ShowLoading() {
 	$("#LoadingOverlay").show();
 	$("#LoadingImage").show();
@@ -476,6 +477,7 @@ $(document)
 		HandleCheckbox("main-container");
 		KeepAlive();
 		SetTooltip();
+		PreventDoubleClick();
 		$(window).resize(function () { window.location.reload(false) }); //Caso a browser seja redimensionado, a página será recarregada para que seus ítens sejam ajustados
 	})
 	.error(function () {

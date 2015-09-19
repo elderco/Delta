@@ -3,7 +3,14 @@
 @{
 	Layout = null;
 }
-
+@if (ViewBag.BloqueadoSemContrato == "SIM")
+{
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		MostrarAlerta("Nenhum contrato ou aditivo foi adicionado à este evento. <br />Para trabalhar com ele, é necessário incluir ao menos o contrato ou um aditivo", "Ops! que problema!!!");
+	});
+</script>
+}
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
 		$(".GeneralPopUpLinks").click(function (e) {

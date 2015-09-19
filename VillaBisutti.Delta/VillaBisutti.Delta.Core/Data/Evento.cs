@@ -44,6 +44,7 @@ namespace VillaBisutti.Delta.Core.Data
 					.Include(e => e.PosVendedora)
 					.Include(e => e.Produtora)
 					.Include(e => e.SomIluminacao)
+					.Include(e => e.Contratos)
 					.ToList();
 			
 		}

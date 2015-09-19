@@ -641,6 +641,7 @@
     <Content Include="Views\Home\KeepAlive.cshtml" />
     <Content Include="Views\Evento\Gerar.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoEvento\Listar.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoEvento\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

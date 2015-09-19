@@ -220,5 +220,10 @@ namespace VillaBisutti.Delta
 			unformattedList = unformattedList.Replace('/', ',');
 			return unformattedList;
 		}
+		public static bool CheckInUrl(string actionName)
+		{
+			string[] baseUrl = HttpContext.Current.Request.Url.AbsoluteUri.Split('/');
+			return baseUrl[baseUrl.Length - 2].ToLower().Trim() != actionName.ToLower().Trim();
+		}
 	}
 }

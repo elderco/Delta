@@ -49,6 +49,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			}
 			model.Evento evento = Util.context.Evento.FirstOrDefault(e => e.Id == id);
 			string PdfUrl = Util.GetPDFUrl(evento);
+			if (qual == "RD")
+				PdfUrl = PdfUrl.Replace(".pdf", "-degustacao.pdf");
 			ViewBag.GeneratedUrl = PdfUrl;
 			return View();
 		}
@@ -67,9 +69,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			ViewBag.Id = id;
 			model.Evento evento = new data.Evento().GetElement(id);
+			int quantos = new data.ContratoAditivo().GetContratosEvento(id).Count();
 			if (evento == null)
-			{
 				return HttpNotFound();
+			if (quantos == 0)
+			{
+				ViewBag.BloqueadoSemContrato = "SIM";
 			}
 			return View(evento);
 		}

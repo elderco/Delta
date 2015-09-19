@@ -3,10 +3,20 @@
 	Layout = null;
 }
 <script language="javascript" type="text/javascript">
+	function DefinirPadrao(id, qtd) {
+		var url = '@Url.Action("Edit", "ItemBoloDoceBemCasadoEvento", new { id = "PrImEiRo", quantidade = "QuAnTiDaDe" })';
+		url = url.replace("PrImEiRo", id);
+		url = url.replace("QuAnTiDaDe", qtd);
+		var divId = "AddingTarget_" + (Math.random() + "").replace(".", "");
+		var $targetDiv = $("<div />").attr("id", divId);
+		$("body").append($targetDiv);
+		LoadPage(url, divId);
+	}
 	$(document).ready(function () {
 		$(".AutoModify").change(function () {
 			var id = $(this).attr("name").split("_")[1];
-			alert(id);
+			var value = $(this).val();
+			DefinirPadrao(id, value);
 		});
 	});
 </script>
