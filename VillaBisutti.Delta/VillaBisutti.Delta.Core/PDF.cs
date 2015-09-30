@@ -13,11 +13,26 @@ namespace VillaBisutti.Delta.Core
 {
 	public class PDF
 	{
-		private const int headingSize = 18;
-		private const int leadSize = 14;
-		private const int normalSize = 12;
-		private const int smallSize = 9;
-
+		private int headingSize = 18;
+		private int leadSize = 14;
+		private int normalSize = 12;
+		private int smallSize = 9;
+		public void SetHeadingSize(int value)
+		{
+				headingSize = value;
+		}
+		public void SetLeadSize(int value)
+		{
+				leadSize = value;
+		}
+		public void SetNormalSize(int value)
+		{
+				normalSize = value;
+		}
+		public void SetSmallSize(int value)
+		{
+				smallSize = value;
+		}
 		string baseFont = "Verdana";
 		public string FileName { get; set; }
 		private FileStream _stream;

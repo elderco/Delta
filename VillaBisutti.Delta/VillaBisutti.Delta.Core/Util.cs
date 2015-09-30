@@ -53,14 +53,39 @@ namespace VillaBisutti.Delta
 			}
 			return value;
 		}
-		public static string GetPDFName(Core.Model.Evento evento)
+		public static string ToEscapedName(this string name)
 		{
-			string name = string.Format("{0}-{1}-{2}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.SiglaCasa, evento.Id);
-			return HttpContext.Current.Server.MapPath("~/OS/" + name);
+			name = name.ToLower();
+			name = name.Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u');
+			name = name.Replace('à', 'a').Replace('è', 'e').Replace('ì', 'i').Replace('ò', 'o').Replace('ù', 'u');
+			name = name.Replace('ä', 'a').Replace('ë', 'e').Replace('ï', 'i').Replace('ö', 'o').Replace('ü', 'u');
+			name = name.Replace('â', 'a').Replace('ê', 'e').Replace('î', 'i').Replace('ô', 'o').Replace('û', 'u');
+			name = name.Replace('ã', 'a').Replace('õ', 'o').Replace('ñ', 'n');
+			name = name.Replace('ç', 'c');
+			name = name.Replace('/', '-').Replace(' ', '-').Replace('\\', '-').Replace('|', '-');
+			name = name.Replace(";", string.Empty).Replace(".", string.Empty).Replace(":", string.Empty).Replace("<", string.Empty).Replace(">", string.Empty);
+			name = name.Replace("{", string.Empty).Replace("}", string.Empty).Replace("[", string.Empty).Replace("]", string.Empty).Replace("!", string.Empty);
+			name = name.Replace("@", string.Empty).Replace("#", string.Empty).Replace("$", string.Empty).Replace("%", string.Empty).Replace("&", string.Empty);
+			name = name.Replace("(", string.Empty).Replace(")", string.Empty).Replace("+", string.Empty).Replace("*", string.Empty).Replace("'", string.Empty);
+			name = name.Replace("\"", string.Empty);
+			return name;
 		}
-		public static string GetPDFUrl(Core.Model.Evento evento)
+		public static string GetOSFileName(Core.Model.Evento evento, string tipo)
 		{
-			string name = string.Format("{0}-{1}-{2}.pdf", evento.Data.ToString("dd-MM-yyyy"), evento.Local.SiglaCasa, evento.Id);
+			return HttpContext.Current.Server.MapPath(GetOSFileUrl(evento, tipo));
+		}
+		public static string GetOSFileUrl(Core.Model.Evento evento, string tipo)
+		{
+			string name = string.Format("{0}/{1}/{2}/{0}-{3}-{4}-{5}-{6}.pdf", 
+				tipo, evento.Data.Year, evento.Data.Month, evento.Data.ToString("dd-MM-yyyy"),
+				evento.Local.SiglaCasa, evento.NomeHomenageados.ToEscapedName(),
+				evento.TipoEvento);
+			if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS/" + tipo)))
+				System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS/" + tipo));
+			if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS/" + tipo + "/" + evento.Data.Year)))
+				System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS/" + tipo + "/" + evento.Data.Year));
+			if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS/" + tipo + "/" + evento.Data.Year + "/" + evento.Data.Month)))
+				System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS/" + tipo + "/" + evento.Data.Year + "/" + evento.Data.Month));
 			return "~/OS/" + name;
 		}
 		public static string GetImageName(string fileName)
@@ -225,5 +250,9 @@ namespace VillaBisutti.Delta
 			string[] baseUrl = HttpContext.Current.Request.Url.AbsoluteUri.Split('/');
 			return baseUrl[baseUrl.Length - 2].ToLower().Trim() != actionName.ToLower().Trim();
 		}
+
+		public static string TipoDocumentoOS { get { return "OS"; } }
+		public static string TipoDocumentoDegustacao { get { return "Degustacao"; } }
+		public static string TipoDocumentoCapa { get { return "Capa"; } }
 	}
 }

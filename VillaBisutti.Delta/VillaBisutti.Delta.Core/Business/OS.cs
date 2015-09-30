@@ -6,60 +6,37 @@ using System.Threading.Tasks;
 using System.Data.Entity.Validation;
 using System.Data.Entity;
 using System.Web;
+using System.Globalization;
 
 namespace VillaBisutti.Delta.Core.Business
 {
-	public class OS
+	public class OS : IDisposable
 	{
+		private int EventoId;
 		public OS(int eventoId)
 		{
-			Initialize(eventoId, false);
-		}
-		public OS(int eventoId, bool IsDegustacao)
-		{
-			Initialize(eventoId, IsDegustacao);
-		}
-		private void Initialize(int eventoId, bool IsDegustacao)
-		{
-			if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS")))
-				System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS"));
-			Evento = Util.context.Evento
-				.Include(e => e.Roteiro)
-				.Include(e => e.Cerimonial)
-				.Include(e => e.Local)
-				.Include(e => e.Produtora)
-				.Include(e => e.PosVendedora)
-				.Include(e => e.Cardapio)
-				.Include(e => e.TipoServico)
-				.FirstOrDefault(e => e.Id == eventoId);
-			PopularItensBebida();
-			PopularItensBolo();
-			PopularItensDecoracao();
-			PopularItensDecoracaoCerimonial();
-			PopularItensFotoVideo();
-			PopularItensMontagem();
-			PopularItensOutrosItens();
-			PopularItensSomIluminacao();
-			FileName = Util.GetPDFName(Evento);
-			if (IsDegustacao)
-				FileName = FileName.Replace(".pdf", "-degustacao.pdf");
+			EventoId = eventoId;
 		}
 		public string FileName { get; set; }
+		#region [ PDF Writer ]
 		private PDF _pdf;
 		private PDF pdf
 		{
 			get
 			{
-				if (_pdf == null)
-					_pdf = new PDF(FileName);
 				if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~/OS")))
 					System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~/OS"));
+				if (_pdf == null)
+					_pdf = new PDF(FileName);
 				return _pdf;
 			}
 		}
 		private void InicializePDF()
 		{
 			pdf.PrepareForWriting();
+		}
+		private void SetPDFHeader()
+		{
 			pdf.SetHeader(Evento.Data, Evento.Local.NomeCasa, Evento.TipoEvento.GetDescription(), Evento.NomeHomenageados, Evento.Pax,
 				string.Format("Das {0} às {1}", Evento.Inicio.ToString(), Evento.Termino.ToString()), Evento.LocalCerimonia.GetDescription(),
 				Evento.Produtora == null ? "Produtora indefinida" : Evento.Produtora.Nome,
@@ -67,8 +44,9 @@ namespace VillaBisutti.Delta.Core.Business
 				Evento.PossuiAssessoria ? "Sim" : "Não", Evento.ContatoAssessoria,
 				Evento.NomeResponsavel, Evento.TelefoneContato, Evento.PerfilFesta);
 		}
+		#endregion
 		private Model.Evento Evento;
-
+		#region [ Collections ]
 		private List<DTO.ItemEvento> itensGastronomia;
 		private List<DTO.ItemEvento> ItensGastronomia
 		{
@@ -158,10 +136,50 @@ namespace VillaBisutti.Delta.Core.Business
 		private List<DTO.SubItemEvento> CopiaSomIluminacaoBisutti = new List<DTO.SubItemEvento>();
 		private List<DTO.SubItemEvento> CopiaSomIluminacaoTerceiro = new List<DTO.SubItemEvento>();
 		private List<DTO.SubItemEvento> CopiaSomIluminacaoContratante = new List<DTO.SubItemEvento>();
+		private List<DTO.ItemRoteiroEvento> itensRoteiro;
+		private List<DTO.ItemRoteiroEvento> ItensRoteiro
+		{
+			get
+			{
+				if (itensRoteiro == null)
+				{
+					itensRoteiro = new List<DTO.ItemRoteiroEvento>();
+					foreach (Model.ItemRoteiro item in Util.context.ItemRoteiro.Where(ir => ir.EventoId == Evento.Id).OrderBy(ir => ir.HorarioInicio))
+						itensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = item.Inicio, Importante = item.Importante, Observacoes = item.Observacao });
+				}
+				return itensRoteiro;
+			}
+		}
+		private List<DTO.ItemRoteiroEvento> itensRoteiroCerimonial;
+		private List<DTO.ItemRoteiroEvento> ItensRoteiroCerimonial
+		{
+			get
+			{
+				if (itensRoteiroCerimonial == null)
+				{
+					itensRoteiroCerimonial = new List<DTO.ItemRoteiroEvento>();
+					foreach (Model.ItemCerimonial item in Util.context.ItemCerimonial.Where(ir => ir.EventoId == Evento.Id).OrderBy(ir => ir.HorarioInicio))
+						itensRoteiroCerimonial.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = item.Inicio, Importante = item.Importante, Observacoes = item.Observacao });
+				}
+				return itensRoteiroCerimonial;
+			}
+		}
+		private List<Model.Foto> fotos;
+		private List<Model.Foto> Fotos
+		{
+			get
+			{
+				if (fotos == null)
+					fotos = Util.context.Foto.Where(f => f.EventoId == Evento.Id).ToList();
+				return fotos;
+			}
+		}
+		#endregion
 
 		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Montagem de \"{0} - \"", item.ItemDecoracao.TipoItemDecoracao.Nome, item.ItemDecoracao.Nome), Importante = false, Observacoes = item.Observacoes });
 		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, item.ItemBoloDoceBemCasado.Nome), Importante = false, Observacoes = item.Observacoes });
 		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBebida.TipoItemBebida.Nome, item.ItemBebida.Nome), Importante = false, Observacoes = item.Observacoes });
+		#region [ Populate itens ]
 		private void PopularItensBebida()
 		{
 			IEnumerable<Model.ItemBebidaSelecionado> itens = Util.context.ItemBebidaSelecionado
@@ -975,45 +993,8 @@ namespace VillaBisutti.Delta.Core.Business
 					CopiaBebidaContratante.Add(subitem.Copiar(item.ItemSomIluminacao.TipoItemSomIluminacao.Nome));
 			}
 		}
+		#endregion
 
-		private List<DTO.ItemRoteiroEvento> itensRoteiro;
-		private List<DTO.ItemRoteiroEvento> ItensRoteiro
-		{
-			get
-			{
-				if (itensRoteiro == null)
-				{
-					itensRoteiro = new List<DTO.ItemRoteiroEvento>();
-					foreach (Model.ItemRoteiro item in Util.context.ItemRoteiro.Where(ir => ir.EventoId == Evento.Id).OrderBy(ir => ir.HorarioInicio))
-						itensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = item.Inicio, Importante = item.Importante, Observacoes = item.Observacao });
-				}
-				return itensRoteiro;
-			}
-		}
-		private List<DTO.ItemRoteiroEvento> itensRoteiroCerimonial;
-		private List<DTO.ItemRoteiroEvento> ItensRoteiroCerimonial
-		{
-			get
-			{
-				if (itensRoteiroCerimonial == null)
-				{
-					itensRoteiroCerimonial = new List<DTO.ItemRoteiroEvento>();
-					foreach (Model.ItemCerimonial item in Util.context.ItemCerimonial.Where(ir => ir.EventoId == Evento.Id).OrderBy(ir => ir.HorarioInicio))
-						itensRoteiroCerimonial.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = item.Inicio, Importante = item.Importante, Observacoes = item.Observacao });
-				}
-				return itensRoteiroCerimonial;
-			}
-		}
-		private List<Model.Foto> fotos;
-		private List<Model.Foto> Fotos
-		{
-			get
-			{
-				if (fotos == null)
-					fotos = Util.context.Foto.Where(f => f.EventoId == Evento.Id).ToList();
-				return fotos;
-			}
-		}
 		private void AdicionarPaginaPrincipal()
 		{
 			pdf.AddHeader();
@@ -1507,8 +1488,26 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void GerarOS()
 		{
+			Evento = Util.context.Evento
+				.Include(e => e.Roteiro)
+				.Include(e => e.Cerimonial)
+				.Include(e => e.Local)
+				.Include(e => e.Produtora)
+				.Include(e => e.PosVendedora)
+				.Include(e => e.Cardapio)
+				.Include(e => e.TipoServico)
+				.FirstOrDefault(e => e.Id == EventoId);
+			PopularItensBebida();
+			PopularItensBolo();
+			PopularItensDecoracao();
+			PopularItensDecoracaoCerimonial();
+			PopularItensFotoVideo();
+			PopularItensMontagem();
+			PopularItensOutrosItens();
+			PopularItensSomIluminacao();
+			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoOS);
 			InicializePDF();
-
+			SetPDFHeader();
 			AdicionarPaginaPrincipal();
 			AdicionarPaginaBebidas();
 			AdicionarPaginaDecoracao();
@@ -1521,12 +1520,59 @@ namespace VillaBisutti.Delta.Core.Business
 			AdicionarPaginaLayout();
 			AdicionarPaginaRoteiro();
 			AdicionarPaginaRoteiroCerimonial();
+			Kill();
 		}
 		public void GerarDegustacao()
 		{
+			Evento = Util.context.Evento
+				.Include(e => e.Local)
+				.Include(e => e.Produtora)
+				.Include(e => e.PosVendedora)
+				.Include(e => e.Cardapio)
+				.Include(e => e.TipoServico)
+				.FirstOrDefault(e => e.Id == EventoId);
+			PopularItensBebida();
+			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoDegustacao);
 			InicializePDF();
+			SetPDFHeader();
 			AdicionarPaginaGastronomia(true);
 			AdicionarPaginaBebidas();
+			Kill();
+		}
+		public void GerarCapa()
+		{
+			Evento = Util.context.Evento
+				.Include(e => e.Local)
+				.Include(e => e.Cardapio)
+				.Include(e => e.TipoServico)
+				.FirstOrDefault(e => e.Id == EventoId);
+			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoCapa);
+			InicializePDF();
+			pdf.SetHeadingSize(25);
+			pdf.SetLeadSize(18);
+			pdf.AddHeaderText("Local: " + Evento.Local.NomeCasa);
+			pdf.AddHeaderText(string.Format("Data: {0} ({1})", Evento.Data.ToString("dd/MM/yyyy"), Evento.Data.ToString("dddd", new CultureInfo("pt-br"))));
+			pdf.AddHeaderText("Nome: " + Evento.NomeHomenageados);
+			pdf.AddLeadText("Contratante: " + Evento.NomeResponsavel);
+			pdf.AddLeadText("Telefone: " + Evento.TelefoneContato);
+			pdf.AddLeadText("E-mail: " + Evento.EmailContato);
+			pdf.AddLeadText("Tipo de evento:" + Evento.TipoEvento.GetDescription());
+			if(Evento.TipoEvento == Model.TipoEvento.Casamento)
+				pdf.AddLeadText("Cerimônia:" + Evento.LocalCerimonia.GetDescription());
+			pdf.AddLeadText(string.Format("Pax: {0} (+10%: {1})", Evento.Pax, Evento.PaxAproximado));
+			pdf.AddLeadText(string.Format("Horário do evento: {0} às {1}", Evento.Inicio.ToString(), Evento.Termino.ToString()));
+			pdf.AddLeadText("Observações: ");
+			pdf.AddLine(" ");
+			pdf.AddLine(" ");
+			pdf.AddLine(" ");
+			pdf.AddLeadText(string.Format("Cardápio / Serviço: {0} - {1}", Evento.Cardapio.Nome, Evento.TipoServico.Nome));
+			pdf.AddLine(" ");
+			for (int i = 0; i < 30; i++ )
+			{
+				pdf.AddLine(" ");
+				pdf.AddBreakRule();
+			}
+			Kill();
 		}
 		public void SetOSFinalizada()
 		{
@@ -1566,6 +1612,11 @@ namespace VillaBisutti.Delta.Core.Business
 			ItensSomIluminacaoContratante = null;
 			fotos = null;
 			itensGastronomia = null;
+		}
+
+		public void Dispose()
+		{
+			Kill();
 		}
 	}
 }

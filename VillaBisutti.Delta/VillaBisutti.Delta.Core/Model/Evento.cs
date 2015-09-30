@@ -159,11 +159,6 @@ namespace VillaBisutti.Delta.Core.Model
 
 		#endregion
 
-		#region [ OS ]
 
-		public string OS { get; set; }
-		public string OSDegustacao { get; set; }
-
-		#endregion
 	}
 }

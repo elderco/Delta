@@ -35,22 +35,28 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Gerar(int id, string qual = "EV", bool generate = false)
 		{
 			biz.OS os;
+			string tipo = string.Empty;
 			if (qual == "EV")
 			{
+				tipo = Util.TipoDocumentoOS;
 				os = new bus.OS(id);
 				os.GerarOS();
-				os.Kill();
+			}
+			else if (qual == "CP")
+			{
+				tipo = Util.TipoDocumentoCapa;
+				os = new bus.OS(id);
+				os.GerarCapa();
+				ViewBag.OutputFile = Server.MapPath("~/OS/Capa");
 			}
 			else if (qual == "RD")
 			{
-				os = new bus.OS(id, true);
+				tipo = Util.TipoDocumentoDegustacao;
+				os = new bus.OS(id);
 				os.GerarDegustacao();
-				os.Kill();
 			}
 			model.Evento evento = Util.context.Evento.FirstOrDefault(e => e.Id == id);
-			string PdfUrl = Util.GetPDFUrl(evento);
-			if (qual == "RD")
-				PdfUrl = PdfUrl.Replace(".pdf", "-degustacao.pdf");
+			string PdfUrl = Util.GetOSFileUrl(evento, tipo);
 			ViewBag.GeneratedUrl = PdfUrl;
 			return View();
 		}
