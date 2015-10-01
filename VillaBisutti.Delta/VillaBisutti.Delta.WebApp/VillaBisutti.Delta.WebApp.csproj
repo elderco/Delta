@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -195,6 +198,7 @@
     <Compile Include="Controllers\Modulo.cs" />
     <Compile Include="Controllers\MontagemController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OSController.cs" />
     <Compile Include="Controllers\OutrosItensController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
@@ -643,6 +647,8 @@
     <Content Include="Views\Evento\Gerar.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoEvento\Listar.cshtml" />
     <Content Include="Views\ItemBoloDoceBemCasadoEvento\Edit.cshtml" />
+    <Content Include="Views\OS\Download.cshtml" />
+    <Content Include="Views\OS\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

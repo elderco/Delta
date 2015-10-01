@@ -52,6 +52,14 @@ namespace VillaBisutti.Delta
 		//		HttpContext.Current.Session["FotoEmMemoria"] = value;
 		//	}
 		//}
-
+		public static List<string> FilesToDownload
+		{
+			get
+			{
+				if (HttpContext.Current.Session["FilesToDownload"] == null)
+					HttpContext.Current.Session["FilesToDownload"] = new List<string>();
+				return (List<string>)HttpContext.Current.Session["FilesToDownload"];
+			}
+		}
 	}
 }

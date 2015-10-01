@@ -5,11 +5,11 @@
 }
 @if (ViewBag.BloqueadoSemContrato == "SIM")
 {
-<script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		MostrarAlerta("Nenhum contrato ou aditivo foi adicionado à este evento. <br />Para trabalhar com ele, é necessário incluir ao menos o contrato ou um aditivo", "Ops! que problema!!!");
-	});
-</script>
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			MostrarAlerta("Nenhum contrato ou aditivo foi adicionado à este evento. <br />Para trabalhar com ele, é necessário incluir ao menos o contrato ou um aditivo", "Ops! que problema!!!");
+		});
+	</script>
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
@@ -29,7 +29,7 @@
 	<div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
 		<div class="widget-header widget-header-large">
 			<h4 class="widget-title" data-toggle="collapse" data-target="#CabecalhoEvento">
-				@(Model.Data.ToString("dd/MM/yyyy"))
+				@(Model.Data.ToString("dddd", new System.Globalization.CultureInfo("pt-BR"))),  @(Model.Data.ToString("dd/MM/yyyy"))
 				<i class="ace-icon fa fa-angle-right"> </i>
 				@(Model.Local.NomeCasa)
 				<i class="ace-icon fa fa-angle-right"> </i>
@@ -73,6 +73,15 @@
 					<font class="sr-only" color="White">Gerar dossiê de Degustação</font>
 				</a>
 			</div>
+			@if (Model.Cardapio != null && Model.TipoServico != null)
+			{
+				<div class="widget-toolbar">
+					<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "CP" })" class="GeneralPopUpLinks" title="Gerar capa" aria-set-w="350" aria-set-h="250">
+						<i class="ace-icon fa fa-newspaper-o red"></i>
+						<font class="sr-only" color="White">Gerar capa</font>
+					</a>
+				</div>
+			}
 
 		</div>
 		<div class="widget-body in" id="CabecalhoEvento">

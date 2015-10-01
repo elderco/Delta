@@ -1551,7 +1551,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.SetHeadingSize(25);
 			pdf.SetLeadSize(18);
 			pdf.AddHeaderText("Local: " + Evento.Local.NomeCasa);
-			pdf.AddHeaderText(string.Format("Data: {0} ({1})", Evento.Data.ToString("dd/MM/yyyy"), Evento.Data.ToString("dddd", new CultureInfo("pt-br"))));
+			pdf.AddHeaderText(string.Format("Data: {0} ({1})", Evento.Data.ToString("dd/MM/yyyy"), Evento.Data.ToString("dddd", new CultureInfo("pt-BR"))));
 			pdf.AddHeaderText("Nome: " + Evento.NomeHomenageados);
 			pdf.AddLeadText("Contratante: " + Evento.NomeResponsavel);
 			pdf.AddLeadText("Telefone: " + Evento.TelefoneContato);
