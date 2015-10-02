@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ICSharpCode.SharpZipLib.Core;
+using dto = VillaBisutti.Delta.Core.DTO;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
@@ -16,19 +17,43 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// GET: /OS/
 		public ActionResult Index()
 		{
-			SessionFacade.FilesToDownload.Add(@"OS\Capa\2015\11\Capa-15-11-2015-CM-priscila-e-rafael-Casamento.pdf");
-			SessionFacade.FilesToDownload.Add(@"OS\Capa\2015\5\Capa-07-05-2015-TE-lide-futuro-Corporativo.pdf");
-			SessionFacade.FilesToDownload.Add(@"OS\Capa\2015\9\Capa-05-09-2015-TE-camila-e-guilherme-Casamento.pdf");
-			SessionFacade.FilesToDownload.Add(@"OS\OS\2015\9\OS-05-09-2015-TE-camila-e-guilherme-Casamento.pdf");
 			return View();
 		}
-		public ActionResult AddToDownload(string file)
+		public ActionResult Filtered(int y = 0, int m = 0)
+		{
+			dto.FileSys files = new dto.FileSys();
+			if (y == 0)
+				y = DateTime.Now.Year;
+			if (m == 0)
+				m = DateTime.Now.Month;
+			if (Directory.Exists(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoOS, y, m))))
+				foreach (string file in Directory.GetFiles(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoOS, y, m))))
+					files.OSs.Add(file.Substring(file.LastIndexOf("\\") + 1));
+			if (Directory.Exists(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoDegustacao, y, m))))
+				foreach (string file in Directory.GetFiles(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoDegustacao, y, m))))
+					files.Degustacoes.Add(file.Substring(file.LastIndexOf("\\") + 1));
+			if (Directory.Exists(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoCapa, y, m))))
+				foreach (string file in Directory.GetFiles(Server.MapPath(string.Format("~/OS/{0}/{1}/{2}/", Util.TipoDocumentoCapa, y, m))))
+					files.Capas.Add(file.Substring(file.LastIndexOf("\\") + 1));
+			return View(files);
+		}
+		public ActionResult ListDownloads()
 		{
 			return View();
 		}
-		public ActionResult RemoveFromDownload(string file)
+		public ActionResult AddDownload(string file)
 		{
-			return View();
+			string fileName = HandleFileName(file);
+			if (!SessionFacade.FilesToDownload.Exists(f => f == fileName))
+				SessionFacade.FilesToDownload.Add(fileName);
+			return RedirectToAction("ListDownloads");
+		}
+		public ActionResult RemoveDownload(string file)
+		{
+			string fileName = HandleFileName(file);
+			if (SessionFacade.FilesToDownload.Exists(f => f == file))
+				SessionFacade.FilesToDownload.Remove(file);
+			return RedirectToAction("ListDownloads");
 		}
 		public ActionResult Download()
 		{
@@ -42,9 +67,9 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				// Loop through the dataset to fill the zip file
 				foreach (string fileName in SessionFacade.FilesToDownload)
 				{
-					FileInfo fi = new FileInfo(Server.MapPath("~/" + fileName));
+					FileInfo fi = new FileInfo(Server.MapPath("~/OS/" + fileName));
 
-					string entryName = fileName.Substring(fileName.LastIndexOf("\\") + 1);
+					string entryName = fileName.Substring(fileName.LastIndexOf("/") + 1);
 					ZipEntry newEntry = new ZipEntry(entryName);
 					newEntry.DateTime = fi.LastWriteTime;
 					zipOS.UseZip64 = UseZip64.Off;
@@ -55,7 +80,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 					// Zip the file in buffered chunks
 					// the "using" will close the stream even if an exception occurs
 					byte[] buffer = new byte[4096];
-					using (FileStream streamReader = io.File.OpenRead(Server.MapPath("~/" + fileName)))
+					using (FileStream streamReader = io.File.OpenRead(Server.MapPath("~/OS/" + fileName)))
 					{
 						StreamUtils.Copy(streamReader, zipOS, buffer);
 					}
@@ -75,6 +100,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 					file.Delete();
 					Response.End();
 				}
+				SessionFacade.FilesToDownload.Clear();
 				return new EmptyResult();
 			}
 			else
@@ -83,6 +109,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				Response.End();
 				return new EmptyResult();
 			}
+		}
+		private string HandleFileName(string file)
+		{
+			string[] splited = file.Split('-');
+			return splited[0] + "/" + splited[3] + "/" + splited[2] + "/" + file;
 		}
 	}
 }

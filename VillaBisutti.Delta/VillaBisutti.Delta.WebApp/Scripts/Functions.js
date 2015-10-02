@@ -39,8 +39,8 @@ function ShowPopUp(url, title, w, h) {
 	$("body").append($popUpContainer);
 
 	title = title ? title : 'Atenção';
-	var pw = !w || isNaN(w) ? $(window).width() - 100 : w;
-	var ph = !h || isNaN(h) ? $(window).height() - 100 : h;
+	var pw = !w || isNaN(w) ? $(window).width() - 250 : w;
+	var ph = !h || isNaN(h) ? $(window).height() - 250 : h;
 	var URL = url.indexOf("?") >= 0 ? "&" : "?";
 	URL = url + URL + "sid=" + Math.random();
 

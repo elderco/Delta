@@ -44,6 +44,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -123,6 +124,7 @@
     <Compile Include="Data\TipoServico.cs" />
     <Compile Include="DTO\Evento.cs" />
     <Compile Include="Business\ItemEvento.cs" />
+    <Compile Include="DTO\FileSys.cs" />
     <Compile Include="DTO\Gastronomia.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />

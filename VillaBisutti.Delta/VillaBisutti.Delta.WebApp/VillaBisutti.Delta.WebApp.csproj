@@ -649,6 +649,8 @@
     <Content Include="Views\ItemBoloDoceBemCasadoEvento\Edit.cshtml" />
     <Content Include="Views\OS\Download.cshtml" />
     <Content Include="Views\OS\Index.cshtml" />
+    <Content Include="Views\OS\Filtered.cshtml" />
+    <Content Include="Views\OS\ListDownloads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -179,7 +179,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult DeleteConfirmed(int id)
 		{
 			new data.Evento().Delete(id);
-			return RedirectToAction("Index");
+			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 
 		protected override void Dispose(bool disposing)

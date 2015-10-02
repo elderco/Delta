@@ -11,8 +11,14 @@
 	@Scripts.Render("~/bundles/own")
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
-	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-	<script>//</script>
+	<script>
+		$(document).ready(function () {
+			$("#DownloadOSPopUp").click(function (e) {
+				e.preventDefault();
+				ShowPopUp($(this).attr("href"), $(this).attr("title"));
+			});
+		});
+	</script>
 	@if (ViewBag.IsBlocked == "TRUE")
 	{
 		<script language="javascript" type="text/javascript">
@@ -39,7 +45,6 @@
 			<div class="navbar-header pull-left">
 				<a href="@Url.Action("Filtrar","Evento")" class="navbar-brand">
 					<small>
-						<!-- style="font-family: 'Satisfy', cursive;" style="vertical-align: middle; width: 30px" -->
 						<img src="~/Content/Images/delta.png" /> Delta - Villa Bisutti
 					</small>
 				</a>
@@ -51,6 +56,9 @@
 			@{VillaBisutti.Delta.Core.Model.Usuario usuario = VillaBisutti.Delta.SessionFacade.UsuarioLogado;}
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
+					<li class="transparent">
+						<a id="DownloadOSPopUp" href="@Url.Action("Index", "OS")" data-rel="tooltip" data-placement="bottom" data-original-title="Baixar OSs"><i class="menu-icon fa fa-download"></i></a>
+					</li>
 					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Cerimonial")))
 					{
 						<li class="transparent">

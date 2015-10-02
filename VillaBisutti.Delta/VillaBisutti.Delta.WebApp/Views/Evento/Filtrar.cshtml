@@ -15,6 +15,10 @@
 		$("#FiltroEventos input, #FiltroEventos select").change(function () {
 			this.form.submit();
 		});
+		$(".delete-evento").click(function (e) {
+			e.preventDefault();
+			ShowPopUp($(this).attr("href"), "Excluir Evento");
+		});
 	});
 </script>
 <div class="col-xl-12 widget-container-col row">
@@ -75,14 +79,14 @@
 			</h4>
 			<div class="widget-toolbar hidden">
 				<a href="#" class="btn btn-xs btn-info button-padding">
-					Gerar degustação				   
-				</a>								   
+					Gerar degustação
+				</a>
 				<a href="#" class="btn btn-xs btn-info button-padding">
 					Gerar OS
-				</a>								   
+				</a>
 				<a href="#" class="btn btn-xs btn-info button-padding">
 					Enviar boas vindas
-				</a>								   
+				</a>
 				<a href="#" class="btn btn-xs btn-info button-padding">
 					Enviar agenda semanal
 				</a>
@@ -90,8 +94,6 @@
 		</div>
 		<div class="widget-body" id="Acoes">
 			<div class="widget-main padding-0">
-
-
 				@if (Model.Count() > 0)
 				{
 					<table class="table table-striped">
@@ -164,7 +166,11 @@
 								<td>
 									@Html.DisplayFor(modelItem => item.OSFinalizada)
 								</td>
-								<td><a class="btn btn-xs "></a></td>
+								<td>
+									<a href="@Url.Action("Delete", "Evento", new{ id = item.Id})" class="btn btn-xs btn-danger delete-evento">
+										<i class="fa fa-trash-o"></i>
+									</a>
+								</td>
 							</tr>
 						}
 

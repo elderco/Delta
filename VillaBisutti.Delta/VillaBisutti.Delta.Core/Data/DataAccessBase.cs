@@ -30,7 +30,7 @@ namespace VillaBisutti.Delta.Core.Data
 		{
 			return id != 0 ? GetCollection().Where(x => x.Id == id).ToList() : GetCollection().ToList();
 		}
-		public void Delete(int id)
+		public virtual void Delete(int id)
 		{
 			T entity = GetElement(id);
 			GetCurrent(entity).State = System.Data.Entity.EntityState.Deleted;
