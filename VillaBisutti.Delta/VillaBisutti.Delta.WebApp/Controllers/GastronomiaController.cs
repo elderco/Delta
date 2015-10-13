@@ -57,6 +57,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult Edited([Bind(Include="EventoId,Id,Observacoes,Evento")] model.Gastronomia gastronomia)
         {
 			new biz.Gastronomia().Save(gastronomia);
+			if (gastronomia.Evento.CardapioId != 0)
+			{
+				biz.OS os = new biz.OS(gastronomia.EventoId);
+				os.GerarCapa();
+			}
 			return Redirect(Request.UrlReferrer.AbsolutePath);
         }
 

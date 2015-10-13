@@ -1,0 +1,21 @@
+﻿@using VillaBisutti.Delta;
+@model IEnumerable<VillaBisutti.Delta.Core.Model.Evento>
+@{
+    Layout = null;
+}
+<style type="text/css" media="screen">
+	.existing-items-container { padding: 3px; }
+	.existing-items { border: 1px solid #666666; }
+</style>
+@foreach (var item in Model)
+{
+	<div class="col-md-4 existing-items-container">
+		<div class="bg-info existing-items">
+			@(item.Data.ToString("dddd", new System.Globalization.CultureInfo("pt-BR"))),  @(item.Data.ToString("dd/MM/yyyy"))
+			<i class="ace-icon fa fa-angle-right"> </i>
+			@(item.Local.NomeCasa)
+			<i class="ace-icon fa fa-angle-right"> </i>
+			@(item.NomeHomenageados)
+		</div>
+	</div>
+}

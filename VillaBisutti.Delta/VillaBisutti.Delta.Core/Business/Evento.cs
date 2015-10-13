@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity.Validation;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.IO;
+using System.Web;
 
 namespace VillaBisutti.Delta.Core.Business
 {
@@ -121,6 +124,31 @@ namespace VillaBisutti.Delta.Core.Business
 		public void AcionarEventosTerceiros()
 		{
 			List<Model.Evento> eventos = new Data.Evento().GetEventosServicoTerceiro();
+		}
+		public void Delete(int id)
+		{
+			Model.Evento evento = context.Evento.Include(e => e.Local).FirstOrDefault(e => e.Id == id);
+			foreach (Model.Foto foto in context.Foto.Where(f => f.EventoId == id))
+				if (File.Exists(Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), foto.URL)))
+					File.Delete(Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), foto.URL));
+			if (File.Exists(Util.GetOSFileName(evento, Util.TipoDocumentoOS)))
+				File.Delete(Util.GetOSFileName(evento, Util.TipoDocumentoOS));
+			if (File.Exists(Util.GetOSFileName(evento, Util.TipoDocumentoCapa)))
+				File.Delete(Util.GetOSFileName(evento, Util.TipoDocumentoCapa));
+			if (File.Exists(Util.GetOSFileName(evento, Util.TipoDocumentoDegustacao)))
+				File.Delete(Util.GetOSFileName(evento, Util.TipoDocumentoDegustacao));
+			using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["VillaBisuttiDelta"].ConnectionString))
+			{
+				SqlCommand cmd = new SqlCommand();
+				cmd.Connection = connection;
+				cmd.CommandType = System.Data.CommandType.StoredProcedure;
+				cmd.CommandText = "SP_DELETE_EVENTO";
+				cmd.Parameters.AddWithValue("@EventoId", id);
+				cmd.Connection.Open();
+				cmd.ExecuteNonQuery();
+				cmd.Dispose();
+				connection.Close();
+			}
 		}
 	}
 }

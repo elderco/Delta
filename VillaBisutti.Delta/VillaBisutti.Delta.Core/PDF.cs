@@ -11,7 +11,7 @@ using System.Web;
 
 namespace VillaBisutti.Delta.Core
 {
-	public class PDF
+	public class PDF : IDisposable
 	{
 		private int headingSize = 18;
 		private int leadSize = 14;
@@ -83,6 +83,8 @@ namespace VillaBisutti.Delta.Core
 			document.Dispose();
 			writer.Close();
 			writer.Dispose();
+			_document = null;
+			_writer = null;
 		}
 		private iPdf.PdfPTable header;
 		private iPdf.PdfPTable Header
@@ -214,6 +216,11 @@ namespace VillaBisutti.Delta.Core
 		public void BreakPage()
 		{
 			document.NewPage();
+		}
+
+		public void Dispose()
+		{
+			FinishWriting();
 		}
 	}
 	internal class PDFWriterEvents : iPdf.IPdfPageEvent

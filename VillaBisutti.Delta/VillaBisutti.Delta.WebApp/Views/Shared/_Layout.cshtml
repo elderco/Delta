@@ -13,7 +13,7 @@
 	@RenderSection("scripts", required: false)
 	<script>
 		$(document).ready(function () {
-			$("#DownloadOSPopUp").click(function (e) {
+			$(".download-link").click(function (e) {
 				e.preventDefault();
 				ShowPopUp($(this).attr("href"), $(this).attr("title"));
 			});
@@ -57,8 +57,12 @@
 			<div class="navbar-buttons navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
 					<li class="transparent">
-						<a id="DownloadOSPopUp" href="@Url.Action("Index", "OS")" data-rel="tooltip" data-placement="bottom" data-original-title="Baixar OSs"><i class="menu-icon fa fa-download"></i></a>
+						<a class="download-link" href="@Url.Action("Degustacoes", "OS")" data-rel="tooltip" data-placement="bottom" data-original-title="Baixar Dossiês de degustação"><i class="menu-icon fa fa-cloud-download"></i></a>
 					</li>
+					<li class="transparent">
+						<a class="download-link" href="@Url.Action("Index", "OS")" data-rel="tooltip" data-placement="bottom" data-original-title="Baixar OSs"><i class="menu-icon fa fa-download"></i></a>
+					</li>
+
 					@if (VillaBisutti.Delta.Core.Business.Usuario.UsuarioPodeLer(usuario, Url.Action("Index", "Cerimonial")))
 					{
 						<li class="transparent">

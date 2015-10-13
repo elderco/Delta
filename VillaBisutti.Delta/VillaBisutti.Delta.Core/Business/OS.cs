@@ -63,7 +63,7 @@ namespace VillaBisutti.Delta.Core.Business
 					itens = itens
 						.OrderBy(i => i.Prato.Nome);
 					itens = itens
-						.OrderBy(i => i.Prato.TipoPrato.Ordem);
+						.OrderBy(i => i.Prato.TipoPrato == null ? 0 : i.Prato.TipoPrato.Ordem);
 					foreach (Model.PratoSelecionado item in itens)
 					{
 						if (positions.Keys.Where(i => i == item.Prato.TipoPratoId).Count() == 0)
@@ -71,7 +71,7 @@ namespace VillaBisutti.Delta.Core.Business
 							positions[item.Prato.TipoPratoId] = itensGastronomia.Count();
 							Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.CardapioId == Evento.CardapioId.Value && t.TipoServicoId == Evento.TipoServicoId.Value && t.TipoPratoId == item.Prato.TipoPratoId);
 							int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
-							itensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
+							itensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
 						}
 						itensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
 						{
@@ -1535,6 +1535,7 @@ namespace VillaBisutti.Delta.Core.Business
 			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoDegustacao);
 			InicializePDF();
 			SetPDFHeader();
+			pdf.AddLeadText(string.Format("Cardápio/Serviço: {0} - {1}", Evento.Cardapio.Nome, Evento.TipoServico.Nome));
 			AdicionarPaginaGastronomia(true);
 			AdicionarPaginaBebidas();
 			Kill();
@@ -1565,7 +1566,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddLine(" ");
 			pdf.AddLine(" ");
 			pdf.AddLine(" ");
-			pdf.AddLeadText(string.Format("Cardápio / Serviço: {0} - {1}", Evento.Cardapio.Nome, Evento.TipoServico.Nome));
+			pdf.AddLeadText("Cardápio: " + Evento.Cardapio.Nome);
 			pdf.AddLine(" ");
 			for (int i = 0; i < 30; i++ )
 			{

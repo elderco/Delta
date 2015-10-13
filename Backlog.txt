@@ -1,4 +1,19 @@
-		URGENTE - OS em batch
+		Bolo, Doce e bem casado -> fornecedor está em branco
+		Filtrar Eventos -> Filtro de email não enviado
+		Cardápio da OS -> exibir somente os TIPOS DE COMIDA que contenham pratos e na ordem de exibição da OS
+		Cardápio da OS -> Observações de cada prato
+		Decoração do cerimonial -> Campo Cores
+		Robôs
+			Layout de cada e-mail para clientes
+			Inicialização e verificação do funcionamento dos robôs
+			Configuração dos robôs
+
+		Todas as áreas da OS - Botão "Definido" não funciona
+		Marcar área da OS como "Encerrado"
+
+		Montagem de Cardápio -> Selecionando o cardápio, os pratos sejam agrupados por tipo de prato (exibidos na ordem da OS)
+		
+OK		URGENTE - OS em batch
 OK		URGENTE - OS Degustação > Trazer o link correto
 OK		Prevenir double click nos "cadastrar" e "salvar" da vida
 OK		Itens da harmonização dos cardápios (importar apenas faltantes)
@@ -6,13 +21,13 @@ OK		Criar ambiente de homologação
 OK		BDBC -> Adicionar campo "Grupo" e agrupar na OS
 OK		BDBC -> Nova entidade para definir padrões do evento 
 OK		BDBC -> Salvar padrões do evento 
-		Organização dos botões para separação de responsabilidade (ResponsabilidadeVB, FornecidoBisutti)
+OK		Organização dos botões para separação de responsabilidade (ResponsabilidadeVB, FornecidoBisutti)
 		Correção nas telas
 OK			- BDBC - Item que Bloqueia deve cair no "Não villa Bisutti"
 OK			- Ocultar quantidade de itens "BloqueiaOutros" na OS
 OK			- Ocultar link "Decoração Cerimonial" quando não tem cerimonial
-			- não deixar entrar em nenhuma área se não tem contrato pro evento
-			- evento com cerimônia externa está aparecendo decoração do cerimonial
+OK			- não deixar entrar em nenhuma área se não tem contrato pro evento
+OK			- evento com cerimônia externa está aparecendo decoração do cerimonial
 			- OS > Itens copiados > Tipo Item no texto na linha
 OK			- Edit TipoItemDecoracao -> antiforgery faltando
 OK		Importação de bolo, doce e bem-casado
@@ -22,7 +37,4 @@ OK		Botão para enviar e-mail no cabeçalho
 		relatórios
 			- Itens / período
 			-
-		Layout de cada e-mail para clientes
-		Configuração de envio de email por evento
-		Inicialização e verificação do funcionamento dos robôs
-		Configuração dos robôs
+OK		Configuração de envio de email por evento

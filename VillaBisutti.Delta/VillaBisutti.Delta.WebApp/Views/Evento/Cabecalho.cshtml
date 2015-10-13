@@ -73,7 +73,7 @@
 					<font class="sr-only" color="White">Gerar dossiê de Degustação</font>
 				</a>
 			</div>
-			@if (Model.Cardapio != null && Model.TipoServico != null)
+			@if (Model.Cardapio != null)
 			{
 				<div class="widget-toolbar">
 					<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "CP" })" class="GeneralPopUpLinks" title="Gerar capa">

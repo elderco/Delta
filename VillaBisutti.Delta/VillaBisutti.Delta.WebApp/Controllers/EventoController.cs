@@ -178,7 +178,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(int id)
 		{
-			new data.Evento().Delete(id);
+			new biz.Evento().Delete(id);
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 

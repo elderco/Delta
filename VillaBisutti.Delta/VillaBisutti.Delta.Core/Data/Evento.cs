@@ -10,21 +10,6 @@ namespace VillaBisutti.Delta.Core.Data
 {
 	public class Evento : DataAccessBase<Model.Evento>
 	{
-		public override void Delete(int id)
-		{
-			using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["VillaBisuttiDelta"].ConnectionString))
-			{
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandType = System.Data.CommandType.StoredProcedure;
-				cmd.CommandText = "SP_DELETE_EVENTO";
-				cmd.Parameters.AddWithValue("@EventoId", id);
-				cmd.Connection.Open();
-				cmd.ExecuteNonQuery();
-				cmd.Dispose();
-				connection.Close();
-			}
-		}
 		public override void Update(Model.Evento entity)
 		{
 			Model.Evento original = context.Evento.FirstOrDefault(a => a.Id == entity.Id);

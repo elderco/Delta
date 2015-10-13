@@ -41,6 +41,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(i => i.ContratoAditivo)
 				.Include(i => i.ItemBoloDoceBemCasado)
 				.Include(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado)
+				.Include(i => i.ItemBoloDoceBemCasado.Fornecedor)
 				.Include(i => i.BoloDoceBemCasado)
 				.Where(i =>
 					i.EventoId == eventoId

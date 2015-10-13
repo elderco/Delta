@@ -20,7 +20,14 @@
 				var $targetDiv = $("<div />").attr("id", id);
 				$("body").append($targetDiv);
 				LoadPage($(this).attr("href"), id);
-			})
+			});
+			$(".observacoes-prato").change(function () {
+				var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
+				var $targetDiv = $("<div />").attr("id", id);
+				$("body").append($targetDiv);
+				var url = $(this).attr("data-href") + "&obs=" + encodeURIComponent($(this).val());
+				LoadPage(url, id);
+			});
 		});
 	</script>
 }
@@ -48,6 +55,10 @@
 <div class="col-xs-12">
 	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.Itens.Keys)
 	{
+		if (Model.Itens[tipoPrato].Count == 0)
+		{
+			continue;
+		}
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-info">
 				<span class="pull-right">
@@ -67,6 +78,9 @@
 			{
 				<li class="list-group-item">
 					<span class="pull-right">
+						<input type="text" class="observacoes-prato" value="@(prato.Observacoes)" data-href="@Url.Action("AlterarObservacoes", "PratoSelecionado", new { id = prato.Id })" />
+					</span>
+					<span>
 						<!-- Degustar / Aprovado / Descartado -->
 						<a id="Degustar_@(prato.Id)" href="@Url.Action("ToggleDegustar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Degustar ? "btn-success" : "btn-danger") tooltip-info action-toggle @(prato.Rejeitado || prato.Escolhido ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover da" : "incluir na") degustação">
 							@(Html.Raw(prato.Degustar ? "<i class=\"fa fa-check\"></i> Item será degustado" : "<i class=\"fa fa-frown-o\"></i> Degustar item"))

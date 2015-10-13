@@ -426,7 +426,6 @@
     <Content Include="Views\TipoReuniao\Create.cshtml" />
     <Content Include="Views\TipoReuniao\Delete.cshtml" />
     <Content Include="Views\TipoReuniao\Index.cshtml" />
-    <Content Include="Views\Evento\Delete.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
     <Content Include="Views\Evento\Details.cshtml" />
     <Content Include="Views\BoloDoceBemCasado\Edit.cshtml" />
@@ -651,6 +650,9 @@
     <Content Include="Views\OS\Index.cshtml" />
     <Content Include="Views\OS\Filtered.cshtml" />
     <Content Include="Views\OS\ListDownloads.cshtml" />
+    <Content Include="Views\Evento\Delete.cshtml" />
+    <Content Include="Views\OS\Degustacoes.cshtml" />
+    <Content Include="Views\OS\Reunioes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

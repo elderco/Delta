@@ -107,3 +107,4 @@ div.tooltip{min-width: 100px}
 
 /* Login */
 .field-validation-error{font-weight: normal; font-size: 14px;}
+.widget-color-dark>.widget-header.bg-danger { background-color: #990000 !important; }

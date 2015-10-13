@@ -1,246 +1,67 @@
-﻿@model VillaBisutti.Delta.Core.Model.Evento
+﻿@using VillaBisutti.Delta
+@model VillaBisutti.Delta.Core.Model.Evento
 @{
-    Layout = null;
+	Layout = null;
 }
-<h3>
-	Você tem certeza que deseja excluir?
-</h3>
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Bebida.Observacoes)
-        </dt>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+	});
+</script>
+<div class="col-xs-12 widget-container-col" style="min-height: 50px; margin-bottom: 20px; z-index: 1000">
+	<div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
+		<div class="widget-header widget-header-large bg-danger">
+			<h4 class="widget-title">
+				Você tem certeza que deseja excluir esse evento e tudo já cadastrado para ele?
+			</h4>
+		</div>
+	</div>
+</div>
+<div class="col-xs-12 widget-container-col" style="min-height: 50px; margin-bottom: 20px; z-index: 1000">
+	<div class="widget-box widget-color-dark" style="opacity: 1; z-index: 0;">
+		<div class="widget-header widget-header-large">
+			<h4 class="widget-title" data-toggle="collapse" data-target="#CabecalhoEvento">
+				@(Model.Data.ToString("dddd", new System.Globalization.CultureInfo("pt-BR"))),  @(Model.Data.ToString("dd/MM/yyyy"))
+				<i class="ace-icon fa fa-angle-right"> </i>
+				@(Model.Local.NomeCasa)
+				<i class="ace-icon fa fa-angle-right"> </i>
+				@(Model.NomeHomenageados)
+			</h4>
+		</div>
+		<div class="widget-body in" id="CabecalhoEvento">
+			<div class="widget-main">
+				<div class="alert alert-info container-fluid">
+					<div class="col-sm-4">
+						<b>Tipo de Evento: </b>@(Model.TipoEvento.GetDescription())
+					</div>
+					<div class="col-sm-4">
+						<b>Pax: </b>@(Model.Pax) +10% (@(Model.PaxAproximado))
+					</div>
+					<div class="col-sm-4">
+						<b>Horário: </b>das @(Model.Inicio.ToString()) às @(Model.Termino.ToString())<br />
+						<b>Cerimonial: </b>@(Model.LocalCerimonia.GetDescription())
+					</div>
+					<div class="col-sm-12">
+						<b>Perfil: </b>@(Model.PerfilFesta)
+					</div>
+					<div class="col-sm-4">
+						<b>Produção: </b>@(Model.Produtora == null ? "Indefinido" : Model.Produtora.Nome)
+					</div>
+					<div class="col-sm-4">
+						<b>Cardápio: </b>@(Model.Cardapio == null ? "Indefinido" : Model.Cardapio.Nome)
+					</div>
+					<div class="col-sm-4">
+						<b>Tipo de serviço: </b>@(Model.TipoServico == null ? "Indefinido" : Model.TipoServico.Nome)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.Bebida.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BoloDoceBemCasado.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BoloDoceBemCasado.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cardapio.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cardapio.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Decoracao.CoresCerimonia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Decoracao.CoresCerimonia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FotoVideo.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FotoVideo.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Local.NomeCasa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Local.NomeCasa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Montagem.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Montagem.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OutrosItens.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OutrosItens.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PosVendedora.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PosVendedora.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Produtora.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Produtora.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SomIluminacao.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SomIluminacao.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoEvento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoEvento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Data)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HorarioInicio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HorarioInicio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HorarioTermino)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HorarioTermino)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pax)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pax)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeResponsavel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CPFResponsavel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CPFResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailContato)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailContato)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TelefoneContato)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TelefoneContato)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeHomenageados)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeHomenageados)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PerfilFesta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PerfilFesta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LocalCerimonia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LocalCerimonia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EnderecoCerimonia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EnderecoCerimonia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Observacoes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailBoasVindasEnviado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailBoasVindasEnviado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OSFinalizada)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OSFinalizada)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoServico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoServico)
-        </dd>
-
-    </dl>
-	<h3>
-		Esta ação não poderá ser desfeita
-	</h3>
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
+		<div class="form-actions no-color">
 			<input type="submit" value="Excluir" class="btn btn-default" />
-			<input type="button" value="Cancelar" data-dismiss="modal" aria-label="Close" class="btn btn-default" aria-hidden="true" />
-        </div>
-    }
+		</div>
+	}
 </div>
