@@ -75,17 +75,17 @@
 
 <div class="row">
 	<h3 class="header smaller blue">Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti && !i.ItemBebida.BloqueiaOutrasPropriedades))
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3 class="header smaller blue">Fornecedores externos (Contratação Villa Bisutti)</h3>
-	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti && !i.ItemBebida.BloqueiaOutrasPropriedades))
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti && !i.FornecimentoBisutti))
 </div>
 <div class="row">
 	<h3 class="header smaller blue">Fornecedores externos (Responsabilidade do contratante)</h3>
-	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti && !i.ItemBebida.BloqueiaOutrasPropriedades))
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
 </div>
-<div class="row">
+@*<div class="row">
 	<h3 class="header smaller blue">Itens não inclusos no evento</h3>
-	@*@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti && !i.ItemBebida.BloqueiaOutrasPropriedades))*@
-</div>
+	@Html.Partial("../ItemBebidaSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti && !i.ItemBebida.BloqueiaOutrasPropriedades))
+</div>*@
