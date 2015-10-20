@@ -47,6 +47,7 @@ namespace VillaBisutti.Delta.Core.Business
 		#endregion
 		private Model.Evento Evento;
 		#region [ Collections ]
+		private Dictionary<string, string> Area = new Dictionary<string, string>();
 		private List<DTO.ItemEvento> itensGastronomia;
 		private List<DTO.ItemEvento> ItensGastronomia
 		{
@@ -54,6 +55,7 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				if (itensGastronomia == null)
 				{
+					Area["GM"] = Util.context.Gastronomia.FirstOrDefault(g => g.EventoId == Evento.Id).Observacoes;
 					Dictionary<int, int> positions = new Dictionary<int, int>();
 					itensGastronomia = new List<DTO.ItemEvento>();
 					IEnumerable<Model.PratoSelecionado> itens = Util.context.PratoSelecionado
@@ -182,6 +184,9 @@ namespace VillaBisutti.Delta.Core.Business
 		#region [ Populate itens ]
 		private void PopularItensBebida()
 		{
+			Model.Bebida bebida = Util.context.Bebida.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["BB"] = bebida.Observacoes;
+
 			IEnumerable<Model.ItemBebidaSelecionado> itens = Util.context.ItemBebidaSelecionado
 				.Include(i => i.ItemBebida)
 				.Include(i => i.ItemBebida.TipoItemBebida)
@@ -288,19 +293,37 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensBolo()
 		{
+			Model.BoloDoceBemCasado area = Util.context.BoloDoceBemCasado.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["BD"] = area.Observacoes;
+			Dictionary<int, int> quantidades = new Dictionary<int, int>();
+			IEnumerable<Model.ItemBoloDoceBemCasadoEvento> Qtds = Util.context.ItemBoloDoceBemCasadoEvento
+				.Where(i => i.EventoId == Evento.Id);
+			foreach (Model.ItemBoloDoceBemCasadoEvento item in Qtds)
+				quantidades[item.TipoItemBoloDoceBemCasadoId] = item.Quantidade;
 			IEnumerable<Model.ItemBoloDoceBemCasadoSelecionado> itens = Util.context.ItemBoloDoceBemCasadoSelecionado
 				.Include(i => i.ItemBoloDoceBemCasado)
 				.Include(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado)
 				.Include(i => i.ItemBoloDoceBemCasado.Fornecedor)
 				.Where(i => i.EventoId == Evento.Id)
 				.OrderBy(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem);
-			int currentId = 0;
+			int currentTipoId = 0;
+			int currentFornecedorId = 0;
 			foreach (Model.ItemBoloDoceBemCasadoSelecionado item in itens.Where(i => i.ContratacaoBisutti))
 			{
-				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentId)
+				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentTipoId
+					&& item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
 				{
-					currentId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
-					ItensBoloTerceiro.Add(new DTO.ItemEvento { Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem, Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, SubItens = new List<DTO.SubItemEvento>() });
+					currentTipoId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
+					currentFornecedorId = item.ItemBoloDoceBemCasado.FornecedorId;
+					ItensBoloTerceiro.Add(
+						new DTO.ItemEvento
+						{
+							Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem,
+							Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome + " - " +
+								item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + "(quantidade: " +
+									(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId] : 0) + ")",
+							SubItens = new List<DTO.SubItemEvento>()
+						});
 				}
 				DTO.SubItemEvento subitem = new DTO.SubItemEvento
 				{
@@ -315,23 +338,32 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBoloTerceiro[ItensBoloTerceiro.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaDecoracao)
-					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaFotoVideo)
-					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaMontagem)
-					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaOutrosItens)
-					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaSomIluminacao)
-					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " > " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
+					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 			}
-			currentId = 0;
+			currentTipoId = 0;
+			currentFornecedorId = 0;
 			foreach (Model.ItemBoloDoceBemCasadoSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
 			{
-				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentId)
+				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentTipoId
+					&& item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
 				{
-					currentId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
-					ItensBoloContratante.Add(new DTO.ItemEvento { Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem, Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, SubItens = new List<DTO.SubItemEvento>() });
+					currentTipoId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
+					ItensBoloContratante.Add(new DTO.ItemEvento
+					{
+						Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem,
+						Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome + " - " +
+							item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + "(quantidade: " +
+								(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId] : 0) + ")",
+						SubItens = new List<DTO.SubItemEvento>()
+					});
 				}
 				DTO.SubItemEvento subitem = new DTO.SubItemEvento
 				{
@@ -346,19 +378,23 @@ namespace VillaBisutti.Delta.Core.Business
 				};
 				ItensBoloContratante[ItensBoloContratante.Count - 1].SubItens.Add(subitem);
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaDecoracao)
-					CopiaDecoracaoContratante.Add(subitem);
+					CopiaDecoracaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaFotoVideo)
-					CopiaFotoVideoContratante.Add(subitem);
+					CopiaFotoVideoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaMontagem)
-					CopiaMontagemContratante.Add(subitem);
+					CopiaMontagemTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaOutrosItens)
-					CopiaOutrosItensContratante.Add(subitem);
+					CopiaOutrosItensTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.CopiaSomIluminacao)
-					CopiaSomIluminacaoContratante.Add(subitem);
+					CopiaSomIluminacaoTerceiro.Add(subitem.Copiar(item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + " - " + item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome));
 			}
 		}
 		private void PopularItensDecoracao()
 		{
+			Model.Decoracao area = Util.context.Decoracao.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["DROBS"] = area.Observacoes;
+			Area["DRCOR"] = area.CoresCerimonia;
+
 			IEnumerable<Model.ItemDecoracaoSelecionado> itens = Util.context.ItemDecoracaoSelecionado
 				.Include(i => i.ItemDecoracao)
 				.Include(i => i.ItemDecoracao.TipoItemDecoracao)
@@ -465,6 +501,10 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensDecoracaoCerimonial()
 		{
+			Model.DecoracaoCerimonial area = Util.context.DecoracaoCerimonial.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["DCOBS"] = area.Observacoes;
+			Area["DCCOR"] = area.CoresCerimonia;
+
 			IEnumerable<Model.ItemDecoracaoCerimonialSelecionado> itens = Util.context.ItemDecoracaoCerimonialSelecionado
 				.Include(i => i.ItemDecoracaoCerimonial)
 				.Include(i => i.ItemDecoracaoCerimonial.TipoItemDecoracaoCerimonial)
@@ -571,6 +611,9 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensFotoVideo()
 		{
+			Model.FotoVideo area = Util.context.FotoVideo.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["FV"] = area.Observacoes;
+
 			IEnumerable<Model.ItemFotoVideoSelecionado> itens = Util.context.ItemFotoVideoSelecionado
 				.Include(i => i.ItemFotoVideo)
 				.Include(i => i.ItemFotoVideo.TipoItemFotoVideo)
@@ -677,6 +720,9 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensMontagem()
 		{
+			Model.Montagem area = Util.context.Montagem.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["MS"] = area.Observacoes;
+
 			IEnumerable<Model.ItemMontagemSelecionado> itens = Util.context.ItemMontagemSelecionado
 				.Include(i => i.ItemMontagem)
 				.Include(i => i.ItemMontagem.TipoItemMontagem)
@@ -783,6 +829,9 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensOutrosItens()
 		{
+			Model.OutrosItens area = Util.context.OutrosItens.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["OI"] = area.Observacoes;
+
 			IEnumerable<Model.ItemOutrosItensSelecionado> itens = Util.context.ItemOutrosItensSelecionado
 				.Include(i => i.ItemOutrosItens)
 				.Include(i => i.ItemOutrosItens.TipoItemOutrosItens)
@@ -889,6 +938,9 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void PopularItensSomIluminacao()
 		{
+			Model.SomIluminacao area = Util.context.SomIluminacao.FirstOrDefault(i => i.EventoId == Evento.Id);
+			Area["SI"] = area.Observacoes;
+
 			IEnumerable<Model.ItemSomIluminacaoSelecionado> itens = Util.context.ItemSomIluminacaoSelecionado
 				.Include(i => i.ItemSomIluminacao)
 				.Include(i => i.ItemSomIluminacao.TipoItemSomIluminacao)
@@ -1005,9 +1057,9 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddBreakRule();
 
 			if (Evento.PosVendedora != null)
-				pdf.AddLeadText("Pós-venda: " + Evento.PosVendedora.Nome + " - " + Evento.PosVendedora.Telefone);
+				pdf.AddLeadText("Execução do evento: " + Evento.PosVendedora.Nome + " - " + Evento.PosVendedora.Telefone);
 			else
-				pdf.AddLeadText("Responsável pós-venda: Indefinido.");
+				pdf.AddLeadText("Execução do evento: Indefinido.");
 			if (Evento.Produtora != null)
 				pdf.AddLeadText("Produção: " + Evento.Produtora.Nome + " - " + Evento.Produtora.Telefone + " - " + Evento.Produtora.Telefone);
 			else
@@ -1055,6 +1107,7 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("BEBIDAS");
+			pdf.AddLeadText(Area["BB"]);
 			pdf.AddBreakRule();
 
 			if (ItensBebidaBisutti.Count() > 0)
@@ -1103,10 +1156,53 @@ namespace VillaBisutti.Delta.Core.Business
 			AdicionarFotosArea("BB");
 			pdf.BreakPage();
 		}
+		private void AdicionarPaginaBoloDoce()
+		{
+			pdf.AddHeader();
+			pdf.AddHeaderText("BOLO, DOCES E BEM-CASADO");
+			pdf.AddLeadText(Area["BD"]);
+			pdf.AddBreakRule();
+
+			if (ItensBoloTerceiro.Count() > 0)
+			{
+				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				foreach (DTO.ItemEvento grupo in ItensBoloTerceiro)
+				{
+					string strItems = string.Empty;
+					foreach (DTO.SubItemEvento item in grupo.SubItens)
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
+				}
+				pdf.AddLine(" ");
+				foreach (DTO.SubItemEvento item in CopiaMontagemTerceiro)
+					AdicionarLinhaItem(item);
+				pdf.AddBreakRule();
+			}
+			if (ItensBoloContratante.Count() > 0)
+			{
+				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				foreach (DTO.ItemEvento grupo in ItensBoloContratante)
+				{
+					string strItems = string.Empty;
+					foreach (DTO.SubItemEvento item in grupo.SubItens)
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
+				}
+				pdf.AddLine(" ");
+				foreach (DTO.SubItemEvento item in CopiaMontagemContratante)
+					AdicionarLinhaItem(item);
+				pdf.AddBreakRule();
+			}
+
+			AdicionarFotosArea("MS");
+			pdf.BreakPage();
+		}
 		private void AdicionarPaginaDecoracao()
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("DECORAÇÃO DA RECEPÇÃO");
+			pdf.AddLeadText(Area["DROBS"]);
+			pdf.AddLeadText(Area["DRCOR"]);
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoBisutti.Count() > 0)
@@ -1114,9 +1210,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoBisutti)
@@ -1128,9 +1225,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoTerceiro)
@@ -1142,9 +1240,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoContratante)
@@ -1161,6 +1260,8 @@ namespace VillaBisutti.Delta.Core.Business
 				return;
 			pdf.AddHeader();
 			pdf.AddHeaderText("DECORAÇÃO DA CERIMÔNIA");
+			pdf.AddLeadText(Area["DCOBS"]);
+			pdf.AddLeadText(Area["DCCOR"]);
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoCerimonialBisutti.Count() > 0)
@@ -1168,9 +1269,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoCerimonialBisutti)
@@ -1182,9 +1284,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoCerimonialTerceiro)
@@ -1196,9 +1299,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaDecoracaoCerimonialContratante)
@@ -1213,6 +1317,7 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("ITENS DE FOTO & VÍDEO");
+			pdf.AddLeadText(Area["FV"]);
 			pdf.AddBreakRule();
 
 			if (ItensFotoVideoBisutti.Count() > 0)
@@ -1220,9 +1325,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaFotoVideoBisutti)
@@ -1234,9 +1340,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaFotoVideoTerceiro)
@@ -1248,9 +1355,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaFotoVideoContratante)
@@ -1265,6 +1373,8 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("GASTRONOMIA");
+			if (incluiDegustar)
+				pdf.AddLeadText(Area["GM"]);
 			pdf.AddBreakRule();
 			foreach (DTO.ItemEvento grupo in ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades).Count() > 0))
 			{
@@ -1280,7 +1390,7 @@ namespace VillaBisutti.Delta.Core.Business
 					if (item.BloqueiaOutrasPropriedades)
 						continue;
 					if (item.Responsabilidade)
-						pdf.AddLine((incluiDegustar ? "Item escolhido > " : "") + item.NomeItem);
+						pdf.AddLine((incluiDegustar ? "Item escolhido - " : "") + item.NomeItem);
 					else if (item.Fornecido && incluiDegustar)
 						pdf.AddLine(item.NomeItem);
 				}
@@ -1293,6 +1403,7 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("MONTAGEM DO SALÃO");
+			pdf.AddLeadText(Area["MS"]);
 			pdf.AddBreakRule();
 
 			if (ItensMontagemBisutti.Count() > 0)
@@ -1300,9 +1411,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensMontagemBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaMontagemBisutti)
@@ -1314,9 +1426,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensMontagemTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaMontagemTerceiro)
@@ -1328,9 +1441,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensMontagemContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaMontagemContratante)
@@ -1345,6 +1459,7 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("OUTROS ITENS");
+			pdf.AddLeadText(Area["OI"]);
 			pdf.AddBreakRule();
 
 			if (ItensOutrosItensBisutti.Count() > 0)
@@ -1352,9 +1467,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaOutrosItensBisutti)
@@ -1366,9 +1482,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaOutrosItensTerceiro)
@@ -1380,9 +1497,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaOutrosItensContratante)
@@ -1397,6 +1515,7 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("ITENS DE SOM E ILUMINAÇÃO");
+			pdf.AddLeadText(Area["SI"]);
 			pdf.AddBreakRule();
 
 			if (ItensSomIluminacaoBisutti.Count() > 0)
@@ -1404,9 +1523,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoBisutti)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaSomIluminacaoBisutti)
@@ -1418,9 +1538,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoTerceiro)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaSomIluminacaoTerceiro)
@@ -1432,9 +1553,10 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoContratante)
 				{
-					pdf.AddLeadText(grupo.Texto);
+					string strItems = string.Empty;
 					foreach (DTO.SubItemEvento item in grupo.SubItens)
-						AdicionarLinhaItem(item);
+						strItems += MontarLinhaItem(item);
+					pdf.AddItemLine(grupo.Texto, strItems);
 				}
 				pdf.AddLine(" ");
 				foreach (DTO.SubItemEvento item in CopiaSomIluminacaoContratante)
@@ -1452,7 +1574,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddBreakRule();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiro)
 			{
-				pdf.AddLine(string.Format("{0} -> qtd: {1} -> {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
+				pdf.AddLine(string.Format("{0} - {1} - {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
 			}
 			pdf.BreakPage();
 		}
@@ -1463,7 +1585,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddBreakRule();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiroCerimonial)
 			{
-				pdf.AddLine(string.Format("{0} -> qtd: {1} -> {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
+				pdf.AddLine(string.Format("{0} - {1} - {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
 			}
 			pdf.BreakPage();
 		}
@@ -1479,12 +1601,31 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void AdicionarLinhaItem(DTO.SubItemEvento item, bool importante)
 		{
-			string strTexto = string.Empty;
+			string strTexto = " ";
 			if (item.BloqueiaOutrasPropriedades)
-				strTexto = string.Format("{0} > {1}", item.NomeItem, item.Observacao);
+			{
+				strTexto += item.NomeItem;
+				strTexto += string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao;
+			}
 			else
-				strTexto = string.Format("{0} > qtd: {1} > {2}", item.NomeItem, item.QuantidadeItem, item.Observacao);
+			{
+				strTexto += item.QuantidadeItem > 0 ? item.QuantidadeItem + " - " : "";
+				strTexto += item.NomeItem;
+				strTexto += string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao;
+			}
 			pdf.AddLine(strTexto, importante);
+		}
+		private string MontarLinhaItem(DTO.SubItemEvento item)
+		{
+			string strTexto = " ";
+			if (item.QuantidadeItem > 0)
+				strTexto += item.QuantidadeItem + " - ";
+			strTexto += item.NomeItem;
+			if (!string.IsNullOrEmpty(item.ContatoFornecedor))
+				strTexto += " (" + item.ContatoFornecedor + " - " + item.HorarioEntrega.ToString() + ")";
+			if (!string.IsNullOrEmpty(item.Observacao))
+				strTexto += " - " + item.Observacao;
+			return strTexto + ";";
 		}
 		public void GerarOS()
 		{
@@ -1509,15 +1650,16 @@ namespace VillaBisutti.Delta.Core.Business
 			InicializePDF();
 			SetPDFHeader();
 			AdicionarPaginaPrincipal();
-			AdicionarPaginaBebidas();
-			AdicionarPaginaDecoracao();
 			AdicionarPaginaDecoracaoCerimonial();
-			AdicionarPaginaFotoVideo();
-			AdicionarPaginaGastronomia(false);
-			AdicionarPaginaMontagem();
-			AdicionarPaginaOutrosItens();
-			AdicionarPaginaSomIluminacao();
+			AdicionarPaginaDecoracao();
 			AdicionarPaginaLayout();
+			AdicionarPaginaMontagem();
+			AdicionarPaginaBoloDoce();
+			AdicionarPaginaFotoVideo();
+			AdicionarPaginaSomIluminacao();
+			AdicionarPaginaOutrosItens();
+			AdicionarPaginaGastronomia(false);
+			AdicionarPaginaBebidas();
 			AdicionarPaginaRoteiro();
 			AdicionarPaginaRoteiroCerimonial();
 			Kill();
@@ -1558,7 +1700,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddLeadText("Telefone: " + Evento.TelefoneContato);
 			pdf.AddLeadText("E-mail: " + Evento.EmailContato);
 			pdf.AddLeadText("Tipo de evento:" + Evento.TipoEvento.GetDescription());
-			if(Evento.TipoEvento == Model.TipoEvento.Casamento)
+			if (Evento.TipoEvento == Model.TipoEvento.Casamento)
 				pdf.AddLeadText("Cerimônia:" + Evento.LocalCerimonia.GetDescription());
 			pdf.AddLeadText(string.Format("Pax: {0} (+10%: {1})", Evento.Pax, Evento.PaxAproximado));
 			pdf.AddLeadText(string.Format("Horário do evento: {0} às {1}", Evento.Inicio.ToString(), Evento.Termino.ToString()));
@@ -1568,7 +1710,7 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddLine(" ");
 			pdf.AddLeadText("Cardápio: " + Evento.Cardapio.Nome);
 			pdf.AddLine(" ");
-			for (int i = 0; i < 30; i++ )
+			for (int i = 0; i < 30; i++)
 			{
 				pdf.AddLine(" ");
 				pdf.AddBreakRule();

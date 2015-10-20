@@ -12,7 +12,7 @@ namespace VillaBisutti.Delta.Core.Model
 		{
 			get
 			{
-				return Hora.ToString().PadLeft(2, '0');
+				return Hora > 23 ? (Hora - 24).ToString().PadLeft(2, '0') : Hora.ToString().PadLeft(2, '0');
 			}
 		}
 		public string Minutos

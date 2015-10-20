@@ -12,8 +12,8 @@ using bus = VillaBisutti.Delta.Core.Business;
 
 namespace VillaBisutti.Delta.WebApp.Controllers
 {
-    [Authorize]
-    public class RoteiroController : Controller
+	[Authorize]
+	public class RoteiroController : Controller
 	{
 		protected override void EndExecute(IAsyncResult asyncResult)
 		{
@@ -39,8 +39,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,RoteiroId")] model.ItemRoteiro itemroteiro)
+		public ActionResult ItemCreated([Bind(Include = "Id,Titulo,HorarioInicio,Importante,Observacao,EventoId,RoteiroId")] model.ItemRoteiro itemroteiro, bool antesInicio = true)
 		{
+			model.Evento e = new data.Evento().GetElement(itemroteiro.EventoId.Value);
+			if (antesInicio)
+				if (e.HorarioInicio > itemroteiro.HorarioInicio)
+					itemroteiro.HorarioInicio += 24 * 60;
 			new data.ItemRoteiro().Insert(itemroteiro);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}

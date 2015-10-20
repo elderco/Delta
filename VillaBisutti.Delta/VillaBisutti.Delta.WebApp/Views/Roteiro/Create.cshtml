@@ -41,6 +41,9 @@
 			<div class="col-md-4">
 				@Html.EditorFor(model => model.Importante)
 				@Html.ValidationMessageFor(model => model.Importante)
+				<br />
+				<label for="antesInicio">Antes do início do evento</label>
+				<input type="checkbox" name="antesInicio" id="antesInicio" value="false" />
 			</div>
 		</div>
 

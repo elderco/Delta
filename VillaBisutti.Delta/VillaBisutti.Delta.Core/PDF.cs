@@ -159,6 +159,18 @@ namespace VillaBisutti.Delta.Core
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
 			document.Add(paragraph);
 		}
+		internal void AddItemLine(string item, string subItems)
+		{
+			iText.Chunk itemChunck = new iText.Chunk(item);
+			itemChunck.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD, iText.BaseColor.BLACK);
+			iText.Chunk subItemsChunck = new iText.Chunk(subItems);
+			subItemsChunck.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
+			iText.Phrase phrase = new iText.Phrase();
+			phrase.Add(itemChunck);
+			phrase.Add(subItemsChunck);
+			iText.Paragraph paragraph = new iText.Paragraph(phrase);
+			document.Add(paragraph);
+		}
 		public void AddLineNoEmphasis(string text)
 		{
 			iText.Chunk chunck = new iText.Chunk(text);
@@ -174,7 +186,7 @@ namespace VillaBisutti.Delta.Core
 		{
 			iText.Chunk chunck = new iText.Chunk(text);
 			if (important)
-				chunck.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD, iText.BaseColor.RED);
+				chunck.Font = iText.FontFactory.GetFont(baseFont, leadSize, iText.Font.BOLD, iText.BaseColor.BLACK);
 			else
 				chunck.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.Font.NORMAL, iText.BaseColor.BLACK);
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
@@ -217,11 +229,11 @@ namespace VillaBisutti.Delta.Core
 		{
 			document.NewPage();
 		}
-
 		public void Dispose()
 		{
 			FinishWriting();
 		}
+
 	}
 	internal class PDFWriterEvents : iPdf.IPdfPageEvent
 	{

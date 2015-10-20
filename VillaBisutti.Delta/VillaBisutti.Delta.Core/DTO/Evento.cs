@@ -27,7 +27,7 @@ namespace VillaBisutti.Delta.Core.DTO
 		public SubItemEvento Copiar(string prefixoItem)
 		{
 			SubItemEvento returnValue = new SubItemEvento();
-			returnValue.NomeItem = prefixoItem + " > " + this.NomeItem;
+			returnValue.NomeItem = prefixoItem + " - " + this.NomeItem;
 			returnValue.QuantidadeItem = this.QuantidadeItem;
 			returnValue.BloqueiaOutrasPropriedades = this.BloqueiaOutrasPropriedades;
 			returnValue.Responsabilidade = this.Responsabilidade;

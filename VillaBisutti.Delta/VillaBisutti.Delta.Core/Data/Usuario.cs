@@ -45,10 +45,11 @@ namespace VillaBisutti.Delta.Core.Data
 
 		public Model.Usuario ValidUser(Model.Usuario usuario)
 		{
-			return context.Usuario.Where(a => a.Email.Equals(usuario.Email) && a.Senha.Equals(usuario.Senha))
+			IEnumerable<Model.Usuario> usuarios = context.Usuario
 				.Include(a => a.Perfil)
 				.Include(a => a.Perfil.Modulos)
-				.Include(a => a.Perfil.Modulos.Select(m => m.Modulo))
+				.Include(a => a.Perfil.Modulos.Select(m => m.Modulo)).ToList();
+			return usuarios.Where(a => a.Email.ToLower().Trim() == usuario.Email.ToLower().Trim() && a.Senha == usuario.Senha)
 				.FirstOrDefault();
 		}
 		public Model.Usuario EntireUser(int usuarioId)

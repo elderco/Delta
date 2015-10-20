@@ -113,8 +113,8 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			ViewBag.TipoEvento = new SelectList(Util.TiposEvento, "key", "value", tipoEvento);
 			ViewBag.LocalId = new SelectList(new data.Local().GetCollection(0), "Id", "NomeCasa", localId);
 			ViewBag.ProdutorId = new SelectList(new data.Usuario().GetCollection(0), "Id", "Nome", produtorId);
-			return View(new data.Evento().Filtrar(inicio.HasValue ? inicio.Value : DateTime.MinValue,
-				termino.HasValue ? termino.Value : DateTime.MaxValue,
+			return View(new data.Evento().Filtrar(inicio.HasValue ? inicio.Value : DateTime.Now,
+				termino.HasValue ? termino.Value : DateTime.Now.AddMonths(7),
 				localId, tipoEvento, produtorId, possuiAssessoria, fechado, enviado, aprovado, filtro));
 		}
 		// GET: /Evento/Create

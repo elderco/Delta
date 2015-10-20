@@ -20,10 +20,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:44</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/08/2015 21:12:26</publishTime>
+      <publishTime>10/20/2015 13:24:19</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/08/2015 21:12:26</publishTime>
+      <publishTime>10/20/2015 13:24:19</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/08/2015 12:25:46</publishTime>
@@ -35,7 +35,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/10/2015 11:03:57</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/26/2015 12:04:55</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>08/08/2015 12:25:47</publishTime>
@@ -104,13 +104,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:49</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Automation.dll">
-      <publishTime>10/08/2015 21:12:16</publishTime>
+      <publishTime>10/20/2015 13:24:15</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Core.dll">
-      <publishTime>10/08/2015 21:12:15</publishTime>
+      <publishTime>10/20/2015 13:24:14</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.WebApp.dll">
-      <publishTime>10/08/2015 21:12:17</publishTime>
+      <publishTime>10/20/2015 13:24:15</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/08/2015 12:25:55</publishTime>
@@ -269,10 +269,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/08/2015 21:12:22</publishTime>
+      <publishTime>10/20/2015 13:24:17</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/VillaBisutti.pubxml.user">
-      <publishTime>10/06/2015 12:01:55</publishTime>
+      <publishTime>10/20/2015 12:14:06</publishTime>
     </File>
     <File Include="Scripts/ace-elements.min.js">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -368,7 +368,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Bebida/Index.cshtml">
-      <publishTime>09/20/2015 14:09:36</publishTime>
+      <publishTime>10/14/2015 01:35:55</publishTime>
     </File>
     <File Include="Views/BoloDoceBemCasado/Edit.cshtml">
       <publishTime>09/20/2015 14:09:36</publishTime>
@@ -1109,7 +1109,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Roteiro/Create.cshtml">
-      <publishTime>08/08/2015 12:23:56</publishTime>
+      <publishTime>10/20/2015 13:23:02</publishTime>
     </File>
     <File Include="Views/Roteiro/Delete.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1349,7 +1349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/10/2015 11:54:36</publishTime>
+      <publishTime>10/20/2015 12:11:24</publishTime>
     </File>
   </ItemGroup>
 </Project>

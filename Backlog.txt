@@ -1,7 +1,26 @@
+		[Marcar área da OS como "Encerrado"] IMPORTANTE!!!
+		Exibir no evento quais partes já estão definidas
+		
+		Gastronomia -> importar para o evento reseta a porra toda
+			Incluir prato que não está no cardápio
+		
+		OS só pode ser impressa (gerada) conforme todas as áreas estiverem finalizadas
+OK			Trocar ">" por "-"
+OK			Se a quantiodade for 0, não exibir a quantidade
+OK			Se não tiver observação, sem o tracinho anterior
+OK			Nova formatação: TipoItem: Quantidade Item[0] - observação; Quantidade Item[1] - observação; (...) Quantidade Item[N] - observação;
+OK			Gastronomia e Bebida - Manter igual formatação atual mas:
+OK			Roteiro está com quantidade
+OK			Contato de fornecedores terceiros não aparece na OS
+			
+OK		Roteiro -> horário após 0 horas vai pro começo do evento
+		
+		Excluir usuário -> tem que set null no evento
+		Validação de farmulários -> após validar, desabilita o botão
 		Bolo, Doce e bem casado -> fornecedor está em branco
 		Filtrar Eventos -> Filtro de email não enviado
-		Cardápio da OS -> exibir somente os TIPOS DE COMIDA que contenham pratos e na ordem de exibição da OS
-		Cardápio da OS -> Observações de cada prato
+OK		Cardápio da OS -> exibir somente os TIPOS DE COMIDA que contenham pratos e na ordem de exibição da OS
+OK		Cardápio da OS -> Observações de cada prato
 		Decoração do cerimonial -> Campo Cores
 		Robôs
 			Layout de cada e-mail para clientes
@@ -9,7 +28,6 @@
 			Configuração dos robôs
 
 		Todas as áreas da OS - Botão "Definido" não funciona
-		Marcar área da OS como "Encerrado"
 
 		Montagem de Cardápio -> Selecionando o cardápio, os pratos sejam agrupados por tipo de prato (exibidos na ordem da OS)
 		

@@ -19,7 +19,7 @@ namespace VillaBisutti.Delta.Core.Business
 							PratoId = prato.Id,
 							CardapioId = cardapio.Id,
 							TipoServico = tipoServico,
-							Degustar = true,
+							Degustar = false,
 							Escolhido = false,
 							Rejeitado = false
 						});
@@ -34,7 +34,7 @@ namespace VillaBisutti.Delta.Core.Business
 						PratoId = prato.Id,
 						CardapioId = cardapioId,
 						TipoServicoId = tipoServicoId,
-						Degustar = true,
+						Degustar = false,
 						Escolhido = false,
 						Rejeitado = false
 					});
@@ -55,7 +55,7 @@ namespace VillaBisutti.Delta.Core.Business
 						PratoId = prato.Id,
 						CardapioId = cardapioId,
 						TipoServicoId = tipoServicoId,
-						Degustar = true,
+						Degustar = false,
 						Escolhido = false,
 						Rejeitado = false
 					});
