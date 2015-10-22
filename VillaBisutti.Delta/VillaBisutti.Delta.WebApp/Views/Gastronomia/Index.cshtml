@@ -25,7 +25,10 @@
 				var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
 				var $targetDiv = $("<div />").attr("id", id);
 				$("body").append($targetDiv);
-				var url = $(this).attr("data-href") + "&obs=" + encodeURIComponent($(this).val());
+				var url = $(this).attr("data-href");
+				url += "?id=" + $(this).attr("data-id");
+				url += "&obs=" + encodeURIComponent($(this).val());
+				url += "&sid=" + Math.random();
 				LoadPage(url, id);
 			});
 		});
@@ -42,7 +45,7 @@
 		</div>
 	</div>
 </div>
-<div class="col-xs-12">
+<div class="col-xs-12 row">
 	<fieldset class="col-md-8">
 		<legend>Informações básicas</legend>
 		@Html.Partial("../Gastronomia/Edit", Model.ThisGastronomia)
@@ -52,7 +55,7 @@
 		<a href="@(Model.ThisGastronomia.Evento.TipoServicoId != null && Model.ThisGastronomia.Evento.CardapioId != null ? Url.Action("ImportarDoCardapio", "PratoSelecionado", new { @id = Model.ThisGastronomia.EventoId }) : "javascript:void(0);")" class=" btn btn-default form-control">Importar degustação padrão</a>
 	</fieldset>
 </div>
-<div class="col-xs-12">
+<div class="col-xs-12 row">
 	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.Itens.Keys)
 	{
 		if (Model.Itens[tipoPrato].Count == 0)
@@ -76,11 +79,8 @@
 			</li>
 			@foreach (VillaBisutti.Delta.Core.Model.PratoSelecionado prato in Model.Itens[tipoPrato])
 			{
-				<li class="list-group-item">
-					<span class="pull-right">
-						<input type="text" class="observacoes-prato" value="@(prato.Observacoes)" data-href="@Url.Action("AlterarObservacoes", "PratoSelecionado", new { id = prato.Id })" />
-					</span>
-					<span>
+				<li class="list-group-item container-fluid">
+					<span class="pull-right col-md-5">
 						<!-- Degustar / Aprovado / Descartado -->
 						<a id="Degustar_@(prato.Id)" href="@Url.Action("ToggleDegustar", "PratoSelecionado", new { id=prato.Id })" class="btn btn-xs @(prato.Degustar ? "btn-success" : "btn-danger") tooltip-info action-toggle @(prato.Rejeitado || prato.Escolhido ? "hidden" : "")" data-rel="tooltip" data-placement="left" data-original-title="Clique para @(prato.Degustar ? "remover da" : "incluir na") degustação">
 							@(Html.Raw(prato.Degustar ? "<i class=\"fa fa-check\"></i> Item será degustado" : "<i class=\"fa fa-frown-o\"></i> Degustar item"))
@@ -92,7 +92,13 @@
 							@(Html.Raw(prato.Rejeitado ? "<i class=\"fa fa-frown-o\"></i> Item rejeitado" : "Rejeitar item"))
 						</a>
 					</span>
-					<span>
+					<span class="pull-right col-md-2">
+						@if (prato.Degustar || prato.Escolhido)
+						{
+						<input type="text" placeholder="Observações" class="observacoes-prato form-control" value="@(prato.Observacoes)" data-id="@prato.Id" data-href="@Url.Action("AlterarObservacoes", "PratoSelecionado")" />
+						}
+					</span>
+					<span class="col-md-5">
 						<strong>@(prato.Prato.Nome)</strong>
 					</span>
 				</li>

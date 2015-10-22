@@ -62,13 +62,13 @@
 				</a>
 			</div>
 			<div class="widget-toolbar">
-				<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "EV" })" class="GeneralPopUpLinks" title="Exibir OS" aria-set-w="350" aria-set-h="250">
+				<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "EV" })" class="GeneralPopUpLinks" title="Exibir OS" aria-set-w="350" aria-set-h="50">
 					<i class="ace-icon fa fa-file-text red"></i>
 					<font class="sr-only" color="White">Exibir OS</font>
 				</a>
 			</div>
 			<div class="widget-toolbar">
-				<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "RD" })" class="GeneralPopUpLinks" title="Gerar dossiê de Degustação" aria-set-w="350" aria-set-h="250">
+				<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "RD" })" class="GeneralPopUpLinks" title="Gerar dossiê de Degustação" aria-set-w="350" aria-set-h="50">
 					<i class="ace-icon fa fa-cutlery red"></i>
 					<font class="sr-only" color="White">Gerar dossiê de Degustação</font>
 				</a>
@@ -76,7 +76,7 @@
 			@if (Model.Cardapio != null)
 			{
 				<div class="widget-toolbar">
-					<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "CP" })" class="GeneralPopUpLinks" title="Gerar capa">
+					<a href="@Url.Action("Gerar", "Evento", new { id = Model.Id, qual = "CP" })" class="GeneralPopUpLinks" title="Gerar capa" aria-set-w="350" aria-set-h="50">
 						<i class="ace-icon fa fa-newspaper-o red"></i>
 						<font class="sr-only" color="White">Gerar capa</font>
 					</a>

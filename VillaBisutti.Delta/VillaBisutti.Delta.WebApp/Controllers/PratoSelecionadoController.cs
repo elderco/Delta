@@ -86,6 +86,14 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			return View();
 		}
+		public ActionResult AlterarObservacoes(int id, string obs)
+		{
+			data.PratoSelecionado dps = new data.PratoSelecionado();
+			model.PratoSelecionado prato = dps.GetElement(id);
+			prato.Observacoes = obs;
+			dps.Update(prato);
+			return View();
+		}
 		// GET: /PratoSelecionado/Edit/5
 		public ActionResult Edit(int? id)
 		{

@@ -48,50 +48,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private Model.Evento Evento;
 		#region [ Collections ]
 		private Dictionary<string, string> Area = new Dictionary<string, string>();
-		private List<DTO.ItemEvento> itensGastronomia;
-		private List<DTO.ItemEvento> ItensGastronomia
-		{
-			get
-			{
-				if (itensGastronomia == null)
-				{
-					Area["GM"] = Util.context.Gastronomia.FirstOrDefault(g => g.EventoId == Evento.Id).Observacoes;
-					Dictionary<int, int> positions = new Dictionary<int, int>();
-					itensGastronomia = new List<DTO.ItemEvento>();
-					IEnumerable<Model.PratoSelecionado> itens = Util.context.PratoSelecionado
-						.Include(i => i.Prato)
-						.Include(i => i.Prato.TipoPrato)
-						.Where(i => i.EventoId == Evento.Id && (i.Degustar || i.Escolhido));
-					itens = itens
-						.OrderBy(i => i.Prato.Nome);
-					itens = itens
-						.OrderBy(i => i.Prato.TipoPrato == null ? 0 : i.Prato.TipoPrato.Ordem);
-					foreach (Model.PratoSelecionado item in itens)
-					{
-						if (positions.Keys.Where(i => i == item.Prato.TipoPratoId).Count() == 0)
-						{
-							positions[item.Prato.TipoPratoId] = itensGastronomia.Count();
-							Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.CardapioId == Evento.CardapioId.Value && t.TipoServicoId == Evento.TipoServicoId.Value && t.TipoPratoId == item.Prato.TipoPratoId);
-							int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
-							itensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
-						}
-						itensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
-						{
-							Fornecido = item.Degustar,
-							BloqueiaOutrasPropriedades = item.Rejeitado,
-							Responsabilidade = item.Escolhido,
-							ContatoFornecedor = string.Empty,
-							QuantidadeItem = 0,
-							HorarioEntrega = 0,
-							Observacao = item.Observacoes,
-							NomeItem = item.Prato.Nome
-						});
-					}
-				}
-				return itensGastronomia;
-			}
-		}
-
+		private List<DTO.ItemEvento> ItensGastronomia = new List<DTO.ItemEvento>();
 		private List<DTO.ItemEvento> ItensBebidaBisutti = new List<DTO.ItemEvento>();
 		private List<DTO.ItemEvento> ItensBebidaTerceiro = new List<DTO.ItemEvento>();
 		private List<DTO.ItemEvento> ItensBebidaContratante = new List<DTO.ItemEvento>();
@@ -182,6 +139,40 @@ namespace VillaBisutti.Delta.Core.Business
 		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, item.ItemBoloDoceBemCasado.Nome), Importante = false, Observacoes = item.Observacoes });
 		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBebida.TipoItemBebida.Nome, item.ItemBebida.Nome), Importante = false, Observacoes = item.Observacoes });
 		#region [ Populate itens ]
+		private void PopularItensGastronomia()
+		{
+			Area["GM"] = Util.context.Gastronomia.FirstOrDefault(g => g.EventoId == Evento.Id).Observacoes;
+			Dictionary<int, int> positions = new Dictionary<int, int>();
+			IEnumerable<Model.PratoSelecionado> itens = Util.context.PratoSelecionado
+				.Include(i => i.Prato)
+				.Include(i => i.Prato.TipoPrato)
+				.Where(i => i.EventoId == Evento.Id && (i.Degustar || i.Escolhido));
+			itens = itens
+				.OrderBy(i => i.Prato.Nome);
+			itens = itens
+				.OrderBy(i => i.Prato.TipoPrato == null ? 0 : i.Prato.TipoPrato.Ordem);
+			foreach (Model.PratoSelecionado item in itens)
+			{
+				if (positions.Keys.Where(i => i == item.Prato.TipoPratoId).Count() == 0)
+				{
+					positions[item.Prato.TipoPratoId] = ItensGastronomia.Count();
+					Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.CardapioId == Evento.CardapioId.Value && t.TipoServicoId == Evento.TipoServicoId.Value && t.TipoPratoId == item.Prato.TipoPratoId);
+					int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
+					ItensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
+				}
+				ItensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
+				{
+					Fornecido = item.Degustar,
+					BloqueiaOutrasPropriedades = item.Rejeitado,
+					Responsabilidade = item.Escolhido,
+					ContatoFornecedor = string.Empty,
+					QuantidadeItem = 0,
+					HorarioEntrega = 0,
+					Observacao = item.Observacoes,
+					NomeItem = item.Prato.Nome
+				});
+			}
+		}
 		private void PopularItensBebida()
 		{
 			Model.Bebida bebida = Util.context.Bebida.FirstOrDefault(i => i.EventoId == Evento.Id);
@@ -311,7 +302,7 @@ namespace VillaBisutti.Delta.Core.Business
 			foreach (Model.ItemBoloDoceBemCasadoSelecionado item in itens.Where(i => i.ContratacaoBisutti))
 			{
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentTipoId
-					&& item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
+					|| item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
 				{
 					currentTipoId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
 					currentFornecedorId = item.ItemBoloDoceBemCasado.FornecedorId;
@@ -321,7 +312,7 @@ namespace VillaBisutti.Delta.Core.Business
 							Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem,
 							Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome + " - " +
 								item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + "(quantidade: " +
-									(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId] : 0) + ")",
+									(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId].ToString() : "N/A") + ") ",
 							SubItens = new List<DTO.SubItemEvento>()
 						});
 				}
@@ -331,7 +322,7 @@ namespace VillaBisutti.Delta.Core.Business
 					ContatoFornecedor = item.ContatoFornecimento,
 					Fornecido = false,
 					Responsabilidade = item.ContratacaoBisutti,
-					QuantidadeItem = item.Quantidade,
+					QuantidadeItem = 0,
 					HorarioEntrega = item.HorarioEntrega,
 					Observacao = item.Observacoes,
 					NomeItem = item.ItemBoloDoceBemCasado.Nome
@@ -353,7 +344,7 @@ namespace VillaBisutti.Delta.Core.Business
 			foreach (Model.ItemBoloDoceBemCasadoSelecionado item in itens.Where(i => !i.ContratacaoBisutti))
 			{
 				if (item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId != currentTipoId
-					&& item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
+					|| item.ItemBoloDoceBemCasado.FornecedorId != currentFornecedorId)
 				{
 					currentTipoId = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId;
 					ItensBoloContratante.Add(new DTO.ItemEvento
@@ -361,7 +352,7 @@ namespace VillaBisutti.Delta.Core.Business
 						Ordem = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Ordem,
 						Texto = item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome + " - " +
 							item.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor + "(quantidade: " +
-								(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId] : 0) + ")",
+								(quantidades.ContainsKey(item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId) ? quantidades[item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasadoId].ToString() : "N/A") + ") ",
 						SubItens = new List<DTO.SubItemEvento>()
 					});
 				}
@@ -371,7 +362,7 @@ namespace VillaBisutti.Delta.Core.Business
 					ContatoFornecedor = item.ContatoFornecimento,
 					Fornecido = false,
 					Responsabilidade = item.ContratacaoBisutti,
-					QuantidadeItem = item.Quantidade,
+					QuantidadeItem = 0,
 					HorarioEntrega = item.HorarioEntrega,
 					Observacao = item.Observacoes,
 					NomeItem = item.ItemBoloDoceBemCasado.Nome
@@ -1107,7 +1098,11 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("BEBIDAS");
-			pdf.AddLeadText(Area["BB"]);
+			if (Area.ContainsKey("BB"))
+			{
+				pdf.AddLeadText("Observações:");
+				pdf.AddLine(Area["BB"]);
+			}
 			pdf.AddBreakRule();
 
 			if (ItensBebidaBisutti.Count() > 0)
@@ -1160,7 +1155,11 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("BOLO, DOCES E BEM-CASADO");
-			pdf.AddLeadText(Area["BD"]);
+			if (Area.ContainsKey("BD"))
+			{
+				pdf.AddLeadText("Observações:");
+				pdf.AddLine(Area["BD"]);
+			}
 			pdf.AddBreakRule();
 
 			if (ItensBoloTerceiro.Count() > 0)
@@ -1194,15 +1193,18 @@ namespace VillaBisutti.Delta.Core.Business
 				pdf.AddBreakRule();
 			}
 
-			AdicionarFotosArea("MS");
+			AdicionarFotosArea("BD");
 			pdf.BreakPage();
 		}
 		private void AdicionarPaginaDecoracao()
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("DECORAÇÃO DA RECEPÇÃO");
-			pdf.AddLeadText(Area["DROBS"]);
-			pdf.AddLeadText(Area["DRCOR"]);
+			pdf.AddLeadText("Cores: ");
+			pdf.AddLine(Area["DRCOR"]);
+			pdf.AddLine(" ");
+			pdf.AddLeadText("Observações: ");
+			pdf.AddLine(Area["DROBS"]);
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoBisutti.Count() > 0)
@@ -1260,8 +1262,13 @@ namespace VillaBisutti.Delta.Core.Business
 				return;
 			pdf.AddHeader();
 			pdf.AddHeaderText("DECORAÇÃO DA CERIMÔNIA");
-			pdf.AddLeadText(Area["DCOBS"]);
-			pdf.AddLeadText(Area["DCCOR"]);
+			pdf.AddLeadText("Cores: ");
+			pdf.AddLine(Area["DCCOR"]);
+			pdf.AddLine(" ");
+			pdf.AddLeadText("Observações: ");
+			pdf.AddLine(Area["DCOBS"]);
+			pdf.AddBreakRule();
+
 			pdf.AddBreakRule();
 
 			if (ItensDecoracaoCerimonialBisutti.Count() > 0)
@@ -1317,7 +1324,11 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("ITENS DE FOTO & VÍDEO");
-			pdf.AddLeadText(Area["FV"]);
+			if (Area.ContainsKey("FV"))
+			{
+				pdf.AddLeadText("Observações:");
+				pdf.AddLine(Area["FV"]);
+			}
 			pdf.AddBreakRule();
 
 			if (ItensFotoVideoBisutti.Count() > 0)
@@ -1373,8 +1384,14 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("GASTRONOMIA");
-			if (incluiDegustar)
-				pdf.AddLeadText(Area["GM"]);
+			pdf.AddLeadText("Cardápio: " + (Evento.Cardapio == null ? "Indefinido" : Evento.Cardapio.Nome));
+			pdf.AddLeadText("Serviço: " + (Evento.TipoServico == null ? "Indefinido" : Evento.TipoServico.Nome));
+			if (!incluiDegustar)
+				if(Area.ContainsKey("GM"))
+				{
+					pdf.AddLeadText("Observações:");
+					pdf.AddLeadText(Area["GM"]);
+				}
 			pdf.AddBreakRule();
 			foreach (DTO.ItemEvento grupo in ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades).Count() > 0))
 			{
@@ -1390,9 +1407,9 @@ namespace VillaBisutti.Delta.Core.Business
 					if (item.BloqueiaOutrasPropriedades)
 						continue;
 					if (item.Responsabilidade)
-						pdf.AddLine((incluiDegustar ? "Item escolhido - " : "") + item.NomeItem);
+						pdf.AddLine((incluiDegustar ? "Item escolhido - " : "") + item.NomeItem + (string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao));
 					else if (item.Fornecido && incluiDegustar)
-						pdf.AddLine(item.NomeItem);
+						pdf.AddLine(item.NomeItem + (string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao));
 				}
 				pdf.AddLine(" ");
 				pdf.BreakLine();
@@ -1403,7 +1420,11 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("MONTAGEM DO SALÃO");
-			pdf.AddLeadText(Area["MS"]);
+			if(Area.ContainsKey("MS"))
+			{
+				pdf.AddLeadText("Observações:");
+				pdf.AddLeadText(Area["MS"]);
+			}
 			pdf.AddBreakRule();
 
 			if (ItensMontagemBisutti.Count() > 0)
@@ -1459,7 +1480,11 @@ namespace VillaBisutti.Delta.Core.Business
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("OUTROS ITENS");
-			pdf.AddLeadText(Area["OI"]);
+			if (Area.ContainsKey("OI"))
+			{
+				pdf.AddLeadText("Observações:");
+				pdf.AddLeadText(Area["OI"]);
+			}
 			pdf.AddBreakRule();
 
 			if (ItensOutrosItensBisutti.Count() > 0)
@@ -1629,6 +1654,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void GerarOS()
 		{
+			//remover página de layout
 			Evento = Util.context.Evento
 				.Include(e => e.Roteiro)
 				.Include(e => e.Cerimonial)
@@ -1638,6 +1664,7 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(e => e.Cardapio)
 				.Include(e => e.TipoServico)
 				.FirstOrDefault(e => e.Id == EventoId);
+			PopularItensGastronomia();
 			PopularItensBebida();
 			PopularItensBolo();
 			PopularItensDecoracao();
@@ -1649,10 +1676,10 @@ namespace VillaBisutti.Delta.Core.Business
 			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoOS);
 			InicializePDF();
 			SetPDFHeader();
+			//AdicionarPaginaLayout();
 			AdicionarPaginaPrincipal();
 			AdicionarPaginaDecoracaoCerimonial();
 			AdicionarPaginaDecoracao();
-			AdicionarPaginaLayout();
 			AdicionarPaginaMontagem();
 			AdicionarPaginaBoloDoce();
 			AdicionarPaginaFotoVideo();
@@ -1673,11 +1700,11 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(e => e.Cardapio)
 				.Include(e => e.TipoServico)
 				.FirstOrDefault(e => e.Id == EventoId);
+			PopularItensGastronomia();
 			PopularItensBebida();
 			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoDegustacao);
 			InicializePDF();
 			SetPDFHeader();
-			pdf.AddLeadText(string.Format("Cardápio/Serviço: {0} - {1}", Evento.Cardapio.Nome, Evento.TipoServico.Nome));
 			AdicionarPaginaGastronomia(true);
 			AdicionarPaginaBebidas();
 			Kill();
@@ -1744,6 +1771,7 @@ namespace VillaBisutti.Delta.Core.Business
 			ItensFotoVideoBisutti = null;
 			ItensFotoVideoTerceiro = null;
 			ItensFotoVideoContratante = null;
+			ItensGastronomia = null;
 			ItensMontagemBisutti = null;
 			ItensMontagemTerceiro = null;
 			ItensMontagemContratante = null;
@@ -1754,7 +1782,6 @@ namespace VillaBisutti.Delta.Core.Business
 			ItensSomIluminacaoTerceiro = null;
 			ItensSomIluminacaoContratante = null;
 			fotos = null;
-			itensGastronomia = null;
 		}
 
 		public void Dispose()

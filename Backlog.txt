@@ -1,6 +1,8 @@
 		[Marcar área da OS como "Encerrado"] IMPORTANTE!!!
 		Exibir no evento quais partes já estão definidas
 		
+		Tirar quantidade de item de BDBC
+		
 		Gastronomia -> importar para o evento reseta a porra toda
 			Incluir prato que não está no cardápio
 		

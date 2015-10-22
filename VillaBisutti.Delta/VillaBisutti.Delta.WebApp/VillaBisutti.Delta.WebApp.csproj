@@ -653,6 +653,7 @@
     <Content Include="Views\Evento\Delete.cshtml" />
     <Content Include="Views\OS\Degustacoes.cshtml" />
     <Content Include="Views\OS\Reunioes.cshtml" />
+    <Content Include="Views\PratoSelecionado\AlterarObservacoes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
