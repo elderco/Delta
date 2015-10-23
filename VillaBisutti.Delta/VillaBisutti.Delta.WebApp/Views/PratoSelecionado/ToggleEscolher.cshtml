@@ -12,3 +12,4 @@
 		$("#Degustar_@(Model.Id)").@(Model.Escolhido ? "addClass" : "removeClass")("hidden");
 	});
 </script>
+@Html.Partial("../PratoSelecionado/_HandleInput", Model)

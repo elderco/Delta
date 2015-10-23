@@ -10,3 +10,4 @@
 		$("#Degustar_@(Model.Id)").html("@(Html.Raw(Model.Degustar ? "<i class=\\\"fa fa-check\\\"></i> Item será degustado" : "Degustar item"))");
 	});
 </script>
+@Html.Partial("../PratoSelecionado/_HandleInput", Model)

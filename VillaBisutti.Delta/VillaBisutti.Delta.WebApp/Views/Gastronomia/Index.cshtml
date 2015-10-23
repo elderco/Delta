@@ -13,6 +13,18 @@
 @section scripts {
 	@Scripts.Render("~/bundles/jqueryval")
 	<script language="javascript" type="text/javascript">
+		function PostObs(elementId) {
+			elementId = "#" + elementId;
+			var theElement = $(elementId);
+			var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
+			var $targetDiv = $("<div />").attr("id", id);
+			$("body").append($targetDiv);
+			var url = theElement.attr("data-href");
+			url += "?id=" + theElement.attr("data-id");
+			url += "&obs=" + encodeURIComponent(theElement.val());
+			url += "&sid=" + Math.random();
+			LoadPage(url, id);
+		}
 		$(document).ready(function () {
 			$(".action-toggle").click(function (e) {
 				e.preventDefault();
@@ -22,14 +34,7 @@
 				LoadPage($(this).attr("href"), id);
 			});
 			$(".observacoes-prato").change(function () {
-				var id = "AddingTarget_" + (Math.random() + "").replace(".", "");
-				var $targetDiv = $("<div />").attr("id", id);
-				$("body").append($targetDiv);
-				var url = $(this).attr("data-href");
-				url += "?id=" + $(this).attr("data-id");
-				url += "&obs=" + encodeURIComponent($(this).val());
-				url += "&sid=" + Math.random();
-				LoadPage(url, id);
+				PostObs($(this).attr("id"));
 			});
 		});
 	</script>
@@ -92,10 +97,10 @@
 							@(Html.Raw(prato.Rejeitado ? "<i class=\"fa fa-frown-o\"></i> Item rejeitado" : "Rejeitar item"))
 						</a>
 					</span>
-					<span class="pull-right col-md-2">
+					<span id="Observacoes_Container_@prato.Id" class="pull-right col-md-2">
 						@if (prato.Degustar || prato.Escolhido)
 						{
-						<input type="text" placeholder="Observações" class="observacoes-prato form-control" value="@(prato.Observacoes)" data-id="@prato.Id" data-href="@Url.Action("AlterarObservacoes", "PratoSelecionado")" />
+							<input id="Observacoes_@prato.Id" type="text" placeholder="Observações" class="observacoes-prato form-control" value="@(prato.Observacoes)" data-id="@prato.Id" data-href="@Url.Action("AlterarObservacoes", "PratoSelecionado")" />
 						}
 					</span>
 					<span class="col-md-5">

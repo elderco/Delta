@@ -1108,6 +1108,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensBebidaBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensBebidaBisutti)
 				{
 					pdf.AddLeadText(grupo.Texto);
@@ -1122,6 +1123,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensBebidaTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensBebidaTerceiro)
 				{
 					pdf.AddLeadText(grupo.Texto);
@@ -1136,6 +1138,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensBebidaContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensBebidaContratante)
 				{
 					pdf.AddLeadText(grupo.Texto);
@@ -1165,6 +1168,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensBoloTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensBoloTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1180,6 +1184,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensBoloContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensBoloContratante)
 				{
 					string strItems = string.Empty;
@@ -1210,6 +1215,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoBisutti)
 				{
 					string strItems = string.Empty;
@@ -1225,6 +1231,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1240,6 +1247,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoContratante)
 				{
 					string strItems = string.Empty;
@@ -1274,6 +1282,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoCerimonialBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialBisutti)
 				{
 					string strItems = string.Empty;
@@ -1289,6 +1298,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoCerimonialTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1304,6 +1314,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensDecoracaoCerimonialContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensDecoracaoCerimonialContratante)
 				{
 					string strItems = string.Empty;
@@ -1334,6 +1345,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensFotoVideoBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoBisutti)
 				{
 					string strItems = string.Empty;
@@ -1349,6 +1361,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensFotoVideoTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1364,6 +1377,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensFotoVideoContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensFotoVideoContratante)
 				{
 					string strItems = string.Empty;
@@ -1430,6 +1444,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensMontagemBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensMontagemBisutti)
 				{
 					string strItems = string.Empty;
@@ -1445,6 +1460,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensMontagemTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensMontagemTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1460,6 +1476,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensMontagemContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensMontagemContratante)
 				{
 					string strItems = string.Empty;
@@ -1490,6 +1507,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensOutrosItensBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensBisutti)
 				{
 					string strItems = string.Empty;
@@ -1505,6 +1523,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensOutrosItensTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1520,6 +1539,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensOutrosItensContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensOutrosItensContratante)
 				{
 					string strItems = string.Empty;
@@ -1546,6 +1566,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensSomIluminacaoBisutti.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoBisutti, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoBisutti)
 				{
 					string strItems = string.Empty;
@@ -1561,6 +1582,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensSomIluminacaoTerceiro.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoTerceiro, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoTerceiro)
 				{
 					string strItems = string.Empty;
@@ -1576,6 +1598,7 @@ namespace VillaBisutti.Delta.Core.Business
 			if (ItensSomIluminacaoContratante.Count() > 0)
 			{
 				pdf.AddLine(Util.TextoFornecimentoContratante, true);
+				pdf.AddLine(" ");
 				foreach (DTO.ItemEvento grupo in ItensSomIluminacaoContratante)
 				{
 					string strItems = string.Empty;
@@ -1783,7 +1806,6 @@ namespace VillaBisutti.Delta.Core.Business
 			ItensSomIluminacaoContratante = null;
 			fotos = null;
 		}
-
 		public void Dispose()
 		{
 			Kill();

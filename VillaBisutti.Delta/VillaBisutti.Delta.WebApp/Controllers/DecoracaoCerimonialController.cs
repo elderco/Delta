@@ -45,7 +45,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edited([Bind(Include = "EventoId,Id,Observacoes")] model.DecoracaoCerimonial decoracaocerimonial)
+		public ActionResult Edited([Bind(Include = "EventoId,Id,CoresCerimonia,Observacoes")] model.DecoracaoCerimonial decoracaocerimonial)
 		{
 			new data.DecoracaoCerimonial().Update(decoracaocerimonial);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
