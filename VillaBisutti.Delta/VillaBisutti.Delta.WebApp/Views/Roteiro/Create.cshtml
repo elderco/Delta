@@ -20,7 +20,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.Titulo, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
-				@Html.EditorFor(model => model.Titulo)
+				@Html.TextAreaFor(model => model.Titulo, new { @rows = 4, @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.Titulo)
 				<input type="hidden" name="EventoId" value="@(ViewBag.Id)" />
 			</div>
@@ -46,9 +46,6 @@
 				<input type="checkbox" name="antesInicio" id="antesInicio" value="false" />
 			</div>
 		</div>
-
-
-
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-4">
 				<input type="submit" value="Salvar" class="btn btn-default form-control" />

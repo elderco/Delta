@@ -655,6 +655,7 @@
     <Content Include="Views\OS\Reunioes.cshtml" />
     <Content Include="Views\PratoSelecionado\AlterarObservacoes.cshtml" />
     <Content Include="Views\PratoSelecionado\_HandleInput.cshtml" />
+    <Content Include="Views\Roteiro\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

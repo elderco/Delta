@@ -126,19 +126,20 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			IEnumerable<Model.Evento> eventos = Util.context.Evento
 				.Include(e => e.Local)
-				.Include(e => e.Reunioes)
-				.Include(e => e.Reunioes.Select(r => r.TipoReuniao))
 				.Where(e => e.Reunioes.Where(r => r.TipoReuniao.Nome.Contains("Degustação") && di <= r.Data && r.Data <= df).Count() > 0);
+			List<dto.Degustacao> degustacoes = new List<dto.Degustacao>();
 			foreach (Model.Evento e in eventos)
 			{
-				if (e.CardapioId == null || e.TipoServicoId == null)
-					continue;
-				using (Biz.OS os = new Biz.OS(e.Id))
+				string fileName = Util.GetOSFileName(e, Util.TipoDocumentoDegustacao);
+				fileName = fileName.Substring(fileName.LastIndexOf("OS\\") + 3).Replace('\\', '/');
+				degustacoes.Add(new dto.Degustacao
 				{
-					os.GerarDegustacao();
-				}
+					Exists = io.File.Exists(Server.MapPath("~/OS/" + fileName)),
+					Identifyer = string.Format("{0} > {1} > {2}", e.Data.ToString("dd-MM-yyyy"), e.Local.NomeCasa, e.NomeHomenageados),
+					FileName = fileName
+				});
 			}
-			return View(eventos);
+			return View(degustacoes);
 		}
 		public ActionResult DownloadDD(DateTime di, DateTime df)
 		{
@@ -155,11 +156,12 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				// Loop through the dataset to fill the zip file
 				foreach (Model.Evento e in eventos)
 				{
-					if (e.CardapioId == null || e.TipoServicoId == null)
-						continue;
 					//OS\2015\9\OS-05-09-2015-TE-camila-e-guilherme-Casamento.pdf
 					string fileName = Util.GetOSFileName(e, Util.TipoDocumentoDegustacao);
 					fileName = fileName.Substring(fileName.LastIndexOf("OS\\") + 3).Replace('\\', '/');
+
+					if (!io.File.Exists(Server.MapPath("~/OS/" + fileName)))
+						continue;
 
 					FileInfo fi = new FileInfo(Server.MapPath("~/OS/" + fileName));
 
@@ -174,7 +176,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 					// Zip the file in buffered chunks
 					// the "using" will close the stream even if an exception occurs
 					byte[] buffer = new byte[4096];
-					using (FileStream streamReader = io.File.OpenRead(Server.MapPath("~/OS/" + fileName)))
+					using (FileStream streamReader = io.File.Open(Server.MapPath("~/OS/" + fileName), FileMode.Open, FileAccess.Read))
 					{
 						StreamUtils.Copy(streamReader, zipOS, buffer);
 					}
@@ -203,6 +205,15 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				Response.End();
 				return new EmptyResult();
 			}
+		}
+		public ActionResult GenerateDD(DateTime di, DateTime df)
+		{
+			IEnumerable<Model.Evento> eventos = Util.context.Evento
+				.Include(e => e.Local)
+				.Where(e => e.Reunioes.Where(r => r.TipoReuniao.Nome.Contains("Degustação") && di <= r.Data && r.Data <= df).Count() > 0);
+			foreach (Model.Evento e in eventos)
+				new Biz.OS(e.Id).GerarDegustacao();
+			return RedirectToAction("Reunioes", new { di = di, df = df });
 		}
 	}
 }

@@ -48,7 +48,38 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			new data.ItemRoteiro().Insert(itemroteiro);
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 		}
-
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Titulo,HorarioInicio,Observacao")] model.ItemRoteiro itemroteiro, bool antesInicio = true)
+		{
+			model.ItemRoteiro roteiro = new data.ItemRoteiro().GetElement(itemroteiro.Id);
+			roteiro.Titulo = itemroteiro.Titulo;
+			roteiro.HorarioInicio = itemroteiro.HorarioInicio;
+			if (antesInicio)
+				roteiro.HorarioInicio += 24 * 60;
+			roteiro.Observacao = itemroteiro.Observacao;
+			new data.ItemRoteiro().Update(roteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath + "#" + itemroteiro.Id);
+		}
+		public ActionResult ToggleImportant(int id)
+		{
+			model.ItemRoteiro roteiro = new data.ItemRoteiro().GetElement(id);
+			roteiro.Importante = !roteiro.Importante;
+			new data.ItemRoteiro().Update(roteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath + "#" + id);
+		}
+		public ActionResult ToggleBefore(int id)
+		{
+			int factor = 24 * 60;
+			model.ItemRoteiro roteiro = new data.ItemRoteiro().GetElement(id);
+			bool before = new data.Evento().GetElement(roteiro.EventoId.Value).HorarioInicio > roteiro.HorarioInicio;
+			if (before)
+				roteiro.HorarioInicio += factor;
+			else
+				roteiro.HorarioInicio -= factor;
+			new data.ItemRoteiro().Update(roteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath + "#" + id);
+		}
 		// GET: /ItemRoteiro/Delete/5
 		public ActionResult Delete(int? id)
 		{

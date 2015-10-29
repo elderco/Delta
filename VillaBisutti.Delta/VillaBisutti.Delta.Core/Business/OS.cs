@@ -1620,10 +1620,16 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddHeader();
 			pdf.AddHeaderText("ROTEIRO");
 			pdf.AddBreakRule();
+			List<PDF.CellRow> rows = new List<PDF.CellRow>();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiro)
 			{
-				pdf.AddLine(string.Format("{0} - {1} - {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
+				PDF.CellRow row = new PDF.CellRow();
+				row.IsRowImportant = item.Importante;
+				row.CellTexts = new string[]{ item.Horario.ToString(), item.Acontecimento, item.Observacoes };
+				row.CellBolds = new bool[] { true, true, false };
+				rows.Add(row);
 			}
+			pdf.AddTable(rows, new float[] { 1F, 6F, 5F });
 			pdf.BreakPage();
 		}
 		private void AdicionarPaginaRoteiroCerimonial()
@@ -1631,10 +1637,16 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddHeader();
 			pdf.AddHeaderText("ROTEIRO DO CERIMONIAL");
 			pdf.AddBreakRule();
+			List<PDF.CellRow> rows = new List<PDF.CellRow>();
 			foreach (DTO.ItemRoteiroEvento item in ItensRoteiroCerimonial)
 			{
-				pdf.AddLine(string.Format("{0} - {1} - {2}", item.Horario, item.Acontecimento, item.Observacoes), item.Importante);
+				PDF.CellRow row = new PDF.CellRow();
+				row.IsRowImportant = item.Importante;
+				row.CellTexts = new string[] { item.Horario.ToString(), item.Acontecimento, item.Observacoes };
+				row.CellBolds = new bool[] { true, true, false };
+				rows.Add(row);
 			}
+			pdf.AddTable(rows, new float[] { 1F, 6F, 5F });
 			pdf.BreakPage();
 		}
 		private void AdicionarFotosArea(string qual)
@@ -1777,7 +1789,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void Kill()
 		{
-			pdf.FinishWriting();
+			pdf.Dispose();
 			_pdf = null;
 			Evento = null;
 			ItensBebidaBisutti = null;

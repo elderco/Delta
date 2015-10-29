@@ -236,6 +236,35 @@ namespace VillaBisutti.Delta.Core
 			document.Add(line);
 			AddLine(" ", false);
 		}
+		public void AddTable(List<CellRow> tableRows, float[] cellWidths)
+		{
+			iPdf.PdfPTable table = new iPdf.PdfPTable(cellWidths.Length);
+			for (int i = 0; i < cellWidths.Length; i++ )
+				table.AbsoluteWidths[i] = cellWidths[i];
+			table.WidthPercentage = 100F;
+			table.SetWidths(cellWidths);
+			table.SpacingBefore = 10F;
+			table.SpacingAfter = 10F;
+			table.SplitRows = false;
+			table.SplitLate = false;
+			table.DefaultCell.Border = 0; // 
+
+			foreach (CellRow row in tableRows)
+			{
+				for (int i = 0; i < row.CellTexts.Length; i++)
+				{
+					iText.Chunk cellChunk = new iText.Chunk(row.CellTexts[i]);
+					cellChunk.Font = iText.FontFactory.GetFont(baseFont, row.IsRowImportant ? leadSize : normalSize, row.CellBolds[i] ? iText.Font.BOLD : iText.Font.NORMAL);
+					iPdf.PdfPCell cell = new iPdf.PdfPCell(new iText.Phrase(cellChunk));
+					//cell.Width = (float)(cellWidths[i] * (document.PageSize.Width / 100));
+					cell.Border = iText.Rectangle.NO_BORDER;
+					cell.NoWrap = false;
+					table.AddCell(cell);
+				}
+			}
+			table.SetWidths(cellWidths);
+			document.Add(table);
+		}
 		public void BreakLine()
 		{
 			AddLine("");
@@ -248,7 +277,12 @@ namespace VillaBisutti.Delta.Core
 		{
 			FinishWriting();
 		}
-
+		public class CellRow
+		{
+			public bool IsRowImportant { get; set; }
+			public string[] CellTexts { get; set; }
+			public bool[] CellBolds { get; set; }
+		}
 	}
 	internal class PDFWriterEvents : iPdf.IPdfPageEvent
 	{

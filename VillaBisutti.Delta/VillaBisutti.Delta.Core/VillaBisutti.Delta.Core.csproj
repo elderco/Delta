@@ -122,6 +122,7 @@
     <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="Data\TipoServico.cs" />
+    <Compile Include="DTO\Degustacao.cs" />
     <Compile Include="DTO\Evento.cs" />
     <Compile Include="Business\ItemEvento.cs" />
     <Compile Include="DTO\FileSys.cs" />

@@ -394,6 +394,9 @@ function ConvertHorario(itemId) {
 	itemId = itemId.replace("#", "") == itemId ? "#" + itemId : itemId;
 	var horas = Math.floor($(itemId).val() / 60);
 	var minutos = $(itemId).val() - (horas * 60);
+	if (horas > 23)	{
+		horas = horas - 24;
+	}
 	$(itemId + "_h").val(horas);
 	$(itemId + "_m").val(minutos);
 }

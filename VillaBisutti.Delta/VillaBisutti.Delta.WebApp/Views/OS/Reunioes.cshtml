@@ -1,5 +1,5 @@
 ﻿@using VillaBisutti.Delta;
-@model IEnumerable<VillaBisutti.Delta.Core.Model.Evento>
+@model IEnumerable<VillaBisutti.Delta.Core.DTO.Degustacao>
 @{
     Layout = null;
 }
@@ -7,15 +7,14 @@
 	.existing-items-container { padding: 3px; }
 	.existing-items { border: 1px solid #666666; }
 </style>
-@foreach (var item in Model)
+<div class="container-fluid">
+	@foreach (var item in Model)
 {
-	<div class="col-md-4 existing-items-container">
+	<div class="col-md-4 existing-items-container" title="@item.FileName">
 		<div class="bg-info existing-items">
-			@(item.Data.ToString("dddd", new System.Globalization.CultureInfo("pt-BR"))),  @(item.Data.ToString("dd/MM/yyyy"))
-			<i class="ace-icon fa fa-angle-right"> </i>
-			@(item.Local.NomeCasa)
-			<i class="ace-icon fa fa-angle-right"> </i>
-			@(item.NomeHomenageados)
+			@item.Identifyer
+			<i class="pull-right fa fa-@(item.Exists ? "check green" : "times red")"></i>
 		</div>
 	</div>
 }
+</div>

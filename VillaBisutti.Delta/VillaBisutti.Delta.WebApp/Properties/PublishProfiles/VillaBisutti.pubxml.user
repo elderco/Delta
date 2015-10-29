@@ -20,10 +20,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:44</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/23/2015 11:13:02</publishTime>
+      <publishTime>10/29/2015 12:50:02</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/23/2015 11:13:02</publishTime>
+      <publishTime>10/29/2015 12:50:02</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/08/2015 12:25:46</publishTime>
@@ -104,13 +104,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:49</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Automation.dll">
-      <publishTime>10/23/2015 11:12:52</publishTime>
+      <publishTime>10/29/2015 12:49:50</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Core.dll">
-      <publishTime>10/23/2015 11:12:51</publishTime>
+      <publishTime>10/29/2015 12:49:49</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.WebApp.dll">
-      <publishTime>10/23/2015 11:12:53</publishTime>
+      <publishTime>10/29/2015 12:49:51</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/08/2015 12:25:55</publishTime>
@@ -269,10 +269,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/23/2015 11:12:59</publishTime>
+      <publishTime>10/29/2015 12:49:58</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/VillaBisutti.pubxml.user">
-      <publishTime>10/22/2015 11:48:23</publishTime>
+      <publishTime>10/27/2015 02:29:03</publishTime>
     </File>
     <File Include="Scripts/ace-elements.min.js">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -290,7 +290,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Scripts/Functions.js">
-      <publishTime>02/10/2015 11:14:42</publishTime>
+      <publishTime>10/29/2015 11:53:13</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -839,7 +839,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/08/2015 12:23:55</publishTime>
+      <publishTime>10/29/2015 11:30:49</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditFornecimentoTerceiro.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -998,7 +998,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/OS/Degustacoes.cshtml">
-      <publishTime>10/08/2015 20:51:24</publishTime>
+      <publishTime>10/27/2015 02:28:49</publishTime>
     </File>
     <File Include="Views/OS/Download.cshtml">
       <publishTime>01/10/2015 11:00:38</publishTime>
@@ -1013,7 +1013,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/10/2015 11:52:54</publishTime>
     </File>
     <File Include="Views/OS/Reunioes.cshtml">
-      <publishTime>10/08/2015 19:33:40</publishTime>
+      <publishTime>10/27/2015 00:44:43</publishTime>
     </File>
     <File Include="Views/OutrosItens/Edit.cshtml">
       <publishTime>09/20/2015 14:09:36</publishTime>
@@ -1115,13 +1115,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Roteiro/Create.cshtml">
-      <publishTime>10/20/2015 13:23:02</publishTime>
+      <publishTime>10/29/2015 11:25:16</publishTime>
     </File>
     <File Include="Views/Roteiro/Delete.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
+    <File Include="Views/Roteiro/Edit.cshtml">
+      <publishTime>10/29/2015 12:45:43</publishTime>
+    </File>
     <File Include="Views/Roteiro/Index.cshtml">
-      <publishTime>09/20/2015 14:09:36</publishTime>
+      <publishTime>10/29/2015 12:45:35</publishTime>
     </File>
     <File Include="Views/RoteiroPadrao/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1355,7 +1358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/22/2015 11:45:53</publishTime>
+      <publishTime>10/29/2015 12:49:54</publishTime>
     </File>
   </ItemGroup>
 </Project>
