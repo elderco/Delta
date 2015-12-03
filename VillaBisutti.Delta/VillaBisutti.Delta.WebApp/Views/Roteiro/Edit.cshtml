@@ -29,7 +29,7 @@
 			</a>
 		</td>
 		<td>
-			@Html.TextAreaFor(model => Model.Observacao, new { @rows = 3, @class = "form-control submit-on-change" + Model.Id })
+			@Html.TextAreaFor(model => Model.Observacao, new { @rows = 3, @class = "form-control submit-on-change-" + Model.Id })
 		</td>
 		<td>
 			<a href="@Url.Action("ToggleBefore", "Roteiro", new { id = Model.Id })" title="Definir antecipação ao início do evento">

@@ -118,7 +118,7 @@ namespace VillaBisutti.Delta.Core.Business
 				{
 					itensRoteiroCerimonial = new List<DTO.ItemRoteiroEvento>();
 					foreach (Model.ItemCerimonial item in Util.context.ItemCerimonial.Where(ir => ir.EventoId == Evento.Id).OrderBy(ir => ir.HorarioInicio))
-						itensRoteiroCerimonial.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = item.Inicio, Importante = item.Importante, Observacoes = item.Observacao });
+						itensRoteiroCerimonial.Add(new DTO.ItemRoteiroEvento { Acontecimento = item.Titulo, Horario = Model.Horario.Parse(item.HorarioInicio), Importante = item.Importante, Observacoes = item.Observacao });
 				}
 				return itensRoteiroCerimonial;
 			}
@@ -156,7 +156,7 @@ namespace VillaBisutti.Delta.Core.Business
 				if (positions.Keys.Where(i => i == item.Prato.TipoPratoId).Count() == 0)
 				{
 					positions[item.Prato.TipoPratoId] = ItensGastronomia.Count();
-					Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.CardapioId == Evento.CardapioId.Value && t.TipoServicoId == Evento.TipoServicoId.Value && t.TipoPratoId == item.Prato.TipoPratoId);
+					Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.EventoId == item.EventoId && t.TipoPratoId == item.Prato.TipoPratoId);
 					int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
 					ItensGastronomia.Add(new DTO.ItemEvento { Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem, Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome, Quantidade = quantidade, SubItens = new List<DTO.SubItemEvento>() });
 				}
@@ -1081,7 +1081,6 @@ namespace VillaBisutti.Delta.Core.Business
 			else
 				pdf.AddLeadText("Tipo de serviço: Indefinido.");
 			pdf.AddBreakRule();
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaLayout()
 		{
@@ -1092,7 +1091,6 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddLeadText("LAYOUT");
 			pdf.AddBreakRule();
 			AdicionarFotosArea("EV");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaBebidas()
 		{
@@ -1152,7 +1150,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("BB");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaBoloDoce()
 		{
@@ -1199,7 +1196,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("BD");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaDecoracao()
 		{
@@ -1262,7 +1258,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("DR");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaDecoracaoCerimonial()
 		{
@@ -1329,7 +1324,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("DC");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaFotoVideo()
 		{
@@ -1392,16 +1386,15 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("FV");
-			pdf.BreakPage();
 		}
-		private void AdicionarPaginaGastronomia(bool incluiDegustar)
+		private void AdicionarPaginaGastronomia(bool incluiDegustar, bool isOS = false)
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("GASTRONOMIA");
 			pdf.AddLeadText("Cardápio: " + (Evento.Cardapio == null ? "Indefinido" : Evento.Cardapio.Nome));
 			pdf.AddLeadText("Serviço: " + (Evento.TipoServico == null ? "Indefinido" : Evento.TipoServico.Nome));
 			if (!incluiDegustar)
-				if(Area.ContainsKey("GM"))
+				if (Area.ContainsKey("GM"))
 				{
 					pdf.AddLeadText("Observações:");
 					pdf.AddLeadText(Area["GM"]);
@@ -1409,9 +1402,14 @@ namespace VillaBisutti.Delta.Core.Business
 			pdf.AddBreakRule();
 			foreach (DTO.ItemEvento grupo in ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades).Count() > 0))
 			{
-				if (!incluiDegustar && grupo.SubItens.Where(si => si.Responsabilidade == true).Count() == 0)
+				if (grupo.SubItens.Where(si => si.Responsabilidade || si.Fornecido).Count() == 0)
 					continue;
-				pdf.AddLeadText(grupo.Texto + (incluiDegustar ? " (Escolher " + grupo.Quantidade + " ite" + (grupo.Quantidade > 1 ? "ns" : "m") + ")" : ""));
+				int escolhidos = grupo.SubItens.Where(si => si.Responsabilidade).Count();
+				int degustar = grupo.SubItens.Where(si => si.Fornecido).Count();
+				if (incluiDegustar && degustar > 0)
+					pdf.AddLeadText(grupo.Texto + " (Escolher " + (grupo.Quantidade - escolhidos) + " ite" + (grupo.Quantidade - escolhidos != 1 ? "ns" : "m") + ")");
+				else if (!incluiDegustar && escolhidos > 0)
+					pdf.AddLeadText(grupo.Texto + (isOS ? "" : " (" + escolhidos + " ite" + (escolhidos != 1 ? "ns" : "m") + " já escolhido" + (escolhidos != 1 ? "s" : "") + ")"));
 				pdf.BreakLine();
 				foreach (DTO.SubItemEvento item in grupo.SubItens.OrderBy(i => i.NomeItem))
 				{
@@ -1420,21 +1418,20 @@ namespace VillaBisutti.Delta.Core.Business
 					//Fornecido = item.Degustar,
 					if (item.BloqueiaOutrasPropriedades)
 						continue;
-					if (item.Responsabilidade)
-						pdf.AddLine((incluiDegustar ? "Item escolhido - " : "") + item.NomeItem + (string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao));
+					if (item.Responsabilidade && !incluiDegustar)
+						pdf.AddLine(item.NomeItem + (string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao));
 					else if (item.Fornecido && incluiDegustar)
 						pdf.AddLine(item.NomeItem + (string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao));
 				}
 				pdf.AddLine(" ");
 				pdf.BreakLine();
 			}
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaMontagem()
 		{
 			pdf.AddHeader();
 			pdf.AddHeaderText("MONTAGEM DO SALÃO");
-			if(Area.ContainsKey("MS"))
+			if (Area.ContainsKey("MS"))
 			{
 				pdf.AddLeadText("Observações:");
 				pdf.AddLeadText(Area["MS"]);
@@ -1491,7 +1488,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("MS");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaOutrosItens()
 		{
@@ -1554,7 +1550,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("OI");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaSomIluminacao()
 		{
@@ -1613,7 +1608,6 @@ namespace VillaBisutti.Delta.Core.Business
 			}
 
 			AdicionarFotosArea("SI");
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaRoteiro()
 		{
@@ -1625,12 +1619,11 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				PDF.CellRow row = new PDF.CellRow();
 				row.IsRowImportant = item.Importante;
-				row.CellTexts = new string[]{ item.Horario.ToString(), item.Acontecimento, item.Observacoes };
+				row.CellTexts = new string[] { item.Horario.ToString(), item.Acontecimento, item.Observacoes };
 				row.CellBolds = new bool[] { true, true, false };
 				rows.Add(row);
 			}
 			pdf.AddTable(rows, new float[] { 1F, 6F, 5F });
-			pdf.BreakPage();
 		}
 		private void AdicionarPaginaRoteiroCerimonial()
 		{
@@ -1642,12 +1635,11 @@ namespace VillaBisutti.Delta.Core.Business
 			{
 				PDF.CellRow row = new PDF.CellRow();
 				row.IsRowImportant = item.Importante;
-				row.CellTexts = new string[] { item.Horario.ToString(), item.Acontecimento, item.Observacoes };
+				row.CellTexts = new string[] { item.Horario.ToInt().ToString(), item.Acontecimento, item.Observacoes };
 				row.CellBolds = new bool[] { true, true, false };
 				rows.Add(row);
 			}
 			pdf.AddTable(rows, new float[] { 1F, 6F, 5F });
-			pdf.BreakPage();
 		}
 		private void AdicionarFotosArea(string qual)
 		{
@@ -1713,16 +1705,27 @@ namespace VillaBisutti.Delta.Core.Business
 			SetPDFHeader();
 			//AdicionarPaginaLayout();
 			AdicionarPaginaPrincipal();
+			pdf.BreakPage();
 			AdicionarPaginaDecoracaoCerimonial();
+			pdf.BreakPage();
 			AdicionarPaginaDecoracao();
+			pdf.BreakPage();
 			AdicionarPaginaMontagem();
+			pdf.BreakPage();
 			AdicionarPaginaBoloDoce();
+			pdf.BreakPage();
 			AdicionarPaginaFotoVideo();
+			pdf.BreakPage();
 			AdicionarPaginaSomIluminacao();
+			pdf.BreakPage();
 			AdicionarPaginaOutrosItens();
-			AdicionarPaginaGastronomia(false);
+			pdf.BreakPage();
+			AdicionarPaginaGastronomia(false, true);
+			pdf.BreakPage();
 			AdicionarPaginaBebidas();
+			pdf.BreakPage();
 			AdicionarPaginaRoteiro();
+			pdf.BreakPage();
 			AdicionarPaginaRoteiroCerimonial();
 			Kill();
 		}
@@ -1734,13 +1737,26 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(e => e.PosVendedora)
 				.Include(e => e.Cardapio)
 				.Include(e => e.TipoServico)
+				.Include(e => e.Reunioes)
+				.Include(e => e.Reunioes.Select(r => r.TipoReuniao))
 				.FirstOrDefault(e => e.Id == EventoId);
 			PopularItensGastronomia();
 			PopularItensBebida();
 			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoDegustacao);
 			InicializePDF();
 			SetPDFHeader();
+			IEnumerable<Model.Reuniao> reunioes = Evento.Reunioes.Where(r => r.TipoReuniao.GeraDossie && r.Data > DateTime.Today);
+			reunioes = reunioes.OrderBy(r => r.Data);
+			Model.Reuniao reuniao = reunioes.FirstOrDefault();
+			if (reuniao != null)
+				pdf.AddHeaderText(string.Format("Reunião: {0} - {1} {2}", reuniao.TipoReuniao.Nome, reuniao.Data.ToString("dd/MM/yyyy"), reuniao.Horario.ToString()));
 			AdicionarPaginaGastronomia(true);
+			if (ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades && si.Responsabilidade).Count() > 0).Count() > 0)
+			{
+				pdf.BreakPage();
+				AdicionarPaginaGastronomia(false);
+			}
+			pdf.BreakPage();
 			AdicionarPaginaBebidas();
 			Kill();
 		}

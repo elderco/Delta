@@ -48,7 +48,24 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 
 		}
-
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Titulo,HorarioInicio,Observacao")] model.ItemRoteiro itemroteiro)
+		{
+			model.ItemCerimonial roteiro = new data.ItemCerimonial().GetElement(itemroteiro.Id);
+			roteiro.Titulo = itemroteiro.Titulo;
+			roteiro.HorarioInicio = itemroteiro.HorarioInicio;
+			roteiro.Observacao = itemroteiro.Observacao;
+			new data.ItemCerimonial().Update(roteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath + "#" + itemroteiro.Id);
+		}
+		public ActionResult ToggleImportant(int id)
+		{
+			model.ItemCerimonial roteiro = new data.ItemCerimonial().GetElement(id);
+			roteiro.Importante = !roteiro.Importante;
+			new data.ItemCerimonial().Update(roteiro);
+			return Redirect(Request.UrlReferrer.AbsolutePath + "#" + id);
+		}
 		// GET: /Cerimonial/Delete/5
 		public ActionResult Delete(int? id)
 		{

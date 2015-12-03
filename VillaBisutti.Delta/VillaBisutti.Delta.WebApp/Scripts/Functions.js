@@ -159,7 +159,6 @@ function ValidateField(element, formId, postForm) {
 	formId = formId.replace("#", "") == formId ? "#" + formId : formId;
 	var valid = true;
 	if (element.attr("data-val") == "true") {
-		//alert(element.attr("type"));
 		switch (element.attr("type")) {
 			case "number":
 				if (isNaN(element.val()) || element.val() == "" || element.val() < parseInt(element.attr("data-val-range-min")) || element.val() > parseInt(element.attr("data-val-range-max"))) {

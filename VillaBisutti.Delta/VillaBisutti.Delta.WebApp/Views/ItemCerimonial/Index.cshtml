@@ -22,7 +22,7 @@
 <table class="table">
 	<tr>
 		<th>
-			@Html.DisplayNameFor(model => model.Inicio)
+			@Html.DisplayNameFor(model => model.HorarioInicio)
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.Titulo)
@@ -46,10 +46,10 @@
 	{
 		<tr>
 			<td>
-				@Html.DisplayFor(modelItem => item.Titulo)
+				@Html.DisplayFor(modelItem => item.HorarioInicio)
 			</td>
 			<td>
-				@(item.Inicio.ToString())
+				@Html.DisplayFor(modelItem => item.Titulo)
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.Importante)

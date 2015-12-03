@@ -26,6 +26,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Pode ocorrer Quinta-feira")] public bool PodeQuinta { get; set; }
 		[Display(Name = "Pode ocorrer Sexta-feira")] public bool PodeSexta { get; set; }
 		[Display(Name = "Pode ocorrer Sábado")] public bool PodeSabado { get; set; }
+		[Display(Name = "Gera documento")] public bool GeraDossie { get; set; }
 		[Display(Name = "Duração")]
 		public int HorarioDuracao { get; set; }
 		[NotMapped]

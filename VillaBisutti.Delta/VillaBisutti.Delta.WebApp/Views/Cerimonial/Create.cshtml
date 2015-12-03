@@ -6,7 +6,6 @@
 }
 <script language="javascript" type="text/javascript">
 	$(document).ready(function () {
-		CreateHorarioEditor("HorarioInicio");
 	});
 </script>
 @Scripts.Render("~/bundles/jqueryval")
@@ -20,14 +19,14 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.Titulo, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
-				@Html.EditorFor(model => model.Titulo)
+				@Html.TextAreaFor(model => model.Titulo, new { @rows = 3, @class = "form-control" })
 				@Html.ValidationMessageFor(model => model.Titulo)
 				<input type="hidden" name="EventoId" value="@(ViewBag.Id)" />
 			</div>
-			@Html.LabelFor(model => model.Inicio, new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.HorarioInicio, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
 				@Html.EditorFor(model => model.HorarioInicio)
-				@Html.ValidationMessageFor(model => model.Inicio)
+				@Html.ValidationMessageFor(model => model.HorarioInicio)
 			</div>
 		</div>
 

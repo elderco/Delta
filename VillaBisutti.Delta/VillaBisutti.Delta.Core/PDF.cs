@@ -13,9 +13,9 @@ namespace VillaBisutti.Delta.Core
 {
 	public class PDF : IDisposable
 	{
-		private int headingSize = 18;
-		private int leadSize = 14;
-		private int normalSize = 12;
+		private int headingSize = 16;
+		private int leadSize = 12;
+		private int normalSize = 11;
 		private int smallSize = 9;
 		public void SetHeadingSize(int value)
 		{

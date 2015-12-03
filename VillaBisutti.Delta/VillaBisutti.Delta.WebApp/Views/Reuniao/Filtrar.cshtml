@@ -94,7 +94,7 @@
 						</tr>
 						@foreach (VillaBisutti.Delta.Core.Model.Reuniao item in Model)
 						{
-                            <tr class="ir-evento" data-href="@Url.Action("Details", "Evento", new { id = item.Id })">
+                            <tr class="ir-evento" data-href="@Url.Action("Details", "Evento", new { id = item.Evento.Id })">
 							<td>
 							@item.Evento.Data.ToString("ddd, dd / MM / yyyy")
 							</td>

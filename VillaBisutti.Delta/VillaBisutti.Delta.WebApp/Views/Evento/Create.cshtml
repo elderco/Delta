@@ -24,7 +24,11 @@
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
-
+	<div class="hidden" id="defaults">
+		<input type="hidden" name="LocalCerimonia" value="@(VillaBisutti.Delta.Core.Model.LocalCerimonia.NaoPossui)" />
+		<input type="hidden" name="EnviarAgendaSemanal" value="false" />
+		<input type="hidden" name="EmailBoasVindasEnviado" value="true" />
+	</div>
 	<h4>Cadastro de eventos</h4>
 	<hr />
 	<div class="form-horizontal">

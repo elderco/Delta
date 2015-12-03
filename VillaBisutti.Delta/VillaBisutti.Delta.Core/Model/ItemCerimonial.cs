@@ -16,20 +16,8 @@ namespace VillaBisutti.Delta.Core.Model
 		public DateTime? UsuarioUpdateData { get; set; }
 		[Display(Name = "Título"), Required]
 		public string Titulo { get; set; }
-		[Display(Name = "Início")]
+		[Display(Name = "Ordem")]
 		public int HorarioInicio { get; set; }
-		[NotMapped]
-		public Horario Inicio
-		{
-			get
-			{
-				return Horario.Parse(HorarioInicio);
-			}
-			set
-			{
-				HorarioInicio = value.ToInt();
-			}
-		}
 		[Display(Name = "Importante")]
 		public bool Importante { get; set; }
 		[Display(Name = "Observação")]

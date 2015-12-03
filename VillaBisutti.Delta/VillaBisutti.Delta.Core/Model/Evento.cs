@@ -85,7 +85,7 @@ namespace VillaBisutti.Delta.Core.Model
 		[Display(Name = "Produtora")]
 		public Usuario Produtora { get; set; }
 		public int? PosVendedoraId { get; set; } //OK
-		[Display(Name = "Pós Vendedora")]
+		[Display(Name = "Execução do evento")]
 		public Usuario PosVendedora { get; set; }
 		//Assessoria
 		[Display(Name = "Possui assessoria")]

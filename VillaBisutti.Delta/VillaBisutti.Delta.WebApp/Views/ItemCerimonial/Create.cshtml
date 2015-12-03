@@ -35,10 +35,10 @@
 				@Html.ValidationMessageFor(model => model.Titulo)
 				<input type="hidden" name="TipoEvento" value="@(ViewBag.TipoEvento)" />
 			</div>
-			@Html.LabelFor(model => model.Inicio, new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.HorarioInicio, new { @class = "control-label col-md-2" })
 			<div class="col-md-4">
 				@Html.EditorFor(model => model.HorarioInicio)
-				@Html.ValidationMessageFor(model => model.Inicio)
+				@Html.ValidationMessageFor(model => model.HorarioInicio)
 			</div>
 		</div>
 

@@ -126,7 +126,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			IEnumerable<Model.Evento> eventos = Util.context.Evento
 				.Include(e => e.Local)
-				.Where(e => e.Reunioes.Where(r => r.TipoReuniao.Nome.Contains("Degustação") && di <= r.Data && r.Data <= df).Count() > 0);
+				.Where(e => e.Reunioes.Where(r => r.TipoReuniao.GeraDossie && di <= r.Data && r.Data <= df).Count() > 0);
 			List<dto.Degustacao> degustacoes = new List<dto.Degustacao>();
 			foreach (Model.Evento e in eventos)
 			{
