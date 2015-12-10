@@ -70,6 +70,16 @@ namespace VillaBisutti.Delta
 			name = name.Replace("\"", string.Empty);
 			return name;
 		}
+		public static string Pluralize(this string word, int quantity)
+		{
+			return word.Pluralize(quantity, word + "s");
+		}
+		public static string Pluralize(this string word, int quantity, string plural)
+		{
+			if (quantity == 1)
+				return word;
+			return plural;
+		}
 		public static string GetOSFileName(Core.Model.Evento evento, string tipo)
 		{
 			return HttpContext.Current.Server.MapPath(GetOSFileUrl(evento, tipo));

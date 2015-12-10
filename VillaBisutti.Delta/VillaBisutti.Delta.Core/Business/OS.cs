@@ -173,6 +173,48 @@ namespace VillaBisutti.Delta.Core.Business
 				});
 			}
 		}
+		private void PopularItensGastronomiaDegustar()
+		{
+			Area["GM"] = Util.context.Gastronomia.FirstOrDefault(g => g.EventoId == Evento.Id).Observacoes;
+			Dictionary<int, int> positions = new Dictionary<int, int>();
+			IEnumerable<Model.PratoSelecionado> itens = Util.context.PratoSelecionado
+				.Include(i => i.Prato)
+				.Include(i => i.Prato.TipoPrato)
+				.Where(i => i.EventoId == Evento.Id && (i.Degustar || i.Escolhido));
+			itens = itens
+				.OrderBy(i => i.Prato.Nome);
+			itens = itens
+				.OrderBy(i => i.Prato.TipoPrato == null ? 0 : i.Prato.TipoPrato.Ordem);
+			ItensGastronomia = new List<DTO.ItemEvento>();
+			foreach (Model.PratoSelecionado item in itens.Where(i => !i.Escolhido))
+			{
+				if (positions.Keys.Where(i => i == item.Prato.TipoPratoId).Count() == 0)
+				{
+					positions[item.Prato.TipoPratoId] = ItensGastronomia.Count();
+					Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.EventoId == item.EventoId && t.TipoPratoId == item.Prato.TipoPratoId);
+					int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
+					ItensGastronomia.Add(new DTO.ItemEvento {
+						id = item.Prato.TipoPratoId,
+						Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem,
+						Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome,
+						Quantidade = quantidade,
+						SubItens = new List<DTO.SubItemEvento>() });
+				}
+				ItensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
+				{
+					Fornecido = item.Degustar,
+					BloqueiaOutrasPropriedades = item.Rejeitado,
+					Responsabilidade = item.Escolhido,
+					ContatoFornecedor = string.Empty,
+					QuantidadeItem = 0,
+					HorarioEntrega = 0,
+					Observacao = item.Observacoes,
+					NomeItem = item.Prato.Nome
+				});
+			}
+			foreach (DTO.ItemEvento item in ItensGastronomia)
+				item.Quantidade -= itens.Where(i => i.Prato.TipoPratoId == item.id && i.Escolhido).Count();
+		}
 		private void PopularItensBebida()
 		{
 			Model.Bebida bebida = Util.context.Bebida.FirstOrDefault(i => i.EventoId == Evento.Id);
@@ -1407,9 +1449,9 @@ namespace VillaBisutti.Delta.Core.Business
 				int escolhidos = grupo.SubItens.Where(si => si.Responsabilidade).Count();
 				int degustar = grupo.SubItens.Where(si => si.Fornecido).Count();
 				if (incluiDegustar && degustar > 0)
-					pdf.AddLeadText(grupo.Texto + " (Escolher " + (grupo.Quantidade - escolhidos) + " ite" + (grupo.Quantidade - escolhidos != 1 ? "ns" : "m") + ")");
+					pdf.AddLeadText(grupo.Texto + ((grupo.Quantidade - escolhidos) > 0 ? " (Escolher " + (grupo.Quantidade - escolhidos) + "item".Pluralize((grupo.Quantidade - escolhidos), "itens") + ")" : ""));
 				else if (!incluiDegustar && escolhidos > 0)
-					pdf.AddLeadText(grupo.Texto + (isOS ? "" : " (" + escolhidos + " ite" + (escolhidos != 1 ? "ns" : "m") + " já escolhido" + (escolhidos != 1 ? "s" : "") + ")"));
+					pdf.AddLeadText(grupo.Texto + (isOS ? "" : " (" + escolhidos + " item".Pluralize(escolhidos, "itens") + " já " + "escolhido".Pluralize(escolhidos) + ")"));
 				pdf.BreakLine();
 				foreach (DTO.SubItemEvento item in grupo.SubItens.OrderBy(i => i.NomeItem))
 				{
@@ -1740,8 +1782,6 @@ namespace VillaBisutti.Delta.Core.Business
 				.Include(e => e.Reunioes)
 				.Include(e => e.Reunioes.Select(r => r.TipoReuniao))
 				.FirstOrDefault(e => e.Id == EventoId);
-			PopularItensGastronomia();
-			PopularItensBebida();
 			FileName = Util.GetOSFileName(Evento, Util.TipoDocumentoDegustacao);
 			InicializePDF();
 			SetPDFHeader();
@@ -1750,6 +1790,8 @@ namespace VillaBisutti.Delta.Core.Business
 			Model.Reuniao reuniao = reunioes.FirstOrDefault();
 			if (reuniao != null)
 				pdf.AddHeaderText(string.Format("Reunião: {0} - {1} {2}", reuniao.TipoReuniao.Nome, reuniao.Data.ToString("dd/MM/yyyy"), reuniao.Horario.ToString()));
+			PopularItensGastronomiaDegustar();
+			PopularItensBebida();
 			AdicionarPaginaGastronomia(true);
 			if (ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades && si.Responsabilidade).Count() > 0).Count() > 0)
 			{
@@ -1760,6 +1802,7 @@ namespace VillaBisutti.Delta.Core.Business
 			AdicionarPaginaBebidas();
 			Kill();
 		}
+
 		public void GerarCapa()
 		{
 			Evento = Util.context.Evento

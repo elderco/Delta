@@ -62,6 +62,22 @@ namespace VillaBisutti.Delta.Core.Business
 			Util.context.SaveChanges();
 			Util.ResetContext();
 		}
+		public Model.PratoSelecionado RejeitarPrato(int id)
+		{
+			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			prato.Rejeitado = !prato.Rejeitado;
+			new Data.PratoSelecionado().Update(prato);
+			Util.context.SaveChanges();
+			return prato;
+		}
+		public Model.PratoSelecionado DegustarPrato(int id)
+		{
+			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			prato.Degustar = !prato.Degustar;
+			new Data.PratoSelecionado().Update(prato);
+			Util.context.SaveChanges();
+			return prato;
+		}
 		public Model.PratoSelecionado EscolherPrato(int id)
 		{
 			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
