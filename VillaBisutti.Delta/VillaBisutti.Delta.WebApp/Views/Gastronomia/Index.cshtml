@@ -59,6 +59,14 @@
 		<legend>Ações</legend>
 		<a href="@(Model.ThisGastronomia.Evento.TipoServicoId != null && Model.ThisGastronomia.Evento.CardapioId != null ? Url.Action("ImportarDoCardapio", "PratoSelecionado", new { @id = Model.ThisGastronomia.EventoId }) : "javascript:void(0);")" class=" btn btn-default form-control">Importar degustação padrão</a>
 	</fieldset>
+	<fieldset class="col-md-3 pull-right">
+		<legend>Prato que não está no cardápio</legend>
+		<form method="get" action="@(Url.Action("AddPratoNotInCardapio", "PratoSelecionado"))">
+			<input type="hidden" name="eventoId" value="@(Model.ThisGastronomia.EventoId)" />
+			<label for="pratoId">Id do prato:</label> <input type="number" name="pratoId" id="pratoId" />
+			<button type="submit">Incluir</button>
+		</form>
+</fieldset>
 </div>
 <div class="col-xs-12 row">
 	@foreach (VillaBisutti.Delta.Core.Model.TipoPratoPadrao tipoPrato in Model.Itens.Keys)

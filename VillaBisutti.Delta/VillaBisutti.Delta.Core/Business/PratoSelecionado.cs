@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace VillaBisutti.Delta.Core.Business
 {
@@ -93,6 +94,24 @@ namespace VillaBisutti.Delta.Core.Business
 			new Data.PratoSelecionado().Update(prato);
 			Util.context.SaveChanges();
 			return prato;
+		}
+
+		public void AddNotInCardapio(int pratoId, int eventoId)
+		{
+			using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["VillaBisuttiDelta"].ConnectionString))
+			{
+				SqlCommand cmd = new SqlCommand();
+				cmd.Connection = connection;
+				cmd.CommandType = System.Data.CommandType.StoredProcedure;
+				cmd.CommandText = "SP_ADD_PRATO_NOT_IN_CARDAPIO";
+				cmd.Parameters.AddWithValue("@EventoId", eventoId);
+				cmd.Parameters.AddWithValue("@PratoId", pratoId);
+				cmd.Parameters.AddWithValue("@UsuarioId", SessionFacade.UsuarioLogado.Id);
+				cmd.Connection.Open();
+				cmd.ExecuteNonQuery();
+				cmd.Dispose();
+				connection.Close();
+			}
 		}
 	}
 }
