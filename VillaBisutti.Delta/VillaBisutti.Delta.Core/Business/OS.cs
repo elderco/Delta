@@ -1449,9 +1449,9 @@ namespace VillaBisutti.Delta.Core.Business
 				int escolhidos = grupo.SubItens.Where(si => si.Responsabilidade).Count();
 				int degustar = grupo.SubItens.Where(si => si.Fornecido).Count();
 				if (incluiDegustar && degustar > 0)
-					pdf.AddLeadText(grupo.Texto + ((grupo.Quantidade - escolhidos) > 0 ? " (Escolher " + (grupo.Quantidade - escolhidos) + "item".Pluralize((grupo.Quantidade - escolhidos), "itens") + ")" : ""));
+					pdf.AddLeadText(grupo.Texto + ((grupo.Quantidade - escolhidos) > 0 ? " (Escolher " + (grupo.Quantidade - escolhidos) + " item".Pluralize((grupo.Quantidade - escolhidos), " itens") + ")" : ""));
 				else if (!incluiDegustar && escolhidos > 0)
-					pdf.AddLeadText(grupo.Texto + (isOS ? "" : " (" + escolhidos + " item".Pluralize(escolhidos, "itens") + " já " + "escolhido".Pluralize(escolhidos) + ")"));
+					pdf.AddLeadText(grupo.Texto + (isOS ? "" : " (" + escolhidos + " item".Pluralize(escolhidos, " itens") + " já " + "escolhido".Pluralize(escolhidos) + ")"));
 				pdf.BreakLine();
 				foreach (DTO.SubItemEvento item in grupo.SubItens.OrderBy(i => i.NomeItem))
 				{
@@ -1791,14 +1791,15 @@ namespace VillaBisutti.Delta.Core.Business
 			if (reuniao != null)
 				pdf.AddHeaderText(string.Format("Reunião: {0} - {1} {2}", reuniao.TipoReuniao.Nome, reuniao.Data.ToString("dd/MM/yyyy"), reuniao.Horario.ToString()));
 			PopularItensGastronomiaDegustar();
-			PopularItensBebida();
 			AdicionarPaginaGastronomia(true);
+			PopularItensGastronomia();
 			if (ItensGastronomia.Where(i => i.SubItens.Where(si => !si.BloqueiaOutrasPropriedades && si.Responsabilidade).Count() > 0).Count() > 0)
 			{
 				pdf.BreakPage();
 				AdicionarPaginaGastronomia(false);
 			}
 			pdf.BreakPage();
+			PopularItensBebida();
 			AdicionarPaginaBebidas();
 			Kill();
 		}
