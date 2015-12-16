@@ -1685,9 +1685,11 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void AdicionarFotosArea(string qual)
 		{
+			Dictionary<string, string> images = new Dictionary<string, string>();
 			foreach (Model.Foto foto in Fotos.Where(f => f.Qual == qual))
 				if (System.IO.File.Exists(HttpContext.Current.Server.MapPath("~/Content/Images/" + foto.URL)))
-					pdf.AddImage(HttpContext.Current.Server.MapPath("~/Content/Images/" + foto.URL), foto.Legenda);
+					images[HttpContext.Current.Server.MapPath("~/Content/Images/" + foto.URL)] = foto.Legenda;
+			pdf.AddImage(images);
 		}
 		private void AdicionarLinhaItem(DTO.SubItemEvento item)
 		{

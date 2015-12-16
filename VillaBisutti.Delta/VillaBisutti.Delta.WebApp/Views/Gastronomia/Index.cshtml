@@ -63,6 +63,8 @@
 		<legend>Prato que não está no cardápio</legend>
 		<form method="get" action="@(Url.Action("AddPratoNotInCardapio", "PratoSelecionado"))">
 			<input type="hidden" name="eventoId" value="@(Model.ThisGastronomia.EventoId)" />
+			<div class="form-group">
+			</div>
 			<label for="pratoId">Id do prato:</label> <input type="number" name="pratoId" id="pratoId" />
 			<button type="submit">Incluir</button>
 		</form>

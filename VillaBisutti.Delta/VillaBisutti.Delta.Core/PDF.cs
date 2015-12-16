@@ -192,42 +192,39 @@ namespace VillaBisutti.Delta.Core
 			iText.Paragraph paragraph = new iText.Paragraph(chunck);
 			document.Add(paragraph);
 		}
-		public void AddImage(string path, string legenda)
+		public void AddImage(Dictionary<string, string> images)
 		{
-			AddImage(path, legenda, (int)iText.Image.GetInstance(path).Width);
-		}
-		public void AddImage(string path, string legenda, bool fullscreen)
-		{
-			iText.Rectangle mediabox = document.PageSize;
-			float width = mediabox.Width - document.LeftMargin - document.RightMargin;
-			AddImage(path, "(" + width + ")" + legenda, (int)width);
-		}
-		public void AddImage(string path, string legenda, int width)
-		{
-			iText.Rectangle mediabox = document.PageSize;
-			int maxWidth = (int)(mediabox.Width - document.LeftMargin - document.RightMargin);
-			if (width > maxWidth)
-				width = maxWidth;
-
-			iPdf.PdfPTable table = new iPdf.PdfPTable(1);
+			if (images.Count == 0)
+				return;
+			iPdf.PdfPTable table = new iPdf.PdfPTable(2);
+			table.SplitLate = true;
+			table.SplitRows = true;
 			table.WidthPercentage = 100F;
-			table.SetWidths(new float[] { 1F });
+			table.SetWidths(new float[] { 50F, 50F });
 			table.SpacingBefore = 10F;
 			table.SpacingAfter = 10F;
-			table.SplitLate = true;
-			table.KeepTogether = true;
+			table.DefaultCell.Border = iText.Rectangle.NO_BORDER;
+			foreach(string path in images.Keys)
+			{
+				iPdf.PdfPTable imageTable = new iPdf.PdfPTable(1);
+				imageTable.WidthPercentage = 100F;
+				imageTable.SetWidths(new float[] { 1F });
+				imageTable.SpacingBefore = 2F;
+				imageTable.SpacingAfter = 2F;
+				imageTable.SplitLate = true;
 
-			iText.Image image = iText.Image.GetInstance(path);
-			image.ScaleToFit((float)width, (float)image.Height * (width / image.Width));
-			image.Alignment = iText.Image.ALIGN_LEFT;
-			iPdf.PdfPCell imageCell = new iPdf.PdfPCell(image, true);
-			table.AddCell(imageCell);
+				iText.Image image = iText.Image.GetInstance(path);
+				image.Alignment = iText.Image.ALIGN_LEFT;
+				iPdf.PdfPCell imageCell = new iPdf.PdfPCell(image, true);
+				imageTable.AddCell(imageCell);
 
-			iText.Chunk chunk = new iText.Chunk(legenda);
-			chunk.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.BaseColor.DARK_GRAY);
-			iPdf.PdfPCell titleCell = new iPdf.PdfPCell(new iText.Phrase(chunk));
-			table.AddCell(titleCell);
+				iText.Chunk chunk = new iText.Chunk(images[path]);
+				chunk.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.BaseColor.DARK_GRAY);
+				iPdf.PdfPCell titleCell = new iPdf.PdfPCell(new iText.Phrase(chunk));
+				imageTable.AddCell(titleCell);
 
+				table.AddCell(imageTable);
+			}
 			document.Add(table);
 		}
 		public void AddBreakRule()
