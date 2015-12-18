@@ -198,7 +198,7 @@ namespace VillaBisutti.Delta.Core
 				return;
 			iPdf.PdfPTable table = new iPdf.PdfPTable(2);
 			table.SplitLate = true;
-			table.SplitRows = true;
+			table.KeepTogether = true;
 			table.WidthPercentage = 100F;
 			table.SetWidths(new float[] { 50F, 50F });
 			table.SpacingBefore = 10F;
@@ -225,6 +225,7 @@ namespace VillaBisutti.Delta.Core
 
 				table.AddCell(imageTable);
 			}
+			table.AddCell("");
 			document.Add(table);
 		}
 		public void AddBreakRule()
