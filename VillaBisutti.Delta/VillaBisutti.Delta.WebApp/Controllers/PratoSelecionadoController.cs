@@ -41,9 +41,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 
 		public ActionResult DefinirDegustacao(int id)
 		{
-			model.PratoSelecionado prato = new data.PratoSelecionado().GetElement(id);
-			prato.Degustar = !prato.Degustar;
-			new data.PratoSelecionado().Update(prato);
+			model.PratoSelecionado prato = new biz.PratoSelecionado().DegustarPrato(id);
 			return View(prato);
 		}
 		public ActionResult Copiar(int cardapioId, int tipoServicoId)

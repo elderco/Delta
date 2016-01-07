@@ -75,7 +75,11 @@
     <Compile Include="Business\PratoSelecionado.cs" />
     <Compile Include="Business\ItemDecoracao.cs" />
     <Compile Include="Business\Reuniao.cs" />
+    <Compile Include="Business\TipoPratoPadrao.cs" />
     <Compile Include="Business\Usuario.cs" />
+    <Compile Include="Configuration\Enums.cs" />
+    <Compile Include="Configuration\IWatcherBase.cs" />
+    <Compile Include="Configuration\OSPrazoFinal.cs" />
     <Compile Include="Data\Bebida.cs" />
     <Compile Include="Data\BoloDoceBemCasado.cs" />
     <Compile Include="Data\Cardapio.cs" />
@@ -211,7 +215,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

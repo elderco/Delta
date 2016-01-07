@@ -45,7 +45,7 @@ namespace VillaBisutti.Delta.Core.Business
 				CCO = enviarEmails,
 				Assunto = "F0DA-SE TO MANDANDO UM MONTE DE EMAIL MESMO",
 				CorpoEmail = mensagemInteira,
-				NomedoRemetente = "Villa Biscate"
+				NomeRemetente = "Villa Biscate"
 			};
 			mail.SendMail();
 		}

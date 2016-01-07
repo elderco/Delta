@@ -36,7 +36,7 @@ namespace VillaBisutti.Delta.Core.Business
 				email.Assunto = "Oi";
 				email.CorpoEmail = message;
 				email.Destinatario = new List<string> { "talesdealmeida@gmail.com" };
-				email.NomedoRemetente = "Ravena";
+				email.NomeRemetente = "Ravena";
 				email.SendMail();
 				evento.EmailBoasVindasEnviado = true;
 				Util.context.Entry(eventoAntigo).OriginalValues.SetValues(evento);

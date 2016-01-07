@@ -135,9 +135,6 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		#endregion
 
-		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Montagem de \"{0} - \"", item.ItemDecoracao.TipoItemDecoracao.Nome, item.ItemDecoracao.Nome), Importante = false, Observacoes = item.Observacoes });
-		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, item.ItemBoloDoceBemCasado.Nome), Importante = false, Observacoes = item.Observacoes });
-		//ItensRoteiro.Add(new DTO.ItemRoteiroEvento { Acontecimento = string.Format("Entrega de \"{0} - \"", item.ItemBebida.TipoItemBebida.Nome, item.ItemBebida.Nome), Importante = false, Observacoes = item.Observacoes });
 		#region [ Populate itens ]
 		private void PopularItensGastronomia()
 		{
@@ -193,12 +190,14 @@ namespace VillaBisutti.Delta.Core.Business
 					positions[item.Prato.TipoPratoId] = ItensGastronomia.Count();
 					Model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.FirstOrDefault(t => t.EventoId == item.EventoId && t.TipoPratoId == item.Prato.TipoPratoId);
 					int quantidade = tpp == null ? 1 : tpp.QuantidadePratos;
-					ItensGastronomia.Add(new DTO.ItemEvento {
+					ItensGastronomia.Add(new DTO.ItemEvento
+					{
 						id = item.Prato.TipoPratoId,
 						Ordem = item.Prato.TipoPrato == null ? 0 : item.Prato.TipoPrato.Ordem,
 						Texto = item.Prato.TipoPrato == null ? "Grupo indefinido" : item.Prato.TipoPrato.Nome,
 						Quantidade = quantidade,
-						SubItens = new List<DTO.SubItemEvento>() });
+						SubItens = new List<DTO.SubItemEvento>()
+					});
 				}
 				ItensGastronomia[positions[item.Prato.TipoPratoId]].SubItens.Add(new DTO.SubItemEvento
 				{
@@ -1698,17 +1697,9 @@ namespace VillaBisutti.Delta.Core.Business
 		private void AdicionarLinhaItem(DTO.SubItemEvento item, bool importante)
 		{
 			string strTexto = " ";
-			if (item.BloqueiaOutrasPropriedades)
-			{
-				strTexto += item.NomeItem;
-				strTexto += string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao;
-			}
-			else
-			{
-				strTexto += item.QuantidadeItem > 0 ? item.QuantidadeItem + " - " : "";
-				strTexto += item.NomeItem;
-				strTexto += string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao;
-			}
+			strTexto += item.QuantidadeItem > 0 ? item.QuantidadeItem + " - " : "";
+			strTexto += item.NomeItem;
+			strTexto += string.IsNullOrEmpty(item.Observacao) ? "" : " - " + item.Observacao;
 			pdf.AddLine(strTexto, importante);
 		}
 		private string MontarLinhaItem(DTO.SubItemEvento item)

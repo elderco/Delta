@@ -162,6 +162,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AutomatizationController.cs" />
     <Compile Include="Controllers\BebidaController.cs" />
     <Compile Include="Controllers\BoloDoceBemCasadoController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
@@ -220,7 +221,6 @@
     <Compile Include="Controllers\TipoReuniaoController.cs" />
     <Compile Include="Controllers\TipoServicoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Core\ServicesFacade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -661,6 +661,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\TEMP\" />
+    <Folder Include="Views\Automatization\" />
+    <Folder Include="WorkerFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

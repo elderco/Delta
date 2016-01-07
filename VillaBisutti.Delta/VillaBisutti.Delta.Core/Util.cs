@@ -70,6 +70,16 @@ namespace VillaBisutti.Delta
 			name = name.Replace("\"", string.Empty);
 			return name;
 		}
+		public static int GetDaysInSpan(this DateTime begin, DateTime end)
+		{
+			int gt = int.Parse(end.ToString("yyyyMMdd"));
+			int lt = int.Parse(begin.ToString("yyyyMMdd"));
+			return gt - lt;
+		}
+		public static int GetDaysInSpan(this DateTime begin, int months)
+		{
+			return begin.GetDaysInSpan(begin.AddMonths(months));
+		}
 		public static string Pluralize(this string word, int quantity)
 		{
 			return word.Pluralize(quantity, word + "s");
@@ -238,7 +248,7 @@ namespace VillaBisutti.Delta
 		{
 			get
 			{
-				return "Itens dinsponibilizados pelo contratante";
+				return "Itens disponibilizados pelo contratante";
 			}
 		}
 		public static string WaterMark

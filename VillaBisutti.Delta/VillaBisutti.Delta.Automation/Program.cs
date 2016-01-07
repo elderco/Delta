@@ -5,12 +5,13 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using VillaBisutti.Delta.Core.Configuration;
 
 namespace VillaBisutti.Delta.Automation
 {
 	public static class Program
 	{
-		public static Dictionary<Thread, Status> Services { get; set; }
+		public static Dictionary<Watcher, Thread> Services { get; set; }
 		public static void StartServicesRunner()
 		{
 			//Registrar todos os watchers

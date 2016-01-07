@@ -194,24 +194,51 @@ namespace VillaBisutti.Delta.Core
 		}
 		public void AddImage(Dictionary<string, string> images)
 		{
+			//if (images.Count == 0)
+			//	return;
+			//iPdf.PdfPTable table = new iPdf.PdfPTable(2);
+			//table.SplitLate = true;
+			//table.KeepTogether = true;
+			//table.WidthPercentage = 100F;
+			//table.SetWidths(new float[] { 50F, 50F });
+			//table.SpacingBefore = 10F;
+			//table.SpacingAfter = 10F;
+			//table.DefaultCell.Border = iText.Rectangle.NO_BORDER;
+			//foreach(string path in images.Keys)
+			//{
+			//	iPdf.PdfPTable imageTable = new iPdf.PdfPTable(1);
+			//	imageTable.WidthPercentage = 100F;
+			//	imageTable.SetWidths(new float[] { 1F });
+			//	imageTable.SpacingBefore = 2F;
+			//	imageTable.SpacingAfter = 2F;
+			//	imageTable.SplitLate = true;
+
+			//	iText.Image image = iText.Image.GetInstance(path);
+			//	image.Alignment = iText.Image.ALIGN_LEFT;
+			//	iPdf.PdfPCell imageCell = new iPdf.PdfPCell(image, true);
+			//	imageTable.AddCell(imageCell);
+
+			//	iText.Chunk chunk = new iText.Chunk(images[path]);
+			//	chunk.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.BaseColor.DARK_GRAY);
+			//	iPdf.PdfPCell titleCell = new iPdf.PdfPCell(new iText.Phrase(chunk));
+			//	imageTable.AddCell(titleCell);
+
+			//	table.AddCell(imageTable);
+			//}
+			//table.AddCell("");
+			//document.Add(table);
 			if (images.Count == 0)
 				return;
-			iPdf.PdfPTable table = new iPdf.PdfPTable(2);
-			table.SplitLate = true;
-			table.KeepTogether = true;
-			table.WidthPercentage = 100F;
-			table.SetWidths(new float[] { 50F, 50F });
-			table.SpacingBefore = 10F;
-			table.SpacingAfter = 10F;
-			table.DefaultCell.Border = iText.Rectangle.NO_BORDER;
-			foreach(string path in images.Keys)
+			foreach (string path in images.Keys)
 			{
 				iPdf.PdfPTable imageTable = new iPdf.PdfPTable(1);
-				imageTable.WidthPercentage = 100F;
+				imageTable.WidthPercentage = 55F;
 				imageTable.SetWidths(new float[] { 1F });
-				imageTable.SpacingBefore = 2F;
-				imageTable.SpacingAfter = 2F;
+				imageTable.SpacingBefore = 0F;
+				imageTable.SpacingAfter = 0F;
 				imageTable.SplitLate = true;
+				imageTable.KeepTogether = true;
+				imageTable.DefaultCell.Border = iText.Rectangle.NO_BORDER;
 
 				iText.Image image = iText.Image.GetInstance(path);
 				image.Alignment = iText.Image.ALIGN_LEFT;
@@ -222,11 +249,9 @@ namespace VillaBisutti.Delta.Core
 				chunk.Font = iText.FontFactory.GetFont(baseFont, normalSize, iText.BaseColor.DARK_GRAY);
 				iPdf.PdfPCell titleCell = new iPdf.PdfPCell(new iText.Phrase(chunk));
 				imageTable.AddCell(titleCell);
-
-				table.AddCell(imageTable);
+				imageTable.AddCell(" ");
+				document.Add(imageTable);
 			}
-			table.AddCell("");
-			document.Add(table);
 		}
 		public void AddBreakRule()
 		{

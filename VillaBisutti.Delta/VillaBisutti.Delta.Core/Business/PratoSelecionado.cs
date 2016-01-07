@@ -69,6 +69,7 @@ namespace VillaBisutti.Delta.Core.Business
 			prato.Rejeitado = !prato.Rejeitado;
 			new Data.PratoSelecionado().Update(prato);
 			Util.context.SaveChanges();
+			Util.ResetContext();
 			return prato;
 		}
 		public Model.PratoSelecionado DegustarPrato(int id)
@@ -77,6 +78,7 @@ namespace VillaBisutti.Delta.Core.Business
 			prato.Degustar = !prato.Degustar;
 			new Data.PratoSelecionado().Update(prato);
 			Util.context.SaveChanges();
+			Util.ResetContext();
 			return prato;
 		}
 		public Model.PratoSelecionado EscolherPrato(int id)
@@ -93,6 +95,7 @@ namespace VillaBisutti.Delta.Core.Business
 			prato.Escolhido = !prato.Escolhido;
 			new Data.PratoSelecionado().Update(prato);
 			Util.context.SaveChanges();
+			Util.ResetContext();
 			return prato;
 		}
 

@@ -47,6 +47,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,22 +56,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgendaSemanal\WatcherAgendaSemanal.cs" />
-    <Compile Include="BoasVindas\WatcherBoasVindas.cs" />
-    <Compile Include="ContratacaoServicoTerceiro\WacherContratacaoServicoTerceiro.cs" />
+    <Compile Include="Workers\WatcherAgendaSemanal.cs" />
+    <Compile Include="Workers\WatcherBoasVindas.cs" />
+    <Compile Include="Workers\WacherContratacaoServicoTerceiro.cs" />
     <Compile Include="Helpers\ExtensionMethods.cs" />
-    <Compile Include="OSFinalizada\WatcherOSFinalizada.cs" />
-    <Compile Include="PrazoFinal\WatcherOSPrazoFinal.cs" />
+    <Compile Include="Workers\WatcherOSFinalizada.cs" />
+    <Compile Include="Workers\WatcherOSPrazoFinal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Status.cs" />
     <Compile Include="Watcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\VillaBisutti.Delta.Core\VillaBisutti.Delta.Core.csproj">
       <Project>{83fb85ef-3d61-495b-be38-e28eac6307e7}</Project>
