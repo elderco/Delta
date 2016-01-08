@@ -13,15 +13,9 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class Evento
 	{
-		public Data.Context context
-		{
-			get
-			{
-				return Util.context;
-			}
-		}
 		public void CopiarRoteiroPadrao(Model.Evento evento)
 		{
+			Data.Context context = new Data.Context();
 			if (evento.Roteiro == null)
 				evento.Roteiro = new List<Model.ItemRoteiro>();
 			foreach (Model.ItemRoteiro item in context.ItemRoteiro.Where(rp => rp.TipoEvento == evento.TipoEvento && (rp.EventoId == 0 || rp.EventoId == null)))
@@ -36,6 +30,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CopiarCerimonialPadrao(Model.Evento evento)
 		{
+			Data.Context context = new Data.Context();
 			if (evento.Cerimonial == null)
 				evento.Cerimonial = new List<Model.ItemCerimonial>();
 			foreach (Model.ItemCerimonial item in context.ItemCerimonial.Where(rp => rp.TipoEvento == evento.TipoEvento && (rp.EventoId == 0 || rp.EventoId == null)))
@@ -50,6 +45,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CopiarCardapioPadrao(Model.Evento evento)
 		{
+			Data.Context context = new Data.Context();
 			IEnumerable<Model.PratoSelecionado> pratos = context.PratoSelecionado.Where(ps => ps.EventoId == evento.Id);
 			context.PratoSelecionado.RemoveRange(pratos);
 			IEnumerable<Model.TipoPratoPadrao> tipos = context.TipoPratoPadrao.Where(tpp => tpp.EventoId == evento.Id);
@@ -87,7 +83,8 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private void CopiarDoces(Model.Evento evento)
 		{
-			foreach(Model.TipoItemBoloDoceBemCasado item in context.TipoItemBoloDoceBemCasado.ToList())
+			Data.Context context = new Data.Context();
+			foreach (Model.TipoItemBoloDoceBemCasado item in context.TipoItemBoloDoceBemCasado.ToList())
 			{
 				context.ItemBoloDoceBemCasadoEvento.Add(new Model.ItemBoloDoceBemCasadoEvento
 				{
@@ -100,6 +97,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void CriarEvento(Model.Evento evento)
 		{
+			Data.Context context = new Data.Context();
 			Model.ContratoAditivo contrato = evento.Contratos[0];
 			evento.Contratos.Clear();
 			evento.Bebida = new Model.Bebida();
@@ -127,6 +125,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void Delete(int id)
 		{
+			Data.Context context = new Data.Context();
 			Model.Evento evento = context.Evento.Include(e => e.Local).FirstOrDefault(e => e.Id == id);
 			foreach (Model.Foto foto in context.Foto.Where(f => f.EventoId == id))
 				if (File.Exists(Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), foto.URL)))

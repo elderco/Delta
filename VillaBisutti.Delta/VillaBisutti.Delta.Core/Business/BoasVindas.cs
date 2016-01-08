@@ -13,7 +13,8 @@ namespace VillaBisutti.Delta.Core.Business
 		private const String EmailBoasVindasFileName = "EmailBoasVindas.txt";
 		public static void EnviaEmailBoasVindas()
 		{
-			List<model.Evento> eventos = Util.context.Evento
+			Data.Context context = new Data.Context();
+			List<model.Evento> eventos = context.Evento
 						.Include(e => e.Bebida)
 						.Include(e => e.BoloDoceBemCasado)
 						.Include(e => e.Cardapio)
@@ -39,10 +40,9 @@ namespace VillaBisutti.Delta.Core.Business
 				email.NomeRemetente = "Ravena";
 				email.SendMail();
 				evento.EmailBoasVindasEnviado = true;
-				Util.context.Entry(eventoAntigo).OriginalValues.SetValues(evento);
+				context.Entry(eventoAntigo).OriginalValues.SetValues(evento);
 			}
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 		}
 	}
 }

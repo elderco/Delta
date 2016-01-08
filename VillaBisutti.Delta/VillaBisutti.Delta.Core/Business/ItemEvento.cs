@@ -22,7 +22,6 @@ namespace VillaBisutti.Delta.Core.Business
 				&& a.Contratado == false)
 			.ToList();
 		}
-
 		public static List<Model.ItemMontagemSelecionado> GetItemMontagem()
 		{
 			return Util.context.ItemMontagemSelecionado
@@ -35,7 +34,6 @@ namespace VillaBisutti.Delta.Core.Business
 				&& a.Contratado == false)
 			.ToList();
 		}
-
 		public static List<Model.ItemBebidaSelecionado> GetItemBebida()
 		{
 			return Util.context.ItemBebidaSelecionado
@@ -48,7 +46,6 @@ namespace VillaBisutti.Delta.Core.Business
 				&& a.Contratado == false)
 			.ToList();
 		}
-
 		public static List<Model.ItemBoloDoceBemCasadoSelecionado> GetItemBoloDoceBemCasado()
 		{
 			return Util.context.ItemBoloDoceBemCasadoSelecionado
@@ -60,7 +57,6 @@ namespace VillaBisutti.Delta.Core.Business
 				&& a.Contratado == false)
 			.ToList();
 		}
-
 		public static List<Model.ItemFotoVideoSelecionado> GetItemFotoVideo()
 		{
 			return Util.context.ItemFotoVideoSelecionado
@@ -109,6 +105,5 @@ namespace VillaBisutti.Delta.Core.Business
                 && a.Contratado == false)
             .ToList();
         }
-
 	}
 }

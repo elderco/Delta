@@ -12,11 +12,12 @@ namespace VillaBisutti.Delta.Core.Business
 	{
 		public model.TipoPratoPadrao DefinirQuantidade(int id, string act)
 		{
-			model.TipoPratoPadrao tpp = Util.context.TipoPratoPadrao.Find(id);
+			Data.Context context = new Data.Context();
+			model.TipoPratoPadrao tpp = context.TipoPratoPadrao.Find(id);
 			tpp.QuantidadePratos = tpp.QuantidadePratos + (act == "add" ? 1 : -1);
-			Util.context.Entry(tpp).State = System.Data.Entity.EntityState.Modified;
-			Util.context.SaveChanges();
-			return Util.context.TipoPratoPadrao.Include(t => t.TipoPrato).FirstOrDefault(t => t.Id == id);
+			context.Entry(tpp).State = System.Data.Entity.EntityState.Modified;
+			context.SaveChanges();
+			return context.TipoPratoPadrao.Include(t => t.TipoPrato).FirstOrDefault(t => t.Id == id);
 		}
 	}
 }

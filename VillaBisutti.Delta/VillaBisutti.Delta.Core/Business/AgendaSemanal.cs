@@ -10,12 +10,14 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public static class AgendaSemanal
 	{
+
 		private const string EmailAgendaSemana = "EmailAgendaSemanal.txt";
 		private const string CabecalhoAgendasemanal = "CabecalhoAgendaSemanal.txt";
 		private const string RodapeAgendasemanal = "RodapeAgendaSemanal.txt";
 
 		public static void EnviarEmailAgendaSemanal()
 		{
+			Data.Context context = new Data.Context();
 			DateTime ate = DateTime.Now.AddDays(Settings.EventosProximosDias).Date;
 			DateTime de = DateTime.Now.Date;
 			DateTime diasAposEventoEnvioEmail = ate.AddDays(Settings.EnviarEmailAposXDiasEvento).Date;
@@ -25,8 +27,8 @@ namespace VillaBisutti.Delta.Core.Business
 			string rodape = Util.ReadFileEmail(RodapeAgendasemanal);
 
 			StringBuilder builder = new StringBuilder();
-			List<model.Evento> proximosEventos = Util.context.Evento.Include(l => l.Local).Include(d => d.Decoracao).Where(e => DbFunctions.TruncateTime(e.Data) >= de && DbFunctions.TruncateTime(e.Data) <= ate).ToList();
-			List<string> enviarEmails = Util.context.Evento.Where(e => DbFunctions.TruncateTime(e.Data) > diasAposEventoEnvioEmail).Select(a => a.EmailContato).Distinct().ToList();
+			List<model.Evento> proximosEventos = context.Evento.Include(l => l.Local).Include(d => d.Decoracao).Where(e => DbFunctions.TruncateTime(e.Data) >= de && DbFunctions.TruncateTime(e.Data) <= ate).ToList();
+			List<string> enviarEmails = context.Evento.Where(e => DbFunctions.TruncateTime(e.Data) > diasAposEventoEnvioEmail).Select(a => a.EmailContato).Distinct().ToList();
 			var culture = new System.Globalization.CultureInfo("pt-BR");
 			foreach (model.Evento proximoeEvento in proximosEventos.OrderBy(a => a.Data))
 			{

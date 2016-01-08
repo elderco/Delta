@@ -11,9 +11,10 @@ namespace VillaBisutti.Delta.Core.Business
     {
 		public void RemoverPerfil(int Id)
 		{
-			Model.Perfil perfilRemovido = Util.context.Perfil.FirstOrDefault(s => s.Id == Id);
-			Util.context.Perfil.Remove(perfilRemovido);
-			Util.context.SaveChanges();
+			Data.Context context = new Data.Context();
+			Model.Perfil perfilRemovido = context.Perfil.FirstOrDefault(s => s.Id == Id);
+			context.Perfil.Remove(perfilRemovido);
+			context.SaveChanges();
 		}
     }
 }

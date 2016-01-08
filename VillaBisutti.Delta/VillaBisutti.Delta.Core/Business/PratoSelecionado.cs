@@ -12,10 +12,11 @@ namespace VillaBisutti.Delta.Core.Business
 	{
 		public void ImportarPratosDosCardapios()
 		{
-			foreach (Model.Cardapio cardapio in Util.context.Cardapio.Include(c => c.Pratos).ToList())
-				foreach (Model.TipoServico tipoServico in Util.context.TipoServico.ToList())
+			Data.Context context = new Data.Context();
+			foreach (Model.Cardapio cardapio in context.Cardapio.Include(c => c.Pratos).ToList())
+				foreach (Model.TipoServico tipoServico in context.TipoServico.ToList())
 					foreach (Model.Prato prato in cardapio.Pratos)
-						Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
+						context.PratoSelecionado.Add(new Model.PratoSelecionado
 						{
 							PratoId = prato.Id,
 							CardapioId = cardapio.Id,
@@ -27,10 +28,11 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		public void ImportarPratosDosCardapiosFaltantes(int cardapioId, int tipoServicoId)
 		{
-			IEnumerable<Model.PratoSelecionado> pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
-			foreach (Model.Prato prato in Util.context.Cardapio.Include(c => c.Pratos).FirstOrDefault(c => c.Id == cardapioId).Pratos)
+			Data.Context context = new Data.Context();
+			IEnumerable<Model.PratoSelecionado> pratos = context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			foreach (Model.Prato prato in context.Cardapio.Include(c => c.Pratos).FirstOrDefault(c => c.Id == cardapioId).Pratos)
 				if (pratos.Where(p => p.PratoId == prato.Id).Count() <= 0)
-					Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
+					context.PratoSelecionado.Add(new Model.PratoSelecionado
 					{
 						PratoId = prato.Id,
 						CardapioId = cardapioId,
@@ -39,19 +41,19 @@ namespace VillaBisutti.Delta.Core.Business
 						Escolhido = false,
 						Rejeitado = false
 					});
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 		}
 		public void ImportarPratosDosCardapios(int cardapioId, int tipoServicoId)
 		{
-			IEnumerable<Model.PratoSelecionado> pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
-			Util.context.PratoSelecionado.RemoveRange(pratos);
-			Util.context.SaveChanges();
+			Data.Context context = new Data.Context();
+			IEnumerable<Model.PratoSelecionado> pratos = context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			context.PratoSelecionado.RemoveRange(pratos);
+			context.SaveChanges();
 			Util.ResetContext();
-			pratos = Util.context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
-			foreach (Model.Prato prato in Util.context.Prato.Include(p => p.Cardapios).Where(p => p.Cardapios.Where(c => c.Id == cardapioId).Count() > 0).ToList())
+			pratos = context.PratoSelecionado.Where(ps => ps.CardapioId == cardapioId && ps.TipoServicoId == tipoServicoId && ps.EventoId == null);
+			foreach (Model.Prato prato in context.Prato.Include(p => p.Cardapios).Where(p => p.Cardapios.Where(c => c.Id == cardapioId).Count() > 0).ToList())
 				if (pratos.Where(p => p.PratoId == prato.Id).Count() <= 0)
-					Util.context.PratoSelecionado.Add(new Model.PratoSelecionado
+					context.PratoSelecionado.Add(new Model.PratoSelecionado
 					{
 						PratoId = prato.Id,
 						CardapioId = cardapioId,
@@ -60,42 +62,41 @@ namespace VillaBisutti.Delta.Core.Business
 						Escolhido = false,
 						Rejeitado = false
 					});
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 		}
 		public Model.PratoSelecionado RejeitarPrato(int id)
 		{
-			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			Data.Context context = new Data.Context();
+			Model.PratoSelecionado prato = context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
 			prato.Rejeitado = !prato.Rejeitado;
 			new Data.PratoSelecionado().Update(prato);
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 			return prato;
 		}
 		public Model.PratoSelecionado DegustarPrato(int id)
 		{
-			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			Data.Context context = new Data.Context();
+			Model.PratoSelecionado prato = context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
 			prato.Degustar = !prato.Degustar;
 			new Data.PratoSelecionado().Update(prato);
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 			return prato;
 		}
 		public Model.PratoSelecionado EscolherPrato(int id)
 		{
-			Model.PratoSelecionado prato = Util.context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
-			int quantosEscolhidos = Util.context.PratoSelecionado.Where(p =>
+			Data.Context context = new Data.Context();
+			Model.PratoSelecionado prato = context.PratoSelecionado.Include(p => p.Prato).FirstOrDefault(p => p.Id == id);
+			int quantosEscolhidos = context.PratoSelecionado.Where(p =>
 				p.Prato.TipoPratoId == prato.Prato.TipoPratoId
 				&& p.EventoId == prato.EventoId
 				&& p.Escolhido
 				).Count();
-			int quantosPode = Util.context.TipoPratoPadrao.FirstOrDefault(tpp => tpp.TipoPratoId == prato.Prato.TipoPratoId && tpp.EventoId == prato.EventoId).QuantidadePratos;
+			int quantosPode = context.TipoPratoPadrao.FirstOrDefault(tpp => tpp.TipoPratoId == prato.Prato.TipoPratoId && tpp.EventoId == prato.EventoId).QuantidadePratos;
 			if (quantosEscolhidos >= quantosPode && prato.Escolhido == false)
 				return null;
 			prato.Escolhido = !prato.Escolhido;
 			new Data.PratoSelecionado().Update(prato);
-			Util.context.SaveChanges();
-			Util.ResetContext();
+			context.SaveChanges();
 			return prato;
 		}
 

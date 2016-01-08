@@ -9,15 +9,9 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class Reuniao
 	{
-		public Data.Context context
-		{
-			get
-			{
-				return Util.context;
-			}
-		}
 		public void CopiarReunioesPadrao(int eventoId)
 		{
+			Data.Context context = new Data.Context();
 			Model.Evento evento = context.Evento.Include(e => e.Reunioes).FirstOrDefault(e => e.Id == eventoId);
 			if (evento.Reunioes.Count > 0)
 				return;
@@ -37,6 +31,7 @@ namespace VillaBisutti.Delta.Core.Business
 		}
 		private DateTime AchaData(int dias, DateTime dataRef, bool Domingo, bool Segunda, bool Terca, bool Quarta, bool Quinta, bool Sexta, bool Sabado)
 		{
+			Data.Context context = new Data.Context();
 			DateTime dia = dataRef.AddDays(-dias);
 			for (int i = 0; i < 4; i++)
 			{

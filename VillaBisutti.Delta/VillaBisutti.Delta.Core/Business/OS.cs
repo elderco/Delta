@@ -15,6 +15,7 @@ namespace VillaBisutti.Delta.Core.Business
 		private int EventoId;
 		public OS(int eventoId)
 		{
+			Util.ResetContext();
 			EventoId = eventoId;
 		}
 		public string FileName { get; set; }
