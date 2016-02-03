@@ -20,10 +20,10 @@
 			@(Model.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome) - @(Model.ItemBoloDoceBemCasado.Nome)
 		</td>
 		<td>
-			@Html.EditorFor(model => model.Quantidade)
+			@(Model.ItemBoloDoceBemCasado.Fornecedor == null ? "Indefinido" : Model.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor)
 		</td>
 		<td>
-			@Html.EditorFor(model => model.ContatoFornecimento)
+			@Html.EditorFor(model => model.Quantidade)
 		</td>
 		<td>
 			@Html.TextBoxFor(model => model.HorarioEntrega, new { @type = "number", @id = "HorarioEntrega_" + Model.Id })
@@ -39,9 +39,6 @@
 		</td>
 		<td>
 			@Html.EditorFor(model => model.Observacoes)
-		</td>
-		<td>
-			@Html.EditorFor(model => model.AgrupamentoItem)
 		</td>
 		<td>
 			<a href="@Url.Action("Delete", "ItemBoloDoceBemCasadoSelecionado", new { id = Model.Id })" class="btn btn-default" title="Remover este item">

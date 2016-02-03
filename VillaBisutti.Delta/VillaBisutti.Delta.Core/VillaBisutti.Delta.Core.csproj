@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\AgendaSemanal.cs" />
+    <Compile Include="Business\Bebida.cs" />
     <Compile Include="Business\BoasVindas.cs" />
+    <Compile Include="Business\BoloDoceBemCasado.cs" />
     <Compile Include="Business\CardapioTipoPrato.cs" />
     <Compile Include="Business\ContratacaoServicoTerceiro.cs" />
     <Compile Include="Business\Foto.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Data\ItemRoteiro.cs" />
     <Compile Include="Data\ItemSomIluminacao.cs" />
     <Compile Include="Data\Local.cs" />
+    <Compile Include="Data\Modulo.cs" />
     <Compile Include="Data\Montagem.cs" />
     <Compile Include="Data\OutrosItens.cs" />
     <Compile Include="Data\Perfil.cs" />
@@ -126,11 +129,13 @@
     <Compile Include="Data\TipoPratoPadrao.cs" />
     <Compile Include="Data\TipoReuniao.cs" />
     <Compile Include="Data\TipoServico.cs" />
+    <Compile Include="DTO\BoloDoceBemCasado.cs" />
     <Compile Include="DTO\Degustacao.cs" />
     <Compile Include="DTO\Evento.cs" />
     <Compile Include="Business\ItemEvento.cs" />
     <Compile Include="DTO\FileSys.cs" />
     <Compile Include="DTO\Gastronomia.cs" />
+    <Compile Include="DTO\ItemRelatorio.cs" />
     <Compile Include="DTO\Prato.cs" />
     <Compile Include="DTO\PratoCardapio.cs" />
     <Compile Include="DTO\PratoSelecionado.cs" />
@@ -215,6 +220,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

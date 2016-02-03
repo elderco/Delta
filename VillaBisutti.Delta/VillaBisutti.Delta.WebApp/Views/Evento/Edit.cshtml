@@ -41,7 +41,7 @@
 		<input type="hidden" name="UsuarioCreateId" value="@(Model.UsuarioCreateId)" />
 		<input type="hidden" name="UsuarioCreateData" value="@(Model.UsuarioCreateData)" />
 		<input type="hidden" name="CardapioId" value="@(Model.CardapioId)" />
-		<input type="hidden" name="TipoServico" value="@(Model.TipoServico)" />
+		<input type="hidden" name="TipoServicoId" value="@(Model.TipoServicoId)" />
 		<input type="hidden" name="OSFinalizada" value="@(Model.OSFinalizada)" />
 		<input type="hidden" name="OSAprovada" value="@(Model.OSAprovada)" />
 		<div class="tabbable tabs-left">
@@ -119,13 +119,13 @@
 							@Html.ValidationMessageFor(model => model.NomeResponsavel)
 						</div>
 					</div>
-					<div class="form-group clear-margin">
+					@*<div class="form-group clear-margin">
 						@Html.LabelFor(model => model.CPFResponsavel, new { @class = "control-label col-md-4" })
 						<div class="col-md-8">
 							@Html.EditorFor(model => model.CPFResponsavel)
 							@Html.ValidationMessageFor(model => model.CPFResponsavel)
 						</div>
-					</div>
+					</div>*@
 					<div class="form-group clear-margin">
 						@Html.LabelFor(model => model.EmailContato, new { @class = "control-label col-md-4" })
 						<div class="col-md-8">

@@ -37,6 +37,7 @@ namespace VillaBisutti.Delta.Core.Data
 				.Include(b => b.Itens)
 				.Include(b => b.Itens.Select(i => i.ItemBoloDoceBemCasado))
 				.Include(b => b.Itens.Select(i => i.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado))
+				.Include(b => b.Itens.Select(i => i.ItemBoloDoceBemCasado.Fornecedor))
 				.ToList();
 		}
 	}

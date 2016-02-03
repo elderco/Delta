@@ -8,8 +8,11 @@
 @Scripts.Render("~/bundles/jqueryval")
 <script type="text/javascript" language="javascript">
 	var enviado;
-	function Buscar(texto, fornecedor, item) {
+	function Buscar() {
 		window.clearTimeout(enviado);
+		var texto = $("#Nome").val();
+		var fornecedor = $("#FornecedorId").val();
+		var item = $("#TipoItemBoloDoceBemCasadoId").val();
 		if (texto == undefined)
 			texto = "";
 		if (fornecedor == undefined || isNaN(fornecedor) || fornecedor == "")
@@ -40,7 +43,7 @@
 			$("#ExcluirFornecedor").click(function () {
 				ShowPopUp(urlDeletar + id, "Excluir Fornecedor", 790);
 			});
-			Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
+			Buscar();
 		});
 		$("#EditarBoloDoceBemCasado").attr("disabled", "disabled");
 		$("#ExcluirBoloDoceBemCasado").attr("disabled", "disabled");
@@ -61,13 +64,13 @@
 			$("#ExcluirBoloDoceBemCasado").click(function () {
 				ShowPopUp(urlDeletar + id, "Excluir Bolo, Doce e Bem-Casado", 790);
 			});
-			Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
+			Buscar();
 		});
 		$("#Nome").keyup(function () {
 			if ($(this).val().length > 3)
-				Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
+				Buscar();
 		});
-		Buscar($("#Nome").val(), $("#TipoItemBoloDoceBemCasadoId").val());
+		Buscar();
 
 		$(".PopUpActionLinks").click(function (e) {
 		    e.preventDefault();

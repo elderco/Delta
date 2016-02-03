@@ -43,7 +43,6 @@
 		$("button[type=submit]").click(function () {
 		    event.preventDefault();
 		    var form = $(this).parents('form:first');
-
 		    var count = 0;
 		    form.find("select[data-val='true']").each(function () {
 		        if ($(this).val() == "") {
@@ -73,43 +72,49 @@
 		@Html.ValidationSummary(true)
 		<input type="hidden" name="EventoId" id="EventoId" value="@(ViewBag.Id)" />
 		<div class="form-group">
-			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, new { @class = "control-label col-md-2" })
-			<div class="col-md-4">
+			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.TipoItemBoloDoceBemCasado.Nome, new { @class = "control-label col-md-4" })
+			<div class="col-md-8">
 				@Html.DropDownList("TipoItemBoloDoceBemCasadoId", (IEnumerable<SelectListItem>)ViewBag.TipoItemBoloDoceBemCasadoId, "Selecione", new { @class = "form-control" })
 			</div>
-			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor, new { @class = "control-label col-md-2" })
-			<div class="col-md-4">
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.Fornecedor.NomeFornecedor, new { @class = "control-label col-md-4" })
+			<div class="col-md-8">
 				@Html.DropDownList("FornecedorId", (IEnumerable<SelectListItem>)ViewBag.FornecedorId, "Selecione", new { @class = "form-control" })
 			</div>
 		</div>
 		<div class="form-group">
-			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.Nome, new { @class = "control-label col-md-2" })
-			<div class="col-md-4" id="ItensTipoItemBoloDoceBemCasadoContainer">
+			@Html.LabelFor(model => model.ItemBoloDoceBemCasado.Nome, new { @class = "control-label col-md-4" })
+			<div class="col-md-8" id="ItensTipoItemBoloDoceBemCasadoContainer">
 				<select class="form-control" data-val="true"></select>
 			</div>
-			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-2 deve-sumir sem-contrato" })
-			<div class="col-md-2 deve-sumir sem-contrato">
+		</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label deve-sumir">Disponibilização</label>
+			<div class="col-md-8 deve-sumir btn-group">
+				<input type="hidden" id="ContratacaoBisutti" name="ContratacaoBisutti" value="true" />
+				<input type="hidden" id="FornecimentoBisutti" name="FornecimentoBisutti" value="false" />
+				<span aria-label="externo" class="responsabilidade-selector btn btn-success">Fornecedor Bisutti</span>
+				<span aria-label="contratante" class="responsabilidade-selector btn btn-info">Contratante</span>
+			</div>
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-4 deve-sumir" })
+			<div class="col-md-8 deve-sumir">
+				@Html.EditorFor(model => model.Quantidade)
+				@Html.ValidationMessageFor(model => model.Quantidade)
+			</div>
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ContratoAditivo, new { @class = "control-label col-md-4 deve-sumir sem-contrato" })
+			<div class="col-md-8 deve-sumir sem-contrato">
 				@Html.DropDownListFor(model => model.ContratoAditivoId, (IEnumerable<SelectListItem>)ViewBag.ContratoAditivoId, "Selecione", new { @class = "form-control", data_val = "nope" })
 				@Html.ValidationMessageFor(model => model.ContratoAditivoId)
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-md-2 control-label deve-sumir">Disponibilização</label>
-			<div class="col-md-10 deve-sumir btn-group">
-				<input type="hidden" id="ContratacaoBisutti" name="ContratacaoBisutti" value="true" />
-				<input type="hidden" id="FornecimentoBisutti" name="FornecimentoBisutti" value="true" />
-				<span aria-label="externo" class="responsabilidade-selector btn btn-info">Fornecedor Bisutti</span>
-				<span aria-label="contratante" class="responsabilidade-selector btn btn-info">Contratante</span>
-			</div>
-		</div>
-		<div class="form-group">
-			@Html.LabelFor(model => model.Quantidade, new { @class = "control-label col-md-2 deve-sumir" })
-			<div class="col-md-2 deve-sumir">
-				@Html.EditorFor(model => model.Quantidade)
-				@Html.ValidationMessageFor(model => model.Quantidade)
-			</div>
-			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-2" })
-			<div class="col-md-6">
+			@Html.LabelFor(model => model.Observacoes, new { @class = "control-label col-md-4" })
+			<div class="col-md-8">
 				@Html.EditorFor(model => model.Observacoes)
 				@Html.ValidationMessageFor(model => model.Observacoes)
 			</div>

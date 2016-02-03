@@ -262,7 +262,7 @@ namespace VillaBisutti.Delta.Core
 		public void AddTable(List<CellRow> tableRows, float[] cellWidths)
 		{
 			iPdf.PdfPTable table = new iPdf.PdfPTable(cellWidths.Length);
-			for (int i = 0; i < cellWidths.Length; i++ )
+			for (int i = 0; i < cellWidths.Length; i++)
 				table.AbsoluteWidths[i] = cellWidths[i];
 			table.WidthPercentage = 100F;
 			table.SetWidths(cellWidths);
@@ -336,6 +336,17 @@ namespace VillaBisutti.Delta.Core
 		}
 		public void OnEndPage(iPdf.PdfWriter writer, iText.Document document)
 		{
+			iPdf.BaseFont helv = iPdf.BaseFont.CreateFont(iPdf.BaseFont.HELVETICA, iPdf.BaseFont.WINANSI, iPdf.BaseFont.NOT_EMBEDDED);
+			iPdf.PdfContentByte cb = writer.DirectContent;
+			int pageN = writer.PageNumber;
+			string text = pageN.ToString();
+			iText.Rectangle pageSize = document.PageSize;
+			cb.SetRGBColorFill(100, 100, 100);
+			cb.BeginText();
+			cb.SetFontAndSize(helv, 12);
+			cb.SetTextMatrix(document.LeftMargin, pageSize.GetBottom(document.BottomMargin));
+			cb.ShowText(text);
+			cb.EndText();
 		}
 		public void OnGenericTag(iPdf.PdfWriter writer, iText.Document document, iText.Rectangle rect, string text)
 		{

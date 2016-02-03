@@ -21,7 +21,7 @@ namespace VillaBisutti.Delta.Core.Business
 			context.Entry(original).State = System.Data.Entity.EntityState.Modified;
 			context.Entry(evento).CurrentValues.SetValues(modified);
 			context.Entry(evento).State = System.Data.Entity.EntityState.Modified;
-			if(alterado)
+			if (alterado)
 			{
 				foreach (Model.PratoSelecionado prato in context.PratoSelecionado.Where(p => p.EventoId == entity.Id))
 					context.Entry(prato).State = System.Data.Entity.EntityState.Deleted;

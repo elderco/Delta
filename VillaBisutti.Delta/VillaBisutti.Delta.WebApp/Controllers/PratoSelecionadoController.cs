@@ -79,7 +79,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult AddPratoNotInCardapio(int pratoId, int eventoId)
 		{
 			new biz.PratoSelecionado().AddNotInCardapio(pratoId, eventoId);
-			return Redirect(Request.UrlReferrer.AbsoluteUri);
+			return View();
 		}
 		public ActionResult ErroMaisPratosQuePermitido()
 		{

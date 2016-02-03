@@ -204,6 +204,7 @@
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PratoController.cs" />
     <Compile Include="Controllers\PratoSelecionadoController.cs" />
+    <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\ReuniaoController.cs" />
     <Compile Include="Controllers\RoteiroController.cs" />
     <Compile Include="Controllers\RoteiroPadraoController.cs" />
@@ -657,6 +658,10 @@
     <Content Include="Views\PratoSelecionado\_HandleInput.cshtml" />
     <Content Include="Views\Roteiro\Edit.cshtml" />
     <Content Include="Views\Cerimonial\Edit.cshtml" />
+    <Content Include="Views\Relatorio\Perfil.cshtml" />
+    <Content Include="Views\Prato\PratosPorTipo.cshtml" />
+    <Content Include="Views\PratoSelecionado\AddPratoNotInCardapio.cshtml" />
+    <Content Include="Views\Relatorio\BoloDoceBemCasado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

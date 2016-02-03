@@ -144,12 +144,29 @@
 						</ul>
 					</li>
 					<li class="transparent">
-						<a href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Relatórios"><i class="menu-icon fa fa-dashboard"></i></a>
+						<a data-toggle="dropdown" href="#" data-rel="tooltip" data-placement="bottom" data-original-title="Relatórios" class="dropdown-toggle">
+							<i class="menu-icon fa fa-dashboard"></i>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
+							<li>
+								<a href="@Url.Action("Perfil", "Relatorio")">
+									Perfil dos eventos
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("BoloDoceBemCasado", "Relatorio")">
+									Bolo, doce e bem-casado
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
 					</li>
 					<li class="light-blue">
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
-							<span class="user-info" title="Dom. Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança Bourbon">
+							<span class="user-info" title="@(usuario.Nome == null ? "" : usuario.Nome)">
 								<small>Olá,</small>
 								@if (usuario != null)
 								{

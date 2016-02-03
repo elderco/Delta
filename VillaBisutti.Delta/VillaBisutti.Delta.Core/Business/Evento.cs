@@ -149,5 +149,36 @@ namespace VillaBisutti.Delta.Core.Business
 				connection.Close();
 			}
 		}
+		public static IEnumerable<DTO.Evento> GetPerfil(DateTime inicio, DateTime termino)
+		{
+			List<DTO.Evento> eventos = new List<DTO.Evento>();
+			using (Data.Context context = new Data.Context())
+				foreach (Model.Evento evento in context.Evento
+					.Include(e => e.Local)
+					.Include(e => e.Produtora)
+					.Where(e => inicio <= e.Data && e.Data <= termino)
+					.OrderBy(e => e.Data)
+					)
+
+					eventos.Add(ConvertEvento(evento));
+			return eventos;
+		}
+
+		internal static DTO.Evento ConvertEvento(Model.Evento evento)
+		{
+			return new DTO.Evento
+					{
+						AberturaCasa = evento.HorarioInicio,
+						DataEvento = evento.Data,
+						Execucao = evento.PosVendedora == null ? "Indefinido" : evento.PosVendedora.Nome,
+						NomeCasa = evento.Local == null ? "Indefinido" : evento.Local.NomeCasa,
+						NomeHomenageados = evento.NomeHomenageados,
+						Pax = evento.Pax,
+						Perfil = evento.Observacoes,
+						Producao = evento.Produtora == null ? "Indefinido" : evento.Produtora.Nome,
+						TerminoEvento = evento.HorarioTermino,
+						TipoEvento = evento.TipoEvento.GetDescription()
+					};
+		}
 	}
 }

@@ -9,28 +9,27 @@
 			<th width="20%"><!--20-->
 				@Html.DisplayNameFor(model => model.ItemBoloDoceBemCasado.Nome)
 			</th>
-			<th width="5%"><!--25-->
-				@Html.DisplayNameFor(model => model.Quantidade)
-			</th>
-			<th width="15%"><!--40-->
-				@Html.DisplayNameFor(model => model.ContatoFornecimento)
+			<th width="20%"><!--40-->
+				@Html.DisplayNameFor(model => model.ItemBoloDoceBemCasado.Fornecedor)
 			</th>
 			<th width="10%"><!--50-->
+				@Html.DisplayNameFor(model => model.Quantidade)
+			</th>
+			<th width="10%"><!--60-->
 				@Html.DisplayNameFor(model => model.HorarioEntrega)
 			</th>
-			<th width="2%"><!--52-->
+			<th width="2%"><!--62-->
 				@Html.DisplayNameFor(model => model.Definido)
 			</th>
-			<th width="2%"><!--54-->
+			<th width="2%"><!--64-->
 				@Html.DisplayNameFor(model => model.FornecedorStartado)
 			</th>
-			<th width="2%"><!--56-->
+			<th width="2%"><!--66-->
 				@Html.DisplayNameFor(model => model.Contratado)
 			</th>
-			<th width="22%"><!--78-->
+			<th width="32%"><!--98-->
 				@Html.DisplayNameFor(model => model.Observacoes)
 			</th>
-			<th width="20%">Agrupar itens</th><!--98-->
 			<th width="2%"></th><!--100-->
 		</tr>
 		@foreach (var item in Model)

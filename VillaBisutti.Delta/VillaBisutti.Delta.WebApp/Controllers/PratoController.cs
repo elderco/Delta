@@ -23,6 +23,11 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 					ViewBag.IsBlocked = "TRUE";
 			base.EndExecute(asyncResult);
 		}
+		public ActionResult PratosPorTipo(int tipoPratoId)
+		{
+			ViewBag.Prato = new SelectList(new data.Prato().ListarPorTipo(tipoPratoId).OrderBy(tp => tp.Nome), "Id", "Nome");
+			return View();
+		}
 		public ActionResult PratosDosCardapios()
 		{
 			return View(new dto.Prato());

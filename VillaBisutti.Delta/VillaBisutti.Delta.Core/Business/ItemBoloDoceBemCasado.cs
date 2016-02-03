@@ -11,7 +11,7 @@ namespace VillaBisutti.Delta.Core.Business
 		public int GetQuantidadeItens(int ItemBoloDoceBemCasadoId)
 		{
 			int quantidade = new Data.ItemBoloDoceBemCasadoSelecionado().GetCollection(0).Where(ibs => ibs.ItemBoloDoceBemCasadoId == ItemBoloDoceBemCasadoId).Sum(ibs => ibs.Quantidade);
-			return new Data.ItemDecoracao().GetElement(ItemBoloDoceBemCasadoId).Quantidade - quantidade;
+			return new Data.ItemBoloDoceBemCasado().GetElement(ItemBoloDoceBemCasadoId).Quantidade - quantidade;
 		}
 	}
 }

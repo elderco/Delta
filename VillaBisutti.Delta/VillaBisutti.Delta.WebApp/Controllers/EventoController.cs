@@ -152,7 +152,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edited([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,PerfilFesta,CardapioId,TipoServico,ProdutoraId,PosVendedoraId,PossuiAssessoria,ContatoAssessoria,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,Observacoes,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,EmailBoasVindasEnviado,OSFinalizada,OSAprovada,EmailBoasVindasEnviado,EnviarAgendaSemanal")] model.Evento evento)
+		public ActionResult Edited([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,PerfilFesta,CardapioId,TipoServicoId,ProdutoraId,PosVendedoraId,PossuiAssessoria,ContatoAssessoria,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,Observacoes,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,EmailBoasVindasEnviado,OSFinalizada,OSAprovada,EmailBoasVindasEnviado,EnviarAgendaSemanal")] model.Evento evento)
 		{
 			new data.Evento().Update(evento);
 			return Redirect(Request.UrlReferrer.AbsoluteUri);

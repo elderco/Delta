@@ -33,6 +33,19 @@
 				$("body").append($targetDiv);
 				LoadPage($(this).attr("href"), id);
 			});
+			$("#AddPrato").submit(function (e) {
+				e.preventDefault();
+				if (!$("#pratoId").val())
+					return false;
+				var url = $(this).attr("action");
+				url += (url.indexOf("?") < 0 ? "?" : "&") + "pratoId=" + $("#pratoId").val();
+				url += "&eventoId=" + $("#AddPratoEventoId").val();
+				LoadPage(url, "FormPostTarget");
+			});
+			$("#TipoPratoId").change(function () {
+				var url = $(this).attr("data-target") + "&tipoPratoId=" + $(this).val();
+				LoadPage(url, "PratoTarget");
+			});
 			$(".observacoes-prato").change(function () {
 				PostObs($(this).attr("id"));
 			});
@@ -61,12 +74,23 @@
 	</fieldset>
 	<fieldset class="col-md-3 pull-right">
 		<legend>Prato que não está no cardápio</legend>
-		<form method="get" action="@(Url.Action("AddPratoNotInCardapio", "PratoSelecionado"))">
-			<input type="hidden" name="eventoId" value="@(Model.ThisGastronomia.EventoId)" />
+		<form id="AddPrato" method="get" action="@(Url.Action("AddPratoNotInCardapio", "PratoSelecionado"))">
+			<input type="hidden" id="AddPratoEventoId" name="eventoId" value="@(Model.ThisGastronomia.EventoId)" />
 			<div class="form-group">
+				<label class="control-label col-md-4" for="TipoPratoId">Tipo de prato</label>
+				<div class="col-md-8">
+					@Html.DropDownList("TipoPratoId", (IEnumerable<SelectListItem>)ViewBag.TipoPrato, String.Empty, new { @class = "form-control", data_target = Url.Action("PratosPorTipo", "Prato", new { sid = new Random().Next(0, 999999) }) })
+				</div>
 			</div>
-			<label for="pratoId">Id do prato:</label> <input type="number" name="pratoId" id="pratoId" />
-			<button type="submit">Incluir</button>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="TipoPratoId">Prato</label>
+				<div class="col-md-8" id="PratoTarget">
+					<select>
+						<option selected="selected" disabled="disabled">Selecione o tipo de prato</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default form-control">Incluir</button>
 		</form>
 </fieldset>
 </div>
@@ -121,3 +145,4 @@
 		</ul>
 	}
 </div>
+<div id="FormPostTarget"></div>

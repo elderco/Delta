@@ -29,6 +29,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         {
 			ViewBag.Cardapios = new SelectList(new data.Cardapio().GetCollection(0).OrderBy(c => c.Nome), "Id", "Nome");
 			ViewBag.TipoServicos = new SelectList(new data.TipoServico().GetCollection(0).OrderBy(ts => ts.Nome), "Id", "Nome");
+			ViewBag.TipoPrato = new SelectList(new data.TipoPrato().GetCollection(0).OrderBy(tp => tp.Nome), "Id", "Nome");
 			ViewBag.Id = id;
 			return View(new dto.Gastronomia(id));
 		}
