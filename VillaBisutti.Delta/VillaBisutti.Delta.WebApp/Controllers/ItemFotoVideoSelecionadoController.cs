@@ -89,7 +89,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult CreateItemFotoVideoSelecionado([Bind(Include = "Id,EventoId,ItemFotoVideoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemFotoVideoSelecionado itemfotovideoselecionado)
 		{
 			new data.ItemFotoVideoSelecionado().Insert(itemfotovideoselecionado);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return View();
 		}
 
 		public ActionResult Delete(int? id)

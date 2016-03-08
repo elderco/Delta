@@ -47,9 +47,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             if (ModelState.IsValid)
             {
 				new data.ContratoAditivo().Insert(contratoaditivo);
+				SessionFacade.CurrentEvento = null;
 				return Redirect(Request.UrlReferrer.AbsolutePath);
             }
-            return View(contratoaditivo);
+			return View(contratoaditivo);
         }
 
 
@@ -65,7 +66,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
             {
                 return HttpNotFound();
             }
-            return View(contratoaditivo);
+			return View(contratoaditivo);
         }
 
         // POST: /ContratoAditivo/Delete/5
@@ -74,6 +75,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 			new data.ContratoAditivo().Delete(id);
+			SessionFacade.CurrentEvento = null;
 			return Redirect(Request.UrlReferrer.AbsolutePath);
 			//return RedirectToAction("Index");
         }

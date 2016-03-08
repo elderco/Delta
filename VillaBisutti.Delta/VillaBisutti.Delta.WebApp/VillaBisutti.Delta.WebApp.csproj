@@ -662,6 +662,14 @@
     <Content Include="Views\Prato\PratosPorTipo.cshtml" />
     <Content Include="Views\PratoSelecionado\AddPratoNotInCardapio.cshtml" />
     <Content Include="Views\Relatorio\BoloDoceBemCasado.cshtml" />
+    <Content Include="Views\ItemDecoracaoSelecionado\CreateItemDecoracaoSelecionado.cshtml" />
+    <Content Include="Views\ItemDecoracaoCerimonialSelecionado\CreateItemDecoracaoCerimonialSelecionado.cshtml" />
+    <Content Include="Views\ItemBoloDoceBemCasadoSelecionado\CreateItemBoloDoceBemCasadoSelecionado.cshtml" />
+    <Content Include="Views\ItemBebidaSelecionado\CreateItemBebidaSelecionado.cshtml" />
+    <Content Include="Views\ItemFotoVideoSelecionado\CreateItemFotoVideoSelecionado.cshtml" />
+    <Content Include="Views\ItemMontagemSelecionado\CreateItemMontagemSelecionado.cshtml" />
+    <Content Include="Views\ItemOutrosItensSelecionado\CreateItemOutrosItensSelecionado.cshtml" />
+    <Content Include="Views\ItemSomIluminacaoSelecionado\CreateItemSomIluminacaoSelecionado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

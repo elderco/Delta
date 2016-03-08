@@ -67,7 +67,7 @@
 
 </script>
 
-@using (Html.BeginForm("CreateItemOutrosItensSelecionado", "ItemOutrosItensSelecionado", FormMethod.Post, new { @id = "CreateItemOutrosItens" }))
+@using (Html.BeginForm("CreateItemOutrosItensSelecionado", "ItemOutrosItensSelecionado", FormMethod.Post, new { @id = "CreateItemOutrosItens", data_behavior = "post-async" }))
 {
     @Html.AntiForgeryToken()
 

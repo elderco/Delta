@@ -74,15 +74,16 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Cabecalho(int id)
 		{
 			ViewBag.Id = id;
-			model.Evento evento = new data.Evento().GetElement(id);
-			int quantos = new data.ContratoAditivo().GetContratosEvento(id).Count();
-			if (evento == null)
-				return HttpNotFound();
-			if (quantos == 0)
+			if (SessionFacade.CurrentEvento == null || SessionFacade.CurrentEvento.Id != id)
 			{
-				ViewBag.BloqueadoSemContrato = "SIM";
+				SessionFacade.CurrentEvento = new data.Evento().GetElement(id);
+				SessionFacade.HasContratos = new data.ContratoAditivo().GetContratosEvento(id).Count() > 0;
 			}
-			return View(evento);
+			if (SessionFacade.CurrentEvento == null)
+				return HttpNotFound();
+			if (!SessionFacade.HasContratos)
+				ViewBag.BloqueadoSemContrato = "SIM";
+			return View(SessionFacade.CurrentEvento);
 		}
 		// GET: /Evento/Details/5
 		public ActionResult Details(int? id)
@@ -155,6 +156,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult Edited([Bind(Include = "Id,TipoEvento,LocalId,Data,HorarioInicio,HorarioTermino,Pax,PerfilFesta,CardapioId,TipoServicoId,ProdutoraId,PosVendedoraId,PossuiAssessoria,ContatoAssessoria,NomeResponsavel,CPFResponsavel,EmailContato,TelefoneContato,NomeHomenageados,Observacoes,LocalCerimonia,EnderecoCerimonia,ObservacoesCerimonia,EmailBoasVindasEnviado,OSFinalizada,OSAprovada,EmailBoasVindasEnviado,EnviarAgendaSemanal")] model.Evento evento)
 		{
 			new data.Evento().Update(evento);
+			SessionFacade.CurrentEvento = null;
 			return Redirect(Request.UrlReferrer.AbsoluteUri);
 		}
 

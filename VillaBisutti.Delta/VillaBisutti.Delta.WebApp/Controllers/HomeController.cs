@@ -41,8 +41,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		{
 			//Buscar no Data.Localizacao todas as casas
 			//Incluir na lista os eventos da casa
-			List<model.Local> casas = new data.Local().GetPorProdutor(SessionFacade.UsuarioLogado.Id);//SessionFacade.UsuarioLogado.Id);
-			return View(casas);
+			return View(SessionFacade.MenuEventos);
 		}
 		public ActionResult KeepAlive() { return View(); }
 	}

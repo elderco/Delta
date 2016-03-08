@@ -91,7 +91,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult CreateItemBoloDoceBemCasadoSelecionado([Bind(Include = "Id,EventoId,ItemBoloDoceBemCasadoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemBoloDoceBemCasadoSelecionado itembolodocebemcasado)
 		{
 			new data.ItemBoloDoceBemCasadoSelecionado().Insert(itembolodocebemcasado);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return View();
 		}
 
 		public ActionResult Delete(int? id)

@@ -11,7 +11,7 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorFornecedor ? "bg-danger" : "bg-success")">
+<tr class="inline-row-editor@(Model.Id)">
     @using (Html.BeginForm("EditPost", "ItemOutrosItensSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
     {
         <td class="col-md-2">

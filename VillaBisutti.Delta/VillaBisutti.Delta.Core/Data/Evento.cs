@@ -32,7 +32,7 @@ namespace VillaBisutti.Delta.Core.Data
 
 		protected override List<Model.Evento> GetCollection()
 		{
-			return context.Evento
+			IEnumerable<Model.Evento> eventos = context.Evento
 					.Include(e => e.Bebida)
 					.Include(e => e.BoloDoceBemCasado)
 					.Include(e => e.Cardapio)
@@ -46,9 +46,8 @@ namespace VillaBisutti.Delta.Core.Data
 					.Include(e => e.Produtora)
 					.Include(e => e.SomIluminacao)
 					.Include(e => e.Contratos)
-					.Include(e => e.TipoServico)
-					.ToList();
-			
+					.Include(e => e.TipoServico);
+			return eventos.ToList();
 		}
 		public List<Model.Evento> GetEventos(int casaId, int produtorId)
 		{

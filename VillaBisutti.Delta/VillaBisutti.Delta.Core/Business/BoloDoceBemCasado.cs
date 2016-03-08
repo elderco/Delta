@@ -56,7 +56,7 @@ namespace VillaBisutti.Delta.Core.Business
 				if (item.Itens.Count > 0)
 					returnList.Add(item);
 			}
-			return returnList;
+			return returnList.OrderBy(e => e.DataEvento);
 		}
 	}
 }

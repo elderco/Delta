@@ -85,11 +85,10 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
-		[ValidateAntiForgeryToken]
 		public ActionResult CreateItemDecoracaoSelecionado([Bind(Include = "Id,EventoId,ItemDecoracaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemDecoracaoSelecionado itemdecoracaoselecionado)
 		{
 			new data.ItemDecoracaoSelecionado().Insert(itemdecoracaoselecionado);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return View();
 		}
 
 		public ActionResult Delete(int? id)

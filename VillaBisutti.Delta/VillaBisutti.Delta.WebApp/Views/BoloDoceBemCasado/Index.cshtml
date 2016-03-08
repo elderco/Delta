@@ -1,6 +1,6 @@
 ﻿@model VillaBisutti.Delta.Core.Model.BoloDoceBemCasado
 @{
-Layout = "~/Views/Shared/_EventosLayout.cshtml";
+	Layout = "~/Views/Shared/_EventosLayout.cshtml";
 }
 @if (ViewBag.IsBlocked == "TRUE")
 {
@@ -11,38 +11,38 @@ Layout = "~/Views/Shared/_EventosLayout.cshtml";
 	</script>
 }
 @section scripts {
-<script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		$(".FormItemEditor").submit(function (evt) {
-			evt.preventDefault();
-			var myUrl = $(this).attr("action");
-			var id = $(this).attr("id").split("_")[1];
-			var myData = $(this).serialize();
-			$("#Item_" + id + " input[type='checkbox']").each(function () {
-				myData += "&" + $(this).attr("name");
-				myData += "=";
-				myData += $(this).attr("checked") == "checked" ? "True" : "False";
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			$(".FormItemEditor").submit(function (evt) {
+				evt.preventDefault();
+				var myUrl = $(this).attr("action");
+				var id = $(this).attr("id").split("_")[1];
+				var myData = $(this).serialize();
+				$("#Item_" + id + " input[type='checkbox']").each(function () {
+					myData += "&" + $(this).attr("name");
+					myData += "=";
+					myData += $(this).attr("checked") == "checked" ? "True" : "False";
+				});
+				$.ajax({
+					type: "POST",
+					url: myUrl,
+					data: myData,
+					success: function (data) {
+						$("#Item_" + id).removeClass("bg-warning").removeClass("bg-success");
+						$("#Item_" + id).addClass(data.trim() == "true" ? "bg-warning" : "bg-success");
+						AddStack("Item salvo", "Item alterado com sucesso");
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						AddError("Ops!", "Ocorreu um erro au tentar atualizar este campo.<br />Verifique os dados inseridos e tente novamente.");
+					}
+				});
 			});
-			$.ajax({
-				type: "POST",
-				url: myUrl,
-				data: myData,
-				success: function (data) {
-					$("#Item_" + id).removeClass("bg-warning").removeClass("bg-success");
-					$("#Item_" + id).addClass(data.trim() == "true" ? "bg-warning" : "bg-success");
-					AddStack("Item salvo", "Item alterado com sucesso");
-				},
-				error: function (XMLHttpRequest, textStatus, errorThrown) {
-					AddError("Ops!", "Ocorreu um erro au tentar atualizar este campo.<br />Verifique os dados inseridos e tente novamente.");
-				}
+			$('form').each(function () {
+				$(this).validate();
 			});
 		});
-		$('form').each(function () {
-			$(this).validate();
-		});
-	});
-</script>
-@Scripts.Render("~/bundles/jqueryval")
+	</script>
+	@Scripts.Render("~/bundles/jqueryval")
 }
 <div class="col-xs-12 widget-container-col">
 	<div class="widget-box widget-color-dark">
@@ -59,7 +59,6 @@ Layout = "~/Views/Shared/_EventosLayout.cshtml";
 <div class="row">
 	@Html.Action("ListNaoSelecionados", "TipoItemBoloDoceBemCasado", new { id = @ViewBag.Id })
 </div>
-
 <div class="row">
 	<div class="col-md-6">
 		<fieldset>
@@ -85,9 +84,14 @@ Layout = "~/Views/Shared/_EventosLayout.cshtml";
 
 <div class="row">
 	<h3 class="header smaller blue">Fornecedores externos (Contratação Villa Bisutti)</h3>
-	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti))
+	<div id="ItensTerceiro" data-collection-url="@Url.Action("ListFornecimentoTerceiro", "ItemBoloDoceBemCasadoSelecionado", new { id = @ViewBag.Id })">
+		@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro", Model.Itens.Where(i => i.ContratacaoBisutti))
+	</div>
 </div>
 <div class="row">
 	<h3 class="header smaller blue">Fornecedores externos (Responsabilidade do contratante)</h3>
-	@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
+	<div id="ItensContratante" data-collection-url="@Url.Action("ListFornecimentoContratante", "ItemBoloDoceBemCasadoSelecionado", new { id = @ViewBag.Id })">
+		@Html.Partial("../ItemBoloDoceBemCasadoSelecionado/ListFornecimentoContratante", Model.Itens.Where(i => !i.ContratacaoBisutti))
+	</div>
 </div>
+

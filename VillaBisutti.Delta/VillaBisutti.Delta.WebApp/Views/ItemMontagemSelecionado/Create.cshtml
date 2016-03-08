@@ -66,7 +66,7 @@
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemMontagemSelecionado", "ItemMontagemSelecionado", FormMethod.Post, new {@id = "CreateItemMontagem" }))
+@using (Html.BeginForm("CreateItemMontagemSelecionado", "ItemMontagemSelecionado", FormMethod.Post, new { @id = "CreateItemMontagem", data_behavior = "post-async" }))
 {
     @Html.AntiForgeryToken()
 

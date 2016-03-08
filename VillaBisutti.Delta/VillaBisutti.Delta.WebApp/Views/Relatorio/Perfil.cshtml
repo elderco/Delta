@@ -73,6 +73,10 @@
 								<span class="col-sm-4 text-muted">Termino do evento:</span>
 								<span class="col-sm-8">@(item.HorarioTerminoEvento.ToString())</span>
 							</p>
+							<p class="col-sm-6">
+								<span class="col-sm-4 text-muted">Pax:</span>
+								<span class="col-sm-8">@(item.Pax) (+10% = @(item.Pax * 1.1))</span>
+							</p>
 							<p class="col-sm-12">
 								<span class="col-sm-2 text-muted">Perfil:</span>
 								<span class="col-sm-10 text-left">@(item.Perfil == null ? "Não preenchido" : item.Perfil)</span>

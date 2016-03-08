@@ -68,7 +68,7 @@
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemFotoVideo" }))
+@using (Html.BeginForm("CreateItemFotoVideoSelecionado", "ItemFotoVideoSelecionado", FormMethod.Post, new { @id = "CreateItemFotoVideo", data_behavior = "post-async" }))
 {
 	@Html.AntiForgeryToken()
 

@@ -62,6 +62,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 			{
 				biz.OS os = new biz.OS(gastronomia.EventoId);
 				os.GerarCapa();
+				SessionFacade.CurrentEvento = null;
 			}
 			return Redirect(Request.UrlReferrer.AbsolutePath);
         }

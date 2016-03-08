@@ -38,15 +38,16 @@ namespace VillaBisutti.Delta.Core.Data
 		public List<Model.ItemDecoracaoSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
 			return context.ItemDecoracaoSelecionado
-				.Include(i => i.ContratoAditivo)
 				.Include(i => i.ItemDecoracao)
 				.Include(i => i.ItemDecoracao.TipoItemDecoracao)
 				.Include(i => i.Decoracao)
 				.Where(i =>
-					i.EventoId == eventoId
-					 && i.ContratacaoBisutti == ContratacaoVB
-					 && i.FornecimentoBisutti == FornecimentoVB
+					i.Decoracao.EventoId == eventoId &&
+					i.ContratacaoBisutti == ContratacaoVB &&
+					i.FornecimentoBisutti == FornecimentoVB
 				)
+				.OrderBy(i => i.ItemDecoracao.Nome)
+				.OrderBy(i => i.ItemDecoracao.TipoItemDecoracao.Ordem)
 				.ToList();
 		}
 	}

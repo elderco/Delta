@@ -27,7 +27,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 				termino = DateTime.Now.AddDays(10);
 			return View(biz.BoloDoceBemCasado.GetReport(inicio.Value, termino.Value, fornecedorId));
 		}
-		public ActionResult Bebida(DateTime? inicio = null, DateTime? termino = null)
+		public ActionResult ItensContratar(DateTime? inicio = null, DateTime? termino = null)
 		{
 			return View();
 		}

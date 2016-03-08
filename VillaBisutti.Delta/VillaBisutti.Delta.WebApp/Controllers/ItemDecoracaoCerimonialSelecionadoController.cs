@@ -89,7 +89,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult CreateItemDecoracaoCerimonialSelecionado([Bind(Include = "Id,EventoId,ItemDecoracaoCerimonialId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemDecoracaoCerimonialSelecionado itemdecoracaoselecionado)
 		{
 			new data.ItemDecoracaoCerimonialSelecionado().Insert(itemdecoracaoselecionado);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return View();
 		}
 
 		public ActionResult Delete(int? id)

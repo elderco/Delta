@@ -7,7 +7,32 @@
 		$(document).ready(function () {
 			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
 			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
-		})
+
+			$("[data-behavior~=post-async]").submit(function (e) {
+				e.preventDefault();
+				var form_data = $(this).serialize();
+				var form_url = $(this).attr("action");
+				var contratar = $("#ContratacaoBisutti").val() == "true";
+				var fornecer = $("#FornecimentoBisutti").val() == "true";
+				var form_target = "#" + (contratar && fornecer ? "ItensBisutti" : (contratar ? "ItensTerceiro" : "ItensContratante"));
+				$.ajax({
+					type: "POST",
+					url: form_url,
+					data: form_data,
+					success: function () {
+						LoadPage($(form_target).attr("data-collection-url"), form_target);
+						AddStack("Inclusão de item", "Informação adicionada com sucesso ao evento");
+						$("#Quantidade").val(0);
+						var txt = $("#Observacoes").val();
+						$('[id="Observacoes"]').val("");
+						$("#Observacoes").val(txt);
+					},
+					error: function () {
+						AddError("Espera aí que eu não consegui inserir isso aqui.", "<i class=\"fa fa-frown\"></i>Verifique se você inseriu as informações corretamente e tente mais uma vez pois deu errado pra inserir este ítem")
+					}
+				});
+			});
+		});
 	</script>
 	@RenderSection("scripts", required: false)
 }

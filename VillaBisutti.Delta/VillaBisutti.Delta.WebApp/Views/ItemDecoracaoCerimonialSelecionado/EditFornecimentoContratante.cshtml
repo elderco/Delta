@@ -11,7 +11,7 @@
 		PreventNegativeNumbers("Quantidade");
 	});
 </script>
-<tr class="inline-row-editor@(Model.Id) @(Model.StateErrorContratante ? "bg-danger" : "bg-success")">
+<tr class="inline-row-editor@(Model.Id) bg-default">
 	@using (Html.BeginForm("EditPost", "ItemDecoracaoCerimonialSelecionado", FormMethod.Post, new { @class = "FormItemEditor", @id = "Edit_" + Model.Id }))
 	{
 		<td>

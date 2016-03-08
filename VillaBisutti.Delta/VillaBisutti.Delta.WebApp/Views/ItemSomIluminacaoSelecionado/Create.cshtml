@@ -66,7 +66,7 @@
 	});
 
 </script>
-@using (Html.BeginForm("CreateItemSomIluminacaoSelecionado", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @id = "CreateItemSomIluminacao" }))
+@using (Html.BeginForm("CreateItemSomIluminacaoSelecionado", "ItemSomIluminacaoSelecionado", FormMethod.Post, new { @id = "CreateItemSomIluminacao", data_behavior = "post-async" }))
 {
 	@Html.AntiForgeryToken()
 

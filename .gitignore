@@ -194,8 +194,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
-/VillaBisutti.Delta/VillaBisutti.Delta.WebApp/Content/images/20151218020506.jpg
-/VillaBisutti.Delta/VillaBisutti.Delta.WebApp/Content/images/20151218020538.jpg
-/VillaBisutti.Delta/VillaBisutti.Delta.WebApp/Content/images/20151218020610.jpg
-VillaBisutti.Delta/VillaBisutti.Delta.WebApp/OS/OS/2015/11/OS-15-11-2015-CM-priscila-e-rafael-Casamento.pdf
-VillaBisutti.Delta/VillaBisutti.Delta.WebApp/Content/images/20151218060756.png
+VillaBisutti.Delta/VillaBisutti.Delta.WebApp/Content/images/201*.jpg
+VillaBisutti.Delta/VillaBisutti.Delta.WebApp/OS/

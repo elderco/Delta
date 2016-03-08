@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using VillaBisutti.Delta.Core.Model;
 using model = VillaBisutti.Delta.Core.Model;
+using data = VillaBisutti.Delta.Core.Data;
 
 namespace VillaBisutti.Delta
 {
@@ -59,6 +60,38 @@ namespace VillaBisutti.Delta
 				if (HttpContext.Current.Session["FilesToDownload"] == null)
 					HttpContext.Current.Session["FilesToDownload"] = new List<string>();
 				return (List<string>)HttpContext.Current.Session["FilesToDownload"];
+			}
+		}
+		public static IEnumerable<model.Local> MenuEventos
+		{
+			get
+			{
+				if (HttpContext.Current.Session["MenuEventos"] == null)
+					HttpContext.Current.Session["MenuEventos"] = new data.Local().GetPorProdutor(UsuarioLogado.Id);
+				return (IEnumerable<model.Local>)HttpContext.Current.Session["MenuEventos"];
+			}
+		}
+		public static model.Evento CurrentEvento
+		{
+			get
+			{
+				return (model.Evento)HttpContext.Current.Session["CurrentEvento"];
+			}
+			set
+			{
+				HttpContext.Current.Session["CurrentEvento"] = value;
+			}
+		}
+
+		public static bool HasContratos
+		{
+			get
+			{
+				return (bool)HttpContext.Current.Session["HasContratos"];
+			}
+			set
+			{
+				HttpContext.Current.Session["HasContratos"] = value;
 			}
 		}
 	}

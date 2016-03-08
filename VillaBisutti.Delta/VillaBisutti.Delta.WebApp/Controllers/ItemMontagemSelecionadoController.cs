@@ -95,7 +95,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
         public ActionResult CreateItemMontagemSelecionado([Bind(Include = "Id,EventoId,ItemMontagemId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemMontagemSelecionado itemmontagemselecionado)
         {
             new data.ItemMontagemSelecionado().Insert(itemmontagemselecionado);
-            return Redirect(Request.UrlReferrer.AbsolutePath);
+            return View();
         }
 
         // GET: /ItemMontagemSelecionado/Delete/5

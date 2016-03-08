@@ -2,9 +2,7 @@
 
 /* Projeto Vila Bisutti */
 
-.main-content {
-  min-height: 500px !important;
-}
+.main-content { min-height: 500px !important; }
 
 .brand-dark-brown{color: #522D1C !important;}
 .navbar, .navbar.navbar-collapse .navbar-container{background-color: #11100C !important;}
@@ -108,3 +106,4 @@ div.tooltip{min-width: 100px}
 /* Login */
 .field-validation-error{font-weight: normal; font-size: 14px;}
 .widget-color-dark>.widget-header.bg-danger { background-color: #990000 !important; }
+.bg-default { background-color: #dfdfdf !important; }

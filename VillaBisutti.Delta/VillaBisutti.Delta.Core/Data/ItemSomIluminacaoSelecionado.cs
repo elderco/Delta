@@ -39,7 +39,6 @@ namespace VillaBisutti.Delta.Core.Data
 		public List<Model.ItemSomIluminacaoSelecionado> GetItensCompartimentados(int eventoId, bool ContratacaoVB, bool FornecimentoVB)
 		{
 			return context.ItemSomIluminacaoSelecionado
-				.Include(i => i.ContratoAditivo)
 				.Include(i => i.ItemSomIluminacao)
 				.Include(i => i.ItemSomIluminacao.TipoItemSomIluminacao)
 				.Include(i => i.SomIluminacao)
@@ -48,6 +47,8 @@ namespace VillaBisutti.Delta.Core.Data
 					 && i.ContratacaoBisutti == ContratacaoVB
 					 && i.FornecimentoBisutti == FornecimentoVB
 				)
+				.OrderBy(i => i.ItemSomIluminacao.Nome)
+				.OrderBy(i => i.ItemSomIluminacao.TipoItemSomIluminacao.Ordem)
 				.ToList();
 		}
 	}

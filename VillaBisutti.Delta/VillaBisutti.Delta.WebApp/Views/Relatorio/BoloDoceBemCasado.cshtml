@@ -75,6 +75,10 @@
 								<span class="col-sm-4 text-muted">Termino do evento:</span>
 								<span class="col-sm-8">@(item.HorarioTerminoEvento.ToString())</span>
 							</p>
+							<p class="col-sm-6">
+								<span class="col-sm-4 text-muted">Pax:</span>
+								<span class="col-sm-8">@(item.Pax)</span>
+							</p>
 						</div>
 						@foreach (VillaBisutti.Delta.Core.DTO.BoloDoceBemCasado.Item subItem in item.Itens)
 						{

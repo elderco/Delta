@@ -89,7 +89,7 @@ namespace VillaBisutti.Delta.WebApp.Controllers
 		public ActionResult CreateItemSomIluminacaoSelecionado([Bind(Include = "Id,EventoId,ItemSomIluminacaoId,ContratoAditivoId,ContratacaoBisutti,FornecimentoBisutti,Quantidade,Observacoes")] model.ItemSomIluminacaoSelecionado itemsomiluminacaoselecionado)
 		{
 			new data.ItemSomIluminacaoSelecionado().Insert(itemsomiluminacaoselecionado);
-			return Redirect(Request.UrlReferrer.AbsolutePath);
+			return View();
 		}
 
 		public ActionResult Delete(int? id)

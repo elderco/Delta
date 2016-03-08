@@ -161,7 +161,7 @@ namespace VillaBisutti.Delta.Core.Business
 					)
 
 					eventos.Add(ConvertEvento(evento));
-			return eventos;
+			return eventos.OrderBy(e => e.DataEvento);
 		}
 
 		internal static DTO.Evento ConvertEvento(Model.Evento evento)
