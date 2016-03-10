@@ -4,9 +4,49 @@
 }
 @section scripts{
 	<script type="text/javascript">
+		function SerializeNaMarra(element) {
+			element = "#" + element.replace(/#/g, "");
+			var container = $(element).parent();
+			var returnData = "";
+			container.find("input").each(function () {
+				returnData += "&" + $(this).attr("name") + "=" + $(this).val();
+			})
+			return returnData;
+		}
 		$(document).ready(function () {
 			try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
 			try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+			
+			$(document).on('submit', ".FormItemEditor", function (evt) {
+				evt.preventDefault();
+				var myUrl = $(this).attr("action");
+				var id = $(this).attr("id").split("_")[1];
+				var myData = $(this).serialize();
+				$("#Item_" + id + " input[type='checkbox']").each(function () {
+					myData += "&" + $(this).attr("name");
+					myData += "=";
+					myData += $(this).attr("checked") == "checked" ? "True" : "False";
+				});
+				console.log(myData);
+				if (myData.indexOf("&Id=") < 0)
+					myData = SerializeNaMarra($(this).attr("id"))
+				console.log(myData);
+				$.ajax({
+					type: "POST",
+					url: myUrl,
+					data: myData,
+					success: function (data) {
+						$("#Item_" + id).removeClass("bg-warning").removeClass("bg-success");
+						$("#Item_" + id).addClass(data.trim() == "true" ? "bg-warning" : "bg-success");
+						AddStack("Item salvo", "Item alterado com sucesso");
+						$("#SpinerDisplay_" + id).addClass("fa-refresh").removeClass("fa-spinner fa-pulse");
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						AddError("Ops!", "Ocorreu um erro ao tentar atualizar este campo.<br />Verifique os dados inseridos e tente novamente.");
+						$("#SpinerDisplay_" + id).addClass("fa-refresh").removeClass("fa-spinner fa-pulse");
+					}
+				});
+			});
 
 			$("[data-behavior~=post-async]").submit(function (e) {
 				e.preventDefault();
@@ -20,12 +60,12 @@
 					url: form_url,
 					data: form_data,
 					success: function () {
-						LoadPage($(form_target).attr("data-collection-url"), form_target);
 						AddStack("Inclusão de item", "Informação adicionada com sucesso ao evento");
 						$("#Quantidade").val(0);
 						var txt = $("#Observacoes").val();
 						$('[id="Observacoes"]').val("");
 						$("#Observacoes").val(txt);
+						LoadPage($(form_target).attr("data-collection-url"), form_target);
 					},
 					error: function () {
 						AddError("Espera aí que eu não consegui inserir isso aqui.", "<i class=\"fa fa-frown\"></i>Verifique se você inseriu as informações corretamente e tente mais uma vez pois deu errado pra inserir este ítem")
