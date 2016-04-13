@@ -10,6 +10,6 @@ WHERE
 GROUP BY
 	Month(E.Data), C.Nome
 HAVING
-	Month(E.Data) IN (4,5,6)
+	Month(E.Data) IN (7,8,9)
 ORDER BY
 	1

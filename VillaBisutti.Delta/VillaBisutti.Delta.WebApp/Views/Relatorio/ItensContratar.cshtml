@@ -1,0 +1,190 @@
+﻿@model IEnumerable<VillaBisutti.Delta.Core.Model.Itens>
+
+@{
+    ViewBag.Title = "ItensContratar";
+    Layout = "a";
+}
+
+<h2>ItensContratar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Casa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioTermino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeHomenageados)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoItemId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaBE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaBD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaDR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaDC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaFV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaMS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopiaSI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bloqueia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadeDisponivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemSelecionadoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Definido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FornecedorStartado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contratado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContratacaoFornecimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Casa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioTermino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeHomenageados)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaBE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaBD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaDR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaDC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaFV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaMS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaOI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopiaSI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bloqueia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantidadeDisponivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemSelecionadoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Definido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FornecedorStartado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contratado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContratacaoFornecimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observacoes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -51,7 +51,7 @@
 
 <div class="row">
 	<h3 class="header smaller blue">Itens Villa Bisutti (Contratação e Fornecimento)</h3>
-	<div id="ItensBisutti"> 
+	<div id="ItensBisutti" data-collection-url="@Url.Action("ListFornecimentoBisutti", "ItemMontagemSelecionado", new { id = @ViewBag.Id })">
 		@Html.Partial("../ItemMontagemSelecionado/ListFornecimentoBisutti", Model.Itens.Where(i => i.ContratacaoBisutti && i.FornecimentoBisutti))
 	</div>
 </div>

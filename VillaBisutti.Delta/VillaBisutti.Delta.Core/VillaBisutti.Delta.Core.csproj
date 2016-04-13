@@ -69,6 +69,7 @@
     <Compile Include="Business\Evento.cs" />
     <Compile Include="Business\ItemBebida.cs" />
     <Compile Include="Business\ItemFotoVideo.cs" />
+    <Compile Include="Business\ItensContratar.cs" />
     <Compile Include="Business\Ordem.cs" />
     <Compile Include="Business\OS.cs" />
     <Compile Include="Business\OSFinalizada.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Model\FornecedorBoloDoceBemCasado.cs" />
     <Compile Include="Model\FotoVideo.cs" />
     <Compile Include="Model\Gastronomia.cs" />
+    <Compile Include="Model\Itens.cs" />
     <Compile Include="Model\ItemBoloDoceBemCasadoEvento.cs" />
     <Compile Include="Model\ItemCerimonial.cs" />
     <Compile Include="Model\ItemDecoracaoCerimonial.cs" />
