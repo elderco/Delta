@@ -31,6 +31,36 @@ namespace VillaBisutti.Delta
 				return DisplayAttribute.Name;
 			return value.ToString();
 		}
+		public static bool IsIn(this string text, string value)
+		{
+			return (!(value == null)) && value.Replace(text, "") != value;
+		}
+		public static string ToIcon(this string value)
+		{
+			//|BE|BD|DR|DC|FV|MS|OI|SI|
+			string retVal = "<span class=\"fa fa-{0}\"></span>";
+			switch(value)
+			{
+				case "BE":
+					return string.Format(retVal, "glass");
+				case "BD":
+					return string.Format(retVal, "birthday-cake");
+				case "DR":
+					return string.Format(retVal, "leaf");
+				case "DC":
+					return string.Format(retVal, "heart");
+				case "FV":
+					return string.Format(retVal, "camera-retro");
+				case "MS":
+					return string.Format(retVal, "trophy");
+				case "OI":
+					return string.Format(retVal, "gift");
+				case "SI":
+					return string.Format(retVal, "headphones");
+				default:
+					return string.Format(retVal, "question");
+			}
+		}
 		public static T Get<T>(string name)
 		{
 			string config = ConfigurationManager.AppSettings[name];

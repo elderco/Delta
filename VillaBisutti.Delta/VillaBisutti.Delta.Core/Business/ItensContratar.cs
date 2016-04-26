@@ -9,7 +9,7 @@ namespace VillaBisutti.Delta.Core.Business
 {
 	public class ItensContratar
 	{
-		public static IEnumerable<Model.Itens> GetReport(DateTime inicio, DateTime termino, bool? definido = null, bool? contratado = null, bool? fornecedorStartado = null, bool? fornecimentoBisutti = null, bool? responsabilidadeBisutti = null)
+		public static IEnumerable<Model.Itens> GetReport(string area, DateTime inicio, DateTime termino, bool? definido = null, bool? contratado = null, bool? fornecedorStartado = null, bool? fornecimentoBisutti = null, bool? responsabilidadeBisutti = null)
 		{
 			string fornecimento = string.Empty;
 			if ((fornecimentoBisutti.HasValue && fornecimentoBisutti.Value) && (responsabilidadeBisutti.HasValue && responsabilidadeBisutti.Value))
@@ -35,21 +35,19 @@ namespace VillaBisutti.Delta.Core.Business
 					cmd.Parameters.AddWithValue("@FornecedorStartado", fornecedorStartado.Value);
 				if (fornecimento != string.Empty)
 					cmd.Parameters.AddWithValue("@ContratacaoFornecimento", fornecimento);
+				if (area == null || area == string.Empty || area == "|")
+					cmd.Parameters.AddWithValue("@Area", DBNull.Value);
+				else
+					cmd.Parameters.AddWithValue("@Area", area);
+				//|BE|BD|DR|DC|FV|MS|OI|SI|
 				if (cmd.Connection.State != System.Data.ConnectionState.Open)
 					cmd.Connection.Open();
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 			}
-			IEnumerable<Model.Itens> lista = new List<Model.Itens>().AsEnumerable<Model.Itens>();// context.Item;
+			IEnumerable<Model.Itens> lista = context.Itens.OrderBy(i => i.Data).ThenBy(i => i.TipoItemId).ThenBy(i => i.ItemId);
 			return lista;
 		}
 	}
 }
 
-
-//@DataInicio DATETIME = NULL,
-//@DataTermino DATETIME = NULL,
-//@Definido BIT = NULL,
-//@Contratado BIT = NULL,
-//@FornecedorStartado BIT = NULL,
-//@ContratacaoFornecimento VARCHAR(50) = NULL
