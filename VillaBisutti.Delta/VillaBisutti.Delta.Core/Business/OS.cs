@@ -1750,7 +1750,7 @@ namespace VillaBisutti.Delta.Core.Business
 			SetPDFHeader();
 			//AdicionarPaginaLayout();
 			AdicionarPaginaPrincipal();
-			if (Evento.LocalCerimonia == Model.LocalCerimonia.Anexo || Evento.LocalCerimonia == Model.LocalCerimonia.Local)
+			if (Evento.LocalCerimonia == Model.LocalCerimonia.Anexo || Evento.LocalCerimonia == Model.LocalCerimonia.Local || Evento.LocalCerimonia == Model.LocalCerimonia.CapelaQuata)
 			{
 				pdf.BreakPage();
 				AdicionarPaginaDecoracaoCerimonial();
@@ -1773,7 +1773,7 @@ namespace VillaBisutti.Delta.Core.Business
 			AdicionarPaginaBebidas();
 			pdf.BreakPage();
 			AdicionarPaginaRoteiro();
-			if (Evento.LocalCerimonia == Model.LocalCerimonia.Anexo || Evento.LocalCerimonia == Model.LocalCerimonia.Local)
+			if (Evento.LocalCerimonia == Model.LocalCerimonia.Anexo || Evento.LocalCerimonia == Model.LocalCerimonia.Local || Evento.LocalCerimonia == Model.LocalCerimonia.CapelaQuata)
 			{
 				pdf.BreakPage();
 				AdicionarPaginaRoteiroCerimonial();

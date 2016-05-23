@@ -17,6 +17,8 @@ namespace VillaBisutti.Delta.Core.Model
 		[Description("Externo")]
 		Externo = 2,
 		[Description("Não Possui")]
-		NaoPossui = 3
+		NaoPossui = 3,
+		[Description("Capela Quatá")]
+		CapelaQuata = 4
 	}
 }
