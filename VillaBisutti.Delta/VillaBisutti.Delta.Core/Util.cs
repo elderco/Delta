@@ -300,7 +300,15 @@ namespace VillaBisutti.Delta
 			string[] baseUrl = HttpContext.Current.Request.Url.AbsoluteUri.Split('/');
 			return baseUrl[baseUrl.Length - 2].ToLower().Trim() != actionName.ToLower().Trim();
 		}
+		public static int[] ToIntArray(this string s, char separator)
+		{
+			if (s[0] == separator)
+				s = s.Substring(1);
+			if(s[s.Length - 1] == separator)
+				s = s.Substring(0, s.Length - 1);
+			return s.Split(separator).Select(i => int.Parse(i)).ToArray();
 
+		}
 		public static string TipoDocumentoOS { get { return "OS"; } }
 		public static string TipoDocumentoDegustacao { get { return "Degustacao"; } }
 		public static string TipoDocumentoCapa { get { return "Capa"; } }

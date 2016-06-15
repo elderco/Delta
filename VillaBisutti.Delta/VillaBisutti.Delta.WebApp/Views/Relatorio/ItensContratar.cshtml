@@ -41,7 +41,7 @@
 		<div class="widget-header widget-header-flat">
 			<h4 class="widget-title lighter">
 				<i class="fa fa-filter green"></i>
-				Filtros
+				Relatório de itens externos
 			</h4>
 			<div class="widget-toolbar">
 				<a href="#" data-toggle="collapse" data-target="#Filtro">
@@ -61,9 +61,8 @@
 					<div class="row">
 						<label for="fornecimento" class="control-label col-md-2">Fornecido por </label>
 						<select class="col-md-2" name="fornecimento" id="fornecimento">
-							<option value="BISUTTI"@("BISUTTI".IsIn(Request.QueryString["fornecimento"]) ? " selected" : "")>Bisutti</option>
-							<option value="TERCEIRO"@("TERCEIRO".IsIn(Request.QueryString["fornecimento"]) ? " selected" : "")>Fornecedor externo</option>
-							<option value="CONTRATANTE"@("CONTRATANTE".IsIn(Request.QueryString["fornecimento"]) ? " selected" : "")>Próprio contratante</option>
+							<option value="TERCEIRO"@("TERCEIRO".IsIn(Request.QueryString["fornecimento"]) ? " selected" : "")>Villa Bisutti (Fornecedor externo)</option>
+							<option value="CONTRATANTE"@("CONTRATANTE".IsIn(Request.QueryString["fornecimento"]) ? " selected" : "")>Contratante</option>
 						</select>
 						<div class="control-label col-md-2">Áreas</div>
 						<div class="col-md-4 input-group">
