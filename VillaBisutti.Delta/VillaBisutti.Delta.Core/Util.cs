@@ -31,6 +31,36 @@ namespace VillaBisutti.Delta
 				return DisplayAttribute.Name;
 			return value.ToString();
 		}
+		public static bool IsIn(this string text, string value)
+		{
+			return (!(value == null)) && value.Replace(text, "") != value;
+		}
+		public static string ToIcon(this string value)
+		{
+			//|BE|BD|DR|DC|FV|MS|OI|SI|
+			string retVal = "<span class=\"fa fa-{0}\"></span>";
+			switch(value)
+			{
+				case "BE":
+					return string.Format(retVal, "glass");
+				case "BD":
+					return string.Format(retVal, "birthday-cake");
+				case "DR":
+					return string.Format(retVal, "leaf");
+				case "DC":
+					return string.Format(retVal, "heart");
+				case "FV":
+					return string.Format(retVal, "camera-retro");
+				case "MS":
+					return string.Format(retVal, "trophy");
+				case "OI":
+					return string.Format(retVal, "gift");
+				case "SI":
+					return string.Format(retVal, "headphones");
+				default:
+					return string.Format(retVal, "question");
+			}
+		}
 		public static T Get<T>(string name)
 		{
 			string config = ConfigurationManager.AppSettings[name];
@@ -270,7 +300,15 @@ namespace VillaBisutti.Delta
 			string[] baseUrl = HttpContext.Current.Request.Url.AbsoluteUri.Split('/');
 			return baseUrl[baseUrl.Length - 2].ToLower().Trim() != actionName.ToLower().Trim();
 		}
+		public static int[] ToIntArray(this string s, char separator)
+		{
+			if (s[0] == separator)
+				s = s.Substring(1);
+			if(s[s.Length - 1] == separator)
+				s = s.Substring(0, s.Length - 1);
+			return s.Split(separator).Select(i => int.Parse(i)).ToArray();
 
+		}
 		public static string TipoDocumentoOS { get { return "OS"; } }
 		public static string TipoDocumentoDegustacao { get { return "Degustacao"; } }
 		public static string TipoDocumentoCapa { get { return "Capa"; } }

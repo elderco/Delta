@@ -9,7 +9,7 @@
 	@Scripts.Render("~/bundles/modernizr")
 	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/own")
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	@RenderSection("scripts", required: false)
 	<script>
 		$(document).ready(function () {
@@ -25,6 +25,7 @@
 			LockPage();
 		</script>
 	}
+	
 </head>
 <body class="no-skin">
 	<div id="navbar" class="navbar navbar-default navbar-collapse navbar-fixed-top">
@@ -151,13 +152,78 @@
 						<ul role="menu" class="user-menu dropdown-menu dropdown-yellow dropdown-menu-right dropdown-caret">
 							<li>
 								<a href="@Url.Action("Perfil", "Relatorio")">
+									<b class="fa fa-info-circle"></b>
 									Perfil dos eventos
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li>
 								<a href="@Url.Action("BoloDoceBemCasado", "Relatorio")">
+									<b class="fa fa-birthday-cake"></b>
 									Bolo, doce e bem-casado
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratar", "Relatorio")">
+									<b class="fa fa-fax"></b>
+									Relatório de itens externos
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="btn btn-info disabled">
+									Itens responsabilidade Villa Bisutti
+									<b class="fa fa-caret-down"></b>
+								</a>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarBebida", "Relatorio")">
+									<b class="fa fa-glass"></b>
+									Bebidas
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarDecoracao", "Relatorio")">
+									<b class="fa fa-leaf"></b>
+									Decoração recepção
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarDecoracaoCerimonial", "Relatorio")">
+									<b class="fa fa-heart"></b>
+									Decoração cerimonial
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarFotoVideo", "Relatorio")">
+									<b class="fa fa-camera-retro"></b>
+									Foto e Vídeo
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarMontagem", "Relatorio")">
+									<b class="fa fa-trophy"></b>
+									Montagem do Salão
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarOutrosItens", "Relatorio")">
+									<b class="fa fa-gift"></b>
+									Outros Itens
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li>
+								<a href="@Url.Action("ItensContratarSomIluminacao", "Relatorio")">
+									<b class="fa fa-headphones"></b>
+									Som e Iluminação
 								</a>
 								<b class="arrow"></b>
 							</li>

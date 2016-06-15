@@ -11,19 +11,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="404.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="500.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>08/08/2015 12:25:44</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/15/2016 04:21:05</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/15/2016 04:21:05</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/08/2015 12:25:46</publishTime>
@@ -32,10 +32,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:46</publishTime>
     </File>
     <File Include="bin/ICSharpCode.SharpZipLib.dll">
-      <publishTime>01/10/2015 11:03:57</publishTime>
+      <publishTime>10/01/2015 11:03:57</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/26/2015 12:04:55</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>08/08/2015 12:25:47</publishTime>
@@ -104,13 +104,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:25:49</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Automation.dll">
-      <publishTime>08/03/2016 04:28:52</publishTime>
+      <publishTime>06/15/2016 04:20:53</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.Core.dll">
-      <publishTime>08/03/2016 04:28:51</publishTime>
+      <publishTime>06/15/2016 04:20:52</publishTime>
     </File>
     <File Include="bin/VillaBisutti.Delta.WebApp.dll">
-      <publishTime>10/03/2016 01:39:00</publishTime>
+      <publishTime>06/15/2016 04:20:54</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/08/2015 12:25:55</publishTime>
@@ -119,97 +119,97 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Content/bootstrap-glyphs.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 13:31:54</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 13:32:15</publishTime>
     </File>
     <File Include="Content/estilos.css">
-      <publishTime>08/03/2016 02:41:45</publishTime>
+      <publishTime>06/15/2016 03:20:30</publishTime>
     </File>
     <File Include="Content/images/500.jpg">
-      <publishTime>07/01/2016 01:35:31</publishTime>
+      <publishTime>01/07/2016 01:35:31</publishTime>
     </File>
     <File Include="Content/images/ajax-loader.gif">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-01.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-02.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-03.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-04.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-05.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/backgrounds/bg-villabisutti-06.jpg">
-      <publishTime>07/01/2016 01:35:56</publishTime>
+      <publishTime>01/07/2016 01:35:56</publishTime>
     </File>
     <File Include="Content/images/bg-logo-villa-bisutti.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/delta-logo-white.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/delta-logo.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/delta.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/logo-villa-bisutti-login.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/searching.jpg">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_diagonals-medium_10_000000_40x40.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_flat_0_ffffff_40x100.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_flat_75_ffffff_40x100.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_glass_55_fbf9ee_1x400.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_glass_65_ffffff_1x400.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_glass_75_dadada_1x400.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_glass_75_e6e6e6_1x400.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_glass_95_fef1ec_1x400.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-icons_222222_256x240.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-icons_2e83ff_256x240.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-icons_454545_256x240.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-icons_888888_256x240.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/images/ui-icons_cd0a0a_256x240.png">
-      <publishTime>07/01/2016 01:35:43</publishTime>
+      <publishTime>01/07/2016 01:35:43</publishTime>
     </File>
     <File Include="Content/jquery-ui.min.css">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -242,37 +242,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/10/2015 11:03:58</publishTime>
+      <publishTime>10/01/2015 11:03:58</publishTime>
     </File>
     <File Include="Padrao Emails/CabecalhoAgendaSemanal.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Padrao Emails/CabecalhoContratacaoTerceiro.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Padrao Emails/EmailAcabouPrazo.txt">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Padrao Emails/EmailAgendaSemanal.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Padrao Emails/EmailBoasVindas.txt">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Padrao Emails/EmailContratacaoServicoTerceiro.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Padrao Emails/EmailOSPrazoFinal.txt">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Padrao Emails/RodapeAgendaSemanal.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/15/2016 04:20:58</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/VillaBisutti.pubxml.user">
-      <publishTime>10/03/2016 01:41:45</publishTime>
+      <publishTime>05/23/2016 06:09:11</publishTime>
     </File>
     <File Include="Scripts/ace-elements.min.js">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -290,7 +290,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Scripts/Functions.js">
-      <publishTime>11/04/2015 09:15:18</publishTime>
+      <publishTime>04/11/2015 09:15:18</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -365,16 +365,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Bebida/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Bebida/Index.cshtml">
-      <publishTime>10/03/2016 00:41:27</publishTime>
+      <publishTime>03/10/2016 00:41:27</publishTime>
     </File>
     <File Include="Views/BoloDoceBemCasado/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/BoloDoceBemCasado/Index.cshtml">
-      <publishTime>10/03/2016 00:44:04</publishTime>
+      <publishTime>03/10/2016 00:44:04</publishTime>
     </File>
     <File Include="Views/Cardapio/Create.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -389,16 +389,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Cerimonial/Create.cshtml">
-      <publishTime>11/04/2015 08:58:08</publishTime>
+      <publishTime>04/11/2015 08:58:08</publishTime>
     </File>
     <File Include="Views/Cerimonial/Delete.cshtml">
-      <publishTime>11/04/2015 09:19:07</publishTime>
+      <publishTime>04/11/2015 09:19:07</publishTime>
     </File>
     <File Include="Views/Cerimonial/Edit.cshtml">
-      <publishTime>11/04/2015 09:14:24</publishTime>
+      <publishTime>04/11/2015 09:14:24</publishTime>
     </File>
     <File Include="Views/Cerimonial/Index.cshtml">
-      <publishTime>10/03/2016 00:46:01</publishTime>
+      <publishTime>03/10/2016 00:46:01</publishTime>
     </File>
     <File Include="Views/ContratoAditivo/Create.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -425,37 +425,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Decoracao/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 11:09:50</publishTime>
     </File>
     <File Include="Views/Decoracao/Index.cshtml">
-      <publishTime>10/03/2016 00:42:25</publishTime>
+      <publishTime>03/10/2016 00:42:25</publishTime>
     </File>
     <File Include="Views/DecoracaoCerimonial/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 11:10:01</publishTime>
     </File>
     <File Include="Views/DecoracaoCerimonial/Index.cshtml">
-      <publishTime>10/03/2016 00:42:56</publishTime>
+      <publishTime>03/10/2016 00:42:56</publishTime>
     </File>
     <File Include="Views/Evento/Cabecalho.cshtml">
       <publishTime>03/26/2016 18:18:49</publishTime>
     </File>
     <File Include="Views/Evento/Create.cshtml">
-      <publishTime>11/01/2016 12:24:22</publishTime>
+      <publishTime>01/11/2016 12:24:22</publishTime>
     </File>
     <File Include="Views/Evento/Delete.cshtml">
-      <publishTime>06/10/2015 11:30:39</publishTime>
+      <publishTime>10/06/2015 11:30:39</publishTime>
     </File>
     <File Include="Views/Evento/Details.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Evento/Edit.cshtml">
-      <publishTime>11/01/2016 12:24:40</publishTime>
+      <publishTime>01/11/2016 12:24:40</publishTime>
     </File>
     <File Include="Views/Evento/Filtrar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/16/2016 12:22:26</publishTime>
     </File>
     <File Include="Views/Evento/Gerar.cshtml">
-      <publishTime>01/10/2015 21:10:49</publishTime>
+      <publishTime>10/01/2015 21:10:49</publishTime>
     </File>
     <File Include="Views/FornecedorBoloDoceBemCasado/Create.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -473,31 +473,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Foto/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/Foto/Definir.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/Foto/Delete.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/Foto/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Foto/Layout.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/FotoVideo/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/FotoVideo/Index.cshtml">
-      <publishTime>10/03/2016 00:43:13</publishTime>
+      <publishTime>03/10/2016 00:43:13</publishTime>
     </File>
     <File Include="Views/Gastronomia/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Gastronomia/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/16/2016 15:44:07</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -512,16 +512,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Home/InternalServerError.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Home/KeepAlive.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/Home/MenuEventos.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Home/PageNotFound.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemBebida/Buscar.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -542,25 +542,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBebida/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:52:23</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/CreateItemBebidaSelecionado.cshtml">
-      <publishTime>08/03/2016 02:04:43</publishTime>
+      <publishTime>03/08/2016 02:04:43</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/Edit.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:39:51</publishTime>
+      <publishTime>03/08/2016 02:39:51</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:40:01</publishTime>
+      <publishTime>03/08/2016 02:40:01</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:40:06</publishTime>
+      <publishTime>03/08/2016 02:40:06</publishTime>
     </File>
     <File Include="Views/ItemBebidaSelecionado/EditPost.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -578,7 +578,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasado/Create.cshtml">
-      <publishTime>02/01/2016 03:19:59</publishTime>
+      <publishTime>01/02/2016 03:19:59</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -593,19 +593,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasado/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/23/2015 00:17:42</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoEvento/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoEvento/Listar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:52:16</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/CreateItemBoloDoceBemCasadoSelecionado.cshtml">
-      <publishTime>08/03/2016 02:04:16</publishTime>
+      <publishTime>03/08/2016 02:04:16</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -617,16 +617,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:45:29</publishTime>
+      <publishTime>03/08/2016 02:45:29</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:45:29</publishTime>
+      <publishTime>03/08/2016 02:45:29</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:45:29</publishTime>
+      <publishTime>03/08/2016 02:45:29</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -638,16 +638,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemBoloDoceBemCasadoSelecionado/ListFornecimentoTerceiro.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/28/2016 02:43:41</publishTime>
     </File>
     <File Include="Views/ItemCerimonial/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/30/2015 11:29:09</publishTime>
     </File>
     <File Include="Views/ItemCerimonial/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemCerimonial/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/30/2015 11:29:59</publishTime>
     </File>
     <File Include="Views/ItemDecoracao/Buscar.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -668,10 +668,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemDecoracao/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonial/Buscar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonial/Create.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -689,13 +689,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonial/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:52:11</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/CreateItemDecoracaoCerimonialSelecionado.cshtml">
-      <publishTime>08/03/2016 02:03:56</publishTime>
+      <publishTime>03/08/2016 02:03:56</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -707,16 +707,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:45:53</publishTime>
+      <publishTime>03/08/2016 02:45:53</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:45:57</publishTime>
+      <publishTime>03/08/2016 02:45:57</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:45:59</publishTime>
+      <publishTime>03/08/2016 02:45:59</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoCerimonialSelecionado/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -731,10 +731,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:52:05</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/CreateItemDecoracaoSelecionado.cshtml">
-      <publishTime>08/03/2016 02:03:45</publishTime>
+      <publishTime>03/08/2016 02:03:45</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -746,16 +746,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:07:29</publishTime>
+      <publishTime>03/08/2016 02:07:29</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:07:32</publishTime>
+      <publishTime>03/08/2016 02:07:32</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:07:16</publishTime>
+      <publishTime>03/08/2016 02:07:16</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemDecoracaoSelecionado/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -788,28 +788,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemFotoVideo/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:51:59</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/CreateItemFotoVideoSelecionado.cshtml">
-      <publishTime>08/03/2016 02:05:10</publishTime>
+      <publishTime>03/08/2016 02:05:10</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/Edit.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:46:29</publishTime>
+      <publishTime>03/08/2016 02:46:29</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:46:23</publishTime>
+      <publishTime>03/08/2016 02:46:23</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:46:19</publishTime>
+      <publishTime>03/08/2016 02:46:19</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemFotoVideoSelecionado/ListFornecimentoBisutti.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -839,13 +839,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemMontagem/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:51:53</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/CreateItemMontagemSelecionado.cshtml">
-      <publishTime>08/03/2016 02:05:28</publishTime>
+      <publishTime>03/08/2016 02:05:28</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -857,16 +857,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditFornecimentoBisutti.cshtml">
-      <publishTime>08/03/2016 02:46:58</publishTime>
+      <publishTime>03/08/2016 02:46:58</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditFornecimentoContratante.cshtml">
-      <publishTime>08/03/2016 02:46:48</publishTime>
+      <publishTime>03/08/2016 02:46:48</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditFornecimentoTerceiro.cshtml">
-      <publishTime>08/03/2016 02:46:43</publishTime>
+      <publishTime>03/08/2016 02:46:43</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemMontagemSelecionado/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -899,13 +899,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemOutrosItens/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemOutrosItensSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:51:47</publishTime>
     </File>
     <File Include="Views/ItemOutrosItensSelecionado/CreateItemOutrosItensSelecionado.cshtml">
-      <publishTime>08/03/2016 02:05:57</publishTime>
+      <publishTime>03/08/2016 02:05:57</publishTime>
     </File>
     <File Include="Views/ItemOutrosItensSelecionado/Delete.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -926,7 +926,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/03/2016 22:48:07</publishTime>
     </File>
     <File Include="Views/ItemOutrosItensSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemOutrosItensSelecionado/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -968,13 +968,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacao/ListarPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacaoSelecionado/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/17/2016 00:46:38</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacaoSelecionado/CreateItemSomIluminacaoSelecionado.cshtml">
-      <publishTime>08/03/2016 02:06:20</publishTime>
+      <publishTime>03/08/2016 02:06:20</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacaoSelecionado/Edit.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -989,7 +989,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/03/2016 22:47:15</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacaoSelecionado/EditPost.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/24/2015 11:43:02</publishTime>
     </File>
     <File Include="Views/ItemSomIluminacaoSelecionado/ListFornecimentoBisutti.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -1013,10 +1013,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/Montagem/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Montagem/Index.cshtml">
-      <publishTime>11/03/2016 22:05:30</publishTime>
+      <publishTime>03/11/2016 22:05:30</publishTime>
     </File>
     <File Include="Views/Order/Index.cshtml">
       <publishTime>08/08/2015 12:23:55</publishTime>
@@ -1025,31 +1025,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:55</publishTime>
     </File>
     <File Include="Views/OS/Degustacoes.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/27/2015 02:28:49</publishTime>
     </File>
     <File Include="Views/OS/Download.cshtml">
-      <publishTime>01/10/2015 11:00:38</publishTime>
+      <publishTime>10/01/2015 11:00:38</publishTime>
     </File>
     <File Include="Views/OS/Filtered.cshtml">
-      <publishTime>02/10/2015 12:00:46</publishTime>
+      <publishTime>10/02/2015 12:00:46</publishTime>
     </File>
     <File Include="Views/OS/Index.cshtml">
-      <publishTime>02/10/2015 11:17:11</publishTime>
+      <publishTime>10/02/2015 11:17:11</publishTime>
     </File>
     <File Include="Views/OS/ListDownloads.cshtml">
-      <publishTime>02/10/2015 11:52:54</publishTime>
+      <publishTime>10/02/2015 11:52:54</publishTime>
     </File>
     <File Include="Views/OS/Reunioes.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/27/2015 00:44:43</publishTime>
     </File>
     <File Include="Views/OutrosItens/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/OutrosItens/Index.cshtml">
-      <publishTime>10/03/2016 00:44:26</publishTime>
+      <publishTime>03/10/2016 00:44:26</publishTime>
     </File>
     <File Include="Views/Perfil/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Perfil/Delete.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1058,7 +1058,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Perfil/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Perfil/Index.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1088,19 +1088,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Prato/PratosPorTipo.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/16/2016 15:27:24</publishTime>
     </File>
     <File Include="Views/Prato/RemoverPratoCardapio.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/AddPratoNotInCardapio.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/16/2016 15:43:14</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/AlterarObservacoes.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 10:23:55</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/Configuracao.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1121,49 +1121,73 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/ToggleDegustar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 10:29:46</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/ToggleEscolher.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 10:29:43</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/ToggleRejeitar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/23/2015 10:29:37</publishTime>
     </File>
     <File Include="Views/PratoSelecionado/_HandleInput.cshtml">
-      <publishTime>12/09/2015 23:13:34</publishTime>
+      <publishTime>09/12/2015 23:13:34</publishTime>
     </File>
     <File Include="Views/Relatorio/BoloDoceBemCasado.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2016 00:19:08</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratar.cshtml">
+      <publishTime>06/15/2016 04:08:40</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarBebida.cshtml">
+      <publishTime>06/15/2016 03:24:55</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarDecoracao.cshtml">
+      <publishTime>06/15/2016 03:25:10</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarDecoracaoCerimonial.cshtml">
+      <publishTime>06/15/2016 03:25:21</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarFotoVideo.cshtml">
+      <publishTime>06/15/2016 03:25:30</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarMontagem.cshtml">
+      <publishTime>06/15/2016 03:25:39</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarOutrosItens.cshtml">
+      <publishTime>06/15/2016 03:30:20</publishTime>
+    </File>
+    <File Include="Views/Relatorio/ItensContratarSomIluminacao.cshtml">
+      <publishTime>06/15/2016 03:33:51</publishTime>
     </File>
     <File Include="Views/Relatorio/Perfil.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/27/2016 00:19:16</publishTime>
     </File>
     <File Include="Views/Reuniao/Create.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/Reuniao/Edit.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Reuniao/Filtrar.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/23/2015 00:59:53</publishTime>
     </File>
     <File Include="Views/Reuniao/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Roteiro/Create.cshtml">
-      <publishTime>11/04/2015 08:56:40</publishTime>
+      <publishTime>04/11/2015 08:56:40</publishTime>
     </File>
     <File Include="Views/Roteiro/Delete.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Roteiro/Edit.cshtml">
-      <publishTime>11/04/2015 09:14:46</publishTime>
+      <publishTime>04/11/2015 09:14:46</publishTime>
     </File>
     <File Include="Views/Roteiro/Index.cshtml">
-      <publishTime>10/03/2016 00:45:20</publishTime>
+      <publishTime>03/10/2016 00:45:20</publishTime>
     </File>
     <File Include="Views/RoteiroPadrao/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1184,28 +1208,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/Shared/_AjaxLayout.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/Shared/_ConfiguracoesLayout.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/Shared/_EventosLayout.cshtml">
-      <publishTime>10/03/2016 01:36:24</publishTime>
+      <publishTime>03/10/2016 01:36:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/01/2016 04:11:51</publishTime>
+      <publishTime>06/15/2016 04:08:03</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/SomIluminacao/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/SomIluminacao/Index.cshtml">
-      <publishTime>10/03/2016 00:44:41</publishTime>
+      <publishTime>03/10/2016 00:44:41</publishTime>
     </File>
     <File Include="Views/TipoItemBebida/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1220,7 +1244,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemBebida/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemBoloDoceBemCasado/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1235,7 +1259,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemBoloDoceBemCasado/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1244,13 +1268,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/Index.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracao/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracaoCerimonial/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1265,7 +1289,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemDecoracaoCerimonial/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemFotoVideo/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1280,7 +1304,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemFotoVideo/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemMontagem/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1295,7 +1319,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemMontagem/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemOutrosItens/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1310,7 +1334,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemOutrosItens/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoItemSomIluminacao/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1325,7 +1349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoItemSomIluminacao/ListNaoSelecionados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoPrato/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1343,10 +1367,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoPratoPadrao/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoPratoPadrao/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/20/2015 14:09:36</publishTime>
     </File>
     <File Include="Views/TipoReuniao/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1355,10 +1379,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Views/TipoReuniao/Edit.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/TipoReuniao/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/31/2015 11:35:05</publishTime>
     </File>
     <File Include="Views/TipoServico/Create.cshtml">
       <publishTime>08/08/2015 12:23:56</publishTime>
@@ -1397,7 +1421,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2015 12:23:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/29/2015 12:49:54</publishTime>
     </File>
   </ItemGroup>
 </Project>

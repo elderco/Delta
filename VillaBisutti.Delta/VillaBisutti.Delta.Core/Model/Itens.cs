@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,13 @@ namespace VillaBisutti.Delta.Core.Model
 {
 	public class Itens
 	{
+		public int Id { get; set; }
 		public string Area { get; set; }
 		public int EventoId { get; set; }
 		public string Casa { get; set; }
 		public DateTime Data { get; set; }
 		public int HorarioInicio { get; set; }
+		[NotMapped]
 		public Horario Inicio
 		{
 			get
@@ -25,6 +28,7 @@ namespace VillaBisutti.Delta.Core.Model
 			}
 		}
 		public int HorarioTermino { get; set; }
+		[NotMapped]
 		public Horario Termino
 		{
 			get
@@ -58,5 +62,6 @@ namespace VillaBisutti.Delta.Core.Model
 		public bool Contratado { get; set; }
 		public string ContratacaoFornecimento { get; set; }
 		public string Observacoes { get; set; }
+		public string Fornecedor { get; set; }
 	}
 }

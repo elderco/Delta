@@ -305,6 +305,24 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Relatorio\ItensContratarBebida.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Relatorio\ItensContratarDecoracao.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Relatorio\ItensContratarDecoracaoCerimonial.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Relatorio\ItensContratarFotoVideo.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Relatorio\ItensContratarMontagem.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Relatorio\ItensContratarOutrosItens.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -671,6 +689,7 @@
     <Content Include="Views\ItemOutrosItensSelecionado\CreateItemOutrosItensSelecionado.cshtml" />
     <Content Include="Views\ItemSomIluminacaoSelecionado\CreateItemSomIluminacaoSelecionado.cshtml" />
     <Content Include="Views\Relatorio\ItensContratar.cshtml" />
+    <Content Include="Views\Relatorio\ItensContratarSomIluminacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
