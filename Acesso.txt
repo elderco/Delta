@@ -1,5 +1,1 @@
-Acesso via FTP:
-	Servidor (IP) - 177.70.106.26
-	Site – villabisutti.com.br
-	Login - villabisutti
-	Senha - RHBq5+DH8] 
+
